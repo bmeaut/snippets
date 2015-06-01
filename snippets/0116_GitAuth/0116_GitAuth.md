@@ -1,6 +1,10 @@
-### GIT és authentikáció
+---
+layout: default
+---
+
+# GIT Ã©s authentikÃ¡ciÃ³
 
 (Ez kelleni fog az OpenShifthez is.)
 
-SSH kulcs alapú authentikáció lényege és használata. Putty és a default key manager eltérései.
-Usernév-jelszó alapú authentikáció pl. BitBucket esetében.
+SSH kulcs alapÃº authentikÃ¡ciÃ³ lÃ©nyege Ã©s hasznÃ¡lata. Putty Ã©s a default key manager eltÃ©rÃ©sei.
+UsernÃ©v-jelszÃ³ alapÃº authentikÃ¡ciÃ³ pl. BitBucket esetÃ©ben.

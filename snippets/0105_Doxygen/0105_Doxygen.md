@@ -1,6 +1,10 @@
-### Doxygen
+---
+layout: default
+---
 
-Minimál példa (forráskód kinézete, doxygen config), majd a RobotMonitorban bemutatása, végül konkrét leírás, hogy hogyan kell klónozni GitHub-ról és lefuttatni rajta a Doxygent.
+# Doxygen
 
-(Qt-ben van valamire közvetlen támogatás? Annak szintaxisa is markdown?)
-(JavaDoc hasonlóan egy snippetben?)
+MinimÃ¡l pÃ©lda (forrÃ¡skÃ³d kinÃ©zete, doxygen config), majd a RobotMonitorban bemutatÃ¡sa, vÃ©gÃ¼l konkrÃ©t leÃ­rÃ¡s, hogy hogyan kell klÃ³nozni GitHub-rÃ³l Ã©s lefuttatni rajta a Doxygent.
+
+(Qt-ben van valamire kÃ¶zvetlen tÃ¡mogatÃ¡s? Annak szintaxisa is markdown?)
+(JavaDoc hasonlÃ³an egy snippetben?)

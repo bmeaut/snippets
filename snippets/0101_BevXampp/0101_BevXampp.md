@@ -1,3 +1,7 @@
-### XAMPP - PHP - MySQL - phpMyAdmin
+---
+layout: default
+---
 
-Egy rövid példa egy weboldalra, ami URL-ben kapott idopont-homérséklet párokat ment el egy adatbázisba, egy másik oldal pedig megjeleníti ezeket. Az adatbázis létrehozáshoz SQL parancsokat használ phpMyAdmin felületen keresztül.
+# XAMPP - PHP - MySQL - phpMyAdmin
+
+Egy rÃ¶vid pÃ©lda egy weboldalra, ami URL-ben kapott idopont-homÃ©rsÃ©klet pÃ¡rokat ment el egy adatbÃ¡zisba, egy mÃ¡sik oldal pedig megjelenÃ­ti ezeket. Az adatbÃ¡zis lÃ©trehozÃ¡shoz SQL parancsokat hasznÃ¡l phpMyAdmin felÃ¼leten keresztÃ¼l.

@@ -1,3 +1,7 @@
-### tesztelési módszerek beágyazott környezetben
+---
+layout: default
+---
 
-Ismétlés: call stack, breakpoint, step fajták, watch, threads. Printf, NYÁK-on mérési pontok, log és loglevel (lásd mikrokontroller labor M6-os mérés útmutatójában).
+# tesztelÃ©si mÃ³dszerek beÃ¡gyazott kÃ¶rnyezetben
+
+IsmÃ©tlÃ©s: call stack, breakpoint, step fajtÃ¡k, watch, threads. Printf, NYÃK-on mÃ©rÃ©si pontok, log Ã©s loglevel (lÃ¡sd mikrokontroller labor M6-os mÃ©rÃ©s ÃºtmutatÃ³jÃ¡ban).

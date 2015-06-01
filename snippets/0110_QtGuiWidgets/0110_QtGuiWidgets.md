@@ -1,4 +1,8 @@
-### Qt GUI (Widgetek)
+---
+layout: default
+---
 
-(A QML túl messze megy ehhez a tárgyhoz.)
-Mini példa (esemény, rajzolás, property grid, mivel ezekre hamar szükségük lesz), majd a RobotMonitorban a konkrét muködés bemutatása.
+# Qt GUI (Widgetek)
+
+(A QML tÃºl messze megy ehhez a tÃ¡rgyhoz.)
+Mini pÃ©lda (esemÃ©ny, rajzolÃ¡s, property grid, mivel ezekre hamar szÃ¼ksÃ©gÃ¼k lesz), majd a RobotMonitorban a konkrÃ©t mukÃ¶dÃ©s bemutatÃ¡sa.

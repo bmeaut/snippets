@@ -1,4 +1,8 @@
-### KISS elv (Keep It Simple and Stupid)
+---
+layout: default
+---
 
-RobotMonitorban van erre valami jó példa? Ha nem, GrainAutLine.Blob és BlobContainer?
-(Kapcsolódik ahhoz az elvhez is, hogy eloször keretrendszert készítünk (Board Support Package is ide tartozik), és csak utána ugrunk neki a feladat részleteinek. Ami persze általában nem ennyire szélsoséges.)
+# KISS elv (Keep It Simple and Stupid)
+
+RobotMonitorban van erre valami jÃ³ pÃ©lda? Ha nem, GrainAutLine.Blob Ã©s BlobContainer?
+(KapcsolÃ³dik ahhoz az elvhez is, hogy eloszÃ¶r keretrendszert kÃ©szÃ­tÃ¼nk (Board Support Package is ide tartozik), Ã©s csak utÃ¡na ugrunk neki a feladat rÃ©szleteinek. Ami persze Ã¡ltalÃ¡ban nem ennyire szÃ©lsosÃ©ges.)

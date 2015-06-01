@@ -1,7 +1,11 @@
-### Unit tesztelés - QUnit
+---
+layout: default
+---
 
-Egyszeru példa, majd a RobotMonitorban lévo unit tesztek hivatkozása.
+# Unit tesztelÃ©s - QUnit
 
-(Kiegészítés másik snippetben: UI tesztelés, mock objektumok?)
+Egyszeru pÃ©lda, majd a RobotMonitorban lÃ©vo unit tesztek hivatkozÃ¡sa.
 
-Beágyazott világban mennyire megy, lefedettség és egyéb metrikák, 16 órás EvoSoft példa, regressziós tesztelés, test driven development (és kezdeti nehézségei)
+(KiegÃ©szÃ­tÃ©s mÃ¡sik snippetben: UI tesztelÃ©s, mock objektumok?)
+
+BeÃ¡gyazott vilÃ¡gban mennyire megy, lefedettsÃ©g Ã©s egyÃ©b metrikÃ¡k, 16 Ã³rÃ¡s EvoSoft pÃ©lda, regressziÃ³s tesztelÃ©s, test driven development (Ã©s kezdeti nehÃ©zsÃ©gei)

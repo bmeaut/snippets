@@ -1,6 +1,10 @@
-### Qt, signals and slots koncepció
+---
+layout: default
+---
 
-Eloször egy egyszeru példa, utána pedig a RobotMonitor mintaalkalmazás kódjában is elmagyarázza a muködését.
+# Qt, signals and slots koncepciÃ³
 
-A példa: JK Flip-flop C++-ban, melynek van egy StateChanged(old,new) signalja, amire feliratkozunk a változások megjelenítéséhez.
+EloszÃ¶r egy egyszeru pÃ©lda, utÃ¡na pedig a RobotMonitor mintaalkalmazÃ¡s kÃ³djÃ¡ban is elmagyarÃ¡zza a mukÃ¶dÃ©sÃ©t.
+
+A pÃ©lda: JK Flip-flop C++-ban, melynek van egy StateChanged(old,new) signalja, amire feliratkozunk a vÃ¡ltozÃ¡sok megjelenÃ­tÃ©sÃ©hez.
 

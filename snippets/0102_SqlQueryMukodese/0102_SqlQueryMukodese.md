@@ -1,4 +1,8 @@
-### SQL lekérdezések muködése
+---
+layout: default
+---
 
-Az Info2-höz már elkészült anyag, mely egy egyszeru, de összetett lekérdezésen keresztül végigmegy a SELECT, FROM, WHERE, GROUP BY, HAVING és ORDER BY lényegén.
+# SQL lekÃ©rdezÃ©sek mukÃ¶dÃ©se
+
+Az Info2-hÃ¶z mÃ¡r elkÃ©szÃ¼lt anyag, mely egy egyszeru, de Ã¶sszetett lekÃ©rdezÃ©sen keresztÃ¼l vÃ©gigmegy a SELECT, FROM, WHERE, GROUP BY, HAVING Ã©s ORDER BY lÃ©nyegÃ©n.
 

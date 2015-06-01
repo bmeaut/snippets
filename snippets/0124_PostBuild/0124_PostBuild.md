@@ -1,4 +1,8 @@
-### post-build lehetoségek
+---
+layout: default
+---
 
-Jenkins lehetoségei, deploy, continuous integration, sonar, cppcheck (Qt Creatorba plugin?)
+# post-build lehetosÃ©gek
+
+Jenkins lehetosÃ©gei, deploy, continuous integration, sonar, cppcheck (Qt Creatorba plugin?)
 

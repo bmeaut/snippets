@@ -1,3 +1,7 @@
-### C++11 pointerek, new/delete kerülése
+---
+layout: default
+---
 
-Egy rövid példa shared, unique és weak pointerre, make_shared, make_unique (C++14!).
+# C++11 pointerek, new/delete kerÃ¼lÃ©se
+
+Egy rÃ¶vid pÃ©lda shared, unique Ã©s weak pointerre, make_shared, make_unique (C++14!).

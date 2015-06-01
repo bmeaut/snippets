@@ -1,4 +1,8 @@
-### Snippet: UML class diagram
+---
+layout: default
+---
 
-Minim·lis pÈlda, majd nÈh·ny diagram a RobotMonitorbÛl.
-Gener·l·s howto (Visual Paradigm? StarUML?)
+# Snippet: UML class diagram
+
+Minim√°lis p√©lda, majd n√©h√°ny diagram a RobotMonitorb√≥l.
+Gener√°l√°s howto (Visual Paradigm? StarUML?)

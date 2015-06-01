@@ -1,3 +1,7 @@
-### Verziókezelok összehasolítása (GIT, CVS, SVN, TFS)
+---
+layout: default
+---
 
-(Ezt a legegyszerubb úgy összerakni, hogy egyszer összehívok mindegyikhez valakit és gyorsan végigbeszéljük.)
+# VerziÃ³kezelok Ã¶sszehasolÃ­tÃ¡sa (GIT, CVS, SVN, TFS)
+
+(Ezt a legegyszerubb Ãºgy Ã¶sszerakni, hogy egyszer Ã¶sszehÃ­vok mindegyikhez valakit Ã©s gyorsan vÃ©gigbeszÃ©ljÃ¼k.)

@@ -1,4 +1,8 @@
-### Qt alapok
+---
+layout: default
+---
 
-Mini projekt létrehozása nulláról, benne több cpp fájl és egy külön library is (keretrendszer, újrahasznosítható komponensek). Egy összetettebb hello world.
-Utána hivatkozza a RobotMonitor projektet.
+# Qt alapok
+
+Mini projekt lÃ©trehozÃ¡sa nullÃ¡rÃ³l, benne tÃ¶bb cpp fÃ¡jl Ã©s egy kÃ¼lÃ¶n library is (keretrendszer, ÃºjrahasznosÃ­thatÃ³ komponensek). Egy Ã¶sszetettebb hello world.
+UtÃ¡na hivatkozza a RobotMonitor projektet.

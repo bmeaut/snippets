@@ -1,3 +1,7 @@
-### GitExtensions használata
+---
+layout: default
+---
 
-(Benne hivatkozás a GIT authentikációs snippetre.)
+# GitExtensions hasznÃ¡lata
+
+(Benne hivatkozÃ¡s a GIT authentikÃ¡ciÃ³s snippetre.)

@@ -1,4 +1,8 @@
-### C++ ismétlés, objektum orientáltság alapjai
+---
+layout: default
+---
 
-(Csak hivatkozzuk a korábbi tantárgyakat. Meg esetleg néhány példa a RobotMonitorból. Újrahasznosítható komponensen hangoztatása.)
+# C++ ismÃ©tlÃ©s, objektum orientÃ¡ltsÃ¡g alapjai
+
+(Csak hivatkozzuk a korÃ¡bbi tantÃ¡rgyakat. Meg esetleg nÃ©hÃ¡ny pÃ©lda a RobotMonitorbÃ³l. ÃšjrahasznosÃ­thatÃ³ komponensen hangoztatÃ¡sa.)
 

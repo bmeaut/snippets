@@ -1,3 +1,7 @@
-### Jenkins és OpenShift
+---
+layout: default
+---
 
-(Kell egy olyan példaprogram, ami egybol fordul egy default OpenShift cartridgen és van benne unit teszt. Qt fordul ott?)
+# Jenkins Ã©s OpenShift
+
+(Kell egy olyan pÃ©ldaprogram, ami egybol fordul egy default OpenShift cartridgen Ã©s van benne unit teszt. Qt fordul ott?)

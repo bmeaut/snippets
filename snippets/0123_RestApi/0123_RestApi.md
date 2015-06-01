@@ -1,5 +1,9 @@
-### REST API és használata programból
+---
+layout: default
+---
 
-Egy egyszeru REST-es szerver oldal elkészítése és használata. PHP-ben? scam.aut.bme.hu elérheto kintrol? (Az teljesen REST?) REST-en kereszül elért felho szolgáltatásra példa.
+# REST API Ã©s hasznÃ¡lata programbÃ³l
+
+Egy egyszeru REST-es szerver oldal elkÃ©szÃ­tÃ©se Ã©s hasznÃ¡lata. PHP-ben? scam.aut.bme.hu elÃ©rheto kintrol? (Az teljesen REST?) REST-en kereszÃ¼l elÃ©rt felho szolgÃ¡ltatÃ¡sra pÃ©lda.
 
 

@@ -1,4 +1,8 @@
-### OpenShift használata
+---
+layout: default
+---
 
-Az XAMPP-s példa feltöltése felhoben futú virtuális szerverre.
-(Mindenki tud magának ingyenesen regisztrálni egyet.)
+# OpenShift hasznÃ¡lata
+
+Az XAMPP-s pÃ©lda feltÃ¶ltÃ©se felhoben futÃº virtuÃ¡lis szerverre.
+(Mindenki tud magÃ¡nak ingyenesen regisztrÃ¡lni egyet.)

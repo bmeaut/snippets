@@ -1,4 +1,8 @@
-### Mi az a Snippet?
+---
+layout: default
+---
+
+# Mi az a Snippet?
 
 A Snippet egy rövid, lehetőleg egy konkrét példa köré felépített leírás valamiről. Lehet ez például technológia, algoritmus, érdekes jelenség, nagy tanulság.
 
