@@ -35,5 +35,4 @@ Minden snippetnek van egy sorszáma és egy rövidítés neve (például "0000_M
 
 Jelenleg a BME AUT-on Csorba Kristóf a snippet rendszer koordinálója, mivel az ő agyából pattant ki az ötlet... :)
 
-# Szerzők, verziók:
-* Csorba Kristóf
+<small>Szerzők, verziók: Csorba Kristóf</small>
