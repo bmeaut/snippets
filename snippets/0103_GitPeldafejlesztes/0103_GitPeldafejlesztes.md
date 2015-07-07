@@ -2,9 +2,18 @@
 layout: default
 ---
 
-# GIT példák
+# GIT bevezető
 
-Hivatkozza a Pro.Git könyvet (weben ingyenes, elso 3 fejezete kell).
+Az alábbi példa egy kis fejlesztési folyamatot mutat be, melyben a két fejlesztő, név szerint Andezit és Bazalt közösen, a GIT verziókövető segítségével követik és osztják meg egymással a változásokat.
+
+Az elkészített program egy kis pánikgomb, melynek segítségével vészjelzéseket lehet küldeni (1) rosszullét, (2) pánikhelyzet esetén. A program forráskódja a bemutatott teljes repositoryval itt érhető el: xxxxxxxxxxxxxxxxxxx
+
+A GIT részletesebb megismeréséhez további olvasmányok:
+
+  * xxxxxxxxx másik GIT snippetek, verziókövetési fogalmak, repository létrehozása nulláról az első commitig, remote beállítása
+  * A Pro.Git könyv első 3 fejezete: https://git-scm.com/book/en/v2
+
+## TODO: push 3 github
 
 Az "Andezit és Bazalt" felhasználók minta repositoryján keresztül bemutatja az alapveto muveleteket, screenshotokkal együtt. A minta repository elérheto a github-on.
 
@@ -14,9 +23,12 @@ Ref GitFlow és GitHub flow oldalak.
 
 emph: a repó csak egy könyvtár a gépen. Repó vs working directory!
 
-Git bin deploy dependencies
+Git: bin, deploy dependencies
 
-# ------------------
+
+
+
+# Egy szoftver fejlesztési folyamat GIT-tel, lépésről lépésre
 
 A következő példa egy egyszerű program feltételezett fejlesztését mutatja be, amiben két felhasználó, Andezit és Bazalt együtt dolgoznak a programon. A screenshotok a GitExtensions git kliensről készültek.
 
