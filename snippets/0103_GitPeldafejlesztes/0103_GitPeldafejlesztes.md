@@ -273,6 +273,6 @@ Az első nagy demózás előtt Andezit még elkészít egy lekérdező funkciót
 
 ![xxxxx](image/047.png)
 
-Majd azt mergelve a master branchbe elkészül az első demózható verzió. A sikeres demó végén Andezit és Bazalt úgy dönt, hogy ezt az állapotot érdemes megjelölni, hátha később gyorsan elő kell szedni "tudjátok, azt a verziót, ami a demón olyan szépen működött!". Ezért egy "Demo1" nevű taggel is megjelölik a demózott állapotot.
+Majd azt mergelve a master branchbe elkészül az első demózható verzió. A sikeres demó végén Andezit és Bazalt úgy dönt, hogy ezt az állapotot érdemes megjelölni, hátha később gyorsan elő kell szedni "tudjátok, azt a verziót, ami a demón olyan szépen működött!". Ezért egy "Demo1" nevű taggel is megjelölik a demózott állapotot. (Commiton jobb klikk, "create new tag", a felugró ablakban pedig be lehet X-elni, hogy "push tag to origin", amitől a tag is felkerül a szerverre.)
 
 ![xxxxx](image/048_master_ff_tag.png)

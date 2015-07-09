@@ -18,8 +18,6 @@ A programunk könyvtára ebben az esetben a munkakönyvtár (working directory),
 
 A GIT eredeti formájában egy parancssoros alkalmazás. Sokan máig ezt a formáját használják. Ezen kívül van egy kicsit minimál designos grafikus felülete is. Ennek kiváltására aztán készült egy csomó másik front end alkalmazás is, mint például a GitExtensions és a SourceTree. Ezek semmi mást nem csinálnak, csak elfedik a GIT parancssoros interfészét és begépelik helyettünk. Ezek mellett természetesen a modern fejlesztő környezetek (pl. Visual Studio, Eclipse, Qt Creator stb.) szintén rendelkeznek GIT integrációval, így onnan is elérjük a legfontosabb funkciókat.
 
--- .git: minden
-
 ## Mit verziókövetünk
 
 Verziókövetni elsősorban forráskódot szoktunk, de bármilyen szöveges anyag könnyen követhező. Például ha valaki LaTeX alatt készíti a szakdolgozatát, akkor azt is be lehet rakni GIT alá. Így ha a konzulensünk belejavít egy verzióba, miközben mi már továbbmentünk, akkor az anno odaadott verzióhoz visszatérve végrehajtuk a változtatásokat (mert itt még a "lásd 5. oldal" megjegyzés a margóra írva stimmel is, nem úgy, mint a legutolsó verziónkban, ahol 12 oldalt már beszúrtunk ide-oda). Utána pedig a változásokat át lehet venni az aktuális verzióhoz is.
@@ -49,7 +47,22 @@ A GIT világában az alábbiak a legfontosabb fogalmak. A fogalmak megértéséh
   * branch (ág): a fejlesztés egymástól függetlenül, több ágon is folyhat. GIT alatt ez teljesen általános, mivel brancheket nagyon könnyű létrehozni. Például ha egy új funkciót fejlesztek, akkor létrehozok egy ágat neki és azon dolgozok, arra commitolgatok. Aztán ha készen vagyok, akkor az én ágamat mergelem (visszaolvasztom) a fejlesztés fő ágába.
 
 A további fogalmakkal menet közben ismerkedünk meg, valamint egy rendszerfüggetlenebb összefoglalás található még itt: *0114_VerziokezelokOsszehasonlitasa*
- 
+
+## A GIT és GitExtensions telepítése
+
+A GIT telepítő készleteit minden platformra a https://git-scm.com/downloads címről lehet letölteni.
+
+A git első konfigurációja a felhasználói nevünk és e-mail címünk megadásából áll:
+
+    git config --global user.name "Andezit"
+    git config --global user.email andezit@example.com
+
+További részletek erről itt olvashatók: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+
+A GIT telepítése után én még fel szoktam rakni a GitExtensions-t, egy igen népszerű GUI-t hozzá: http://code.google.com/p/gitextensions/
+
+További kliensek itt találhatók: https://git-scm.com/downloads/guis
+
 ## Egy git repository létrehozása
 
 A legegyszerűbb eset, ha el akarok készíteni egyetlen szövegfájlt és azt verziókövetni is akarom. Ehhez kell egy üres könyvtár, amiben dolgozni fogok, majd ott ki kell adni a
@@ -99,6 +112,14 @@ Végül commitolva, aminek a -m kapcsolóval egyből megadjuk a szövegét (megj
 Megjegyzésnek illik olyasmit írni, amiből kiderül, hogy éppen mit változtattunk meg. Az "asdffsdfgd" szöveg nem egy illendő dolog. Főleg, hogy végleg bent marad a repositoryban.
 
 Mostantól ehhez az állapothoz bármikor vissza tudunk majd térni. A commitot a hash kódja azonosítja, melynek eleje (ez is elegendő az azonosításhoz) most "691c17d".
+
+## Szerver oldalon már létező repository klónozása
+
+Amennyiben úgy kezdjük a munkát, hogy más már létrehozta a repositoryt, akkor nekünk nem kell létrehozni, mindössze klónozni kell. Ehhez adjuk ki a git clone parancsot. Például a
+
+    git clone https://github.com/bmeaut/snippets.git
+
+parancs az aktuális könyvtárból fog nyitni egy snippets könyvtárat, ami a projekt munkakönyvtára lesz.
 
 ## További olvasnivaló
 
