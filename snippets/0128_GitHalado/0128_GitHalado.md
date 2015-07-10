@@ -17,9 +17,11 @@ Bazalt helyi repositoryjában természetesen ettől még ott szerepel az origin/
 
 ## Andezit: új állapotátmenetek és szépítés
 
----- TODO kellene egy ábra az állapotgépről!
-
 Andezit úgy dönt, hogy hiányzik néhány állapot átmenet. Konkrétan ha pánik gombot nyomunk, akkor annak bármelyik várakozó állapotban át kellene ugrania pánikjelzésre. Akkor is, ha például éppen arra várunk, hogy a Sick jelzésünkre megjöjjön a megerősítés (AwaitSickAck állapot).
+
+Az egész fejlesztési példa végére az alábbi állapotgépet fogja Andezig és Bazalt implementálni: (a részletes leírás itt olvasható: 0103_GitPeldafejlesztes)
+
+![](image/allapotgep.png)
 
 A módosításokat Andezit egy új, NewTransitions branchre commitolja és egyelőre még nem pusholja a szerver oldalra. Azt tervezi, hogy még egy kicsit szépít a kódon, majd utána rebaseli a munkáját a master ágra, akkor pedig a rebase előtt nem szabad pusholni. (Hogy miért nem, arról később lesz szó.)
 
