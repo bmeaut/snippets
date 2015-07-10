@@ -2,39 +2,42 @@
 layout: default
 ---
 
-# GIT bevezető
-
-Az alábbi példa egy kis fejlesztési folyamatot mutat be, melyben a két fejlesztő, név szerint Andezit és Bazalt közösen, a GIT verziókövető segítségével követik és osztják meg egymással a változásokat.
-
-Az elkészített program egy kis pánikgomb, melynek segítségével vészjelzéseket lehet küldeni (1) rosszullét, (2) pánikhelyzet esetén. A program forráskódja a bemutatott teljes repositoryval itt érhető el: xxxxxxxxxxxxxxxxxxx
-
-A GIT részletesebb megismeréséhez további olvasmányok:
-
-  * xxxxxxxxx másik GIT snippetek, verziókövetési fogalmak, repository létrehozása nulláról az első commitig, remote beállítása
-  * A Pro.Git könyv első 3 fejezete: https://git-scm.com/book/en/v2
-
-## TODO: push 3 github
-
-Az "Andezit és Bazalt" felhasználók minta repositoryján keresztül bemutatja az alapveto muveleteket, screenshotokkal együtt. A minta repository elérheto a github-on.
-
-Ref GitFlow és GitHub flow oldalak.
-
-(Forward integration példa: @Janka, EvoSoft)
-
-emph: a repó csak egy könyvtár a gépen. Repó vs working directory!
-
-Git: bin, deploy dependencies
-
-
-
-
 # Egy szoftver fejlesztési folyamat GIT-tel, lépésről lépésre
 
 A következő példa egy egyszerű program feltételezett fejlesztését mutatja be, amiben két felhasználó, Andezit és Bazalt együtt dolgoznak a programon. A screenshotok a GitExtensions git kliensről készültek.
 
 http://code.google.com/p/gitextensions/
 
-A példa során összeállt repository elérhető egy ZIP-ben az alábbi helyen: xxxxxxxxxxxxxxxxxxxxxxx
+A példa során összeállt repository (benne a forráskóddal) elérhető egy ZIP-ben az alábbi helyen: xxxxxxxxxxxxxxxxxxxxxxx
+
+## Az elkészítendő pánikgomb
+
+Az elkészített program egy kis pánikgomb, melynek segítségével vészjelzéseket lehet küldeni (1) rosszullét, (2) pánikhelyzet esetén.
+
+A forráskód lényegi része egy bsp.c-ből áll majd (Board Support Package, mely jelen esetben a konzol ablakot használja kommunikációra és az események szimulálására), valamint a main.c, mely az állapotgépet implementálja.
+
+Az allapotgép állapotai az alábbiak:
+
+![](image/allapotgep.png)
+
+  * Init: kezdeti állapot, azonnal ugrik tovább a Normal állapotra.
+  * Normal: készenléti, várakozó állapot
+  * SendSick: a felhasználó megnyomta a rosszullét jelző gombot. Ekkor küldi el a képzeletbeli szervernek a riasztást, majd automatikusan ugrik tovább az AwaitSickAck állapotra.
+  * AwaitSickAck: Várakozik a szerver megerősítésére, hogy fogadta a riasztást.
+  * SendPanic: A SendSick-hez hasonló, csak a pánik gomb megnyomása esetére. A riasztás kiküldése után ugrik az AwaitPanicAck állapotra. 
+  * AwaitPanicAck: Várakozik a szerver megerősítésére.
+  * AwaitQueryOk: A szervertől kapott egy kérdést, hogy minden rendben van-e. Várja, hogy a felhasználó megnyomja az OK gombot.
+  * SendQueryOk: OK válasz küldése, utána rögtön ugrik tovább az AwaitQueryOkAck állapotra. 
+  * AwaitQueryOkAck: Várja a szervertől a megerősítést az OK jelzésre.
+
+Az egyes külső eseményeket most billentyűkkel szimuláljuk:
+
+  * P: pánik gomb megnyomása
+  * S: rosszullét gomb megnyomása
+  * A: megerősítés érkezett a szervertől
+  * Q: kérdés érkezett a szervertől, hogy minden rendben van-e
+  * O: OK gomb megnyomása
+  * Escape: kilépés az alkalmazásból
 
 ## Andezit elkészíti a BSP-t és egy kezdeti verziót
 
@@ -276,3 +279,12 @@ Az első nagy demózás előtt Andezit még elkészít egy lekérdező funkciót
 Majd azt mergelve a master branchbe elkészül az első demózható verzió. A sikeres demó végén Andezit és Bazalt úgy dönt, hogy ezt az állapotot érdemes megjelölni, hátha később gyorsan elő kell szedni "tudjátok, azt a verziót, ami a demón olyan szépen működött!". Ezért egy "Demo1" nevű taggel is megjelölik a demózott állapotot. (Commiton jobb klikk, "create new tag", a felugró ablakban pedig be lehet X-elni, hogy "push tag to origin", amitől a tag is felkerül a szerverre.)
 
 ![xxxxx](image/048_master_ff_tag.png)
+
+## További olvasnivaló
+
+A GIT részletesebb megismeréséhez további olvasmányok:
+
+  * 0126_GitBev: GIT bevezető
+  * 0116_GitAuth: GIT authentikáció
+  * 128_GitHalado: haladóbb műveletek
+  * A Pro.Git könyv első 3 fejezete: https://git-scm.com/book/en/v2
