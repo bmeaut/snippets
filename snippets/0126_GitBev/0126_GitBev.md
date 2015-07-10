@@ -26,6 +26,8 @@ Bináris fájlokat a GIT ugyan el tud tárolni, igazi ereje azonban nem érvény
 
 Fontos azonban, hogy olyan dolgot soha nem szoktunk verziókövetni, ami fordítás eredménye, vagy bármilyen más módon generált fájl. Ezeket mindenki magának generálja majd le. Ezzel elsősorban a repository (a "tároló") méretét csökkentjük, másrészt lehet, hogy az egyes fejlesztők gépein a környezeti eltérések miatt bizonyos generált dolgok el fognak térni. Ha ezeket utána a GIT-en keresztül megosztanák egymással, folyton ide-oda módosítgatná mindenki a generált fájlokat, mert mindig csak egy valakinél lenne pont jó.
 
+Azt, hogy mely fájlokat nem akarunk verziókövetni (és így fel se ajánlja a stagelésüket a GIT), a .gitignore fájlban adhatjuk meg a working directory gyökerében.
+
 Ezen kívül szintén általános elvárás, hogy olyan állapotot nem mentünk el, ami le sem fordul.
 
 ## A legfontosabb fogalmak röviden
