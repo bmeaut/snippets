@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Git haladó
 
 A kiindulási alapunk Andezit és Bazalt projektje a demo1 tag kirakása után.
