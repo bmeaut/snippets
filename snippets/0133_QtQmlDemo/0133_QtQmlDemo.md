@@ -20,7 +20,22 @@ Nézzük most végig, hogy miből áll ez a kis példaprogram.
 
 ## main.cpp
 
-A main.cpp tartalma igen tömör: létrehoz egy QApplication objektumot, aminek az app.exec() hívásával indul el az ablakkezelő rendszer eseménykezelő főciklusa. Vagyis a főprogram összerakja a felhasználó felületet, majd amíg ki nem lépünk, eseményekre vár és minden eseménynél végrehajtja a megfelelő eseménykezelőt.
+A main.cpp tartalma igen tömör:
+
+	#include <QApplication>
+	#include <QQmlApplicationEngine>
+	
+	int main(int argc, char *argv[])
+	{
+	    QApplication app(argc, argv);
+	
+	    QQmlApplicationEngine engine;
+	    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+	
+	    return app.exec();
+	}
+
+Létrehoz egy QApplication objektumot, aminek az app.exec() hívásával indul el az ablakkezelő rendszer eseménykezelő főciklusa. Vagyis a főprogram összerakja a felhasználó felületet, majd amíg ki nem lépünk, eseményekre vár és minden eseménynél végrehajtja a megfelelő eseménykezelőt.
 
 Ezen kívül létrejön egy QQmlApplicationEngine objektum is, ami pedig a QML felület betöltéséért és felépítéséért felelős.
 
