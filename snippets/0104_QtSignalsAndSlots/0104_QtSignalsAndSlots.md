@@ -132,16 +132,16 @@ Az Application a konstruktorában létrehozza az alkalmazás többi objektumát 
 
 ### Application.cpp
 
-#include <QCoreApplication>
-#include <QDebug>
-#include "Application.h"
-#include "Simulator.h"
+    #include <QCoreApplication>
+    #include <QDebug>
+    #include "Application.h"
+    #include "Simulator.h"
 
-Application::Application(int argc, char* argv[])
-    : QCoreApplication(argc, argv),
-      simulator(2),
-      timer()
-{
+    Application::Application(int argc, char* argv[])
+        : QCoreApplication(argc, argv),
+          simulator(2),
+          timer()
+    {
 
 Most kapcsoljuk össze a signalokat és slotokat. Sok hibának az az oka, hogy
 
@@ -207,30 +207,30 @@ Hasonló a helyzet a többi kulcsszóval is:
 A varázslás a MOC által generált C++ forrásfájlban van, mint amilyen a moc_Simulator.cpp (ezt a fordítás eredményeit tartalmazó build könyvtárban találjuk meg a fordítás után):
 
     // SIGNAL 0
-    void Simulator::arrived(int \_t1)
+    void Simulator::arrived(int _t1)
     {
-        void \*\_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&\_t1)) };
-        QMetaObject::activate(this, &staticMetaObject, 0, \_a);
+        void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+        QMetaObject::activate(this, &staticMetaObject, 0, _a);
     }
 
 Valójában a signalhoz generált függvény továbbhív a QMetaObject ősosztály activate metódusába.  Ahhoz, hogy megértsük, ott mi történik, ugyanebben a fájlban még nézzünk meg egy másik metódust:
 
-    void Simulator::qt_static_metacall(QObject \*\_o, QMetaObject::Call \_c, int \_id, void \*\*\_a)
+    void Simulator::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
     {
-        if (\_c == QMetaObject::InvokeMetaMethod) {
-            Simulator \*\_t = static_cast<Simulator \*>(\_o);
-            switch (\_id) {
-            case 0: \_t->arrived((\*reinterpret_cast< int(\*)>(\_a[1]))); break;
-            case 1: \_t->tick(); break;
+        if (_c == QMetaObject::InvokeMetaMethod) {
+            Simulator *_t = static_cast<Simulator *>(_o);
+            switch (_id) {
+            case 0: _t->arrived((*reinterpret_cast< int(*)>(_a[1]))); break;
+            case 1: _t->tick(); break;
             default: ;
             }
-        } else if (\_c == QMetaObject::IndexOfMethod) {
-            int \*result = reinterpret_cast<int \*>(\_a[0]);
-            void \*\*func = reinterpret_cast<void \*\*>(\_a[1]);
+        } else if (_c == QMetaObject::IndexOfMethod) {
+            int *result = reinterpret_cast<int *>(_a[0]);
+            void **func = reinterpret_cast<void **>(_a[1]);
             {
-                typedef void (Simulator::\*\_t)(int );
-                if (\*reinterpret_cast<\_t \*>(func) == static_cast<\_t>(&Simulator::arrived)) {
-                    \*result = 0;
+                typedef void (Simulator::*_t)(int );
+                if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Simulator::arrived)) {
+                    *result = 0;
                 }
             }
         }
@@ -242,3 +242,4 @@ Ez a statikus metódus gyakorlatilag arra jó, hogy átadva neki egy Simulator o
 
   * Befejezésül még annyit hozzáteszek, hogy a connect-nek nyilván van egy disconnect megfelelője is, ami megszünteti a kapcsolatokat.
   * Természetesen ez a funkcionalitás más környezetekben is szükségessé vált. C# alatt például a delegate egy konténer és egy függvény pointer kombinációja, amivel ugyanezt lehet elérni.
+  * Mivel valójában a signal és slot is metódus lesz, ezért nincs akadálya annak, hogy egy signalhoz egy másik signal meghívását kapcsoljuk, vagy hogy egy slotot metódusként meghívjunk. Sőt, a C++11 óra signalhoz a connect segítségével lamda kifejezést is hozzá lehet kapcsolni.
