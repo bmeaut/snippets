@@ -60,7 +60,7 @@ Ha hibát találsz, szólj Kristófnak! Köszi!
 
 ## Hibakeresés, hibakezelés, tesztelés
 
-  * x [0119_QUnit](snippets/0119_QUnit/0119_QUnit.html) (5%) Unit tesztek Qt alatt
+  * [0119_QTest](snippets/0119_QTest/0119_QTest.html) (95%) Unit tesztek Qt alatt
   * [0120_Hibakezeles](snippets/0120_Hibakezeles/0120_Hibakezeles.html) (95%) Hibakezelési módszerek
   * Try és több catch, miért nincs C++-ban final
   * cppcheck és sonar használata
