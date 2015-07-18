@@ -36,7 +36,7 @@ Ha hibát találsz, szólj Kristófnak! Köszi!
 ### Qt
 
   * [0131_QtToolchainHelloWorld](snippets/0131_QtToolchainHelloWorld/0131_QtToolchainHelloWorld.html) (95%)
-  * x [0104_QtSignalsAndSlots](snippets/0104_QtSignalsAndSlots/0104_QtSignalsAndSlots.html) (1%)
+  * [0104_QtSignalsAndSlots](snippets/0104_QtSignalsAndSlots/0104_QtSignalsAndSlots.html) (95%)
   * x Q_OBJECT, Q_PROPERTY, mit csinál a Meta-object compiler ezekkel? Az Invoke működése :)
   * [0134_QDataStream](snippets/0134_QDataStream/0134_QDataStream.html) (100%) A QDataBuffer és a QDataStream
   * [0132_QtSocketDemo](snippets/0132_QtSocketDemo/0132_QtSocketDemo.html) (95%)
