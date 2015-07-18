@@ -80,6 +80,7 @@ Közben referencia átadás
     #include <vector>
     #include <memory>
     #include <functional>
+    #include <algorithm>
 
     using namespace std;
 
@@ -107,7 +108,7 @@ Közben referencia átadás
         }
 
         // Execute a lambda on all stored elements
-        void ForEach(std::function<void(const Blob&)> lambda )
+        void ForEach(std::function<void(const Blob&)> lambda ) const
         {
             for(const auto& blob : blobs)
             {
@@ -115,34 +116,53 @@ Közben referencia átadás
             }
         }
 
+        auto begin()
+        {
+            return blobs.begin();
+        }
+
+        auto end()
+        {
+            return blobs.end();
+        }
+
     private:
-    	// This is where we store the blobs
-    	std::vector<std::unique_ptr<Blob>> blobs;
+        // This is where we store the blobs
+        std::vector<std::unique_ptr<Blob>> blobs;
+
     };
-    
+
     // To make the output easier
     std::ostream& operator<<(std::ostream& stream, const Blob& blob)
     {
-	    stream << "Blob(" << blob.x << "," << blob.y << ")";
-	    return stream;
+        stream << "Blob(" << blob.x << "," << blob.y << ")";
+        return stream;
     }
-    
+
     int main()
     {
-    	// Create a set of blobs (which takes ownership)
-    	BlobContainer blobs;
-    
-    	// Add 2 blobs
-    	std::unique_ptr<Blob> newBlob = std::make_unique<Blob>(12,34);
-    	blobs.add(newBlob);
-    	newBlob = std::make_unique<Blob>(56,78);
-    	blobs.add(newBlob);
-    
-    	// After adding, the newBlob pointer is null, as the ownership has moved
-    	//  into the container.
-    	cout << ( newBlob ? "newBlob is still valid" : "newBlob is invalid" ) << endl;
-    
-    	cout << "Contents:" << endl;
-    	blobs.ForEach( [](const Blob& blob){ cout << blob << endl; } );
+        // Create a set of blobs (which takes ownership)
+        BlobContainer blobs;
+
+        // Add 2 blobs
+        std::unique_ptr<Blob> newBlob = std::make_unique<Blob>(12,34);
+        blobs.add(newBlob);
+        newBlob = std::make_unique<Blob>(56,78);
+        blobs.add(newBlob);
+
+        // After adding, the newBlob pointer is null, as the ownership has moved
+        //  into the container.
+        cout << ( newBlob ? "newBlob is still valid" : "newBlob is invalid" ) << endl;
+
+        cout << "Contents:" << endl;
+        blobs.ForEach( [](const Blob& blob){ cout << blob << endl; } );
+
+        cout << "The same with iterators and std::for_each" << endl;
+        std::for_each(
+            blobs.begin(),
+            blobs.end(),
+            [](std::unique_ptr<Blob>& blob)
+                { cout << *blob << endl; });
     }
-    
+
+A ForEach metódus helyett egyébként lehetne iterator is és akkor megy az std::for_each is! Ott is lehet lambda...
