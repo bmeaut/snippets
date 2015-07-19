@@ -2,35 +2,48 @@
 layout: default
 ---
 
-# Ez egy snippet sablon
+## Singleton (FONTOS, bevezető példa is egyben)
 
-Ide jön a snippet teljes szövege.
+* Első példa
+* Primitív implementáció, de pl. szálbiztos?
+* Több lehetséges implementáció. Az eltérés, hogy miket kezel le és miket nem. Nem kell mindig a nagyágyú. (Pl. mennyi látszik kívülről, szálbiztosság)
 
-## Felsorolások, forráskód
+### Bevezető példa
 
-A snippetekben forráskód az alábbi három módon jelenhet meg:
+### Részletek
 
-* Közvetlenül a szövegbe ágyazva, mint lentebb.
-* Magában a snippet könyvtárában szerepelhet minta forráskód, külön fájlban.
-* Hivatkozhatunk például egy github repositoryra is, mint ez itt: [Ennek a snippetnek a forrása a github.com-on](https://github.com/bmeaut/snippets/blob/gh-pages/snippets/0001_SnippetSablon/0001_SnippetSablon.md)
+* The Abstract Factory, Builder, and Prototype patterns can use Singletons in their implementation.
+* Facade objects are often singletons because only one Facade object is required.
+* State objects are often singletons.
+* Singletons are often preferred to global variables because:
+   * They do not pollute the global namespace (or, in languages with namespaces, their containing namespace) with unnecessary variables.[4]
+   * They permit lazy allocation and initialization, whereas global variables in many languages will always consume resources.
 
-A forráskód lehet inline, mint a `` printf() ``, vagy lehet kódblokk, melynek minden sora legalább 4 szóközzel kezdődik:
+Abstract factory singleton: Java AWT, getDefaultToolkit().
 
-    void main()
-    {
-      printf("Mizu?\n");
-    }
+static Singleton& instance()
+{
+     static Singleton s;
+     return s;
+}
 
-## Képek beágyazása
+Nehezíti a unit tesztelést, mert globális állapotot vezet be a rendszerbe, ezért a teszeléshez a program egy kis részének nehezebb teljesen izoláltan egy olyan kis környezetet szimulálni, melyben a tesztet végre kell hajtani. (**példa kell**)
 
-Képek beágyazása az image alkönyvtártól, relatív címzéssel így történik:
+### Példák
 
-![AUT Logó](image/AUT_logo.png "AUT Logó")
+* Log műveletek
+* Konfigurációs beállítások (section-key-value hármasok pl. ini fájlból)
+* Forgalomszámláló rendszerben
+   * a kereszteződés, benne a tipikus mozgási irányokkal, sávok helyével. Videó adatok (FPS, valós kezdeti és befejezési időpont).
 
-## További információk a szintaxisról
 
-Például itt: [Markdown szintaxis összefoglaló](http://daringfireball.net/projects/markdown/syntax)
+### Multiton, mint általánosítása
 
-<small>Szerzők, verziók: Csorba Kristóf</small>
+A skeleton általánosításra az egyetlen példány helyett (1) előre adott számú példány esetére, vagy (2) bizonyos kategóriánként pontosan egy példányra.
 
-<small>A szerzők megjelölése egyrészt azért fontos, hogy lehessen látni, kinek az alkotása egy snippet, másrészt az esetleges hibákkal kapcsolatban is őt érdemes keresni.</small>
+Hívják még registry of singletonsnak is, ahol kulcsonként csak egyetlen példány lehet.
+Mint egy hash, de (1) nem adhatunk meg új elemeket, (2) soha nem ad vissza nullptr-t, létrehozza, ha kell.
+
+Példák:
+
+* Hardver perifériák, amikből több is lehet.

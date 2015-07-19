@@ -2,35 +2,57 @@
 layout: default
 ---
 
-# Ez egy snippet sablon
+## Composite (FONTOS)
 
-Ide jön a snippet teljes szövege.
+### Bevezető példa
 
-## Felsorolások, forráskód
+Az ablakkezelő rendszerkben az ablakok control-okból állnak (nyomógomb, szövegdoboz stb.). Viszont a hierarchikus csoportosítás kedvéért vannak container controlok is, melyekbe amellett, hogy ők maguk is controlok, további controlokat lehet belerakni. Amikor az ablakkezelő rendszer meg akar jeleníteni egy controlt, meghívja a rajzoló metódusát. Ha ez éppen egy container control, akkor annak a rajzoló metódusa továbbhívja az összes tartalomazott control rajzoló metódusát. Ezáltal a hívó oldalnak nem kell tudnia, hogy egy egyszerű controlt, vagy egy összetettet jelenít éppen meg.
 
-A snippetekben forráskód az alábbi három módon jelenhet meg:
+A Composite design pattern lényege, hogy ugyanazon interfészen kereszül érünk el egy elemet és többet egyszerre.
 
-* Közvetlenül a szövegbe ágyazva, mint lentebb.
-* Magában a snippet könyvtárában szerepelhet minta forráskód, külön fájlban.
-* Hivatkozhatunk például egy github repositoryra is, mint ez itt: [Ennek a snippetnek a forrása a github.com-on](https://github.com/bmeaut/snippets/blob/gh-pages/snippets/0001_SnippetSablon/0001_SnippetSablon.md)
+### Részletek
 
-A forráskód lehet inline, mint a `` printf() ``, vagy lehet kódblokk, melynek minden sora legalább 4 szóközzel kezdődik:
+A megvalósítás alapja általában annyi, hogy az ősosztály (mint a control) container leszármazottjai valamilyen tároló mechanizmussal controlok egy halmazát is tudják tárolni.
 
-    void main()
+    class Control
     {
-      printf("Mizu?\n");
-    }
+    public:
+        virtual void draw() = 0;
+    };
 
-## Képek beágyazása
+    class ContainerControl : public Control
+    {
+    public:
+        virtual void draw() override
+        {
+            for(auto& c : internalControls)
+            {
+                c.draw();
+            }
+        }
 
-Képek beágyazása az image alkönyvtártól, relatív címzéssel így történik:
+    private:
+        std::vector<Control&> internalControls;
+    };
 
-![AUT Logó](image/AUT_logo.png "AUT Logó")
+Így a controlokból tetszőleges hierarchia építhető fel, melyet ha egyetlen gyökéreleme van (ilyen például az ablak egy ablakkezelő rendszerben), nagyon egyszerűen, a gyökérelem draw() metódusával meg tudunk jeleníteni.
 
-## További információk a szintaxisról
+A Composite design pattern egyes megvalósításai például abban eltérnek, hogy a gyerek manipuláló metódusok az ősosztályban vannak-e. A fenti példában ilyen lenne a
 
-Például itt: [Markdown szintaxis összefoglaló](http://daringfireball.net/projects/markdown/syntax)
+   Control::AddControl(Control& c);
 
-<small>Szerzők, verziók: Csorba Kristóf</small>
+### Példa: RobonAUT manőver
 
-<small>A szerzők megjelölése egyrészt azért fontos, hogy lehessen látni, kinek az alkotása egy snippet, másrészt az esetleges hibákkal kapcsolatban is őt érdemes keresni.</small>
+Ha egy robot az összetett menővereket úgy végzi el, hogy azok egyszerűbb menűverek sorozatai, akkor a Composite design pattern segítégével nagyon elegánsan fel lehet építeni ezeket a hierarchikus menőver szekvenciákat. Minden menőver vagy elemi, és akkor a futtató metódus azt végre is hajtja, vagy összetett, amikor pedig a futtató metódus sorban végrehajtja az egyes tartalmazott menővereket.
+
+Az implementáció nagyon hasonló lenne a fenti Control példához, csak Control helyett Maneuver, draw() helyett pedig execute() lenne. Fontos, hogy az execute() metódus csak akkor térjen vissza, ha a robot ténylegesen be is fejezte a manővert.
+
+(A megoldás igény esetén még a Command design patternnel is kominálható, ha az elemi manőverek objektumoknak egy külön Command objektum megadásával mondjuk meg, hogy ténylegesen mi lesz a feladat.)
+
+### Példa: áramköri blokkok szimulációban
+
+Egy áramkör szimulációban az egyes blokkok leírására szintén nagyon alkalmas a Composite design pattern, mivel ott is ugyanilyen egymásba skatulyázós hierarchiát figyelhetünk meg. Ebben az esetben az egyes blokkok interfésze kicsit trükkösebb, mivel tetszőleges számú ki- és bemenetet is támogatnia kell, a container blokk pedig a belső összeköttetéseket is le kell, hogy írja, ami szintén bonyolítja a helyzetet.
+
+### További példák
+
+...

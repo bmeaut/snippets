@@ -2,35 +2,58 @@
 layout: default
 ---
 
-# Ez egy snippet sablon
+## Abstract factory (FONTOS)
 
-Ide jön a snippet teljes szövege.
+### Bevezető példa
 
-## Felsorolások, forráskód
+### Részletek
 
-A snippetekben forráskód az alábbi három módon jelenhet meg:
 
-* Közvetlenül a szövegbe ágyazva, mint lentebb.
-* Magában a snippet könyvtárában szerepelhet minta forráskód, külön fájlban.
-* Hivatkozhatunk például egy github repositoryra is, mint ez itt: [Ennek a snippetnek a forrása a github.com-on](https://github.com/bmeaut/snippets/blob/gh-pages/snippets/0001_SnippetSablon/0001_SnippetSablon.md)
+http://stackoverflow.com/questions/2280170/why-do-we-need-abstract-factory-design-pattern
 
-A forráskód lehet inline, mint a `` printf() ``, vagy lehet kódblokk, melynek minden sora legalább 4 szóközzel kezdődik:
+Egymástól függő objektumok egy családját létrehozó interfészt ad, anélkül, hogy a konkrét osztályokat specifikálná.
 
-    void main()
-    {
-      printf("Mizu?\n");
-    }
+Vagyis factory method csoportokat fog össze. Olyan csoportokat, hogy a létrehozott termékek összeférhetőek legyenek. (Mint egy Linux disztribúció: ott is csomagok egy egymással kompatibilis halmazát állítják össze.)
 
-## Képek beágyazása
+Készít egy "platform vs termék" mátrixot. Minden termékhez készül egy factory method (az abstract factoryban), majd ebből származnak az egyes platformok factoryjai.
 
-Képek beágyazása az image alkönyvtártól, relatív címzéssel így történik:
+További előnyök
 
-![AUT Logó](image/AUT_logo.png "AUT Logó")
+* Cserélhető komponensek, de nem lehet őket akárhogy csereberélni, csak bizonyos, egymással összetartozó készletekben!
 
-## További információk a szintaxisról
+Hátányok
 
-Például itt: [Markdown szintaxis összefoglaló](http://daringfireball.net/projects/markdown/syntax)
+* Nehéz egy újabb factory methodot (terméket) felvenni
 
-<small>Szerzők, verziók: Csorba Kristóf</small>
+Megjegyzések
 
-<small>A szerzők megjelölése egyrészt azért fontos, hogy lehessen látni, kinek az alkotása egy snippet, másrészt az esetleges hibákkal kapcsolatban is őt érdemes keresni.</small>
+* Könnyű lecserélni az egész készletet, mivel csak az abstr.factory példányosításánal kell váltani.
+* Az abstract factory gyakran singleton, mivel sok helyen kellhet.
+* A kliens ezután ne használjon new operatátort, hanem a factory metódusokat használja új példányok létrehozására.
+* (Néha kicsit nagyobb jelentőséget tulajdonítanak neki, mint amilyen gyakran előfordul. (?))
+* Abstract Factory classes are often implemented with Factory Methods, but they can also be implemented using Prototype.
+* Abstract Factory can be used as an alternative to Facade to hide platform-specific classes.
+
+Külső anyagok:
+
+* https://sourcemaking.com/design_patterns/abstract_factory
+
+
+### Példa: platform függőség
+
+* Platform függőség: egy abstract factory egy kombinációja az oprendszernek (pl. fájlkezelés), kommunikációs protokollnak, használt adatbázisnak. Amikor már nagyon sok az ifdef (platform feltétellel) a kódban.
+
+### Példa: look-and-feel
+
+* Look-and-feel
+
+### További példák
+
+
+* FancyDocumentCreator és ModernDocumentCreator. Mindkettő tud készíteni levelet, cikket, könyvet stb.
+* Pizza AF: RomePizzaFactory, MilanPizzaFactory
+
+* Factory és Abstr.Factory határán:
+  * Ha a konkrét adatbázis fajtája csak a konfigurációból derül ki, futási időben. (Akár azért is, mert az egyes ügyfeleknél kint lévő verziók más adatbázisra épülnek.)
+  * Protokollok és esetleg verzióik is
+  * Diagnosztikai vagy a versenyen használt protokoll implementáció (loggol, visszaellenőriz, diag vs robusztusság)

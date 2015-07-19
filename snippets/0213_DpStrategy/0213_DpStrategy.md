@@ -2,35 +2,23 @@
 layout: default
 ---
 
-# Ez egy snippet sablon
+## Strategy (FONTOS)
 
-Ide jön a snippet teljes szövege.
+### Bevezető példa
 
-## Felsorolások, forráskód
+### Részletek
 
-A snippetekben forráskód az alábbi három módon jelenhet meg:
+### Példa:
 
-* Közvetlenül a szövegbe ágyazva, mint lentebb.
-* Magában a snippet könyvtárában szerepelhet minta forráskód, külön fájlban.
-* Hivatkozhatunk például egy github repositoryra is, mint ez itt: [Ennek a snippetnek a forrása a github.com-on](https://github.com/bmeaut/snippets/blob/gh-pages/snippets/0001_SnippetSablon/0001_SnippetSablon.md)
+### Példa:
 
-A forráskód lehet inline, mint a `` printf() ``, vagy lehet kódblokk, melynek minden sora legalább 4 szóközzel kezdődik:
+### További példák
 
-    void main()
-    {
-      printf("Mizu?\n");
-    }
+Változtatható stratégia. Pl. user-függően, üzemmód függően.
+Mit? Pl. validációt, jogosultság ellenőrzést, de lehet akár az aktuálisan kiválasztott eszköz is. (Grain: processor)
 
-## Képek beágyazása
+Pro: Car osztályok, ha az ős előírja a brake() metódust, mindben meg kell írni. Akkor is, ha csak 3 féle van... viszont ez a pattern inheritance->composition!
 
-Képek beágyazása az image alkönyvtártól, relatív címzéssel így történik:
+Példák
 
-![AUT Logó](image/AUT_logo.png "AUT Logó")
-
-## További információk a szintaxisról
-
-Például itt: [Markdown szintaxis összefoglaló](http://daringfireball.net/projects/markdown/syntax)
-
-<small>Szerzők, verziók: Csorba Kristóf</small>
-
-<small>A szerzők megjelölése egyrészt azért fontos, hogy lehessen látni, kinek az alkotása egy snippet, másrészt az esetleges hibákkal kapcsolatban is őt érdemes keresni.</small>
+* RobonAUT gyorsításos szakasz, ha nem csak egyetlen paraméter módosításától függ a merészség. Például merészebb módban mehet gyorsabban és használhatja a szoftveres ABS-t, vagy egy teljesen új vonalra visszatalálós módszert.

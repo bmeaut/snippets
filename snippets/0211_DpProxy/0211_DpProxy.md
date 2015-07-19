@@ -2,35 +2,52 @@
 layout: default
 ---
 
-# Ez egy snippet sablon
+## Proxy (FONTOS)
 
-Ide jön a snippet teljes szövege.
+### Bevezető példa
 
-## Felsorolások, forráskód
+Tegyük fel, hogy egy távvezérelhető robot minden funkcióját egy objektum metódushívásaival akarjuk elérni. Azt szeretnénk, hogy azon az objektumon kívül a kommunikáció részleteivel már egyáltalán ne kelljen foglalkozni.
 
-A snippetekben forráskód az alábbi három módon jelenhet meg:
+A megoldás a Proxy design pattern: az alkalmazásunkban egy Proxy objektum fogja képviselni a robotunkat, minden kérés hozzá fut majd be, amiket ő a megfelelő módon továbbít.
 
-* Közvetlenül a szövegbe ágyazva, mint lentebb.
-* Magában a snippet könyvtárában szerepelhet minta forráskód, külön fájlban.
-* Hivatkozhatunk például egy github repositoryra is, mint ez itt: [Ennek a snippetnek a forrása a github.com-on](https://github.com/bmeaut/snippets/blob/gh-pages/snippets/0001_SnippetSablon/0001_SnippetSablon.md)
+class RobotProxy
+{
+public:
+   virtual void Forward(int distance) = 0;
+   virtual void Turn(int degrees) = 0;
+   virtual int ReadFrontDistanceSensor() = 0 const;
+};
 
-A forráskód lehet inline, mint a `` printf() ``, vagy lehet kódblokk, melynek minden sora legalább 4 szóközzel kezdődik:
+class DefaultRobotProxy : public RobotProxy
+{
+public:
+   virtual void Forward(int distance) override;
+   virtual void Turn(int degrees) override;
+   virtual int ReadFrontDistanceSensor() const override;
+};
 
-    void main()
-    {
-      printf("Mizu?\n");
-    }
 
-## Képek beágyazása
+Ennek az osztálynak a használata egyrészt nagyon egyszerű és kényelmes, másrészt van még egy nagy előnye: könnyen le lehet cserélni. Tesztelési célokra készíthetünk egy olyan leszármazottat is, ami valójában egy szimulátorhoz csatlakozik. Vagy egy olyat, ami csak a felhasználó felület tesztelésére szolgál és csak kiírja, hogy "most előre küldjük a robotot 3 méterrel".
 
-Képek beágyazása az image alkönyvtártól, relatív címzéssel így történik:
+(Amennyiben a szimulátor és az igazi robot eléggé hasonló protokollal kommunikál, akkor lehet, hogy felesleges két Proxy kialakítása. Elég, ha a Proxy konstruktora paraméterként megkap egy kommunikációs objektumot, amit használ majd. Ennek lecserésésével a Proxy nem is tudja majd, hogy valójában az igazi robottal beszél, vagy a szimulátorral.) **Ref dependency injection**
 
-![AUT Logó](image/AUT_logo.png "AUT Logó")
+### Részletek
 
-## További információk a szintaxisról
+Placeholder for another object to control access to it.
 
-Például itt: [Markdown szintaxis összefoglaló](http://daringfireball.net/projects/markdown/syntax)
+Lehet kombinálni a flyweighttel.
 
-<small>Szerzők, verziók: Csorba Kristóf</small>
 
-<small>A szerzők megjelölése egyrészt azért fontos, hogy lehessen látni, kinek az alkotása egy snippet, másrészt az esetleges hibákkal kapcsolatban is őt érdemes keresni.</small>
+
+### Példa:
+
+### Példa:
+
+### További példák
+
+* Jogosultság ellenőrzés
+* Egyszerűbb interfész (ez az alkalmazás nagyon közel van a Facade design patternhez.)
+* Távoli erőforrások eléréséhez interfész (pl. webservice, REST API hívások)
+* Távoli, nagy erőforrás igényű műveletek koordinálása. Péládul a tényleges kérés előtt már elkezdi a végrehajtást.
+* Ha egy osztály funkciói eredetileg nem thread-safek és nem tuduk rajta módosítani, egy Proxy eltakarhatja és megoldhatja a szükséges szinkronizációkat.
+* A std::shared_ptr<> smart pointer is egyfajta proxy, mivel elérhetővé teszti a pointer értékét, valamint számolja a hivatkozásokat, és ha ez a számláló eléri a nullát, megszünteti a pointer által hivatkozott objektumot.

@@ -2,35 +2,21 @@
 layout: default
 ---
 
-# Ez egy snippet sablon
+## Lazy initialization (FONTOS)
 
-Ide jön a snippet teljes szövege.
+### Bevezető példa
 
-## Felsorolások, forráskód
+Kiindulási probléma, amin keresztül bemutatom: dilated blob2 cache
 
-A snippetekben forráskód az alábbi három módon jelenhet meg:
+* Cachelt tároló: ha még nem áll rendelkezésre az, amit kértünk, akkor létrehozza, egyébként gyorsan visszaadja. Például a GrainAutLine dilated blob container.
 
-* Közvetlenül a szövegbe ágyazva, mint lentebb.
-* Magában a snippet könyvtárában szerepelhet minta forráskód, külön fájlban.
-* Hivatkozhatunk például egy github repositoryra is, mint ez itt: [Ennek a snippetnek a forrása a github.com-on](https://github.com/bmeaut/snippets/blob/gh-pages/snippets/0001_SnippetSablon/0001_SnippetSablon.md)
+### Részletek
 
-A forráskód lehet inline, mint a `` printf() ``, vagy lehet kódblokk, melynek minden sora legalább 4 szóközzel kezdődik:
+(Virtual proxy néven is ismert.)
+Létrehozás vagy kiszámítás (erőforrás igényes dolgok) csak akkor, amikor már tényleg kell.
 
-    void main()
-    {
-      printf("Mizu?\n");
-    }
+Például egy tároló, mely ha eddig ismeretlen elemet akarunk lekérni, akkor gyorsan készít egyet, egyébként meg mindig visszaadja ugyanazt. (Lazy factory method!)
 
-## Képek beágyazása
+### Példa:
 
-Képek beágyazása az image alkönyvtártól, relatív címzéssel így történik:
-
-![AUT Logó](image/AUT_logo.png "AUT Logó")
-
-## További információk a szintaxisról
-
-Például itt: [Markdown szintaxis összefoglaló](http://daringfireball.net/projects/markdown/syntax)
-
-<small>Szerzők, verziók: Csorba Kristóf</small>
-
-<small>A szerzők megjelölése egyrészt azért fontos, hogy lehessen látni, kinek az alkotása egy snippet, másrészt az esetleges hibákkal kapcsolatban is őt érdemes keresni.</small>
+* Bluetooth modul Facade-je: csak akkor inicializáljuk teljesen a BT kommunikációt, ha tényleg szükség van rá. (Akkor van igazán értelme, ha az alkalmazás során jó esély van rá, hogy nem is fog kelleni, amikor meg kell, akkor nem kell azonnal mennie.)

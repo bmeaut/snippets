@@ -2,35 +2,58 @@
 layout: default
 ---
 
-# Ez egy snippet sablon
+## Facade (FONTOS)
 
-Ide jön a snippet teljes szövege.
+### Bevezető példa
 
-## Felsorolások, forráskód
+Tegyük fel, hogy Bluetooth kommunikációt implementálunk egy Bluetooth modul segítségével (pl. Bluegiga WT12). A Bluetooth modult UART-on kereszül tudjuk vezérelni szöveges parancsok segítségével. Péládul a párosításhoz szükséges PIN-t a "SET BT AUTH * 123456" paranccsal tudjuk beállítani.
 
-A snippetekben forráskód az alábbi három módon jelenhet meg:
+Objektum orientált alkalmazásunkban egyrészt kényelmes lenne egy objektumon kereszül elérni a szükséges API funkciókat, másrészt egy csomó funkcióra nincs is szükségünk, így számunkra elég lenne egy sokkal egyszerűbb API is, ami egy csomó mindent magától, automatikusan beállít egy default értékre.
 
-* Közvetlenül a szövegbe ágyazva, mint lentebb.
-* Magában a snippet könyvtárában szerepelhet minta forráskód, külön fájlban.
-* Hivatkozhatunk például egy github repositoryra is, mint ez itt: [Ennek a snippetnek a forrása a github.com-on](https://github.com/bmeaut/snippets/blob/gh-pages/snippets/0001_SnippetSablon/0001_SnippetSablon.md)
+A Facade design pattern célja egy olyan interfész kialakítása, mely a mögötte lévő funkciókat az adott alkalmazás számára kényelmesebb formában teszi elérhetővé. Jelen esetben a szükséges funkciókat lefedi a metódusaival, de a feleslegesen bonyolult részleteket elfedi a fejleszők elől.
 
-A forráskód lehet inline, mint a `` printf() ``, vagy lehet kódblokk, melynek minden sora legalább 4 szóközzel kezdődik:
-
-    void main()
+    class BluetoothCommunication
     {
-      printf("Mizu?\n");
-    }
+    public:
+        virtual void SetPin(string pin) = 0;
+        virtual std::ostream GetOutputStream() = 0;
+        virtual std::istream GetInputStream() = 0;
+    };
 
-## Képek beágyazása
+    class Wt12Communication : public BluetoothCommunication
+    {
+    public:
+        virtual void SetPin(string pin) override
+        {
+            GetOutputStream() << "SET BT AUTH * " << pin << endl;
+        }
+    };
 
-Képek beágyazása az image alkönyvtártól, relatív címzéssel így történik:
+A *GetOutputStream()* és *GetInputStream()* metódusokat most nem tárgyajuk. Légyegük, hogy olyan streameket adnak vissza, amikkel már könnyedén tudunk küldeni/fogadni a bluetooth kapcsolaton kereszül.
 
-![AUT Logó](image/AUT_logo.png "AUT Logó")
+A fenti példában később a Wt12Communication osztály segítségével már nagyon könnyen tudunk péládul PIN-t módosítani:
 
-## További információk a szintaxisról
+    Wt12Communication wt12comm;
+    wt12comm.SetPin("123456");
 
-Például itt: [Markdown szintaxis összefoglaló](http://daringfireball.net/projects/markdown/syntax)
+Mind a kommunikáció, mind az esetleges visszajelzések és hibaellenőrzések részleteit be tudjuk burkolni a BluetoothCommunication osztály mögé.
 
-<small>Szerzők, verziók: Csorba Kristóf</small>
+**Erre pont van osztály Qt alatt, csak Windows alatt nem mindig megy. (?)**
 
-<small>A szerzők megjelölése egyrészt azért fontos, hogy lehessen látni, kinek az alkotása egy snippet, másrészt az esetleges hibákkal kapcsolatban is őt érdemes keresni.</small>
+### Részletek
+
+Aggregál egy összetettebb rendszert, interfészeket.
+Wrapperként egy sokkal egyszerűbb interfészt ad. Pl. API elé. Vagy egy bonyolult rendszert egyszerűen akarunk elérni, sok éppen felesleges részlet nélkül.
+
+Kiegészítési lehetőségek:
+
+* Adapter: más interfészeket kell támogatni
+* Decorator: futási időben változtatható viselkedés
+
+### Példa:
+
+### Példa:
+
+### További példák
+
+* C# környezetben a Windows Forms osztálykönyvtár feladata, hogy a háttérben meghúzódó WIN32 API használatát megkönnyítse, és hogy egy objektum orientált interfészt biztosítson felé.

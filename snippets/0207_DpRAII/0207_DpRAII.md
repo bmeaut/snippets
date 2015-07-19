@@ -2,35 +2,24 @@
 layout: default
 ---
 
-# Ez egy snippet sablon
+## Resource acquisition is initialization (MED)
 
-Ide jön a snippet teljes szövege.
+### Bevezető példa
 
-## Felsorolások, forráskód
+### Részletek
 
-A snippetekben forráskód az alábbi három módon jelenhet meg:
 
-* Közvetlenül a szövegbe ágyazva, mint lentebb.
-* Magában a snippet könyvtárában szerepelhet minta forráskód, külön fájlban.
-* Hivatkozhatunk például egy github repositoryra is, mint ez itt: [Ennek a snippetnek a forrása a github.com-on](https://github.com/bmeaut/snippets/blob/gh-pages/snippets/0001_SnippetSablon/0001_SnippetSablon.md)
+### Példa:
 
-A forráskód lehet inline, mint a `` printf() ``, vagy lehet kódblokk, melynek minden sora legalább 4 szóközzel kezdődik:
 
-    void main()
-    {
-      printf("Mizu?\n");
-    }
+Guard osztály, amikor az megszűnik, akkor elengedi az erőforrást. (A foglalás egy változó inicializálása.) Mindegy, hogyan lépünk ki a scope-ból!
 
-## Képek beágyazása
+Objektum életciklushoz köti az erőforrás foglalást.
 
-Képek beágyazása az image alkönyvtártól, relatív címzéssel így történik:
+Managed nyelvekben using, C++-ban simán a stacken létre lehet hozni a guard-ot.
 
-![AUT Logó](image/AUT_logo.png "AUT Logó")
 
-## További információk a szintaxisról
+## Összefoglalás, megjegyzések
 
-Például itt: [Markdown szintaxis összefoglaló](http://daringfireball.net/projects/markdown/syntax)
-
-<small>Szerzők, verziók: Csorba Kristóf</small>
-
-<small>A szerzők megjelölése egyrészt azért fontos, hogy lehessen látni, kinek az alkotása egy snippet, másrészt az esetleges hibákkal kapcsolatban is őt érdemes keresni.</small>
+* A creational patternek gyakran keverednek, vagy nem annyira triviális, hogy melyiket is kellene használni. A fejlesztés során ahogy egyre nagyobb flexibilitásra van szükség, gyakran készül Factory Method, melyből később Abstract Factory lesz, az pedig belül lehet, hogy Buildert vagy Prototypeot használ. De közben a Builder is használhat Factoryt vagy Prototypeot az egyes részegységes létrehozásához.
+* Builder focuses on constructing a complex object step by step. Abstract Factory emphasizes a family of product objects (either simple or complex). Builder returns the product as a final step, but as far as the Abstract Factory is concerned, the product gets returned immediately.

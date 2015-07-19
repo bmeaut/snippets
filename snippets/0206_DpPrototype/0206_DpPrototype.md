@@ -2,35 +2,30 @@
 layout: default
 ---
 
-# Ez egy snippet sablon
+## Prototype (MED)
 
-Ide jön a snippet teljes szövege.
+Erőforrásigényes példányosítás és inicializálás helyett egy konkét prototípus példány klónozása.
 
-## Felsorolások, forráskód
+### Bevezető példa
 
-A snippetekben forráskód az alábbi három módon jelenhet meg:
+* Játékprogram pályaszerkesztője: kiválasztunk egy új ellenség-fajtát, beállítjuk a sok-sok paraméterét és megjelenését (Builderrel), majd annyi példányt pakolunk le belőle a játéktérre, amennyit csak akarunk.
 
-* Közvetlenül a szövegbe ágyazva, mint lentebb.
-* Magában a snippet könyvtárában szerepelhet minta forráskód, külön fájlban.
-* Hivatkozhatunk például egy github repositoryra is, mint ez itt: [Ennek a snippetnek a forrása a github.com-on](https://github.com/bmeaut/snippets/blob/gh-pages/snippets/0001_SnippetSablon/0001_SnippetSablon.md)
+### Részletek
 
-A forráskód lehet inline, mint a `` printf() ``, vagy lehet kódblokk, melynek minden sora legalább 4 szóközzel kezdődik:
+Olyasmi, mint a factory, csak egy kezdeti mintapéldánnyal adjuk meg, hogy milyeneket szeretnék majd gyártani.
 
-    void main()
-    {
-      printf("Mizu?\n");
-    }
 
-## Képek beágyazása
+További lehetőség: abstract ősosztály clone() metódussal és registryvel (map<string,baseclass&>). Minden konkrét példány regisztrálja magát, és onnan kezdve new helyett ezzel létre lehet hozni egy példányt úgy, hogy csak a nevét adjuk át stringként.
 
-Képek beágyazása az image alkönyvtártól, relatív címzéssel így történik:
+Megjegyzések
 
-![AUT Logó](image/AUT_logo.png "AUT Logó")
+* Composite és Decorator patternekkel együtt gyakran használják.
+* kombinálható factory patternnel
 
-## További információk a szintaxisról
+### Példa: különböző kép típusok
 
-Például itt: [Markdown szintaxis összefoglaló](http://daringfireball.net/projects/markdown/syntax)
+A műveletek amikor egy származtatott képet készítenek, akkor klónozzák az alapképet. És akkor egységesen lehet rajzolni színtértől és bitmélységtől, csatornaszámtól függetlenül. (Persze az alap metódusokra mindenkinek van megfelelő konverziója.)
 
-<small>Szerzők, verziók: Csorba Kristóf</small>
+### További példák
 
-<small>A szerzők megjelölése egyrészt azért fontos, hogy lehessen látni, kinek az alkotása egy snippet, másrészt az esetleges hibákkal kapcsolatban is őt érdemes keresni.</small>
+...
