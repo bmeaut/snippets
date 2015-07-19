@@ -52,11 +52,32 @@ Ha hibát találsz, szólj Kristófnak! Köszi!
 
 ## Tervezési minták, tervezés
 
-  * Design Patterns bevezető (95%, csak még nem snippet)
-  * x Architektúrák (0%): Rétegek (DAL, BSP, uC OS, megkerülés veszélyei), MVC (GrainAutLine, view processzorok), Document-View, Pipes and filters, whiteboard architektúrák (pl. JAM hypothesis graph)
-  * x Creational design patterns (50%)
-  * x Structural design patterns (70%)
-  * x Behavioral design patterns (60%)
+  * [0200_DesignPatternsBev](snippets/0200_DesignPatternsBev/0200_DesignPatternsBev.html) (95%, csak még nem snippet)
+  * Architektúrák (0%): Rétegek (DAL, BSP, uC OS, megkerülés veszélyei), MVC (GrainAutLine, view processzorok), Document-View, Pipes and filters, whiteboard architektúrák (pl. JAM hypothesis graph)
+
+Példányosítási minták (50%)
+
+  * [0202_DpAbstactFactory](snippets/0202_DpAbstactFactory/0202_DpAbstactFactory.html)
+  * [0201_DpFactory](snippets/0201_DpFactory/0201_DpFactory.html)
+  * [0203_DpBuilder](snippets/0203_DpBuilder/0203_DpBuilder.html)
+  * [0204_DpLazyInit](snippets/0204_DpLazyInit/0204_DpLazyInit.html)
+  * [0205_DpSingleton](snippets/0205_DpSingleton/0205_DpSingleton.html)
+  * [0206_DpPrototype](snippets/0206_DpPrototype/0206_DpPrototype.html)
+  * [0207_DpRAII](snippets/0207_DpRAII/0207_DpRAII.html)
+
+Struktúrális minták (70%)
+
+  * [0208_DpComposite](snippets/0208_DpComposite/0208_DpComposite.html)
+  * [0209_DpDecorator](snippets/0209_DpDecorator/0209_DpDecorator.html)
+  * [0210_DpFacade](snippets/0210_DpFacade/0210_DpFacade.html)
+  * [0211_DpProxy](snippets/0211_DpProxy/0211_DpProxy.html)
+
+Viselkedési minták (60%)
+
+  * [0212_DpObserver](snippets/0212_DpObserver/0212_DpObserver.html)
+  * [0213_DpStrategy](snippets/0213_DpStrategy/0213_DpStrategy.html)
+  * [0214_DpState](snippets/0214_DpState/0214_DpState.html)
+  * [0215_DpEgyebek](snippets/0215_DpEgyebek/0215_DpEgyebek.html)
 
 ## Hibakeresés, hibakezelés, tesztelés
 
@@ -92,7 +113,7 @@ Egyéb témákban:
   * [0115_Openshift](snippets/0115_Openshift/0115_Openshift.html) (1%, skip)
   * [0118_OpenshiftJenkins](snippets/0118_OpenshiftJenkins/0118_OpenshiftJenkins.html) (1%, skip)
   * [0123_RestApi](snippets/0123_RestApi/0123_RestApi.html) (1%, skip)
-  * [0201_GooglePlayPublikalas](snippets/0201_GooglePlayPublikalas/0201_GooglePlayPublikalas.html) (1%, skip)
+  * [0301_GooglePlayPublikalas](snippets/0301_GooglePlayPublikalas/0301_GooglePlayPublikalas.html) (1%, skip)
 
 ## Törlésre szánt snippetek
 
