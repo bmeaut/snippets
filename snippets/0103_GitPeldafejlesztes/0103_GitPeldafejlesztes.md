@@ -8,11 +8,11 @@ A következő példa egy egyszerű program feltételezett fejlesztését mutatja
 
 http://code.google.com/p/gitextensions/
 
-A példa során összeállt repository (benne a forráskóddal) elérhető egy ZIP-ben az alábbi helyen: xxxxxxxxxxxxxxxxxxxxxxx
+A példa során összeállt repository (benne a forráskóddal) elérhető egy ZIP-ben az Alkalmazás fejlesztés tantárgy holnapján.
 
 ## Az elkészítendő pánikgomb
 
-Az elkészített program egy kis pánikgomb, melynek segítségével vészjelzéseket lehet küldeni (1) rosszullét, (2) pánikhelyzet esetén.
+Az elkészített program egy kis pánikgomb, melynek segítségével vészjelzéseket lehet küldeni (1) rosszullét, (2) pánikhelyzet esetén. (Eredetileg egy ipari projekt keretében készítettünk egy ilyet biztonsági őrök számára.)
 
 A forráskód lényegi része egy bsp.c-ből áll majd (Board Support Package, mely jelen esetben a konzol ablakot használja kommunikációra és az események szimulálására), valamint a main.c, mely az állapotgépet implementálja.
 
