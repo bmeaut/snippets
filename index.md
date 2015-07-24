@@ -45,6 +45,9 @@ Ha hibát találsz, szólj Kristófnak! Köszi!
 ### Qt+QML
 
   * [0133_QtQmlDemo](snippets/0133_QtQmlDemo/0133_QtQmlDemo.html) (95%) Egy QML projekt alapjai
+  * [0135_QtQmlControlKupac](snippets/0135_QtQmlControlKupac/0135_QtQmlControlKupac.html) (95%) Qt QML kontrolok, lista - modell - delegate, függvény
+  * [0136_QtQmlCpp](snippets/0136_QtQmlCpp/0136_QtQmlCpp.html) (95%) A QML és C++ oldal kapcsolata
+
 
 ### Fordítási folyamat - egyebek
 
