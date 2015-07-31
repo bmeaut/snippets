@@ -31,7 +31,7 @@ Két fontos dologra érdemes figyelni:
 
 Az assert általában arra kell, hogy a kódomat ne is lehessen rosszul használni: ha valaki hibásan használja (például a képfeldolgozó függvényemet színes képpel hívja meg, pedig szürkeárnyalatosat várok), akkor az azonnal derüljön ki. Ez azért is fontos, mert ha csapatban fejlesztünk és az én függvényem száll el, akkor én kapom a hibajegyet és nem az, aki rosszul hívta meg.
 
-Érdemes megnézni az ST HAL (Hardware Abstraction Layer) megoldásait, ahol például a HAL_ADC_Init függvény ellenőrzi, hogy ha egy Resolution paramétert kell átadni, akkor az tényleg az-e:
+Érdemes megnézni az ST HAL (Hardware Abstraction Layer) megoldásait, ahol például a HAL\_ADC\_Init függvény ellenőrzi, hogy ha egy Resolution paramétert kell átadni, akkor az tényleg az-e:
 
     assert_param(IS_ADC_RESOLUTION(hadc->Init.Resolution));
 
