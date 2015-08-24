@@ -26,6 +26,8 @@ Ha hibát találsz, szólj Kristófnak! Köszi!
   * [0129_GitTuzvedelem](snippets/0129_GitTuzvedelem/0129_GitTuzvedelem.html) (95%) "Vészhelyzetek" és megoldásuk GIT alatt
   * x [0114_VerziokezelokOsszehasonlitasa](snippets/0114_VerziokezelokOsszehasonlitasa/0114_VerziokezelokOsszehasonlitasa.html) (50%, többi rendszer még hiányzik) Verziókezelő rendszerek általában, valamit összehasonlítások
 
+  * x [0137_GithubForkPullReq](snippets/0137_GithubForkPullReq/0137_GithubForkPullReq.html) (0%) Github fork és pull request használata
+
 ## Fordítás, C++11, Qt és QML
 
 ### C++11, C++14, STL
