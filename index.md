@@ -2,7 +2,7 @@
 layout: indexlayout
 ---
 
-# Üdvözlet a snippet oldalon
+# Üdvözlet a BME AUT snippet oldalon
 
 A snippet gyűjtemény ősszel indul, addigra lesz itt jelentősebb mennyiségű anyag.
 
