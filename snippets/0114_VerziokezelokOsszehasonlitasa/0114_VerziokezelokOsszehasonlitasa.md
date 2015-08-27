@@ -10,7 +10,7 @@ A "most jó, ezt most így be-ZIP-elem" megközelítés egy ideig működik, de 
 
 Egy verzió kezelő rendszertől elsősorban az alábbiakat várjuk el:
 
-  * Mindig lehessen tudni, melyek az aktuális verzió. És ha többféle aktuális verzió is van, akkor mindegyiket lehessen követni.
+  * Mindig lehessen tudni, melyik az aktuális verzió. És ha többféle aktuális verzió is van, akkor mindegyiket lehessen követni.
   * Több fejlesztő is dolgozhasson egy projekten. Azt, hogy többen egyszerre módosítanak valamit, vagy meg kell akadályozni, vagy kezelni kell az esetleges ütközéseket.
   * Vissza lehessen állítani egy korábbi verziót.
 
@@ -18,7 +18,7 @@ Ezen kívül még elvárhatjuk az alábbiakat is:
 
   * Lehessen offline is dolgozni, vagyis amikor nincsen kapcsolat a verziókezelő szerverrel.
   * Ideiglenesen félre lehessen rakni változásokat. Vagy azért, mert félkész és még nem alkalmas arra, hogy elmentsük egy új verzióként, vagy egy másik fejlesztőnek akarunk átadni bizonyos módosításokat.
-  * A verziókezelő nem utolsó sorban a forráskód biztonságos tárolását is gyakran ellátja. A nagy megbízhatóságú tárolás ugyan nem a verziókelés feladat, viszont az esetek nagy részében mégis a központi verziókezelő szerver az, amiről biztonsági mentések is készülnek. (Van bőven olyan cég, ahol akár egész lezárt projekteket dokumentációval együtt egy központi SVN szerverre töltenek fel. Egyrészt így biztos helyen van, másrészt könnyű lekezelni, ha valamiért jön egy "még véglegesebb verzió".)
+  * A verziókezelő nem utolsó sorban a forráskód biztonságos tárolását is gyakran ellátja. A nagy megbízhatóságú tárolás ugyan nem a verziókelés feladata, viszont az esetek nagy részében mégis a központi verziókezelő szerver az, amiről biztonsági mentések is készülnek. (Van bőven olyan cég, ahol akár egész lezárt projekteket dokumentációval együtt egy központi SVN szerverre töltenek fel. Egyrészt így biztos helyen van, másrészt könnyű lekezelni, ha valamiért jön egy "még véglegesebb verzió".)
 
 ## Alapvető fogalmak a verziókezelésben
 
@@ -38,11 +38,11 @@ A verziókezelők világában gyakori fogalmak az alábbiak:
 
 ## Verziókezelők összehasolítása (GIT, CVS, SVN, TFS)
 
-TODO: (Ezt a legegyszerubb úgy összerakni, hogy egyszer összehívok mindegyikhez valakit és gyorsan végigbeszéljük.)
-
   * CVS: egy egyetemi projektben készült az első verzió, amikor a prof közösen akart fejleszteni 2 hallgatójával és eltérő volt az időbeosztásuk. 1986, minden verziókezelő atyja.
   * SVN: CVS utódja, nagyon elterjedt (de a GIT egyre inkább kiszorítja)
   * GIT: Linux kernel fejlesztéséhez alakították ki, elosztott
   * Mercurial: letisztult python kód, hasonló a GIT-hez és kb. egyszerre indultak útnak. Egyszerűbb a gitnél (gyorsabb tanulás) és az elsődleges szempont a teljesítmény volt (nagy projektek számára).
 
 http://www.smashingmagazine.com/2008/09/18/the-top-7-open-source-version-control-systems/
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

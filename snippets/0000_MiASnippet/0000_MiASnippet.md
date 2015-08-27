@@ -19,9 +19,10 @@ Az első snippetek a BME AUT Alkalmazásfejlesztés tantárgyához jöttek létr
 ## Publikálás módja
 
 A tárba egy új snippet az alábbi módokon kerülhet be (preferencia sorrendben):
-* Ha van hozzáférésed a repositoryhoz, szabad a pálya. Saját branchen dolgozz és szólj Kristófnak, hogy mergelje, ha készen vagy.
-* Ha forkolod a git repositoryt a githubon, a kiegészítés után küljd pull requestet Kristófnak és mergelni fogja a snippetedet vagy a javításaidat.
-* Egy zip-ben elküldheted Kristófnak.
+
+  * Ha van hozzáférésed a repositoryhoz, szabad a pálya. Saját branchen dolgozz és szólj Kristófnak, hogy mergelje, ha készen vagy.
+  * Ha forkolod a git repositoryt a githubon, a kiegészítés után küljd pull requestet Kristófnak és mergelni fogja a snippetedet vagy a javításaidat.
+  * Egy zip-ben elküldheted Kristófnak.
 
 ## Technikailag hogy készül egy snippet?
 

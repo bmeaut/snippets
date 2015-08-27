@@ -4,17 +4,15 @@ layout: default
 
 # Egy szoftver fejlesztési folyamat GIT-tel, lépésről lépésre
 
-A következő példa egy egyszerű program feltételezett fejlesztését mutatja be, amiben két felhasználó, Andezit és Bazalt együtt dolgoznak a programon. A screenshotok a GitExtensions git kliensről készültek.
+A következő példa egy egyszerű program feltételezett fejlesztését mutatja be, amiben két felhasználó, Andezit és Bazalt együtt dolgoznak a programon. A screenshotok a [GitExtensions](http://code.google.com/p/gitextensions/) git kliensről készültek.
 
-http://code.google.com/p/gitextensions/
-
-A példa során összeállt repository (benne a forráskóddal) elérhető egy ZIP-ben az Alkalmazás fejlesztés tantárgy holnapján.
+A példa során összeállt repository (benne a forráskóddal) elérhető egy ZIP-ben az [Alkalmazásfejlesztés tantárgy holnapján](https://www.aut.bme.hu/Course/VIAUMA09). Csak ki kell tömöríteni és már használható is. Valójában a ZIP három könyvtárat tartalmaz, melyek a szervernek és a két fejlesztő repositoryjának adnak helyet.
 
 ## Az elkészítendő pánikgomb
 
 Az elkészített program egy kis pánikgomb, melynek segítségével vészjelzéseket lehet küldeni (1) rosszullét, (2) pánikhelyzet esetén. (Eredetileg egy ipari projekt keretében készítettünk egy ilyet biztonsági őrök számára.)
 
-A forráskód lényegi része egy bsp.c-ből áll majd (Board Support Package, mely jelen esetben a konzol ablakot használja kommunikációra és az események szimulálására), valamint a main.c, mely az állapotgépet implementálja.
+A forráskód lényegi része egy ``bsp.c``-ből áll majd (Board Support Package, mely jelen esetben a konzol ablakot használja kommunikációra és az események szimulálására), valamint a ``main.c``, mely az állapotgépet implementálja.
 
 Az allapotgép állapotai az alábbiak:
 
@@ -39,11 +37,13 @@ Az egyes külső eseményeket most billentyűkkel szimuláljuk:
   * O: OK gomb megnyomása
   * Escape: kilépés az alkalmazásból
 
+(A továbbiak olvasása közben a repositoryt letöltve minden egyes lépésben lehet követni a forráskód változásait.)
+
 ## Andezit elkészíti a BSP-t és egy kezdeti verziót
 
 ![AndezotCommitBsp](image/001.png)
 
-A feladat megoldásához kell egy Board Support Package, mely az áramkör specifikus részeket tartalmazza. Jelen esetben azért, hogy asztali környezetben is futhasson a program, a BSP a terminál ablakot használja kommunikációra, de beágyazott környezetbe átrakva a programot csak a BSP-t kellene lecserélni, a többit nem.)
+A feladat megoldásához kell egy Board Support Package, mely az áramkör specifikus részeket tartalmazza. Jelen esetben azért, hogy asztali környezetben futhasson a program, a BSP a terminál ablakot használja kommunikációra, de beágyazott környezetbe átrakva a programot csak a BSP-t kellene lecserélni, a többit nem.)
 
 Miután elkészült a BSP kódja, Andezit commit-olja:
 
@@ -59,19 +59,20 @@ Mivel Andezit most a Commit gombot nyomta meg, a push művelet még hátra van. 
 
 A push művelet elvégzéséhez szükség van a távoli szerverre (vagyis remotera, ami most origin néven fut), valamint hogy melyik lokális branchet melyik távoli branchre akarjuk pusholni. Az esetek túlnyomó többségében itt a brancheken nem kell semmit változtatni. Az előfordul néha, hogy több remote is van és akkor több helyre is tudunk pusholni.
 
+A push művelet ablaka felugrik és egy idő után közli, hogy sikeres volt. Ezután az alábbit látja Andezit, vagyis hogy az origin/master most már ugyanarra a commitra mutat, mint az ő lokális master branche.
+
 ![xxxxx](image/005.png)
 
-A push művelet ablaka felugrik és egy idú ő után közli, hogy sikeres volt. Ezután az alábbit látja Andezit, vagyis hogy az origin/master most már ugyanarra a commitra mutat, mint az ő lokális master branche.
+## Bazalt követi az eseményeket
 
-## Bazal követi az eseményeket
+Most, hogy Andezit felpusholta a BSP-t, szól Bazaltnak, hogy már van mit megnézni. Bazalt egyelőre még nem kezd el dolgozni, de fetchel egyet, hogy a távoli commitokat letöltse. (Érdemes megnézni a 
+GitExtensions által kiadott parancsot.)
 
 ![xxxxx](image/006_BazaltFetchRes.png)
 
-Most, hogy Andezit felpusholta a BSP-t, szól Bazaltnak, hogy már van mit megnézni. Bazalt egyelőre még nem kezd el dolgozni, de fetchel egyet, hogy a távoli commitokat letöltse. (Érdemes megnézni a GitExtensions által kiadott parancsot.)
+Mivel Bazaltnál még nincsen lokális branch, ezért kicheckolja az origin/master-t.
 
 ![xxxxx](image/007.png)
-
-Mivel Bazaltnál még nincsen lokális branch, ezért kicheckolja az origin/master-t.
 
 ## Andezit saját branchen fejlesztésbe kezd
 
@@ -91,7 +92,7 @@ Most Andezit a Commit ablakban a "Commit and Push"-ra kattintott, így a commit 
 
 ![xxxxx](image/011_B_Panic_branch.png)
 
-Eközben Bazalt elkezdi a pánik gomb fejlesztését. Andezithez hasonlóan létrehoz egy saját (un. feature) branchet, amin csak ő fog dolgozni. A neve PanicButton. Amikor készen van, commitolja a változásokat.
+Eközben Bazalt elkezdi a pánik gomb fejlesztését. Andezithez hasonlóan létrehoz egy saját branchet, amin csak ő fog dolgozni. A neve PanicButton. Amikor készen van, commitolja a változásokat.
 
 ![xxxxx](image/012_B_push.png)
 
@@ -164,7 +165,7 @@ Utána pedig folytatjuk a mergelést a main.c-vel:
 
 ![xxxxx](image/024.png)
 
-Itt a switch szerkezetben van gubanc, ráadásul a kdiff3 bár mindent megtesz, hogy kibogozza, nem veszi észre, hogy ott nagyon blokkokat kellene egymás után másolni, mert ő mindig a legkisebb módosításokkal próbáljra összehúzni a változásokat.
+Itt a switch szerkezetben van gubanc, ráadásul a kdiff3 bár mindent megtesz, hogy kibogozza, nem veszi észre, hogy ott nagyobb blokkokat kellene egymás után másolni, mert ő mindig a legkisebb módosításokkal próbáljra összehúzni a változásokat.
 
 Ilyenkor vagy kézzel az alsó ablakban össze-copy-pasteljük a megoldást, vagy kihasználjuk a kdiff3 néhány trükkjét. Itt most az a gond, hogy néhány eltérést együtt kellene kezelni és nem darabokban.
 
@@ -238,7 +239,7 @@ Melyeket most már nyugodtan tud commitolni a SickButton ágon, majd pusholni a 
 
 ## Bazalt folytatja a munkát
 
-Andezit kissé viharos commitja után Bazalt letölti a változásokat (nála is tovább gördül az origin/SickButton), majd hogy minden friss legyen a saját PanicButton ágán is, mergeli abba az origin/SickButton-t. Most is megy a fast forward, mivel nincsen semmi komlikáció, csak előre kell tolni a PanicButton ágat.
+Andezit kissé viharos commitja után Bazalt letölti a változásokat (nála is tovább gördül az origin/SickButton), majd hogy minden friss legyen a saját PanicButton ágán is, mergeli abba az origin/SickButton-t. Most is megy a fast forward, mivel nincsen semmi komplikáció, csak előre kell tolni a PanicButton ágat.
 
 ![xxxxx](image/040_B_ff2SickButton_toRecycle.png)
 
@@ -268,7 +269,7 @@ Azért, hogy most is látszódjon a historyn, hogy mely pontok voltak tényleges
 
 ![xxxxx](image/046.png)
 
-Most megnézve a historyt, tényleg látszik, hogy a master ág mely commitokat érintette, vagyis melyke voltak stabil állapotok. Ha a master léptetésénél fast forwardot használt volna Andezit, akkor nem jöttek volna létre ezek a dedikált commitok, így nem lehetne megkülönböztetni az egyes feature branchek commitjait és a tényleges master branch commitokat.
+Most megnézve a historyt, tényleg látszik, hogy a master ág mely commitokat érintette, vagyis melyek voltak stabil állapotok. Ha a master léptetésénél fast forwardot használt volna Andezit, akkor nem jöttek volna létre ezek a dedikált commitok, így nem lehetne megkülönböztetni az egyes feature branchek commitjait és a tényleges master branch commitokat.
 
 ## Andezit utolsó simítása és az első demó
 
@@ -287,4 +288,4 @@ A GIT részletesebb megismeréséhez további olvasmányok:
   * 0126_GitBev: GIT bevezető
   * 0116_GitAuth: GIT authentikáció
   * 128_GitHalado: haladóbb műveletek
-  * A Pro.Git könyv első 3 fejezete: https://git-scm.com/book/en/v2
+  * A [Pro.Git könyv](https://git-scm.com/book/en/v2) első 3 fejezete

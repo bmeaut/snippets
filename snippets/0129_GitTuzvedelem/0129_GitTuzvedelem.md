@@ -44,7 +44,7 @@ Resetelni többféle módon tudunk:
 ![](image/002_ResetMaster2.png)
 
   * Soft: csak a branch hivatkozását módosítja, a stagelt fájlok (ez az index tartalma) és a munkakönyvtár nem változik. Gyakorlatilag ha újra commitolunk, visszaállíthatjuk a reset előtti állapotot.
-  * Mixed: a soft eset mellett az indexet is visszaállítja, ami kiveszi a stageből a fájlokat. Egy stageléssel és committal ezt is vissza tudjuk még állítani.
+  * Mixed: a soft esethez képest az indexet is visszaállítja, ami kiveszi a stageből a fájlokat. Egy stageléssel és committal ezt is vissza tudjuk még állítani.
   * Hard: a fentiek mellett a munkakönyvtárat is reseteli, vagyis ez az, ami ténylegesen a fájlokat is visszaállítja egy korábbi állapotra.
 
 Most a hard verziót választjuk, mert az az igazán veszélyes. Jön is egyből a figyelmeztetés:
@@ -94,8 +94,8 @@ Mivel most a munkakönyvtárban még nem hoztuk vissza a majdnem elveszített v�
 Néhány megjegyzés:
 
   * A "git reflog" parancsnál részletesebb információkat is ad a "git log -g", ha szükséges.
-  * Ez a szituáció részletesen le van írva a GIT dokumentációban: https://git-scm.com/book/en/v2/Git-Internals-Maintenance-and-Data-Recovery
-  * A sehonnan el nem érhető objektumok (pl. commitok) törlésére a "git prune" parancs szolgál: http://git-scm.com/docs/git-prune
+  * Ez a szituáció részletesen le van írva a GIT dokumentációban: [https://git-scm.com/book/en/v2/Git-Internals-Maintenance-and-Data-Recovery](https://git-scm.com/book/en/v2/Git-Internals-Maintenance-and-Data-Recovery)
+  * A sehonnan el nem érhető objektumok (pl. commitok) törlésére a "git prune" parancs szolgál: [http://git-scm.com/docs/git-prune](http://git-scm.com/docs/git-prune)
 
 ## A revert commit (először)
 
@@ -169,7 +169,7 @@ Korábban volt szó arról, hogy mi a HEAD: egy referencia arra a commitra, "ami
 
 	ref: refs/heads/master
 
-és már nincs is benne.)
+és más nincs is benne.)
 
 Normál körülmények között nem szokott előfordulni, hogy a HEAD nem egy branchre mutat, de ki lehet próbálni, milyen az. Ehhez checkout-oljunk egy olyan commitot, ami nem egy branch végén áll. Például a legelsőt:
 
@@ -205,7 +205,7 @@ De mi csak menjünk most tovább.
 
 ![](image/026_CommitDetachedHeadreEredmenye.png)
 
-Ha tehát ezt meg is akarjuk tartani, akkor fontos, hogy egy branchet hozzunk létre rá. Tegyük meg ezt is: jobb klikk és "Create now branch". A felugró ablakban adunk neki egy nevet és már készen is van.
+Ha tehát ezt meg is akarjuk tartani, akkor fontos, hogy egy branchet hozzunk létre rá. Tegyük meg ezt is: jobb klikk és "Create new branch". A felugró ablakban adunk neki egy nevet és már készen is van.
 
 ![](image/027_CreateBranch1.png)
 
@@ -233,7 +233,7 @@ Van egy kis merge conflict, de a KDiff3-mal megoldjuk:
 
 ![](image/034_Rebase3.png)
 
-Ilyenkor a rebase miatt a merge toolnak végig kell mennie a rebaselt commitokon és végre kell őket hajtania a master ág végéről kezdve. Közben ha ütközés van, akkor lehet, hogy be kell neki segíteni. (De ne felejtsük el, hogy ha bármi gond van, a rebase előtti állapotra mindig vissza tudunk térni, így nagyon aggódni emiatt sem kell!)
+Ilyenkor a rebase miatt a merge toolnak végig kell mennie a rebaselt commitokon és végre kell őket hajtania a master ág végéről kezdve. Közben ha ütközés van, akkor lehet, hogy be kell neki segíteni. (De ne felejtsük el, hogy ha bármi gond van, a rebase előtti állapotra mindig vissza tudunk térni, így nagyon aggódni emiatt sem kell!) Az alábbi képen látszik, hogy a fromDetachedHead most már a master branch folytatása.
 
 ![](image/035_RebaseResult.png)
 
@@ -269,4 +269,4 @@ Egy igen érdekes helyzet állt elő: mivel a két ág között valójában ninc
 
 ![](image/040_WhatBazaltSees.png)
 
-A helyzet kicsit kusza, de alapvetően neki ugyanúgy az eddigi munkáját mergelnie kell a távoli ágakhoz. Azért egy fokkal egyszerűbb lett volna, ha Andezit csak akkor rebasel, ha már mindent commitolt, amit akart. Mert akkor egyetlen commit sorozatot helyez át, amin a többiek könnyebben át tudnak venni és nem duplázódnak commitok.
+A helyzet kicsit kusza, de alapvetően neki ugyanúgy az eddigi munkáját mergelnie kell a távoli ágakhoz. Azért egy fokkal egyszerűbb lett volna, ha Andezit csak akkor rebasel, ha már mindent commitolt, amit akart. Mert akkor egyetlen commit sorozatot helyez át, amit a többiek könnyebben át tudnak venni és nem duplázódnak commitok.

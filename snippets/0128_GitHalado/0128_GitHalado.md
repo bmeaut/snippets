@@ -6,9 +6,11 @@ layout: default
 
 A kiindulási alapunk Andezit és Bazalt projektje a demo1 tag kirakása után.
 
-Mivel a demo1 tag kirakása után még létezik az origin/QueryFunction, de már nincsen rá szükség, Andezit megszünteti. Erre a GitExtensions még képes, így parancssorból adja ki az alábbi parancsot:
+Mivel a demo1 tag kirakása után még létezik az origin/QueryFunction, de már nincsen rá szükség, Andezit megszünteti. Erre a GitExtensions már nem képes, így parancssorból adja ki az alábbi parancsot:
 
     git push origin :QueryFunction
+
+A parancs jelentése annyi, hogy pusholjuk a semmit a távoli QueryFunction-be.
 
 Bazalt helyi repositoryjában természetesen ettől még ott szerepel az origin/QueryFunction tracking reference, bár a remote oldalon már nincs megfelelője, így mérsékelten hasznos. Bazalt az olyan branch hivatkozásoktól, melynek már nincsen megfelelője a remote oldalon, az alábbiak szerint tud megszabadulni:
 
@@ -134,4 +136,4 @@ Miután Bazalt meggyőződött róla, hogy a program most már tényleg helyesen
 
 ![](image/123_BazaltMergesIntoMasterAndAddsDemo2Tag.png)
 
-Befejezésül Andezit és átvált a master branchére és mergeli bele (fast-forwarddal) az új origin/master-t.
+Befejezésül Andezit is átvált a master branchre és mergeli bele (fast-forwarddal) az új origin/master-t.

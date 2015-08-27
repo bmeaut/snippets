@@ -9,7 +9,7 @@ A github-on ha egy repositoryhoz nincsen collaborator hozzáférésünk, akkor k
   * "forkolunk" belőle, vagyis létrehozunk belőle egy saját másolatot,
   * a másolaton végrehajtjuk a javasolt módosításokat
   * küldünk egy pull requestet a repo fejlesztőinek
-  * a repo fejlesztői ha arra érdemesnek tartják a hozzájárulásainkat, akkor pullolhatják, vagyis átvehetik őket.
+  * a repo fejlesztői ha arra érdemesnek tartják a hozzájárulásainkat, akkor mergelhetik, vagyis átvehetik őket.
 
 Ez a snippet bemutatja, hogy a github.com-on hogyan lehet forkolni egy repositoryt, végrehajtani benne valamilyen módosítást, majd elküldeni a repo tulajdonosának egy pull requestet. Végül pedig hogy ő hogyan tudja átvenni a javasolt módosításokat.
 
@@ -31,7 +31,7 @@ Ilyenkor létrejön egy saját másolatunk a reporól, ami azonban tudja, hogy h
 
 ## Hozzájárulás
 
-Ezután lehet dolgozni a projekthez való hozzájárulásunkon. Jelen esetben az index.md fájlba fogjuk beírni azt, hogy a BME AUT snippet oldalán üdvözöljük a felhasználót, és nem csak a "snippet oldalon". Ehhez a github webes szerkesztőjét használjuk, de nyilván lehetne a klónozni és lokálisan a gépünkön is dolgozni.
+Ezután lehet dolgozni a projekthez való hozzájárulásunkon. Jelen esetben az index.md fájlba fogjuk beírni azt, hogy a BME AUT snippet oldalán üdvözöljük a felhasználót, és nem csak a "snippet oldalon". Ehhez a github webes szerkesztőjét használjuk, de nyilván lehetne klónozni és lokálisan a gépünkön is dolgozni.
 
 ![](image/003_EditingIndexMd.png)
 
@@ -49,7 +49,7 @@ Pull requestet nagyon könnyű létrehozni. Először a Compare-re kattintunk, h
 
 ![](image/006_Compare.png)
 
-Majd a Create pull requestre. Ehhez adnunk kell neki egy címet és egy kis kommentárt is illik hozzá írni, hogy mit is változtattunk.
+Majd a Create pull requestre kattintunk. Ehhez adnunk kell neki egy címet és egy kis kommentárt is illik hozzá írni, hogy mit is változtattunk.
 
 ![](image/007_CreatePullReq.png)
 
@@ -59,7 +59,7 @@ A Create pull request gombra kattintás után elkészül a pull request. Ez olya
 
 ## A tulajdonos látja a pull requestet és kiegészítést kér
 
-A snippet repó eredeti tulajdonosa belépve az oldaára látha, hogy a smeyel nevű user nyitott egy pull requestet.
+A snippet repó eredeti tulajdonosa belépve az oldalára látja, hogy a smeyel nevű user nyitott egy pull requestet.
 
 ![](image/009_OtherUsersGithub.png)
 
@@ -129,8 +129,6 @@ Látszik, hogy a fork és pull request egy új branch létrehozásaként és ann
 
 ## További olvasnivaló
 
-  * https://help.github.com/articles/fork-a-repo/
+  * [https://help.github.com/articles/fork-a-repo/](https://help.github.com/articles/fork-a-repo/)
 
 <small>Szerzők, verziók: Csorba Kristóf</small>
-
-<small>A szerzők megjelölése egyrészt azért fontos, hogy lehessen látni, kinek az alkotása egy snippet, másrészt az esetleges hibákkal kapcsolatban is őt érdemes keresni.</small>

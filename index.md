@@ -4,27 +4,25 @@ layout: indexlayout
 
 # Üdvözlet a [BME AUT](https://www.aut.bme.hu/Default.aspx) snippet oldalon
 
-A snippet gyűjtemény ősszel indul, addigra lesz itt jelentősebb mennyiségű anyag.
-
 Ha hibát találsz, szólj Kristófnak! Köszi!
 
 ## Általános
 
-  * [0000_MiASnippet](snippets/0000_MiASnippet/0000_MiASnippet.html) (95%) Mi az a snippet és hogyan készülnek?
-  * [0001_SnippetSablon](snippets/0001_SnippetSablon/0001_SnippetSablon.html) (95%) Snippet sablon
+  * [0000_MiASnippet](snippets/0000_MiASnippet/0000_MiASnippet.html) Mi az a snippet és hogyan készülnek?
+  * [0001_SnippetSablon](snippets/0001_SnippetSablon/0001_SnippetSablon.html) Snippet sablon
 
 ## Tantárgyak szerinti indexek
 
-  * [0100_AlkFejlIndex](snippets/0100_AlkFejlIndex/0100_AlkFejlIndex.html) (ez lesz odamásolva...) Az Alkalmazásfejlesztés tárgy tematikájához kapcsolódó snippetek indexe.
+  * [0100_AlkFejlIndex](snippets/0100_AlkFejlIndex/0100_AlkFejlIndex.html) Az Alkalmazásfejlesztés tárgy tematikájához kapcsolódó snippetek indexe.
 
 ## Verziókezelés
 
-  * [0126_GitBev](snippets/0126_GitBev/0126_GitBev.html) (95%) GIT bevezető
-  * [0116_GitAuth](snippets/0116_GitAuth/0116_GitAuth.html) (95%) A GIT ssh authentikációja
-  * [0103_GitPeldafejlesztes](snippets/0103_GitPeldafejlesztes/0103_GitPeldafejlesztes.html) (99%, ZIP URL hiányzik, tantárgy holnap és github repo) Egy példa fejlesztési folyamat két fejlesztővel, GIT alapokon.
-  * [0128_GitHalado](snippets/0128_GitHalado/0128_GitHalado.html) (95%) Haladóbb GIT műveletek
-  * [0129_GitTuzvedelem](snippets/0129_GitTuzvedelem/0129_GitTuzvedelem.html) (95%) "Vészhelyzetek" és megoldásuk GIT alatt
-  * x [0114_VerziokezelokOsszehasonlitasa](snippets/0114_VerziokezelokOsszehasonlitasa/0114_VerziokezelokOsszehasonlitasa.html) (50%, többi rendszer még hiányzik) Verziókezelő rendszerek általában, valamit összehasonlítások
+  * [0126_GitBev](snippets/0126_GitBev/0126_GitBev.html) GIT bevezető
+  * [0116_GitAuth](snippets/0116_GitAuth/0116_GitAuth.html) A GIT SSH authentikációja
+  * [0103_GitPeldafejlesztes](snippets/0103_GitPeldafejlesztes/0103_GitPeldafejlesztes.html) Egy példa fejlesztési folyamat két fejlesztővel, GIT alapokon.
+  * [0128_GitHalado](snippets/0128_GitHalado/0128_GitHalado.html) Haladóbb GIT műveletek
+  * [0129_GitTuzvedelem](snippets/0129_GitTuzvedelem/0129_GitTuzvedelem.html) "Vészhelyzetek" és megoldásuk GIT alatt
+  * [0114_VerziokezelokOsszehasonlitasa](snippets/0114_VerziokezelokOsszehasonlitasa/0114_VerziokezelokOsszehasonlitasa.html) (50%) Verziókezelő rendszerek általában, valamit összehasonlítások
 
   * x [0137_GithubForkPullReq](snippets/0137_GithubForkPullReq/0137_GithubForkPullReq.html) (0%) Github fork és pull request használata
 
