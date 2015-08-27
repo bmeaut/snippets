@@ -36,13 +36,31 @@ A verziókezelők világában gyakori fogalmak az alábbiak:
   * 3-way-merge: a mergelési folyamat egyik széles körben alkalmazott módszere. Lényege, hogy a két összefésülendő verzió (X és Y) közös ősét (A) is megkeresi (amikor még a két ág megegyezett), majd minden ettől való eltérésről el kell dönteni, hogy az A-beli, X-beli, vagy az Y-beli verzió maradjon meg. Ha a kérdéses sorban X vagy Y közül az egyik megegyezik A-val, akkor a másik az újabb, így azt választjuk. Ha viszont X és Y is változott, akkor van merge conflict, amikor általában a felhasználóra bízzuk a döntést.
   * tag: egyes verziókezelők megengedik, hogy bizonyos állapotokat megjelöljünk. Ilyen tag vagy címke lehet például az a verzió a szakdolgozatból, mely felkerült a diplomaterv portálra, vagy az a firmware verzió, melyet a RobonAUT kvalifikáción használtunk. Nem árt tudni, hogy ha hirtelen kell egy működőképes verzió, akkor melyik volt az.
 
-## Verziókezelők összehasolítása (GIT, CVS, SVN, TFS)
+## Verziókezelők összehasonlítása
 
-  * CVS: egy egyetemi projektben készült az első verzió, amikor a prof közösen akart fejleszteni 2 hallgatójával és eltérő volt az időbeosztásuk. 1986, minden verziókezelő atyja.
-  * SVN: CVS utódja, nagyon elterjedt (de a GIT egyre inkább kiszorítja)
-  * GIT: Linux kernel fejlesztéséhez alakították ki, elosztott
-  * Mercurial: letisztult python kód, hasonló a GIT-hez és kb. egyszerre indultak útnak. Egyszerűbb a gitnél (gyorsabb tanulás) és az elsődleges szempont a teljesítmény volt (nagy projektek számára).
+A verziókezelők összehasonlításával kapcsolatban most elsősorban az eloszott és a centralizált verziókövetők két neves képviselőjét, a Git-et és a Team Foundation Servert fogom röviden összehasonlítani, mivel ennek a két kategóriának a többi képviselője alapvetően nagyon hasonlóan működik.
 
-http://www.smashingmagazine.com/2008/09/18/the-top-7-open-source-version-control-systems/
+  * CVS: egy egyetemi projektben készült az első verzió, amikor egy professzor közösen akart fejleszteni két hallgatójával és eltérő volt az időbeosztásuk. 1986, minden verziókezelő atyja, máig lehet vele találkozni.
+  * SVN: A CVS utódja, nagyon elterjedt (de a GIT egyre inkább kiszorítja). Nagyon sok cégnél lehet vele találkozni, ahol centralizált verziókezelőt szerettek volna és nem akartak Microsoft technológiára építeni.
+  * GIT: Eredetileg a Linux kernel fejlesztéséhez alakították ki, ahol nagyon-nagyon sok fejlesztő munkáját kellett összefogni.
+  * Mercurial: letisztult python kód, hasonló a GIT-hez és közel egyszerre indultak útnak. Egyszerűbb a gitnél (gyorsabb tanulás) és az elsődleges szempont a teljesítmény volt (nagy projektek számára).
+  * TFS: A Team Foundation Server a Microsoft technológiai vonalának (centralizált) verziókezelője. Rengeteg integrációs és kollaborációs szolgáltatása van. A TFS jelenleg már támogatja a git repositorykat is, így git szerverként is kiválóan működik.
+
+A számos másik snippetben bemutatott Git-hez képest a TFS fő eltérései az alábbiak:
+
+  * Centralizált verziókövető, így a munkához alapvetően online kapcsolat kell a szerverrel.
+  * Sokkal inkább a lináris (branch mentes) fejlesztést helyezi előtérbe: elágazások és mergelések helyett mindenki ugyanazon ágon dolgozik és gyakran checkin-el (a git-es commit megfelelője).
+  * Amennyiben fejlesztők egymás között olyan kódrészletet akarnak megosztani, ami még nem alkalmas arra, hogy a főágba bekerüljön, a shelving segítségével "kirakhatják egy polcra" a változásokat, amiket egy másik fejlesztő levehet. (Git alatt ilyenkor a két fejlesztő nyitna erre a célra egy branchet.) 
+  * A központi szerver lehetővé teszi fájlok zárolását, ami megakadályozza, hogy két fejlesztő egyszerre nyúljon egy fájl tartalmához. Ennek van egy árnyaltabb változata is, amit a Visual Studio automatikusan is megtesz: a szerkesztett fájlokat checkout-olja, ami azt jelenti, hogy a fájlt megjelöli szerkesztésre. Ezek a megoldások nagyban hozzájárulnak ahhoz, hogy ritkán legyen merge conflict. Jóval ritkábban, mint például Git esetében.
+  * A TFS kiterjedt integrációs lehetőségei például lehetővé teszik a gated checkint, ami azt jelenti, hogy amíg a unit tesztek nem futnak le sikeresen, addig nem lehet a módosításokat checkinelni. Ez nagy segítség a programozási hibák ellen, viszont túlságosan macerássá is teheti a fejlesztést.
+  * TFS alatt is van branch támogatás, ez viszont a munkakönyvtárban a forráskód duplázását jelenti: ha két branchen dolgozunk, a gépünkön két teljes munkakörnyvtár jelen lesz. A TFS alapú projektek gyakran használnak brancheket, de csak módjával. (Például egy fejlesztői, egy tesztelői és egy éles verzió gyakran indokolt.) 
+
+TFS alatt a tipikus munkafolyamat a következő:
+
+  * Munka előtt "get latest version". Ha a helyi módosítások ütköznek valamelyik most letöltött változtatással, akkor mergelni kell. Az "auto merge" funkciót nyugodtan lehet használni, az esetek legnagyobb részében gond nélkül megoldja.
+  * A munka végeztével "checkin", melyhez a git-es commithoz hasonlóan meg kell adni egy rövid, beszédes leírást. Érdemes gyakran checkinelni, ha éppen használható állapotban van a kód, mert akkor a fejlesztők verziói kevésbbé távolodnak el egymástól és kisebb az esélye, hogy macerásabb mergelésre lesz szükség. (És mergelnie is annak kell, aki később akart checkinelni.)
+  * Amennyiben vissza szeretnénk vonni az általunk végrehajtott módosításokat, akkor erre az "undo pending changes" való.
+
+TFS-hez szokott fejlesztők számára a Git-ben főleg a sok branch és merge olykor ijesztő. Számukra az egyik szerencsés Git-es stratégia a gyakori commit és push/pull mellett a merge helyett a rebase használata, mivel a rebase a TFS-es lineáris (branch mentes) repository koncepciójához hasonló eredményt ad.  
 
 <small>Szerzők, verziók: Csorba Kristóf</small>

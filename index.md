@@ -22,9 +22,8 @@ Ha hibát találsz, szólj Kristófnak! Köszi!
   * [0103_GitPeldafejlesztes](snippets/0103_GitPeldafejlesztes/0103_GitPeldafejlesztes.html) Egy példa fejlesztési folyamat két fejlesztővel, GIT alapokon.
   * [0128_GitHalado](snippets/0128_GitHalado/0128_GitHalado.html) Haladóbb GIT műveletek
   * [0129_GitTuzvedelem](snippets/0129_GitTuzvedelem/0129_GitTuzvedelem.html) "Vészhelyzetek" és megoldásuk GIT alatt
-  * [0114_VerziokezelokOsszehasonlitasa](snippets/0114_VerziokezelokOsszehasonlitasa/0114_VerziokezelokOsszehasonlitasa.html) (50%) Verziókezelő rendszerek általában, valamit összehasonlítások
-
-  * x [0137_GithubForkPullReq](snippets/0137_GithubForkPullReq/0137_GithubForkPullReq.html) (0%) Github fork és pull request használata
+  * [0114_VerziokezelokOsszehasonlitasa](snippets/0114_VerziokezelokOsszehasonlitasa/0114_VerziokezelokOsszehasonlitasa.html) Verziókezelő rendszerek általában, valamit összehasonlítások
+  * [0137_GithubForkPullReq](snippets/0137_GithubForkPullReq/0137_GithubForkPullReq.html) Github fork és pull request használata
 
 ## Fordítás, C++11, Qt és QML
 
@@ -37,16 +36,14 @@ Ha hibát találsz, szólj Kristófnak! Köszi!
 
   * [0131_QtToolchainHelloWorld](snippets/0131_QtToolchainHelloWorld/0131_QtToolchainHelloWorld.html) (95%) A Qt toolchain működése
   * [0104_QtSignalsAndSlots](snippets/0104_QtSignalsAndSlots/0104_QtSignalsAndSlots.html) (95%) A Qt Signals and slots rendszere
-  * x Q_OBJECT, Q_PROPERTY, mit csinál a Meta-object compiler ezekkel? Az Invoke működése :)
   * [0134_QDataStream](snippets/0134_QDataStream/0134_QDataStream.html) (100%) A QDataBuffer és a QDataStream
   * [0132_QtSocketDemo](snippets/0132_QtSocketDemo/0132_QtSocketDemo.html) (95%) Socket kezelés Qt alatt
-  * x SerialPort: implementáció kész, külön snippet? + tesztelése loopback eszközzel? (mk USB-s loopback HW)
 
 ### Qt+QML
 
   * [0133_QtQmlDemo](snippets/0133_QtQmlDemo/0133_QtQmlDemo.html) (95%) Egy QML projekt alapjai
   * [0135_QtQmlControlKupac](snippets/0135_QtQmlControlKupac/0135_QtQmlControlKupac.html) (95%) Qt QML kontrolok, lista - modell - delegate, függvény
-  * [0136_QtQmlCpp](snippets/0136_QtQmlCpp/0136_QtQmlCpp.html) (20%) A QML és C++ oldal kapcsolata
+  * [0136_QtQmlCpp](snippets/0136_QtQmlCpp/0136_QtQmlCpp.html) (80%) A QML és C++ oldal kapcsolata
 
 
 ### Fordítási folyamat - egyebek
