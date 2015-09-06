@@ -14,6 +14,7 @@ Vagy mi az, ami a tananyaghoz tartozik.
   * [0129_GitTuzvedelem](snippets/0129_GitTuzvedelem/0129_GitTuzvedelem.html) "Vészhelyzetek" és megoldásuk GIT alatt
   * [0114_VerziokezelokOsszehasonlitasa](snippets/0114_VerziokezelokOsszehasonlitasa/0114_VerziokezelokOsszehasonlitasa.html) Verziókezelő rendszerek általában, valamit összehasonlítások
   * [0137_GithubForkPullReq](snippets/0137_GithubForkPullReq/0137_GithubForkPullReq.html) Github fork és pull request használata
+  * [0138_GitParancssor](snippets/0138_GitParancssor/0138_GitParancssor.html) A Git konzolos használata során gyakran előkerülő parancsok
 
 ## Fordítás, C++11, Qt és QML
 
@@ -76,4 +77,3 @@ Viselkedési minták
 ## Dokumentáció
 
   * [0105_Doxygen](snippets/0105_Doxygen/0105_Doxygen.html) A Doxygen használata dokumentáció generálásra a forráskód alapján
-
