@@ -8,7 +8,7 @@ Változó, hogy ki mennyire szereti a konzolos megoldásokat. Sokak szerint sokk
 
 Bármely git parancsról kaphatunk segítséget a ``--help`` opcióval. Pl.
 
-   git commit --help
+    git commit --help
 
 ## Első lépések
 
@@ -92,7 +92,7 @@ Az utolsó eset akkor hasznos, ha látni szeretnénk a többi ág fejlődését,
 
 Ezek a műveletek akkor működnek, ha tracking branchen vagyunk, vagyis a branchről a git tudja, hogy mi a távoli megfelelője. A teljes szintaktis az alábbi:
 
-   git push origin master:origin/master
+    git push origin master:origin/master
 
 Ebben az esetben az origin távoli repository master ágára pusholjuk a helyi mastert.
 
@@ -129,7 +129,7 @@ Amennyiben több, tipikusan még nem pusholt commitot akarunk összeolvasztani, 
 
 Tegyük fel, hogy 3 commitot szeretnék összeolvasztani. Az első, amit nem most készítettem, az 5b74f4, vagyis erre szeretném a squashing eredményét rárakni:
 
-git rebase -i 5b74f4
+    git rebase -i 5b74f4
 
 (A commit hash kódokat egyébként a ``git log`` paranccsal lehet lekérni.)
 A git ekkor feldob egy szövegfált szereksztésre, melyben minden commithoz megadhatjuk, hogy mi legyen vele:
