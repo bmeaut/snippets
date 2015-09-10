@@ -162,6 +162,17 @@ Itt a commitok végrehajtási sorrendben szerepelnek, időben az első van az el
 
 Ezután a fájlt elmentve és kilépve a szerkesztőből, egy újabb szövegszerkesztő ablakot kapunk, amiben az "eredő" commit üzenetét tudjuk összerakni. Amint ezt is elmentjünk és kilépünk a szövegszerkesztőből, létrejön az összeolvasztott commit.
 
+## Egyebek
+
+A parancsok által feldobott szövegszerkesztőt az alábbiak szerint lehet pl. a "nano"-ra beállítani:
+
+    git config --global core.editor "nano"
+
+A kdiff3 beállítása mergetoolnak (ebben a példában Windows alatt):
+
+    git config --global merge.tool kdiff3
+    git config --global mergetool.kdiff3.cmd '"C:\\Program Files (x86)\\KDiff3\\kdiff3" $BASE $LOCAL $REMOTE -o $MERGED'
+
 ## További információk a szintaxisról
 
   * [Git dokumentáció](http://git-scm.com/docs/)
