@@ -126,3 +126,8 @@ Egyéb témákban:
   * [0110_QtGuiWidgets](snippets/0110_QtGuiWidgets/0110_QtGuiWidgets.html) (1%, skip)
   * [0107_KissElv](snippets/0107_KissElv/0107_KissElv.html) (1%) Keep It Simple And Stupid
   * [0117_GitExt](snippets/0117_GitExt/0117_GitExt.html) (1%, SKIP?)
+
+
+### Point Cloud Library
+
+  * [0401_PointCloudLib](snippets/0401_PointCloudLib/0401_PointCloudLib.html) Point Cloud Library fordítása, telepítése
