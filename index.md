@@ -56,15 +56,15 @@ Ha hibát találsz, szólj Kristófnak! Köszi!
   * [0200_DesignPatternsBev](snippets/0200_DesignPatternsBev/0200_DesignPatternsBev.html) (95%, csak még nem snippet)
   * Architektúrák (0%): Rétegek (DAL, BSP, uC OS, megkerülés veszélyei), MVC (GrainAutLine, view processzorok), Document-View, Pipes and filters, whiteboard architektúrák (pl. JAM hypothesis graph)
 
-Példányosítási minták (50%)
+Példányosítási minták
 
-  * [0202_DpAbstactFactory](snippets/0202_DpAbstactFactory/0202_DpAbstactFactory.html)
-  * [0201_DpFactory](snippets/0201_DpFactory/0201_DpFactory.html)
-  * [0203_DpBuilder](snippets/0203_DpBuilder/0203_DpBuilder.html)
-  * [0204_DpLazyInit](snippets/0204_DpLazyInit/0204_DpLazyInit.html)
-  * [0205_DpSingleton](snippets/0205_DpSingleton/0205_DpSingleton.html)
-  * [0206_DpPrototype](snippets/0206_DpPrototype/0206_DpPrototype.html)
-  * [0207_DpRAII](snippets/0207_DpRAII/0207_DpRAII.html)
+* [0201_DpFactory](snippets/0201_DpFactory/0201_DpFactory.html) 90%
+  * [0202_DpAbstactFactory](snippets/0202_DpAbstactFactory/0202_DpAbstactFactory.html) 90%
+  * [0203_DpBuilder](snippets/0203_DpBuilder/0203_DpBuilder.html) 95%
+  * [0204_DpLazyInit](snippets/0204_DpLazyInit/0204_DpLazyInit.html) 95%
+  * [0205_DpSingleton](snippets/0205_DpSingleton/0205_DpSingleton.html) 95%
+  * [0206_DpPrototype](snippets/0206_DpPrototype/0206_DpPrototype.html) 95%
+  * [0207_DpRAII](snippets/0207_DpRAII/0207_DpRAII.html) 95%
 
 Struktúrális minták (70%)
 
@@ -79,6 +79,7 @@ Viselkedési minták (60%)
   * [0213_DpStrategy](snippets/0213_DpStrategy/0213_DpStrategy.html)
   * [0214_DpState](snippets/0214_DpState/0214_DpState.html)
   * [0215_DpEgyebek](snippets/0215_DpEgyebek/0215_DpEgyebek.html)
+  * Visitor
 
 ## Hibakeresés, hibakezelés, tesztelés
 

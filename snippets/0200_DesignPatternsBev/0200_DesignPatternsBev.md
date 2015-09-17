@@ -2,11 +2,25 @@
 layout: default
 ---
 
+# FÉLKÉSZ
+
 # Design patterns bevezető
 
 **Az elejénre Singleton, azon keresztül bemutatva az egész patternesdit, UML leírást. Azt, hogy sokféle módon meg lehet írni, a kérdés az, hogy mire gondolunk és mire nem. Nem kell mindig a nagyágyú. Lassan, példa centrikusan, problémából kiindulva mutassam meg őket!**
 
 *Ebbe a leírásba fontos az is, hogy mi az, amit majd számon lehet kérni az egyes patternekről!*
+
+*Sokféle módon implementálhatók!*
+
+GoF:
+Design Patterns: Elements of Reusable Object-Oriented Software
+Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides
+The authors are often referred to as the Gang of Four (GoF).[1]
+
+
+Design Patterns WikiBooks:
+https://en.wikibooks.org/wiki/Computer_Science_Design_Patterns
+
 
 Példák, melyekhez lehet kötni:
 

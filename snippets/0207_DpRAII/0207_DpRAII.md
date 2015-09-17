@@ -2,24 +2,20 @@
 layout: default
 ---
 
-## Resource acquisition is initialization (MED)
+## Resource acquisition is initialization (RAII)
+
+A RAII tervezési minta célja egy objektum garantált, szabályos felszabadítása úgy, hogy ezt egy másik objektum életciklusához kötjük.
 
 ### Bevezető példa
 
+Ha egy fájlba írunk és közben előfordulhat, hogy egy kivétel miatt megszakad az írási folyamat, gondoskodnunk kell a fájl megfelelő lezárásáról. Amennyiben a fájl objektumunkat a kiíró függvény elején, a stacken hozzuk létre (nem a heap-en, new-val), akkor amikor kilép a végrehajtás a függvényből (vagy normális működéssel, vagy kivétel miatt, ez most mindegy), a stacken létrehozott objektum destruktora garantáltan meg fog hívódni. Ha a fájlt itt szabályosan lezárjuk, ezzel nyelvi szintű garanciánk van arra, hogy a fájl mindig lezáródik, akárhogy lépünk ki a függvényből.
+
 ### Részletek
 
+A RAII mintát Bjarne Stroustrup és Andrew Koenig alkották meg a kivétel-biztos erőforrás kezeléshez. Ezért nincsen a kivételek kezelésénél C++-ban finally blokk, mint a Java nyelvben. Java alatt objektumot nem tudunk a stacken létrehozni, így a fenti mechanizmus nem működne. C#-ban hasonló céllal jött létre a "using" blokk.
 
 ### Példa:
 
-
-Guard osztály, amikor az megszűnik, akkor elengedi az erőforrást. (A foglalás egy változó inicializálása.) Mindegy, hogyan lépünk ki a scope-ból!
-
-Objektum életciklushoz köti az erőforrás foglalást.
-
-Managed nyelvekben using, C++-ban simán a stacken létre lehet hozni a guard-ot.
-
-
-## Összefoglalás, megjegyzések
-
-* A creational patternek gyakran keverednek, vagy nem annyira triviális, hogy melyiket is kellene használni. A fejlesztés során ahogy egyre nagyobb flexibilitásra van szükség, gyakran készül Factory Method, melyből később Abstract Factory lesz, az pedig belül lehet, hogy Buildert vagy Prototypeot használ. De közben a Builder is használhat Factoryt vagy Prototypeot az egyes részegységes létrehozásához.
-* Builder focuses on constructing a complex object step by step. Abstract Factory emphasizes a family of product objects (either simple or complex). Builder returns the product as a final step, but as far as the Abstract Factory is concerned, the product gets returned immediately.
+  * Mutex objektumok garantált felszabadítása
+  * Fájlok lezárása
+  * Dinamikus objektum lefoglalása és felszabadítása: ha nem simán new-val hozzuk létre, hanem egy a stacken létrehozott unique_ptr smart pointerrel, akkor annak megszűnésekor a smart pointer destruktora a dinamikusan (heapen) létrehozott objektumot is felszabadítja.
