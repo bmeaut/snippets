@@ -68,25 +68,24 @@ Példányosítási minták
 
 Struktúrális minták (70%)
 
-  * [0208_DpComposite](snippets/0208_DpComposite/0208_DpComposite.html)
-  * [0209_DpDecorator](snippets/0209_DpDecorator/0209_DpDecorator.html)
-  * [0210_DpFacade](snippets/0210_DpFacade/0210_DpFacade.html)
-  * [0211_DpProxy](snippets/0211_DpProxy/0211_DpProxy.html)
+  * [0208_DpComposite](snippets/0208_DpComposite/0208_DpComposite.html) 95%
+  * [0209_DpDecorator](snippets/0209_DpDecorator/0209_DpDecorator.html) 95%
+  * [0210_DpFacade](snippets/0210_DpFacade/0210_DpFacade.html) 95%
+  * [0211_DpProxy](snippets/0211_DpProxy/0211_DpProxy.html) 95%
 
 Viselkedési minták (60%)
 
-  * [0212_DpObserver](snippets/0212_DpObserver/0212_DpObserver.html)
+  * [0212_DpObserver](snippets/0212_DpObserver/0212_DpObserver.html) 95%
   * [0213_DpStrategy](snippets/0213_DpStrategy/0213_DpStrategy.html)
-  * [0214_DpState](snippets/0214_DpState/0214_DpState.html)
+  * [0214_DpState](snippets/0214_DpState/0214_DpState.html) 95%
+  * [0217_DpVisitor](snippets/0217_DpVisitor/0217_DpVisitor.html)
   * [0215_DpEgyebek](snippets/0215_DpEgyebek/0215_DpEgyebek.html)
-  * Visitor
+  * [0216_VisitorObserverPelda](snippets/0216_VisitorObserverPelda/0216_VisitorObserverPelda.html) 95%
 
 ## Hibakeresés, hibakezelés, tesztelés
 
   * [0119_QTest](snippets/0119_QTest/0119_QTest.html) (95%) Unit tesztek Qt alatt
   * [0120_Hibakezeles](snippets/0120_Hibakezeles/0120_Hibakezeles.html) (95%) Hibakezelési módszerek
-  * Try és több catch, miért nincs C++-ban final
-  * cppcheck és sonar használata
 
 ## Dokumentáció
 
@@ -104,9 +103,8 @@ Az alkalmazásfejlesztés tárgyhoz:
   * x [0113_UmlSequenceDiagram](snippets/0113_UmlSequenceDiagram/0113_UmlSequenceDiagram.html) (1%)
   * [0125_BeagyTeszteles](snippets/0125_BeagyTeszteles/0125_BeagyTeszteles.html) (1%)
   * opc [0002_SnippetPullReq](snippets/0002_SnippetPullReq/0002_SnippetPullReq.html) (1%)
-  * x QML listák, modellek és delegatek (Nagyobb példának ott az STV kódja.)
-  * x QML és C++ kapcsolat (signalok mindkét irányba, adatkötés C++ oldalról frissítve). (Nagyobb példának ott van az STV kódja.)
   * [0106_Markdown](snippets/0106_Markdown/0106_Markdown.html) (1%)
+  * cppcheck és sonar használata
 
 Egyéb témákban:
 

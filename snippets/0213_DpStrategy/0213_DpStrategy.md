@@ -2,7 +2,7 @@
 layout: default
 ---
 
-## Strategy (FONTOS)
+## Strategy
 
 ### Bevezető példa
 

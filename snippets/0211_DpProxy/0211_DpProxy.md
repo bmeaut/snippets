@@ -2,7 +2,9 @@
 layout: default
 ---
 
-## Proxy (FONTOS)
+## Proxy
+
+A proxy egy osztály, mely interfészt biztosít valami máshoz.
 
 ### Bevezető példa
 
@@ -31,23 +33,13 @@ Ennek az osztálynak a használata egyrészt nagyon egyszerű és kényelmes, m�
 
 (Amennyiben a szimulátor és az igazi robot eléggé hasonló protokollal kommunikál, akkor lehet, hogy felesleges két Proxy kialakítása. Elég, ha a Proxy konstruktora paraméterként megkap egy kommunikációs objektumot, amit használ majd. Ennek lecserésésével a Proxy nem is tudja majd, hogy valójában az igazi robottal beszél, vagy a szimulátorral.) **Ref dependency injection**
 
-### Részletek
-
-Placeholder for another object to control access to it.
-
-Lehet kombinálni a flyweighttel.
-
-
-
-### Példa:
-
-### Példa:
-
 ### További példák
 
-* Jogosultság ellenőrzés
-* Egyszerűbb interfész (ez az alkalmazás nagyon közel van a Facade design patternhez.)
-* Távoli erőforrások eléréséhez interfész (pl. webservice, REST API hívások)
-* Távoli, nagy erőforrás igényű műveletek koordinálása. Péládul a tényleges kérés előtt már elkezdi a végrehajtást.
-* Ha egy osztály funkciói eredetileg nem thread-safek és nem tuduk rajta módosítani, egy Proxy eltakarhatja és megoldhatja a szükséges szinkronizációkat.
-* A std::shared_ptr<> smart pointer is egyfajta proxy, mivel elérhetővé teszti a pointer értékét, valamint számolja a hivatkozásokat, és ha ez a számláló eléri a nullát, megszünteti a pointer által hivatkozott objektumot.
+  * Jogosultság ellenőrzés
+  * Egyszerűbb interfész (ez az alkalmazás nagyon közel van a Facade design patternhez.)
+  * Távoli erőforrások eléréséhez interfész (pl. webservice, REST API hívások)
+  * Távoli, nagy erőforrás igényű műveletek koordinálása. Péládul a tényleges kérés előtt már elkezdi a végrehajtást.
+  * Ha egy osztály funkciói eredetileg nem szálbiztosak és nem tuduk rajta módosítani, egy Proxy eltakarhatja és megoldhatja a szükséges szinkronizációkat.
+  * A std::shared_ptr<> smart pointer is egyfajta proxy, mivel elérhetővé teszti a pointer értékét, valamint számolja a hivatkozásokat, és ha ez a számláló eléri a nullát, megszünteti a pointer által hivatkozott objektumot.
+  * Például WebServiceek használatakor (olyan függvények, melyeket HTTP protokollon kereszül lehet meghívni) a forráskód szintjén automatikusan generálódnak a proxy osztályok, így a webservice hívása ugyanúgy történik, mint akármilyen másik objektum egy metódusának meghívása. Csak az valójában HTTP protokollon kereszül egy szerverre továbbítja a kérést.
+  * A lazy initialization másik neve virtual proxy, mivel az is úgy viselkedik, mintha egy proxy lenne, ami az első tényleges hozzáférés pillanatában gyorsan még inicializálja a célobjektumot.

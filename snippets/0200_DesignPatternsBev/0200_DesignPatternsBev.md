@@ -10,7 +10,7 @@ layout: default
 
 *Ebbe a leírásba fontos az is, hogy mi az, amit majd számon lehet kérni az egyes patternekről!*
 
-*Sokféle módon implementálhatók!*
+*Sokféle módon implementálhatók! Tervezői döntés kérédse, hogy mikor milyen megoldás jó. Az itteni példák egy lehetőséget mutatnak, de természetesen van olyan eset, amikor másképp érdemes megoldani az adott feladatot.*
 
 GoF:
 Design Patterns: Elements of Reusable Object-Oriented Software

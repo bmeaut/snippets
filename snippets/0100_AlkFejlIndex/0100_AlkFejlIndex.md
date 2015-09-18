@@ -67,7 +67,10 @@ Viselkedési minták
   * [0212_DpObserver](../0212_DpObserver/0212_DpObserver.html)
   * [0213_DpStrategy](../0213_DpStrategy/0213_DpStrategy.html)
   * [0214_DpState](../0214_DpState/0214_DpState.html)
+  * [0217_DpVisitor](../0217_DpVisitor/0217_DpVisitor.html)
   * [0215_DpEgyebek](../0215_DpEgyebek/0215_DpEgyebek.html)
+  * [0216_VisitorObserverPelda](../0216_VisitorObserverPelda/0216_VisitorObserverPelda.html)
+
 
 ## Hibakeresés, hibakezelés, tesztelés
 

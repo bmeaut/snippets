@@ -2,7 +2,9 @@
 layout: default
 ---
 
-## Observer vagy publish/subscribe (FONTOS)
+## Observer vagy publish/subscribe
+
+Az observer tervezési minta lehetővé teszi, hogy egy objektum értesítést kapjon akkor, ha egy másik objektumban valamilyen esemény (például attribútumok változása) bekövetkezik.
 
 ### Bevezető példa
 
@@ -42,18 +44,20 @@ A *notifyAllObservers()* metódus azért private, mert minden esetben a dokument
 
 ### Részletek
 
-Az observer design pattern tipikusan egy-több függőségeket kezel le, ahol egy példány változásairól minden függő példány értesül. Szokták ezt még publish/subscribe tervezési mintának is nevezni.
+Az observer design pattern tipikusan egy-több függőségeket kezel le, ahol egy példány változásairól minden függő példány értesül. Szokták ezt még publish/subscribe tervezési mintának is nevezni. Főleg elosztott eseménykezelésre használjuk (amikor nem egy központi helyen vannak az eseménykezelők, hanem mindenki - viszonylag független módon - tudomást szerez arról, ami érdekli.) Fontos eleme a Document-View modellnek és a Model-View-Control architektúráknak is.
 
 Az implementációra kiváló megoldást ad a Qt signals-and-slots rendszere is.
 
+Az implementációnál figyelni kell arra, hogy ha egy observer hamarabb is megszűnhet, mint amiket figyel, akkor a megfigyelt objektum észrevegye, hogy a nála lévő referencia vagy pointer az observerre már érvénytelen. (Ilyenkor hasznos a weak_ptr.)
+
 Előnyök:
 
-* Laza csatolás, a dokumentumnak mindegy, hányan figyelik.
-* Jól skálázható, mivel sok feliratkozást is könnyen tud kezelni a megoldás.
+  * Laza csatolás, a dokumentumnak mindegy, hányan figyelik.
+  * Jól skálázható, mivel sok feliratkozást is könnyen tud kezelni a megoldás.
 
 Hátrányok:
 
-* Elég nehéz módosítani az üzenetek formátumát, így előfordulhat, hogy az idővel szűk keresztmetszet lesz: egyre több mindenről derül ki, hogy azt is át kellene adni az observernek.
+  * Elég nehéz módosítani az üzenetek formátumát, így előfordulhat, hogy az idővel szűk keresztmetszet lesz: egyre több mindenről derül ki, hogy azt is át kellene adni az observernek.
 
 ### Példa: robotban szenzor adatok frissítése
 
@@ -63,8 +67,6 @@ Egy autonóm mobil robotban a sok fedélzeti szenzor értékét vagy folyamatosa
 
 Ugyanezt a mechanizmust egyébként nem csak a szenzorokkal lehet kialakítani, hanem magasabb szintű "érzékelőkkel" is: például lehet készíteni egy olyan virtuális szenzort, ami ráépül az oldalsó távolságmérőre és akkor jelez, ha már meggyőződött róla, hogy egy közeli, kiszögelléses fal mellett megy a robot. Ilyenkor a felsőbb szintű logika lehet, hogy elég, ha csak erre a virtuális szenzorra iratkozik fel. Milyen kényelmes, ha van egy függvényünk, ami akkor hívódik meg, ha egyértelműen kiszögelléses fal mellett haladunk.
 
-### Példa:
-
 ### További példák
 
-* RobotMon-ban van ilyen? Tipikusan a megjelenítés ilyen. Bár éppen alapjelekre is rá lehet rakni. Vagy új adat beérkezésére (vagy az inkább chain of responsibility).
+  * RobotMon-ban van ilyen? Tipikusan a megjelenítés ilyen. Bár éppen alapjelekre is rá lehet rakni. Vagy új adat beérkezésére (vagy az inkább chain of responsibility).

@@ -2,7 +2,9 @@
 layout: default
 ---
 
-## Composite (FONTOS)
+## Composite
+
+A composite olyan objektumgráfoknál használatos, ahol a gráf egy eleme ugyanúgy viselkedik, mint egy egész részgráf: ugyanazon interfész mögött lehet egyetlen elem is, de elemek egy halmaza is.
 
 ### Bevezető példa
 
@@ -41,6 +43,12 @@ A Composite design pattern egyes megvalósításai például abban eltérnek, ho
 
    Control::AddControl(Control& c);
 
+Egy általános UML osztálydiagram az alábbi:
+
+![](image/Composite.png)
+
+A Componentnek kétféle leszármazottja van: a Leaf, amik a "hagyományos" elemei a gráfnak (például Button a felhasználói felületen), a Composite pedig olyan elem, ami másik elemeket tartalmaz (pl. Panel a felhasználói felületen).
+
 ### Példa: RobonAUT manőver
 
 Ha egy robot az összetett menővereket úgy végzi el, hogy azok egyszerűbb menűverek sorozatai, akkor a Composite design pattern segítégével nagyon elegánsan fel lehet építeni ezeket a hierarchikus menőver szekvenciákat. Minden menőver vagy elemi, és akkor a futtató metódus azt végre is hajtja, vagy összetett, amikor pedig a futtató metódus sorban végrehajtja az egyes tartalmazott menővereket.
@@ -53,6 +61,6 @@ Az implementáció nagyon hasonló lenne a fenti Control példához, csak Contro
 
 Egy áramkör szimulációban az egyes blokkok leírására szintén nagyon alkalmas a Composite design pattern, mivel ott is ugyanilyen egymásba skatulyázós hierarchiát figyelhetünk meg. Ebben az esetben az egyes blokkok interfésze kicsit trükkösebb, mivel tetszőleges számú ki- és bemenetet is támogatnia kell, a container blokk pedig a belső összeköttetéseket is le kell, hogy írja, ami szintén bonyolítja a helyzetet.
 
-### További példák
+## További olvasnivaló
 
-...
+  * [A command design pattern](https://en.wikibooks.org/wiki/C%2B%2B_Programming/Code/Design_Patterns#Command)

@@ -2,16 +2,15 @@
 layout: default
 ---
 
-## State (FONTOS)
+## State
 
-
-
+A state minta lehetővé teszi egy objektum számára, hogy megváloztassa a működését, ha a belső állapota változik.
 
 ### Bevezető példa
 
 Autonóm robotoknál általános, hogy viselkedésüket a környezetéből érkező információk határozzák meg. Vagyis attól függően, hogy az érzékelők miket jeleznek, a robotnak módosítania kell a viselkedését. A Strategy design pattern megmutatja, hogyan lehet egy algoritmust könnyen kicserélhetővé tenni. A State design pattern ezt úgy használja fel, hogy a robotnak mindig van egy aktuális állapota (véges állapotú automatát feltételezve), ami pedig magában tartalmazza azt, hogy hogyan reagál az eseményekre, egyfajta Strategy patternként.
 
-**Ez így számos helyen nem fordul a láthatóságok miatt!**
+(Az alábbi kódrészlet több helyen a láthatóságok miatt nem fordul. Ezeket terjedelmi okokból nem vettem bele az alábbi példába, mivel hiányuk az érthetőséget nem befolyásolja.)
 
     class Robot
     {
@@ -93,11 +92,13 @@ Ez az objektum orientált megközelítés bár elsőre esetleg feleslegesen bony
 
 További lehetőségek a fenti példában
 
-* Ha az állapotváltáskor jelentős logikát kell futtatni, akkor a State váltást végző függvény már meg is hívhat valami metódust, ami a belépéskor fut le.
-* a StandbyState-ben az onTick esemény segítségével villogjon egy helyzetjelző fény
+  * Ha az állapotváltáskor jelentős logikát kell futtatni, akkor a State váltást végző függvény már meg is hívhat valami metódust, ami a belépéskor fut le.
+  * a StandbyState-ben az onTick esemény segítségével villogjon egy helyzetjelző fény
 
-### Példa:
-
-### Példa:
+A Strategy és State minta elég közel állnak egymáshoz. A fő eltérés, hogy a strategy mintában nem a belső állapot dönti el, hogy mikor vált stratégiát, hanem azt kívülről kapja az objektum, például a konfigurációtól függően. De a state mintához a strategy is hasznos lehet, ha például számos állapotban kell vonalat követnie a robotnak, viszont ezt a vonalkövetési módszert cserélhetővé akarjuk tenni. A cserét macera minden állapotban lekódolni, sokkal jobb, ha az viszont strategy minta szerint kerül bele.
 
 ### További példák
+
+  * Hierarchikus menük implementálására is hasznos lehet a minta: minden almenü egy state osztály.
+  * Beágyazott környezetben például egy grafikus LCD megjelenítési módjai között lehet state mintával váltogatni.
+  * Egy rajzprogramban a kiválasztott eszközt is meg lehet valósítani state mintával.
