@@ -38,3 +38,5 @@ Megjegyzések
 ### Példa: User input type (konzol, COM, socket (Nightshade példa!))
 
 ...
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

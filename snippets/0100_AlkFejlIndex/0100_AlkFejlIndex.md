@@ -80,3 +80,5 @@ Viselkedési minták
 ## Dokumentáció
 
   * [0105_Doxygen](../0105_Doxygen/0105_Doxygen.html) A Doxygen használata dokumentáció generálásra a forráskód alapján
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

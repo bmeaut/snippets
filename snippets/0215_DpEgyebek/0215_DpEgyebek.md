@@ -283,3 +283,5 @@ Először megnézzük, hogy kell-e a lock, ha igen, akkor lockolunk és újra el
 ## Thread-specific pool (SKIP)
 
 "Szálon belül globális változó", C++11-ben thread_local kulcsszó.
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

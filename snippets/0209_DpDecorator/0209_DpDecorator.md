@@ -69,3 +69,5 @@ A decorator design pattern utólagos jogosultság ellenőrzési rendszer készí
 
    * A [GrainAutLine](http://bmeaut.github.io/grainautline/) rendszerben a blobok olyan foltok, amik kőzetek szemcséit fedik le. Ha például azt szeretnénk, hogy az egyes foltokhoz színeket is lehessen rendelni, ezt a decorator mintával is meg lehet oldani, amihez akkor az eredeti Blob osztályt nem kell módosítani.
    * Olyan grafikus elem a felhasználó felületen, melyet utólag kiegészítünk, hogy többlet információkat is meg tudjon jeleníteni magán akkor, amikor kirajzolja magát.
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

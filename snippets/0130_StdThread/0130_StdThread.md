@@ -105,3 +105,5 @@ A fejlesztés során volt egy tanulságos hiba: kezdetben a szál indítás az a
 Vagyis a roi paramétert nem érték, hanem referencia szerint vette át a lamda kifejezés. Emiatt viszont az összes szál az indulásakor ugyanarra a roi objektumra hivatkozott. Mivel a feladat szétosztó for ciklus gyorsabban lefutott, minthogy a szálak eljutottak volna a GetBlendedImage tényleges meghívásáig (amikor is érték szerint átadják a roi aktuális értékét), ezért az összes szál az utolsó roi-ra futott le.
 
 Kívülről annyi látszott, hogy a képnek csak az alja készül el. (De az valójában többször is.) A megoldás az volt, hogy a roi-t a lamda kifejezés értékként kapja meg, vagyis az std::thread konstruktor hívásakor a roi másolódjon le és ne ugyanarra hivatkozzon mind. Így már minden szál azon a területen dolgozott, amit a for ciklus kijelölt neki.
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

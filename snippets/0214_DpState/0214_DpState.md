@@ -102,3 +102,5 @@ A Strategy és State minta elég közel állnak egymáshoz. A fő eltérés, hog
   * Hierarchikus menük implementálására is hasznos lehet a minta: minden almenü egy state osztály.
   * Beágyazott környezetben például egy grafikus LCD megjelenítési módjai között lehet state mintával váltogatni.
   * Egy rajzprogramban a kiválasztott eszközt is meg lehet valósítani state mintával.
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

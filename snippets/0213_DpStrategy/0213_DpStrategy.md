@@ -22,3 +22,5 @@ Pro: Car osztályok, ha az ős előírja a brake() metódust, mindben meg kell �
 Példák
 
 * RobonAUT gyorsításos szakasz, ha nem csak egyetlen paraméter módosításától függ a merészség. Például merészebb módban mehet gyorsabban és használhatja a szoftveres ABS-t, vagy egy teljesen új vonalra visszatalálós módszert.
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

@@ -57,3 +57,5 @@ További lehetőség a log bejegyzések kategóriákba rendezése, melyek segít
 # Beszédes hibaüzenetek
 
 A felhasználói felületeken megjelenő hibaüzenetekkel kapcsolatban érdemes még megemlíteni, hogy az ilyen hibaüzenetet ne csak a fejlesztő értse, hanem a felhasználó is. Az "Adatbázis kapcsolati hiba, kód 12354H4GGX!" nyilván nem ilyen, de néha egész nehéz átülni a felhasználó helyére. Egy partnernyilvántartó rendszer felhasználójának az sem mond sokat, hogy "Nincs érvényes bejegyzés a szerződés-jogviszony összerendelő táblában." Pedig a fejlesztőnek az már triviális... miután 6 hónapja dolgozik azzal az adatbázissal.
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

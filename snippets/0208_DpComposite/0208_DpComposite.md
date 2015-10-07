@@ -64,3 +64,5 @@ Egy áramkör szimulációban az egyes blokkok leírására szintén nagyon alka
 ## További olvasnivaló
 
   * [A command design pattern](https://en.wikibooks.org/wiki/C%2B%2B_Programming/Code/Design_Patterns#Command)
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

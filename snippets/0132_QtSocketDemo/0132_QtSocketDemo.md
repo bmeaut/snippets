@@ -47,3 +47,5 @@ A szerver oldal annyiban más, hogy a QTcpSocket csak akkor jön létre, amikor 
 Ezen kívül van még egy QTimer, ami másodpercenként jelez az Applicationnek (tick slot), hogy küldjön ki egy újabb "Mizu?" üzenetet.
 
 Az alkalmazás részletes működése legkönnyebben a fenti signal térkép és a forráskódban lévő kommentek alapján követhető.
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

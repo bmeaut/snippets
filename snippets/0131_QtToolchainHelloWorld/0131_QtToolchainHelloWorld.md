@@ -180,3 +180,5 @@ A toolchain és fordítás után még egyszer menjünk végig az egyes fájlokon
   * qrc: A Qt rendszer képes arra, hogy a program exe fájljába belecsomagoljon egyéb un. erőforrásokat. Ezek tipikusan olyan fájlok, amikre az exe-nek szüksége lesz. Pl. QML fájlok és képek. Ezeket kell itt felsorolni.
 
 Ahhoz képest, hogy egy hello world programot írtunk, elég sok mindenről szó esett. De a fordítási folyamatnak az egyes lépéseit fontos egyszer végignézni, mert rengeteg hibát akkor lehet könnyen megoldani, ha tisztában vagyunk vele, mi is történik a háttérben. (Egy fekete dobozról elég nehéz megmondani, hogy miért nem mondja azt, hogy "Hello world"...)
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

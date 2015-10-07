@@ -238,3 +238,5 @@ Ez a statikus metódus gyakorlatilag arra jó, hogy átadva neki egy Simulator o
   * Természetesen ez a funkcionalitás más környezetekben is szükségessé vált. C# alatt például a delegate egy konténer és egy függvény pointer kombinációja, amivel ugyanezt lehet elérni.
   * Mivel valójában a signal és slot is metódus lesz, ezért nincs akadálya annak, hogy egy signalhoz egy másik signal meghívását kapcsoljuk, vagy hogy egy slotot metódusként meghívjunk. Sőt, a C++11 óta signalhoz a connect segítségével lamda kifejezést is hozzá lehet kapcsolni.
   * További információk itt: [http://woboq.com/blog/how-qt-signals-slots-work-part2-qt5.html](http://woboq.com/blog/how-qt-signals-slots-work-part2-qt5.html)
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

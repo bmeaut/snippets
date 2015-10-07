@@ -43,3 +43,5 @@ Ennek az osztálynak a használata egyrészt nagyon egyszerű és kényelmes, m�
   * A std::shared_ptr<> smart pointer is egyfajta proxy, mivel elérhetővé teszti a pointer értékét, valamint számolja a hivatkozásokat, és ha ez a számláló eléri a nullát, megszünteti a pointer által hivatkozott objektumot.
   * Például WebServiceek használatakor (olyan függvények, melyeket HTTP protokollon kereszül lehet meghívni) a forráskód szintjén automatikusan generálódnak a proxy osztályok, így a webservice hívása ugyanúgy történik, mint akármilyen másik objektum egy metódusának meghívása. Csak az valójában HTTP protokollon kereszül egy szerverre továbbítja a kérést.
   * A lazy initialization másik neve virtual proxy, mivel az is úgy viselkedik, mintha egy proxy lenne, ami az első tényleges hozzáférés pillanatában gyorsan még inicializálja a célobjektumot.
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

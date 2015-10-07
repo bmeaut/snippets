@@ -268,3 +268,5 @@ Az egyes fázisok után a kimenetet kommentárba beleírtam a forráskódba.
 	    ElementString: 2+100
 	    */
 	}
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

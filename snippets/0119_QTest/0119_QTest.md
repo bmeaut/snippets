@@ -86,3 +86,5 @@ Lefuttatva az alkalmazást az alábbi kimenetet kapjuk:
     ********* Finished testing of QTestDemoTest *********
 
 Természetesen a unit tesztek ennél bonyolultabban szoktak lenni.
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

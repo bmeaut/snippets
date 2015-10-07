@@ -58,3 +58,5 @@ Ilyen esetekben hosszabb távon igen kényelmes, ha ilyenkor az ilyen kiegészí
   * C# környezetben a Windows Forms osztálykönyvtár feladata, hogy a háttérben meghúzódó WIN32 API használatát megkönnyítse, és hogy egy objektum orientált interfészt biztosítson felé. (Az utóbbi időben helyette már Windows Presentation Foundationt használunk, melynek hasonló a feladat, de a Windows Formshoz képest már nagyon eltávolodott az alacsony szintektől.)
   * Szintén hasznos ez a tervezési minta akkor, ha az eltakart API használata során valamire külön kellene figyelni, vagyis a használó kódrészletektől nagyon függ. Például ha egy funkció meghívásakor nagyon fontos, hogy egy máshol lévő paraméter helyesen be legyen állítva, akkor erről egy facade nagyon szépen gondoskodhat.
   * Előfordul, hogy egy API nagyon kiforratlan vagy kényelmetlen, elavult. Ilyenkor a rossz API elé készíthetünk egy "jó" API-t, amit már kényelmesen lehet használni.
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

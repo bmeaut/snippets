@@ -19,3 +19,5 @@ A RAII mintát Bjarne Stroustrup és Andrew Koenig alkották meg a kivétel-bizt
   * Mutex objektumok garantált felszabadítása
   * Fájlok lezárása
   * Dinamikus objektum lefoglalása és felszabadítása: ha nem simán new-val hozzuk létre, hanem egy a stacken létrehozott unique_ptr smart pointerrel, akkor annak megszűnésekor a smart pointer destruktora a dinamikusan (heapen) létrehozott objektumot is felszabadítja.
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

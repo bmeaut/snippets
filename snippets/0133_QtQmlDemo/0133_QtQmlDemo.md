@@ -250,4 +250,5 @@ Ennek a generált cpp fájlnak igen tanulságos, bár mérsékelten olvasható a
 	[...]
 
 A fájl binárisan tartalmazza az erőforrás fájlok tartalmát és neveit. Az első blokk a tényleges adattartalom, a második pedig egy részlet a fájlok neveiből. A nevek UTF-16 kódolással szerepelnek, vagyis minden karakter 2 bájt. A "0x0, 0x4d" péládul az M betű a MainForm elejéről.
- 
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

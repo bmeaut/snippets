@@ -76,3 +76,5 @@ Hívják még registry of singletonsnak is, ahol kulcsonként csak egyetlen pél
 Konkrét példa lehet beágyazott rendszerben az olyan perifériák burkoló objektumai, amikből több is lehet. Például nyomógombok.
 
     Buttons::GetInstance(OkButton)->Enable();
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

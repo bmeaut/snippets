@@ -289,3 +289,5 @@ A GIT részletesebb megismeréséhez további olvasmányok:
   * 0116_GitAuth: GIT authentikáció
   * 128_GitHalado: haladóbb műveletek
   * A [Pro.Git könyv](https://git-scm.com/book/en/v2) első 3 fejezete
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

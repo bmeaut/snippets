@@ -53,3 +53,5 @@ Az alábbi példák a factory method és az abstract factory minták határán v
 
   * http://stackoverflow.com/questions/2280170/why-do-we-need-abstract-factory-design-pattern
   * https://sourcemaking.com/design_patterns/abstract_factory
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

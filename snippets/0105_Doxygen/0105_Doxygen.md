@@ -166,3 +166,5 @@ Ezután nincs más teendő, mint elmenteni a Doxyfile-t (ez az alapértelmezett 
 ## Más forráskód alapú dokumentáció generáló rendszerek
 
 A Doxygen működéséhez nagyon hasonló rendszer például a JavaDoc, mely a Java világ hasonló célú, mindenhol rendelkezésre álló dokumentáció generátora.
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

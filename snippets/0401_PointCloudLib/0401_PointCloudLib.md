@@ -74,5 +74,4 @@ csere:
 	Release:
 	C:\Program Files\Boost\lib\libboost_chrono-vc100-mt-1_50.lib
 
-
 <small>Szerzők, verziók: Kovács Viktor</small>

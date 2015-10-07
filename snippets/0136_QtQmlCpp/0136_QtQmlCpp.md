@@ -219,4 +219,3 @@ Végül pedig a függvény, ami objectName alapján megkeres egy elemet. Rekurz�
   * [http://doc.qt.io/qt-5/qtqml-cppintegration-interactqmlfromcpp.html](http://doc.qt.io/qt-5/qtqml-cppintegration-interactqmlfromcpp.html)
 
 <small>Szerzők, verziók: Csorba Kristóf</small>
-

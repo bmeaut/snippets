@@ -70,3 +70,5 @@ Ugyanezt a mechanizmust egyébként nem csak a szenzorokkal lehet kialakítani, 
 ### További példák
 
   * RobotMon-ban van ilyen? Tipikusan a megjelenítés ilyen. Bár éppen alapjelekre is rá lehet rakni. Vagy új adat beérkezésére (vagy az inkább chain of responsibility).
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

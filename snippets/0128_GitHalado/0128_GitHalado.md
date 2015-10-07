@@ -137,3 +137,5 @@ Miután Bazalt meggyőződött róla, hogy a program most már tényleg helyesen
 ![](image/123_BazaltMergesIntoMasterAndAddsDemo2Tag.png)
 
 Befejezésül Andezit is átvált a master branchre és mergeli bele (fast-forwarddal) az új origin/master-t.
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

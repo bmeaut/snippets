@@ -28,3 +28,5 @@ Megjegyzések
 ### Példa: különböző kép típusok
 
 Egy képszerkesztő rendszerben (vagy például az OpenCV osztálykönyvtárban) tipikusan vannak színes és szürke árnyalatos képek, eltérő bitmélységű képek stb. A rajzoló funkciók ezek mindegyikén futnak, belül megoldják a helyes viselkedés kiválasztását. Ha ilyenkor akarunk egy olyan képet, ami a beállításaiban hasonlít egy másik, már létező képhez, akkor a legegyszerűbb lemásolni (klónozni).
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

@@ -36,3 +36,5 @@ A [www.github.com](www.github.com) esetében a felhasználói névvel és jelsz�
 ## Egyéb authentikációs módszerek
 
 Péládul a TFS (Microsoft Team Foundation Server) és a bitbucket.org felhasználói névvel authentikál. Ilyenkor a GIT push és pull műveleteknél ezeket kell megadni.
+
+<small>Szerzők, verziók: Csorba Kristóf</small>

@@ -270,3 +270,5 @@ Egy igen érdekes helyzet állt elő: mivel a két ág között valójában ninc
 ![](image/040_WhatBazaltSees.png)
 
 A helyzet kicsit kusza, de alapvetően neki ugyanúgy az eddigi munkáját mergelnie kell a távoli ágakhoz. Azért egy fokkal egyszerűbb lett volna, ha Andezit csak akkor rebasel, ha már mindent commitolt, amit akart. Mert akkor egyetlen commit sorozatot helyez át, amit a többiek könnyebben át tudnak venni és nem duplázódnak commitok.
+
+<small>Szerzők, verziók: Csorba Kristóf</small>
