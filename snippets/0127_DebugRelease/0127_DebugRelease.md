@@ -193,6 +193,6 @@ A release mód nem is használ függvényhívást, csak a szinusz kiszámítás�
 
 A függvény elején elmenti a bázispointerbe (EBP) a stack pointert (ESP) (amihez a legelején az EBP értékét a stackre elmenti, a levégén meg visszaolvassa), a függvény befejezése előtt pedig van egy ellenőrzés, hogy a stack pointer tényleg oda állt-e vissza, ahol a függvény elején volt. Ha nem, akkor meghívja az RTC_CheckEsp függvényt, ami valószínűleg a hiba jelzésére szolgál.
 
-A konklúzió tehát az, hogy debug módban azért nem mérünk futási időt, mert rengeteg olyan műveletet tartalmaz, ami az éles futáshoz egyáltalán nem kell.
+A konklúzió tehát az, hogy debug módban azért nem mérünk futási időt, mert rengeteg olyan műveletet tartalmaz, ami az éles futáshoz egyáltalán nem kell. Ráadásul debug módban a fordító összes optimalizáló funkciója is ki van kapcsolva.
 
 Végezetül megjegyzem, hogy egyszer a Point Cloud Library használata során tapasztaltuk, hogy a debug és release módú fordítás és futtatás között szó szerint 1000-szeres sebességkülönbség volt! Mivel a program 17 millió (lézerszkennerrel felvett) pontot elemezgetett, nyilván nagyon nem volt mindegy, hogy a ciklusokban mennyi többletfeladat van.

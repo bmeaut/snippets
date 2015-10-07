@@ -4,13 +4,13 @@ layout: default
 
 # Qt toolchain és Hello world alkalmazás
 
-A Qt egy C++ és GCC fölé épülő, cross-platform környezet. Náhány előnye, amit érdemes lehet kihasználni:
+A Qt egy C++ és (elsősorban) GCC fölé épülő, cross-platform környezet. Náhány előnye, amit érdemes lehet kihasználni:
 
-  * C++-ban elérhetünk egy egy kiterjedt osztálykönyvtárat és nem csak az STL-re támaszkodhatunk.
+  * C++-ban elérhetünk egy kiterjedt osztálykönyvtárat és nem csak az STL-re támaszkodhatunk.
   * A QML (vagy a Widgetek) segítségével könnyen tudunk GUI-t, vagyis grafikus felhasználói felületet készíteni.
-  * Cross-platform, így Windows, Linux és iOS alatt is használható.
+  * Cross-platform, így többek között Windows, Linux és iOS alatt is használható.
 
-Letölteni innen lehet: https://www.qt.io/
+Letölteni innen lehet: [https://www.qt.io/](https://www.qt.io/)
 
 A Qt környezet alapvetően a GCC fordítócsaládra épít (Windows alatt ezt a MinGW formájában érhetjük el), de szükség esetén kiválóan működik a Visual Studio fordítójával is.
 
@@ -20,9 +20,9 @@ C++ esetén a Qt toolchain az alábbiak szerint működik:
 
   * Qt Creator (community edition): az ingyenes, grafikus fejlesztői környezet (IDE).
   * MinGW: a fordító (vagy GCC Linux alatt, clang iOS alatt)
-  * make: a klasszikus Linuxos make, mely a Makefile-ok alapján elvégzi a függőségek feloldását és a megfelelő sorrendben lefordítja a programunk részeit.
+  * make: a klasszikus Linuxos make, mely a Makefile-ok alapján elvégzi a függőségek feloldását és a megfelelő sorrendben lefordítja a programunk (megváltozott) részeit.
   * qmake: a Qt egy Makefile generátor programja. Gyakorlatilag a qmake számára kell megadnunk, hogy milyen forrásfájlokból áll a programunk, ami alapján ő majd generálja a make számára a Makefile-okat.
-  * MOC: A Qt egyik nagy magic része, a Meta-Object Compiler. Ez a Qt-s C++ fájlokból szabványos C++ fájlokat generál, hogy a GCC valójában már azokat fordítsa majd le. Ennek segítségével érték el a Qt fejlesztői, hogy Qt alatt olyan nyelvi elemeket is lehet használni (pl. signals and slots), amit a szabvány sajnos C++ nem támogat. Ráadásul ezeket a használt fordítótól függetlenül használhatjuk, mivel a fordító már szabványos C++ kódot fog kapni.
+  * MOC: A Qt egyik nagy magic része, a Meta-Object Compiler. Ez a Qt-s C++ fájlokból szabványos C++ fájlokat generál, hogy a GCC valójában már azokat fordítsa majd le. Ennek segítségével érték el a Qt fejlesztői, hogy Qt alatt olyan nyelvi elemeket is lehet használni (pl. signals and slots), amit a szabvány C++ sajnos nem támogat. Ráadásul ezeket a használt fordítótól függetlenül használhatjuk, mivel a fordító már szabványos C++ kódot fog kapni.
   * gdb: Ez a gcc debuggere. Amikor a Qt Creatorban debuggoljuk a programunkat, a háttérben valójában ezzel a programmal kommunikálunk. Ő rakja le a töréspontokat, folytatja a végrehajtást, kéri le a változó értékeket stb. Közvetlenül ritkán van vele dolgunk.
 
 ## Egy Qt projekt létrehozása
@@ -96,7 +96,7 @@ Ha belenézünk, többnyire a beállításaink vannak benne kulcs-érték párok
 
 Ami egyből feltűnhet, hogy a fordítás eredménye, az exe fájl nincs itt. Erre pont a fent említett BuildDirectory beállítás adja meg a választ: egy könyvtárral kijjebb van egy build-QtHelloWorld-Desktop_Qt_5_4_0_MinGW_32bit-Debug nevű könyvtár. Ezt hívják shadow buildnek: a fordítás kimenete máshova kerül, hogy a forráskód könyvtárát ne "szemetelje" össze. A neve utal a fordítási beállításokra (MinGW és Debug mód), benne pedig az alábbiak vannak:
 
-  * a gyökerében van Makefile, Makefile.Debug és Makefile.Release. A Makefile működésére most nem térünk ki. Lényeg, hogy ez már konkrétan tartalmazza, hogy mely fájlokat kell lefordítani és milyen beállításokkal kell meghívni a fordítót és a linkert. Van egy közös rész, valamint a Debug és Release mód különbségeit tartalmazó fájl. 
+  * a gyökerében van Makefile, Makefile.Debug és Makefile.Release. A Makefile működésére most nem térünk ki. Lényeg, hogy ez már konkrétan tartalmazza, hogy mely fájlokat kell lefordítani és milyen beállításokkal kell meghívni a fordítót és a linkert. Van egy közös rész, valamint a Debug és Release mód különbségeit tartalmazó fájlok. 
   * debug és release könyvtárak: a release könyvtárunk még üres, mivel release módban még nem fordítottuk le egyszer sem a programunkat. A debugban található a keresett exe fájl, valamint a main.cpp fordításából származó main.o (object fájl).
 
 (Ha esetleg a munkánk során arra gyanakszunk, hogy valami nem fordult újra, pedig kellene neki, akkor egyrészt a Qt creatorban a projekten jobb gombbal kattintva a Clean ebben a build könyvtárban takarít, vagy akár magát a könyvtárat is letörölhetjük, az akkor biztosan mindent újrageneráltat.)
@@ -135,9 +135,11 @@ A make elindította a g++ fordítót. Itt elég sok parancssori kapcsoló van, m
   * -o: output file, vagyis a fordítás eredménye ide kerül. Jelen esetben a main.o object fájl az.
   * Végül kapcsoló nélkül a bemeneti cpp fájlt látjuk.  
 
+Ezzel a compiler el is végezte minden feladatát, mivel több cpp fájlunk nincsen. Ha lenne, mindre egyesével meghívódna a fordító.
+
 	g++ -Wl,-subsystem,console -mthreads -o debug\QtHelloWorld.exe debug/main.o  -LC:/Qt/5.4/mingw491_32/lib -lQt5Cored 
 
-Mivel a make ezzel minden cpp fájlt lefordított, meghíva a linkert (ami jelen esetben szintén a g++ egyik funkciója, de működésében attól még a fordítási folyamat egy alapvetően másik lépése). Itt a fontosabb paraméterek:
+Mivel a make ezzel minden cpp fájlt lefordított, meghívja a linkert (ami jelen esetben szintén a g++ egyik funkciója, de működésében attól még a fordítási folyamat egy alapvetően másik lépése). Itt a fontosabb paraméterek:
 
   * -o: most is a kimeneti fájl neve, ami most már exe.
   * Ezután jönnek a bemeneti fájlok, most csak a debug/main.o, az előző lépés eredménye.
@@ -148,7 +150,7 @@ Itt érdemes megemlíteni, hogy a libraryket is lehet release és debug módban 
 
 	mingw32-make[1]: Leaving directory 'E:/Oktatas/AlkFejl/build-QtHelloWorld-Desktop_Qt_5_4_0_MinGW_32bit-Debug'
 
-A make végzett ebben a könyvtárban, visszalép egyet. (A make egész könyvtár szerkezeteket be tud járni úgy, hogy minden könyvtárban lehet neki feladatot adni Makefile formájában. Például több program is lehet egymás mellett, mindnek a lehet saját Makefile-ja, és a gyökérben lehet egy olyan, ami minden könyvtárra ráküldi a make-et, a részleteket meg majd ott megtalálja.)
+A make végzett ebben a könyvtárban, visszalép egyet. (A make egész könyvtár szerkezeteket be tud járni úgy, hogy minden könyvtárban lehet neki feladatot adni Makefile formájában. Például több program is lehet egymás mellett, mindnek lehet saját Makefile-ja, és a gyökérben lehet egy olyan, ami minden könyvtárra ráküldi a make-et, a részleteket meg majd ott megtalálja.)
 
 	16:33:50: The process "C:\Qt\Tools\mingw491_32\bin\mingw32-make.exe" exited normally.
 	16:33:50: Elapsed time: 00:01.
@@ -157,7 +159,7 @@ Sikeresen végeztünk. Ráadásul egész gyorsan.
 
 Ami a fentiekből fontos: minden hiba és warning, ami az "Issues" ablakban megjelenik (vagy általában bármely fejlesztő környezet hibajelző ablakában), az innen származik, a fordító a konzol ablakba írja ki őket. Vagyis például ha a fordító nem talál egy include fájlt, akkor a konzol ablakban megkeresve, hogy mikor kaptuk ezt a hibát, meg lehet azt is nézni, hogy milyen paraméterekkel futott le a fordító. Onnan pedig kiderül, hogy pontosan melyik könyvtárakban kereste a header fájlokat. A header és lib fájlok meg nem találásával kapcsolatos hibákat tipikusan innen lehet megoldani.  
 
-A fordítás során kaphatunk a fordítótól hibákat (pl. ismeretlen változó, szintaktikai hiba stb.), vagy a linkertől ("undefined reference"). Ez utóbbi már nem a forráskód egy konkrét sorára hivatkozik, hanem arra utal, hogy egy vagy több object fájl hivatkozik valamire, amit viszont semelyik object vagy library fájlban nem talál a linker, így a hívási csonkokat nem tudja hova bekötni. (Ilyen esetben azt kell ellenőrizni, hogy az a cpp fájl, aminem a nem talált függvény van, tényleg lefordult-e, és a linkernek fel van-e sorolva bemenetként (-l kapcsolóval), a linker pedig nem reklamált-e, hogy nem találja.
+A fordítás során kaphatunk a fordítótól hibákat (pl. ismeretlen változó, szintaktikai hiba stb.), vagy a linkertől ("undefined reference"). Ez utóbbi már nem a forráskód egy konkrét sorára hivatkozik, hanem arra utal, hogy egy vagy több object fájl hivatkozik valamire, amit viszont semelyik object vagy library fájlban nem talál a linker, így a hívási csonkokat nem tudja hova bekötni. (Ilyen esetben azt kell ellenőrizni, hogy az a cpp fájl, amiben a nem talált függvény van, tényleg lefordult-e, és a linkernek fel van-e sorolva bemenetként (vagy libraryként a -l kapcsolóval), a linker pedig nem reklamált-e, hogy nem találja.
 
 ## Fájlok: projekt, forráskód, header, fordítási termékek és társaik
 
@@ -168,13 +170,13 @@ A toolchain és fordítás után még egyszer menjünk végig az egyes fájlokon
   * Makefile: A qmake generálja, a make számára parancsfájl. Leírja, hogy milyen sorrendben és milyen paraméterekkel kell meghívni a fordítót.
   * Makefile.Debug: A Makefile kiegészítése Debug módra.
   * Makefile.Release: A Makefile kiegészítése Release módra.
-  * cpp: C++ forrásfájl. A G++ minden egyes CPP fájl egymástól függetlenül (!) lefordít és object fájlt készít belőlük. A fájlon kívüli hivatkozások (pl. máshol definiált függvények, változók) az object fájlban még csak csonkok, amiket majd a linker összeköt.
-  * h: header fájl. A cpp fájlok includeoljál őket (amitől a tartalmuk egy az egyben bemásolódik a cpp fájlba). Feladatuk, hogy deklaráljanak másik cpp fájlokban definiált osztályokat, metódusokat, változókat. (Előfordul olyan is, hogy a header fájlban van megírva a tényleges függvénytörzs is. Erre akkor van szükség, ha a cpp lefordításához már tudni kell a függvény belső tartalmát is. Ez tipikus eset a C++ sablonoknál (template).) A header fájlok tartalma csak egyszer kerülhet bele egy cpp fájlba, mert különben többször deklarálnánk a tartalmukat. Hogy a sok include direktíva nehogy többször includeoljon be egy fájlt, un. header guarddal szoktuk védeni. Ez úgy működik, hogy a header fájl tartalmát egy #ifdef veszi körül és csak akkor lép bele a fordító, ha még nincs definiálva egy olyan makró, amit az #ifdef után egyből definiálunk is. (Hasonló és még gyorsabb, de hivatalosan nem szabványos megoldás a "#pragma once" direktíva.)
+  * cpp: C++ forrásfájl. A G++ minden egyes CPP fájlt egymástól függetlenül (!) lefordít és object fájlt készít belőlük. A fájlon kívüli hivatkozások (pl. máshol definiált függvények, változók) az object fájlban még csak csonkok, amiket majd a linker összeköt. (A linker a nevét is innen kapta.)
+  * h: header fájl. A cpp fájlok includeolják őket (amitől a tartalmuk egy az egyben bemásolódik a cpp fájlba). Feladatuk, hogy deklaráljanak másik cpp fájlokban definiált osztályokat, metódusokat, változókat. (Előfordul olyan is, hogy a header fájlban van megírva a tényleges függvénytörzs is. Erre akkor van szükség, ha a cpp lefordításához már tudni kell a függvény belső tartalmát is. Ez gyakori eset a C++ sablonoknál (template).) A header fájlok tartalma csak egyszer kerülhet bele egy cpp fájlba, mert különben többször deklarálnánk a tartalmukat. Hogy a sok include direktíva nehogy többször includeoljon be egy fájlt, un. header guarddal szoktuk védeni. Ez úgy működik, hogy a header fájl tartalmát egy #ifdef veszi körül és csak akkor lép bele a fordító, ha még nincs definiálva egy olyan makró, amit az #ifdef után egyből definiálunk is. (Hasonló és még gyorsabb, de hivatalosan nem szabványos megoldás a "#pragma once" direktíva használata.)
   * obj vagy .o: Object fájl (tárgykód), mely egy cpp fájl lefordított formája. A linker ezeket és a lib fájlokat olvassa be és kapcsolja össze a köztük lévő hivatkozásokat.
-  * lib: Library fájl (függvénykönyvtár): hasonló az object fájlhoz, általában sok object fájl összeszerkesztésével jön létre. Olyan függvények, osztályok vannak bennük, amiket több programban történő felhasználásra szántak. Ilyenkor megkapjuk a lib fájlokat, valamint a hozzájuk tartozó header fájlokat, hogy a saját cpp fájljainkban hivatkozni tudjuk a lib tartalmára.
+  * lib: Library fájl (függvénykönyvtár): hasonló az object fájlhoz, általában sok object fájl összeszerkesztésével jön létre. Olyan függvények, osztályok vannak bennük, amiket több programban történő felhasználásra szántak. Ilyenkor megkapjuk a lib fájlokat, valamint a hozzájuk tartozó header fájlokat, hogy a saját cpp fájljainkban hivatkozni tudjunk a lib tartalmára.
   * dll: Dinamikusan linkelt könyvtár. Olyan, mint a lib, csak nem a linker fordítja hozzá a programhoz, hanem a program indulásakor töltődik be hozzá. Minden DLL-hez tartozik egy lib, amit hozzá kell fordítanunk a programunkhoz, ez azonban csak függvénycsonkokat tartalmaz, amik a program betöltésekor összekapcsolódak a DLL megfelelő függvényeivel. (A rendszer a DLL-eket az exe könyvtárában és a PATH környezeti változóban megadott könyvtárakban keresi. Így ha indításkor az a gond, hogy nincs meg egy DLL, akkor vagy be kell rakni a helyét a path-ba, vagy az exe mellé kell másolni.)
   * moc_....cpp: Az Qt Meta-Object Compilerének kimenete. Erre a fentiekben még nem láttunk példát, mert semmi olyat nem használtunk, amihez kellett volna. Tartalma szabvány C++ fájl, ami a mi cpp fájljainból generálódik, hogy a szabványos fordítók le tudják kezelni a Qt-specifikus nyelvi elemeket (pl. "signal", "slot", "emit" kulcsszavak).
-  * qml: A Qt deklaratív felhasználói felület leíró fájljai. Ezekkel a grafikus felülettel kapcsolatban fogunk találkozni. Ezek írják le, hogy milyen elemek vannak egy ablakban, azok hogy kapcsolódnak egymáshoz, a listák honnan veszik az adataikat, stb. Egyszerűbb feladatokat JavaScript nyelven a QML fájlokban is le lehet írni, nem kell "áthívni" a cpp oldalra.
+  * qml: A Qt deklaratív felhasználói felület leíró fájljai. Ezekkel a grafikus felülettel kapcsolatban fogunk találkozni. Ezek írják le, hogy milyen elemek vannak egy ablakban, azok hogy kapcsolódnak egymáshoz, a listák honnan veszik az adataikat stb. Egyszerűbb feladatokat JavaScript nyelven a QML fájlokban is le lehet írni, nem kell "áthívni" a cpp oldalra.
   * qrc: A Qt rendszer képes arra, hogy a program exe fájljába belecsomagoljon egyéb un. erőforrásokat. Ezek tipikusan olyan fájlok, amikre az exe-nek szüksége lesz. Pl. QML fájlok és képek. Ezeket kell itt felsorolni.
 
-Ahhoz képest, hogy egy hello world programot írtunk, elég sok mindenről szó esett. De a fordítási folyamatnak az egyes lépéseit fontos egyszer végignézni, mert rengeteg hibát akkor lehet könnyen megoldani, ha tisztában vagyunk, mi is történik a háttérben. (Egy fekete dobozról elég nehéz megmondani, hogy miért nem mondja azt, hogy "Hello world"...)
+Ahhoz képest, hogy egy hello world programot írtunk, elég sok mindenről szó esett. De a fordítási folyamatnak az egyes lépéseit fontos egyszer végignézni, mert rengeteg hibát akkor lehet könnyen megoldani, ha tisztában vagyunk vele, mi is történik a háttérben. (Egy fekete dobozról elég nehéz megmondani, hogy miért nem mondja azt, hogy "Hello world"...)

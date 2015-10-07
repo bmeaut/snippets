@@ -16,7 +16,7 @@ A "Minden" menüben van a kilépés. (Valamint egy később a C++ oldalra irány
 
 ## QML elemek és csoportosításuk
 
-QML alatt nagyon sok féle felhasználó felület elemet használhatunk. Mi most az alábbiakra térünk ki:
+QML alatt nagyon sok féle felhasználói felület elemet használhatunk. Mi most az alábbiakra térünk ki:
 
   * Item: egy általános elem (pl. C# alatt ez a Control megfelelője).
   * MenuBar, MenuItem: Egy menü és egy menüpont.
@@ -56,14 +56,14 @@ A mostani példában alapvetően a layoutokat fogjuk használni, de például a 
 
 A példaprogram RadioCanvasList elemének felépítése az alábbi. (A "..." részek a belső részletek, azokat is hamarosan megnézzük.) Alapvetően 3 oszlopa van, amik belül egymás alá rendezett elemeket tartalmaznak, kivéve a következőt, mely csak egy ListView elemet.
 
-Az egész egy RowLayoutban van, ami kitölti a teljes szülőjét és "margins" távolságot tart ("margins" egy változó).
+Az egész egy RowLayoutban van, ami kitölti a teljes szülőjét és "margin" távolságot tart ("margin" egy változó).
 
     RowLayout {
         id: baseGrid
         anchors.fill: parent
         anchors.margins: margin
 
-Az első GroupBoxon egy ColumnLayoutot tartalmaz. Itt egy érdekes csavar is van: a GroupBox szeretné függőlegesen kitölteni a helyét. Ezt alapvetően a RowLayoutban kellene beállítani, mivel az felel a GroupBox méretének beállításáért, viszont ez minden RowLayouton belüli elemre eltérhet. Ezért ezek a beállítások úgy vannak megoldva, hogy a GroupBoxon belül vannak és *a Layoutnak szólnak, de csak a GroupBox-ra vonatkoztatva*.
+Az első GroupBox egy ColumnLayoutot tartalmaz. Itt egy érdekes csavar is van: a GroupBox szeretné függőlegesen kitölteni a helyét. Ezt alapvetően a RowLayoutban kellene beállítani, mivel az felel a GroupBox méretének beállításáért, viszont ez minden RowLayouton belüli elemre eltérhet. Ezért ezek a beállítások úgy vannak megoldva, hogy a GroupBoxon belül vannak és *a Layoutnak szólnak, de csak a GroupBox-ra vonatkoztatva*.
 
         GroupBox {
             Layout.fillHeight: true
@@ -124,7 +124,7 @@ A delegate egy GroupBox, benne egy egymás mellé rakott Rectangle és Text elem
             }
         }
 
-A modell egy ListModel példány. Az id-ja alapján fogunk rá hivatkozni, ha további elemeket akarunk beleírni. Ilyenkor a lista ezt észre fogja venni is megától frissíti a megjelenítést. A ListElementek tetszőleges tulajdonságokat tartalmazhatnak. Az a fontos, hogy azokat tartalmazzák, amikre a delegate hivatkozik: jelen esetben a "colorCode" és "message". 
+A modell egy ListModel példány. Az id-ja alapján fogunk rá hivatkozni, ha további elemeket akarunk beleírni. Ilyenkor a lista ezt észre fogja venni is magától frissíti a megjelenítést. A ListElementek tetszőleges tulajdonságokat tartalmazhatnak. Az a fontos, hogy azokat is tartalmazzák, amikre a delegate hivatkozik: jelen esetben a "colorCode" és "message". 
 
         model: ListModel {
             id: eventLogModel
@@ -220,7 +220,7 @@ A propertyk egyszerű változók, amiket később tudunk használni. (Szükség 
 	    // C++ oldal is el tudja érni
 	    property int lineWidth : 3
 
-QML alatt könnye lehet JavaScript függvényeket készíteni. A paramétereknek itt nincsen típusa. A függvényben értékat adunk a selectedColor változónak, a drawingCanvas elemünket újrarajzoltatjuk, a ListView modelljéül szoláló listára felveszünk egy új bejegyzést, valamint a konzolra is kiírjuk, hogy mi történt.
+QML alatt könnyen lehet JavaScript függvényeket készíteni. A paramétereknek itt nincsen típusa. A függvényben értékat adunk a selectedColor változónak, a drawingCanvas elemünket újrarajzoltatjuk, a ListView modelljéül szoláló listára felveszünk egy új bejegyzést, valamint a konzolra is kiírjuk, hogy mi történt.
 	
 	    // C++ oldal is el tudja érni
 	    function selectColor(messageText, color)
@@ -383,13 +383,11 @@ Ez a példaprogram bemutatta néhány felhasználói felület elem és az elrend
 
 Sokszor halljuk, hogy a QML deklaratív. Ez azt jelenti, hogy itt nem lépésenként adjuk meg, hogy hogyan működjön a felhasználói felület, hanem csak azt írjuk le, hogy milyen legyen. És a QML motor a többit magától megoldja. Például egy elem méretét akár egy függvénnyel is meghatározhatjuk: ha a bemeneti paraméterek megváltoznak, a QML motor magától újra ki fogja számolni az értékeket, ezzel nekünk nem kell törődnünk.
 
-A QML fájlokat bele lehet fordítani az EXE fájlokba, de lehetnek az EXE mellett is. Ez utóbbi eset akkor lehet nagyon hasznos, ha több felhasználói felületet akarunk ugyanazzal a programmal támogatni. A QML egy kiváló lehetőséget biztosít arra, hogy az alkalmazásunknak a felhasználói felületét teljesen leválasszuk az alkalmazás logikáról. Így a design és a háttérlogika fejlesztése sokkal kevésbbé van összekötve. Egy QML-hez értő designer nagyon sok mindent meg tud oldani a C++ oldali fejlesztők nélkül is. Leginkább csak abban kell megegyezni, hogy a modellek (mint a fenti példában a ListView modellje) milyen néven és tartalommal állnak rendelkezésre.
+A QML fájlokat bele lehet fordítani az EXE fájlokba, de lehetnek az EXE mellett is. Ez utóbbi eset akkor lehet nagyon hasznos, ha több felhasználói felületet akarunk ugyanazzal a programmal támogatni. A QML egy kiváló lehetőséget biztosít arra, hogy az alkalmazásunknak a felhasználói felületét teljesen leválasszuk az alkalmazás logikáról. Így a design és a háttérlogika fejlesztése sokkal kevésbbé van összekötve. Egy QML-hez értő designer nagyon sok mindent meg tud oldani a C++ oldali fejlesztők nélkül is. Leginkább csak abban kell megegyezni, hogy a modellek (mint a fenti példában a ListView modellje) milyen néven és tartalommal állnak rendelkezésre, és hogy milyen signalokat lehet használni. 
 
 ## További információk
 
   * Összetettebb példákat a SimpleTelemetryVisualizer program tartalmaz.
-  * A QML-C++ kapcsolatról külön snippet szól. 
+  * A QML-C++ kapcsolatról külön snippet szól: [0136_QtQmlCpp](../0136_QtQmlCpp/0136_QtQmlCpp.html) 
 
 <small>Szerzők, verziók: Csorba Kristóf</small>
-
-<small>A szerzők megjelölése egyrészt azért fontos, hogy lehessen látni, kinek az alkotása egy snippet, másrészt az esetleges hibákkal kapcsolatban is őt érdemes keresni.</small>

@@ -30,26 +30,26 @@ Ha hibát találsz, szólj Kristófnak! Köszi!
 
 ### C++11, C++14, STL
 
-  * [0121_Cpp11Ptr](snippets/0121_Cpp11Ptr/0121_Cpp11Ptr.html) (95%) A C++11 smart pointer megoldásai
-  * [0130_StdThread](snippets/0130_StdThread/0130_StdThread.html) (95%) Szálkezelés az std::thread segítségével
+  * [0121_Cpp11Ptr](snippets/0121_Cpp11Ptr/0121_Cpp11Ptr.html) A C++11 smart pointer megoldásai
+  * [0130_StdThread](snippets/0130_StdThread/0130_StdThread.html) Szálkezelés az std::thread segítségével
 
 ### Qt
 
-  * [0131_QtToolchainHelloWorld](snippets/0131_QtToolchainHelloWorld/0131_QtToolchainHelloWorld.html) (95%) A Qt toolchain működése
-  * [0104_QtSignalsAndSlots](snippets/0104_QtSignalsAndSlots/0104_QtSignalsAndSlots.html) (95%) A Qt Signals and slots rendszere
-  * [0134_QDataStream](snippets/0134_QDataStream/0134_QDataStream.html) (100%) A QDataBuffer és a QDataStream
-  * [0132_QtSocketDemo](snippets/0132_QtSocketDemo/0132_QtSocketDemo.html) (95%) Socket kezelés Qt alatt
+  * [0131_QtToolchainHelloWorld](snippets/0131_QtToolchainHelloWorld/0131_QtToolchainHelloWorld.html) A Qt toolchain működése
+  * [0104_QtSignalsAndSlots](snippets/0104_QtSignalsAndSlots/0104_QtSignalsAndSlots.html) A Qt Signals and slots rendszere
+  * [0134_QDataStream](snippets/0134_QDataStream/0134_QDataStream.html) A QDataBuffer és a QDataStream
+  * [0132_QtSocketDemo](snippets/0132_QtSocketDemo/0132_QtSocketDemo.html) Socket kezelés Qt alatt
 
 ### Qt+QML
 
-  * [0133_QtQmlDemo](snippets/0133_QtQmlDemo/0133_QtQmlDemo.html) (95%) Egy QML projekt alapjai
-  * [0135_QtQmlControlKupac](snippets/0135_QtQmlControlKupac/0135_QtQmlControlKupac.html) (95%) Qt QML kontrolok, lista - modell - delegate, függvény
-  * [0136_QtQmlCpp](snippets/0136_QtQmlCpp/0136_QtQmlCpp.html) (80%) A QML és C++ oldal kapcsolata
+  * [0133_QtQmlDemo](snippets/0133_QtQmlDemo/0133_QtQmlDemo.html) Egy QML projekt alapjai
+  * [0135_QtQmlControlKupac](snippets/0135_QtQmlControlKupac/0135_QtQmlControlKupac.html) Qt QML kontrolok, lista - modell - delegate, függvény
+  * [0136_QtQmlCpp](snippets/0136_QtQmlCpp/0136_QtQmlCpp.html) A QML és C++ oldal kapcsolata
 
 
 ### Fordítási folyamat - egyebek
 
-* [0127_DebugRelease](snippets/0127_DebugRelease/0127_DebugRelease.html) (95%) Mi a különbség a debug és release fordítás között?
+* [0127_DebugRelease](snippets/0127_DebugRelease/0127_DebugRelease.html) Mi a különbség a debug és release fordítás között?
 
 ## Tervezési minták, tervezés
 

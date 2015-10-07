@@ -4,7 +4,7 @@ layout: default
 
 # QtQmlDemo
 
-Ha a Qt Creator indítsakor Qt Quick Applicationt választunk, akkor rögtön kaptunk egy kis alkalmazás keretet, amivel QML-es alkalmazást tudunk készíteni. (A QtQuick az az osztálykönyvtár, aminek a felhasználó felület leíró nyelve a QML.)
+Ha a Qt Creator indításakor Qt Quick Applicationt választunk, akkor rögtön kaptunk egy kis alkalmazás keretet, amivel QML-es alkalmazást tudunk készíteni. (A QtQuick az az osztálykönyvtár, aminek a felhasználó felület leíró nyelve a QML.)
 
 A kiindulási alap így néz ki:
 
@@ -37,7 +37,7 @@ A main.cpp tartalma igen tömör:
 
 Létrehoz egy QApplication objektumot, aminek az app.exec() hívásával indul el az ablakkezelő rendszer eseménykezelő főciklusa. Vagyis a főprogram összerakja a felhasználó felületet, majd amíg ki nem lépünk, eseményekre vár és minden eseménynél végrehajtja a megfelelő eseménykezelőt.
 
-Ezen kívül létrejön egy QQmlApplicationEngine objektum is, ami pedig a QML felület betöltéséért és felépítéséért felelős.
+Ezen kívül létrejön egy QQmlApplicationEngine objektum is, ami pedig a QML felület betöltéséért, felépítéséért és üzemeltetéséért felelős.
 
 (A QStringLiteral majdnem ugyanaz, mintha QString()-et írnánk, csak fordítási időben létre tud jönni egy read-only QString objektum, így futási időben sokkal gyorsabb.)
 
@@ -54,7 +54,7 @@ A QRC fájl tartalma az alábbi (jobb klikk, Open in Text Editor):
 	    </qresource>
 	</RCC>
 
-A lényege, hogy az itt felsorolt - egyébként a projektben létező - fájlok bekerülnek a fordításkor az exe fájlba. Hivatkozni rájuk úgy lehet, hogy a main() függvényben is láttuk, pl. "qrc:/main.qml". (A "/" prefixet már a QRC fájlban adtuk meg.)
+A lényege, hogy az itt felsorolt - egyébként a projektben létező - fájlok bekerülnek a fordításkor az exe fájlba. Hivatkozni rájuk úgy lehet, ahogy a main() függvényben is láttuk, pl. "qrc:/main.qml". (A "/" prefixet már a QRC fájlban adtuk meg.)
 
 ## pro fájl
 
@@ -66,7 +66,7 @@ Ez jelenti azt, hogy egy futtatható alkalmazást szeretnénk. (És nem példáu
 	
 	QT += qml quick widgets
 	
-Szükségünk lesz a QT keretrendszerből a qml, quick és widgets. Widgeteket most nem használunk, viszont a QApplication osztály használatához is ez kell.
+Szükségünk lesz a QT keretrendszerből a qml, quick és widgets részekre. Widgeteket most nem használunk, viszont a QApplication osztály használatához is ez kell.
 A háttérben ezek a beállítások példul bizonyos include és library fájl csoportok elérési útjait veszik hozzá a projektünkhöz.
 
 	SOURCES += main.cpp
@@ -87,7 +87,7 @@ Ha külső QML fájlokat is szeretnénk használni, itt adhatnánk meg a helyük
 
 Itt egy másik projekt fájlt includeolunk. A kiterjesztése azért pri és nem pro, hogy ez is jelezze, hogy ezt includolásra szánták.
 
-A deployment.pri tartalmába most nem megyünk bele. Sok esetben nem is kell hozzányúlni. Elsősorban akkor van rá szükség, ha program telepítése valamiért speciális, például mert Android alatt processzor architektúra függő, hogy mi hol van a fájlrendszerben.
+A deployment.pri tartalmába most nem megyünk bele. Sok esetben nem is kell hozzányúlni. Elsősorban akkor van rá szükség, ha a program telepítése valamiért speciális, például mert Android alatt processzor architektúra függő, hogy mi hol van a fájlrendszerben.
 
 ## MainForm.ui.qml
 
@@ -122,7 +122,7 @@ A layout egy elrendezést irányító elem. Ami benne van, azokat úgy helyezi e
 
 	        anchors.centerIn: parent
 	
-Maga a RowLayout is rendelkezik tulajdonságokkal. Ilyen az anchors. Itt lehet megadni, hogy a RowLayout elem határai hova igazodjanak. Itt most bárhogy is mozog vagy méreteződik az ablak, ő a szülőjének a közepén lesz. (Itt lehet például olyanokat is megadni, hogy minden irányba töltse ki a szülőt, ami jelen esetben az egyel kintebb definiált Item.)
+Maga a RowLayout is rendelkezik tulajdonságokkal. Ilyen az anchors. Itt lehet megadni, hogy a RowLayout elem határai hova igazodjanak. Itt most bárhogy is mozog vagy méreteződik az ablak, ő a szülőjének a közepén lesz. (Itt lehet például olyanokat is megadni, hogy minden irányba töltse ki a szülőt, ami jelen esetben az eggyel kintebb definiált Item.)
 
 	        Button {
 
@@ -152,7 +152,7 @@ A további két Button hasonló az elsőhöz.
 	    }
 	}
 	
-Mint látható, itt a felhasználó felület felépítését adtuk meg, de a viselkedésről semmit nem mondtunk. Ez azért van, mert ez egy általánosabban használható felhasználói felület elem (bár most nyilván csak a main.qml-ből fogjuk egyszer példányosítani).
+Mint látható, itt a felhasználói felület felépítését adtuk meg, de a viselkedésről semmit nem mondtunk. Ez azért van, mert ez egy általánosabban használható felhasználói felület elem (bár most nyilván csak a main.qml-ből fogjuk egyszer példányosítani).
 
 A lényeg, hogy a viselkedést majd ott adjuk meg, ahol felhasználjuk ezt a felület elemet.
 
@@ -187,9 +187,9 @@ Az ApplicationWindow az alkalmazás főablakat. Beállítjuk a címét, méreté
 	        }
 	    }
 
-A menüsor egy MenuBar osztályó elem. A "menuBar : MenuBar" azt jeleti, hogy az ApplicationWindow menuBar tulajdonságának adunk értéket úgy, hogy az egy MenuBar osztályú elem lesz, aminek itt helyben adjuk meg az értékét. A MenuBar tartalmaz egy Menu elemet (ez lesz a File menü), aminek van címe, valamint benne vannak MenuItem-ek (Open és Exit). A címekben az "&" jel határozza meg a billentyűparancsokat: az Alt-F, Alt-O és Alt-x az egyes menüpontokat fogják aktiválni.
+A menüsor egy MenuBar osztályú elem. A "menuBar : MenuBar" azt jeleti, hogy az ApplicationWindow menuBar tulajdonságának adunk értéket úgy, hogy az egy MenuBar osztályú elem lesz, aminek itt helyben adjuk meg az értékét. A MenuBar tartalmaz egy Menu elemet (ez lesz a File menü), aminek van címe, valamint benne vannak MenuItem-ek (Open és Exit). A címekben az "&" jel határozza meg a billentyűparancsokat: az Alt-F, Alt-O és Alt-x az egyes menüpontokat fogják aktiválni.
 
-Ezeknek az elemeknek már eseményeik (signaljaik) is vannak. QML alatt az eseményeknek megfelelő signalokat JavaScript kódrészletekhez tudjuk kötni. A signal neve "Triggered", amihez kódrészletet az "onTriggered"-nek értéked adva tudunk rendelni. A fenti esetben az Open triggerére meghívjük a messageDialog objektum show() metódusát, az Exit esetében pedig a Qt.quit() hívással leállítjuk a programot.
+Ezeknek az elemeknek már eseményeik (signaljaik) is vannak. QML alatt az eseményeknek megfelelő signalokat JavaScript kódrészletekhez tudjuk kötni. A signal neve "Triggered", amihez kódrészletet az "onTriggered"-nek értéket adva tudunk rendelni. A fenti esetben az Open triggerére meghívjük a messageDialog objektum show() metódusát, az Exit esetében pedig a Qt.quit() hívással leállítjuk a programot.
 	
 	    MainForm {
 	        anchors.fill: parent
@@ -198,7 +198,7 @@ Ezeknek az elemeknek már eseményeik (signaljaik) is vannak. QML alatt az esem�
 	        button3.onClicked: messageDialog.show(qsTr("Button 3 pressed"))
 	    }
 
-Itt példányosítjuk a MainForm elemet. Az "anchors.fill" tulajdonságnak megadhatjuk, hogy az elem mely elemet töltse ki teljesen. Most a szülőt, ami az ApplicationWindow. Ezen kívül beállítunk eseménykezelőket is, miközben kihasználjuk, hogy a nyomógombok bár a MainForm mélyén vannak (egy RowLayout alatt), aliasokon keresztül könnyen le tudjuk őket érni.
+Itt példányosítjuk a MainForm elemet. Az "anchors.fill" tulajdonságnak megadhatjuk, hogy az elem mely elemet töltse ki teljesen. Most a szülőt, ami az ApplicationWindow. Ezen kívül beállítunk eseménykezelőket is, miközben kihasználjuk, hogy a nyomógombok bár a MainForm mélyén vannak (egy RowLayout alatt), aliasokon keresztül könnyen el tudjuk őket érni.
 	
 	    MessageDialog {
 	        id: messageDialog
@@ -222,7 +222,7 @@ Ezzel a végére is értünk a Qt QML-es példa keretprogramjának. A fordítás
 	
 	g++ -c -pipe -fno-keep-inline-dllexport -g -frtti -Wall -Wextra -fexceptions -mthreads -DUNICODE -DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG -DQT_QUICK_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN -I..\QtQmlDemo -I"C:\Qt\5.4\mingw491_32\include" -I"C:\Qt\5.4\mingw491_32\include\QtQuick" -I"C:\Qt\5.4\mingw491_32\include\QtWidgets" -I"C:\Qt\5.4\mingw491_32\include\QtGui" -I"C:\Qt\5.4\mingw491_32\include\QtQml" -I"C:\Qt\5.4\mingw491_32\include\QtNetwork" -I"C:\Qt\5.4\mingw491_32\include\QtCore" -I"debug" -I"." -I"C:\Qt\5.4\mingw491_32\mkspecs\win32-g++" -o debug\qrc_qml.o debug\qrc_qml.cpp
 
-Az első sor egy rcc.exe program segítségével a qml.qrc fájlból készít egy qrc_qml.cpp fájlt, a második pedig hozzáforítja azt a projekthez.
+Az első sor egy rcc.exe program segítségével a qml.qrc fájlból készít egy qrc_qml.cpp fájlt, a második pedig hozzáfordítja azt a projekthez.
 
 Ennek a generált cpp fájlnak igen tanulságos, bár mérsékelten olvasható a tartalma.
 

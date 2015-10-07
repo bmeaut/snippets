@@ -6,7 +6,7 @@ layout: default
 
 Az alábbi példaprogram az [alkalmazásfejlesztés repository](https://github.com/csorbakristof/alkalmazasfejlesztes) InMemoryStream példája. Bemutatja röviden a QBuffer, mint általános adattároló buffer, és a QDataStream, mint tárolók fölött működő stream osztály használatát.
 
-A példában létrehozunk egy buffert a memóriába, amire létrehozunk egy folyamot, ami pont abba tud írni. Utána létrehozunk ugyanarra a bufferre egy másik folyamot is, ami olvasni fog belőle. És megnézzük, hogy a bufferbe pontosan mi kerül bele.
+A példában létrehozunk egy buffert a memóriában, amire létrehozunk egy folyamot, ami pont ebbe a bufferbe tud írni. Utána létrehozunk ugyanarra a bufferre egy másik folyamot is, ami olvasni fog belőle. És megnézzük, hogy a bufferbe pontosan mi kerül bele.
 
     #include <QCoreApplication>
     #include <QString>
@@ -23,11 +23,11 @@ A buffer tárolja az adatokat
 
         QByteArray buffer;
 
-A stream fog írni (csak Write nincsen). A stream tudja követni, hogy hol tart, tud írni... de tárolója nincsen, azt kívülről biztosítjuk neki.
+A stream fog írni ("WriteOnly" nincsen). A stream tudja követni, hogy hol tart, tud írni... de tárolója nincsen, azt kívülről biztosítjuk neki.
 
         QDataStream stream(&buffer, QIODevice::ReadWrite);
 
-Most direkt ilyen szöveget fogunk beírni a bufferbe, hogy hexában is könnyen felismerjük, hogy mi van ott.
+Most direkt olyan szöveget fogunk beírni a bufferbe, hogy hexában is könnyen felismerjük, hogy mi van ott.
 
         QString text1("ABCD");
         QString text2("EFG");
@@ -67,5 +67,3 @@ A kapott kimenet az alábbi:
 A QString először elmenti a saját hosszát bájtban, 32 biten (00000008), utána az egyes karaktereket UTF-16 kódolással: A (0041), B (0042), C (0043), D (0044). Utána pedig jön a második QString.
 
 <small>Szerzők, verziók: Csorba Kristóf</small>
-
-<small>A szerzők megjelölése egyrészt azért fontos, hogy lehessen látni, kinek az alkotása egy snippet, másrészt az esetleges hibákkal kapcsolatban is őt érdemes keresni.</small>

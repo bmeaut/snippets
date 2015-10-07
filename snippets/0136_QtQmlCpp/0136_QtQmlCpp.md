@@ -4,7 +4,7 @@ layout: default
 
 # Qt alatt a QML és C++ oldal kapcsolata
 
-Ennek a snippetnek az alapja a [QmlControlKupac példaprogram](https://github.com/csorbakristof/alkalmazasfejlesztes/tree/master/QmlControlKupac) alkalmazás. A QML oldal nagy részét egy másik snippet mutatja be részletesen, itt most a QML és C++ oldal kapcsolatáról lesz szó.
+Ennek a snippetnek az alapja a [QmlControlKupac példaprogram](https://github.com/csorbakristof/alkalmazasfejlesztes/tree/master/QmlControlKupac) alkalmazás. A QML oldal nagy részét egy másik snippet ([0135_QtQmlControlKupac](../0135_QtQmlControlKupac/0135_QtQmlControlKupac.html)) mutatja be részletesen, itt most a QML és C++ oldal kapcsolatáról lesz szó.
 
 A QML és C++ kapcsolatát az alábbi funkciókon kereszül fogom bemutatni:
 
@@ -91,7 +91,7 @@ Ahhoz, hogy a QML oldalhoz hozzáférjünk, a Qml motortól el kell kérni a leg
 
 (Tudjuk, hogy gyökér objektumból pontosan egy van, még ha az általánosság miatt itt listát is kapunk vissza.)
 
-A MainWindowsCppSide osztály ezután az alábbiak szerint alakul. Azért, hogy a Signals and Slots rendszer működjön, mindenképpen QObject-nek kell lennie. A konstruktor a rootObject alapján megkeresi az "ApplicationWindow" objectName-mel rendelkező objektumot és hozzáköti az addGreenEntryHandler() slotot.
+A MainWindowCppSide osztály ezután az alábbiak szerint alakul. Azért, hogy a Signals and Slots rendszer működjön, mindenképpen QObject-nek kell lennie. A konstruktor a rootObject alapján megkeresi az "ApplicationWindow" objectName-mel rendelkező objektumot és hozzáköti az addGreenEntryHandler() slotot.
 
 
 	#pragma once
@@ -147,7 +147,7 @@ A MainWindowCppSide.cpp pedig:
 	    qDebug() << "MainWindowCppSide inicializálva.";
 	}
 	
-A csatlakoztatott eseménykezelő pedig a Zöld menüpont kiválasztása esetén megkeresni a RadioCanvasList elemet, meghívja a setColor metódusát és beállítja a lineWidth tulajdonságát. Mivel ezek a QML oldalon vannak, hivatkozni rájuk csak szövegesen a nevükkel tudunk. Az invokeMethod egy adott QObject névvel adott metódusát meg tudja hívni, a QQmlProperty::write pedig értéket tud adni hasonló módszerrel. A változók, amikre az adatcsere során szükség van, azért QVariant típusúak, mivel a QML/JavaScript oldalon nincsennek típusok megadva. A QVariant egy nagyon ravasz osztály, mely egyszerre tud számos, gyakran használt típust tárolni, vagyis át tud vinni például szöveget és számot is. Tény, hogy a C++ kódban egy kicsit "körbe kell makrózni" ezeket a műveleteket, hogy a Qt meta-object rendszerének emészthető legyen, de ha megszokjuk, utána egyrészt kényelmesen használható, másrészt csak minimálisan változik esetről esetre.
+A csatlakoztatott eseménykezelő pedig a Zöld menüpont kiválasztása esetén megkeresni a RadioCanvasList elemet, meghívja a setColor metódusát és beállítja a lineWidth tulajdonságát. Mivel ezek a QML oldalon vannak, hivatkozni rájuk csak szövegesen, a nevükkel tudunk. Az invokeMethod egy adott QObject névvel adott metódusát meg tudja hívni, a QQmlProperty::write pedig értéket tud adni hasonló módszerrel. A változók, amikre az adatcsere során szükség van, azért QVariant típusúak, mivel a QML/JavaScript oldalon nincsennek típusok megadva. A QVariant egy nagyon ravasz osztály, mely egyszerre tud számos, gyakran használt típust tárolni, vagyis át tud vinni például szöveget és számot is. Tény, hogy a C++ kódban egy kicsit "körbe kell makrózni" ezeket a műveleteket, hogy a Qt meta-object rendszerének emészthető legyen, de ha megszokjuk, utána egyrészt kényelmesen használható, másrészt csak minimálisan változik esetről esetre.
 
 	void MainWindowCppSide::addGreenEntryHandler()
 	{
@@ -216,9 +216,7 @@ Végül pedig a függvény, ami objectName alapján megkeres egy elemet. Rekurz�
 
 ## További olvasnivaló
 
-  * http://doc.qt.io/qt-5/qtqml-cppintegration-interactqmlfromcpp.html
-
+  * [http://doc.qt.io/qt-5/qtqml-cppintegration-interactqmlfromcpp.html](http://doc.qt.io/qt-5/qtqml-cppintegration-interactqmlfromcpp.html)
 
 <small>Szerzők, verziók: Csorba Kristóf</small>
 
-<small>A szerzők megjelölése egyrészt azért fontos, hogy lehessen látni, kinek az alkotása egy snippet, másrészt az esetleges hibákkal kapcsolatban is őt érdemes keresni.</small>

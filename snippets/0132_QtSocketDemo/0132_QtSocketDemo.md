@@ -7,7 +7,7 @@ layout: default
 A QtSocketDemó példa alkalmazás bemutatja a socketek használatát Qt alatt. 
 [Az alkalmazás forráskódja itt érhető el.](https://github.com/csorbakristof/alkalmazasfejlesztes/)
 
-A program a következőket teszi: felépít egy szerver socketet, majd egy kliens socketet, mivel csatlakozik hozzá. Ezután másodpercenként elküld a kliens socketen egy "Mizu?" szöveget. És akárhányszor kap a szerver oldalon egy "Mizu?" kérdést, arra visszaküldi, hogy "Minden OK.".
+A program a következőket teszi: felépít egy szerver socketet, majd egy kliens socketet, amivel csatlakozik hozzá. Ezután másodpercenként elküld a kliens socketen egy "Mizu?" szöveget. És akárhányszor kap a szerver oldalon egy "Mizu?" kérdést, arra visszaküldi, hogy "Minden OK.".
 
 A program célja, hogy megmutassa, hogyan kell
 

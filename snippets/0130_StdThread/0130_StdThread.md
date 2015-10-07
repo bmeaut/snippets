@@ -4,9 +4,9 @@ layout: default
 
 # Az std::thread használata röviden
 
-Ha valami műveletet egy másik szálon akarunk lefuttatni, vagyis nagy része nem több szálon fut, csak egy művelet hatékonyabb, ha több magot is ki tud használni, akkor az std::thread egy igen egyszerű választás.
+Gyakori eset, hogy valami műveletet egy másik szálon akarunk lefuttatni, vagyis programunk nagy része nem több szálon fut, csak egy művelet hatékonyabb, ha több magot is ki tud használni, akkor az std::thread egy igen egyszerű választás.
 
-A GrainAutLine (http://bmeaut.github.io/grainautline/) alkalmazásban szükség volt egy olyan függvényre, mely képeket (rétegeket) tud egymásra keverni. Mivel ez a megjelenítés egyik fontos lépése, nem árt, ha gyorsan befejeződik. Mivel ezt pixelenként ugyanúgy és egymástól függetlenül kell elvégezni, ezért ez egy kiváló lehetőség a párhuzamosításra.
+A [GrainAutLine](http://bmeaut.github.io/grainautline/) alkalmazásban szükség volt egy olyan függvényre, mely képeket (rétegeket) tud egymásra keverni. Mivel ez a megjelenítés egyik fontos lépése, nem árt, ha gyorsan befejeződik. Mivel ezt pixelenként ugyanúgy és egymástól függetlenül kell elvégezni, ezért ez egy kiváló lehetőség a párhuzamosításra.
 
 ## Képek egymásra keverése több szálon
 
@@ -102,7 +102,6 @@ A fejlesztés során volt egy tanulságos hiba: kezdetben a szál indítás az a
 
 	threads[i] = std::thread([this, &resultImage, &roi](){ GetBlendedImage(resultImage, roi); });
 
-Vagyis a roi paramétert nem érték, hanem referencia szerint vette át a lamda kifejezés. Emiatt viszont az összes szál az indulásakor ugyanarra a roi objektumra hivatkozott. Mivel a feladat szétosztó for ciklus gyorsabban lefutott, minthogy a szálak eljutottak volna a GetBlendedImage tényleges meghívásáit (amikor is érték szerint átadják a roi aktuális értékét), ezért az összes szál az utolsó roi-ra futott le.
+Vagyis a roi paramétert nem érték, hanem referencia szerint vette át a lamda kifejezés. Emiatt viszont az összes szál az indulásakor ugyanarra a roi objektumra hivatkozott. Mivel a feladat szétosztó for ciklus gyorsabban lefutott, minthogy a szálak eljutottak volna a GetBlendedImage tényleges meghívásáig (amikor is érték szerint átadják a roi aktuális értékét), ezért az összes szál az utolsó roi-ra futott le.
 
 Kívülről annyi látszott, hogy a képnek csak az alja készül el. (De az valójában többször is.) A megoldás az volt, hogy a roi-t a lamda kifejezés értékként kapja meg, vagyis az std::thread konstruktor hívásakor a roi másolódjon le és ne ugyanarra hivatkozzon mind. Így már minden szál azon a területen dolgozott, amit a for ciklus kijelölt neki.
-

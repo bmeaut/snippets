@@ -2,15 +2,9 @@
 layout: default
 ---
 
-Eloször egy egyszeru példa, utána pedig a RobotMonitor mintaalkalmazás kódjában is elmagyarázza a muködését.
-
-A példa: JK Flip-flop C++-ban, melynek van egy StateChanged(old,new) signalja, amire feliratkozunk a változások megjelenítéséhez.
-
-STV-ben CPP-QML és QML-QML kapcsolatra is van példa.
-
 # A Signals and slots koncepció Qt alatt
 
-Az eseményvezértelt rendszerekben gyakran van szükség arra, hogy egy eseményhez hozzákössünk egy eseménykezelőt. Eredetileg C-ben és C++-ban erre valók a függvény pointerek, mivel azokat paraméterként átadva "be tudunk regisztrálni" egy meghívandó függvényt. Ezzel két gond van:
+Az eseményvezérelt rendszerekben gyakran van szükség arra, hogy egy eseményhez hozzákössünk egy eseménykezelőt. Eredetileg C-ben és C++-ban erre valók a függvény pointerek, mivel azokat paraméterként átadva "be tudunk regisztrálni" egy meghívandó függvényt. Ezzel két gond van:
 
   * Ha egy eseményhez több eseménykezelő függvényt is meg akarunk tudni adni, akkor valami pointer tárolót is létre kell hozni.
   * Ha a kezelő függvény egy objektumban van, akkor annak vagy csak statikus metódusát tudjuk beregisztrálni, vagy meg kell oldanunk, hogy az objektum this pointerét is valahogy regisztráljuk a függvénypointerrel együtt.
@@ -19,7 +13,7 @@ A Qt kihasználva a Meta-object compiler előnyeit erre a problémára alakítot
 
 ## A konkrét példa részei
 
-Az alábbi példa ( mely [itt](https://github.com/csorbakristof/alkalmazasfejlesztes) érhető el a SignalsAndSlots könyvtárban) három objektumot használ:
+Az alábbi példa (mely [itt](https://github.com/csorbakristof/alkalmazasfejlesztes) érhető el a SignalsAndSlots könyvtárban) három objektumot használ:
 
   * Application: ez képviseli az alkalmazást, ami létrehoz egy időzítőt (QTimer) és egy szimulátort (Simulator), ami egy járművet szimulál.
   * Simulator: pozíció és sebesség alapján szimulál egy járművet. Akkor lép az idő, amikor meghívódik a tick() slotja. Ezt fogjuk majd a QTimer-hez kötni, hogy másodpercenként meghívódjon.
@@ -51,13 +45,13 @@ A Q_OBJECT makrót minden olyan objektumnak tartalmaznia kell, ami a QObject-bő
 
     signals:
 
-Az arrived signal fogja jelezni, hogy megérkeztünk egy szép helyre.
+Az arrived signal fogja jelezni, hogy megérkeztünk egy szép helyre (bármit is jelentsen a szép hely :) ).
 
         void arrived(int where);
 
     public slots:
 
-Az idő haladását pedig a QTimer ennek a slotnak a hívásával fogja jelezni.
+Az idő haladását pedig a QTimer a tick() slotnak a hívásával fogja jelezni.
 
         void tick();
 
@@ -151,20 +145,20 @@ Most kapcsoljuk össze a signalokat és slotokat. Sok hibának az az oka, hogy
 
 A szintaktika egyszerű: forrás objektum, signal, cél objektum, slot.
 
-    connect(&timer, &QTimer::timeout, &simulator, &Simulator::tick);
-    connect(&simulator, &Simulator::arrived,
-            this, &Application::simulatorArrivedToNicePlace);
+        connect(&timer, &QTimer::timeout, &simulator, &Simulator::tick);
+        connect(&simulator, &Simulator::arrived,
+                this, &Application::simulatorArrivedToNicePlace);
 
 A timert pedig elindítjuk 1000ms periódus idővel.
 
-    timer.start(1000);
-}
+        timer.start(1000);
+    }
 
-void Application::simulatorArrivedToNicePlace(int where)
-{
-    qDebug() << "A szimulátor szép helyre ért: " << where;
-    exit(0);
-}
+    void Application::simulatorArrivedToNicePlace(int where)
+    {
+        qDebug() << "A szimulátor szép helyre ért: " << where;
+        exit(0);
+    }
 
 ## main.cpp
 
@@ -191,11 +185,11 @@ Az a.exec() hívás a Qt-s ablakok eseménykezelőit tartalmazná, de most ilyen
 
 ## Mire fordul le a signal és a slot?
 
-A Qt Meta-object rendszerének nagy trükkje, hogy minden szabványos C++-ra fordul le, így bármly fordítóval használható. Na de mire fordulnak le ezek a kulcsszavak, mint slots, emit, meg a signalok és slotok?
+A Qt Meta-object rendszerének nagy trükkje, hogy minden szabványos C++-ra fordul le, így bármly fordítóval használható. Na de mire fordulnak le ezek a kulcsszavak, mint slots, emit, meg maguk a signalok és slotok?
 
 A válasz meglepően egyszerű: a signal egy sima függvény lesz, amit megír helyettünk a MOC (Meta-Object Compiler). Így az emit kulcsszó igazából csak neki szól, valójában semmire nem fordul le: az "emit arrived(x);"-ból a tényleges C++ fordító már csak "arrived(x);"-et lát.
 
-A slot szintén csak egy sima metódus. Valójában az emit, slots és signals emit preprocesszor makrók. Qt Creatorban rajtuk F2-t nyomva az alábbit látjuk a qobjectdefs.h-ban:
+A slot szintén csak egy sima metódus. Valójában az emit, slots és signals preprocesszor makrók. Qt Creatorban rajtuk F2-t nyomva az alábbit látjuk a qobjectdefs.h-ban:
 
     # define emit
 
@@ -242,5 +236,5 @@ Ez a statikus metódus gyakorlatilag arra jó, hogy átadva neki egy Simulator o
 
   * Befejezésül még annyit hozzáteszek, hogy a connect-nek nyilván van egy disconnect megfelelője is, ami megszünteti a kapcsolatokat.
   * Természetesen ez a funkcionalitás más környezetekben is szükségessé vált. C# alatt például a delegate egy konténer és egy függvény pointer kombinációja, amivel ugyanezt lehet elérni.
-  * Mivel valójában a signal és slot is metódus lesz, ezért nincs akadálya annak, hogy egy signalhoz egy másik signal meghívását kapcsoljuk, vagy hogy egy slotot metódusként meghívjunk. Sőt, a C++11 óra signalhoz a connect segítségével lamda kifejezést is hozzá lehet kapcsolni.
+  * Mivel valójában a signal és slot is metódus lesz, ezért nincs akadálya annak, hogy egy signalhoz egy másik signal meghívását kapcsoljuk, vagy hogy egy slotot metódusként meghívjunk. Sőt, a C++11 óta signalhoz a connect segítségével lamda kifejezést is hozzá lehet kapcsolni.
   * További információk itt: [http://woboq.com/blog/how-qt-signals-slots-work-part2-qt5.html](http://woboq.com/blog/how-qt-signals-slots-work-part2-qt5.html)
