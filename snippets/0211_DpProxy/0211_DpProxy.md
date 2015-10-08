@@ -31,7 +31,17 @@ public:
 
 Ennek az osztálynak a használata egyrészt nagyon egyszerű és kényelmes, másrészt van még egy nagy előnye: könnyen le lehet cserélni. Tesztelési célokra készíthetünk egy olyan leszármazottat is, ami valójában egy szimulátorhoz csatlakozik. Vagy egy olyat, ami csak a felhasználó felület tesztelésére szolgál és csak kiírja, hogy "most előre küldjük a robotot 3 méterrel".
 
-(Amennyiben a szimulátor és az igazi robot eléggé hasonló protokollal kommunikál, akkor lehet, hogy felesleges két Proxy kialakítása. Elég, ha a Proxy konstruktora paraméterként megkap egy kommunikációs objektumot, amit használ majd. Ennek lecserésésével a Proxy nem is tudja majd, hogy valójában az igazi robottal beszél, vagy a szimulátorral.) **Ref dependency injection**
+(Amennyiben a szimulátor és az igazi robot eléggé hasonló protokollal kommunikál, akkor lehet, hogy felesleges két Proxy kialakítása. Elég, ha a Proxy konstruktora paraméterként megkap egy kommunikációs objektumot, amit használ majd. Ennek lecserésésével a Proxy nem is tudja majd, hogy valójában az igazi robottal beszél, vagy a szimulátorral.)
+
+### Általános felépítés
+
+A proxy általános UML osztálydiagramja az alábbi:
+
+![](image/Proxy.png)
+
+Lényege, hogy az absztrakt ősosztály előír egy műveletet, amit a tényleges implementáció (RealSubject) is megvalósít, de a Proxy is. Viszont a Proxy tartalmaz egy hivatkozást (ez lehet egy pointer helyett akár hálózati kapcsolat is) a RealSubjectre és valójában csak továbbítja a kérést.
+
+Itt érdemes megjegyezni, hogy a Proxy minta szorosan kapcsolódik a dependency injection koncepcióhoz, mivel előfordul, hogy egy osztály egy függőségét (valamilyen más objektumot, amire szüksége van) egy proxyn kereszül éri el. 
 
 ### További példák
 

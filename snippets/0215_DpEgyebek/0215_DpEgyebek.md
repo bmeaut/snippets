@@ -237,6 +237,8 @@ Egyesek szerint antipattern, az API-ját mindenki támogassa, vagy legyen előtt
 
 http://en.wikipedia.org/wiki/Proactor_pattern
 
+![](image/Proactor.png)
+
 Egy async reactor. Hosszan tartó folyamatokat futtat async, majd completion handlert hív.
 
 ## Thread pool (MED)

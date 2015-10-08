@@ -18,6 +18,10 @@ Ehelyett a szörny konfigurációnál beállíthatjuk egy konkrét példány (a 
 
 A prototype olyasmi, mint a factory, csak egy kezdeti mintapéldánnyal adjuk meg, hogy milyeneket szeretnék majd gyártani, és nem pedig azzal, hogy a factory method leszármaztatott osztályai közül választunk egyet. (A fenti példában például a sok beállítás miatt vagy sokféle factory kellene, vagy a példányosítás után amúgy is át kellene állítani egy csomó mindent.)
 
+Általánosan a prototype osztály diagramja az alábbi. Minden konkrét implementációnak rendelkeznie kell egy a klónozásra szolgáló metódussal, hogy fel lehessen használni további példányok létrehozására.
+
+![](image/prototype.png)
+
 Megjegyzések
 
   * Tipikus alkalmazási eset az, amikor a példányosítás valamiért költséges folyamat, így sokkal jobban megéri egy példányt létrehozni, utána pedig már csak azt másolni. (Például ha a példányosítás bonyolultan, a Builder minta alapján készül.)
@@ -30,3 +34,4 @@ Megjegyzések
 Egy képszerkesztő rendszerben (vagy például az OpenCV osztálykönyvtárban) tipikusan vannak színes és szürke árnyalatos képek, eltérő bitmélységű képek stb. A rajzoló funkciók ezek mindegyikén futnak, belül megoldják a helyes viselkedés kiválasztását. Ha ilyenkor akarunk egy olyan képet, ami a beállításaiban hasonlít egy másik, már létező képhez, akkor a legegyszerűbb lemásolni (klónozni).
 
 <small>Szerzők, verziók: Csorba Kristóf</small>
+

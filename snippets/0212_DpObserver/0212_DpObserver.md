@@ -59,6 +59,12 @@ Hátrányok:
 
   * Elég nehéz módosítani az üzenetek formátumát, így előfordulhat, hogy az idővel szűk keresztmetszet lesz: egyre több mindenről derül ki, hogy azt is át kellene adni az observernek.
 
+Általánosan az observer minta osztálydiagramja az alábbi:
+
+![](image/Observer.png)
+
+A megfigyelt osztálytól azt várjuk el, hogy tárolja a megfigyelő observerjeit és ebbe a tárolóba fel lehessen venni és ki lehessen venni konkrét observer példányokat (registerObserver(), unregisterObserver()). Ezen kívül természetesen képesnek kell lennie arra, hogy a megfigyelt esemény bekövetkezésekor értesítse az observereket (notifyObservers()). Az observerektől mindössze annyit várunk el, hgoy a notifyObservers() jelzését tudják fogadni, ami ebben az esetben a notify() metódus implementálása. (Előfordul az is, hogy a notify() paramétere a Subject maga, ha olyan eseményt figyel az observer, aminél fontos, hogy kinél következett be.)
+
 ### Példa: robotban szenzor adatok frissítése
 
 Egy autonóm mobil robotban a sok fedélzeti szenzor értékét vagy folyamatosan pollozni kell (vagyis periodikusan lekérdezni, hogy változott-e), vagy ki lehet alakítani egy observeres megoldást, ahol a szenzor értesíti a regisztrált observereket. Vagy akkor, ha (1) új mérési eredmény áll rendelkezésre, vagy (2) ha az új eredmény jelentősen el is tér az előzőtől.

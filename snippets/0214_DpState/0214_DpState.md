@@ -97,6 +97,14 @@ További lehetőségek a fenti példában
 
 A Strategy és State minta elég közel állnak egymáshoz. A fő eltérés, hogy a strategy mintában nem a belső állapot dönti el, hogy mikor vált stratégiát, hanem azt kívülről kapja az objektum, például a konfigurációtól függően. De a state mintához a strategy is hasznos lehet, ha például számos állapotban kell vonalat követnie a robotnak, viszont ezt a vonalkövetési módszert cserélhetővé akarjuk tenni. A cserét macera minden állapotban lekódolni, sokkal jobb, ha az viszont strategy minta szerint kerül bele.
 
+A state minta osztálydiagramja az alábbi:
+
+![](image/State.png)
+
+A Context, vagyis aminek állapotai vannak, valamilyen kérés (request()) kezelése esetén a State egyik ősosztályára bízza a helyzet kezelését (state.handle()). Attól függően, hogy éppen melyik az aktuális állapot (ConcreteStateA vagy ConcreteStateB), attól függ a ténylegesen meghívott handle(). Fontos, hogy a State leszármazottak számára valahogy lehetővé kell tenni, hogy lecseréljék magukat egy másik állapotra (pl. Context::setCurrentState(State newState)), mert az állapotok csak ekkor fognak tudni váltani magukról egy másikra.
+
+Az állapotváltást a State leszármazottjai kezdeményezik. Vagy úgy, hogy a Context számára mindig létrehoznak egy új State példányt (pl. context.setCurrentState(make_unique<ConcreteStateB>()) ), vagy ha nem akarjuk mindig újra példányosítani az osztályokat, a Context maga is tárolhat minden State leszármazottból egy példányt (pl. std::map-ben), ahonnan a State csak elkéri és átadja a Contextnek, mint következő.
+
 ### További példák
 
   * Hierarchikus menük implementálására is hasznos lehet a minta: minden almenü egy state osztály.
