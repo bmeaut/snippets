@@ -81,7 +81,7 @@ A doxygen több jelölésrendszert is támogat ([részletek itt](http://www.stac
   * @warning: figyelmeztetések. Tipikusan piros vonallal emeli ki a doxygen.
   * @bug: ismert hibák
   * @note: megjegyzés, behúzott bekezdésbe kerül majd
-  * @see vagy @sa: hivatkozás például másik osztály másik metódusára. A \:: jelölést felismeri a Doxygen.
+  * @see vagy @sa: hivatkozás például másik osztály másik metódusára. A :: jelölést (scope operator) felismeri a Doxygen.
 
 A Doxygen a dokumentációt elsősorban a forráskód fájlokból generálja, de ezen kívül beolvassa többek között a txt és md kiterjeszésű fájlokat is. Így az alábbi parancsokkal több oldalas, tartalomjegyzékes, oldalak közötti hivatkozásokkal teleszőtt leírásokat is tudunk készíteni:
 

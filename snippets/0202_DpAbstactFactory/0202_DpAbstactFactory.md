@@ -18,6 +18,12 @@ Az abstract factory egymástól függő objektumok egy családját létrehozó i
 
 Ez tipikusan akkor hasznos, ha cserélhető komponenseink vannak, de azokat nem lehet tetszőlegesen, egymástól függetlenül cserélni, csak bizonyos kombinációkban.
 
+Az abstract factory osztálydiagramja az alábbi:
+
+![](image/AbstractFactory.png)
+
+A látrehozás helyén csak egy AbstractFactory referenciánk van és annak tudjuk a createProductA és createProductB metódusát meghívni. Azt, hogy valójában az 1-es vagy 2-es termékcsoport A vagy B termékét hozzuk létre, azt az határozza meg, hogy valójában egy ConcreteFactory1 vagy ConcreteFactory2 példányt használunk.
+
 Előnyök
 
   * Könnyű lecserélni az egész "készletet", mivel csak az abstract factory példányosításánal kell váltani.

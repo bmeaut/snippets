@@ -92,16 +92,16 @@ Ez az objektum orientált megközelítés bár elsőre esetleg feleslegesen bony
 
 További lehetőségek a fenti példában
 
-  * Ha az állapotváltáskor jelentős logikát kell futtatni, akkor a State váltást végző függvény már meg is hívhat valami metódust, ami a belépéskor fut le.
+  * Ha az állapotváltáskor jelentős logikát kell futtatni, akkor a State váltást végző függvény már meg is hívhatja az új állapotnak valami onEntering() metódusát, hogy az a belépéskor mindig lefusson. Ugyanígy lehet onLeave() metódust is készíteni.
   * a StandbyState-ben az onTick esemény segítségével villogjon egy helyzetjelző fény
 
-A Strategy és State minta elég közel állnak egymáshoz. A fő eltérés, hogy a strategy mintában nem a belső állapot dönti el, hogy mikor vált stratégiát, hanem azt kívülről kapja az objektum, például a konfigurációtól függően. De a state mintához a strategy is hasznos lehet, ha például számos állapotban kell vonalat követnie a robotnak, viszont ezt a vonalkövetési módszert cserélhetővé akarjuk tenni. A cserét macera minden állapotban lekódolni, sokkal jobb, ha az viszont strategy minta szerint kerül bele.
+A Strategy és State minta elég közel állnak egymáshoz. A fő eltérés, hogy a strategy mintában nem a belső állapot dönti el, hogy mikor vált stratégiát, hanem azt kívülről kapja az objektum, például a konfigurációtól függően. De a state mintához a strategy is hasznos lehet, ha például számos állapotban kell vonalat követnie a robotnak, viszont ezt a vonalkövetési módszert cserélhetővé akarjuk tenni. A cserét macera minden állapotban lekódolni, sokkal jobb, ha az viszont strategy minta szerint kerül bele, a State-ek pedig csak használják.
 
 A state minta osztálydiagramja az alábbi:
 
 ![](image/State.png)
 
-A Context, vagyis aminek állapotai vannak, valamilyen kérés (request()) kezelése esetén a State egyik ősosztályára bízza a helyzet kezelését (state.handle()). Attól függően, hogy éppen melyik az aktuális állapot (ConcreteStateA vagy ConcreteStateB), attól függ a ténylegesen meghívott handle(). Fontos, hogy a State leszármazottak számára valahogy lehetővé kell tenni, hogy lecseréljék magukat egy másik állapotra (pl. Context::setCurrentState(State newState)), mert az állapotok csak ekkor fognak tudni váltani magukról egy másikra.
+A Context, vagyis aminek állapotai vannak, valamilyen kérés (request()) kezelése esetén a State egyik ősosztályára bízza a helyzet kezelését (state.handle()). Attól függ a ténylegesen meghívott handle(), hogy éppen melyik az aktuális állapot (ConcreteStateA vagy ConcreteStateB). Fontos, hogy a State leszármazottak számára valahogy lehetővé kell tenni, hogy lecseréljék magukat egy másik állapotra (pl. Context::setCurrentState(State& newState)), mert az állapotok csak ekkor fognak tudni váltani magukról egy másikra.
 
 Az állapotváltást a State leszármazottjai kezdeményezik. Vagy úgy, hogy a Context számára mindig létrehoznak egy új State példányt (pl. context.setCurrentState(make_unique<ConcreteStateB>()) ), vagy ha nem akarjuk mindig újra példányosítani az osztályokat, a Context maga is tárolhat minden State leszármazottból egy példányt (pl. std::map-ben), ahonnan a State csak elkéri és átadja a Contextnek, mint következő.
 

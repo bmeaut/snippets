@@ -2,10 +2,6 @@
 layout: default
 ---
 
-TODO:
-- UML diagram (Factory, ConcreteFactory, Product elnevezésekkel)
-- Hivatkozás a példaprogramra, ha lesz
-
 ## Factory method
 
 A factory method célja, hogy egy ősosztály leszármazottjai közül az egyiknek létrehozzuk egy példányát, de azt máshol döntjük el, hogy melyiket.
@@ -20,23 +16,15 @@ Például egy játék pályaszerkesztőjében kattintásra létre lehet hozni ú
 
 A Factory method tervezési minta osztálydiagramja az alábbi:
 
-![](images/FactoryMethodClassDiagram.png)
+![](image/FactoryMethodClassDiagram.png)
 
-A Factory egy ősosztály, melyre a példányosítást kérő kliens például egy referenciával hivatkozik majd. Ezt a referenciát lehet majd az egyes ConcreteFactory osztályok példányaira állítani. Az ősosztály, mint interface, definiálja a példányosító objektumot (tipikusan tisztán absztrakt, virtuális függvényként, de akár alapértelmezett implementációt is tartalmazhat). A kliens amikor szeretne egy Product példányt, azt nem a konstruktorával hozza létre (new operátorral), hanem a Factory::Create metódus segítségével. Ebből pedig nyilván azé az osztályé fog lefutni, amelyiknek egy példányára a kliens éppen hivatkozik.
+A Factory egy ősosztály (itt Creator), melyre a példányosítást kérő kliens például egy referenciával hivatkozik majd. Ezt a referenciát lehet majd az egyes ConcreteCreator osztályok példányaira állítani. Az ősosztály, mint interface, definiálja a példányosító objektumot (tipikusan tisztán absztrakt, virtuális függvényként, de akár alapértelmezett implementációt is tartalmazhat). A kliens amikor szeretne egy Product példányt, azt nem a konstruktorával hozza létre (new operátorral), hanem a Creator::factoryMethod metódus segítségével. Ebből pedig nyilván azé az osztályé fog lefutni, amelyiknek egy példányára a kliens éppen hivatkozik.
 
 Megjegyzések
 
   * Ha van factory method, akkor nem használunk new operátort, hanem a factory methodokat.
   * Ez a minta akkor hasznos, ha a létrehozás helyén nem akarom eldönteni, hogy pontosan milyen példányt akarok létrehozni. Vagy azért, mert a kliens osztálynak ehhez semmi köze, vagy azért, mert nagyon sok helyen kell példányosítani és macerás mindenhova odarakni a döntési logikát.
   * Szintén hasznos a minta akkor, ha a létrehozás nem triviális folyamat (nem csak a konstruktort kell meghívni), mivel akkor a létrehozási folyamat ahelyett, hogy sok helyen előfordulna a forráskódban, bekerül a factory methodba. (Ez egy kicsit hasonlít a Builder mintához.)
-  * Ez a megoldás kapcsolódik a dependency injection koncepcióhoz is. Annak is az a lényege, hogy kívülről kapuk azokat az objektumokat (jelen esetben a factoryt), amire később szükségünk lesz. (Ahelyett, hogy helyben be lenne drótozva.)
-
-### Példa: bemenet kiválasztása
-
-...
-
-### Példa: User input type (konzol, COM, socket (Nightshade példa!))
-
-...
+  * Ez a megoldás kapcsolódik a dependency injection koncepcióhoz is. Annak is az a lényege, hogy kívülről kapjuk azokat az objektumokat (jelen esetben a factoryt), amire később szükségünk lesz. (Ahelyett, hogy helyben be lenne drótozva.)
 
 <small>Szerzők, verziók: Csorba Kristóf</small>

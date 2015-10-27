@@ -44,7 +44,7 @@ Ezután bárhol, ahol eddig az ImageMorphot használtuk, használhatjuk az Image
 
 ### Részletek
 
-Bent aggregál egy eredeti példányt (vagyis például egy pointerrel hivatkozik egy eredeti példányra), a decorator ősosztály is implementálja a dekorálandó interfészt, de csak továbbít. Leszármazott dekorátorok pedig kiegészíthetik a simán továbbhívó metódusokat.
+A minta bent aggregál egy eredeti példányt (vagyis például egy pointerrel hivatkozik egy eredeti példányra), a decorator ősosztály is implementálja a dekorálandó interfészt, de csak továbbít. Leszármazott dekorátorok pedig kiegészíthetik a simán továbbhívó metódusokat.
 
     class abstract Window;
     class SimpleWindow : Window;

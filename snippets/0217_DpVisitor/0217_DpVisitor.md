@@ -10,7 +10,7 @@ A visitor tervezési minta célja, hogy (látszólag) új funkciókkal lehessen 
 
 Tegyük fel, hogy egy vektoros rajzprogramot készítünk, amiben az alakzatok (Circle, Rectangle és Ellipse osztályok) egy közös Shape ősből származnak. Az alapvető funkciókkal már készen vagyunk, viszont most szeretnénk készíteni két új funkciót. Az egyik egy alternatív megjelenítési stílus, a másik pedig egy exportálási funkció, ami XML fájlba tudja kiírni a rajzunk tartalmát.
 
-Tegyük fel, hogy az osztályaink már meg tudják magukat jeleníteni, de másképp, de többet nem. És az osztályokhoz nem is akarunk már hozzányúlni. Vagy azért, mert nem tudunk, vagy azért, mert nem akarjuk óriás osztályokká tenni őket. Sokkal jobb lenne a fenti két új funkciót valahogy kiszervezni az osztályokból.
+Tegyük fel, hogy az osztályaink már meg tudják magukat jeleníteni, de többet nem. És az osztályokhoz nem is akarunk már hozzányúlni. Vagy azért, mert nem tudunk, vagy azért, mert nem akarjuk óriás osztályokká tenni őket. Sokkal jobb lenne a fenti két új funkciót valahogy kiszervezni az osztályokból.
 
 A visitor tervezési minta lényege, hogy készítünk egy lehetőséget arra, hogy egy kívülről kapott objektum minden osztályunkat "végiglátogasson" és mindegyikkel csináljon valamit. Ráadásul a visitornak és a végiglátogatott osztályoknak is többféle osztálya lehet: most van háromféle alakzatunk, amit nyilvánvalóan eltérően kell kezelni, és van két funkciónk (új megjelenítés és XML export).
 
@@ -18,11 +18,11 @@ A megoldás az alábbi osztály diagramon látható:
 
 ![](images/VisitorClassDiagram.png)
 
-Minden Shape leszármazottat felkészítünk arra, hogy fogadjon egy visitort. Amikor az accept() metódusnak átadjuk majd a konkrét visitort, az accept() fogja meghívni a visitor visit() metódusát, ami paraméterként megkapha a hívó referenciáját.
+Minden Shape leszármazottat felkészítünk arra, hogy fogadjon egy visitort. Amikor az accept() metódusnak átadjuk majd a konkrét visitort, az accept() fogja meghívni a visitor visit() metódusát, ami paraméterként megkapja a hívó referenciáját.
 
 ![](images/VisitorSeqDiag.png)
 
-Ezt a műveletet hívjuk double dispatchnek. Azért jó, mert ha egy generikus tárolónk van, ami csak Shape* pointereket tárol, valamint van egy ShapeVisitor* pointerünk a visitorra (de nem tudjuk, konkrétan melyik az), akkor is minden szépen működik: az accept() bár ShapeVisitor referenciát kap, mivel a visit() virtuális függvény, a helyes leszármazott visitor implementációt fogja meghívni. A visit() paramétereként pedig a this pointert adja át, ami már a tényleges Shape leszármazottra mutató pointer (és nem Shape*, azért kell minden Shape leszármazottban implementálni az accept()-et és ezért nem lehet simán örökölni az ősből). Így ténylegesen a megfelelő visitor implementációnak a meglátogatott alakzatnak megfelelő metódusa fog meghívódni. (Ezt elegánsan úgy is mondhatjuk, hogy a meghívott metódus mind a visitor, mind az alakzat dinamikus típusának megfelelően hívódik meg.)
+Ezt a műveletet hívjuk double dispatchnek. Azért jó, mert ha egy generikus tárolónk van, ami csak Shape* pointereket tárol, valamint van egy ShapeVisitor* pointerünk a visitorra (de nem tudjuk, konkrétan melyik az), akkor is minden szépen működik: az accept() bár ShapeVisitor referenciát kap, mivel a visit() virtuális függvény, a helyes leszármazott visitor implementációt fogja meghívni. A visit() paramétereként pedig a this pointert kapja meg, ami már a tényleges Shape leszármazottra mutató pointer (és nem Shape*, azért kell minden Shape leszármazottban implementálni az accept()-et és ezért nem lehet simán örökölni az ősből). Így ténylegesen a megfelelő visitor implementációnak a meglátogatott alakzatnak megfelelő metódusa fog meghívódni. (Ezt elegánsan úgy is mondhatjuk, hogy a meghívott metódus mind a visitor, mind az alakzat dinamikus típusának megfelelően hívódik meg.)
 
 ### Egyéb részletek
 
@@ -37,10 +37,6 @@ Ilyenkor lehet készíteni a meglátogatandó elemek tárolója számára egy ol
           lambda(s);
        }
     }
-
-### További példák
-
-
 
 ### További olvasnivaló
 

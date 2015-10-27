@@ -11,15 +11,15 @@ Az alábbi példa egy konkrét implementációja a visitor és observer tervezé
 Ez a példaprogram a Visitor és Observer design patternek működését mutatja be.
 Egy tároló objektumban (ElementContainer) elemeket (ElementBase leszármazottjai, ElementInt és ElementString) tárolunk.
 
-Az observer (Observer osztály, az ObserverBase leszármazottja) minden egyes Elementhez be van regisztrálva, hogy az ha változik a belső állapota (value attribútuma), akkor erről szól az observernek.
+Az observer (Observer osztály, az ObserverBase leszármazottja) minden egyes Elementhez be van regisztrálva, hogy ha változik annak belső állapota (value attribútuma), akkor erről szóljon az observernek.
 
-Egy visitor (Visotor, ami a VisitorBase-ből származik) a tárolóban lévő összes elemet módosítja. Tud kezelni ElementInt és ElementString objektumokat is.
+Egy visitor (Visitor, ami a VisitorBase-ből származik) a tárolóban lévő összes elemet módosítja. Tud kezelni ElementInt és ElementString objektumokat is.
 
 A következőkben bemutatom a forráskód részleteit, nem feltétlenül a forráskódban szereplő sorrendben.
 
 ## Ősosztályok
 
-Ősosztály a visitorok számára, melyek ElementInt és ElementString objektumokat tudnak fogadni. A visitor minta lényege, hogy minden ElementInt és ElementString meg fogja hívni a visitor megfelelő metódusát önmagára, így a visitor minden elemen végre tudja hajtani az általa képviselt műveletet.
+A VisitorBase ősosztály a visitorok számára, melyek ElementInt és ElementString objektumokat tudnak fogadni. A visitor minta lényege, hogy minden ElementInt és ElementString meg fogja hívni a visitor megfelelő metódusát önmagára, így a visitor minden elemen végre tudja hajtani az általa képviselt műveletet.
 
 	class VisitorBase
 	{
@@ -28,7 +28,7 @@ A következőkben bemutatom a forráskód részleteit, nem feltétlenül a forr�
 	    virtual void Visit(ElementString& element) = 0;
 	};
 
-Az observerek ősosztálya. Minden ElementBase leszármazottnak be lehet ilyen objektumokat regisztrálni, hogy ennek szóljanak, ha változik az értékük.
+Az ObserverBase az observerek ősosztálya. Minden ElementBase leszármazottnak be lehet ilyen objektumokat regisztrálni, hogy neki is szóljanak, ha változik az értékük.
 
 	class ObserverBase
 	{
@@ -37,7 +37,7 @@ Az observerek ősosztálya. Minden ElementBase leszármazottnak be lehet ilyen o
 	    virtual void ValueChanged(string oldValue, string newValue) = 0;
 	};
 
-A tároló elemeinek ősosztálya. Minden elem meg tudja magát jeleníteni, tud kezelni visitort, valamint observereket is be lehet regisztrálni mindegyiknek, amiket értesít, ha az értéke megváltozik.
+Az ElementBase a tároló elemeinek ősosztálya. Minden elem meg tudja magát jeleníteni, tud kezelni visitort, valamint observereket is be lehet regisztrálni mindegyiknek, amiket értesít, ha az értéke megváltozik.
 
 Itt tároljuk a pointereket a regisztrált observerekre.
 
@@ -132,7 +132,7 @@ Ez a konkrét visitor osztály. Int típus esetén hozzáad 100-at az értékhez
 
 Ezt a műveletet fogjuk végrehajtani az összes tárolt elemen. (Az ilyen műveletek hatására az Element értesíteni fogja az összes observerét a változásról.)
 
-Így a visitor gyakorlatileg egy új műveletet definiál az Element-ek felett, melyhez azonban nem kell módosítani az Element-ek osztályait.
+Így a visitor gyakorlatilag egy új műveletet definiál az Element-ek felett, melyhez azonban nem kell módosítani az Element-ek osztályait.
 
 Az elemek Accept metódusa a visitor megfelelő metódusát fogja mindig visszahívni.
 
@@ -172,9 +172,9 @@ Ez pedig egy konkrét observer implementáció, mely a konzolra kiírja az ért�
 
 Ez a tároló osztály az ElementBase leszármazottjait tudja eltárolni. Az elemeknek ő az ownere, a tároló a megszűnésekor a tárolt elemeit is megszünteti. Ezt úgy oldja meg, hogy unique_ptr smart pointerrel tárolja őket.
 
-Az AddAndTakeOwnership metódus unique_ptr-t kap paraméterként, amit viszont nem lehet másolni, csak mozgatni (move semantics), ezért a vektorba mentésnél az std::move függvény segítségével mozgatjuk az értéket. Ez azért fontos, mert így nem lehet véletlenül sem lemásolni egy unique_ptr-t, aminek hatására végül mégiscsak több smart pointer birtokolná az objektumot. Mozgatáskor a forrás tudja, hogy elvesztette az ownershipet és nullptr-re állítja magát.
+Az AddAndTakeOwnership metódus unique\_ptr-t kap paraméterként, amit viszont nem lehet másolni, csak mozgatni (move semantics), ezért a vektorba mentésnél az std::move függvény segítségével mozgatjuk az értéket. Ez azért fontos, mert így nem lehet véletlenül sem lemásolni egy unique\_ptr-t, aminek hatására végül mégiscsak több smart pointer birtokolná az objektumot. Mozgatáskor a forrás tudja, hogy elvesztette az ownershipet és nullptr-re állítja magát.
 
-(Szintén a unique_ptr másolhatatlansága miatt kell a Show() metódusban referencia szerint végigmenni az elemeken, mivel ideiglenes másolatot itt sem készíthetünk, vagyis sima "auto element : elements" nem fordulna le.)
+(Szintén a unique\_ptr másolhatatlansága miatt kell a Show() metódusban referencia szerint végigmenni az elemeken, mivel ideiglenes másolatot itt sem készíthetünk, vagyis egy sima "auto element : elements" nem fordulna le.)
 
 Ahhoz, hogy a visitorokat könnyen át tudjuk adni minden elemnek, a tároló Accept metódusa továbbítja azt minden elemének.
 
@@ -208,7 +208,7 @@ Ahhoz, hogy a visitorokat könnyen át tudjuk adni minden elemnek, a tároló Ac
 
 A főprogramban 4 elemet hozunk létre. Mindbe regisztráljuk az observert, majd berakjuk a tárolóba.
 
-(Érdekesség, hogy a move semantika miatt a unique_ptr-t minden elemnél újra lehet hasznosítani.)
+(Érdekesség, hogy a move semantika miatt a unique\_ptr-t minden elemnél újra lehet hasznosítani.)
 
 Az egyes fázisok után a kimenetet kommentárba beleírtam a forráskódba.
 

@@ -8,7 +8,7 @@ A composite olyan objektumgráfoknál használatos, ahol a gráf egy eleme ugyan
 
 ### Bevezető példa
 
-Az ablakkezelő rendszerkben az ablakok control-okból állnak (nyomógomb, szövegdoboz stb.). Viszont a hierarchikus csoportosítás kedvéért vannak container controlok is, melyekbe amellett, hogy ők maguk is controlok, további controlokat lehet belerakni. Amikor az ablakkezelő rendszer meg akar jeleníteni egy controlt, meghívja a rajzoló metódusát. Ha ez éppen egy container control, akkor annak a rajzoló metódusa továbbhívja az összes tartalomazott control rajzoló metódusát. Ezáltal a hívó oldalnak nem kell tudnia, hogy egy egyszerű controlt, vagy egy összetettet jelenít éppen meg.
+Az ablakkezelő rendszerkben az ablakok control-okból állnak (nyomógomb, szövegdoboz stb.). Viszont a hierarchikus csoportosítás kedvéért vannak container controlok is, melyekbe amellett, hogy ők maguk is controlok, további controlokat lehet belerakni (pl. GroupBox). Amikor az ablakkezelő rendszer meg akar jeleníteni egy controlt, meghívja a rajzoló metódusát. Ha ez éppen egy container control, akkor annak a rajzoló metódusa továbbhívja az összes tartalmazott control rajzoló metódusát. Ezáltal a hívó oldalnak nem kell tudnia, hogy egy egyszerű controlt, vagy egy összetettet jelenít éppen meg.
 
 A Composite design pattern lényege, hogy ugyanazon interfészen kereszül érünk el egy elemet és többet egyszerre.
 
@@ -41,21 +41,21 @@ A megvalósítás alapja általában annyi, hogy az ősosztály (mint a control)
 
 A Composite design pattern egyes megvalósításai például abban eltérnek, hogy a gyerek manipuláló metódusok az ősosztályban vannak-e. A fenti példában ilyen lenne a
 
-   Control::AddControl(Control& c);
+    Control::AddControl(Control& c);
 
 Egy általános UML osztálydiagram az alábbi:
 
 ![](image/Composite.png)
 
-A Componentnek kétféle leszármazottja van: a Leaf, amik a "hagyományos" elemei a gráfnak (például Button a felhasználói felületen), a Composite pedig olyan elem, ami másik elemeket tartalmaz (pl. Panel a felhasználói felületen).
+A Componentnek kétféle leszármazottja van: a Leaf, amik a "hagyományos" elemei a gráfnak (például Button a felhasználói felületen), a Composite pedig olyan elem, ami másik elemeket tartalmaz (pl. GroupBox vagy TabControl a felhasználói felületen).
 
 ### Példa: RobonAUT manőver
 
-Ha egy robot az összetett menővereket úgy végzi el, hogy azok egyszerűbb menűverek sorozatai, akkor a Composite design pattern segítégével nagyon elegánsan fel lehet építeni ezeket a hierarchikus menőver szekvenciákat. Minden menőver vagy elemi, és akkor a futtató metódus azt végre is hajtja, vagy összetett, amikor pedig a futtató metódus sorban végrehajtja az egyes tartalmazott menővereket.
+Ha egy robot az összetett menővereket úgy végzi el, hogy azok egyszerűbb manőverek sorozatai, akkor a Composite design pattern segítégével nagyon elegánsan fel lehet építeni ezeket a hierarchikus menőver szekvenciákat. Minden menőver vagy elemi, és akkor a futtató metódus azt végre is hajtja, vagy összetett, amikor pedig a futtató metódus sorban végrehajtja az egyes tartalmazott manővereket.
 
 Az implementáció nagyon hasonló lenne a fenti Control példához, csak Control helyett Maneuver, draw() helyett pedig execute() lenne. Fontos, hogy az execute() metódus csak akkor térjen vissza, ha a robot ténylegesen be is fejezte a manővert.
 
-(A megoldás igény esetén még a Command design patternnel is kominálható, ha az elemi manőverek objektumoknak egy külön Command objektum megadásával mondjuk meg, hogy ténylegesen mi lesz a feladat.)
+(A megoldás igény esetén még a Command design patternnel is kominálható, ha az elemi manőver objektumoknak egy külön Command objektum megadásával mondjuk meg, hogy ténylegesen mi lesz a feladat.)
 
 ### Példa: áramköri blokkok szimulációban
 

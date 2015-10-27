@@ -8,9 +8,9 @@ a singleton egy olyan osztály, melyből csak egyetlen egy példány létezik a 
 
 ### Bevezető példa
 
-Tegyük fel, hogy egy ConfigManager osztályt készítünk, mely egy konfigurációs fájlból olvas be beállításokat. A programunkban nagyon sok helyen szükségünk van ezeknek a beállításoknak az olvasására, de azt is biztos, hogy egynél több példányra nem lesz szükség a ConfigManager osztályból.
+Tegyük fel, hogy egy ConfigManager osztályt készítünk, mely egy konfigurációs fájlból olvas be beállításokat. A programunkban nagyon sok helyen szükségünk van ezeknek a beállításoknak az olvasására, de az is biztos, hogy egynél több példányra nem lesz szükség a ConfigManager osztályból.
 
-Ekkor a ConfigManager egy singleton lesz:
+Ekkor a ConfigManager egy singleton lesz, például az alábbiak szerint:
 
     class ConfigManager
     {
@@ -59,7 +59,7 @@ További lehetséges implementáció:
 Hátránya:
 
   * Nehezíti a unit tesztelést, mert globális állapotot vezet be a rendszerbe, ezért a teszeléshez a program egy kis részének nehezebb teljesen izoláltan egy olyan kis környezetet szimulálni, melyben a tesztet végre kell hajtani.
-  * Túlzott használata (singletonism) anti-patternnek minősül. Sokan hajlamosak mindent singletonná tenni. Viszont ha esetleg kiderül, hogy mégis lehet belőle még egy példány, akkor az nagyon nagy átalakítást igényel a programban. (Egyik projektünkben ilyen eset volt egy partnernyilvántartó rendszerben, amikor szerencsére az adatbázis kapcsolat nem volt singleton, mert fél év múlva kiderült, hogy néha nyitnunk kell egy az állandóan használttól független adatbázis kapcsolatot, amin egyébként ugyanazokat a viszonylag bonyolult műveleteket kell tudni elvégezni, mint a szokásos funkciók esetén. Ha singleton lett volna, nem tudjunk volna könnyedén példányosítani még egyet.)
+  * Túlzott használata (singletonism) anti-patternnek minősül. Sokan hajlamosak mindent singletonná tenni. Viszont ha esetleg kiderül, hogy mégis lehet belőle még egy példány, akkor az nagyon nagy átalakítást igényel a programban. (Egyik projektünkben ilyen eset volt egy partnernyilvántartó rendszerben, amikor szerencsére az adatbázis kapcsolat nem volt singleton, mert fél év múlva kiderült, hogy néha nyitnunk kell egy az állandóan használttól független adatbázis kapcsolatot, amin egyébként ugyanazokat a viszonylag bonyolult műveleteket kell tudni elvégezni, mint a szokásos funkciók esetén. Ha singleton lett volna, nem tudtunk volna könnyedén példányosítani még egyet.)
 
 ### További példák
 
@@ -69,9 +69,9 @@ Hátránya:
 
 ### Multiton, mint általánosítás
 
-A skeleton általánosításra az egyetlen példány helyett (1) előre adott számú példány esetére, vagy (2) bizonyos kategóriánként pontosan egy példányra.
+A singleton általánosításra az egyetlen példány helyett (1) előre adott számú példány esetére, vagy (2) bizonyos kategóriánként pontosan egy példányra.
 
-Hívják még registry of singletonsnak is, ahol kulcsonként csak egyetlen példány lehet. Erre konkrét példa a Lazy Initialization minta leírásában olvasható Lazy Factoryként.
+Hívják még registry of singletonsnak is, ahol kulcsonként csak egyetlen példány lehet. Erre konkrét példa a Lazy Initialization minta leírásában olvasható Lazy Factory.
 
 Konkrét példa lehet beágyazott rendszerben az olyan perifériák burkoló objektumai, amikből több is lehet. Például nyomógombok.
 

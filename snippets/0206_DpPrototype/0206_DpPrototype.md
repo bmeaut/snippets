@@ -24,14 +24,14 @@ A prototype olyasmi, mint a factory, csak egy kezdeti mintapéldánnyal adjuk me
 
 Megjegyzések
 
-  * Tipikus alkalmazási eset az, amikor a példányosítás valamiért költséges folyamat, így sokkal jobban megéri egy példányt létrehozni, utána pedig már csak azt másolni. (Például ha a példányosítás bonyolultan, a Builder minta alapján készül.)
+  * Tipikus alkalmazási eset az, amikor a példányosítás valamiért költséges folyamat, így sokkal jobban megéri egy példányt létrehozni, utána pedig már csak azt másolni. (Például az is lehet, hogy a példányosítás bonyolultan, eleve a a Builder minta alapján történik.)
   * Composite és Decorator patternekkel együtt gyakran használják, mivel ezeknél a példányosítás nem egy triviális folyamat, így ha egyszer valamit már sikerült összeállítani, hasznos lehet, ha könnyen lehet másolni. Ezen kívül a számos konfigurációs lehetőség miatt (mint a composite objektumgráfjának összeállítása) nem egyszerű még egy ugyanolyan példányt létrehozni, kivéve, ha lehet klónozni.
   * Kombinálható factory patternnel, ami létrehozza a prototípust, amit utána klónozás előtt még lehet módosítani.
   * Sokszor használják az abstract factory kiváltására olyan esetekben, amikor az abstract factorynak már kezd nagyon sok leszármaztatott osztálya lenni a sok lehetőség miatt.
 
 ### Példa: különböző kép típusok
 
-Egy képszerkesztő rendszerben (vagy például az OpenCV osztálykönyvtárban) tipikusan vannak színes és szürke árnyalatos képek, eltérő bitmélységű képek stb. A rajzoló funkciók ezek mindegyikén futnak, belül megoldják a helyes viselkedés kiválasztását. Ha ilyenkor akarunk egy olyan képet, ami a beállításaiban hasonlít egy másik, már létező képhez, akkor a legegyszerűbb lemásolni (klónozni).
+Egy képszerkesztő rendszerben (vagy például az OpenCV osztálykönyvtárban) tipikusan vannak színes és szürke árnyalatos képek, eltérő bitmélységű képek stb. A rajzoló funkciók ezek mindegyikén futnak, belül megoldják a helyes viselkedés kiválasztását. Ha ilyenkor akarunk egy olyan képet, ami a beállításaiban hasonlít egy másik, már létező képhez, akkor a legegyszerűbb lemásolni (klónozni). Vagy az egész képet klónozzuk, vagy csak a beállításait, a tartalma pedig csak háttérszínű lesz.
 
 <small>Szerzők, verziók: Csorba Kristóf</small>
 

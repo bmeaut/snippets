@@ -12,21 +12,21 @@ Tegyük fel, hogy egy távvezérelhető robot minden funkcióját egy objektum m
 
 A megoldás a Proxy design pattern: az alkalmazásunkban egy Proxy objektum fogja képviselni a robotunkat, minden kérés hozzá fut majd be, amiket ő a megfelelő módon továbbít.
 
-class RobotProxy
-{
-public:
-   virtual void Forward(int distance) = 0;
-   virtual void Turn(int degrees) = 0;
-   virtual int ReadFrontDistanceSensor() = 0 const;
-};
-
-class DefaultRobotProxy : public RobotProxy
-{
-public:
-   virtual void Forward(int distance) override;
-   virtual void Turn(int degrees) override;
-   virtual int ReadFrontDistanceSensor() const override;
-};
+	class RobotProxy
+	{
+	public:
+	   virtual void Forward(int distance) = 0;
+	   virtual void Turn(int degrees) = 0;
+	   virtual int ReadFrontDistanceSensor() = 0 const;
+	};
+	
+	class DefaultRobotProxy : public RobotProxy
+	{
+	public:
+	   virtual void Forward(int distance) override;
+	   virtual void Turn(int degrees) override;
+	   virtual int ReadFrontDistanceSensor() const override;
+	};
 
 
 Ennek az osztálynak a használata egyrészt nagyon egyszerű és kényelmes, másrészt van még egy nagy előnye: könnyen le lehet cserélni. Tesztelési célokra készíthetünk egy olyan leszármazottat is, ami valójában egy szimulátorhoz csatlakozik. Vagy egy olyat, ami csak a felhasználó felület tesztelésére szolgál és csak kiírja, hogy "most előre küldjük a robotot 3 méterrel".
@@ -46,7 +46,7 @@ Itt érdemes megjegyezni, hogy a Proxy minta szorosan kapcsolódik a dependency 
 ### További példák
 
   * Jogosultság ellenőrzés
-  * Egyszerűbb interfész (ez az alkalmazás nagyon közel van a Facade design patternhez.)
+  * Egyszerűbb interfész (Ez az alkalmazás nagyon közel van a Facade design patternhez.)
   * Távoli erőforrások eléréséhez interfész (pl. webservice, REST API hívások)
   * Távoli, nagy erőforrás igényű műveletek koordinálása. Péládul a tényleges kérés előtt már elkezdi a végrehajtást.
   * Ha egy osztály funkciói eredetileg nem szálbiztosak és nem tuduk rajta módosítani, egy Proxy eltakarhatja és megoldhatja a szükséges szinkronizációkat.

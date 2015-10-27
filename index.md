@@ -58,29 +58,29 @@ Ha hibát találsz, szólj Kristófnak! Köszi!
 
 Példányosítási minták
 
-* [0201_DpFactory](snippets/0201_DpFactory/0201_DpFactory.html) 90%
-  * [0202_DpAbstactFactory](snippets/0202_DpAbstactFactory/0202_DpAbstactFactory.html) 90%
-  * [0203_DpBuilder](snippets/0203_DpBuilder/0203_DpBuilder.html) 95%
-  * [0204_DpLazyInit](snippets/0204_DpLazyInit/0204_DpLazyInit.html) 95%
-  * [0205_DpSingleton](snippets/0205_DpSingleton/0205_DpSingleton.html) 95%
-  * [0206_DpPrototype](snippets/0206_DpPrototype/0206_DpPrototype.html) 95%
-  * [0207_DpRAII](snippets/0207_DpRAII/0207_DpRAII.html) 95%
+  * [0201_DpFactory](snippets/0201_DpFactory/0201_DpFactory.html)
+  * [0202_DpAbstactFactory](snippets/0202_DpAbstactFactory/0202_DpAbstactFactory.html)
+  * [0203_DpBuilder](snippets/0203_DpBuilder/0203_DpBuilder.html)
+  * [0204_DpLazyInit](snippets/0204_DpLazyInit/0204_DpLazyInit.html)
+  * [0205_DpSingleton](snippets/0205_DpSingleton/0205_DpSingleton.html)
+  * [0206_DpPrototype](snippets/0206_DpPrototype/0206_DpPrototype.html)
+  * [0207_DpRAII](snippets/0207_DpRAII/0207_DpRAII.html)
 
-Struktúrális minták (70%)
+Struktúrális minták
 
-  * [0208_DpComposite](snippets/0208_DpComposite/0208_DpComposite.html) 95%
-  * [0209_DpDecorator](snippets/0209_DpDecorator/0209_DpDecorator.html) 95%
-  * [0210_DpFacade](snippets/0210_DpFacade/0210_DpFacade.html) 95%
-  * [0211_DpProxy](snippets/0211_DpProxy/0211_DpProxy.html) 95%
+  * [0208_DpComposite](snippets/0208_DpComposite/0208_DpComposite.html)
+  * [0209_DpDecorator](snippets/0209_DpDecorator/0209_DpDecorator.html)
+  * [0210_DpFacade](snippets/0210_DpFacade/0210_DpFacade.html)
+  * [0211_DpProxy](snippets/0211_DpProxy/0211_DpProxy.html)
 
-Viselkedési minták (60%)
+Viselkedési minták (85%)
 
-  * [0212_DpObserver](snippets/0212_DpObserver/0212_DpObserver.html) 95%
-  * [0213_DpStrategy](snippets/0213_DpStrategy/0213_DpStrategy.html)
-  * [0214_DpState](snippets/0214_DpState/0214_DpState.html) 95%
+  * [0212_DpObserver](snippets/0212_DpObserver/0212_DpObserver.html)
+  * [0213_DpStrategy](snippets/0213_DpStrategy/0213_DpStrategy.html) 20%
+  * [0214_DpState](snippets/0214_DpState/0214_DpState.html)
   * [0217_DpVisitor](snippets/0217_DpVisitor/0217_DpVisitor.html)
-  * [0215_DpEgyebek](snippets/0215_DpEgyebek/0215_DpEgyebek.html)
-  * [0216_VisitorObserverPelda](snippets/0216_VisitorObserverPelda/0216_VisitorObserverPelda.html) 95%
+  * [0215_DpEgyebek](snippets/0215_DpEgyebek/0215_DpEgyebek.html) 20%
+  * [0216_VisitorObserverPelda](snippets/0216_VisitorObserverPelda/0216_VisitorObserverPelda.html)
 
 ## Hibakeresés, hibakezelés, tesztelés
 
