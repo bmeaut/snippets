@@ -1,3 +1,7 @@
+---
+layout: indexlayout
+---
+
 # Jenkins konfiguráció
 
 A Jenkins egy javaban írt nyílt forráskódú folyamatos integrációs eszköz (continous integration tool). A Jenkins folyamatos integrációs szolgáltatást nyújt szoftverfejlesztéshez. Ez egy szerver alapú szolgáltatás, ami a legtöbb verziókezelő (SCM) eszközt támogat (CVS, GIT, Subversion, RTC). Legfontosabb feladata, hogy folyamatosan lefuttassa és tesztelje a szoftver projekteteket, és ezáltal könnyebbé tegye a szoftverfejlesztés folyamatát. Hivatalos honlap: https://jenkins-ci.org/
