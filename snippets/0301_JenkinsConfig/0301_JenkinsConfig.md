@@ -1,5 +1,5 @@
 ---
-layout: indexlayout
+layout: default
 ---
 
 # Jenkins konfiguráció
