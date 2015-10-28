@@ -73,13 +73,12 @@ Struktúrális minták
   * [0210_DpFacade](snippets/0210_DpFacade/0210_DpFacade.html)
   * [0211_DpProxy](snippets/0211_DpProxy/0211_DpProxy.html)
 
-Viselkedési minták (85%)
+Viselkedési minták
 
   * [0212_DpObserver](snippets/0212_DpObserver/0212_DpObserver.html)
-  * [0213_DpStrategy](snippets/0213_DpStrategy/0213_DpStrategy.html) 20%
+  * [0213_DpStrategy](snippets/0213_DpStrategy/0213_DpStrategy.html)
   * [0214_DpState](snippets/0214_DpState/0214_DpState.html)
   * [0217_DpVisitor](snippets/0217_DpVisitor/0217_DpVisitor.html)
-  * [0215_DpEgyebek](snippets/0215_DpEgyebek/0215_DpEgyebek.html) 20%
   * [0216_VisitorObserverPelda](snippets/0216_VisitorObserverPelda/0216_VisitorObserverPelda.html)
 
 ## Hibakeresés, hibakezelés, tesztelés
@@ -105,6 +104,7 @@ Az alkalmazásfejlesztés tárgyhoz:
   * opc [0002_SnippetPullReq](snippets/0002_SnippetPullReq/0002_SnippetPullReq.html) (1%)
   * [0106_Markdown](snippets/0106_Markdown/0106_Markdown.html) (1%)
   * cppcheck és sonar használata
+  * [0215_DpEgyebek](snippets/0215_DpEgyebek/0215_DpEgyebek.html) 20%
 
 Egyéb témákban:
 
