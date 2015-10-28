@@ -3,7 +3,7 @@ layout: default
 ---
 
 # Az Alkalmazásfejlesztés tantárgy snippet listája
-Vagy mi az, ami a tananyaghoz tartozik.
+Avagy mi az, ami a tananyaghoz tartozik.
 
 ## Verziókezelés
 
@@ -41,6 +41,15 @@ Vagy mi az, ami a tananyaghoz tartozik.
 
 * [0127_DebugRelease](../0127_DebugRelease/0127_DebugRelease.html) Mi a különbség a debug és release fordítás között?
 
+## Hibakeresés, hibakezelés, tesztelés
+
+  * [0119_QTest](../0119_QTest/0119_QTest.html) Unit tesztek Qt alatt
+  * [0120_Hibakezeles](../0120_Hibakezeles/0120_Hibakezeles.html) Hibakezelési módszerek
+
+## Dokumentáció
+
+  * [0105_Doxygen](../0105_Doxygen/0105_Doxygen.html) A Doxygen használata dokumentáció generálásra a forráskód alapján
+
 ## Tervezési minták, tervezés
 
   * [0200_DesignPatternsBev](../0200_DesignPatternsBev/0200_DesignPatternsBev.html)
@@ -69,15 +78,5 @@ Viselkedési minták
   * [0214_DpState](../0214_DpState/0214_DpState.html)
   * [0217_DpVisitor](../0217_DpVisitor/0217_DpVisitor.html)
   * [0216_VisitorObserverPelda](../0216_VisitorObserverPelda/0216_VisitorObserverPelda.html)
-
-
-## Hibakeresés, hibakezelés, tesztelés
-
-  * [0119_QTest](../0119_QTest/0119_QTest.html) Unit tesztek Qt alatt
-  * [0120_Hibakezeles](../0120_Hibakezeles/0120_Hibakezeles.html) Hibakezelési módszerek
-
-## Dokumentáció
-
-  * [0105_Doxygen](../0105_Doxygen/0105_Doxygen.html) A Doxygen használata dokumentáció generálásra a forráskód alapján
 
 <small>Szerzők, verziók: Csorba Kristóf</small>
