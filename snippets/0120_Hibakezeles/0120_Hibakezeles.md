@@ -2,11 +2,13 @@
 layout: default
 ---
 
-# Hibakezelés
+Az alkalmazások jelentős része foglalkozik a futás közben kialakuló hibák kezelésével. Főleg kritikus rendszerekben a kódnak akár 80 százalékát is kiteheti azon hibakezelő részek aránya, melyek ideális esetben soha nem fognak lefutni.
 
-Az alkalmazások jelentős része foglalkozik a futás közben kialakuló hibák kezelésével. Főleg kritikus rendszerekben a kódnak akár 80 százalékát is kiteheti azok részek aránya, melyek ideális esetben soha nem fognak lefutni.
+A hibák felderítése szempontjából fontos, hogy egyrészt mit és hogyan ellenőrzünk, másrészt hogy a hiba eseményekről mennyi nyom keletkezik a fejlesztők számára.
 
-Miket szokás tenni a hibákkal?
+# Felismert hibák kezelési módjai
+
+avagy mit teszünk, ha hibát észlel a programunk.
 
 ## A hiba lenyelése
 
@@ -24,12 +26,12 @@ Anno a C++ egyik nagy újdonsága volt. Lényege, hogy vannak "dobható" (throwa
 
 Két fontos dologra érdemes figyelni:
 
-  * Az exception kezelés nagyon erőforrás igényes. Ha egy művelet a rendeltetésszerű működés esetén is hol lehetésges és hol nap, semmiképpen ne úgy döntsük ezt el, hogy megpróbáljuk és ha exceptiont dob, akkor elkapjuk, konstatáljuk, hogy most nem ez volt a helyzet, és megyünk tovább. (Péládul klasszikus Java példa, hogy úgy döntjük el egy stringről, hogy szám van-e benne, hogy megpróbáljuk meghívni az Integer.parseInt(input);-et és ha NumberFormatException  jön, akkor nem az volt. Ez nagyon lassú megoldás.)
-  * Exception esetén figyelni kell arra, hogy mindent felszabadítsunk, amit kell, annak ellenére, hogy a kódrészlet nem futott végig. Java esetén erre van a try-catch-finally koncepció finally része, ami mindenképpen lefut, akkor is, ha nem volt exception és akkor is, ha volt. C++-ban nincs ilyen, elsősorban azért, mert a "resource acquisition is initialization" jobban lekezeli az ilyen eseteket. (Bjarne Stroustrup tömör magyarázata erre: http://www.stroustrup.com/bs_faq2.html#finally)
+  * Az exception kezelés nagyon erőforrás igényes. Ha egy művelet a rendeltetésszerű működés esetén is hol lehetésges és hol nem, semmiképpen ne úgy döntsük ezt el, hogy megpróbáljuk és ha exceptiont dob, akkor elkapjuk, konstatáljuk, hogy most nem ez volt a helyzet, és megyünk tovább. Például klasszikus Java példa, hogy úgy döntjük el egy stringről, hogy szám van-e benne, hogy megpróbáljuk meghívni az Integer.parseInt(input);-et és ha NumberFormatException  jön, akkor nem az volt. Ez nagyon lassú megoldás.
+  * Exception esetén figyelni kell arra, hogy mindent felszabadítsunk, amit kell, annak ellenére, hogy a kódrészlet nem futott végig. Java esetén erre van a try-catch-finally koncepció finally része, ami mindenképpen lefut, akkor is, ha nem volt exception és akkor is, ha volt. C++-ban nincs ilyen, elsősorban azért, mert a "resource acquisition is initialization" jobban lekezeli az ilyen eseteket. (Bjarne Stroustrup tömör magyarázata erre: [http://www.stroustrup.com/bs_faq2.html#finally](http://www.stroustrup.com/bs_faq2.html#finally))
 
 ## Assert használata
 
-Az assert általában arra kell, hogy a kódomat ne is lehessen rosszul használni: ha valaki hibásan használja (például a képfeldolgozó függvényemet színes képpel hívja meg, pedig szürkeárnyalatosat várok), akkor az azonnal derüljön ki. Ez azért is fontos, mert ha csapatban fejlesztünk és az én függvényem száll el, akkor én kapom a hibajegyet és nem az, aki rosszul hívta meg.
+Az assert általában arra kell, hogy a kódomat ne is lehessen rosszul használni: ha valaki hibásan használja (például a képfeldolgozó függvényemet színes képpel hívja meg, pedig szürkeárnyalatosat várok), akkor az azonnal derüljön ki. Ez azért is fontos, mert ha csapatban fejlesztünk és az én függvényem száll el, akkor egy ilyen esetben valószínűleg én kapom a hibajegyet és nem az, aki rosszul hívta meg.
 
 Érdemes megnézni az ST HAL (Hardware Abstraction Layer) megoldásait, ahol például a HAL\_ADC\_Init függvény ellenőrzi, hogy ha egy Resolution paramétert kell átadni, akkor az tényleg az-e:
 

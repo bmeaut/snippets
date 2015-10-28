@@ -53,7 +53,7 @@ Ha hibát találsz, szólj Kristófnak! Köszi!
 
 ## Tervezési minták, tervezés
 
-  * [0200_DesignPatternsBev](snippets/0200_DesignPatternsBev/0200_DesignPatternsBev.html) (95%, csak még nem snippet)
+  * [0200_DesignPatternsBev](snippets/0200_DesignPatternsBev/0200_DesignPatternsBev.html)
   * Architektúrák (0%): Rétegek (DAL, BSP, uC OS, megkerülés veszélyei), MVC (GrainAutLine, view processzorok), Document-View, Pipes and filters, whiteboard architektúrák (pl. JAM hypothesis graph)
 
 Példányosítási minták
@@ -83,12 +83,12 @@ Viselkedési minták
 
 ## Hibakeresés, hibakezelés, tesztelés
 
-  * [0119_QTest](snippets/0119_QTest/0119_QTest.html) (95%) Unit tesztek Qt alatt
-  * [0120_Hibakezeles](snippets/0120_Hibakezeles/0120_Hibakezeles.html) (95%) Hibakezelési módszerek
+  * [0119_QTest](snippets/0119_QTest/0119_QTest.html)
+  * [0120_Hibakezeles](snippets/0120_Hibakezeles/0120_Hibakezeles.html)
 
 ## Dokumentáció
 
-  * [0105_Doxygen](snippets/0105_Doxygen/0105_Doxygen.html) (95%) A Doxygen használata dokumentáció generálásra a forráskód alapján
+  * [0105_Doxygen](snippets/0105_Doxygen/0105_Doxygen.html)
 
 ## Vegyes (még besorolatlan)
 

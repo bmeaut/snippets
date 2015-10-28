@@ -2,61 +2,67 @@
 layout: default
 ---
 
-# FÉLKÉSZ
-
 # Design patterns bevezető
 
-**Az elejénre Singleton, azon keresztül bemutatva az egész patternesdit, UML leírást. Azt, hogy sokféle módon meg lehet írni, a kérdés az, hogy mire gondolunk és mire nem. Nem kell mindig a nagyágyú. Lassan, példa centrikusan, problémából kiindulva mutassam meg őket!**
+A szoftverfejlesztési gyakorlatban igen gyakran kerülünk szembe nagyon hasonló feladatokkal. Ilyen lehet például egy konfigurációs fájl, melynek tartalmához a rendszer számos pontjáról kell tudni hozzáférni, viszont ezért minden egyes objektum számára átadni a konfigurációs beállításokat elég nehézkes lenne. A Singleton tervezési minta például erre javasol egy megoldást.
 
-*Ebbe a leírásba fontos az is, hogy mi az, amit majd számon lehet kérni az egyes patternekről!*
+A tervezési minták felismerése a tervezési folyamat során számos előnnyel jár:
 
-*Sokféle módon implementálhatók! Tervezői döntés kérédse, hogy mikor milyen megoldás jó. Az itteni példák egy lehetőséget mutatnak, de természetesen van olyan eset, amikor másképp érdemes megoldani az adott feladatot.*
+  * Így követhetjük a már bevált megoldásokat, amik kialakulása során számos olyan veszélyt és problémaforrást is figyelembe vettek, amire esetleg most mi magunk még nem is gondolunk, viszont könnyű beleszaladni.
+  * A tervezéshez egységes, mindenki által ismert terminológiát ad, így az összetettebb konstrukciókról is sokkal könnyebb beszélni. "És készítünk egy observert a beállításokhoz." "Az állapotot State tervezési mintával kezeljük."
 
-GoF:
-Design Patterns: Elements of Reusable Object-Oriented Software
-Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides
-The authors are often referred to as the Gang of Four (GoF).[1]
+Valószínűleg már mindenki egész sok tervezési mintával találkozott, mivel ezek nagy része semmi misztikus dolgot nem tartalmaz, de a mintákat igazán kihasználni csak akkor tudjuk, ha ez tudatosul is: akkor tudjuk nevén nevezni és akkor juthat eszünkbe az, hogy az adott minta megvalósításakor mikre szokás, mikre érdemes figyelni.
 
+Amennyiben egy olyan kis programot készítünk, amit csak egyszer fogunk lefuttatni és soha többet nem fog változni, nyilván nem biztos, hogy van értelme nagy tervezési mintákban gondolkodni (bár ekkor sem ártalmas). Viszont ha van rá esély, hogy idővel módosítani kell a programot (változnak az igények), vagy hogy többen dolgoznak majd rajta, akkor nagyon megéri egy kicsit több hangsúlyt fektetni a tervezésre és a minták felkutatására.
 
-Design Patterns WikiBooks:
-https://en.wikibooks.org/wiki/Computer_Science_Design_Patterns
+Volt már rá példa, hogy egy tanszéki projekt esetében amikor egy új igény felmerült, hamar kiderült, hogy a forráskódban már megvan a helye a megoldásnak, mivel a szükséges interfészek már régen ki vannak alakítva, még ha addig nem is volt rájuk különösebben szükség.
 
+Tervezési minta nagyon sok van, az alábbi gyűjtemény természetesen messze nem teljes. Ezen kívül az egyes helyzetekben és fejlesztési környezetekben az egyes minták megvalósítása is nagyon eltérhet egymástól: vagy a követelmények eltérései miatt, vagy egyszerűen az adott programnyelv és keretrendszer képességeitől függően. Ezen kívül az alábbi minta halmazok mellett is léteznek bőven további tervezési minta fajták.
 
-Példák, melyekhez lehet kötni:
+Az egyes mintákról részletesen külön snippetek szólnak.
 
-  * GrainAutLine
-  * SMEyeL rendszer, multi-cam és data streaming
-  * RobonAUT robot és hozzá kapcsolódó diagnosztika
-  * RobonAUT pályaelektronika
+## Creational patterns, létrehozási vagy példányosítási minták
 
-Ismernek sokat, csak nem feltétlenül tudatosan. Azzal, hogy tudatosítjuk ezeknek a mintáknak a létezését, elérjük, hogy a tervezéskor már mintaként jut eszükbe (és van esély rá, hogy így ismerik fel a helyzeteket), amivel együtt eszükbe jutnak a tipikus megoldások, veszélyforrások, mikre kell gondolni stb.
+A creational design patternek objektumok létrehozására vonatkozó tervezési minták. Akkor jönnek elő, amikor vagy az nem triviális, hogy (1) hogyan kell létrehozni egy objektumot (például mert sok lépésből áll és összetett, mint egy labirintusos játék pályája), vagy (2) mert az nem triviális, hogy egy ősosztálynak pontosan melyik leszármazottjára is van szükség (péládul egy kommunikációs objektum függ a használt protokolltól).
 
-Design patterns és Anti-Patterns
-Dependency injection (factory method)
-http://en.wikipedia.org/wiki/Dependency_injection
+  * Factory, Factory Method: a példányosítást egy cserélhető vagy konfigurálható metódusba, osztályba szervezi ki.
+  * Abstact Factory: összekapcsolódó osztályok lehetséges "készletére", halmazára kialakított factory.
+  * Builder: összetett példányosítási, felépítési folyamatokat támogató osztály.
+  * Lazy Initialization: csak akkor végzi el ténylegesen a példányosítást, amikor már tényleg használnánk az eredményét, egészen addig késlelteti.
+  * Singleton: a rendszerben egyetlen példányban létező objektum.
+  * Prototype: a példányosítást egy mintapéldány másolásával helyettesítő megoldás.
+  * Resource Allocation Is Initialization (RAII): nyelvi szinten garantálja egy erőforrás felszabadítását.
 
-A DI container végzi el magától az összekapcsolásokat. Config mehet abstract factory segítségével!
+A creational patternek gyakran keverednek, vagy nem annyira triviális, hogy melyiket is kellene használni. A fejlesztés során ahogy egyre nagyobb flexibilitásra van szükség, gyakran készül Factory Method, melyből később Abstract Factory lesz, az pedig belül lehet, hogy Buildert vagy Prototypeot használ. De közben a Builder is használhat Factoryt vagy Prototypeot az egyes részegységek létrehozásához.
 
-http://en.wikipedia.org/wiki/Dependency_inversion_principle
-Ne függjön egy magas szintű modul alacsony szinű moduloktól, csak absztrakcióiktól. Ugyanez felfelé is. SOLID elvek!
+A Builder az összeállításra koncentrál, melynek utolsó lépése a tényleges létrehozás és az eredmény visszaadása. Az Abstract Factory általában egy lépésben létre is hozza a kért objektumot és azonnal visszaadja azt.
 
-http://en.wikipedia.org/wiki/SOLID_(object-oriented_design)
+## Structural patterns, struktúrális minták
 
-http://en.wikipedia.org/wiki/Inversion_of_control
+A struktúrális minták a rendszer felépítésére tesznek javaslatot, nem pedig egy folyamat leírására.
 
-tesztelés, mockolás említése? framework nélkül van értelme?
+  * A Composite minta összetett objektumgráfok egyszerűbb kezelését célozza meg.
+  * A Decorator új funkciókkal egészít ki egy már létező implementációt, annak módosítása nélkül.
+  * A Facade egy már létező interface beburkolását, és ezzel többnyire egyszerűsítését célozza meg.
+  * A Proxy egy valamilyen szempontból távoli objektum elérését teszi egyszerűbbé, vagy kiegészíti ezt valamilyen további funkcióval. 
 
-Gondolatok
+## Behavioral patterns, viselkedési minták
 
-  * Bővíthetőség növelésére: MemoQ példa, ott minden új feature igénynek már megvan a helye a forráskódban, még ha csak egy üres csonk is.
-  * Először keretrendszer, utána konkrét megoldás. A minták segítenek az általánosításban.
-  * Tudom, hogy egyenesen is le lehet kódolni, és ha csak le kell egyszer futtatni és kész, akkor ez teljesen jó is. De ha évekig supportolni kell, ráadásul időnként kérnek kiegészítéseket, akkor már nagyon-nagyon nem mindegy, hogy mennyire tudunk bátran belenyúlni a programba. (Ha minden mindenhonnan mindent csinál és elér, akkor sok ideigneles belehekkelés után kockázatos lesz bármihez is hozzányúlni. Sokkal jobb, ha be vannak védve a dolgok a fejlesztők ellen is. Azt fel lehet oldani, de amíg nincs feloldva, addig biztosak lehetünk benne, hogy tényleg nem fordul elő olyan hekkelés, ami megszegi. Hekkelés pedig mindig lesz.)
+A viselkedési minták bizonyos feladatokra adnak működési javaslatokat.
 
-## Design patterns - Creational patterns
+  * Az Observer célja, hogy egy objektum automatikusan értesüljön egy másik változásairól.
+  * A Strategy könnyen cserélhetővé teszi bizonyos részfeladatok megoldási módját.
+  * A State eltérő állapotok esetén eltérő viselkedés implementálására ad javaslatot.
+  * A Visitor egy új funkcióval egészít ki egy már kész osztályt vagy osztály halmazt.
 
-A creational design patternek objektumok létrehozására vonakozó tervezési minták. Akkor jönnek elő, amikor vagy az nem triviális, hogy (1) hogyan kell létrehozni egy objektumot (például mert sok lépésből áll és összetett, mint egy labirintusos játék pályája), vagy (2) mert az nem triviális, hogy egy ősosztálynak pontosan melyik leszármazottjára is van szükség (péládul egy kommunikációs objektum függ a használt protokolltól).
+## További olvasnivaló
 
-* A creational patternek gyakran keverednek, vagy nem annyira triviális, hogy melyiket is kellene használni. A fejlesztés során ahogy egyre nagyobb flexibilitásra van szükség, gyakran készül Factory Method, melyből később Abstract Factory lesz, az pedig belül lehet, hogy Buildert vagy Prototypeot használ. De közben a Builder is használhat Factoryt vagy Prototypeot az egyes részegységes létrehozásához.
-* Builder focuses on constructing a complex object step by step. Abstract Factory emphasizes a family of product objects (either simple or complex). Builder returns the product as a final step, but as far as the Abstract Factory is concerned, the product gets returned immediately.
+  * "GoF", vagyis a Gang of Four könyve: Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides; Design Patterns: Elements of Reusable Object-Oriented Software
+  * [Design Patterns WikiBooks](https://en.wikibooks.org/wiki/Computer_Science_Design_Patterns)
+  * Dependency injection: [http://en.wikipedia.org/wiki/Dependency_injection](http://en.wikipedia.org/wiki/Dependency_injection)
+  * Dependency inversion principle [http://en.wikipedia.org/wiki/Dependency_inversion_principle](http://en.wikipedia.org/wiki/Dependency_inversion_principle)
+  * SOLID elvek [http://en.wikipedia.org/wiki/SOLID_(object-oriented_design)](http://en.wikipedia.org/wiki/SOLID_(object-oriented_design))
+  * [http://en.wikipedia.org/wiki/Inversion_of_control](http://en.wikipedia.org/wiki/Inversion_of_control)
 
 <small>Szerzők, verziók: Csorba Kristóf</small>
+

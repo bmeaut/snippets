@@ -4,13 +4,13 @@ layout: default
 
 ## A Doxygen használata
 
-A doxygen (doxygen.org) egy forráskód alapján automatikusan dokumentációt generáló eszköz. Alapötlete, hogy a forráskódban (most C++ esetét nézve) az osztályokat, metódusokat és attribútumokat megfelelő formázással kommentezve, a forráskódot bejárva azokból esztétikus leírások készíthetők.
+A [doxygen](http://doxygen.org/) egy forráskód alapján automatikusan dokumentációt generáló eszköz. Alapötlete, hogy a forráskódban (most C++ esetét nézve) az osztályokat, metódusokat és attribútumokat megfelelő formázással kommentezve, a forráskódot bejárva azokból esztétikus leírások készíthetők.
 
 Számos programnyelvet támogat, a kommentárok formázásában támogatja a Markdown formátumot, kimenete pedig többek között lehet HTML vagy LaTeX forráskód is. 
 
-Természetesen ennek egy fontos előfeltétele, hogy a kommentárokból tényleg egy használható dokumentáció álljon össze. Valószínűleg mindenki találkozott már olyan "dokumentációval", amiben fel volt sorolva (ömlesztve) az összes osztály, azokban meg lehetet nézni a metódusok listáját, de ezen kívül csak kb. annyira hasznos szövegek voltak benne, hogy "setX(int x)" metódus beállítja x értékét. Hát ezzel sokra megyünk...
+Természetesen ennek egy fontos előfeltétele, hogy a kommentárokból tényleg egy használható dokumentáció álljon össze. Valószínűleg mindenki találkozott már olyan "dokumentációval", amiben fel volt sorolva (ömlesztve) az összes osztály, azokban meg lehetet nézni a metódusok listáját, de ezen kívül csak kb. annyira hasznos szövegek voltak benne, hogy a "setX(int x)" metódus beállítja x értékét. Hát ezzel sokra megyünk...
 
-Viszont a Doxygent nem ezek alapján kellene megítélni: nyilván a semminél lényegesen több időt igényel, de különösebb gond nélkül össze lehet rakni olyan dokumentációt, ami már tényleg használható. És ha nem egy a forráskódtól független dokumentum, akkor még annak is több az esélye, hogy a kód módosításai közben a dokumentáció is friss marad. (Ami valljuk be, egy hosszabb fejlesztési folyamat során nem mindig teljesül...)
+Viszont a Doxygent nem ezek alapján kellene megítélni: a semminél lényegesen több időt igényel, de különösebb gond nélkül össze lehet vele rakni olyan dokumentációt, ami már tényleg használható. És ha nem egy a forráskódtól független dokumentum, akkor még annak is több az esélye, hogy a kód módosításai közben a dokumentáció is friss marad. (Ami valljuk be, egy hosszabb fejlesztési folyamat során nem mindig teljesül...)
 
 Néhány szempont, amire érdemes figyelni a forráskód kommentezésénél, ha utána azt dokumentációnak is akarjuk használni:
 
@@ -22,9 +22,9 @@ Végül, de nem utolsó sorban nagyon fontos, hogy amit így generálunk, az ref
 
 ### A kommentárok mennyisége és a forráskód olvashatósága
 
-Mielőtt nekilátunk a SimpleTelemetryVisualizer példaprogram dokumentációjának elkészítéséhez, egy fontos megjegyzés a kommentárok mennyiségéről: vannak helyek, ahol előírás, hogy a forráskódban a kommentároknak kell kitenniük a sorok felét. No ez szerintem egy kissé túlzás: ezzel pont azt érjük el, hogy a megoldás két nyelven van leírva: C++-ban és angolul, aminem nem sok értelme van. Ha a forráskódban normális váltózó- és függvénynevek vannak (és nem maci, teve, valami, a, b, c stb.), akkor a forráskód olvasható lesz. 
+Mielőtt nekilátunk a SimpleTelemetryVisualizer példaprogram dokumentációjának elkészítéséhez, egy fontos megjegyzés a kommentárok mennyiségéről: vannak helyek, ahol előírás, hogy a forráskódban a kommentároknak kell kitenniük a sorok felét. No ez egy kissé túlzás: ezzel pont azt érjük el, hogy a megoldás két nyelven van leírva: C++-ban és angolul, aminem nem sok értelme van. Ha a forráskódban normális váltózó- és függvénynevek vannak (és nem maci, teve, valami, a, b, c stb.), akkor a forráskód olvasható lesz. 
 
-Az alábbi metódus szerintem elég egyértelmű, hogy mit csinál:
+Az alábbi metódus elég egyértelmű, hogy mit csinál:
 
 	void RobotProxy::accelerate()
 	{
@@ -92,7 +92,7 @@ A Doxygen a dokumentációt elsősorban a forráskód fájlokból generálja, de
   * @mainpage: ez az oldal lesz a főoldal, amivel a dokumentáció kezdődik. Ez a parancs csak egyetlen helyen szerepelhet, különben a Doxygen figyelmeztet és csak az elsőt veszi figyelembe.
 
 Képekre a következő szintaxissal tudunk hivatkozni:
-    \!\[\]\(eleresiUt\/Kepnev.png\)
+    \!\[\]\(eleresiUt/Kepnev.png\)
 
 (Képeknél fontos, hogy a Doxywizardban majd az Input/IMAGE_PATH-nak meg kell adnunk, hogy ezek a fájlok is másolódjanak át a dokumentációba.)
 
@@ -118,13 +118,8 @@ Ezek fényében a dokumentáció kezdő oldalának eleje az alábbi:
 	![](diagrams/main_ClassDiagram.png)
 	
 	A CommunicationTcpSocket példánya felelős minden kommunikációért a kliens irányból (a másik a szimulátor, mely a mélyén tartalmaz egy CommunicationTcpSocketServer objektumot).
-	
-## Csoportsítási lehetőségek
 
-http://www.stack.nl/~dimitri/doxygen/manual/grouping.html
-
-TODO: nem akar működni... :(
-
+Ezeket a fájlokat a SimpleTelemetryVisualizer forráskódját is tartalmazó repository docs könyvtára tartalmazza: [https://github.com/csorbakristof/alkalmazasfejlesztes/tree/master/SimpleTelemetryVisualizer/docs](https://github.com/csorbakristof/alkalmazasfejlesztes/tree/master/SimpleTelemetryVisualizer/docs)
 
 ## A Doxygen konfigurálása és futtatása
 
@@ -155,7 +150,7 @@ Az Input oldalon az IMAGE\_PATH-hoz felvettem a docs/diagrams könyvtárat, hogy
 
 Ennek az oldalnak a végén van egy USE\_MDFILE\_AS\_MAINPAGE beállítás is. Ha nem használtuk a @mainpage parancsot egyetlen fájlban sem (jelen esetben az overview.md elején szerepel), akkor itt kell megadni, hogy melyik a kezdőoldal.
 
-Továbbá ha szükséges, például itt lehet olyan fájlokat megadni, amit ki szeretnénk hagyni a feldolgozásból. (EXCLUDE beállítás)
+Továbbá ha szükséges, például itt lehet olyan fájlokat megadni, amit ki szeretnénk hagyni a feldolgozásból (EXCLUDE beállítás).
 
 Ezután nincs más teendő, mint elmenteni a Doxyfile-t (ez az alapértelmezett neve), majd a Run fülön rákattintani a "Run doxygen" gombra. Ha lefutott, alul a "Show HTML output"-ra kattintva meg is tudjuk nézni az eredményt.
 
