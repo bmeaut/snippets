@@ -90,6 +90,16 @@ Viselkedési minták
 
   * [0105_Doxygen](snippets/0105_Doxygen/0105_Doxygen.html)
 
+## További elkészült snippetek, még kategória nélkül
+
+### Point Cloud Library
+
+  * [0401_PointCloudLib](snippets/0401_PointCloudLib/0401_PointCloudLib.html) Point Cloud Library fordítása, telepítése
+
+### Jenkins, continuous integration
+
+  * [0301_JenkinsConfig](snippets/0301_JenkinsConfig/0301_JenkinsConfig.html) Jenkins első lépések
+
 ## Vegyes (még besorolatlan)
 
   * [0124_PostBuild](snippets/0124_PostBuild/0124_PostBuild.html) (1%, skip) Jenkins alatt tesztelése a QTest példaprogramnak, valamint sonar futtatása.
@@ -126,6 +136,3 @@ Egyéb témákban:
   * [0117_GitExt](snippets/0117_GitExt/0117_GitExt.html) (1%, SKIP?)
 
 
-### Point Cloud Library
-
-  * [0401_PointCloudLib](snippets/0401_PointCloudLib/0401_PointCloudLib.html) Point Cloud Library fordítása, telepítése
