@@ -63,7 +63,8 @@ A git első konfigurációja a felhasználói nevünk és e-mail címünk megad�
 
 További részletek erről itt olvashatók: [https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
 
-A GIT telepítése után én még fel szoktam rakni a GitExtensions-t, egy igen népszerű GUI-t hozzá: [http://code.google.com/p/gitextensions/](http://code.google.com/p/gitextensions/)
+A GIT telepítése után én még fel szoktam rakni a GitExtensions-t, egy igen népszerű GUI-t hozzá: [http://gitextensions.github.io/](http://gitextensions.github.io/)
+
 
 További kliensek itt találhatók: [https://git-scm.com/downloads/guis](https://git-scm.com/downloads/guis)
 
