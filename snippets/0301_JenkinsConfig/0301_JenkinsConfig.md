@@ -10,7 +10,7 @@ A Jenkins egy javaban írt nyílt forráskódú folyamatos integrációs eszköz
 
 A jenkins telepítése rendkívül egyszerű feladat.
 
-![](image/Jenkins_kep_02.png)
+![](image/Jenkins_kep_02.PNG)
 
 Csak le kell tölteni a honlapról a Windows native package-t. Majd egyszerűen a next-next-finish módszerrel telepíthető is. A böngésző http://localhost:8080/ URL-jén futtatható.
 
@@ -18,19 +18,19 @@ Csak le kell tölteni a honlapról a Windows native package-t. Majd egyszerűen 
 
 „Új item” fül alatt hozhatunk létre projekteket. Itt létrehoztam egy freestyle projectet.
 
-![](image/Jenkins_kep_03.png)
+![](image/Jenkins_kep_03.PNG)
  
 „Emberek” fül alatt hozhatunk létre felhasználókat, és itt adhatóak meg a felhasználók jogosultságai is.
 
-![](image/Jenkins_kep_04.png)
+![](image/Jenkins_kep_04.PNG)
 
 A „Build történet” alatt látható egy idődiagram, ahol a megfelelő projektek buildjei látható. Itt a Snippet test projekt legelső buildje látható. Státusza megszakadt (aborted), ugyanis kézzel leállítottam.
 
-![](image/Jenkins_kep_05.png)
+![](image/Jenkins_kep_05.PNG)
 
 A „Jenkins kezelése” fül alatt találhatók a fontosabb beállítások. Számunkra a „Rendszer Beállítások” és a „Kiegészítők Kezelése” gombok lesznek relevánsak. 
 
-![](image/Jenkins_kep_06.png)
+![](image/Jenkins_kep_06.PNG)
 
 ## Projekt építése és konfigurálása
 
@@ -38,52 +38,52 @@ Hozzunk létre egy működő projektet, és adjunk hozzá egy buildet.
 
 A kezdeti állapoton látható két projekt. Csináljunk egy harmadikat.
 
-![](image/Jenkins_kep_01.png)
+![](image/Jenkins_kep_01.PNG)
  
 Először válasszuk a „Jenkins Kezelése” -> „Kiegészítők Kezelése” pontokat. Itt le kell tölteni a szükséges pluginokat. A repository eléréségez szükségünk lesz a „GIT plugin-ra. Töltsük le, és indítsuk újra a Jenkinst.
 
 Ezután válasszuk a „Jenkins Kezelése” -> „Rendszer Beállítások” pontokat, és keressük meg a Git beállításokat. Itt a „Path to Git excecutable” útvonalat megfelelően kell beállítani, hogy elérhessük a Gitet. A C meghajtóra telepítettem a Git könyvtáramat. Ezenbelül a cmd mappa tartalmazza a szükséges .exe fájlt.
 
-![](image/Jenkins_kep_07.png)
+![](image/Jenkins_kep_07.PNG)
  
 „Új item” alatt létrehozhatunk egy „Freestyle project”-et.
 
-![](image/Jenkins_kep_08.png)
+![](image/Jenkins_kep_08.PNG)
  
 Válasszuk ki a „Verziókezelő rendszer” alatt a Git-t és adjuk meg a Repository URL-t. Én a GitHub-on létrehoztam egy repositoryt, és ennek az elérési útvonalát adtam meg.
 
-![](image/Jenkins_kep_09.png)
+![](image/Jenkins_kep_09.PNG)
  
 Kattintsunk az „Építés Most”-ra és futtassuk le a legelső buildünket.
 
-![](image/Jenkins_kep_10.png)
+![](image/Jenkins_kep_10.PNG)
  
 A „Console Output” alatt nézhetjük meg mit is csinált ez az egyszerű „dummy build”.
 
 Létrehozott egy workspacet a számítógépünkön, ahova lefetchelte a távoli Git repository változásait. Mivel ez az első build, letöltötte az egész repositoryt. Így sikeresen lefutott a build.
 
-![](image/Jenkins_kep_11.png)
+![](image/Jenkins_kep_11.PNG)
  
 Ha visszamegyünk az irányítópultra akkor elérhetjük a munkaterületet.
 
-![](image/Jenkins_kep_12.png)
+![](image/Jenkins_kep_12.PNG)
  
 Itt látható az egyfajl.txt. Nyissuk meg.
 
-![](image/Jenkins_kep_13.png)
+![](image/Jenkins_kep_13.PNG)
  
 Hello.
 
 Nézzük meg, mi van a GitHub repositoryban.
 
-![](image/Jenkins_kep_14.png)
+![](image/Jenkins_kep_14.PNG)
  
 Ugyanez. Tehát elérte a Jenkins a távoli repositoryt.
 
-![](image/Jenkins_kep_15.png)
+![](image/Jenkins_kep_15.PNG)
  
 Tehát Jenkins alatt létrehoztunk egy projektet (Snippet test), azon belül egy buildet, ami képes elérni Giten keresztül a GitHub repositorymat, majd azon lefuttat egy „dummy test”-t.
 
-![](image/Jenkins_kep_16.png)
+![](image/Jenkins_kep_16.PNG)
  
 <small>Szerzők, verziók: Almási Péter</small>
