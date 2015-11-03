@@ -20,7 +20,7 @@ A prototype olyasmi, mint a factory, csak egy kezdeti mintapéldánnyal adjuk me
 
 Általánosan a prototype osztály diagramja az alábbi. Minden konkrét implementációnak rendelkeznie kell egy a klónozásra szolgáló metódussal, hogy fel lehessen használni további példányok létrehozására.
 
-![](image/prototype.png)
+![](image/Prototype.png)
 
 Megjegyzések
 

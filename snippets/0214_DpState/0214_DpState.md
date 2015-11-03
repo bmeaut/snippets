@@ -62,7 +62,7 @@ Autonóm robotoknál általános, hogy viselkedésüket a környezetéből érke
     };
 
     Robot::Robot()
-       : currentState(CruiseState())
+       : currentState(CruiseState(*this))
     { }
 
     void CruiseState::onLeftWallDetected(float distance)

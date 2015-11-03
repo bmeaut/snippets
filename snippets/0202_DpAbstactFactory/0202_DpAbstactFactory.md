@@ -2,8 +2,6 @@
 layout: default
 ---
 
-TODO: UML diagram beszúrása és leírása; hivatkozás példaprogramra (ha van)
-
 ## Abstract factory
 
 Az abstract factory tervezési minta igen közel áll a factory method tervezési mintához. Gyakorlatilag azok egy csoportját fogja össze. Erre akkor van szükség, ha több féle objektumot kell tudni létrehozni, de nem tetszőleges kombinációban, hanem az egymásnak megfelelőeket. Ekkor egy abstract factory összefogja a factory methodokat és amikor példányosítani kell valamit, akkor mindig az éppen aktuális abstract factory megfelelő factory methodját fogjuk használni.

@@ -48,7 +48,7 @@ Itt érdemes megjegyezni, hogy a Proxy minta szorosan kapcsolódik a dependency 
   * Jogosultság ellenőrzés
   * Egyszerűbb interfész (Ez az alkalmazás nagyon közel van a Facade design patternhez.)
   * Távoli erőforrások eléréséhez interfész (pl. webservice, REST API hívások)
-  * Távoli, nagy erőforrás igényű műveletek koordinálása. Péládul a tényleges kérés előtt már elkezdi a végrehajtást.
+  * Távoli, nagy erőforrás igényű műveletek koordinálása. Például a tényleges kérés előtt már elkezdi a végrehajtást.
   * Ha egy osztály funkciói eredetileg nem szálbiztosak és nem tuduk rajta módosítani, egy Proxy eltakarhatja és megoldhatja a szükséges szinkronizációkat.
   * A std::shared_ptr<> smart pointer is egyfajta proxy, mivel elérhetővé teszti a pointer értékét, valamint számolja a hivatkozásokat, és ha ez a számláló eléri a nullát, megszünteti a pointer által hivatkozott objektumot.
   * Például WebServiceek használatakor (olyan függvények, melyeket HTTP protokollon kereszül lehet meghívni) a forráskód szintjén automatikusan generálódnak a proxy osztályok, így a webservice hívása ugyanúgy történik, mint akármilyen másik objektum egy metódusának meghívása. Csak az valójában HTTP protokollon kereszül egy szerverre továbbítja a kérést.
