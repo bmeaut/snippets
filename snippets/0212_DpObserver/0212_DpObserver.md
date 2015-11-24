@@ -17,7 +17,7 @@ Egy ilyen alkalmazásban tipikusan a document - view megközelítést alkalmazzu
     class IObserver
     {
     public:
-        onDocumentChanged(const Document& doc)
+        virtual void onDocumentChanged(const Document& doc) = 0;
     }
 
     class Document
@@ -39,6 +39,9 @@ Egy ilyen alkalmazásban tipikusan a document - view megközelítést alkalmazzu
             }
         }
     }
+
+
+
 
 A *notifyAllObservers()* metódus azért private, mert minden esetben a dokumentum kezdeményezi az observerek tájékoztatását, miután megváltozott a tartalma.
 
