@@ -14,13 +14,48 @@ Ez a Snippet a Cortex Corvette RobonAUT csapat összefoglalója az autóhoz írt
 
 vmi rizsát ide.
 
-## QCustomPlot
+## Qt előnyei egyéb keretrendszerekhez viszonyítva
 
-A fejlesztést nagyban megkönnyítette, hogy nem kellett mindent nulláról megírnunk. Az egyik külső forrásból származó (third-party) felhasznált osztály a *QCustomPlot* volt. Segítségével, gyakorlatilag pár sorban tudunk létrehozni gyönyörű, végtelenül paraméterezhető és reszponzív diagrammokat.
+### Crossplatform rendszer
+
+A **Qt** keretrendszer nagy előnye például egy *.net*-hez képest, hogy lényegében platformfüggetlen rendszer, a fejlesztők és felhasználók különböző platformokon dolgozhatnak. Ez a **java** környezetre is igaz persze, de a Qt alkalmazások natívak, virtuális gép és GC nélkül futnak az adott operációs rendszer felett.
+
+Magas szintű absztrakciót tesz lehetővé, így például egységesen kezelhető a Windows-os és Linux-os grafikus felület az összes widgettel együtt, a soros portok, vagy a *folymatok* (QProcess). A projekt kapcsán persze a platformnak csupán kevés szolgáltatására volt szükségünk.
+
+### Absztrakt interfészek
+
+Az absztrakt interfészek használata nem kizárólag a platformfüggő különbségek kezelésekor hasznos. Már a beágyazott projekt elkezdése előtt érdemesnek tűnt a vezérlő protokoll fejlesztésével foglalkozni, ezt viszont hardver nélkül a legegyszerűbben valamiféle szimulátorral lehet megoldani. A szimulátor esetünkben a szabványos be- és kimeneteken kommunikál a közös protokoll szerint. A szimulátort a vezérlőszoftver képes *QProcess*ben futtatni, és ezáltal soros interfészként használni. Amikor már a beágyazott projekten dolgoztunk, jó ötletnek tűnt beépíteni az USB-VCP-t, mivel csak egy autónk (és egy BT modulunk)  van, de sok ezektől független feladaton lehet dolgozni az autó nélkül (ADC lábakkal megvalósított perifériák pl.). A QProcess-alapú soros interfész alapján percek alatt megvalósítható volt a QSerialPort-alapú, amely kezeli az USB-VCP-t, és a Bluetooth soror portját is.
+
+Különösen hasznos volt a szimulátorral fenntartott teljes kompatibilitás a vonalkereső algoritmus hibakeresésénél. Az autóval felvettünk néhány mintát, amelyeken látványosan nem működött az algoritmus, majd ezeken az autó nélkül, a szimulátorban tudtunk tovább dolgozni, amihez kapcsolódva tudtuk elemezni a kimeneti grafikonokat.
+
+### Signal-slot megoldás
+
+Érdemes kihasználni a Qt-ben elérhető, a C++-hoz képes új nyelvi kiegészítéseket. Minden objektum, amely a *QObject*ből származik, tartalmazhat signalokat és slotokat, amelyeket futásidőben kapcsolhatunk össze más objektumokkal. Ez a megoldás lehetővé teszi azt is, hogy egy signalt több objektum slotjaira kapcsoljunk; ezt alkalmaztuk például a *Communication Log* felület és a protokollértelmezés között: mindkettő objektum megkap minden adatot az eszköz felől, az egyik egyszerűen kiírja egy konzolra, a másik értelmezi a bejövő információt. A két interfész egymástól, és minden más objektumtól független, a futásidőben létrehozott kapcsolat köti őket csupán egy soros interfész egy signaljához.
+
+## Kommunikáció az eszközzel
+
+Ha már tudjuk, hogy soros interfészeink lesznek, érdemes szót ejteni az interfészeken továbbított adatokról. Ez a téma komoly vitakérdés volt a csapaton belül, végül a következő megoldást választottuk:
+
+* ASCII karaktereket használ, a könnyű hibakeresés végett
+* kevés utasítást tartalmaz
+* a beágyazott eszközön futó szerver tartalmazza a parancsokat, a leírásukat stb.
+* maguk a parancsok és beállítható paraméterek egy fagráf csomópontjaiba vannak rendezve
+
+Ez a fagráfos, dinamikusan felderíthető parancskészlet a fejlesztés során igen hasznosnak bizonyult. A legtöbb módosításhoz nem volt szükség a vezérlő szoftver módosítására. A protokoll kevés számú parancsával implementálható lekérdezéseket csak egyszer kellett megírni, a rendszer pedig lényegében korlátlanul bővíthető. A PC-oldali feldolgozás Qt alatt természetesen könnyen implementálható a különféle *stringmanipuláló* eszközökkel, *regular expression*-ökkel; a beágyazott szerver alkalmazás megvalósítása már valamivel bonyolultabb feladat.
+
+## Nem célszerű újra feltalálni a kereket
+
+A fejlesztést nagyban megkönnyíti (gyorsítja), ha nem kell mindent nekünk implementálni, mert léteznek elérhető IP (Intellectual Property) modulok. Ezek előnye a munkaidőn kívül gyakran a tesztelési idő csökkenése is, hiszen egy sok projektben használt modulban mások már észrevették  a lehetséges hibák jó részét (kisebb valószínűséggel kell nekünk javítanunk bármit bennük).
+
+### QCustomPlot
+
+Az egyik külső forrásból származó (third-party) felhasznált osztály a *QCustomPlot* volt. Segítségével, gyakorlatilag pár sorban tudunk létrehozni gyönyörű, végtelenül paraméterezhető és reszponzív diagrammokat.
 
 ![Cortex Corvette Vonaldetektálás](image/cc_linesensor.png "Cortex Corvette Vonaldetektálás")
 
-Nem csak látványnak volt jó a megjelenítés, hanem segítségével a többfajta vonaldetektálási algoritmust is ki tudtunk próbálni, valamint láthattuk azt is közel valósidőben (egy 32 elemű tömb elemeinek nézegetése helyett), hogy melyik szenzorunk "rosszalkodik", illetve hol van még hardveres problémánk.
+Nem csak látványnak volt jó a megjelenítés, hanem segítségével a többfajta vonaldetektálási algoritmust is ki tudtunk próbálni, valamint láthattuk azt is közel valósidőben (egy 32 elemű tömb elemeinek, vagy a 32 teszt célú kék LED nézegetése helyett), hogy melyik szenzorunk "rosszalkodik", illetve hol van még hardveres problémánk (ebből akadt néhány).
+
+Egyetlen komoly hiányosságot találtunk a *QCustomPlot*ban, a grafikus gyorsítás hiányát. A grafikon újrarajzolása 30-50 fps feletti sebességen komoly terhelést jelent a CPU számára. Ezzel a limitációval persze együtt lehet élni egy mai 4-8 magos gépen, de attól még bosszantó.
 
 [QCustomPlot hivatalos weboldal](http://www.qcustomplot.com/)
 
