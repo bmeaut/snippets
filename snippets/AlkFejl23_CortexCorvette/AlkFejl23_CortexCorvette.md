@@ -12,7 +12,9 @@ Ez a Snippet a Cortex Corvette RobonAUT csapat összefoglalója az autóhoz írt
 
 ## Általános
 
-vmi rizsát ide.
+A Qt-alapú vezérlőszoftver (`CSW`) megalkotásakor alapvető célunk volt, hogy a fejlesztés a lehető leggyorsabban menjen, a lehető legkevesebb rejtett hibát tartalmazza a kód, hogy a RobonAUT-tal kapcsolatos *firmware* fejlesztéstől ne vegyünk el feleslegesen időt. Ez indokolja a protokoll ilyen jellegű megvalósítását, a soros interfészek kezelését, a harmadik féltől származó elemek alkalmazását. Emellett igyekeztünk minden döntés közben észben tartani a platform sajátosságait, illetve a C++11 újdonságait. A szoftver rétegei többnyire szépen elkülönülnek, tehát nincs szükség például a főablak példányára, hogy az autó kormányát mozgathassuk stb. Ennek ellenére néhány korábbi tervezési megfontolás idővel kevésbé jó döntésnek bizonyult, a kezelőfelület például viszonylag erősen a `MainWindow` köré épült, hiába vannak azon belül jól elkülönített interfészek.
+
+A szoftveren tehát még bőven van mit fejleszteni, és fogunk is, hiszen még hiányoznak a felületek néhány szenzor identifikációjához, illetve bizonyos nemlinearitási problémákhoz is szükség lesz mintagyűjtésre. Ez azonban nem komoly probléma, hiszen **napjainkban nem létezik kész szoftver**, kizárólag **kiadott** szoftverek találhatók a piacon. Ennek megfelelően elmondható, hogy bár a *CSW* jelen állapotában egészen kényelmesen használható, jelenleg fejlesztés alatt álló, mérsékelten végigtesztelt termék.
 
 ## Qt előnyei egyéb keretrendszerekhez viszonyítva
 
@@ -98,6 +100,8 @@ A Projekt részeként létrehoztunk két tesztelő osztályt, mely egy Polinomá
 ## Tárgy hasznosságga
 
 Bár mindannyian használtunk már verziókövetést a tárgy előtt is, nem értjük, hogy ez miért nem került előbb tananyagba, hiszen sokaknak teljesen újdonság volt ez a téma. Javasolnánk a tárgy (legalább részeinek) bevitelét az alapképzés részébe.
+
+Emellett zavaró az **állatorvosi ló** effektus. Adott egy lista, benne véges sok remek Qt-feature, C++11-feature és persze design pattern. Ezekből legyen 3 darab, amabból a másikból 2-2 stb. Ez így abszolút nem életszagú, a gyakorlatban a probléma jellege mozgatja a megoldás mechanizmusát, és soha nem az elvárt megoldási mód határozza meg az összes többi tényezőt. A projekt elejétől fogva a *jól használható debug eszköz a versenygéphez* volt a célja, a fejlesztés menetét optimális esetben előre definiált patternek helyett az alkalmazás tényleges igényei határoznák meg...
 
 *True story: bejöttem előadásra, volt pár olyan rész a GIT-ben, amiről még nem hallottam, mivel nem kellett használnom (stash, cherry-pick). Majd két nap múlva elmentem állásinterjúra, ahol megkérdezték pont ezeket. :)*
 
