@@ -33,6 +33,7 @@ A kör területes példa részletesebben kifejtve. Egy kört pontosan tartalmaz�
 
 A Markov-láncok definíciójának lényege, hogy egy adott állapot (mondjuk a következő) valószínűsége csak a megelőző állapottól függ. Képlettel:
 
+![keplet](https://cloud.githubusercontent.com/assets/10497471/11790296/565f79ec-a29b-11e5-95bc-63b4e8675092.jpg)
 Az itt részletezett példában ez azt jelenti, hogy az átmeneti valószínűségek csak az aktuális elrendezéstől függnek, de az hogy mivolt az eddigi iterációknál az semmilyen kihatással nincs a következő lépésre. Ez érthető, hiszen az energia különbségeket csak közvetlenül az átmenet előtti állapot és az utána levő állapot határozza meg.
 
 ## Reversible Jump
