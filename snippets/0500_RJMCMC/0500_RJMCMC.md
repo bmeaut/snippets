@@ -47,5 +47,6 @@ A  Monte Carlo (MC) tehát magában is több módszer gyűjtőelnevezése, de a 
 
 *Reversible-jump Markov chain Monte Carlo*, Andrea Gesmundo, University of Geneva
 
+Szerző: Budai Ádám
 
 
