@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Az RJMCMC algoritmus
 
 Kezdjük a rövidítés feloldásával: Reversible Jump Markov Chain Monte Carlo. A fogalom megértéséhez 3 dolgot kell részletezni. Nevezetesen mit jelent a:
