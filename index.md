@@ -92,6 +92,10 @@ Viselkedési minták
 
 ## További elkészült snippetek, még kategória nélkül
 
+  * [0302_JenkinsAdvanced](snippets/0302_JenkinsAdvanced/0302_JenkinsAdvanced.html) A Jenkins használata xUnit pluginnel QTestLib unit tesztek forratására.
+
+
+
 ### Point Cloud Library
 
   * [0401_PointCloudLib](snippets/0401_PointCloudLib/0401_PointCloudLib.html) Point Cloud Library fordítása, telepítése
