@@ -93,8 +93,17 @@ Viselkedési minták
 ## További elkészült snippetek, még kategória nélkül
 
   * [0302_JenkinsAdvanced](snippets/0302_JenkinsAdvanced/0302_JenkinsAdvanced.html) A Jenkins használata xUnit pluginnel QTestLib unit tesztek forratására.
+  * [0500_RJMCMC](snippets/0500_RJMCMC/0500_RJMCMC.html) A Reversible Jump Markov Chain Monte Carlo optimalizálás
 
+### Tantárgyakhoz kapcsolódó, hallgatók által készített tanulsággyűjtemények
 
+  * Alkalmazásfejlesztés:
+	  * [0600_AlkFejlHfTanulsagok/1](snippets/0600_AlkFejlHfTanulsagok/0600_1.html)
+	  * [0600_AlkFejlHfTanulsagok/2](snippets/0600_AlkFejlHfTanulsagok/0600_2.html) 
+	  * [0600_AlkFejlHfTanulsagok/3](snippets/0600_AlkFejlHfTanulsagok/0600_3.html) 
+	  * [0600_AlkFejlHfTanulsagok/4](snippets/0600_AlkFejlHfTanulsagok/0600_4.html) 
+	  * [0600_AlkFejlHfTanulsagok/5](snippets/0600_AlkFejlHfTanulsagok/0600_5.html) 
+	  * [0600_AlkFejlHfTanulsagok/6](snippets/0600_AlkFejlHfTanulsagok/0600_6.html)  
 
 ### Point Cloud Library
 
