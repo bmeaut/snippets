@@ -13,18 +13,18 @@ Ahhoz hogy unit teszteket tudjunk futtatni, szükségünk van megfelelő plugin(
 
 Fontos tudni, hogy a Jenkins létrehoz egy mappát a számítógépeden, ahova letölti az aktuális git working directoryt, ebben a mappában helyezi el a legenerált fájlokat és itt keresi a relatív URL-ben megadott paramétereket. Így fog kinézni az URL: „\Jenkins\jobs\Project_neve\workspace”. Úgy lehet leellenőrizni, hogy tényleg jó git repositoryn dolgozik a Jenkins, hogy megnézed milyen fájlok vannak a workspaceben. Ez leellenőrizhető a fájlrendszerben a megadott URL alatt, illetve a Jenkins kezelőfelületén is a „Munkaterület” gomb alatt.
 
-![](image/Jenkins_halado_kep_01.png)
+![](image/Jenkins_halado_kep_01.PNG)
  
  
 ## Build
 
 A Build beállítások alatt megadható, hogy mikor töltse le a Jenkins a repository-t és futtassa a unit teszteket. Nekem célszerű volt éjfél utánra állítani ezt a paramétert. A kérdőjel alatt látható, milyen szintaktia szerint lehet paramétereket felvenni. 
 
-![](image/Jenkins_halado_kep_02.png)
+![](image/Jenkins_halado_kep_02.PNG)
 
 Windows alatt célszerű „Execute Windows Batch command”-t választani így egyszerű shell parancsokkal futtatható a build. A commands.cmd fájlt az előbb említett workspace-be kell helyezni, ugyanis a Jenkins mindent a munkakönyvtárhoz képest relatívan keres
 
-![](image/Jenkins_halado_kep_03.png)
+![](image/Jenkins_halado_kep_03.PNG)
  
 A példámban egy Qt-C++ alkalmazásnak a unit tesztjeit szeretném futtatni. A cmd fájlban három sor található. Először futtatom a Qt qmake.exe-jét. Persze meg kell a Jenkinsnek adni az elérési URL-t. Ezek után futtatom a mingw make.exe-jét. Ezután futtatható a generált UnitTests.exe fájl.
 A parancsok a fejlesztőkörnyezet „Compile Output” részében látható, hogyan is futtatható a megírt program. Valahogy így néz ki a cmd fájl:
@@ -38,11 +38,11 @@ Ilyenkor a cmd fájlban a UnitTests.exe sor a következőre változik:
 
 	UnitTests.exe -xml -o UnitTestResult.xml
 
-![](image/Jenkins_halado_kep_04.png)
+![](image/Jenkins_halado_kep_04.PNG)
  
 Lehetőség van még Build utáni feldolgozásra. Például e-mailt küldeni, dokumentációt készíteni, vagy az eredményeket egyéb programmal tovább analizálni. Grafikonon is látható a build tendencia:
 
-![](image/Jenkins_halado_kep_05.png)
+![](image/Jenkins_halado_kep_05.PNG)
  
 
 ## Egyéb
