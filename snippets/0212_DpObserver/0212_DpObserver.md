@@ -12,36 +12,38 @@ Tegyük fel, hogy egy HTML szerkesztő alkalmazást készítünk. Azt szeretnén
 
 Egy ilyen alkalmazásban tipikusan a document - view megközelítést alkalmazzuk, ahol egy dokumentum és két hozzá kapcsolódó nézet van. Az Observer design pattern lényege, hogy a nézetek figyelik a dokumentumot, és ha az megváltozik, arról szeretnének azonnal tudomást szerezni, hogy ennek megfelelően módosíthassák a megjelenésüket a felhasználói felületen. Ezt úgy érik el, hogy az observerek feliratkoznak a dokumentum változását jelző eseményekre, így ha a dokumentum változik, minden feliratkozott observer kap róla értesítést.
 
-    class Document;
+```C++
+class Document;
 
-    class IObserver
+class IObserver
+{
+public:
+    virtual void onDocumentChanged(const Document& doc) = 0;
+}
+
+class Document
+{
+public:
+    void registerObserver(IObserver& obs)
     {
-    public:
-        virtual void onDocumentChanged(const Document& doc) = 0;
+      observers.push_back(obs);
     }
 
-    class Document
+private:
+    std::vector<IObserver&> observers;
+
+    void notifyAllObservers() const
     {
-    public:
-        void registerObserver(IObserver& obs)
+        for(auto& obs : observers)
         {
-          observers.push_back(obs);
-        }
-
-    private:
-        std::vector<IObserver&> observers;
-
-        void notifyAllObservers() const
-        {
-            for(auto& obs : observers)
-            {
-              obs.onDocumentChanged(* this);
-            }
+          obs.onDocumentChanged(* this);
         }
     }
+}
 
 
 
+```
 
 A *notifyAllObservers()* metódus azért private, mert minden esetben a dokumentum kezdeményezi az observerek tájékoztatását, miután megváltozott a tartalma.
 

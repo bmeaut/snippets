@@ -12,31 +12,35 @@ Tegyük fel, hogy egy ConfigManager osztályt készítünk, mely egy konfigurác
 
 Ekkor a ConfigManager egy singleton lesz, például az alábbiak szerint:
 
-    class ConfigManager
+```C++
+class ConfigManager
+{
+public:
+    static ConfigManager GetInstance()
     {
-    public:
-        static ConfigManager GetInstance()
+        if (instance == null)
         {
-            if (instance == null)
-            {
-                instance = new ConfigManager();
-            }
-            return instance;
+            instance = new ConfigManager();
         }
-
-        int GetIntSetting(const char *section, const char *key);
-
-    private:
-        ConfigManager();
-
-        static ConfigManager* instance;
+        return instance;
     }
 
-    ConfigManager* ConfigManager::instance = null;
+    int GetIntSetting(const char *section, const char *key);
+
+private:
+    ConfigManager();
+
+    static ConfigManager* instance;
+}
+
+ConfigManager* ConfigManager::instance = null;
+```
 
 Mivel a konstruktor private, new operátorral kívülről a ConfigManager nem példányosítható. Az egyetlen lehetőség a statikus GetInstance hívása, ami ha még nincsen egyetlen példány sem (elmentve az instance attribútumban), akkor létrehoz egyet, majd visszaadja azt. És mivel a statikus GetInstance mindenhonnan látható, így a kódban bárhol használhatjuk:
 
-    int defaultTargetSpeed = ConfigManager::GetInstance()->GetIntSetting("Movement","DefaultTargetSpeed");
+```C++
+int defaultTargetSpeed = ConfigManager::GetInstance()->GetIntSetting("Movement","DefaultTargetSpeed");
+```
 
 (Itt most feltételezzük, hogy a beállításokat tartalmazó fájl section-ökre van osztva, azon belül pedig kulcs-érték párokat lehet megadni.)
 
@@ -50,11 +54,13 @@ A singletonokat sokszor jobban szeretjük, mint a globális változókat, mivel 
 
 További lehetséges implementáció:
 
-    static Singleton& instance()
-    {
-        static Singleton s;
-        return s;
-    }
+```C++
+static Singleton& instance()
+{
+    static Singleton s;
+    return s;
+}
+```
 
 Hátránya:
 
@@ -75,6 +81,8 @@ Hívják még registry of singletonsnak is, ahol kulcsonként csak egyetlen pél
 
 Konkrét példa lehet beágyazott rendszerben az olyan perifériák burkoló objektumai, amikből több is lehet. Például nyomógombok.
 
-    Buttons::GetInstance(OkButton)->Enable();
+```C++
+Buttons::GetInstance(OkButton)->Enable();
+```
 
 <small>Szerzők, verziók: Csorba Kristóf</small>

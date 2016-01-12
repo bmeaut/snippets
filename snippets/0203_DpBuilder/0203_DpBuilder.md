@@ -10,8 +10,10 @@ A builder tervezési minta szétválasztja a reprezentációt és az őt felép�
 
 Számos programnyelvben a string egy olyan objektum, amit gyakran fűzünk össze másik stringekkel, viszont ez a művelet meglehetősen erőforrás igényes. Amennyiben a
 
-    for(int i=0; i<100; i++)
-        result = result + string(i) + " és ";
+```C++
+for(int i=0; i<100; i++)
+    result = result + string(i) + " és ";
+```
 
 minden egyes + műveleténél létre kell hozni egy új (az esetek nagy részében ideiglenes) string objektumot a részeredmény tárolására, akkor az igen nagy erőforrás pazarlás. Erre jött létre a StringBuilder, melynek sorban meg lehet mondani, hogy miket fűzzön hozzá a stringhez, de a tényleges string objektum csak akkor jön létre, amikor készen vagyunk. Addig a tartalma másik formában tárolódik, úgy, hogy ahhoz sokkal könnyebb legyen hozzáfűzni.
 

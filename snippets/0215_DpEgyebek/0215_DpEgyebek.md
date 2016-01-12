@@ -13,19 +13,21 @@ layout: default
 Belső példány az adaptee (ctor kapja meg), a publikus metódusok pedig arra forgatják át a hívásokat. Az Adapter emellett megvalósíthat egy interfészt, ami a kliens elvárásait definiálja.
 
 
-    class BridgePattern {
-        public static void main(String[] args) {
-            Shape[] shapes = new Shape[] {
-            new CircleShape(1, 2, 3, new DrawingAPI1()),
-            new CircleShape(5, 7, 11, new DrawingAPI2()),
-        };
+```C++
+class BridgePattern {
+    public static void main(String[] args) {
+        Shape[] shapes = new Shape[] {
+        new CircleShape(1, 2, 3, new DrawingAPI1()),
+        new CircleShape(5, 7, 11, new DrawingAPI2()),
+    };
 
-        for (Shape shape : shapes) {
-            shape.resizeByPercentage(2.5);
-            shape.draw();
-        }
+    for (Shape shape : shapes) {
+        shape.resizeByPercentage(2.5);
+        shape.draw();
     }
+}
 
+```
 
 ### Példa:
 

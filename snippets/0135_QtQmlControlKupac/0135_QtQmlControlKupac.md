@@ -58,86 +58,99 @@ A példaprogram RadioCanvasList elemének felépítése az alábbi. (A "..." ré
 
 Az egész egy RowLayoutban van, ami kitölti a teljes szülőjét és "margin" távolságot tart ("margin" egy változó).
 
-    RowLayout {
-        id: baseGrid
-        anchors.fill: parent
-        anchors.margins: margin
+```QML
+RowLayout {
+    id: baseGrid
+    anchors.fill: parent
+    anchors.margins: margin
+```
 
 Az első GroupBox egy ColumnLayoutot tartalmaz. Itt egy érdekes csavar is van: a GroupBox szeretné függőlegesen kitölteni a helyét. Ezt alapvetően a RowLayoutban kellene beállítani, mivel az felel a GroupBox méretének beállításáért, viszont ez minden RowLayouton belüli elemre eltérhet. Ezért ezek a beállítások úgy vannak megoldva, hogy a GroupBoxon belül vannak és *a Layoutnak szólnak, de csak a GroupBox-ra vonatkoztatva*.
 
-        GroupBox {
-            Layout.fillHeight: true
+```QML
+GroupBox {
+    Layout.fillHeight: true
 
-            ColumnLayout {
-			...
-            }
-        }
+    ColumnLayout {
+
+        ...
+    }
+}
+```
 
 A második oszlop egy olyan GroupBox, ami széltében és magasságban is kitölti a helyét. Mivel a két szélsőnek fix mérete van (az első akkora, amennyire a tartalma miatt szükség lesz, az utolsónak pedig meg van adva a szélessége), így vízszintesen ő fog mindig átméreteződni.
 
-        GroupBox
-        {
-            Layout.fillHeight: true
-            Layout.fillWidth: true
+```QML
+    GroupBox
+    {
+        Layout.fillHeight: true
+        Layout.fillWidth: true
 
-            ListView {
-			...
-            }
+        ListView {
+            ...
         }
+    }
 
-        GroupBox {
-            Layout.fillHeight: true
-            width: 200
+    GroupBox {
+        Layout.fillHeight: true
+        width: 200
 
-            ColumnLayout {
-			...
-            }
+        ColumnLayout {
+            ...
         }
+    }
+```
 
 ## A ListView
 
 A ListView egy különleges elem: van neki egy modellje, ami egy lista. És van neki egy "sablonja" ami azt adja meg, hogy egy elem hogyan kell, hogy kinézzen. Ezután a ListView fogja a sablont (ezt delegatenek hívja) és azzal, mint mintával, megjeleníti a modellben szereplő elemeket.
 
-    ListView {
-        id: eventLog
-        anchors.fill: parent
-        anchors.margins: 10
+```QML
+ListView {
+    id: eventLog
+    anchors.fill: parent
+    anchors.margins: 10
+```
 
 A delegate egy GroupBox, benne egy egymás mellé rakott Rectangle és Text elemmel. (A Row olyasmi, mint a RowLayout, csak butább. De arra pont jó, hogy egymás mellé rakjon két elemet. Itt most szélességeket, kitöltéseket nem kell neki beállítani.) A delegate megadásánál szerepelnek olyan értékek, hogy "colorCode" és "message". Ezek itt változók, amiknek majd a modell köteles értéket adni.
 
-        delegate: GroupBox {
-            anchors.left: parent.left
-            anchors.right: parent.right
-            Row {
-                id: row2
-                Rectangle {
-                    width: 40
-                    height: 20
-                    color: colorCode
-                }
-                Text {
-                    text: message
-                    anchors.verticalCenter: parent.verticalCenter
-                    font.bold: true
-                }
-                spacing: 10
+```QML
+    delegate: GroupBox {
+        anchors.left: parent.left
+        anchors.right: parent.right
+        Row {
+            id: row2
+            Rectangle {
+                width: 40
+                height: 20
+                color: colorCode
             }
+            Text {
+                text: message
+                anchors.verticalCenter: parent.verticalCenter
+                font.bold: true
+            }
+            spacing: 10
         }
+    }
+```
 
 A modell egy ListModel példány. Az id-ja alapján fogunk rá hivatkozni, ha további elemeket akarunk beleírni. Ilyenkor a lista ezt észre fogja venni is magától frissíti a megjelenítést. A ListElementek tetszőleges tulajdonságokat tartalmazhatnak. Az a fontos, hogy azokat is tartalmazzák, amikre a delegate hivatkozik: jelen esetben a "colorCode" és "message". 
 
-        model: ListModel {
-            id: eventLogModel
-            ListElement {
-                message: "Indul a program..."
-                colorCode: "grey"
-            }
-            ListElement {
-                message: "Pirossal kezdünk"
-                colorCode: "red"
-            }
+```QML
+    model: ListModel {
+        id: eventLogModel
+        ListElement {
+            message: "Indul a program..."
+            colorCode: "grey"
+        }
+        ListElement {
+            message: "Pirossal kezdünk"
+            colorCode: "red"
         }
     }
+}
+```
 
 Itt most konkrét értékeket is adtunk a modellnek, hogy legyen kezdőérték is. Ehhez a listához később eseménykezelőkből tudunk majd értéket adni.
 
@@ -145,237 +158,262 @@ Itt most konkrét értékeket is adtunk a modellnek, hogy legyen kezdőérték i
 
 Ennek az alkalmazásnak a jelenleg vizsgált funkcióihoz minimális C++ oldal tartozik, mert minden QML-ben van. (A [...] részt most ki is lehet venni, az csak a C++-os példákhoz kell majd.)
 
-	int main(int argc, char *argv[])
-	{
-	    QApplication app(argc, argv);
-	
-	    QQmlApplicationEngine engine;
-	    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+```C++
+int main(int argc, char *argv[])
+{
+    QApplication app(argc, argv);
 
-		[...]	
-	
-	    return app.exec();
-	} 
-	
+    QQmlApplicationEngine engine;
+    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+
+    [...]    
+
+    return app.exec();
+}
+```
+    
 ### main.qml
 
 A QML oldal két fájlból áll: az egyik a main.qml, amely beállítja az ablak paramétereit és a főmenüt, majd példányosítja a RadioCanvasList elemet, ami lényegében minden egyebet tartalmaz.
 
-	import QtQuick 2.4
-	import QtQuick.Controls 1.3
-	import QtQuick.Window 2.2
-	import QtQuick.Dialogs 1.2
-	
-	ApplicationWindow {
-	    title: "QmlControlKupac"
-	    width: 640
-	    height: 480
-	    visible: true
-	
+```QML
+import QtQuick 2.4
+import QtQuick.Controls 1.3
+import QtQuick.Window 2.2
+import QtQuick.Dialogs 1.2
+
+ApplicationWindow {
+    title: "QmlControlKupac"
+    width: 640
+    height: 480
+    visible: true
+```
+    
 A következőkben később csak a C++-ból eléréshez szükséges objektum nevet állítunk be (ez alapján lehet majd megtalálni C++-ból valamit a QML fájlban), valamint definiáltunk egy signal-t, amit szintén csak a C++ kiegészítésben fogunk használni. 
 
-	    // A C++ oldal számára
-	    objectName: "ApplicationWindow"
-	    signal addGreenEntry();
-	
+```QML
+    // A C++ oldal számára
+    objectName: "ApplicationWindow"
+    signal addGreenEntry();
+```
+    
 A menüt az ablak menuBar tulajdonságának adjuk értékül. A MenuItem-nek van egy signalja "Triggered" néven. Ehhez QML alatt egyből létre is jön egy slot onTriggered néven, aminek ha JavasScript kódot adunk értékül, akkor az a signal hatására le is fog futni.  
 
-	    menuBar: MenuBar {
-	        Menu {
-	            title: "&Minden"
-	            MenuItem {
-	                text: "&Zöld"
-	                onTriggered: addGreenEntry();
-	            }
-	            MenuItem {
-	                text: "&Kilépés"
-	                onTriggered: Qt.quit();
-	            }
-	        }
-	    }
-	
+```QML
+    menuBar: MenuBar {
+        Menu {
+            title: "&Minden"
+            MenuItem {
+                text: "&Zöld"
+                onTriggered: addGreenEntry();
+            }
+            MenuItem {
+                text: "&Kilépés"
+                onTriggered: Qt.quit();
+            }
+        }
+    }
+```
+
 Végül pedig példányosítjuk a RadioCanvasList elemet. Nevét onnan kapta, hogy Radio button, Canvas és List is van benne. Itt meg lehetne neki adni tulajdonságokat, id-t vagy sok egyebet, de most semmi ilyesmire nincs szükségünk. Az elem típusának nevét mindig a fájlnév adja meg (most RadioCanvasList.qml).
 
-	    RadioCanvasList {
-	    }
-	}
+```QML
+    RadioCanvasList {
+    }
+}
+```
 
 ### RadioCanvasList.qml
 
 Ez az a fájl, ami (a menü kivételével) a teljes fejhasználói felületet leírja.
 
-	import QtQuick 2.4
-	import QtQuick.Controls 1.3
-	import QtQuick.Layouts 1.1
-	
-	Item {
-	    anchors.fill: parent
-	    objectName: "RadioCanvasList"
+```QML
+import QtQuick 2.4
+import QtQuick.Controls 1.3
+import QtQuick.Layouts 1.1
+
+Item {
+    anchors.fill: parent
+    objectName: "RadioCanvasList"
+```
 
 A propertyk egyszerű változók, amiket később tudunk használni. (Szükség esetén a C++ oldalról is tudjuk őket olvasni és írni.) 
-	
-	    property int margin: 10
-	    property color selectedColor : "grey"
-	
-	    // C++ oldal is el tudja érni
-	    property int lineWidth : 3
+
+```QML
+    property int margin: 10
+    property color selectedColor : "grey"
+
+    // C++ oldal is el tudja érni
+    property int lineWidth : 3
+```
 
 QML alatt könnyen lehet JavaScript függvényeket készíteni. A paramétereknek itt nincsen típusa. A függvényben értékat adunk a selectedColor változónak, a drawingCanvas elemünket újrarajzoltatjuk, a ListView modelljéül szoláló listára felveszünk egy új bejegyzést, valamint a konzolra is kiírjuk, hogy mi történt.
-	
-	    // C++ oldal is el tudja érni
-	    function selectColor(messageText, color)
-	    {
-	        selectedColor = color;
-	        drawingCanvas.requestPaint();
-	        eventLogModel.append( { message: messageText, colorCode: color } );
-	        console.log("selectColor(" + messageText + ", " + color + ")");
-	    }
-	
+
+```QML
+    // C++ oldal is el tudja érni
+    function selectColor(messageText, color)
+    {
+        selectedColor = color;
+        drawingCanvas.requestPaint();
+        eventLogModel.append( { message: messageText, colorCode: color } );
+        console.log("selectColor(" + messageText + ", " + color + ")");
+    }
+```
+    
 Itt kezdődik a RowLayout, amely a 3 oszlopot helyezi egymás mellé.
 
-	    RowLayout {
-	        id: baseGrid
-	        anchors.fill: parent
-	        anchors.margins: margin
-	
-	        // 1. oszlop
-	
-	        GroupBox {
-	            Layout.fillHeight: true
+```QML
+    RowLayout {
+        id: baseGrid
+        anchors.fill: parent
+        anchors.margins: margin
+
+        // 1. oszlop
+
+        GroupBox {
+            Layout.fillHeight: true
+```
 
 A RadioButton-ok kölcsönös kizárást egy ExclusiveGroup definiálásával adhatjuk meg.
 
-	            ExclusiveGroup { id: radioButtonExclusiveGroup }
-	
-	            ColumnLayout {
-	                anchors.fill: parent
-	
-	                RadioButton {
-	                    id: redRadioButton
-	                    text: "Piros"
-	                    exclusiveGroup: radioButtonExclusiveGroup
+```QML
+            ExclusiveGroup { id: radioButtonExclusiveGroup }
+
+            ColumnLayout {
+                anchors.fill: parent
+
+                RadioButton {
+                    id: redRadioButton
+                    text: "Piros"
+                    exclusiveGroup: radioButtonExclusiveGroup
+```
 
 Kattintás esetén a teendő egy függvényhívás, melyet JavaScript kódként adunk meg. 
 
-	                    onClicked: {
-	                        selectColor("Váltás pirosra.", "red");
-	                    }
-	                }
-	
-	                RadioButton {
-	                    id: blueRadioButton
-	                    text: "Kék"
-	                    exclusiveGroup: radioButtonExclusiveGroup
-	                    onClicked: {
-	                        selectColor("Váltás kékre.", "blue");
-	                    }
-	                }
-	
+```QML
+                    onClicked: {
+                        selectColor("Váltás pirosra.", "red");
+                    }
+                }
+
+                RadioButton {
+                    id: blueRadioButton
+                    text: "Kék"
+                    exclusiveGroup: radioButtonExclusiveGroup
+                    onClicked: {
+                        selectColor("Váltás kékre.", "blue");
+                    }
+                }
+```
+    
 A Canvas az, amire tudunk rajzolni az onPaint eseménykezelőjének elkészítésével. A rajzolás alapja egy context objektum elkérése, mely rendelkezik számos rajzoló függvénnyel. A vonal rajzolás érdekessége, hogy először megadjuk, hogy miket rajzoljon, majd a stroke() függvény meghívásával rajzoljuk ki az egészet ténylegesen.
 
-	                Canvas {
-	                    id: drawingCanvas
-	                    width: 100
-	                    Layout.fillHeight: true
-	
-	                    onPaint: {
-	                        var context = getContext("2d");
-	                        context.reset();
-	                        context.fillStyle = selectedColor
-	                        context.fillRect(0, 0, width/2, height);
-	                        context.lineWidth = lineWidth;
-	                        context.strokeStyle = "rgba(255,255,0,1)";
-	                        context.ellipse(width/2-30,height/2-30,60,60);
-	                        context.stroke();
-	                        console.log("drawingCanvas.onPaint kész");
-	                    }
-	                }
-	            }
-	        }
-	
-	        // 2. oszlop
-	
-	        GroupBox
-	        {
-	            Layout.fillHeight: true
-	            Layout.fillWidth: true
-	
-	            ListView {
-	                id: eventLog
-	                anchors.fill: parent
-	                anchors.margins: 10
-	                delegate: GroupBox {
-	                    anchors.left: parent.left
-	                    anchors.right: parent.right
-	                    Row {
-	                        id: row2
-	                        Rectangle {
-	                            width: 40
-	                            height: 20
-	                            color: colorCode
-	                        }
-	                        Text {
-	                            text: message
-	                            anchors.verticalCenter: parent.verticalCenter
-	                            font.bold: true
-	                        }
-	                        spacing: 10
-	                    }
-	                }
-	                model: ListModel {
-	                    id: eventLogModel
-	                    ListElement {
-	                        message: "Indul a program..."
-	                        colorCode: "grey"
-	                    }
-	                    ListElement {
-	                        message: "Pirossal kezdünk"
-	                        colorCode: "red"
-	                    }
-	                }
-	            }
-	        }
-	
-	        // 3. oszlop
-	
-	        GroupBox {
-	            Layout.fillHeight: true
-	            width: 200
-	
-	            ColumnLayout {
-	                anchors.fill: parent
-	
-	                Text {
-	                    text: "Üzenet:";
-	                }
-	
-	                TextField {
-	                    id: messageTextField
-	                    Layout.fillWidth: true
-	                    placeholderText: "Ide írd be az üzenetet..."
-	                }
-	
-	                Button {
-	                    id: addMessageButton
-	                    Layout.fillWidth: true
-	                    text: "Üzenet hozzáadása"
-	
-	                    onClicked: {
-	                        eventLogModel.append( { message: messageTextField.text, colorCode: "grey" } );
-	                    }
-	                }
-	
+```QML
+                Canvas {
+                    id: drawingCanvas
+                    width: 100
+                    Layout.fillHeight: true
+
+                    onPaint: {
+                        var context = getContext("2d");
+                        context.reset();
+                        context.fillStyle = selectedColor
+                        context.fillRect(0, 0, width/2, height);
+                        context.lineWidth = lineWidth;
+                        context.strokeStyle = "rgba(255,255,0,1)";
+                        context.ellipse(width/2-30,height/2-30,60,60);
+                        context.stroke();
+                        console.log("drawingCanvas.onPaint kész");
+                    }
+                }
+            }
+        }
+
+        // 2. oszlop
+
+        GroupBox
+        {
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+
+            ListView {
+                id: eventLog
+                anchors.fill: parent
+                anchors.margins: 10
+                delegate: GroupBox {
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    Row {
+                        id: row2
+                        Rectangle {
+                            width: 40
+                            height: 20
+                            color: colorCode
+                        }
+                        Text {
+                            text: message
+                            anchors.verticalCenter: parent.verticalCenter
+                            font.bold: true
+                        }
+                        spacing: 10
+                    }
+                }
+                model: ListModel {
+                    id: eventLogModel
+                    ListElement {
+                        message: "Indul a program..."
+                        colorCode: "grey"
+                    }
+                    ListElement {
+                        message: "Pirossal kezdünk"
+                        colorCode: "red"
+                    }
+                }
+            }
+        }
+
+        // 3. oszlop
+
+        GroupBox {
+            Layout.fillHeight: true
+            width: 200
+
+            ColumnLayout {
+                anchors.fill: parent
+
+                Text {
+                    text: "Üzenet:";
+                }
+
+                TextField {
+                    id: messageTextField
+                    Layout.fillWidth: true
+                    placeholderText: "Ide írd be az üzenetet..."
+                }
+
+                Button {
+                    id: addMessageButton
+                    Layout.fillWidth: true
+                    text: "Üzenet hozzáadása"
+
+                    onClicked: {
+                        eventLogModel.append( { message: messageTextField.text, colorCode: "grey" } );
+                    }
+                }
+```
+
 Mivel ebben az oszlopban nincs olyan elem, amit elegánsan szét lehetne függőlegesen húzni, berakunk egy plusz elemet, ami kitölt minden maradék függőleges helyet.
 
-	                // Placeholder
-	                Item {
-	                    Layout.fillHeight: true
-	                }
-	            }
-	        }
-	    }
-	}
-	
+```QML
+                // Placeholder
+                Item {
+                    Layout.fillHeight: true
+                }
+            }
+        }
+    }
+}
+```
 
 ## Összefoglalás
 
