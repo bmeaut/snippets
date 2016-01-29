@@ -25,17 +25,17 @@ Egy ilyen alkalmazásban tipikusan a document - view megközelítést alkalmazzu
     public:
         void registerObserver(IObserver& obs)
         {
-          observers.push_back(obs);
+          observers.push_back(&obs);
         }
 
     private:
-        std::vector<IObserver&> observers;
+        std::vector<IObserver*> observers;
 
         void notifyAllObservers() const
         {
-            for(auto& obs : observers)
+            for(auto obs : observers)
             {
-              obs.onDocumentChanged(* this);
+              obs->onDocumentChanged(* this);
             }
         }
     }

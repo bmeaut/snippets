@@ -27,14 +27,14 @@ A megvalósítás alapja általában annyi, hogy az ősosztály (mint a control)
     public:
         virtual void draw() override
         {
-            for(auto& c : internalControls)
+            for(auto c : internalControls)
             {
-                c.draw();
+                c->draw();
             }
         }
 
     private:
-        std::vector<Control&> internalControls;
+        std::vector<Control*> internalControls;
     };
 
 Így a controlokból tetszőleges hierarchia építhető fel, melyet ha egyetlen gyökéreleme van (ilyen például az ablak egy ablakkezelő rendszerben), nagyon egyszerűen, a gyökérelem draw() metódusával meg tudunk jeleníteni.
