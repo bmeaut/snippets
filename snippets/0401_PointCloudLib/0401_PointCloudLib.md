@@ -34,27 +34,19 @@ layout: default
 
 Keresés (debug):
 
-```
-C:\Program Files\Boost\lib\libboost_iostreams-vc100-mt-gd-1_50.lib
-```
+    C:\Program Files\Boost\lib\libboost_iostreams-vc100-mt-gd-1_50.lib
 
 csere:
 
-```
-C:\Program Files\Boost\lib\libboost_iostreams-vc100-mt-gd-1_50.lib;C:\Program Files\Boost\lib\libboost_chrono-vc100-mt-gd-1_50.lib
-```
+    C:\Program Files\Boost\lib\libboost_iostreams-vc100-mt-gd-1_50.lib;C:\Program Files\Boost\lib\libboost_chrono-vc100-mt-gd-1_50.lib
 
 és keresés (release):
 
-```
-C:\Program Files\Boost\lib\libboost_iostreams-vc100-mt-1_50.lib
-```
+    C:\Program Files\Boost\lib\libboost_iostreams-vc100-mt-1_50.lib
 
 csere:
 
-```
-C:\Program Files\Boost\lib\libboost_iostreams-vc100-mt-1_50.lib;C:\Program Files\Boost\lib\libboost_chrono-vc100-mt-1_50.lib
-```
+    C:\Program Files\Boost\lib\libboost_iostreams-vc100-mt-1_50.lib;C:\Program Files\Boost\lib\libboost_chrono-vc100-mt-1_50.lib
 
 ## 6. Fordítás
 - VS 2010 fordítja a solution-t (debug / release!). Ez több órán át is tarthat. A függőségek hiányzó pdb-ire vonatkozó figyelmeztetések normálisak.
@@ -62,16 +54,14 @@ C:\Program Files\Boost\lib\libboost_iostreams-vc100-mt-1_50.lib;C:\Program Files
 ## 7. Saját alkalmazás létrehozása
 -"CMakeLists.txt" létrehozása (pl. pclproject/src-ben):
 
-```
-cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
-project(<PROJEKTNÉV>)
-find_package(PCL 1.2 REQUIRED)
-include_directories(${PCL_INCLUDE_DIRS})
-link_directories(${PCL_LIBRARY_DIRS})
-add_definitions(${PCL_DEFINITIONS})
-add_executable (<PROJEKTNÉV> <PROJEKTNÉV>.cpp <PROJEKTNÉV>.h)
-target_link_libraries(<PROJEKTNÉV> ${PCL_LIBRARIES})
-```
+    cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
+    project(<PROJEKTNÉV>)
+    find_package(PCL 1.2 REQUIRED)
+    include_directories(${PCL_INCLUDE_DIRS})
+    link_directories(${PCL_LIBRARY_DIRS})
+    add_definitions(${PCL_DEFINITIONS})
+    add_executable (<PROJEKTNÉV> <PROJEKTNÉV>.cpp <PROJEKTNÉV>.h)
+    target_link_libraries(<PROJEKTNÉV> ${PCL_LIBRARIES})
 
 -CMake indítás, forrás (src) könyvtár megadása, cél (pl. pclproject/build) megadása, Configure, [paraméterek módosítása], Configure, Generate
 
@@ -79,12 +69,9 @@ target_link_libraries(<PROJEKTNÉV> ${PCL_LIBRARIES})
 
 -Project/Properties/Linker/Input/Additional Dependencies: fel kell venni a chrono függőséget:
 
-Debug:
-
+    Debug:
 	C:\Program Files\Boost\lib\libboost_chrono-vc100-mt-gd-1_50.lib
-
-Release:
-
+	Release:
 	C:\Program Files\Boost\lib\libboost_chrono-vc100-mt-1_50.lib
 
 <small>Szerzők, verziók: Kovács Viktor</small>

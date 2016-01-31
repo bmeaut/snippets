@@ -12,75 +12,71 @@ Autonóm robotoknál általános, hogy viselkedésüket a környezetéből érke
 
 (Az alábbi kódrészlet több helyen a láthatóságok miatt nem fordul. Ezeket terjedelmi okokból nem vettem bele az alábbi példába, mivel hiányuk az érthetőséget nem befolyásolja.)
 
-```C++
-class Robot
-{
-public:
-    Robot();
-    void setState(State s);
-private:
-    State currentState;
-};
+    class Robot
+    {
+    public:
+        Robot();
+        void setState(State s);
+    private:
+        State currentState;
+    };
 
-class State
-{
-public:
-    State(Robot& r) : robot(r) { }
-    virtual void onFrontDistanceChanged(float distance) { }
-    virtual void onLeftDistanceChanged(float distance) { }
-    virtual void onRightDistanceChanged(float distance) { }
-    virtual void onLeftWallDetected(float distance) { }
-    virtual void onRightWallDetected(float distance) { }
-    virtual void onVelocityChanged(float velocity) { }
-    virtual void onTick() { }
-private:
-    Robot& robot;
-};
-```
+    class State
+    {
+    public:
+        State(Robot& r) : robot(r) { }
+        virtual void onFrontDistanceChanged(float distance) { }
+        virtual void onLeftDistanceChanged(float distance) { }
+        virtual void onRightDistanceChanged(float distance) { }
+        virtual void onLeftWallDetected(float distance) { }
+        virtual void onRightWallDetected(float distance) { }
+        virtual void onVelocityChanged(float velocity) { }
+        virtual void onTick() { }
+    private:
+        Robot& robot;
+    };
 
 Érdemes a State ősosztályban alapértelmezett metódusokat adni, hogy az egyes Stateekben csak azokat kelljen megírni, amire ténylegesen szükség van.
 
-```C++
-class CruiseState : public State
-{
-public:
-  CruiseState(Robot& r) : State(r) { }
-  virtual void onLeftWallDetected(float distance) override;
-};
+    class CruiseState : public State
+    {
+    public:
+      CruiseState(Robot& r) : State(r) { }
+      virtual void onLeftWallDetected(float distance) override;
+    };
 
-class StoppingState : public State
-{
-public:
-  StoppingState(Robot& r) : State(r) { }
-  virtual void onVelocityChanged(float velocity) override;
+    class StoppingState : public State
+    {
+    public:
+      StoppingState(Robot& r) : State(r) { }
+      virtual void onVelocityChanged(float velocity) override;
 
-private:
-  const float maxSpeedForStopped = 0.01;
-};
+    private:
+      const float maxSpeedForStopped = 0.01;
+    };
 
-class StandbyState : public State
-{
-public:
-  StandbyState(Robot& r) : State(r) { }
-};
+    class StandbyState : public State
+    {
+    public:
+      StandbyState(Robot& r) : State(r) { }
+    };
 
-Robot::Robot()
-   : currentState(CruiseState(*this))
-{ }
+    Robot::Robot()
+       : currentState(CruiseState(*this))
+    { }
 
-void CruiseState::onLeftWallDetected(float distance)
-{
-    robot.setState(StoppingState(robot));
-}
+    void CruiseState::onLeftWallDetected(float distance)
+    {
+        robot.setState(StoppingState(robot));
+    }
 
-void StoppingState::onVelocityChanged(float velocity)
-{
-  if (velocity <= maxSpeedForStopped)
-  {
-    robot.setState(StandbyState(robot));
-  }
-}
-```
+    void StoppingState::onVelocityChanged(float velocity)
+    {
+      if (velocity <= maxSpeedForStopped)
+      {
+        robot.setState(StandbyState(robot));
+      }
+    }
 
 Ebben a példában ha a robot bal oldalán egyértelműen (többszörös mérésekkel igazolva) fal van, akkor a robot elkezd megállni (StoppingState). Ha pedig megállt, akkor állva marad (StandbyState).
 

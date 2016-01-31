@@ -14,14 +14,12 @@ A snippetekben forráskód az alábbi három módon jelenhet meg:
 * Magában a snippet könyvtárában szerepelhet minta forráskód, külön fájlban.
 * Hivatkozhatunk például egy github repositoryra is, mint ez itt: [ennek a snippetnek a forrása a github.com-on](https://github.com/bmeaut/snippets/blob/gh-pages/snippets/0001_SnippetSablon/0001_SnippetSablon.md)
 
-A forráskód lehet inline, mint a `` printf() ``, vagy lehet kódblokk, melynek minden három backticket (Alt Gr + 7) követ, és a végén is ez zárja le.
+A forráskód lehet inline, mint a `` printf() ``, vagy lehet kódblokk, melynek minden sora legalább 4 szóközzel kezdődik:
 
-```C++
-void main()
-{
-  printf("Mizu?\n");
-}
-```
+    void main()
+    {
+      printf("Mizu?\n");
+    }
 
 ## Képek beágyazása
 

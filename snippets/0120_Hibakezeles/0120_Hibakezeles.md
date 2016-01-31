@@ -35,18 +35,14 @@ Az assert általában arra kell, hogy a kódomat ne is lehessen rosszul használ
 
 Érdemes megnézni az ST HAL (Hardware Abstraction Layer) megoldásait, ahol például a HAL\_ADC\_Init függvény ellenőrzi, hogy ha egy Resolution paramétert kell átadni, akkor az tényleg az-e:
 
-```C++
-assert_param(IS_ADC_RESOLUTION(hadc->Init.Resolution));
-```
+    assert_param(IS_ADC_RESOLUTION(hadc->Init.Resolution));
 
 Az ide vonatkozó header fájlban lévő makró pedig:
 
-```C++
-#define IS_ADC_RESOLUTION(RESOLUTION) (((RESOLUTION) == ADC_RESOLUTION12b) || \
-                                       ((RESOLUTION) == ADC_RESOLUTION10b) || \
-                                       ((RESOLUTION) == ADC_RESOLUTION8b)  || \
-                                       ((RESOLUTION) == ADC_RESOLUTION6b))
-```
+    #define IS_ADC_RESOLUTION(RESOLUTION) (((RESOLUTION) == ADC_RESOLUTION12b) || \
+                                           ((RESOLUTION) == ADC_RESOLUTION10b) || \
+                                           ((RESOLUTION) == ADC_RESOLUTION8b)  || \
+                                           ((RESOLUTION) == ADC_RESOLUTION6b))
 
 Így bár a vizsgált paraméter uint32_t, mégis kiderül, ha valami érvénytelen szám került bele.
 

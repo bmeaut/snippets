@@ -26,16 +26,14 @@ Mielőtt nekilátunk a SimpleTelemetryVisualizer példaprogram dokumentációjá
 
 Az alábbi metódus elég egyértelmű, hogy mit csinál:
 
-```C++
-void RobotProxy::accelerate()
-{
-    RobotState newState;
-    newState.setStatus(RobotState::Status::Accelerate);
-    newState.setA(1);
-    communication.send(newState);
-    qDebug() << "Gyorsítási parancs elküldve.";
-}
-```
+	void RobotProxy::accelerate()
+	{
+	    RobotState newState;
+	    newState.setStatus(RobotState::Status::Accelerate);
+	    newState.setA(1);
+	    communication.send(newState);
+	    qDebug() << "Gyorsítási parancs elküldve.";
+	}
 
 Lehetne még hozzá kommentárt írni, de minek. A header fájlban ott van előtte, hogy 1 m/s2 gyorsítási parancsot küld a robotnak. Ennyi pont elég.
 
@@ -43,39 +41,37 @@ Lehetne még hozzá kommentárt írni, de minek. A header fájlban ott van előt
 
 Nézzük meg a SimpleTelemetryVisualizer Simulator.h fájljának elejét:
 
-```C++
-#pragma once
-#ifndef SIMULATOR_H
-#define SIMULATOR_H
-#include <QObject>
-#include <QTimer>
-#include "Communication/CommunicationTcpSocketServer.h"
-#include "RobotState.h"
-
-/**
- * @brief A robot szimulátor.
- * 
- * Van egy belső, RobotState típusú állapota, melyet egy QTimer segítségével periodikusan frissít.
- * Létrehoz egy CommunicationTcpSocketServer objektumot a kommunikációhoz, amihez lehet csatlakozni.
- * Minden szimulációs lépés után elküldi az állapotát.
- * Ha egy RobotState objektumot kap, azt parancsként értelmezi.
- */
-class Simulator : public QObject
-{
-    Q_OBJECT
-
-public:
-    /** Konstruktor.
-     * @param port  A port, amin a létrehozott szerver hallgatózik.
-    */
-    explicit Simulator(int port);
-    ~Simulator() = default;
-
-    /** Elindítja a szimulátort.
-     * @param intervalSec   A szimulátor periódusideje.
-     */
-    void start(float intervalSec);
-```
+	#pragma once
+	#ifndef SIMULATOR_H
+	#define SIMULATOR_H
+	#include <QObject>
+	#include <QTimer>
+	#include "Communication/CommunicationTcpSocketServer.h"
+	#include "RobotState.h"
+	
+	/**
+	 * @brief A robot szimulátor.
+	 * 
+	 * Van egy belső, RobotState típusú állapota, melyet egy QTimer segítségével periodikusan frissít.
+	 * Létrehoz egy CommunicationTcpSocketServer objektumot a kommunikációhoz, amihez lehet csatlakozni.
+	 * Minden szimulációs lépés után elküldi az állapotát.
+	 * Ha egy RobotState objektumot kap, azt parancsként értelmezi.
+	 */
+	class Simulator : public QObject
+	{
+	    Q_OBJECT
+	
+	public:
+	    /** Konstruktor.
+	     * @param port  A port, amin a létrehozott szerver hallgatózik.
+	    */
+	    explicit Simulator(int port);
+	    ~Simulator() = default;
+	
+	    /** Elindítja a szimulátort.
+	     * @param intervalSec   A szimulátor periódusideje.
+	     */
+	    void start(float intervalSec);
  
 A doxygen több jelölésrendszert is támogat ([részletek itt](http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html#cppblock)), most itt csak az egyiket mutatom be. Minden kommentár eleje /**, a vége pedig */ kell, hogy legyen. Ezen belül mehet a szöveg, ami tartalmazhat Markdown jelöléseket, valamint speciális parancsokat. A parancsok @ jellel kezdődnek. A teljes lista [itt érhető el](http://www.stack.nl/~dimitri/doxygen/manual/commands.html), a legfontosabbak:
 
@@ -96,36 +92,32 @@ A Doxygen a dokumentációt elsősorban a forráskód fájlokból generálja, de
   * @mainpage: ez az oldal lesz a főoldal, amivel a dokumentáció kezdődik. Ez a parancs csak egyetlen helyen szerepelhet, különben a Doxygen figyelmeztet és csak az elsőt veszi figyelembe.
 
 Képekre a következő szintaxissal tudunk hivatkozni:
-```
-\!\[\]\(eleresiUt/Kepnev.png\)
-```
+    \!\[\]\(eleresiUt/Kepnev.png\)
 
 (Képeknél fontos, hogy a Doxywizardban majd az Input/IMAGE_PATH-nak meg kell adnunk, hogy ezek a fájlok is másolódjanak át a dokumentációba.)
 
 Ezek fényében a dokumentáció kezdő oldalának eleje az alábbi:
 
-```C++
-@mainpage
-@tableofcontents
-
-@section Architektura Architektúra áttekintés
-
-A Simple Telemetry Visualizer (STV) alkalmazás három fő részből áll:
-
-   * Robot reprezentáció és szimuláció: ez felelős a robot állapotának követéséért, valamint a korábbi állapotok eltárolásáért a későbbi megjelenítéshez.
-   * Felhasználói felület: QML alapú megjelenítése a vezérlő nyomógomboknak, valamint az aktuális és korábbi állapotoknak.
-   * Kommunikáció: TCP/IP alapú kommunikáció a szimulációval. Kialakítása miatt könnyű az átállás más, péládul Bluetooth alapú kommunikációra. A kommunikációs adatcsomagok egyetlen osztály példányait küldik mindkét irányba (RobotState), ebben továbbítódnak a konkrét állapotok és a parancsok is.
-
-@section StvApplication StvApplication: az alkalmazás osztály
-
-Az StvApplication osztály egyetlen példányát hozza létre a main() függvény. A konstruktor létrehozza a további objektum példányokat, összekapcsolja őket. A main() függvény ezután elindítja a Qt fő eseménykezelő ciklusát.
-
-Az StvApplication környezetét az alábbi osztálydiagram ábrázolja:
-
-![](diagrams/main_ClassDiagram.png)
-
-A CommunicationTcpSocket példánya felelős minden kommunikációért a kliens irányból (a másik a szimulátor, mely a mélyén tartalmaz egy CommunicationTcpSocketServer objektumot).
-```
+	@mainpage
+	@tableofcontents
+	
+	@section Architektura Architektúra áttekintés
+	
+	A Simple Telemetry Visualizer (STV) alkalmazás három fő részből áll:
+	
+	   * Robot reprezentáció és szimuláció: ez felelős a robot állapotának követéséért, valamint a korábbi állapotok eltárolásáért a későbbi megjelenítéshez.
+	   * Felhasználói felület: QML alapú megjelenítése a vezérlő nyomógomboknak, valamint az aktuális és korábbi állapotoknak.
+	   * Kommunikáció: TCP/IP alapú kommunikáció a szimulációval. Kialakítása miatt könnyű az átállás más, péládul Bluetooth alapú kommunikációra. A kommunikációs adatcsomagok egyetlen osztály példányait küldik mindkét irányba (RobotState), ebben továbbítódnak a konkrét állapotok és a parancsok is.
+	
+	@section StvApplication StvApplication: az alkalmazás osztály
+	
+	Az StvApplication osztály egyetlen példányát hozza létre a main() függvény. A konstruktor létrehozza a további objektum példányokat, összekapcsolja őket. A main() függvény ezután elindítja a Qt fő eseménykezelő ciklusát.
+	
+	Az StvApplication környezetét az alábbi osztálydiagram ábrázolja:
+	
+	![](diagrams/main_ClassDiagram.png)
+	
+	A CommunicationTcpSocket példánya felelős minden kommunikációért a kliens irányból (a másik a szimulátor, mely a mélyén tartalmaz egy CommunicationTcpSocketServer objektumot).
 
 Ezeket a fájlokat a SimpleTelemetryVisualizer forráskódját is tartalmazó repository docs könyvtára tartalmazza: [https://github.com/csorbakristof/alkalmazasfejlesztes/tree/master/SimpleTelemetryVisualizer/docs](https://github.com/csorbakristof/alkalmazasfejlesztes/tree/master/SimpleTelemetryVisualizer/docs)
 

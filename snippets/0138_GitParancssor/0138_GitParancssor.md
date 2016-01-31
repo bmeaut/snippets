@@ -8,45 +8,33 @@ Változó, hogy ki mennyire szereti a konzolos megoldásokat. Sokak szerint sokk
 
 Bármely git parancsról kaphatunk segítséget a ``--help`` opcióval. Pl.
 
-```Shell
-git commit --help
-```
+    git commit --help
 
 ## Első lépések
 
 Git repository létrehozása az aktuális könyvtárban:
 
-```Shell
-git init
-```
+    git init
 
 Amennyiben olyan repositoryt szeretnénk létrehozni, amit csak távolról fogunk elérni és klónozni (ez viszonylag ritka, leginkább szerver oldalon fordul elő, ahol viszont ezt nem parancssorból szokás megtenni), akkor a ``--bare`` kapcsolóval tehetjük ezt meg.
 
 Sokkal gyakoribb, hogy egy már létező repositoryt klónozunk:
 
-```Shell
-git clone https://github.com/bmeaut/snippets.git
-```
+    git clone https://github.com/bmeaut/snippets.git
 
 Ha már létrejött a repository, annak állapotát (változott-e valami, stagelve van-e valami) a státusz lekérdezésével tehetjük meg:
 
-```Shell
-git status
-```
+    git status
 
 Stagelni fájlokat az add paranccsal lehet:
 
-```Shell
-git add egyfajl.txt
-git add .
-```
+    git add egyfajl.txt
+    git add .
 
 Ez utóbbi minden változást stagel. A stagelt fájlokat commitolni pedig az alábbi módon lehet:
 
-```Shell
-git commit -m "Üzenet"
-git commit
-```
+    git commit -m "Üzenet"
+    git commit
 
 Az első esetben helyben megadtuk a commit üzenetet is. Ha több sorosat szeretnénk megadni, a második eset feldobja az alapértelmezett szövegszerkesztőnket, megvárja, míg beírjuk a commit szöveget (mentünk és kilépünk), majd azt használja commit üzenetnek.
 
@@ -54,18 +42,14 @@ Ez a szövegszerkesztő feldobás amúgy is gyakori a git világában: ha több 
 
 A commitok sorát a
 
-```Shell
-git log
-gitk --all
-```
+    git log
+    gitk --all
 
 parancsok mutatják meg, szövegesen és grafikusan. A gitk-nál az ``--all`` azt jelenti, hogy az összes branchet látni szeretnénk, nem csak az aktuálisat.
 
 Az aktuális munkakönyvtár és commit közötti eltérést (mi változott) a
 
-```Shell
-git diff
-```
+    git diff
 
 parancs mutatja meg.
 
@@ -73,10 +57,8 @@ parancs mutatja meg.
 
 Új branchet tipikusan úgy szoktunk létrehozni, hogy checkoutoljuk is, ezért a leggyakrabban a checkout parancsot használjuk erre a ``-b`` mint branch opcióval:
 
-```Shell
-git checkout -b UjBranchnev
-git checkout -b UjBranchnev a1b2c3
-```
+    git checkout -b UjBranchnev
+    git checkout -b UjBranchnev a1b2c3
 
 Az első eset az aktuális (HEAD által mutatott) commiton hozza létre az új ágat, a második eset pedig az a1b2c3 commiton.
 
@@ -84,43 +66,33 @@ A fenti példában az a1b2c3 helyén állhat egy távoli branch is, pl. origin/m
 
 Ha pedig csak át akarunk váltani egy másik branchre, azt is a checkouttal tehetjük meg:
 
-```Shell
-git checkout master
-```
+    git checkout master
 
 Branchet törölni a
 
-```Shell
-git branch --delete NemKellBranch
-```
+    git branch --delete NemKellBranch
 
 paranccsal lehet. Fontos, hogy ez csak akkor lehetésges, ha a törölt branch minden commitja már mergelve van máshova, vagyis "nem fog leszakadni a commit gráfról". (Ha mégis ezt szeretnénk, arra való a ``--force``.)
 
 Amennyiben el akarjuk dobni az el nem mentett változásokat, azt a reset paranccsal tehetjük meg: a munkakönyvtár állapotát visszaállítjuk arra, ami az adott (vagy aktuális) commitban szerepel. A tényleges visszaállításhoz a ``--hard`` opció is kell.
 
-```Shell
-git reset --hard
-git reset --hard a1b2c3
-```
+    git reset --hard
+    git reset --hard a1b2c3
 
 ## Push, pull, fetch
 
 A push, pull és fetch műveletek alapesetben az aktuális ágra vonatkoznak. Mivel általában erre van szükségünk, ezek sok paraméterezést nem is igényelnek:
 
-```Shell
-git push
-git pull
-git fetch
-git fetch --all
-```
+    git push
+    git pull
+    git fetch
+    git fetch --all
 
 Az utolsó eset akkor hasznos, ha látni szeretnénk a többi ág fejlődését, esetleg mergelni akarjuk őket.
 
 Ezek a műveletek akkor működnek, ha tracking branchen vagyunk, vagyis a branchről a git tudja, hogy mi a távoli megfelelője. A teljes szintaktis az alábbi:
 
-```Shell
-git push origin master:origin/master
-```
+    git push origin master:origin/master
 
 Ebben az esetben az origin távoli repository master ágára pusholjuk a helyi mastert.
 
@@ -128,10 +100,8 @@ Ebben az esetben az origin távoli repository master ágára pusholjuk a helyi m
 
 A merge és rebase művelet parancsa egyszerű, utána viszont lehet, hogy felhasználói beavatkozásra lesz szükség. Ilyenkor azonban a git a válaszában mindig leírja, mi a teendő, ráadásul ezt határozottan érthetően írja le.
 
-```Shell
-git merge MasikBranch
-git rebase MasikBranch
-```
+    git merge MasikBranch
+    git rebase MasikBranch
 
 Fontos, hogy a fentieknél a merge marad a jelenlegi ágon és magába mergeli a másikat, míg a rebase a mostani ág tartalmát áthelyezi (rebaseli) a másik ágra, vagyis annak folytatása lesz a jelenlegi munkánk.
 
@@ -139,23 +109,17 @@ A rebase folyamat több commit "visszajátszását" igényelheti, és ezért min
 
 Az ütközések feloldása egyrészt mehet kézzel. Ilyenkor az ütköző fájlokba bekerül mindkét alternatíva és nekünk kell kitakarítani, az eredeti verzió pedig .orig kiterjesztéssel áll rendelkezésre. (A .orig fájlokat utána törölni szoktuk.) Amennyiben mergetool-t használunk, akkor is ugyanez történik, csak a sima szövegszerkesztőnk helyett a mergetool indul el, aminek a felülete direkt arra készült, hogy az egyes alternatívák közül könnyen tudjuk választani. A mergetool indítása a
 
-```Shell
-git mergetool
-```
+    git mergetool
 
 paranccsal történik. (Az, hogy mi az alapértelmezett mergetool, konfiguráció kérdése. A windowsos telepítő a kdiff3 használatát ajánlja fel.) Természetesen nem csak rebase, hanem merge esetén is ugyanígy működik a kézi mergelés.
 
 A rebase folytatása az alábbi paranccsal megy:  
 
-```Shell
-git rebase --continue
-```
+    git rebase --continue
 
 Végül pedig a cherry-picking az alábbi módon működik:
 
-```Shell
-git cherry-pick 0f543fe
-```
+    git cherry-pick 0f543fe
 
 Ezzel a 0f543fe commitot vesszük át a saját águnkra, amivel egy másoltatot készítünk azokról a változtatásokról.
 
@@ -165,42 +129,36 @@ Amennyiben több, tipikusan még nem pusholt commitot akarunk összeolvasztani, 
 
 Tegyük fel, hogy 3 commitot szeretnék összeolvasztani. Az első, amit nem most készítettem, az 5b74f4, vagyis erre szeretném a squashing eredményét rárakni:
 
-```Shell
-git rebase -i 5b74f4
-```
+    git rebase -i 5b74f4
 
 (A commit hash kódokat egyébként a ``git log`` paranccsal lehet lekérni.)
 A git ekkor feldob egy szövegfált szereksztésre, melyben minden commithoz megadhatjuk, hogy mi legyen vele:
 
-```Shell
-pick e21eac9 UjSor
-pick 9323585 UjSor2
-pick 55c8cf6 UjSor3
+    pick e21eac9 UjSor
+    pick 9323585 UjSor2
+    pick 55c8cf6 UjSor3
 
-# Rebase 5b74f4a..55c8cf6 onto 5b74f4a (3 command(s))
-#
-# Commands:
-# p, pick = use commit
-# r, reword = use commit, but edit the commit message
-# e, edit = use commit, but stop for amending
-# s, squash = use commit, but meld into previous commit
-# f, fixup = like "squash", but discard this commit's log message
-# x, exec = run command (the rest of the line) using shell
-#
-# These lines can be re-ordered; they are executed from top to bottom.
-#
-# If you remove a line here THAT COMMIT WILL BE LOST.
-#
-# However, if you remove everything, the rebase will be aborted.
-```
+    # Rebase 5b74f4a..55c8cf6 onto 5b74f4a (3 command(s))
+    #
+    # Commands:
+    # p, pick = use commit
+    # r, reword = use commit, but edit the commit message
+    # e, edit = use commit, but stop for amending
+    # s, squash = use commit, but meld into previous commit
+    # f, fixup = like "squash", but discard this commit's log message
+    # x, exec = run command (the rest of the line) using shell
+    #
+    # These lines can be re-ordered; they are executed from top to bottom.
+    #
+    # If you remove a line here THAT COMMIT WILL BE LOST.
+    #
+    # However, if you remove everything, the rebase will be aborted.
 
 Itt a commitok végrehajtási sorrendben szerepelnek, időben az első van az első sorban. (Gyakorlatilag egy parancs scriptet szerkesztünk a git számára.) Mivel kell egy commit, az elsőt meghagyjuk (pick), a második kettőt viszont beleolvasztjuk (squash, vagy röviden s):
 
-```Shell
-pick e21eac9 UjSor
-s 9323585 UjSor2
-s 55c8cf6 UjSor3
-```
+    pick e21eac9 UjSor
+    s 9323585 UjSor2
+    s 55c8cf6 UjSor3
 
 Ezután a fájlt elmentve és kilépve a szerkesztőből, egy újabb szövegszerkesztő ablakot kapunk, amiben az "eredő" commit üzenetét tudjuk összerakni. Amint ezt is elmentjünk és kilépünk a szövegszerkesztőből, létrejön az összeolvasztott commit.
 
@@ -208,16 +166,12 @@ Ezután a fájlt elmentve és kilépve a szerkesztőből, egy újabb szövegszer
 
 A parancsok által feldobott szövegszerkesztőt az alábbiak szerint lehet pl. a "nano"-ra beállítani:
 
-```Shell
-git config --global core.editor "nano"
-```
+    git config --global core.editor "nano"
 
 A kdiff3 beállítása mergetoolnak (ebben a példában Windows alatt):
 
-```Shell
-git config --global merge.tool kdiff3
-git config --global mergetool.kdiff3.cmd '"C:\\Program Files (x86)\\KDiff3\\kdiff3" $BASE $LOCAL $REMOTE -o $MERGED'
-```
+    git config --global merge.tool kdiff3
+    git config --global mergetool.kdiff3.cmd '"C:\\Program Files (x86)\\KDiff3\\kdiff3" $BASE $LOCAL $REMOTE -o $MERGED'
 
 ## További információk a szintaxisról
 

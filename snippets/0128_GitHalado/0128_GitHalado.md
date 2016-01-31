@@ -8,18 +8,14 @@ A kiindulási alapunk Andezit és Bazalt projektje a demo1 tag kirakása után.
 
 Mivel a demo1 tag kirakása után még létezik az origin/QueryFunction, de már nincsen rá szükség, Andezit megszünteti. Erre a GitExtensions már nem képes, így parancssorból adja ki az alábbi parancsot:
 
-```Shell
-git push origin :QueryFunction
-```
+    git push origin :QueryFunction
 
 A parancs jelentése annyi, hogy pusholjuk a semmit a távoli QueryFunction-be.
 
 Bazalt helyi repositoryjában természetesen ettől még ott szerepel az origin/QueryFunction tracking reference, bár a remote oldalon már nincs megfelelője, így mérsékelten hasznos. Bazalt az olyan branch hivatkozásoktól, melynek már nincsen megfelelője a remote oldalon, az alábbiak szerint tud megszabadulni:
 
-```Shell
-git fetch --prune origin
-    x [deleted]         (none)     -> origin/QueryFunction
-```
+    git fetch --prune origin
+        x [deleted]         (none)     -> origin/QueryFunction
 
 ## Andezit: új állapotátmenetek és szépítés
 
@@ -120,15 +116,13 @@ Bazalt ezután úgy dönt, hogy készen állnak az új demóra, így először a
 
 Ekkor Bazalt még utoljára ellenőrzi, hogy tényleg minden szépen fut-e. Sajnos kiderül, hogy a program nem is fordul, ugyanis sikerült duplázni a switch default ágát:
 
-```C++
-    default:
-        addLogEntry("Unknown state", LogLevelNormal);
-        break;
-    default:
-        addLogEntry("Unknown state", LogLevelNormal);
-        assert(0);
-        break;
-```
+        default:
+            addLogEntry("Unknown state", LogLevelNormal);
+            break;
+        default:
+            addLogEntry("Unknown state", LogLevelNormal);
+            assert(0);
+            break;
 
 Még jó, hogy ellenőrizte. A merge még sem volt olyan zökkenőmentes. Semmi gond, gyors javítás, utána pedig commit. Jobban belegondolva ez a merge része kellett volna, hogy legyen. Mivel a merge commitot még nem pusholta, éppen módosíthatja is. Erre való az "amend commit": a mostani commitot beleolvasztja az előzőbe. Tipikusan akkor használjuk, ha valami lemaradt:
 

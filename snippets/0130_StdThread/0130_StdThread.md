@@ -12,25 +12,23 @@ A [GrainAutLine](http://bmeaut.github.io/grainautline/) alkalmazásban szükség
 
 Az ezt megvalósító ImageBlender osztály lényegi része az alábbi:
 
-```C++
-class ImageBlender
-{
-public:
-[...]
-    // Meghatározza az összekevert képet
-    cv::Mat GetBlendedImage();
+    class ImageBlender
+    {
+    public:
+    [...]
+        // Meghatározza az összekevert képet
+        cv::Mat GetBlendedImage();
 
-private:
-    // Az egyes rétegek képei
-    std::vector<const cv::Mat*> images;
-    // Rétegenként az átlátszóság értéke
-    std::vector<float> opacities;
-    // Egy kisebb képrészre elvégzi az összekeverést
-    void GetBlendedImage(cv::Mat &resultImage, const cv::Rect roi);
-    // A használt szálak száma
-    const int NumberOfThreads;
-};
-```
+    private:
+        // Az egyes rétegek képei
+        std::vector<const cv::Mat*> images;
+        // Rétegenként az átlátszóság értéke
+        std::vector<float> opacities;
+        // Egy kisebb képrészre elvégzi az összekeverést
+        void GetBlendedImage(cv::Mat &resultImage, const cv::Rect roi);
+        // A használt szálak száma
+        const int NumberOfThreads;
+    };
 
 Az OpenCV cv::Mat formában tárolja a képeket. A ImageBlender::GetBlendedImage() végzi el ténylegesen a rétegek képeinek (ImageBlender::images) az összekeverését, amihez ImageBlender::opacities tárolja az átlátszóságukat.
 
@@ -38,59 +36,55 @@ Az ImageBlender::GetBlendedImage() egy kis előkészület után feldarabolja a k
 
 A feladat szétosztó kódrészlet az alábbi:
 
-```C++
-// Mérjük a futásidőt, hogy a metódus végén meg tudjuk jeleníteni
-QElapsedTimer timer;
-timer.start();
+	// Mérjük a futásidőt, hogy a metódus végén meg tudjuk jeleníteni
+    QElapsedTimer timer;
+    timer.start();
 
-// Itt rakjuk össze a végeredményt.
-cv::Mat resultImage(images[0]->rows, images[0]->cols, CV_8UC3);
+	// Itt rakjuk össze a végeredményt.
+    cv::Mat resultImage(images[0]->rows, images[0]->cols, CV_8UC3);
 
-[...]
+	[...]
 
-// Itt tároljuk a szálakat
-std::vector<std::thread> threads(NumberOfThreads);
-// Egy téglalap magassága
-const int sliceHeight = images[0]->rows / NumberOfThreads;
-// Az utolsó téglalap magassága eltérhet
-const int lastSliceHeight = images[0]->rows - (NumberOfThreads - 1) * sliceHeight;
-// A téglalapok szélessége a kép szélességének felel meg.
-const int width = images[0]->cols;
+	// Itt tároljuk a szálakat
+    std::vector<std::thread> threads(NumberOfThreads);
+	// Egy téglalap magassága
+    const int sliceHeight = images[0]->rows / NumberOfThreads;
+	// Az utolsó téglalap magassága eltérhet
+    const int lastSliceHeight = images[0]->rows - (NumberOfThreads - 1) * sliceHeight;
+	// A téglalapok szélessége a kép szélességének felel meg.
+    const int width = images[0]->cols;
 
-// Minden szálra
-for(int i = 0; i < NumberOfThreads; i++)
-{
-    // A munkaterület
-    cv::Rect roi(
-                0,
-                i*sliceHeight,
-                width,
-                ( i == NumberOfThreads - 1 ? lastSliceHeight : sliceHeight )
-                );
-    // A szál indítása        
-    threads[i] = std::thread([this, &resultImage, roi](){ GetBlendedImage(resultImage, roi); });
-}
+	// Minden szálra
+    for(int i = 0; i < NumberOfThreads; i++)
+    {
+		// A munkaterület
+        cv::Rect roi(
+                    0,
+                    i*sliceHeight,
+                    width,
+                    ( i == NumberOfThreads - 1 ? lastSliceHeight : sliceHeight )
+                    );
+		// A szál indítása        
+		threads[i] = std::thread([this, &resultImage, roi](){ GetBlendedImage(resultImage, roi); });
+    }
 
-// A fő szál nem tesz  mást, mint megvárja a többieket.
-for(int i = 0; i < NumberOfThreads; i++)
-{
-    threads[i].join();
-}
+	// A fő szál nem tesz  mást, mint megvárja a többieket.
+    for(int i = 0; i < NumberOfThreads; i++)
+    {
+        threads[i].join();
+    }
 
-// Kiírjuk az eltelt időt
-qDebug() << "ImageBlender::GetBlendedImage(): total elapsed time: " << timer.elapsed();
+	// Kiírjuk az eltelt időt
+    qDebug() << "ImageBlender::GetBlendedImage(): total elapsed time: " << timer.elapsed();
 
-// Visszaadjuk a végeredményt. (Move szemantikával.)
-return resultImage;
-```
+	// Visszaadjuk a végeredményt. (Move szemantikával.)
+    return resultImage;
  
 A lényegi rész az a sor, ahol elindítjuk a szálakat. Itt az std::thread konstruktorának átadunk egy lambda kifejezést, melyet az a szál végre fog hajtani. A lambda kifejezés három része külön-külön:
 
-```C++
-[this, &resultImage, roi]
-()
-{ GetBlendedImage(resultImage, roi); }
-```
+	[this, &resultImage, roi]
+	()
+	{ GetBlendedImage(resultImage, roi); }
 
 A lamda kifejezésnek szüksége lesz három változóra: a this pointerre, mivel a this->GetBlendedImage meghívásához az is kell, mint rejtett paraméter. A resultImage-re, amit referenciaként veszünk át (értékként másolni kellene a cv::Mat objektumot), valamint a roi-t, vagyis a munkaterületet.
 
@@ -106,9 +100,7 @@ Ezután az egyes szálak kiszámolják a rájuk eső képrészletet és ha mind 
 
 A fejlesztés során volt egy tanulságos hiba: kezdetben a szál indítás az alábbi volt:
 
-```C++
-threads[i] = std::thread([this, &resultImage, &roi](){ GetBlendedImage(resultImage, roi); });
-```
+	threads[i] = std::thread([this, &resultImage, &roi](){ GetBlendedImage(resultImage, roi); });
 
 Vagyis a roi paramétert nem érték, hanem referencia szerint vette át a lamda kifejezés. A hivatkozott roi objektumok viszont a ciklusmagon belül voltak deklarálva, így a következő iterációra az életciklusuk lejárt (az objektumok megszűntek), a rájuk hivatkozó referenciák kiértékelése később a threadekben nem definiált viselkedés. A fordító ugyanazt a memóriaterületet hasznosította újra minden roi-objektumhoz, mivel időben nem fednek át az életciklusaik. Mivel a referencia mutatóként van megvalósítva, az összes szál az indulásakor ugyanarra a roi objektumra az utolsóként létrehozottra hivatkozott, ami akkor életciklusa szerint már megszűnt, de a hozzá tartozó memóriaterületet még nem írta felül a program.
 

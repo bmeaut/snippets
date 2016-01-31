@@ -10,33 +10,30 @@ Ez egyébként azért fontos kérdés, mert sokak azért nem szeretik használni
 A kísérletezéshez készítettem 3 repositoryt, melyek Andezit, Bazalt, és az Origin (szerver) repositoryját fogják képviselni.
 
 
-```ShellSession
-$ cd Origin
-
-$ git init --bare --shared=all
-$ cd ..
-$ git clone Origin Andezit
-Cloning into 'Andezit'...
-warning: You appear to have cloned an empty repository.
-done.
-$ git clone Origin Bazalt
-Cloning into 'Bazalt'...
-warning: You appear to have cloned an empty repository.
-done.
-```
+    $ cd Origin
+	$ git init --bare --shared=all
+	$ cd ..
+	$ git clone Origin Andezit
+	Cloning into 'Andezit'...
+	warning: You appear to have cloned an empty repository.
+	done.
+	$ git clone Origin Bazalt
+	Cloning into 'Bazalt'...
+	warning: You appear to have cloned an empty repository.
+	done.
 
 No ezzel meg is vagyunk. (A fentiekben az Origin a klónozandó repository neve, az Andezit és Bazalt pedig a könyvtárak, ahova klónozni szeretném őket. Így minden szépen egymás mellé került.)
 
 Most már csak egy fájl kell, amin lehet kísérletezni. Ez lett a NaivFajl.txt, az alábbi kezdeti tartalommal:
 
-    Ez itt a naív fájl, ami azt hiszi, hogy nyugis helyen van.
+	Ez itt a naív fájl, ami azt hiszi, hogy nyugis helyen van.
 
 ## Reset current branch
 
 A következőkben tegyül fel, hogy Andezit kiegészítt a szövegünket egy sorral, és ezt a változtatást utána majd vissza akarja vonni.
  
-    Ez itt a naív fájl, ami azt hiszi, hogy nyugis helyen van.
-    Ez meg az a szöveg, aminek a beszúrását majd visszavonjuk.
+	Ez itt a naív fájl, ami azt hiszi, hogy nyugis helyen van.
+	Ez meg az a szöveg, aminek a beszúrását majd visszavonjuk.
 
 Az utolsó commitot visszavonni könnyű, hiszem csak az előzőre vissza kell rakni a branchet. Próbáljuk is ki, jobb klikk és "Reset current branch to here":
 
@@ -70,21 +67,17 @@ Szerencsére a repositoryból nem törlődik (csak néha, takarításkor) az a c
 
 Az eltűnt commitot GitExtensions alól már nem tudjuk előszedni, de parancssorból igen. Nem kell mást tenni, mint lekérni a reflog-ot, vagyis a referencia változások logját. Ebben most az alábbiak szerepelnek:
 
-```ShellSession
-$ git reflog
-af6290e HEAD@{0}: reset: moving to af6290ef74fdf4696d9da1319d7f33cdc3ab1b33
-6c10c8e HEAD@{1}: commit: Added line to revert later.
-af6290e HEAD@{2}: commit (initial): Initial commit of NaivFajl.txt
-```
+	$ git reflog
+	af6290e HEAD@{0}: reset: moving to af6290ef74fdf4696d9da1319d7f33cdc3ab1b33
+	6c10c8e HEAD@{1}: commit: Added line to revert later.
+	af6290e HEAD@{2}: commit (initial): Initial commit of NaivFajl.txt
 
 Látszik, hogy volt ott nekünk egy commitunk, amit a hash kódja azonosít: 6c10c8e.
 Ilyenkor vagy létrehozunk egy branchet erre a commitra, vagy a reset parancsot adjuk ki megint, csak most a célnak az elveszett commitot adjuk meg:
 
-```ShellSession
-$ git reset 6c10c8e
-Unstaged changes after reset:
-M       NaivFajl.txt
-```
+	$ git reset 6c10c8e
+	Unstaged changes after reset:
+	M       NaivFajl.txt
 
 Ezután frissítve a GitExtensions képét:
 
@@ -110,9 +103,9 @@ Ha egy olyan commitot akarunk visszavonni, ami már régebben volt és azóra r�
 
 Ezért először Andezit felvesz egy új sort:
 
-    Ez itt a naív fájl, ami azt hiszi, hogy nyugis helyen van.
-    Ez meg az a szöveg, aminek a beszúrását majd visszavonjuk.
-    Ez meg az a sor, amit meg akarunk tartani.
+	Ez itt a naív fájl, ami azt hiszi, hogy nyugis helyen van.
+	Ez meg az a szöveg, aminek a beszúrását majd visszavonjuk.
+	Ez meg az a sor, amit meg akarunk tartani.
 
 És commitolja:
 
@@ -153,12 +146,12 @@ Látszik, hogy a stagelt változás tényleg szépen visszavonja a törölni kí
 
 Ami itt még érdekes, az egy "NaivFajl.txt.orig" nevű fájl, ami megjelent. Ennek tartalma:
 
-    Ez itt a naív fájl, ami azt hiszi, hogy nyugis helyen van.
-    <<<<<<< HEAD
-    Ez meg az a szöveg, aminek a beszúrását majd visszavonjuk.
-    Ez meg az a sor, amit meg akarunk tartani.
-    =======
-    >>>>>>> parent of 6c10c8e... Added line to revert later.
+	Ez itt a naív fájl, ami azt hiszi, hogy nyugis helyen van.
+	<<<<<<< HEAD
+	Ez meg az a szöveg, aminek a beszúrását majd visszavonjuk.
+	Ez meg az a sor, amit meg akarunk tartani.
+	=======
+	>>>>>>> parent of 6c10c8e... Added line to revert later.
 
 A GIT alapvetően parancssoros eszköz és a mergehez ez a fájl mutatja, hogy a NaivFajl.txt miben tért el az eredeti verziótól. (A KDiff3 is ezt használta fel.) Mivel ez nekünk nem kell, jobb gombbal és "Reset file changes"-t választva töröljük, a NaivFajl.txt változásait pedig commitoljuk.
 
@@ -174,7 +167,7 @@ Korábban volt szó arról, hogy mi a HEAD: egy referencia arra a commitra, "ami
 
 (Ha megnézzük az Andezit/.git/HEAD fájl tartalmát, abban bizony pont ez van:
 
-    ref: refs/heads/master
+	ref: refs/heads/master
 
 és más nincs is benne.)
 

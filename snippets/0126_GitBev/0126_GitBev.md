@@ -58,10 +58,8 @@ A GIT telepítő készleteit minden platformra a [https://git-scm.com/downloads]
 
 A git első konfigurációja a felhasználói nevünk és e-mail címünk megadásából áll:
 
-```ShellSession
-git config --global user.name "Andezit"
-git config --global user.email andezit@example.com
-```
+    git config --global user.name "Andezit"
+    git config --global user.email andezit@example.com
 
 További részletek erről itt olvashatók: [https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
 
@@ -74,57 +72,47 @@ További kliensek itt találhatók: [https://git-scm.com/downloads/guis](https:/
 
 A legegyszerűbb eset, ha el akarok készíteni egyetlen szövegfájlt és azt verziókövetni is akarom. Ehhez kell egy üres könyvtár, amiben dolgozni fogok, majd ott ki kell adni a
 
-```ShellSession
-$ git init
-Initialized empty Git repository in c:/temp/.git/
-```
+    $ git init
+    Initialized empty Git repository in c:/temp/.git/
 
 parancsot. (A GIT Windows alatt felrak egy linuxos shellt, így a parancsokat ne a cmd.exe-n kereszül adjuk ki. Ebben a shellben általában minden működik, ami a cmd.exe-ben, de például a C:\temp könyvtárba "cd /c/temp" paranccsal tudunk belépni, mivel Linux alatt a fájlrendszerben a meghajtók könyvtárakba csatlakoznak be.) 
 
 Ettől már létre is jön a .git könyvtár. Ha létrehozzuk a szövegfájlunkat (akármilyen módszerrel, szövegszerkesztővel), akkor utána megkérdezhetjük a git-et, hogy van-e változás a munkakönyvtárban:
 
-```ShellSession
-$ git status
-# On branch master
-#
-# Initial commit
-#
-# Untracked files:
-#   (use "git add <file>..." to include in what will be committed)
-#
-#       elso.txt
-nothing added to commit but untracked files present (use "git add" to track)
-```
+    $ git status
+    # On branch master
+    #
+    # Initial commit
+    #
+    # Untracked files:
+    #   (use "git add <file>..." to include in what will be committed)
+    #
+    #       elso.txt
+    nothing added to commit but untracked files present (use "git add" to track)
 
 Igen, az elso.txt változott, mint untracked fájl. (Untracked, mert még nem adtuk hozzá soha a repositoryhoz, vagyis teljesen újnak számít.) Most adjuk hozzá (stageljük):
 
-```ShellSession
-$ git add elso.txt
-```
+    $ git add elso.txt
 
 És újra lekérdezve a helyzetet:
 
-```ShellSession
-$ git status
-# On branch master
-#
-# Initial commit
-#
-# Changes to be committed:
-#   (use "git rm --cached <file>..." to unstage)
-#
-#       new file:   elso.txt
-#
-```
+    $ git status
+    # On branch master
+    #
+    # Initial commit
+    #
+    # Changes to be committed:
+    #   (use "git rm --cached <file>..." to unstage)
+    #
+    #       new file:   elso.txt
+    #
 
 Végül commitolva, aminek a -m kapcsolóval egyből megadjuk a szövegét (megjegyzését) is:
 
-```ShellSession
-$ git commit -m "Elso commit"
-[master (root-commit) 691c17d] Elso commit
- 1 file changed, 1 insertion(+)
- create mode 100644 elso.txt
-```
+    $ git commit -m "Elso commit"
+    [master (root-commit) 691c17d] Elso commit
+     1 file changed, 1 insertion(+)
+     create mode 100644 elso.txt
 
 Megjegyzésnek illik olyasmit írni, amiből kiderül, hogy éppen mit változtattunk meg. Az "asdffsdfgd" szöveg nem egy illendő dolog. Főleg, hogy végleg bent marad a nevünk alatt a repositoryban.
 
@@ -134,9 +122,7 @@ Mostantól ehhez az állapothoz bármikor vissza tudunk majd térni. A commitot 
 
 Amennyiben úgy kezdjük a munkát, hogy más már létrehozta a repositoryt, akkor nekünk nem kell létrehozni, mindössze klónozni kell. Ehhez adjuk ki a git clone parancsot. Például a
 
-```ShellSession
-git clone https://github.com/bmeaut/snippets.git
-```
+    git clone https://github.com/bmeaut/snippets.git
 
 parancs leklónozza a gépünkre a teljes snippets repositoryt. Az aktuális könyvtárból fog nyitni egy snippets könyvtárat, ami a projekt munkakönyvtára lesz.
 

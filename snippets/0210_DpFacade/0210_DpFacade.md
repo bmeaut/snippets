@@ -14,33 +14,29 @@ Objektum orientált alkalmazásunkban egyrészt kényelmes lenne egy objektumon 
 
 A Facade design pattern célja egy olyan interfész kialakítása, mely a mögötte lévő funkciókat az adott alkalmazás számára kényelmesebb formában teszi elérhetővé. Jelen esetben a szükséges funkciókat lefedi a metódusaival, de a feleslegesen bonyolult részleteket elfedi a fejleszők elől.
 
-```C++
-class BluetoothCommunication
-{
-public:
-    virtual void SetPin(string pin) = 0;
-    virtual std::ostream GetOutputStream() = 0;
-    virtual std::istream GetInputStream() = 0;
-};
-
-class Wt12Communication : public BluetoothCommunication
-{
-public:
-    virtual void SetPin(string pin) override
+    class BluetoothCommunication
     {
-        GetOutputStream() << "SET BT AUTH * " << pin << endl;
-    }
-};
-```
+    public:
+        virtual void SetPin(string pin) = 0;
+        virtual std::ostream GetOutputStream() = 0;
+        virtual std::istream GetInputStream() = 0;
+    };
+
+    class Wt12Communication : public BluetoothCommunication
+    {
+    public:
+        virtual void SetPin(string pin) override
+        {
+            GetOutputStream() << "SET BT AUTH * " << pin << endl;
+        }
+    };
 
 A *GetOutputStream()* és *GetInputStream()* metódusokat most nem tárgyajuk. Légyegük, hogy olyan streameket adnak vissza, amikkel már könnyedén tudunk küldeni/fogadni a bluetooth kapcsolaton keresztül.
 
 A fenti példában később a Wt12Communication osztály segítségével már nagyon könnyen tudunk péládul PIN-t módosítani:
 
-```C++
-Wt12Communication wt12comm;
-wt12comm.SetPin("123456");
-```
+    Wt12Communication wt12comm;
+    wt12comm.SetPin("123456");
 
 Mind a kommunikáció, mind az esetleges visszajelzések és hibaellenőrzések részleteit be tudjuk burkolni a BluetoothCommunication osztály mögé.
 

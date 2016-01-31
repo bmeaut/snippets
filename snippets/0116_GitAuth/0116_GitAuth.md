@@ -27,9 +27,7 @@ Konvertálás OpenSSH -> Putty irányba: a PuTTYgen felhasználói felületén b
 
 Konvertálás Putty -> OpenSSH irányba: a GIT által telepített ssh-keygen programmal az alábbiak szerint.
 
-```Shell
-ssh-keygen -i -f regi_nyilvanos_kulcs.pub > uj_nyilvanos_kulcs.pub
-```
+    ssh-keygen -i -f regi_nyilvanos_kulcs.pub > uj_nyilvanos_kulcs.pub
 
 ## SSH kulcs regisztrálása GitHub-on
 

@@ -30,15 +30,13 @@ A gyakorlatban sokszor előfordul a visitor mintának egy egyszerűsített vált
 
 Ilyenkor lehet készíteni a meglátogatandó elemek tárolója számára egy olyan metódust, ami paraméterül kap egy lambda kifejezést, aminek a paramétere egy ilyen elem. A tároló pedig minden egyes elemére lefuttatja a lambda kifejezést. A fenti példában ebben az esetben lenne egy ShapeContainer, aminek lenne egy Shape-ekre értelmezett lambda kifejezést kapó metódusa:
 
-```C++
-void ShapeContainer::ForEach(std::function<void(const Shape&)> lambda)
-{
-   for(const Shape& s : shapeVector)
-   {
-      lambda(s);
-   }
-}
-```
+    void ShapeContainer::ForEach(std::function<void(const Shape&)> lambda)
+    {
+       for(const Shape& s : shapeVector)
+       {
+          lambda(s);
+       }
+    }
 
 ### További olvasnivaló
 

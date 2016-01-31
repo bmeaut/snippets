@@ -8,81 +8,61 @@ Az alábbi példaprogram az [alkalmazásfejlesztés repository](https://github.c
 
 A példában létrehozunk egy buffert a memóriában, amire létrehozunk egy folyamot, ami pont ebbe a bufferbe tud írni. Utána létrehozunk ugyanarra a bufferre egy másik folyamot is, ami olvasni fog belőle. És megnézzük, hogy a bufferbe pontosan mi kerül bele.
 
-```C++
-#include <QCoreApplication>
-#include <QString>
-#include <QBuffer>
-#include <QDataStream>
-#include <QDebug>
+    #include <QCoreApplication>
+    #include <QString>
+    #include <QBuffer>
+    #include <QDataStream>
+    #include <QDebug>
 
-int main(int argc, char* argv[])
-{
-    Q_UNUSED(argc);
-    Q_UNUSED(argv);
-```
+    int main(int argc, char* argv[])
+    {
+        Q_UNUSED(argc);
+        Q_UNUSED(argv);
 
 A buffer tárolja az adatokat
 
-```C++
-    QByteArray buffer;
-```
+        QByteArray buffer;
 
 A stream fog írni ("WriteOnly" nincsen). A stream tudja követni, hogy hol tart, tud írni... de tárolója nincsen, azt kívülről biztosítjuk neki.
 
-```C++
-    QDataStream stream(&buffer, QIODevice::ReadWrite);
-```
+        QDataStream stream(&buffer, QIODevice::ReadWrite);
 
 Most direkt olyan szöveget fogunk beírni a bufferbe, hogy hexában is könnyen felismerjük, hogy mi van ott.
 
-```C++
-    QString text1("ABCD");
-    QString text2("EFG");
-```
+        QString text1("ABCD");
+        QString text2("EFG");
 
 Most írunk a streambe. A QString osztály ki tudja magát írni és vissza is tudja magát olvasni.
 
-```C++
-    stream << text1;
-    stream << text2;
-```
+        stream << text1;
+        stream << text2;
 
 Létrehozunk egy streamet, ami olvasni tud a bufferből. A két stream tetszőlegesen tud írni, olvasni és ugrálni a bufferen, egymást nem zavarják.
 
-```C++
-    QDataStream readStream(&buffer, QIODevice::ReadOnly);
-    QString readText1;
-    QString readText2;
-```
+        QDataStream readStream(&buffer, QIODevice::ReadOnly);
+        QString readText1;
+        QString readText2;
 
 Fontos, hogy a két QString tudja, hogy milyen hosszú, így nem kell megkeresni a határukat. Ez nagyon kényelmessé teszi az összetettebb adatstrultúrák sorosítását, mivel csak egymás után ki kell írni az adatokat.
 
-```C++
-    readStream >> readText1;
-    readStream >> readText2;
-```
+        readStream >> readText1;
+        readStream >> readText2;
 
 Megnézzük, mit sikerült visszaolvasni.
 
-```C++
-    qDebug() << "Text1: " << readText1;
-    qDebug() << "Text2: " << readText2;
-```
+        qDebug() << "Text1: " << readText1;
+        qDebug() << "Text2: " << readText2;
 
 És megnézzük a buffer tartalmát is, mert tanulságos:
 
-```C++
-    qDebug() << "A buffer: " << buffer.toHex();
-}
-```
+        qDebug() << "A buffer: " << buffer.toHex();
+    }
 
 A kapott kimenet az alábbi:
 
-```C++
-Text1:  "ABCD"
-Text2:  "EFG"
-A buffer:  "00000008004100420043004400000006004500460047"
-```
+    Text1:  "ABCD"
+    Text2:  "EFG"
+    A buffer:  "00000008004100420043004400000006004500460047"
 
 A QString először elmenti a saját hosszát bájtban, 32 biten (00000008), utána az egyes karaktereket UTF-16 kódolással: A (0041), B (0042), C (0043), D (0044). Utána pedig jön a második QString.
 
