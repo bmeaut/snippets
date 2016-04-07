@@ -31,7 +31,7 @@ Az alábbi példák az [alkalmazásfejelsztés tárgy Git repositoryjában](http
 
 ## A Cpp11Pointers példa: shared\_ptr vektor és weak\_ptr hivatkozás
 
-{% highlight cpp %}
+```cpp
 #include <iostream>
 #include <vector>
 #include <memory>
@@ -49,7 +49,7 @@ public:
 public:
     int x,y;
 };
-{% endhighlight %}
+```
 
 A main()-ben shared\_ptr-ekkel tárolunk blobokat, melyekre ha mindenhol shared\_ptr-ekkel hivatkozunk, akkor azzal nem is lesz gond, viszont a referencia számlálás miatt kicsi többletköltséggel jár. Ha nem kell shared\_ptr, hivatkozhatunk rájuk weak\_ptr-ekkel is, mint például itt a megjelenítésnél. Viszont ha weak\_ptr-rel hivatkozunk, akkor biztosítani kell, hogy futás közben egy másik szálon nem szűnik meg a hivatkozott objektum. Ezért ha biztosra akarunk menni, akkor a weak\_ptr-eket lehet lockolni. Ilyenkor ha már nem létezik a hivatkozott objektum, akkor nullptr-t kapunk vissza, ellenkező esetben pedig egy shared\_ptr-t, ami addig biztosan "életben tartja" az objektumot, amíg dolgozunk vele:
 
