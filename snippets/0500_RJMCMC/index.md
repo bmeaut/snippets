@@ -1,5 +1,8 @@
 ---
 layout: default
+title: Reversible Jump Markov Chain Monte Carlo (RJMCMC) optimalizálás
+tags: other
+authors: Budai Ádám
 ---
 
 # Az RJMCMC algoritmus

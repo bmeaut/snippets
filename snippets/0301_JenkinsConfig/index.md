@@ -1,5 +1,8 @@
 ---
 layout: default
+title: Jenkins konfigurációs alapok
+tags: other
+authors: Almási Péter
 ---
 
 # Jenkins konfiguráció

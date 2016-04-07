@@ -1,1 +1,15 @@
+# Site settings
+title: BME AUT Snippets
+email: 
+description: > # this means to ignore newlines until "baseurl:"
+  Ez a BME AUT Snippet gyűjtemény. A snippetek egy-egy kis témakört bemutató,
+  konkrét példák köré felépített leírások.
 baseurl: /snippets
+url: "http://www.aut.bme.hu" # the base hostname & protocol for your site
+#twitter_username: 
+github_username:  bmeaut
+
+# Build settings
+highlighter: true
+markdown: kramdown
+permalink: pretty

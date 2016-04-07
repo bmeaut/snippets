@@ -1,5 +1,8 @@
 ---
 layout: default
+title: Point Cloud Library alapok
+tags: other
+authors: Kovács Viktor
 ---
 
 # Mi a Point Cloud Library?

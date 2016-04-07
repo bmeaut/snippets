@@ -1,5 +1,8 @@
 ---
 layout: default
+title: Mi a snippet?
+tags: snippets
+authors: Csorba Kristóf
 ---
 
 # Mi az a Snippet?

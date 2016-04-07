@@ -1,5 +1,8 @@
 ---
 layout: default
+title: Snippet sablon
+tags: snippets
+authors: Csorba Kristóf
 ---
 
 # Ez egy snippet sablon

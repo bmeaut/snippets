@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <a href="{{ "/fullList.html" | prepend: site.baseurl }}">Minden snippet egyszerre</a><p/>
+
+  {% capture allTags %}
+  {% for p in site.pages %} {% for t in p.tags %} {{t}} {% endfor %} {% endfor %}
+  {% endcapture %}
+  {% assign allTagsArray = allTags | split : ' ' | sort %}
+
+  {% for t in allTagsArray %}
+    <a href="#{{t}}">{{t}}</a>
+  {% endfor %}
+
+  <h1 class="page-heading">Snippetek címkék szerint</h1>
+
+{% for tag in allTagsArray %}
+  <h2 id="{{tag}}">{{tag}}</h2><br/>
+  <ul>
+  {% for page in site.pages %}
+    {% if page.tags contains tag %}
+    <li>
+      <a href="{{ page.url }}">{{ page.title }}</a> {{page.tags}} ({{page.authors}})
+    </li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+{% endfor %}
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>

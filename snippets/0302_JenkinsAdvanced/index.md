@@ -1,5 +1,8 @@
 ---
 layout: default
+title: Jenkins haladó
+tags: other
+authors: Almási Péter
 ---
 
 #Jenkins haladó
