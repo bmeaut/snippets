@@ -9,6 +9,6 @@ url: "http://bmeaut.github.io" # the base hostname & protocol for your site
 github_username:  bmeaut
 
 # Build settings
-highlighter: rogue
+highlighter: rouge
 markdown: kramdown
 permalink: pretty
