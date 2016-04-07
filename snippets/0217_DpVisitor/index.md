@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: DpVisitor
+title: Visitor tervezési minta
+tags: designpatterns
+authors: Csorba Kristóf
 ---
 
 ## A Visitor tervezési minta

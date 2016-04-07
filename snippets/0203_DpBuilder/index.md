@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: DpBuilder
+title: Builder tervezési minta
+tags: designpatterns
+authors: Csorba Kristóf
 ---
 
 ## Builder

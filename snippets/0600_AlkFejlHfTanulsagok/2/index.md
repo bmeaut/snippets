@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: AlkFejlHf2
+title: AlkFejlHf2 (2015 ősz - RobonAut 12. csapat)
+authors: 12. csapat (AlkFejl 2015 ősz)
+tags: alkfejlhf
 ---
 
 # Az Alkalmazásfejlesztés házi feladat tanulságai a 12. csapat szerint

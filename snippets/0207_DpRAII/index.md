@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: DpRAII
+title: RAII tervezési minta
+tags: designpatterns
+authors: Csorba Kristóf
 ---
 
 ## Resource acquisition is initialization (RAII)

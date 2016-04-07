@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: VerCmp
+title: Verziókezelők összehasonlítása
+tags: alkfejl git
+authors: Csorba Kristóf
 ---
 
 # Miért kell a verziókezelés?

@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: GitPeldafejlesztes
+title: Git példafejlesztés
+tags: alkfejl git
+authors: Csorba Kristóf
 ---
 
 # Egy szoftver fejlesztési folyamat GIT-tel, lépésről lépésre

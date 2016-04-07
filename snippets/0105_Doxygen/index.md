@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: Doxygen
+title: Doxygen alapok
+tags: alkfejl
+authors: Csorba Kristóf
 ---
 
 ## A Doxygen használata

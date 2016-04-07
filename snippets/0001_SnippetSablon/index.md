@@ -1,5 +1,6 @@
 ---
 layout: default
+codename: SnippetSablon
 title: Snippet sablon
 tags: snippets
 authors: Csorba Kristóf

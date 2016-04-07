@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: QtQmlCpp
+title: A Qt QML és a C++ oldal kapcsolata
+tags: alkfejl qt
+authors: Csorba Kristóf
 ---
 
 # Qt alatt a QML és C++ oldal kapcsolata

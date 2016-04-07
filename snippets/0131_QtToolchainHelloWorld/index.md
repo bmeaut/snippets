@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: QtToolchain
+title: Qt toolchain és Hello world
+tags: alkfejl qt
+authors: Csorba Kristóf
 ---
 
 # Qt toolchain és Hello world alkalmazás

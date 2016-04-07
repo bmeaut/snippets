@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: AlkFejlHf4
+title: AlkFejlHf4
+authors: Divald Viktor, Nagy Bálint Máté, Szabó Oszkár
+tags: alkfejlhf
 ---
 
 # Alkalmazásfejlesztés házifeladat tapasztalatok

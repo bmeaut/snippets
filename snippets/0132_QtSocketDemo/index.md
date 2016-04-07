@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: QtSocket
+title: Qt socket kezelés
+tags: alkfejl qt
+authors: Csorba Kristóf
 ---
 
 # QtSocketDemo

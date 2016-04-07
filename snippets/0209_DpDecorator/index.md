@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: DpDecorator
+title: Decorator tervezési minta
+tags: designpatterns
+authors: Csorba Kristóf
 ---
 
 ## Decorator

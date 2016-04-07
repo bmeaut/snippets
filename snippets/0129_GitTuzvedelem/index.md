@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: GitTuzvedelem
+title: Git "tűzvédelem"
+tags: alkfejl git
+authors: Csorba Kristóf
 ---
 
 # GIT tűzvédelem

@@ -2,7 +2,7 @@
 layout: default
 title: C++11 smart pointerek, a new/delete kerülése
 authors: Csorba Kristóf
-tags: alkfejl
+tags: alkfejl cpp
 ---
 
 # C++11 smart pointerek, a new/delete kerülése

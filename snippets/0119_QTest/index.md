@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: QTest
+title: QTest unit tesztek
+tags: alkfejl qt
+authors: Csorba Kristóf
 ---
 
 # QTest, vagyis unit tesztelés Qt környezetben

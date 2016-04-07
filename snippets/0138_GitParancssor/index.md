@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: GitParancssor
+title: Git parancssor
+tags: alkfejl git
+authors: Csorba Kristóf
 ---
 
 # A Git konzolos használata során gyakran előkerülő parancsok

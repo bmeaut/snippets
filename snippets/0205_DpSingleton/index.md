@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: DpSingleton
+title: Singleton tervezési minta
+tags: designpatterns
+authors: Csorba Kristóf
 ---
 
 ## Singleton

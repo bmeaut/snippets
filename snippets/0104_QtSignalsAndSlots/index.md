@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: QtSignals
+title: Qt Signals and slots
+tags: alkfejl qt
+authors: Csorba Kristóf
 ---
 
 # A Signals and slots koncepció Qt alatt

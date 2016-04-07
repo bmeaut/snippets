@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: DpObserver
+title: Observer tervezési minta
+tags: designpatterns
+authors: Csorba Kristóf
 ---
 
 ## Observer vagy publish/subscribe

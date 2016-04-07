@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: DpAbstractFactory
+title: Abstract factory tervezési minta
+tags: designpatterns
+authors: Csorba Kristóf
 ---
 
 ## Abstract factory

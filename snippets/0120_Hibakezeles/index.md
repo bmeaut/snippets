@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: Hibakezeles
+title: Hibakezelési alapok
+tags: alkfejl cpp
+authors: Csorba Kristóf
 ---
 
 Az alkalmazások jelentős része foglalkozik a futás közben kialakuló hibák kezelésével. Főleg kritikus rendszerekben a kódnak akár 80 százalékát is kiteheti azon hibakezelő részek aránya, melyek ideális esetben soha nem fognak lefutni.

@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: QDataStream
+title: QBuffer és QDataStream
+tags: alkfejl qt
+authors: Csorba Kristóf
 ---
 
 # A QBuffer és QDataStream használata

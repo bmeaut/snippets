@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: DpStrategy
+title: Strategy tervezési minta
+tags: designpatterns
+authors: Csorba Kristóf
 ---
 
 ## Strategy

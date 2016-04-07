@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: DpState
+title: State tervezési minta
+tags: designpatterns
+authors: Csorba Kristóf
 ---
 
 ## State

@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: DpFacade
+title: Facade tervezési minta
+tags: designpatterns
+authors: Csorba Kristóf
 ---
 
 ## Facade

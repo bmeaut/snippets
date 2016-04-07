@@ -1,6 +1,10 @@
 ---
 layout: default
 permalink: /fullList.html
+codename: fullList
+title: Minden snippet listája
+tags: snippets
+authors: Csorba Kristóf
 ---
 
 <div class="home">
@@ -9,7 +13,7 @@ permalink: /fullList.html
     {% for page in site.pages %}
       <li>
         <h2>
-          <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }} (author: {{page.authors}}, tags: {{page.tags}})</a>
+          <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a> <small>{{page.tags}} ({{page.authors}})</small>
         </h2>
       </li>
     {% endfor %}

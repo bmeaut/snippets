@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: DpComposite
+title: Composite tervezési minta
+tags: designpatterns
+authors: Csorba Kristóf
 ---
 
 ## Composite

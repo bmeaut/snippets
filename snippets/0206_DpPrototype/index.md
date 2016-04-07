@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: DpPrototype
+title: Prototype tervezési minta
+tags: designpatterns
+authors: Csorba Kristóf
 ---
 
 ## Prototype

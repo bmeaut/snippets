@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: DpLazyInit
+title: Lazy initialization tervezési minta
+tags: designpatterns
+authors: Csorba Kristóf
 ---
 
 ## Lazy initialization

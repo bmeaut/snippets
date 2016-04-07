@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: GitBev
+title: Git bevezető
+tags: alkfejl git
+authors: Csorba Kristóf
 ---
 
 # Git bevezető

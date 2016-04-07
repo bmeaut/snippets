@@ -1,5 +1,6 @@
 ---
 layout: default
+codename: JenkinsAdv
 title: Jenkins haladó
 tags: other
 authors: Almási Péter

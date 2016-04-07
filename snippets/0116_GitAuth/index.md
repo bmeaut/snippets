@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: GitAuth
+title: Git ssh authentikáció
+tags: alkfejl git
+authors: Csorba Kristóf
 ---
 
 # GIT és authentikáció

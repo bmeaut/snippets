@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: DpEgyebek
+title: Egyéb tervezési minták
+tags: designpatterns
+authors: Csorba Kristóf
 ---
 
 # Más struktúrális minták

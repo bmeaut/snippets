@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: GitHalado
+title: Git haladó
+tags: alkfejl git
+authors: Csorba Kristóf
 ---
 
 # Git haladó

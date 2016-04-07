@@ -1,40 +1,40 @@
 ---
 layout: default
-codename: Index
-title: Index
+permalink: /alkfejl.html
+codename: alkfejl
+title: Alkalmazásfejlesztés snippetek
 tags: snippets
 authors: Csorba Kristóf
 ---
 
 <div class="home">
-
-  <a href="{{ "/fullList.html" | prepend: site.baseurl }}">Minden snippet egyszerre</a><p/>
+  {% assign tagToFilterFor = 'alkfejl' %}
 
   {% capture allTags %}
-  {% for p in site.pages %} {% for t in p.tags %} {{t}} {% endfor %} {% endfor %}
+    {% for p in site.pages %}
+      {% if p.tags contains tagToFilterFor %}
+        {% for t in p.tags %} {{t}} {% endfor %}
+      {% endif %}
+    {% endfor %}
   {% endcapture %}
   {% assign allTagsArrayWithDuplicates = allTags | split : ' ' | sort %}
 
   {% assign prev = "" %}
   {% capture allTags %}
   {% for t in allTagsArrayWithDuplicates %}
-    {% if prev != t %} {{t}} {% endif %}
+    {% if prev != t and t != tagToFilterFor %} {{t}} {% endif %}
     {% assign prev = t %}
   {% endfor %}
   {% endcapture %}
-  {% assign allTagsArray = allTags | split : ' ' | sort %}
+  {% assign allTagsArray = allTags | split : ' ' | sort | %}
 
-  Minden címke: {% for t in allTagsArray %} <a href="#{{t}}">{{t}}</a> {% endfor %}
-
-  <p/><a href="{{ "/alkfejl.html" | prepend: site.baseurl }}">Csak az alkalmazásfejlesztés tárgy snippetjei</a><p/>
-
-  <h1 class="page-heading">Minden snippet címkék szerint</h1>
+  <h1 class="page-heading">Alkalmazásfejlesztés snippetek címkék szerint</h1>
 
 {% for tag in allTagsArray %}
   <h2 id="{{tag}}">{{tag}}</h2><br/>
   <ul>
   {% for page in site.pages %}
-    {% if page.tags contains tag %}
+    {% if page.tags contains tag and page.tags contains "alkfejl" %}
     <li>
       <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a> <small>{{page.tags}} ({{page.authors}})</small>
     </li>

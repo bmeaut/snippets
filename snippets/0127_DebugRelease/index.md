@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: DebugRelease
+title: A debug és release fordítás különbségei
+tags: alkfejl cpp
+authors: Csorba Kristóf
 ---
 
 # Debug és release módú fordítás

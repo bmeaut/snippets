@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: StdThread
+title: std::thread
+tags: alkfejl cpp
+authors: Csorba Kristóf
 ---
 
 # Az std::thread használata röviden

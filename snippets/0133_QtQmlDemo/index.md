@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: QtQmlDemo
+title: Qt QML alapok
+tags: alkfejl qt
+authors: Csorba Kristóf
 ---
 
 # QtQmlDemo

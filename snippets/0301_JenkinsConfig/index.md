@@ -1,5 +1,6 @@
 ---
 layout: default
+codename: JenkinsConfig
 title: Jenkins konfigurációs alapok
 tags: other
 authors: Almási Péter

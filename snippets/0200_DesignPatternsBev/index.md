@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: DpDesignPatternBev
+title: Tervezési minták bevezető
+tags: designpatterns
+authors: Csorba Kristóf
 ---
 
 # Design patterns bevezető

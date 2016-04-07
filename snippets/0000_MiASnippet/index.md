@@ -1,5 +1,6 @@
 ---
 layout: default
+codename: MiASnippet
 title: Mi a snippet?
 tags: snippets
 authors: Csorba Kristóf

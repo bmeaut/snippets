@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: DpProxy
+title: Proxy tervezési minta
+tags: designpatterns
+authors: Csorba Kristóf
 ---
 
 ## Proxy

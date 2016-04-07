@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: DpFactory
+title: Factory tervezési minta
+tags: designpatterns
+authors: Csorba Kristóf
 ---
 
 ## Factory method

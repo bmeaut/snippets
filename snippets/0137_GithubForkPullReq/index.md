@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: GithubForkPullReq
+title: Github fork és pull request műveletek
+tags: alkfejl git
+authors: Csorba Kristóf
 ---
 
 # Fork és pull request a github-on

@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: QmlControlKupac
+title: QML Controlok (QmlControlKupac)
+tags: alkfejl qt
+authors: Csorba Kristóf
 ---
 
 # QML Kontrollok

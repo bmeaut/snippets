@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: BevXampp
+title: Bevezetés az XAMPP használatába
+tags: info2
+authors: Csorba Kristóf
 ---
 
 # XAMPP - PHP - MySQL - phpMyAdmin
