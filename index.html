@@ -9,11 +9,18 @@ layout: default
   {% capture allTags %}
   {% for p in site.pages %} {% for t in p.tags %} {{t}} {% endfor %} {% endfor %}
   {% endcapture %}
+  {% assign allTagsArrayWithDuplicates = allTags | split : ' ' | sort %}
+
+  {% assign prev = "" %}
+  {% capture allTags %}
+  {% for t in allTagsArrayWithDuplicates %}
+    {% if prev != t %} {{t}} {% endif %}
+    {% assign prev = t %}
+  {% endfor %}
+  {% endcapture %}
   {% assign allTagsArray = allTags | split : ' ' | sort %}
 
-  {% for t in allTagsArray %}
-    <a href="#{{t}}">{{t}}</a>
-  {% endfor %}
+  All tags: {% for t in allTagsArray %} <a href="#{{t}}">{{t}}</a> {% endfor %}
 
   <h1 class="page-heading">Snippetek címkék szerint</h1>
 
