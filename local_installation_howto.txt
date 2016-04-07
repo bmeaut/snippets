@@ -1,0 +1,7 @@
+(For Windows)
+
+...
+
+gem install rouge
+
+Run runJekyll.cmd to test the site...
