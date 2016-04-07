@@ -1,5 +1,8 @@
 ---
 layout: default
+title: C++11 smart pointerek, a new/delete kerülése
+authors: Csorba Kristóf
+tags: alkfejl
 ---
 
 # C++11 smart pointerek, a new/delete kerülése
@@ -28,23 +31,25 @@ Az alábbi példák az [alkalmazásfejelsztés tárgy Git repositoryjában](http
 
 ## A Cpp11Pointers példa: shared\_ptr vektor és weak\_ptr hivatkozás
 
-    #include <iostream>
-    #include <vector>
-    #include <memory>
+{% highlight cpp %}
+#include <iostream>
+#include <vector>
+#include <memory>
 
-    using namespace std;
+using namespace std;
 
-    class Blob
+class Blob
+{
+public:
+    Blob(int x, int y)
+        : x(x), y(y)
     {
-    public:
-        Blob(int x, int y)
-            : x(x), y(y)
-        {
-        }
+    }
 
-    public:
-        int x,y;
-    };
+public:
+    int x,y;
+};
+{% endhighlight %}
 
 A main()-ben shared\_ptr-ekkel tárolunk blobokat, melyekre ha mindenhol shared\_ptr-ekkel hivatkozunk, akkor azzal nem is lesz gond, viszont a referencia számlálás miatt kicsi többletköltséggel jár. Ha nem kell shared\_ptr, hivatkozhatunk rájuk weak\_ptr-ekkel is, mint például itt a megjelenítésnél. Viszont ha weak\_ptr-rel hivatkozunk, akkor biztosítani kell, hogy futás közben egy másik szálon nem szűnik meg a hivatkozott objektum. Ezért ha biztosra akarunk menni, akkor a weak\_ptr-eket lehet lockolni. Ilyenkor ha már nem létezik a hivatkozott objektum, akkor nullptr-t kapunk vissza, ellenkező esetben pedig egy shared\_ptr-t, ami addig biztosan "életben tartja" az objektumot, amíg dolgozunk vele:
 
