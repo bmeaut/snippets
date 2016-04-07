@@ -3,7 +3,7 @@ layout: default
 codename: AlkFejlHf3
 title: AlkFejlHf3
 authors: Zelei Kristóf, Vógel Ákos, Laczkó Tibor
-tags: alkfejlhf
+tags: afhf
 ---
 
 A fejlesztés során felmerülő nehézségeket a fejlesztés során tapasztal sorrendben tálaljuk.

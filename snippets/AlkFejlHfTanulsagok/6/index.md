@@ -3,7 +3,7 @@ layout: default
 codename: AlkFejlHf6
 title: AlkFejlHf6
 authors: (?)
-tags: alkfejlhf
+tags: afhf
 ---
 
 # I. A Qt Creator fejlesztőkörnyezezet telepítése Linux (Ubuntu) operációs rendszerre (részletes leírás)

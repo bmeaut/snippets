@@ -30,11 +30,9 @@ A tárba egy új snippet az alábbi módokon kerülhet be (preferencia sorrendbe
 
 ## Technikailag hogy készül egy snippet?
 
-A snippet tár egy GIT repository a github.com-on. Minden snippet viszonylag független egymástól és külön könyvtárakban vannak. Elvileg akármi lehet egy ilyen könyvtárban, de az egységesebb kezelhetőség kedvéért a Markdown formátum javasolt (+ képek egy külön "image" alkönyvtárban). A Markdown egy nagyon egyszerű, szöveges formátum, melyből a háttérben lévő Jekyll engine egész designos oldalakat tud létrehozni.
+A snippet tár egy GIT repository a github.com-on. Minden snippet viszonylag független egymástól és külön könyvtárakban vannak. Minden snippet egy index.md (Markdown formátumú) fájlban található, valamint lehetnek mellette képek, például egy image könyvtárban. A Markdown egy nagyon egyszerű, szöveges formátum, melyből a háttérben lévő Jekyll engine egész designos oldalakat tud létrehozni.
 
 Mivel a repository mindenki számára olvasható, bármely snippet kódját meg tudod nézni és újra tudod hasznosítani.
-
-Minden snippetnek van egy sorszáma és egy rövidítés neve (például "0000_MiASnippet"). A sorszámot kérd Kristóftól, hogy ne legyen belőle káosz. Az első két számjegy a csoportosításra van, a második kettő sima sorszám.
 
 ## Ha megakadok, kihez forduljak?
 

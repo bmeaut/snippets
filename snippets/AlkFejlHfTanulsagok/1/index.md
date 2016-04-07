@@ -3,7 +3,7 @@ layout: default
 codename: AlkFejlHf1
 title: AlkFejlHf1 - Cortex Corvette összefoglaló
 authors: Major Péter, Nagy Balázs, Imre Dávid
-tags: alkfejlhf
+tags: afhf
 ---
 
 # Cortex Corvette összefoglaló

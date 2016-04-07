@@ -3,7 +3,7 @@ layout: default
 codename: AlkFejlHf4
 title: AlkFejlHf4
 authors: Divald Viktor, Nagy Bálint Máté, Szabó Oszkár
-tags: alkfejlhf
+tags: afhf
 ---
 
 # Alkalmazásfejlesztés házifeladat tapasztalatok
@@ -30,7 +30,7 @@ A tervezési mintákkal, illetve a feladatunkkal kicsit jobban megismerkedve, fe
 Az egyik legérdekesebb részfeladatnak a felhasználói felület megfelelő kialakítását tartottuk, tapasztalatlan QML és Cpp fejlesztőként - korábbi Androidos xml tapasztalatokal -
 kezdetben meglehetősen nehézkes volt megfelelően összeilleszteni a két oldalt, illetve a fellépő hibákat megkeresni. A Qt kifejezetten jó online dokumentációját átböngészve azonban a hibákat több-kevesebb idő alatt, de mindig sikerült megoldani.
 
-![UI](ui.JPG "Felhasználói felület")
+![UI](image/ui.JPG "Felhasználói felület")
 
 ## Problémák
 ### QML által támogatott adattípusok
@@ -69,6 +69,6 @@ amely hibátlanul visszaadta a beérkezett float típusú üzenetdarabot.
 A hiba okára azóta sem sikerült rájönnünk (nem nagy hiba, nagyon sokat nem is kerestük az okát, hiszen könnyű alternatív megoldásokat adni), mindenesetre érdekes jelenség, és a Qt dokumentációjában sem találtuk nyomát.
 
 
-![Alt Text](logo.png "git•egylet")
+![Alt Text](image/logo.png "git•egylet")
 
 <small>Szerzők: Divald Viktor, Nagy Bálint Máté, Szabó Oszkár</small>
