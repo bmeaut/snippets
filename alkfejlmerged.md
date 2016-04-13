@@ -34,9 +34,7 @@ authors: Csorba Kristóf
   <h2 id="{{tag}}">{{tag}}</h2><br/>
   {% for page in site.pages %}
     {% if page.tags contains tag and page.tags contains "alkfejl" %}
-    <div id="{{page.url}}">
-      <script type="text/javascript"> document.getElementById("{{page.url}}").innerHTML='<object type="text/html" data="{{ page.url | prepend: site.baseurl }}/index.html" ></object>'; </script>
-    </div>
+      {{page.content | markdownify}}
     {% endif %}
   {% endfor %}
   </table>
