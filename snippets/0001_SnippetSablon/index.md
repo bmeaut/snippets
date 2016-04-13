@@ -21,10 +21,12 @@ A snippetekben forráskód az alábbi három módon jelenhet meg:
 
 A forráskód lehet inline, mint a `` printf() ``, vagy lehet kódblokk, melynek minden sora legalább 4 szóközzel kezdődik:
 
-    void main()
-    {
-      printf("Mizu?\n");
-    }
+```cpp
+void main()
+{
+  printf("Mizu?\n");
+}
+```
 
 ## Képek beágyazása
 
