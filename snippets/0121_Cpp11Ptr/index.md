@@ -1,5 +1,6 @@
 ---
 layout: default
+codename: Cpp11Ptr
 title: C++11 smart pointerek, a new/delete kerülése
 authors: Csorba Kristóf
 tags: alkfejl cpp

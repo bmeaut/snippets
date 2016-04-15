@@ -1,9 +1,9 @@
 ---
 layout: default
 permalink: /alkfejlmerged.html
-codename: alkfejl
+codename: AlkFejlMerged
 title: Alkalmazásfejlesztés snippetek összeolvasztva
-tags: snippets
+tags: snippets skipfromindex
 authors: Csorba Kristóf
 ---
 

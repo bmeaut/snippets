@@ -2,14 +2,15 @@
 layout: default
 codename: Index
 title: Index
-tags: snippets
+tags: snippets skipfromindex
 authors: Csorba Kristóf
 ---
 
 <div class="home">
 
-  <a href="{{ "/fullList.html" | prepend: site.baseurl }}">Minden snippet egyszerre</a><p/>
-  {% assign skippedTags = 'afhf' %}
+  <a href="{{ "/fullList.html" | prepend: site.baseurl }}">Minden snippet egyszerre, kódnévvel</a><p/>
+  {% assign skippedTags = 'afhf skipfromindex' %}
+  {% assign skippedPageTag = 'skipfromindex' %}
 
   {% capture allTags %}
   {% for p in site.pages %} {% for t in p.tags %} {{t}} {% endfor %} {% endfor %}
@@ -36,9 +37,11 @@ authors: Csorba Kristóf
   <ul>
   {% for page in site.pages %}
     {% if page.tags contains tag %}
+    {% unless page.tags contains skippedPageTag %}
     <li>
       <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a> <small>{{page.tags}} ({{page.authors}})</small>
     </li>
+    {% endunless %}
     {% endif %}
   {% endfor %}
   </ul>

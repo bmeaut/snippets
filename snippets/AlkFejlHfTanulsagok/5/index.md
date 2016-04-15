@@ -3,7 +3,7 @@ layout: default
 codename: AlkFejlHf5
 title: AlkFejlHf5
 authors: 11. csapat (AlkFejl 2015. ősz)
-tags: afhf
+tags: alkfejl afhf skipfromindex
 ---
 
 # Az Alkalmazásfejlesztés házi feladat tanulságai a 11. csapat szerint
