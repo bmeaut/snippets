@@ -2,7 +2,7 @@
 layout: default
 codename: DpVisitor
 title: Visitor tervezési minta
-tags: designpatterns
+tags: designpatterns alkfejl
 authors: Csorba Kristóf
 ---
 

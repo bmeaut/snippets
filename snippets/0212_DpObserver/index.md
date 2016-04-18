@@ -2,7 +2,7 @@
 layout: default
 codename: DpObserver
 title: Observer tervezési minta
-tags: designpatterns
+tags: designpatterns alkfejl
 authors: Csorba Kristóf
 ---
 

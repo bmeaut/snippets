@@ -2,7 +2,7 @@
 layout: default
 codename: DpStrategy
 title: Strategy tervezési minta
-tags: designpatterns
+tags: designpatterns alkfejl
 authors: Csorba Kristóf
 ---
 

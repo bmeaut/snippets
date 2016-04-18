@@ -2,7 +2,7 @@
 layout: default
 codename: DpVisitorObserver
 title: A Visitor és az observer tervezési minta
-tags: designpatterns
+tags: designpatterns alkfejl
 authors: Csorba Kristóf
 ---
 

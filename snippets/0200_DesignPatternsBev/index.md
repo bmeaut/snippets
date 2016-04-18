@@ -2,7 +2,7 @@
 layout: default
 codename: DpDesignPatternBev
 title: Tervezési minták bevezető
-tags: designpatterns
+tags: designpatterns alkfejl
 authors: Csorba Kristóf
 ---
 
