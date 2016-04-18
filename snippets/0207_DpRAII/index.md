@@ -2,7 +2,7 @@
 layout: default
 codename: DpRAII
 title: RAII tervezési minta
-tags: designpatterns
+tags: designpatterns alkfejl
 authors: Csorba Kristóf
 ---
 

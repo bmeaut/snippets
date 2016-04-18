@@ -2,7 +2,7 @@
 layout: default
 codename: DpAbstractFactory
 title: Abstract factory tervezési minta
-tags: designpatterns
+tags: designpatterns alkfejl
 authors: Csorba Kristóf
 ---
 

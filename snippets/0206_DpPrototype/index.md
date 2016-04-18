@@ -2,7 +2,7 @@
 layout: default
 codename: DpPrototype
 title: Prototype tervezési minta
-tags: designpatterns
+tags: designpatterns alkfejl
 authors: Csorba Kristóf
 ---
 

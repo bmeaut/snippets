@@ -2,7 +2,7 @@
 layout: default
 codename: DpBuilder
 title: Builder tervezési minta
-tags: designpatterns
+tags: designpatterns alkfejl
 authors: Csorba Kristóf
 ---
 

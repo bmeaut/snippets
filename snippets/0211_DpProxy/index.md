@@ -2,7 +2,7 @@
 layout: default
 codename: DpProxy
 title: Proxy tervezési minta
-tags: designpatterns
+tags: designpatterns alkfejl
 authors: Csorba Kristóf
 ---
 

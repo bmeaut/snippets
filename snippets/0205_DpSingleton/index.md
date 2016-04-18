@@ -2,7 +2,7 @@
 layout: default
 codename: DpSingleton
 title: Singleton tervezési minta
-tags: designpatterns
+tags: designpatterns alkfejl
 authors: Csorba Kristóf
 ---
 

@@ -2,7 +2,7 @@
 layout: default
 codename: DpDecorator
 title: Decorator tervezési minta
-tags: designpatterns
+tags: designpatterns alkfejl
 authors: Csorba Kristóf
 ---
 

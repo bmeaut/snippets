@@ -2,7 +2,7 @@
 layout: default
 codename: DpFacade
 title: Facade tervezési minta
-tags: designpatterns
+tags: designpatterns alkfejl
 authors: Csorba Kristóf
 ---
 

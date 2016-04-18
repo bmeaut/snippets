@@ -2,7 +2,7 @@
 layout: default
 codename: DpLazyInit
 title: Lazy initialization tervezési minta
-tags: designpatterns
+tags: designpatterns alkfejl
 authors: Csorba Kristóf
 ---
 

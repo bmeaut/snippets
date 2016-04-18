@@ -2,7 +2,7 @@
 layout: default
 codename: DpComposite
 title: Composite tervezési minta
-tags: designpatterns
+tags: designpatterns alkfejl
 authors: Csorba Kristóf
 ---
 

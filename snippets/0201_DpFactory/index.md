@@ -2,7 +2,7 @@
 layout: default
 codename: DpFactory
 title: Factory tervezési minta
-tags: designpatterns
+tags: designpatterns alkfejl
 authors: Csorba Kristóf
 ---
 
