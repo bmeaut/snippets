@@ -10,9 +10,9 @@ V-REP robot vezérlése TCP socketen keresztül.
 
 lua, main script, child script, threading, blocking
 
-## Server config V-REP oldalon
+## TCP socket V-REP-ben
 
-socket nyitása vrep-ben:
+socket nyitása:
 ```lua
 socket = require("socket")
 server = socket.tcp()
@@ -21,7 +21,7 @@ server:listen(1)
 client = command_server:accept()
 client:settimeout(0)
 ```
-socket olvasása/írása vrepben:
+socket olvasása/írása:
 ```lua
 command = client:receive('*l')  -- read a line
 if(command == "GET") then   
@@ -77,4 +77,6 @@ ez lehet nem is kell mer tananyag
 
 ## Hibakezelés
 
-hogy ne fagyjon le minden
+csatlakozási sorrend
+disconnect, stop sim, etc.
+
