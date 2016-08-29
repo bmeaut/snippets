@@ -22,11 +22,12 @@ futtatására használhatók a
 de külön szálon futó szkriptek is. 
 TCP kommunikáció megvalósításához az utóbbi ajánlott.
 
-## TCP socket kezelése Lua-ban
+## TCP server létrehozása Lua-ban
 
 Valami bevezető szöveg ide.
+írj a localhost-ról is.
 
-socket nyitása, csatlakozás:
+Server socket nyitása, csatlakozás:
 ```lua
 socket = require("socket")
 server = socket.tcp()
@@ -38,15 +39,16 @@ server:listen(number_of_clients)
 client = server:accept()  -- waits until client connects
 client:settimeout(0)
 ```
-socket írása/olvasása:
+A socket-en adat küldése/fogasása
+ a `send()`/`receive()` metódusokkal lehetséges:
 ```lua
 command = client:receive('*l')  -- read a line
 if(command == "GET") then
-    data = string.format("some text with data: %f\n", num_data)
+    data = string.format("some text with data: %f\n", some_float_data)
     client:send(data)  -- write a line
 end
 ```
-a `client:receive()` lehetséges paraméterei:
+a `receive()` lehetséges paraméterei:
 - `'*a'`: addig olvas amíg tud
 - `'*l'`: egy sort olvas (az első `\n` karakterig)
 - szám: adott számú byte-ot olvas
@@ -56,7 +58,7 @@ Az általunk használt kommunikációs protokoll szöveg alapú volt
 így minden parancsot és választ egy `'\n'` karakter zárt, 
 emiatt sorokat írtunk/olvastunk. 
 
-## Threading V-REP-ben - röviden
+## Threading V-REP-ben
 
 Az egyszerű child script-ek felépítésével itt nem foglalkozunk, csak a 
 külön szálon futókéval. A külön száló futó kódot egy külön függvénybe írjuk:
@@ -71,12 +73,9 @@ A függvény addig pörög a while ciklusban, amíg a szimuláció
 nem szeretne megállni.
 
 
-A a függvény definíció után következik az inicializáló kód. 
+A függvény definíció után következik az inicializáló kód. 
 Ez a mi esetünkben a  feljebb tárgyalt socket létrehozása és 
 a csatlakozás.
-```lua
-openSocket()
-```
 
 Inicializálás után elindítjuk a feljebb definiált függvényünket külön szálon
 az `xpcall()` hívással. Ez csak akkor tér vissza, ha a függvényünk 
@@ -115,9 +114,6 @@ threadFunction=function()
             data = string.format("some text with data: %f\n", num_data)
             client:send(data)  -- write a line
         end
-        
-        -- communication between threads
-        simSwitchThread()
     end
 end
 
@@ -130,7 +126,7 @@ simSetThreadIsFree(false)
 simAddStatusbarMessage('Connection established...')
 
 -- start thread
-res,err=xpcall(threadFunction,function(err) return debug.traceback(err) end)
+res, err = xpcall(threadFunction, function(err) return debug.traceback(err) end)
 if not res then
     simAddStatusbarMessage('Lua runtime error: '..err)
 end
@@ -144,7 +140,7 @@ simAddStatusbarMessage('Connections closed...')
 
 ## Szálak közötti kommunikáció
 
-Ahhoz, hogy a tudjuk a robotot vezérelni, illetve tőle adatot lekérdezni,
+Ahhoz, hogy tudjuk a robotot vezérelni, illetve tőle adatot lekérdezni,
 szükséges, hogy a TCP kommunikációt kezelő szál tudjon a többi szállal
 is kommunikálni.
 
@@ -163,10 +159,11 @@ linePack=simGetStringSignal("myLineData")
 
 ide kell majd a blocking dolog meg a simSwitchThread() meg hasonlók.
 
-## TCP kapcsolat CPP oldalon
+## TCP kapcsolat C++ oldalon
 
-Miután elindítottuk a V-REP szimulációt (ami ekkor a `server.accept()`
-hívásnál várakozik) csatlakozhatunk a szerverhez. Ez Qt-ban a következőképp
+Miután elindítottuk a V-REP szimulációt (ahol a kommunikációs szál 
+ekkor a `server.accept()` hívásnál várakozik) 
+csatlakozhatunk a szerverhez. Ez Qt-ban a következőképp
 néz ki:
 
 ```cpp
@@ -174,7 +171,8 @@ néz ki:
 
 socket = QTcpSocket();
 socket.connectToHost("127.0.0.1", 25455);
-socket.waitForConnected(100)
+int timeout_ms = 100;
+socket.waitForConnected(timeout_ms);
 ```
 
 Ezután a socket írása olvasása már gyerekjáték:
