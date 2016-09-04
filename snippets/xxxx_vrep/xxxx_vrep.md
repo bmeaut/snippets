@@ -76,6 +76,38 @@ Az általunk használt kommunikációs protokoll szöveg alapú volt
 így minden parancsot és választ egy `'\n'` karakter zárt, 
 emiatt sorokat írtunk/olvastunk. 
 
+## Szálak közötti kommunikáció
+
+Ahhoz, hogy tudjuk a robotot vezérelni, illetve tőle adatot lekérdezni,
+szükséges, hogy a TCP kommunikációt kezelő szál tudjon a többi szállal
+is kommunikálni.
+
+A V-REP child script-jei között ez úgynevezett **signal**-okon keresztül lehetséges.
+Alapvetően `int`, `float` és `string` signal-ok állnak rendelkezésre, ezek a nevüknek
+megfelelő típusú változó továbbítására alkalmasak. Az összes elérhető függvény 
+[itt](http://www.coppeliarobotics.com/helpFiles/en/apiFunctionListCategory.htm#signals) található.
+
+### Példa:
+
+A TCP szerver a klienstől megkapja a robot új sebesség alapjelét, ezt beírja a megfelelő
+signal-ba:
+```
+simSetFloatSignal("robot_speed_setpoint", speed_from_client)
+```
+A robot sebességszabályzója egy másik szálon kiolvassa az új értéket:
+```
+new_speed = simGetFloatSignal("robot_speed_setpoint")
+``` 
+Több változó (pl. 10 darab vonalérzékelő) küldésére használható több signal is, 
+mi a string-be pakolás, string-ként küldés majd visszaalakítás mellett döntöttünk. Ehhez külön 
+[packing függvények](http://www.coppeliarobotics.com/helpFiles/en/apiFunctionListCategory.htm#packing) 
+állnak rendelkezésre:
+```lua
+simSetStringSignal("line_sensor_data", simPackFloats(line_data))
+...
+line_data = simUnpackFloats(simGetStringSignal("line_sensor_data"))
+```
+
 ## Threaded child script V-REP-ben
 
 Az egyszerű child script-ek felépítésével itt nem foglalkozunk, csak a 
@@ -129,6 +161,7 @@ threadFunction=function()
     while simGetSimulationState()~=sim_simulation_advancing_abouttostop do
         command = client:receive('*l')  -- read a line
         if(command == "GET") then
+            num_data = simGetFloatSignal("some_float_data")
             data = string.format("some text with data: %f\n", num_data)
             client:send(data)  -- write a line
         end
@@ -153,43 +186,6 @@ end
 client:shutdown('both')
 server:close()
 simAddStatusbarMessage('Connections closed...')
-```
-
-
-## Szálak közötti kommunikáció
-
-Ahhoz, hogy tudjuk a robotot vezérelni, illetve tőle adatot lekérdezni,
-szükséges, hogy a TCP kommunikációt kezelő szál tudjon a többi szállal
-is kommunikálni.
-
-A V-REP child script-jei között ez úgynevezett **signal**-okon keresztül lehetséges.
-Alapvetően `int`, `float` és `string` signal-ok állnak rendelkezésre, ezek a nevüknek
-megfelelő típusú változó továbbítására alkalmasak. Az összes elérhető függvény 
-[itt](http://www.coppeliarobotics.com/helpFiles/en/apiFunctionListCategory.htm#signals) található.
-
-### Példa:
-
-A TCP szerver a klienstől megkapja a robot új sebesség alapjelét, ezt beírja a megfelelő
-signal-ba:
-```
-simSetFloatSignal("robot_speed_setpoint", speed_from_client)
-```
-A robot sebességszabályzója egy másik szálon kiolvassa az új értéket:
-```
-new_speed = simGetFloatSignal("robot_speed_setpoint")
-``` 
-Ha íráskor a hivatkozott signal még nem létezik, akkor létrehozza. Olvasásnál
-a `simWaitForSignal("signal_name")` fügvénnyel lehet addig várni, amíg a megadott signal
-létre nem jön.
-
-Több változó (pl. 10 darab vonalérzékeló) küldésére használható több signal is, 
-mi a string-be pakolás, string-ként küldés majd visszaalakítás mellett döntöttünk. Ehhez külön 
-[packing függvények](http://www.coppeliarobotics.com/helpFiles/en/apiFunctionListCategory.htm#packing) 
-állnak rendelkezésre:
-```lua
-simSetStringSignal("line_sensor_data", simPackFloats(line_data))
-...
-line_data = simUnpackFloats(simGetStringSignal("line_sensor_data"))
 ```
 
 ## Szálak időzítése
