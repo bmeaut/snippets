@@ -6,10 +6,14 @@ layout: default
 
 A [V-REP](http://www.coppeliarobotics.com/) (**V**irtual **R**obot **E**xperimentation **P**latform)
 egy oktatási célra ingyenesen elérhető robot szimulációs környezet. Tulajdonképpen
-bármilyen robotot össze lehet rakni benne, a robot egyes részei külön szkriptekkel
-vezérelhetők. Hasznos olyan csapatoknak, akik nem indulnak a RobonAUT-on, mert így is
+bármilyen robotot össze lehet rakni benne, de elérhető sok előre elkészített
+robot/szenzor is, a robot egyes részei külön szkriptekkel vezérelhetők. 
+Egy kis ügyeskedéssel elérhető, hogy egy valós robothoz hasonló 
+módon a szimulált robottal TCP socketen keresztül lehessen kommunikálni.
+Hasznos olyan csapatoknak, akik nem indulnak a RobonAUT-on, mert így is
 "valós" robottal tesztelhetik és mutathatják be a házi feladatukat, nem kell még egy 
-saját robot leprogramozásával is bajlódni.  
+saját robot leprogramozásával is bajlódni, de akár RobonAUT-os csapatok
+is használhatják kísérletezésre.
 
 ## Alapok
 
@@ -20,7 +24,8 @@ csak a fontosabb dolgokat emeljük ki.
 A V-REP szkriptnyelve a Lua. A szimuláció tulajdonképpen abból áll, 
 hogy minden szimulációs lépésben meghívja a 
 [main script](http://www.coppeliarobotics.com/helpFiles/en/mainScript.htm)-et, 
-ebben történnek a szimulációs számítások. Ezt a script-et ne bántsuk. 
+ebben történnek a szimulációs számítások és sok egyéb varázslat. 
+**Ezt a script-et ne bántsuk**. 
 
 Saját kód futtatására használhatók a 
 [child script](http://www.coppeliarobotics.com/helpFiles/en/childScripts.htm)-ek 
@@ -32,18 +37,18 @@ TCP kommunikáció megvalósításához az utóbbi ajánlott.
 
 A megoldás lépései vázlatosan:
 1. robot összekattintgatása V-REP-ben
-2. robot moduljait (pl vonalérzékelő, motorok) vezérlő Lua szkriptek megírása
-3. TCP server létrehozása (szintén külön szkriptben)
-4. kommunikácó a server és a modulok szkriptjei között
-5. TCP client létrehozása (C++/Qt oldalon)
-6. kommunikáció a TCP client és server, ezáltal a diagnosztika program és a robot között
+2. robot moduljait (pl. vonalérzékelő, motorok) vezérlő Lua szkriptek megírása
+3. TCP szerver létrehozása (szintén külön szkriptben, külön szálon)
+4. kommunikácó a szerver és a robot modulok szkriptjei között
+5. TCP kliens létrehozása (C++/Qt oldalon)
+6. kommunikáció a TCP szerver és kliens, ezáltal a robot és a diagnosztika program között
 
 ## TCP server létrehozása Lua-ban
 
 Ezt Lua-ban is a többi nyelvhez nagyon hasonlóan lehet megtenni. Amennyiben a szimuláció
 és a diagnosztika program is ugyanazon a számítógépen fut, érdemes a localhoston keresztül 
 kommunikálniuk. Akik merészebbek, azok LAN-on egy másik számítógépen szimulált robothoz 
-is csatlakozhatnak.
+is csatlakozhatnak (részletes leírás [itt](http://w3.impa.br/~diego/software/luasocket/tcp.html)).
 
 Server socket nyitása, csatlakozás:
 ```lua
@@ -86,6 +91,8 @@ A V-REP child script-jei között ez úgynevezett **signal**-okon keresztül leh
 Alapvetően `int`, `float` és `string` signal-ok állnak rendelkezésre, ezek a nevüknek
 megfelelő típusú változó továbbítására alkalmasak. Az összes elérhető függvény 
 [itt](http://www.coppeliarobotics.com/helpFiles/en/apiFunctionListCategory.htm#signals) található.
+A signal-okat egy string-gel lehet azonosítani, ezt íráskor és olvasáskor
+is meg kell adni.
 
 ### Példa:
 
@@ -110,8 +117,19 @@ line_data = simUnpackFloats(simGetStringSignal("line_sensor_data"))
 
 ## Threaded child script V-REP-ben
 
-Az egyszerű child script-ek felépítésével itt nem foglalkozunk, csak a 
-külön szálon futókéval. A külön száló futó kódot egy külön függvénybe írjuk:
+Az egyszerű child script-ek felépítésével itt nem foglalkozunk (arról
+[itt](http://www.coppeliarobotics.com/helpFiles/en/childScripts.htm#nonThreaded)), 
+csak a külön szálon futókéval. Ezek négy fő szekcióból állnak, melyeket
+később részletezünk:
+
+1. külön szálon futó kód egy függvényben
+2. inicializáló kód
+3. szál indítása
+4. clean-up kód
+
+### A script felépítése
+
+A külön száló futó kódot egy külön függvénybe írjuk:
 ```lua
 threadFunction=function()
     while simGetSimulationState()~=sim_simulation_advancing_abouttostop do
@@ -190,20 +208,27 @@ simAddStatusbarMessage('Connections closed...')
 
 ## Szálak időzítése
 
-Alapértelmezettként a szálak szimulációs lépésenként 2 ms futásidőt kapnak, 
-utána a scheduler átadja a futási jogot egy másik szálnak. Ezen az időn a 
-`simSetThreadSwitchTiming()` függvénnyel állíthatunk, 0-200 ms közötti időt 
+Fontos megjegyezni, hogy a külön szálon futó 
+child script-ek igazából nem is futnak külön szálon, csak a V-REP futtatja
+őket időosztásban. Jól megírt kód esetében azonban ez a felhasználó
+számára transzparens, így továbbra is külön szálon futóként hivatkozunk rá.
+
+Minden threaded child script-hez hozzá van rendelve egy futási idő 
+(alapértelmezettként 2 ms), minden szimulációs lépésben ennyi ideig fut, 
+majd a V-REP átvált egy másik szkriptre. Ezen az időn a 
+`simSetThreadSwitchTiming()` függvénnyel állíthatunk, 1-200 ms közötti időt 
 megadva. Ez mindig arra a threaded child script-re vonatkozik, amelyikből 
 meghívjuk, így minden scriptnél lehet különböző.
 
-A `simSwitchThread()` függvénnyel explicit lemondhatunk a futásról. Amennyiben ezt 
-200 ms-os futási idővel kombináljuk (maximális beállítható szimulációs mintavételi idő), 
-úgy a szálunk szinkronizálva lesz a szimulációs lépésekkel.
+A `simSwitchThread()` függvénnyel explicit lemondhatunk a futásról. Ez 
+akkor hasznos, ha bizonyos körülmények között nincs rá szükség, hogy az
+adott szimulációs lépésben tovább fusson a szál.
 
-BIZTOS??
+Ha a futásidőt 200 ms-ra (max) állítjuk, és a while ciklus végén
+meghívjuk a `simSwitchThread()` függvényt, akkor a szál futása szinkronizálva
+lesz a szimuláció lépéseivel, és minden lépésben egyszer fog lefutni.
 
-Fontos megjegyezni, hogy a külön szálon futó child script-ek igazából
-nem is futnak külön szálon. Ez kívülről azonban csak akkor látszik, amikor
+
 valamelyik szál blokkoló hívást tartalmaz, ilyenkor ugyanis a V-REP nem tudja
 elvenni tőle a futási jogot, és az egész program megfagy amíg a blokkoló utasítás
 véget nem ér. Ilyen blokkoló utasítás például a `client:receive()`. Annak érdekében,
