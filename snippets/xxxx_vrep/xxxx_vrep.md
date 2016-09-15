@@ -184,14 +184,15 @@ threadFunction=function()
             simSetThreadIsFree(true)
             client = server:accept()  -- waits until client connects with 1 sec timeout
             simSetThreadIsFree(false)
-            simSwitchThread()
+            simSwitchThread()  -- read on this later
         end
         if(client) then
-            client:settimeout(0)
             simAddStatusbarMessage('Connection established...')
+            client:settimeout(0)
             while simGetSimulationState()~=sim_simulation_advancing_abouttostop do
-                data = string.format("Elapsed time: %.2f\n", socket.gettime() - x)
-                client:send(data)  -- write a line
+                some_variable = simGetFloatSignal('some_signal_name')
+                some_data = string.format("some data: %.2f\n", some_variable)
+                client:send(some_data)  -- write a line
             end
         end
     end
