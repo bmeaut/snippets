@@ -5,7 +5,7 @@ layout: default
 # Kommunikáció V-REP-ben szimulált robottal
 
 A [V-REP](http://www.coppeliarobotics.com/) (**V**irtual **R**obot **E**xperimentation **P**latform)
-egy oktatási célra ingyenesen elérhető robot szimulációs környezet. Tulajdonképpen
+egy oktatási célra ingyenesen elérhető platformfüggetlen robot szimulációs környezet. Tulajdonképpen
 bármilyen robotot össze lehet rakni benne, de elérhető sok előre elkészített
 robot/szenzor is, a robot egyes részei külön szkriptekkel vezérelhetők. 
 Egy kis ügyeskedéssel elérhető, hogy egy valós robothoz hasonló 
