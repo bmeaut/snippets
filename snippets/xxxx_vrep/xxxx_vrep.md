@@ -84,7 +84,7 @@ emiatt sorokat írtunk/olvastunk.
 ## Szálak közötti kommunikáció
 
 Ahhoz, hogy tudjuk a robotot vezérelni, illetve tőle adatot lekérdezni,
-szükséges, hogy a TCP kommunikációt kezelő szál tudjon a többi szállal
+szükséges, hogy a TCP kommunikációt kezelő szál tudjon a többi szkripttel
 is kommunikálni.
 
 A V-REP child script-jei között ez úgynevezett **signal**-okon keresztül lehetséges.
@@ -142,11 +142,13 @@ nem szeretne megállni.
 
 
 A függvény definíció után következik az inicializáló kód. 
-Ez ebben az esetben a feljebb tárgyalt socket létrehozása és 
-a csatlakozás.
+Ez ebben az esetben a feljebb tárgyalt socket inicializálása.
+A csatlakozást érdemes már a szálként futó függvénybe rakni, így
+nem fagy le a program ha mégsem csatlakoznak.
 
 Inicializálás után elindítjuk a feljebb definiált függvényünket külön szálon
-az `xpcall()` hívással. Ez csak akkor tér vissza, ha a függvényünk 
+az `xpcall()` hívással (így a szálban bekövetkező hiba esetén is rendes
+stacktrace-t kapunk hibaüzenetként). Ez csak akkor tér vissza, ha a függvényünk 
 visszatért, amiről az előbb megtudtuk, hogy a szimuláció leállításakor 
 következik be. 
 ```lua
@@ -171,28 +173,32 @@ openSocket=function()
     server:bind(localhost_ip, random_port_number)
     number_of_clients = 1
     server:listen(number_of_clients)
-    client = server:accept()  -- waits until client connects
-    client:settimeout(0)
+    client:settimeout(1)
 end
 
 threadFunction=function()
     while simGetSimulationState()~=sim_simulation_advancing_abouttostop do
-        command = client:receive('*l')  -- read a line
-        if(command == "GET") then
-            num_data = simGetFloatSignal("some_float_data")
-            data = string.format("some text with data: %f\n", num_data)
-            client:send(data)  -- write a line
+        simAddStatusbarMessage('Waiting for connection...')
+        while (not client) and (simGetSimulationState()~=sim_simulation_advancing_abouttostop) do
+            simSetThreadIsFree(true)
+            client = server:accept()  -- waits until client connects with 1 sec timeout
+            simSetThreadIsFree(false)
+            simSwitchThread()
+        end
+        if(client) then
+            client:settimeout(0)
+            simAddStatusbarMessage('Connection established...')
+            while simGetSimulationState()~=sim_simulation_advancing_abouttostop do
+                data = string.format("Elapsed time: %.2f\n", socket.gettime() - x)
+                client:send(data)  -- write a line
+            end
         end
     end
 end
 
 -- initialization
 simSetThreadSwitchTiming(2) -- Default timing for automatic thread switching
-simAddStatusbarMessage('Waiting for connection...')
-simSetThreadIsFree(true)
 openSocket()
-simSetThreadIsFree(false)
-simAddStatusbarMessage('Connection established...')
 
 -- start thread
 res, err = xpcall(threadFunction, function(err) return debug.traceback(err) end)
@@ -225,12 +231,14 @@ akkor hasznos, ha bizonyos körülmények között nincs rá szükség, hogy az
 adott szimulációs lépésben tovább fusson a szál.
 
 Ha a futásidőt 200 ms-ra (max) állítjuk, és a while ciklus végén
-meghívjuk a `simSwitchThread()` függvényt, akkor a szál futása szinkronizálva
-lesz a szimuláció lépéseivel, és minden lépésben egyszer fog lefutni.
+meghívjuk a `simSwitchThread()` függvényt, ráadásul egy ciklus lefut 200 ms alatt, 
+akkor a szál futása szinkronizálva lesz a szimuláció lépéseivel, és minden 
+lépésben egyszer fog lefutni.
 
 
-valamelyik szál blokkoló hívást tartalmaz, ilyenkor ugyanis a V-REP nem tudja
-elvenni tőle a futási jogot, és az egész program megfagy amíg a blokkoló utasítás
+Az is külön figyelmet igényel, ha valamelyik szál blokkoló hívást 
+tartalmaz, ilyenkor ugyanis a V-REP nem tudja elvenni tőle a 
+futási jogot, és az egész program megfagy amíg a blokkoló utasítás
 véget nem ér. Ilyen blokkoló utasítás például a `client:receive()`. Annak érdekében,
 hogy ilyenkor más szálak is tudjanak futni, a hasonló hívásokat egy non-blocking
 section-be kell rakni. Ezt a `simSetThreadIsFree()` fügvénnyel tehetjük meg:
@@ -239,8 +247,7 @@ simSetThreadIsFree(true)  -- start of non-blocking section
 server:accept()           -- some blocking code
 simSetThreadIsFree(false) -- end of non-blocking section
 ```
-Erre láthattunk példát a TCP child script inicializáló részénél, ahol szintén a client csatlakozása 
-volt a blokkoló hívás. Mivel ez másik programból (vagy másik számítógépről) történik
+Mivel a csatlakozés másik programból (vagy másik számítógépről) történik
 akár több percig is eltarthat, elég kellemetlen ha addig a V-REP nem reagál semmire.
 Fontos hogy a non-blocking section-t amint lehet zárjuk le, különben szinkronizációs 
 problémáink adóthatnak!
@@ -290,7 +297,7 @@ if(socket.state() == QAbstractSocket::ConnectedState)
 egy szkriptben. Így fontos volt, hogy C++-ban ugyanolyan sorrendben csatlakozzunk hozzájuk, 
 mint ahogy Lua-ban megnyitottuk őket. Ellenkező esetben a Lua szkript az egyik csatlakozásnál
 marad örökre, a C++ program pedig egy másik portra nem tud csatlakozni, mert az még nincs nyitva.
-Ez természetesen kikerülhető a külön portok külön szálon indításával, vagy C++ oldalon
+Ez természetesen kikerülhető a külön portok külön szálon indításával, vagy 
 sikertelen csatlakozás esetén a még nem csatlakoztatott portokkal ciklikusan újrapróbálkozni.
 - a V-REP bezárása előtt mindenképp állítsuk le a szimulációt, különben nem hívódik meg a 
 clean-up kód, nem zárjuk le a portokat. Ez a szimuláció következő indításakor pánikot 
