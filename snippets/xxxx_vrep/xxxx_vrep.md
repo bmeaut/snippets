@@ -36,6 +36,7 @@ TCP kommunikáció megvalósításához az utóbbi ajánlott.
 ### Koncepció
 
 A megoldás lépései vázlatosan:
+
 1. robot összekattintgatása V-REP-ben
 2. robot moduljait (pl. vonalérzékelő, motorok) vezérlő Lua szkriptek megírása
 3. TCP szerver létrehozása (szintén külön szkriptben, külön szálon)
