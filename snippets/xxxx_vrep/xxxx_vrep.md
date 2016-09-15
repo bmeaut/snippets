@@ -252,11 +252,26 @@ akár több percig is eltarthat, elég kellemetlen ha addig a V-REP nem reagál 
 Fontos hogy a non-blocking section-t amint lehet zárjuk le, különben szinkronizációs 
 problémáink adóthatnak!
 
-### Példák
+### Példa szimulációval szinkronizált szálra
 
-kell egy példa sima szálra
+Erre kézenfekvő példa a robot állapotát a diagnosztika kliensnek küldő szál.
+Mivel a robotot leíró változók leggyakrabban szimulációs lépésenként változhatnak,
+nem érdemes őket gyakrabban küldeni.
 
-kell egy példa 200ms+switchThread-re
+Ekkor a child script fontos elemei:
+```lua
+...
+threadFunction=function()
+    while simGetSimulationState()~=sim_simulation_advancing_abouttostop do
+        client.send(robot_status)
+        simSwitchThread()  -- give up run time
+    end
+end
+...
+-- init code
+simSetThreadSwitchTiming(200)
+...
+```
 
 ## TCP kapcsolat C++ oldalon
 
@@ -302,4 +317,7 @@ sikertelen csatlakozás esetén a még nem csatlakoztatott portokkal ciklikusan 
 - a V-REP bezárása előtt mindenképp állítsuk le a szimulációt, különben nem hívódik meg a 
 clean-up kód, nem zárjuk le a portokat. Ez a szimuláció következő indításakor pánikot 
 és sok fölösleges debuggolást okozhat.
-- mi volt még?
+- Mivel a V-REP az egész [scene](http://www.coppeliarobotics.com/helpFiles/en/scenes.htm)-t
+egy bináris file-ban tárolja, a Lua szkripteken eszközölt változások nem
+követhetők git-ben. Érdemes azokat pl. egy almappába időnként kimenteni, így
+használható a diff.
