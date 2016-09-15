@@ -15,6 +15,9 @@ Hasznos olyan csapatoknak, akik nem indulnak a RobonAUT-on, mert így is
 saját robot leprogramozásával is bajlódni, de akár RobonAUT-os csapatok
 is használhatják kísérletezésre.
 
+Készítettünk a snippet tartalmát minimalista stílusban, de egyben bemutató
+[**minta projektet**](https://github.com/matekatona/vrep-sample).
+
 ## Alapok
 
 A V-REP működését nem részletezzük (mások megtették 
@@ -258,7 +261,7 @@ problémáink adóthatnak!
 
 Erre kézenfekvő példa a robot állapotát a diagnosztika kliensnek küldő szál.
 Mivel a robotot leíró változók leggyakrabban szimulációs lépésenként változhatnak,
-nem érdemes őket gyakrabban küldeni.
+nem érdemes őket gyakrabban küldeni (főleg nem pár ms alatt többször).
 
 Ekkor a child script fontos elemei:
 ```lua
@@ -266,7 +269,7 @@ Ekkor a child script fontos elemei:
 threadFunction=function()
     while simGetSimulationState()~=sim_simulation_advancing_abouttostop do
         client.send(robot_status)
-        simSwitchThread()  -- give up run time
+        simSwitchThread()
     end
 end
 ...
@@ -306,7 +309,6 @@ if(socket.state() == QAbstractSocket::ConnectedState)
     raw_string = QString(raw_data);
 }
 ```
-## [Minta project](https://github.com/matekatona/vrep-sample)
 
 ## Lessons learned
 
