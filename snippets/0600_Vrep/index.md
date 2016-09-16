@@ -1,5 +1,9 @@
 ---
 layout: default
+codename: VRep
+title: V-Rep kapcsolat C++ alkalmazásból
+tags: alkfejl
+authors: Katona Máté
 ---
 
 # Kommunikáció V-REP-ben szimulált robottal
