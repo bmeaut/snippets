@@ -1,4 +1,4 @@
----
+﻿---
 layout: default
 codename: GitBev
 title: Git bevezető
@@ -137,5 +137,7 @@ A folytatáshoz az alábbi leírásokat érdemes felkeresni:
 * Egy részletes fejlesztési folyamat példa GIT használatával: *0103_GitPeldafejlesztes*
 * Pro.Git könyv: [https://git-scm.com/book/en/v2](https://git-scm.com/book/en/v2)
 * A verziókezelők összehasonlítása és további fogalmak: *0114_VerziokezelokOsszehasonlitasa*
+* [GIT, github és GitExtensions első lépések](https://www.youtube.com/watch?v=OntibzA4038)
+* [GIT példafejlesztés](https://www.youtube.com/watch?v=OOHnNx1M2aY)
 
 <small>Szerzők, verziók: Csorba Kristóf</small>
