@@ -315,6 +315,7 @@ socket.waitForConnected(timeout_ms);
 ```
 
 Ezután a socket írása olvasása már gyerekjáték:
+
 ```cpp
 // write something
 if(socket.state() == QAbstractSocket::ConnectedState)
