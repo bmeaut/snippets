@@ -59,6 +59,7 @@ kommunikálniuk. Akik merészebbek, azok LAN-on egy másik számítógépen szim
 is csatlakozhatnak (részletes leírás [itt](http://w3.impa.br/~diego/software/luasocket/tcp.html)).
 
 Server socket nyitása, csatlakozás:
+
 ```lua
 socket = require("socket")
 server = socket.tcp()
@@ -70,8 +71,10 @@ server:listen(number_of_clients)
 client = server:accept()  -- waits until client connects
 client:settimeout(0)
 ```
+
 A socket-en adat küldése/fogasása
  a `send()`/`receive()` metódusokkal lehetséges:
+
 ```lua
 command = client:receive('*l')  -- read a line
 if(command == "GET") then
@@ -79,6 +82,7 @@ if(command == "GET") then
     client:send(data)  -- write a line
 end
 ```
+
 a `receive()` lehetséges paraméterei:
 - `'*a'`: addig olvas amíg tud
 - `'*l'`: egy sort olvas (az első `\n` karakterig)
@@ -106,17 +110,22 @@ is meg kell adni.
 
 A TCP szerver a klienstől megkapja a robot új sebesség alapjelét, ezt beírja a megfelelő
 signal-ba:
+
 ```
 simSetFloatSignal("robot_speed_setpoint", speed_from_client)
 ```
+
 A robot sebességszabályzója egy másik szálon kiolvassa az új értéket:
+
 ```
 new_speed = simGetFloatSignal("robot_speed_setpoint")
-``` 
+```
+
 Több változó (pl. 10 darab vonalérzékelő) küldésére használható több signal is, 
 mi a string-be pakolás, string-ként küldés majd visszaalakítás mellett döntöttünk. Ehhez külön 
 [packing függvények](http://www.coppeliarobotics.com/helpFiles/en/apiFunctionListCategory.htm#packing) 
 állnak rendelkezésre:
+
 ```lua
 simSetStringSignal("line_sensor_data", simPackFloats(line_data))
 ...
@@ -138,6 +147,7 @@ később részletezünk:
 ### A script felépítése
 
 A külön száló futó kódot egy külön függvénybe írjuk:
+
 ```lua
 threadFunction=function()
     while simGetSimulationState()~=sim_simulation_advancing_abouttostop do
@@ -145,6 +155,7 @@ threadFunction=function()
     end
 end
 ```
+
 A függvény addig pörög a while ciklusban, amíg a szimuláció 
 nem szeretne megállni.
 
@@ -158,12 +169,14 @@ Inicializálás után elindítjuk a feljebb definiált függvényünket külön 
 az `xpcall()` hívással (így a szálban bekövetkező hiba esetén is rendes
 stacktrace-t kapunk hibaüzenetként). Ez csak akkor tér vissza, ha a függvényünk 
 visszatért, amiről az előbb megtudtuk, hogy a szimuláció leállításakor 
-következik be. 
+következik be.
+
 ```lua
 res, err = xpcall(threadFunction, function(err) return debug.traceback(err) end)
 ```
 
 Utána jöhet a takarítás: a kapcsolat lezárása.
+
 ```lua
 client:shutdown('both')
 server:close()
@@ -251,11 +264,13 @@ futási jogot, és az egész program megfagy amíg a blokkoló utasítás
 véget nem ér. Ilyen blokkoló utasítás például a `client:receive()`. Annak érdekében,
 hogy ilyenkor más szálak is tudjanak futni, a hasonló hívásokat egy non-blocking
 section-be kell rakni. Ezt a `simSetThreadIsFree()` fügvénnyel tehetjük meg:
+
 ```lua
 simSetThreadIsFree(true)  -- start of non-blocking section
 server:accept()           -- some blocking code
 simSetThreadIsFree(false) -- end of non-blocking section
 ```
+
 Mivel a csatlakozés másik programból (vagy másik számítógépről) történik
 akár több percig is eltarthat, elég kellemetlen ha addig a V-REP nem reagál semmire.
 Fontos hogy a non-blocking section-t amint lehet zárjuk le, különben szinkronizációs 
@@ -268,6 +283,7 @@ Mivel a robotot leíró változók leggyakrabban szimulációs lépésenként v�
 nem érdemes őket gyakrabban küldeni (főleg nem pár ms alatt többször).
 
 Ekkor a child script fontos elemei:
+
 ```lua
 ...
 threadFunction=function()
