@@ -2,7 +2,7 @@
 layout: default
 codename: VRep
 title: V-Rep kapcsolat C++ alkalmazásból
-tags: alkfejl
+tags: alkfejl other
 authors: Katona Máté
 ---
 
