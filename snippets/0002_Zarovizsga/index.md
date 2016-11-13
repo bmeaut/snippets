@@ -20,7 +20,7 @@ A záróvizsgán a tananyag az Alkalmazásfejlesztés tárgy anyagát fedi le, a
     * A QML és QmlEngine működése
       * QML scriptnyelv, JavaScript, események kezelése, kapcsolat a C++ oldallal
       * QML controlok: listák (model és delegate jelentése), rajzolás (onPaint működése, Context)
-    * A signals and slots mechanimus célja, működése, mi mire fordul le (emit, signal, slot kulcsszavak, a működés alapgondolata és a MOC szerepe)
+    * A signals and slots mechanizmus célja, működése, mi mire fordul le (emit, signal, slot kulcsszavak, a működés alapgondolata és a MOC szerepe)
   * Tervezés
     * SOLID elvek és jelentésük
     * Létrehozási tervezési minták
