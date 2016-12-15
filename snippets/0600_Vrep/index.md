@@ -146,7 +146,7 @@ később részletezünk:
 
 ### A script felépítése
 
-A külön száló futó kódot egy külön függvénybe írjuk:
+A külön szálon futó kódot egy külön függvénybe írjuk:
 
 ```lua
 threadFunction=function()
@@ -194,7 +194,7 @@ openSocket=function()
     server:bind(localhost_ip, random_port_number)
     number_of_clients = 1
     server:listen(number_of_clients)
-    client:settimeout(1)
+    server:settimeout(1)
 end
 
 threadFunction=function()
@@ -229,7 +229,9 @@ if not res then
 end
 
 -- clean-up
-client:shutdown('both')
+if (client) then
+	client:shutdown('both')
+end
 server:close()
 simAddStatusbarMessage('Connections closed...')
 ```
