@@ -178,7 +178,9 @@ res, err = xpcall(threadFunction, function(err) return debug.traceback(err) end)
 Utána jöhet a takarítás: a kapcsolat lezárása.
 
 ```lua
-client:shutdown('both')
+if (client) then
+	client:shutdown('both')
+end
 server:close()
 ```
 
