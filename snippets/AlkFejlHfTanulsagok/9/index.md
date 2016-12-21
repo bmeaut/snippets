@@ -1,8 +1,8 @@
 ---
 layout: default
-codename: Tanulságok
+codename: AlkFejlHf9
 title: BAD csapat tanulságai
-tags: snippets
+tags: alkfejl afhf skipfromindex
 authors: Kelemen Attila János, Pesti Bence, Szabados Dávid
 ---
 
@@ -24,7 +24,7 @@ QML-ben az egyes kasztolási funkciók nem vagy csak nagyon nehézkesen működn
 
 ## 4) Képek használata
 
-Amennyiben a GUI-ban képeket szeretnénk használni be kell jegyezzük őket a qml.qrc fájlba. Ezt a fájlt a Resources mappában találjuk. Jobb klikk/Open With/Plain Text Editor kombinációval nyitható meg. a fájl. 
+Amennyiben a GUI-ban képeket szeretnénk használni be kell jegyezzük őket a qml.qrc fájlba. Ezt a fájlt a Resources mappában találjuk. Jobb klikk/Open With/Plain Text Editor kombinációval nyitható meg. a fájl.
 
 Itt egy példa a bejegyzésekre:
 

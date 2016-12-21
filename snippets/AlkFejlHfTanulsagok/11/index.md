@@ -1,5 +1,12 @@
-# TeamA csapat: házi feladat tanulságok
+---
+layout: default
+codename: AlkFejlHf11
+title: TeamA csapat tanulságai
+tags: alkfejl afhf skipfromindex
+authors: TeamA csapat
+---
 
+# TeamA csapat: házi feladat tanulságok
 
 A Qt házi megírása során több izgalmas jelenséggel is találkoztunk, amelyekre érdemes máskor odafigyelni.
 
