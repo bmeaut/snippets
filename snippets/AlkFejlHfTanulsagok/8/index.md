@@ -39,7 +39,7 @@ Bár elsőre nem tűnnek bonyolultnak ezek az ábrák, azt gondolhatnánk, hogy 
 főleg ha nem csak egy-két diagramot kell elkészítenünk. A program, amivel végül mi készítettük a dokumentáció ábráit , a Microsof Visio, melyet az egyetem hallgatói ingyenesen letölthetnek az MSDNAA szerverről.
 Ez egy általános diagram készítő program, ami különböző „modulokból” épül fel, a különböző diagram típusok szerint.Ezeket igen sokrétűen tudjuk felhasználni összetett információk megjelenítésére, vizualizálására.
 Amire nekünk elsősorban szükségünk volt az az osztálydiagram és a szekvenciadiagram rajzoló modul. Osztálydiagram szerkesztő alapesetben is része a Visio 2016-nak, de a szekvencia diagramok rajzolásához mi egy addonként letölthető template-et használtunk, ami a következő linken elérhető:   
-[http://www.softwarestencils.com/uml/](http://www.softwarestencils.com/uml/) \n  
+[http://www.softwarestencils.com/uml/](http://www.softwarestencils.com/uml/)
 
 A template telepítésének menete az alábbi:
 
