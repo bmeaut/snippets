@@ -21,11 +21,11 @@ A QML oldalon az osztályok változóinak elérése jelentett számunkra problé
 
 ### UI designer
 
-Megoszlik az emberek véleménye, hogy mennyire hasznos a QT Creator ezen funkciója és ebből kifolyólag mennyire ajánlott egyáltalán a hasznáalata. Véleményünk szerint, inkább az a fontos, hogy tudjuk mi is történik a háttérben. Kézzel is és a designer segítségével is készíthető jó és rossz UI mind kinézet, mind kód szempontjából.
+Megoszlik az emberek véleménye, hogy mennyire hasznos a QT Creator ezen funkciója és ebből kifolyólag mennyire ajánlott egyáltalán a hasznáalata. Véleményünk szerint, inkább az a fontos, hogy tudjuk mi is történik a háttérben. Kézzel is és a designer segítségével is készíthető jó és rossz UI mind a kinézet, mind a kód szempontjából.
 
 ### if(){} else(){} ->  ... ? ... : ...  He? Ha!
 
-Érdemes visszaemlékezni a programozás alapjai tárgyra és felkutatni a fejünkben a ?: operátort(persze csak ha már elfelejtettük). Ennek segítségével egy sorban megvalósíthó egy feltétel vizsgálat, mely átláthatóbb kódot eredményez. Főként GUI fejlesztés során használtuk, például a csatlakozási állapot kijelzéséhez.
+Érdemes visszaemlékezni a programozás alapjai tárgyra és felkutatni a fejünkben a ``?:`` operátort(persze csak ha már elfelejtettük). Ennek segítségével egy sorban megvalósíthó egy feltétel vizsgálat, mely átláthatóbb kódot eredményez. Főként GUI fejlesztés során használtuk, például a csatlakozási állapot kijelzéséhez.
 
 ```cpp
 ...
@@ -34,17 +34,17 @@ Text
 {
 	id:		connectionStatusText
 	text:	"Status: " + ((serialPortStatus) ?  "connected" : "disconnected")
-	color:	(serPortStat) ?  "limegreen" : "orangered"
+	color:	(serialPortStatus) ?  "limegreen" : "orangered"
 }
 ...
 ```
 
 ### Még nincs pédányosítva...
 
-Az alkalmazás konstruktorában végzünk egy historyChanged() hívást, hogy elérhetőek legyenek QML oldalon a változók. Amennyiben egy olyan osztály változóját is elérhetővé tesszük, amely még nincs példányosítva akkor összeomlik a program. Erre mi azt a megoldást találtuk, hogy a history.Add(temp) függvénnyel egy default osztályt már hozzáadunk a historyhoz, így nem egy NULL pointerre mutató osztályt adunk QML oldalra.
+Az alkalmazás konstruktorában végzünk egy ``historyChanged()`` hívást, hogy elérhetőek legyenek QML oldalon a változók. Amennyiben egy olyan osztály változóját is elérhetővé tesszük, amely még nincs példányosítva akkor összeomlik a program. Erre mi azt a megoldást találtuk, hogy a ``history.Add(temp)`` függvénnyel egy default osztályt már hozzáadunk a historyhoz, így nem egy NULL pointerre mutató osztályt adunk QML oldalra.
 
 ### További információk a csapatról
 
-Ha kíváncsiak vagytok a versenyre való felkészülésünkre, kedeveljétek a [Facebook](https://www.facebook.com/BetaRomeoBME/) oldalunkat.
+Ha kíváncsiak vagytok a versenyre való felkészülésünkre, kedveljétek a [Facebook](https://www.facebook.com/BetaRomeoBME/) oldalunkat.
 
 Szerzők: Benedek Ádám, Vicsotka Tamás
