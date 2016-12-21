@@ -3,7 +3,7 @@ layout: default
 codename: AlkFejlHf11
 title: TeamA csapat tanulságai
 tags: alkfejl afhf skipfromindex
-authors: TeamA csapat
+authors: Farkas Péter, Prőhle Orsolya, Szilágyi Ábrahám
 ---
 
 # TeamA csapat: házi feladat tanulságok

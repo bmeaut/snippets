@@ -11,9 +11,11 @@ A joancornella csapat összefoglalója a 2016 őszi félév Alkalmazásfejleszt�
 Qt Creator telepítése
 A fejlesztés alatt belefutottam abba a hibába, hogy regisztráltam a Qt oldalán, amire nem is lenne szükség, ahhoz, hogy használjuk a programot. Érdemes a következő lépések szerint letölteni és telepíteni a Qt alkalmazást ahhoz, hogy ne kelljen 30 nap után licenszt vásároljunk.
 A „qt download”-ra rákeresve, az első találatok közt szerepel a „Start for free…” link, amire kattintva a következő válaszokat adjuk:
+
 1.	In-house deployment, private use, or student use
 2.	No
 3.	Yes
+
 Ha jól csináltuk, akkor a megjelenik a „Get Qt Open Source” felirat a „Get started” gomb fölött. Kattintsunk a „Get started”-ra, majd a „Download Now” gombra, így egy online downloadert töltünk le amit indíthatunk is.
 A telepítés során, amikor lehetőség van beírni az e-mail címet és jelszót, akkor a „Skip” gombra kattintsunk, ne regisztráljuk a honlapon. Amikor eljutottunk ahhoz a részhez, hogy ki lehet választani, hogy milyen egyéb komponenseket szeretnénk feltelepíteni, akkor gondoskodjuk róla, hogy a MinGW 5.3.0 32bit-t válasszuk ki (pl. Qt5.7 alatt). Nálam ez automatikusan nem volt bepipálva, így a fordításnál problémákba ütköztem.
 
@@ -44,8 +46,9 @@ Ha be szeretnénk szúrni a képünket, akkor már csak meg kell hívnunk a köv
 A resource fájlok URL-je másolható, ha jobb klikkelünk a fájlon.
 
 Egyéb tanulságok
-•	Tanácsoljuk a házi feladatot minél korábban elkezdeni, főleg ha az ember BSc második féléve óta nem programozott C++-ban
-•	Ugyanez hatványozottan igaz a RobonAUT-on résztvevő csapatok számára, már az élesztés során is nagyon jól használható, ha van egy jól átgondolt diagnosztikai alkalmazásunk. Természetesen, amikor az autón már „csak” hangolni szeretnénk paramétereket, akkor is elengedhetetlen.
-•	A git használatát érdemes készségszinten elsajátítani. Sok időt lehet vele megspórolni, ha már nem kell komolyan átgondolni minden egyes merge/checkout/… folyamatot.
-•	A Qt és QML oldal közötti hívásokkal nem árt tisztában lenni. A QML oldalról „ctrl+klikk” kombináció nem használható, így nehezen kereshető vissza, hogy mi is honnan érkezik valójában.
-•	UML diagram szerkesztéséhez érdemes alaposan átnézni a Qt által biztosított lehetőségeket, mert jobb lehetőségeket tartalmaz mint pl. a Visio.
+
+  *	Tanácsoljuk a házi feladatot minél korábban elkezdeni, főleg ha az ember BSc második féléve óta nem programozott C++-ban
+  *	Ugyanez hatványozottan igaz a RobonAUT-on résztvevő csapatok számára, már az élesztés során is nagyon jól használható, ha van egy jól átgondolt diagnosztikai alkalmazásunk. Természetesen, amikor az autón már „csak” hangolni szeretnénk paramétereket, akkor is elengedhetetlen.
+  *	A git használatát érdemes készségszinten elsajátítani. Sok időt lehet vele megspórolni, ha már nem kell komolyan átgondolni minden egyes merge/checkout/… folyamatot.
+  *	A Qt és QML oldal közötti hívásokkal nem árt tisztában lenni. A QML oldalról „ctrl+klikk” kombináció nem használható, így nehezen kereshető vissza, hogy mi is honnan érkezik valójában.
+  *	UML diagram szerkesztéséhez érdemes alaposan átnézni a Qt által biztosított lehetőségeket, mert jobb lehetőségeket tartalmaz mint pl. a Visio.

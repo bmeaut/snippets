@@ -6,12 +6,14 @@ authors: Team B csapat (AlkFejl 2016 ősz)
 tags: alkfejl afhf skipfromindex
 ---
 
-###1. QML build probléma
+### 1. QML build probléma
+
 Sokszor belefutottunk abba a problémába, hogy a QML oldali módosításokat a build után nem érzékelte a Qt Creator.
 Az egyik lehetséges megoldás – amit mi alkalmaztunk -  az, hogy a QML oldali módosítások után mindig clean-eljük és újrafordítjuk az egész projectet.
 A probléma egyébként nem mindenkinél jött elő mindig.
 
-###2. A Qt adattípusok sorosításáról
+### 2. A Qt adattípusok sorosításáról
+
 Hogyan lehet soros vonalon kiküldeni különböző objektumokat? Pontosan milyen bájtokat küldünk ki,
 amikor például egy Qt adattípust sorosítunk? A kérdésre a "serialize" kulcsszó adja meg a választ.
 Mielőtt bármit is elküldenénk a vezérelendő eszköz felé - különösképp ha fizikai eszközről van szó és nem szimulátorról - érdemes utánajárni,
@@ -29,7 +31,8 @@ Természetesen a problémát többféleképpen is áthidalhatjuk, mi például r
 Érdemes még megjegyezni azt is, hogy sorosításkor az említett típusok először mindig az adatvektor hosszát küldik ki 32 biten.
 Ez egy hasznos kényelmi funkció, hiszen így a vevő oldalon mindig tudjuk, hogy pontosan hány adatbájtot kell fogadnunk egy egy adatcsomag esetében.
 
-###3. A dokumentáció készítését megkönnyítő szoftverek
+### 3. A dokumentáció készítését megkönnyítő szoftverek
+
 Egy jó szoftver nagyon meg tudja könnyíteni a különböző diagramok szerkesztését, rajzolását.
 Mivel nekünk még nem sok tapasztalatunk volt UML diagramokkal kiegészített dokumentációk készítésében, ezért először a feladathoz megfelelő programo(ka)t kellett megkeresnünk.
 Bár elsőre nem tűnnek bonyolultnak ezek az ábrák, azt gondolhatnánk, hogy bőven elég egy „paint” is hozzájuk, azonban az ilyen "ekecs" megoldásokkal a munka nagyon lassú és szenvedős tud lenni,
@@ -39,13 +42,15 @@ Amire nekünk elsősorban szükségünk volt az az osztálydiagram és a szekven
 [http://www.softwarestencils.com/uml/](http://www.softwarestencils.com/uml/) \n  
 
 A template telepítésének menete az alábbi:
+
     1.    Tömörítsük ki a letöltött fájlokat egy tetszőleges könyvtárunkba (mindegy, hogy hová).
     2.    Indítsuk el a Microsoft Visio-t, majd navigáljunk a File/Options/Save menüpont alá.
     3.    Itt illesszük be a fájljainkhoz tartozó elérési utat a „Default personal templates and location” mezőbe, majd klikkeljünk az OK-ra.
     4.    Ezek után, ha új munkalapot nyitunk meg a Visioban (File/New),  a telepített template meg fog jelenni a PERSONAL tab alatt.
     5.    Válasszuk ki a template-et és máris használhatjuk az UML diagram rajzoló szolgáltatásait.
 
-###4. QObject, mint ősosztály
+### 4. QObject, mint ősosztály
+
 Valószínűleg a többség számára nyilvánvaló, hogy miért kell a saját osztályainkat a QObject-ből származtatni,
 mi azonban mégis belefutottunk abba, hogy ezt elfelejtettük, így nem tudtuk használni a Qt Signals & Slots mechanizmusát.
 A származtatást két okból is célszerű elvégezni: egyik a már említett Signals & Slots, másik pedig a memóriakezelés.
