@@ -1,4 +1,4 @@
-﻿---
+---
 layout: default
 codename: AlkFejlHf14
 title: Balloon team tanulságai
@@ -11,6 +11,7 @@ authors: Háda Tamás, Szikszai Dávid
 ## 1) QtCharts, grafikonok megjelenítése
 A szimulátorunk által szolgáltatott adatokat szerettük volna minél látványosabban megjeleníteni az alkalmazásunk grafikus felületén. Ehhez a Qt-s környezethez tartozó QtCharts modult alkalmaztuk.
 A modul a Qt Graphics View Frameworköt használja, melynek köszönhetően egyszerűen készíthetünk vele látványos grafikonokat. Ennek előnye, hogy sok előre elkészített grafikon típust tartalmaz, melyeket csak megfelelő módon kell alkalmaznunk. Ismét teljesül, hogy nem feltétlenül kell feltalálni mindent magunknak, ha már léteznek rá jól működő megoldások is. További előnye, hogy tisztán QML oldalon megvalósítható a grafikon (kis javascripttel kiegészítve), c++ oldalon csupán egy függvényhívásra volt szükségünk.
+
 ```cpp   
  QMetaObject::invokeMethod(mainWindow, "addToChart",
                               Q_RETURN_ARG(QVariant, returnedValue),
@@ -18,10 +19,13 @@ A modul a Qt Graphics View Frameworköt használja, melynek köszönhetően egys
                               Q_ARG(QVariant, QVariant(y_pos)),
                         Q_ARG(QVariant, QVariant(z_pos)));
 ```
+
 A qml oldalon megvalósított addToChart javascript függvény végzi a pontoknak a grafikonhoz történő hozzáadását.
 A modul használata, kezdeti nehézségek:
 A modult hasonlóan a többi Qt-s modulhoz, először importálnunk kell.
-import QtCharts 2.1
+
+   import QtCharts 2.1
+
 Importálás követően azonban azt vettük észre, hogy a QtCreator nem ismeri fel a modult, az elviekben hozzá tartozó típusokat aláhúzza, nem fordul az alkalmazás. Végül hosszadalmas keresgélés és próbálkozás után kiderült, hogy az alap Qt release nem tartalmazza ezt. (Hivatalos oldalon talált leírások és példakódok egyike sem utaltak erre az egyébként egyszerű magyarázatra :) ).
 Ez egy folyamatosan fejlesztett modul, mely jelenleg is csak add-on-ként elérhető. (git repository: https://github.com/qt/qtcharts).
 Szerencsére a Qt Maintanance Tool-ja segítségünkre volt a modul hozzáadásához.
@@ -65,6 +69,7 @@ void Balloon::AddField(std::unique_ptr<Field> field)
 ```
 
 ## 3) Konstruktor problémák
+
 Sajnos legalább kétszer belefutottunk ebbe a hibába, ami elakasztotta a fejlesztést. A lényege, hogy amikor létrehozunk egy új .cpp és .h fájlt, vagyis valamilyen új osztálynak a deklarációját, akkor a QObject-ből való öröklés bepipálásával, egy megfelelő skeleton generálódik számunkra. Azonban ez nem is annyira megfelelő néha, esetünkben a generált konstruktor miatt. A generált konstruktorunk, egy QObject-re mutató pointert kap paraméterül, amely számára a parent-et állítja be, de nekünk erre egyszer sem volt szükség, hogy használjuk, viszont annál inkább okozott gondot a létezése.
 A probléma röviden az volt, hogy esetünkben a TCP kapcsolat megírásakor, referenciaként tároltuk az osztályunkban például a SocketServert. Ez önmagában nem lett volna még gond, de elkezdett dobálni a Qt undeclared variable hibát. Végül a megoldás a problémára az volt, hogy eltűntettük az automatikusan generált konstruktort és csak a sajátunkat hagytuk meg.
 
