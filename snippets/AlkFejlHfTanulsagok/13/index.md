@@ -8,7 +8,7 @@ authors: Benedek Ádám, Vicsotka Tamás
 
 # Beta Romeo csapat tapasztalatai a BRUTUS telemetria alkalmazás fejlesztése során
 
-A házi feldatban egy telemetria alkalmazást készítettünk, mely a RobonAUT versenyhez is nagy segítséget nyújt. Az alábbiakban néhány tanulságot osztunk meg, amelyek remélhetőleg segítik a későbbi generációkat is. 
+A házi feldatban egy telemetria alkalmazást készítettünk, mely a RobonAUT versenyhez is nagy segítséget nyújt. Az alábbiakban néhány tanulságot osztunk meg, amelyek remélhetőleg segítik a későbbi generációkat is.
 
 ### Feladatok ütemezése, határidők
 
