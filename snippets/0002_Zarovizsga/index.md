@@ -15,7 +15,7 @@ A záróvizsgán a tananyag az Alkalmazásfejlesztés tárgy anyagát fedi le, a
     * Csapatmunka git alatt: merge és rebase, git flow (master, development, feature branchek, release branchek, hotfixek stb.)
   * C++14, Qt és QML
     * C++ smart pointerek (unique, shared és weak pointerek)
-    * C++ lambda kifejezések, var kulcsszó és range for
+    * C++ lambda kifejezések, auto kulcsszó és range for
     * Teljes fordítási folyamat Qt alatt (compiler, linker, MOC, QRC mechanizmus, statikus és dinamikus library (DLL) jelentése)
     * A QML és QmlEngine működése
       * QML scriptnyelv, JavaScript, események kezelése, kapcsolat a C++ oldallal
@@ -28,4 +28,3 @@ A záróvizsgán a tananyag az Alkalmazásfejlesztés tárgy anyagát fedi le, a
     * Viselkedési tervezési minták
 
 Minden témakörben, de különösen a tervezéssel kapcsolatos kérdések esetében előfordulhat olyan kérdés, hogy a diplomatervben szerepel-e valamilyen tervezési minta vagy hogyan érvényesülnek a SOLID elvek. Ha nem szerepelnek benne, akkor hogyan lehetne őket felhasználni, alkalmazni.
-
