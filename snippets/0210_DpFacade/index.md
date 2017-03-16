@@ -16,7 +16,7 @@ Tegyük fel, hogy Bluetooth kommunikációt implementálunk egy Bluetooth modul 
 
 Objektum orientált alkalmazásunkban egyrészt kényelmes lenne egy objektumon kereszül elérni a szükséges API funkciókat, másrészt egy csomó funkcióra nincs is szükségünk, így számunkra elég lenne egy sokkal egyszerűbb API is, ami egy csomó mindent magától, automatikusan beállít egy default értékre.
 
-A Facade design pattern célja egy olyan interfész kialakítása, mely a mögötte lévő funkciókat az adott alkalmazás számára kényelmesebb formában teszi elérhetővé. Jelen esetben a szükséges funkciókat lefedi a metódusaival, de a feleslegesen bonyolult részleteket elfedi a fejleszők elől.
+A Facade design pattern célja egy olyan interfész kialakítása, mely a mögötte lévő funkciókat az adott alkalmazás számára kényelmesebb formában teszi elérhetővé. Jelen esetben a szükséges funkciókat lefedi a metódusaival, de a feleslegesen bonyolult részleteket elfedi a fejlesztők elől.
 
     class BluetoothCommunication
     {
@@ -35,7 +35,7 @@ A Facade design pattern célja egy olyan interfész kialakítása, mely a mögö
         }
     };
 
-A *GetOutputStream()* és *GetInputStream()* metódusokat most nem tárgyajuk. Légyegük, hogy olyan streameket adnak vissza, amikkel már könnyedén tudunk küldeni/fogadni a bluetooth kapcsolaton keresztül.
+A *GetOutputStream()* és *GetInputStream()* metódusokat most nem tárgyaljuk. Lényegük, hogy olyan streameket adnak vissza, amikkel már könnyedén tudunk küldeni/fogadni a bluetooth kapcsolaton keresztül.
 
 A fenti példában később a Wt12Communication osztály segítségével már nagyon könnyen tudunk péládul PIN-t módosítani:
 
@@ -55,7 +55,7 @@ Gyakori alkalmazása, amikor egy viszonylag összetett API-t kell elérni, de a 
 
 Egyik hallgatómnak szüksége volt egy osztálykönyvtárra, mely C++ alatt lineáris programozási feladatokat tud megoldani. Talált is egy alkalmasat, mely azonban DLL-ben állt rendelkezésre, így a program indulása után a DLL betöltést is meg kellett oldani.
 
-Ilyen esetekben hosszabb távon igen kényelmes, ha ezeket a kiegészítő teendőket elfedjük: készítünk egy facade osztályt, melynek látszólag csak meg kell adni a lineáris programozási feladatot és visszakapjuk az eredményt. A háttérben persze ő betölti a DLL-t, megfelelően inicializálja az osztálykönyvtárat, átaja neki a feladatot, megoldatja, visszaolvassa és esetleg kényelmesebben kezelhető alakra hozza az eredményt, majd visszaadja azt. De ezt kívülről már nem lehet látni és ami még fontosabb, nem is kell tudni róla.
+Ilyen esetekben hosszabb távon igen kényelmes, ha ezeket a kiegészítő teendőket elfedjük: készítünk egy facade osztályt, melynek látszólag csak meg kell adni a lineáris programozási feladatot és visszakapjuk az eredményt. A háttérben persze ő betölti a DLL-t, megfelelően inicializálja az osztálykönyvtárat, átadja neki a feladatot, megoldatja, visszaolvassa és esetleg kényelmesebben kezelhető alakra hozza az eredményt, majd visszaadja azt. De ezt kívülről már nem lehet látni és ami még fontosabb, nem is kell tudni róla.
 
 ### További példák
 

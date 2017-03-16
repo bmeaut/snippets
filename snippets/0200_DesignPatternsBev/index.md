@@ -30,7 +30,7 @@ Az egyes mintákról részletesen külön snippetek szólnak.
 A creational design patternek objektumok létrehozására vonatkozó tervezési minták. Akkor jönnek elő, amikor vagy az nem triviális, hogy (1) hogyan kell létrehozni egy objektumot (például mert sok lépésből áll és összetett, mint egy labirintusos játék pályája), vagy (2) mert az nem triviális, hogy egy ősosztálynak pontosan melyik leszármazottjára is van szükség (péládul egy kommunikációs objektum függ a használt protokolltól).
 
   * Factory, Factory Method: a példányosítást egy cserélhető vagy konfigurálható metódusba, osztályba szervezi ki.
-  * Abstact Factory: összekapcsolódó osztályok lehetséges "készletére", halmazára kialakított factory.
+  * Abstract Factory: összekapcsolódó osztályok lehetséges "készletére", halmazára kialakított factory.
   * Builder: összetett példányosítási, felépítési folyamatokat támogató osztály.
   * Lazy Initialization: csak akkor végzi el ténylegesen a példányosítást, amikor már tényleg használnánk az eredményét, egészen addig késlelteti.
   * Singleton: a rendszerben egyetlen példányban létező objektum.
@@ -41,14 +41,14 @@ A creational patternek gyakran keverednek, vagy nem annyira triviális, hogy mel
 
 A Builder az összeállításra koncentrál, melynek utolsó lépése a tényleges létrehozás és az eredmény visszaadása. Az Abstract Factory általában egy lépésben létre is hozza a kért objektumot és azonnal visszaadja azt.
 
-## Structural patterns, struktúrális minták
+## Structural patterns, strukturális minták
 
-A struktúrális minták a rendszer felépítésére tesznek javaslatot, nem pedig egy folyamat leírására.
+A strukturális minták a rendszer felépítésére tesznek javaslatot, nem pedig egy folyamat leírására.
 
   * A Composite minta összetett objektumgráfok egyszerűbb kezelését célozza meg.
   * A Decorator új funkciókkal egészít ki egy már létező implementációt, annak módosítása nélkül.
   * A Facade egy már létező interface beburkolását, és ezzel többnyire egyszerűsítését célozza meg.
-  * A Proxy egy valamilyen szempontból távoli objektum elérését teszi egyszerűbbé, vagy kiegészíti ezt valamilyen további funkcióval. 
+  * A Proxy egy valamilyen szempontból távoli objektum elérését teszi egyszerűbbé, vagy kiegészíti ezt valamilyen további funkcióval.
 
 ## Behavioral patterns, viselkedési minták
 
@@ -69,4 +69,3 @@ A viselkedési minták bizonyos feladatokra adnak működési javaslatokat.
   * [http://en.wikipedia.org/wiki/Inversion_of_control](http://en.wikipedia.org/wiki/Inversion_of_control)
 
 <small>Szerzők, verziók: Csorba Kristóf</small>
-

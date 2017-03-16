@@ -26,7 +26,7 @@ Gyakran előfordul a "Lazy factory" megoldás is, ami egy factory method, egy ma
 
 ### Példák
 
-  * Bluetooth modul Facade-je (a Facade is tervezési minta): csak akkor inicializáljuk teljesen a BT kommunikációt, ha tényleg szükség van rá. (Ennek a megoldának akkor van igazán értelme, ha az alkalmazás során jó esély van rá, hogy nem is fog kelleni, amikor meg kell, akkor nem kell azonnal mennie.)
+  * Bluetooth modul Facade-je (a Facade is tervezési minta): csak akkor inicializáljuk teljesen a BT kommunikációt, ha tényleg szükség van rá. (Ennek a megoldásnak akkor van igazán értelme, ha az alkalmazás során jó esély van rá, hogy nem is fog kelleni, amikor meg kell, akkor nem kell azonnal mennie.)
   * Egy áramkörtervező programban az egyes alkatrészek képét elég egyszer betölteni, minden egyes ellenálláshoz nem kell külön ellenállás képet tárolni. Egy lazy factorytól kérünk egy ellenállás képet, amit ő első alkalommal ténylegesen betölt, később meg már csak visszaadja a tárolt példányt, lévén a megjelenítéshez felesleges több példányt létrehozni.
   * GUI fejlesztéskor szükségünk van Brush objektumokra, amik a kitöltések színét és mintáját határozzák meg. Ezek létrehozása elég költséges, viszont minden megjelenítéskor szükség van rájuk. Ezért érdemes a már létrehozott példányokat elmenteni későbbi használatra is.
   * Egy több képréteget támogató rajzprogram is tárolhatja a rétegeket lazy factoryval: ha kell egy újabb réteg, létrehozza az első hozzáféréskor, később meg már csak az elmentett példányt adja vissza.

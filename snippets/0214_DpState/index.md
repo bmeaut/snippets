@@ -8,11 +8,11 @@ authors: Csorba Kristóf
 
 ## State
 
-A state minta lehetővé teszi egy objektum számára, hogy megváloztassa a működését, ha a belső állapota változik.
+A state minta lehetővé teszi egy objektum számára, hogy megváltoztassa a működését, ha a belső állapota változik.
 
 ### Bevezető példa
 
-Autonóm robotoknál általános, hogy viselkedésüket a környezetéből érkező információk határozzák meg. Vagyis attól függően, hogy az érzékelők miket jeleznek, a robotnak módosítania kell a viselkedését. A Strategy design pattern megmutatja, hogyan lehet egy algoritmust könnyen kicserélhetővé tenni. A State design pattern ezt úgy használja fel, hogy a robotnak mindig van egy aktuális állapota (véges állapotú automatát feltételezve), ami pedig magában tartalmazza azt, hogy hogyan reagál az eseményekre, egyfajta Strategy patternként.
+Autonóm robotoknál általános, hogy viselkedésüket a környezetükből érkező információk határozzák meg. Vagyis attól függően, hogy az érzékelők miket jeleznek, a robotnak módosítania kell a viselkedését. A Strategy design pattern megmutatja, hogyan lehet egy algoritmust könnyen kicserélhetővé tenni. A State design pattern ezt úgy használja fel, hogy a robotnak mindig van egy aktuális állapota (véges állapotú automatát feltételezve), ami pedig magában tartalmazza azt, hogy hogyan reagál az eseményekre, egyfajta Strategy patternként.
 
 (Az alábbi kódrészlet több helyen a láthatóságok miatt nem fordul. Ezeket terjedelmi okokból nem vettem bele az alábbi példába, mivel hiányuk az érthetőséget nem befolyásolja.)
 

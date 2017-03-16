@@ -76,7 +76,7 @@ Branchet törölni a
 
     git branch --delete NemKellBranch
 
-paranccsal lehet. Fontos, hogy ez csak akkor lehetésges, ha a törölt branch minden commitja már mergelve van máshova, vagyis "nem fog leszakadni a commit gráfról". (Ha mégis ezt szeretnénk, arra való a ``--force``.)
+paranccsal lehet. Fontos, hogy ez csak akkor lehetséges, ha a törölt branch minden commitja már mergelve van máshova, vagyis "nem fog leszakadni a commit gráfról". (Ha mégis ezt szeretnénk, arra való a ``--force``.)
 
 Amennyiben el akarjuk dobni az el nem mentett változásokat, azt a reset paranccsal tehetjük meg: a munkakönyvtár állapotát visszaállítjuk arra, ami az adott (vagy aktuális) commitban szerepel. A tényleges visszaállításhoz a ``--hard`` opció is kell.
 
@@ -94,7 +94,7 @@ A push, pull és fetch műveletek alapesetben az aktuális ágra vonatkoznak. Mi
 
 Az utolsó eset akkor hasznos, ha látni szeretnénk a többi ág fejlődését, esetleg mergelni akarjuk őket.
 
-Ezek a műveletek akkor működnek, ha tracking branchen vagyunk, vagyis a branchről a git tudja, hogy mi a távoli megfelelője. A teljes szintaktis az alábbi:
+Ezek a műveletek akkor működnek, ha tracking branchen vagyunk, vagyis a branchről a git tudja, hogy mi a távoli megfelelője. A teljes szintaxis az alábbi:
 
     git push origin master:origin/master
 
@@ -111,7 +111,7 @@ Fontos, hogy a fentieknél a merge marad a jelenlegi ágon és magába mergeli a
 
 A rebase folyamat több commit "visszajátszását" igényelheti, és ezért minden ilyen visszajátszáskor előfordulhat, hogy ütközés van, vagyis a másik ág módosításai és a mi munkánk ellentmondásos. Ilyenkor a rebase folyamat megáll, megkér minket, hogy oldjuk fel az ütközéseket, utána pedig folytassuk.
 
-Az ütközések feloldása egyrészt mehet kézzel. Ilyenkor az ütköző fájlokba bekerül mindkét alternatíva és nekünk kell kitakarítani, az eredeti verzió pedig .orig kiterjesztéssel áll rendelkezésre. (A .orig fájlokat utána törölni szoktuk.) Amennyiben mergetool-t használunk, akkor is ugyanez történik, csak a sima szövegszerkesztőnk helyett a mergetool indul el, aminek a felülete direkt arra készült, hogy az egyes alternatívák közül könnyen tudjuk választani. A mergetool indítása a
+Az ütközések feloldása egyrészt mehet kézzel. Ilyenkor az ütköző fájlokba bekerül mindkét alternatíva és nekünk kell kitakarítani, az eredeti verzió pedig .orig kiterjesztéssel áll rendelkezésre. (A .orig fájlokat utána törölni szoktuk.) Amennyiben mergetool-t használunk, akkor is ugyanez történik, csak a sima szövegszerkesztőnk helyett a mergetool indul el, aminek a felülete direkt arra készült, hogy az egyes alternatívák közül könnyen tudjunk választani. A mergetool indítása a
 
     git mergetool
 
@@ -125,7 +125,7 @@ Végül pedig a cherry-picking az alábbi módon működik:
 
     git cherry-pick 0f543fe
 
-Ezzel a 0f543fe commitot vesszük át a saját águnkra, amivel egy másoltatot készítünk azokról a változtatásokról.
+Ezzel a 0f543fe commitot vesszük át a saját águnkra, amivel egy másolatot készítünk azokról a változtatásokról.
 
 ## Squashing
 
@@ -136,7 +136,7 @@ Tegyük fel, hogy 3 commitot szeretnék összeolvasztani. Az első, amit nem mos
     git rebase -i 5b74f4
 
 (A commit hash kódokat egyébként a ``git log`` paranccsal lehet lekérni.)
-A git ekkor feldob egy szövegfált szereksztésre, melyben minden commithoz megadhatjuk, hogy mi legyen vele:
+A git ekkor feldob egy szövegfájlt szerkesztésre, melyben minden commithoz megadhatjuk, hogy mi legyen vele:
 
     pick e21eac9 UjSor
     pick 9323585 UjSor2

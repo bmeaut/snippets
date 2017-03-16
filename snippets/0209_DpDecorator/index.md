@@ -40,11 +40,11 @@ Erre megoldás a Decorator design pattern, mely kiegészíti az ImageMorph oszt�
           qDebug() << "ImageMorph::FillHoles finished, time: " << timer.elapsed() << " ms";
         }
 
-    private:
+    protected:
         const ImageMorph& internalImageMorph;
     };
 
-Ezután bárhol, ahol eddig az ImageMorphot használtuk, használhatjuk az ImageMorphLogger osztályt is, ha a konstruktorának megadunk egy eredeti ImageMorphot. (Itt most arról nem beszélünk, hogy az eredeti ImageMorph példányát hogyan fogjuk felszabadítani. Most ez a hívó oldal felelőssége, de megoldhatnánk úgy is, hogy az ImageMorphLogger egy unique_ptr<ImageMorph> smart pointerrel tárolja az eredeti ImageMorph példányt, ami így megszűnik, ha az ImageMorphLogger példány megszűnik.)
+Ezután bárhol, ahol eddig az ImageMorphot használtuk, használhatjuk az ImageMorphLogger osztályt is, ha a konstruktorának megadunk egy eredeti ImageMorphot. (Itt most arról nem beszélünk, hogy az eredeti ImageMorph példányát hogyan fogjuk felszabadítani. Most ez a hívó oldal felelőssége, de megoldhatnánk úgy is, hogy az ImageMorphLogger egy unique_ptr<ImageMorph> smart pointerrel tárolja az eredeti ImageMorph példányt, ami így megszűnik, ha az ImageMorphLogger példány megszűnik.) Az, hogy az eredeti osztályra hivatkozó referencia private vagy protected, a minta szempontjából nem jelentős, csak ha esetleg később a decoratorból is tovább akarunk származtatni.
 
 ### Részletek
 

@@ -59,6 +59,6 @@ Tegyük fel, hogy több fájlformátumból tudunk beolvasni egy bonyolultabb ada
   * Ha egy adattároló objektumból van csak olvasható (és ezért például gyorsabban kereshető) és szerkeszthető verzió is, két builder közül választva lehet meghatározni, hogy melyik jöjjön létre.
   * A [GrainAutLine](bmeaut.github.io/grainautline) rendszer Blob2, foltokat tároló osztálya rendezett belső reprezentációval rendelkezik, vagyis a folt pixeleit sorba rendezve kell átadni a konstruktornak. Építéskor még nem feltétlenül rendezett az adatsor, utána meg már read-only, így az építés (és benne a végső rendezés) jól leválasztható.
   * Robot pályája mindenféle elemekkel. Létrehozni csak egyszer kell, utána már csak használjuk. (A komponensek felrakása után a véglegesítéskor a maradék kapcsolatokat bekötögeti a builder, például hogy melyik után melyik következik, minden lehetésges irányba.)
-  * A Builder akár választhat is optimális reprezentációt. Például ha látja, hogy folytonos vagy ritkás egy mátrix, akkor sima vagy sparse példányt is létrehozhat! (Ez utóbbi nem fogal le minden elemnek helyet, hanem (sor; oszlop; érték) formában tárolja az összes elemet.)
+  * A Builder akár választhat is optimális reprezentációt. Például ha látja, hogy folytonos vagy ritkás egy mátrix, akkor sima vagy sparse példányt is létrehozhat! (Ez utóbbi nem foglal le minden elemnek helyet, hanem (sor; oszlop; érték) formában tárolja az összes elemet.)
 
 <small>Szerzők, verziók: Csorba Kristóf</small>
