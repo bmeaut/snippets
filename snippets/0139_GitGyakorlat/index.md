@@ -8,7 +8,7 @@ authors: Csorba Kristóf
 
 # Git gyakorlat
 
-Ennek a gyakolatnak a célja a git alapok és, a branchek, mergelés és rebaseelés használatának kipróbálása, gyakorlása.
+Ennek a gyakorlatnak a célja a git alapok és a branchek, mergelés és rebaseelés használatának kipróbálása, gyakorlása.
 
 A gyakorlat során egy Visual Studio alatt, C#-ban fejlesztett alkalmazás fejlesztésében veszel részt, melyet másik két fiktív fejlesztővel együtt fogsz elkészíteni. Az "alkalmazás" egyszerű matematikai műveleteket használ, melyek működését unit tesztekkel is ellenőrizzük. A feladat sikeres elvégzése esetén a master ágon minden unit teszt zöld lesz és lesz közöttük olyan, mely a többi fiktív fejlesztő munkájának eredménye.
 
@@ -18,11 +18,11 @@ Előfeltételek:
   * Merge tool (pl. KDiff3)
   * Igény szerint grafikus git frontend (pl. [GitExtensions](https://sourceforge.net/projects/gitextensions/), [SourceTree](https://www.sourcetreeapp.com/)...)
 
-A feladatokhoz további anyagokat találsz az oldal végén.
+Ha a megoldás során további leírásokra, magyarázatokra lesz szükséged, az oldal végén találsz tippeket, linkeket.
 
 ## 1. feladat: Klónozás és futtatás
 
-  * Klónozd le a [kiinduló repositoryt](UUUURRRRRLLLL). (Éles feladat esetében később rendszeresen ide pusholnád a változásokat, ettől itt most eltekintünk.)
+  * Klónozd le a kiinduló repositoryt: [https://github.com/bmeaut/gitgyakorlat](https://github.com/bmeaut/gitgyakorlat). (Éles feladat esetében később rendszeresen ide pusholnád a változásokat, ettől itt most eltekintünk.)
   * Visual Studioban megnyitva a solutiont futtasd le az alkalmazást (Application projekt) és a unit teszteket (Tests projekt).
   * Nézd át a forráskódot! A műveletek a Common (class library) projektben találhatóak, erre hivatkozik az Application és a Tests is.
   * Nézd meg a repository commit gráfját. A master ágból fogsz most elindulni, a többi ág a képzeletbeli fejlesztők munkája, akik majd veled párhuzamosan dolgoznak. (Vagyis tegyél úgy, mintha azok az ágak most még nem léteznének.)
@@ -38,6 +38,7 @@ A feladatokhoz további anyagokat találsz az oldal végén.
 ## 3. feladat: Már létező kód módosítása
 
   * Az Operations.IsPrime metódus ugyan már készen van, viszont messze van az optimálistól. Módosítsd, hogy a lehetséges osztókat csak a paraméter négyzetgyökéig vizsgálja végig. (Figyelj rá, hogy négyzetszám esetén a négyzetgyököt még ellenőrizni kell, mint osztó!)
+  * Ellenőrizd a TestIsPrime unit teszteket.
   * Commitold a kiegészítésedet.
 
 ## 4. feladat: Rebase
@@ -48,7 +49,8 @@ Itt lehetne mergelni is, de a gyakorlás érdekében most törekedjünk inkább 
 
   * Rebaseld a saját branchedet Andezit munkájára!
     * A rebase közben kiderül, hogy Andezit a Sub elkészítése mellett észrevette IsPrime hiányosságát is és ő is javította, bár ő csak annyit tett meg, hogy a paraméter feléig vizsgálja az osztókat. Mivel mindketten ugyanazt a sort módosítottátok, a merge tool nem tudja eldönteni, melyik a helyes.
-  * Nézd meg a commit gráfot! A saját ágad commitjai átkerültek, mintha Andezit munkája után, onnan kiindulva dolgoztál volna. (A valóságban a commit nem helyeződik át, ez már egy új, csak úgy néz ki, mint a régi. Vagyis ha nagyon összekuszálódott valami, a reflog segítségével még vissza lehet nyerni az előző állapotot is és ha oda reseteled az ágadat, olyan lesz minden, mint a rebase előtt.)
+    * Ilyenkor a conflict miatt .orig kiterjesztésű fájlok is megjelennek, ezeket ne commitold, hanem ha minden jól sikerült, nyugodtan törölheted őket.
+  * Nézd meg a commit gráfot! A saját ágad commitjai átkerültek, mintha Andezit munkája után, onnan kiindulva dolgoztál volna. (A valóságban a commit nem helyeződik át, ez már egy új, csak úgy néz ki, mint a régi. Vagyis ha nagyon összekuszálódott volna valami, a reflog segítségével még vissza lehet nyerni az előző állapotot is és ha oda reseteled az ágadat, olyan lesz minden, mint a rebase előtt.)
   * A rebase után ellenőrizd a unit teszteket! (Ezt egyébként érdemes gyakran megtenni, pont erre vannak.) Ideális esetben látni fogod, hogy az IsPrime továbbra is működik (nem romlott el) és most már a Sub funkció is működik.
 
 ## 5. feladat: Andezit is átveszi a változtatásaidat
@@ -72,28 +74,27 @@ A következő feladatod az osztás funkció implementálása, amihez még unit t
 
 Időközben kiderül, hogy Bazalt is dolgozott, ő meg az Operations.Mul funkciót készítette el. Azt állítja, hogy nála már zöld az erre vonatkozó unit teszt is, így ideje átvenni a fejleményeket.
 
-Ebben az esetben a rebase művelet nem lenne nyerő dolog: a saját ágad eredményeit Andezit is használja! Éles feladat esetében a rebase után pusholtad volna, hogy Andezit is át tudja venni fast forwarddal. Ha most rebase művelettel a saját ágadnak azt a részét áthelyeznéd bazalt ágára, azzal áthelyeznéd azt a commitot is, amiből Andezit folytatni fogja a munkát. Ennek ő nagyon nem örülne! (Kiegészítő feladatként kipróbálhatod, mit látna Andezit, ha most rebaseelnél. Ha az egész munkakönyvtárat a benne lévő .git könyvtárral együtt be-ZIP-eled, később vissza tudsz térni erre az állapotra.)
+Ebben az esetben a rebase művelet nem lenne nyerő dolog: a saját ágad eredményeit Andezit is használja! Éles feladat esetében a rebase után pusholtad volna, hogy Andezit is át tudja venni fast forwarddal. Ha most rebase művelettel a saját ágadnak azt a részét áthelyeznéd bazalt ágára, azzal áthelyeznéd azt a commitot is, amiből Andezit folytatni fogja a munkát. Ennek ő nagyon nem örülne! (Tanulságos kiegészítő feladatként kipróbálhatod, mit látna Andezit, ha most rebaseelnél. Ha az egész munkakönyvtárat a benne lévő .git könyvtárral együtt be-ZIP-eled, később vissza tudsz térni erre az állapotra.)
 
 Most mergelünk, hogy semmilyen korábbi commitot ne módosítsunk.
 
   * Mergeld Bazalt ágát a sajátodba.
   * Ellenőrizd a unit teszteket. Ha minden jól megy, most már a TestMul teszt is zöld.
-  * Commitold a mergelés eredményét. (Ilyenkor .orig kiterjesztésű fájlok is megjelennek, ezeket ne commitold, hanem ha minden jól sikerült, nyugodtan törölheted őket.)
   * Nézd meg a commit gráfot, ahol egy merge commitban szépen összefut az Andezittel közös munkád és Bazalt alkotása.
 
 ## 8. feladat: Revert commit
 
-Tegyük fel, hogy a projekt vezetés úgy dönt, az Application üdvözlő szövegei mégsem kellenek. Persze egyszerűen ki is lehetne törölni őket, de most inkább használjuk ki, hogy azon anno egy külön commitban kerültek be. (Ezért érdemes gyakran commitolni úgy, hogy egy commitban csak logikailag egybe tartozó modosítások legyenek.) Ha ez az üdvözlő szöveg egy bonyolultabb funkció lenne és nem lenne olyan triviális az eltávolítása, sokkal kényelmesebb lenne azt a régi commitot visszavonni, mintha meg sem történt volna.
+Tegyük fel, hogy a projekt vezetés úgy dönt, az Application üdvözlő szövegei mégsem kellenek. Persze egyszerűen ki is lehetne törölni őket, de most inkább használjuk ki, hogy azok anno egy külön commitban kerültek be. (Ezért érdemes gyakran commitolni úgy, hogy egy commitban csak logikailag egybe tartozó módosítások legyenek.) Ha ez az üdvözlő szöveg egy bonyolultabb funkció lenne és nem lenne olyan triviális az eltávolítása, sokkal kényelmesebb lenne azt a régi commitot visszavonni, mintha meg sem történt volna.
 
 Egy commit visszavonása nem módosítja a history (korábbi commitokat és így a commit gráf már elkészült részét), hanem egyszerűen a jelenlegi pontban létrehoz egy olyan commitot, ami a visszavonandó inverze: ami ott új kódsor volt, az itt most törlődik, ami pedig akkor törlődött, az most visszakerül.
 
-  * A revert commit funkcióval hozd létre annak a régi commitnak az inverzét, ami az üdvözlő szövegeket hozra létre!
+  * A revert commit funkcióval hozd létre annak a régi commitnak az inverzét, ami az üdvözlő szövegeket hozta létre!
   * Nézd meg a commit gráfot és a revert commit által behozott módosításokat.
   * A biztonság kedvéért futtasd le a unit teszteket.
 
 ## 9. feladat: A master ág frissítése
 
-A fejlesztésnek ez a szakasza most véget ért. Miven unit teszt zöld, ideje publikálni kiváló alkalmazásunkat. Ehhez szerencsés, ha a master ág is az új, stabil állapotra mutat. Ezzel jelezzük másoknak, hogy a mostani állapotra már ők is építhetnek, mert nem egy köztes, fejlesztés alatti valamit találnak ott.
+A fejlesztésnek ez a szakasza most véget ért. Minden unit teszt zöld, ideje publikálni kiváló alkalmazásunkat. Ehhez szerencsés, ha a master ág is az új, stabil állapotra mutat. Ezzel jelezzük másoknak, hogy a mostani állapotra már ők is építhetnek, mert nem egy köztes, fejlesztés alatti valamit találnak ott.
 
   * Válts át a master ágra.
   * Nézz rá a forráskódra, eltűnnek az Operations-ből a műveletek, mivel most visszatértünk egy olyan időpontra, amikor azok még nem voltak készen.
@@ -104,18 +105,16 @@ Az a csapaton belül egyeztetett "branching policy" kérdése, hogy ez az utols�
 
 ## Kész! :)
 
-Ha minden jól sikerült, mostanra a master ágon minden unit teszt zöld, de ebből nem mindent neked kellett megoldani, hanem benne van Andezit és Bazalt munkája is.
+Ha minden jól sikerült, mostanra a master ágon minden unit teszt zöld, de ebből nem mindent neked kellett megoldani, hanem benne van Andezit és Bazalt munkája is. Mivel a master ág most a saját ágad előtt jár, a munka folytatásakor egy mozdulattal érdemes a saját ágadat előre rakni (fast forward) a master ágra. Nagyobb projekt esetében a master előre helyezését a vezető fejlesztő végzi, így te ebből annyit látnál a munka kezdetén, hogy "Jé, előre került a master ág... gyorsan átveszem én is."
 
-Az, hogy valaki a merge vagy rebase műveletet szereti, sokszor csak csapaton belüli megegyezés kérdése. A merge után jobban látszik, milyen ágakon folyt a munka, viszont ha már nagyon sok ág van, a rebase segít egy lineárisabb commit gráf fenntartásában. (Akik a .NET világ TFS verziókezelőjéhez szoktak hozzá, nekik a rebase hozza majd a már megszokott munkafolyamatot.) Amire mindenképpen figyelni kell, hogy rebaseelni csak olyan munkát szabad, amit még nem pusholtál, mert különben lehet, hogy valaki már munkát alapoz arra a commitra, amit később áthelyezel.
+Az, hogy valaki a merge vagy rebase műveletet használja, sokszor csak csapaton belüli megegyezés kérdése. A merge után jobban látszik, milyen ágakon folyt a munka, viszont ha már nagyon sok ág van, a rebase segít egy lineárisabb commit gráf fenntartásában. (Akik a .NET világ TFS verziókezelőjéhez szoktak hozzá, nekik a rebase hozza majd a már megszokott munkafolyamatot.) Amire mindenképpen figyelni kell, hogy rebaseelni csak olyan munkát szabad, amit még nem pusholtál, mert különben lehet, hogy valaki már munkát alapoz arra a commitra, amit később áthelyezel.
 
-## Gyakoran Ismételt Kérdések
+Van, akinek névre a rebase veszedelmesebbnek hangzik és ezért nem használja, pedig igazából nem nehezebb használni, mint mergelni.
 
-További anyagok a témához:
+## Gyakran Ismételt Kérdések, további anyagok
 
   * A Git használatával kapcsolatban számos leírás és példa található a [snippet gyűjteményben](http://bmeaut.github.io/snippets/#git).
-
-TODO:
-  * A kiinduló repóban a commitok ténylegesen andezittől és bazalttól származzanak!
+  * A Git honlapján számos formátumban elérhető a Pro Git könyv: [https://git-scm.com/book/en/v2](https://git-scm.com/book/en/v2)
 
 További kérdések esetén írj!
 [Csorba Kristóf](https://www.aut.bme.hu/Staff/kristof)
