@@ -26,7 +26,7 @@ Könyvtárak között a ``cd`` paranccsal navigálhatunk.
 
 A ``pwd`` paranccsal az aktuális könyvtár abszolút címzését kaphatjuk meg.
  
-## A könyvtárstruktúra megjelenítése (ls)
+## A könyvtár tartalmának megjelenítése (ls)
 
 Az ``ls`` parancs beírásával az aktuális könyvtár tartalmát jeleníthetjük meg. Mint a legtöbb linuxos parancshoz, ehhez is tartoznak a működését befolyásoló argumentumok:
 
