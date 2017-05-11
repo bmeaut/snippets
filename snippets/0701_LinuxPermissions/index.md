@@ -20,7 +20,11 @@ Egy állomány jogosultságainak lekérdezésére a legegyszerűbb megoldás az 
 
 A parancsot kiadva az válasz első oszlopában ehhez hasonlót kell látnunk: ``-rwxr-xr-x`` De mit is jelent ez?
 
-A fenti sor négy oszlopba bontható: ``-``|``rwx``|``r-x``|``r-x`` Az első csoport jól láthatóan különbözik a többitől. Valóban, ennek más a jelentése, míg a többi megegyező tartalmú.
+A fenti sor négy oszlopba bontható:
+
+``-``|``rwx``|``r-x``|``r-x``
+
+Az első csoport jól láthatóan különbözik a többitől. Valóban, ennek más a jelentése, míg a többi megegyező tartalmú.
 
 Ezen kívül ami számunkra még fontos, az a ``gergo gergo``. Ez az állomány tulajdonosát és a hozzá rendelt csoportot jelenti.
 
@@ -40,7 +44,7 @@ Az első oszlopban az állomány típusát olvashatjuk. Az itt előforduló röv
 ### Tulajdonos, csoport, mindenki más (owner, group, other)
 
 A következő három oszlop a tulajdonos, a csoport és mindenki más számára a fájlon végezhető műveletek olvashatóak.
- 
+
  - owner(u): a fájl létrehozója
  - group(g): a fájlhoz hozzárendelt csoportokba tartozó felhasználók
  - other(o): mindenki más
@@ -52,7 +56,11 @@ Az ``rwx`` hármas az írási, olvasási és futtatási jogot jelenti. Ha ``-`` 
 
 A fent látható ``rwxr-xr-x`` jogkör tehát azt jelenti, hogy a tulajdonosnak lehetősége van a fájlt írni, olvasni és futtatni, a csoportnak és mindenki másnak pedig olvasni és futtatni.
 
-Az oktális írásmód: az ``rwxr-xr-x`` jogkör előfordul az alábbi írásmódban is: ``755``. Hogy keletkezett ez a szám? A már megismert oszlopokra bontva: ``rwx``|``r-x``|``r-x``. Most a jogosulságok helyére ``1``-et, a tiltások helyére ``0``-t írva: ``111``|``101``|``101``, ami kettes számrendszerben éppen a ``7``|``5``|``5``-nek felel meg.
+Az oktális írásmód: az ``rwxr-xr-x`` jogkör előfordul az alábbi írásmódban is: ``755``. Hogy keletkezett ez a szám? A már megismert oszlopokra bontva, utána a jogosulságok helyére ``1``-et, a tiltások helyére ``0``-t írva, végül decimálisan:
+
+``rwx``|``r-x``|``r-x``
+``111``|``101``|``101``
+``7``|``5``|``5``
 
 ## Jogosultság váltás (chmod)
 
@@ -81,6 +89,7 @@ Ha nincsen felhasználó megadva (ez a leggyakrabban használt eset) *superuser*
 ## Felhasználó kezelés
 ### User, Group létrehozás
 ``sudo adduser bela``, ``sudo addgroup developers`` csak root jogosultsággal meghívható parancs. Az ``adduser`` interaktívan hozza létre a felhasználót (amennyiben lehetőség van rá, ezt használjuk és ne a ``useradd`` parancsot).
+
 ### Felhasználó hozzáadása a csoporthoz
 ```bash
 sudo usermod -a -G developers bela
@@ -93,6 +102,7 @@ $ groups bela
 bela : bela developers
 ```
 Itt érdemes megemlíteni, hogy például ``sudo`` jogunk (rootként való parancshíváshoz való jogunk) akkor van, ha a sudo csoportban benne vagyunk.
+
 ### Törlés
 ``sudo deluser bela``, ``sudo delgroup developers``. A ``bela`` felhasználó törlésével figyelmeztet, hogy a számára létrehozott ``bela`` csoportnak nincs több eleme, majd törli azt. Ugyanakkor, a ``developers`` csoportból is töröltük az utolsó felhasználót, de azt nem törli magától.
 
