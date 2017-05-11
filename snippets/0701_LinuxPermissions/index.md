@@ -14,9 +14,15 @@ Ez a snippet a linux jogosulság-kezeléséről szól. Megismerkedünk a jogokka
 
 Egy állomány jogosultságainak lekérdezésére a legegyszerűbb megoldás az ``ls -l <filename>`` használata. Pl. ``ls -l level.txt``
 
+```bash
+-rw-rw-r-- 1 gergo gergo 46 máj   11 13:14 level.txt
+```
+
 A parancsot kiadva az válasz első oszlopában ehhez hasonlót kell látnunk: ``-rwxr-xr-x`` De mit is jelent ez?
 
 A fenti sor négy oszlopba bontható: ``-``|``rwx``|``r-x``|``r-x`` Az első csoport jól láthatóan különbözik a többitől. Valóban, ennek más a jelentése, míg a többi megegyező tartalmú.
+
+Ezen kívül ami számunkra még fontos, az a ``gergo gergo``. Ez az állomány tulajdonosát és a hozzá rendelt csoportot jelenti.
 
 ### Állomány típusa
 
@@ -71,3 +77,23 @@ A ``chgrp`` paranccsal a fájl csoportja állítható. A ``chown :<group> <filen
 A ``sudo`` paranccsal fájlokat hajthatunk végre más felhasználóként. A szó a *su* és a *do* részekből tevődik össze, az előbbi egy különálló parancs, az adott felhasználóként indít egy terminált. Az utóbbi az angol csinálni szót jelenti.
 
 Ha nincsen felhasználó megadva (ez a leggyakrabban használt eset) *superuser*ként futtatja az állományt, amennyiben a felhasználónak van jogköre ehhez és megadja a jelszavát.
+
+## Felhasználó kezelés
+### User, Group létrehozás
+``sudo adduser bela``, ``sudo addgroup developers`` csak root jogosultsággal meghívható parancs. Az ``adduser`` interaktívan hozza létre a felhasználót (amennyiben lehetőség van rá, ezt használjuk és ne a ``useradd`` parancsot).
+### Felhasználó hozzáadása a csoporthoz
+```bash
+sudo usermod -a -G developers bela
+```
+ - -a: append, hozzáfűzés: az eddig meglévő csoportokhoz adunk hozzá egy újat.
+ - -G: másodlagos csoport (nem a user default csoportja, azt ``-g``-vel módosíthatjuk)
+### Felhasználóhoz rendelt csoportok
+```bash
+$ groups bela
+bela : bela developers
+```
+Itt érdemes megemlíteni, hogy például ``sudo`` jogunk (rootként való parancshíváshoz való jogunk) akkor van, ha a sudo csoportban benne vagyunk.
+### Törlés
+``sudo deluser bela``, ``sudo delgroup developers``. A ``bela`` felhasználó törlésével figyelmeztet, hogy a számára létrehozott ``bela`` csoportnak nincs több eleme, majd törli azt. Ugyanakkor, a ``developers`` csoportból is töröltük az utolsó felhasználót, de azt nem törli magától.
+
+*Figyelem!* Az ``adduser`` létrehoz a felhasználónak egy új home könyvtárat(``/home/bela``), ezt nem törli automatikusan a ``deluser``! Törölhetjük: ``sudo rm -r /home/bela/``
