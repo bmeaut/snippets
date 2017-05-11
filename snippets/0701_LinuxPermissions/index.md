@@ -96,6 +96,7 @@ sudo usermod -a -G developers bela
 ```
  - -a: append, hozzáfűzés: az eddig meglévő csoportokhoz adunk hozzá egy újat.
  - -G: másodlagos csoport (nem a user default csoportja, azt ``-g``-vel módosíthatjuk)
+ 
 ### Felhasználóhoz rendelt csoportok
 ```bash
 $ groups bela

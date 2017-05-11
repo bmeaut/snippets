@@ -13,7 +13,7 @@ Ebben a snippetben bash scriptek készítését fogjuk megnézni
 Az alábbi kód tartalmazza a hello word programot. A ``!/bin/bash`` a szintaxis-értelmező helyét adja meg, az ``echo`` pedig a kiíró parancs(``man echo``).
 ```bash
 #!/bin/bash
-echo "Hello, World!" 
+echo "Hello, World!"
 ```
 Mentsük el ``proba.sh`` néven! Tegyük a fájlt futtathatóvá! ``chmod +x proba.sh ``. Ezek után, ha a könyvtárban állunk ``./`` beszúrásával, egyébként simán a fájl nevével futtathatjuk: ``./proba.sh``. Ezzel kész is a Hello World! alkalmazásunk.
 
@@ -47,10 +47,11 @@ else
 	echo a matematika mast mond
 fi
 ```
-A fenti kódból három dolgot emelnék ki: 
+A fenti kódból három dolgot emelnék ki:
  - az ``if``-nek van egy lezárása: a ``fi``
  - a feltételt ``[]`` közé tettük
  - a kiértékelés ``n1 -eq n2`` módon történt
+
 ### Feltételek
 A ``[feltetel]`` beírásával valójában a ``test`` parancs hívódik meg (``test feltetel``). A ``man test`` meghívásával tanulmányozhatjuk az elérhető feltételek listáját. A leggyakrabban használtak a következők:
  - String
@@ -74,8 +75,10 @@ A ``[feltetel]`` beírásával valójában a ``test`` parancs hívódik meg (``t
    - ``test -s f`` - f létezik és nem 0 hosszúságú
 
 Figyeljünk oda a szóközökre, mert számít!
+
 ## Ciklus
 Mint az if-nél, itt is figyeljünk arra, hogy a ciklusoknak van lezárása! ``if-fi``, ``do-done``, ``case-esac``.
+
 ### For
 For ciklussal egyrészt végigmehetünk felsorolva az elemeket:
 ```bash
@@ -91,6 +94,7 @@ do
   echo $i
 done
 ```
+
 ### While, until
 Az elől- és hátultesztelős ciklus esetén a szintaxis csak a parancs nevében különbözik:
 ```bash
@@ -107,8 +111,10 @@ do
   i=$((i+1))
 done
 ```
+
 ## Gyakorlás
 Most már semmi se állíthat meg minket attól, hogy kiírjuk 1-től 100-ig az 5-tel osztható számokat (segítség: a maradékszámítás itt is a ``%``)!
+
 ### Megoldás
 ```bash
 #!/bin/bash
@@ -117,9 +123,10 @@ do
 	if [ $((i%5)) -eq 0 ]
 	then
 		echo $i
-	fi	
+	fi
 done
 ```
+
 ## Zárszó
 A bash programozás ereje abban van, legalábbis szerintem, hogy használhatjuk a linuxban egyébként is használt parancsokat. Az alábbi script például az ``ls``-el kilistázza a könyvtár elemeit, a ``grep``-el szűr a ``.txt`` formátumokra, majd az ``awk``-val az előre megadott módon jeleníti meg az információkat az állományokról (a ``$N`` a tömb N. elemére hivatkozik):
 ```bash
@@ -129,13 +136,12 @@ ls -l |
 grep "\.txt" |
 awk 'BEGIN{
 	print"Könyvtár *.txt adatai:";
-	print"--------------------------"}; 
-{ 
-	printf("%s\t%5s Byte\n",$9,$5); 
+	print"--------------------------"};
+{
+	printf("%s\t%5s Byte\n",$9,$5);
 	total += $5 };
-END { 
+END {
 	print"--------------------------";
 	printf("összesen:\t%5s Byte\n",total);
 }'
 ```
-
