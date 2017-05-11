@@ -1,6 +1,6 @@
 ---
 layout: default
-codename: LinuxBash
+codename: BashBev
 title: Bash programozás
 tags: linux
 authors: Németh Gergely Dániel, Szántó Tamás
