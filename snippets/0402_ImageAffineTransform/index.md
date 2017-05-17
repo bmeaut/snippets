@@ -22,8 +22,6 @@ pl.: <img src="image/theta.png" alt="theta" width="7"> szöggel origó (z tengel
 
 <img src="image/rotation_matrix_sample.png" alt="minta forgatás mátrix" width="300">
 
-
-
 ## A forgatás mátrix
 
 ```cs
@@ -49,13 +47,12 @@ var forgatasMatrix = Cv2.GetRotationMatrix2D(kepKozepPont, 45, 1.0);
 Mat forgatott = Mat.Zeros(img.Rows, img.Cols, img.Type());
 Cv2.WarpAffine(eredeti, forgatott, forgatasMatrix, forgatott.Size());
 ```
-| eredeti | forgatott |
-| :-----: | :---------: |
-| ![eredeti](image/original.png) | ![forgatott](image/rotated.png) |
 
+eredeti | forgatott |
+:-----: | :---------: |
+![eredeti](image/original.png) | ![forgatott](image/rotated.png) |
 
 ## Feature pontok keresése két képen
-
 
 ```cs
 List<Point2f> img1Pts = new List<Point2f>();
