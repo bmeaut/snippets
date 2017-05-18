@@ -1,4 +1,4 @@
-﻿---
+---
 layout: default
 codename: FiltersThreshold
 title: Filterek és Thresholding alkalmazása
@@ -41,7 +41,7 @@ Paraméterek:
 
     Cv2.BilateralFilter(src, dst, diameter, sigmaColor, sigmaSpace);
 
-![](image/001.PNG "eredeti, median, bilateral")
+![](image/001.png)
 
 Itt látható a szűrők alkalmazása: a bal oldali kép az eredeti, középen a median filterrel ellátott kép (i=7), jobb oldalon pedig a bilateral filteres változat (150, 150, 5) látható. A jobb oldali képen a kisebb rések a tollon jobban megmaradtak, erősebbek a határvonalak, míg a középső ezeket jobban összemosta.
 
@@ -68,7 +68,7 @@ Paraméterek:
 
 Az előbb felsorolt sorrendben a szegmentációk végeredménye:
 
-![](image/002.PNG "eredeti, binary, binary_inv, truncate, thresh_to_zero, thresh_to_zero_inv")
+![](image/002.png)
 
 ## Thresholding alkalmazása
 
@@ -82,7 +82,7 @@ A *maxValue* értéke itt most 255, de igazából mindegy, hogy mi van megadva, 
 
 Megvalósítva:
 
-![](image/003.PNG "eredeti, keletkezett kép, poligonnal")
+![](image/003.png)
 
 Bal oldalon látható a kiinduló állapot, középen a szegmentált kép, jobb oldalon pedig az ez alapján létrejött poligonokkal ellátott kép. Az egységes szürke területek alkotnak 1-1 poligont.
 
@@ -98,7 +98,7 @@ Paraméterek:
 
        Cv2.InRange(src, min, max, dst);
 
-![](image/004.PNG "eredeti, keletkezett kép, poligonnal")
+![](image/004.png)
 
 A fenti képen a piros szerű részek behatárolása volt a cél. A küszöböket a HSV (hue, saturate, value) hármasa határozta meg. Jelen példában két intervallumra is szükség volt a kívánt szín elhelyezkedésének köszönhetően, így a [0,100,100]-[10,255,255] és a [155,100,100]-[180,255,255] közötti részekből alakult ki a poligon.
 

@@ -24,7 +24,7 @@ Az algoritmus működésének alapja, hogy nem az egész képen keressük egy ad
 csak a létrejövő szuperpixel középpontjához képest egy megadott környezetben. Ahogy ezt a következő képen is láthatjuk, ahol az S
 a létre jövő pixelek átlag szélessége.
 
-![Keresés mérete](image/search.png "Keresés korlátozása")
+![Keresés mérete](image/search.PNG)
 
 Az algoritmus három fő fázisból áll:
 * Inicializálás
@@ -50,7 +50,7 @@ követhetik a színeket.
 ### Frissítés
 
 A frissítés szakasz feladata, hogy a hozzárendelés során kialakult pixelterületeken belül áthelyezze arra a pontra a pixel
-közepét ahol a legkisebb az átlagtól való eltérés. Miután sikeresen átraktuk a középpontokat újra futtatjuk a hozzárendelés 
+közepét ahol a legkisebb az átlagtól való eltérés. Miután sikeresen átraktuk a középpontokat újra futtatjuk a hozzárendelés
 szakaszt. Amikor áthelyezzük középpontokat a két pont különbsége alapján számolt hibákat összeszámoljuk. Addig ismételjük adott
 hozzárendelést illetve a frissités szakaszt amíg ez a hiba egy köszöbérték alá nem esik.
 
@@ -89,8 +89,8 @@ until E <= threshold
 
 ## Algoritmus eredménye
 
-![Eredeti festmény](image/festmeny.png "Girl with a Pearl Earring")
-![Szuperpixel festmény](image/festmenyAfter.png "Girl with a Pearl Earring After SLIC")
+![Eredeti festmény](image/festmeny.png)
+![Szuperpixel festmény](image/festmenyAfter.png)
 
 
 ## További információ az algoritmusról
