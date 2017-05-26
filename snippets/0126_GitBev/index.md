@@ -24,7 +24,7 @@ A GIT eredeti formájában egy parancssoros alkalmazás. Sokan máig ezt a form�
 
 ## Mit verziókövetünk
 
-Verziókövetni elsősorban forráskódot szoktunk, de bármilyen szöveges anyag könnyen követhező. Például ha valaki LaTeX alatt készíti a szakdolgozatát, akkor azt is be lehet rakni GIT alá. Így ha a konzulensünk belejavít egy verzióba, miközben mi már továbbmentünk, akkor az anno odaadott verzióhoz visszatérve végrehajtuk a változtatásokat (mert itt még a "lásd 5. oldal" megjegyzés a margóra írva stimmel is, nem úgy, mint a legutolsó verziónkban, ahol 12 oldalt már beszúrtunk ide-oda). Utána pedig a változásokat át lehet venni az aktuális verzióhoz is.
+Verziókövetni elsősorban forráskódot szoktunk, de bármilyen szöveges anyag könnyen követhető. Például ha valaki LaTeX alatt készíti a szakdolgozatát, akkor azt is be lehet rakni GIT alá. Így ha a konzulensünk belejavít egy verzióba, miközben mi már továbbmentünk, akkor az anno odaadott verzióhoz visszatérve végrehajtuk a változtatásokat (mert itt még a "lásd 5. oldal" megjegyzés a margóra írva stimmel is, nem úgy, mint a legutolsó verziónkban, ahol 12 oldalt már beszúrtunk ide-oda). Utána pedig a változásokat át lehet venni az aktuális verzióhoz is.
 
 Bináris fájlokat a GIT ugyan el tud tárolni, igazi ereje azonban nem érvényesül. Ettől függetlenül például a szakdolgozat PNG ábráit nyugodtan belerakjuk a dolgozat mellé.
 
