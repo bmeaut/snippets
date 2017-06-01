@@ -127,3 +127,22 @@ A B és a C program error kimenetét is az ``error.txt``-be szeretném tenni. Mi
 
 ![csoportositas](image/csoportositas.png "Csoportosítás")
 
+### Parancsok futtatása a háttérben
+
+Vannak olyan programok amelyektől azt várjuk el, hogy folyamatosan fussanak (webszerver, webes IDE, system monitoring tool, stb.). Mivel parancsokat a Linux alapértelmezetten előtérben futtat, így egy ilyen program futtatásakor "elveszítjük" a parancssori felületet, hisz fut a program és ilyenkor nem tudunk más programot indítani.
+Ilyenkor jön jól a háttérben való futtatás. Ezt a következőképp tehetjük meg:
+
+``parancs &``
+
+Ekkor az adott parancs kimenetét ugyanúgy látjuk, viszont új parancsokat is tudunk futtatni (emiatt szokták aszinkron futtatásnak is hívni).
+Ha ismét az előtérbe szeretnénk hozni a programot, akkor azt a 
+
+``fg``
+
+paranccsal tehetjük meg.
+
+A ``&`` jellel való futtatás egyik tulajdonsága, hogy amint bezárjuk a terminál ablakot, az összes benne futtatott program is leáll. Ha azt szeretnénk, hogy pl. webszerverünk tovább fusson, akkor azt így tehetjük meg:
+
+``nohup parancs &``
+
+Természetesen az így elindított program sem örökéletű. Ha valamilyen hibába ütközik futás közben, akkor nagy eséllyel ki fog lépni. E probléma megoldására egy lehetőség a [Stackoverflow](https://stackoverflow.com/questions/696839/how-do-i-write-a-bash-script-to-restart-a-process-if-it-dies)-n olvasható.
