@@ -2,7 +2,7 @@
 layout: default
 codename: TerminalShortcuts
 title: Terminal shortcuts
-tags: snippets, linux
+tags: linux
 authors: László Dániel
 ---
 

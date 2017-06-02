@@ -234,7 +234,7 @@ Valójában a signalhoz generált függvény továbbhív a QMetaObject ősosztá
         }
     }
 
-Ez a statikus metódus gyakorlatilag arra jó, hogy átadva neki egy Simulator objektumra mutató pointert és egy metódus sorszámot, meg tudjuk hívni azt a metódust. És ez a lényege a mata-object rendszernek: egy metódust nem csak pointerrel lehet meghívni, de sorszámmal is. A connect metódus a pointerek alapján megkeresi a metódusok sorszámát és egy nagy tárolóba csak azt menti le, hogy melyik forrás objektum melyik sorszámú metódusa (a signal) melyik cél objektumok mely sorszámú metódusaihoz (a slot) csatlakozik. És a fenti activate() metódus ezeket szépen végighivogatja.
+Ez a statikus metódus gyakorlatilag arra jó, hogy átadva neki egy Simulator objektumra mutató pointert és egy metódus sorszámot, meg tudjuk hívni azt a metódust. És ez a lényege a meta-object rendszernek: egy metódust nem csak pointerrel lehet meghívni, de sorszámmal is. A connect metódus a pointerek alapján megkeresi a metódusok sorszámát és egy nagy tárolóba csak azt menti le, hogy melyik forrás objektum melyik sorszámú metódusa (a signal) melyik cél objektumok mely sorszámú metódusaihoz (a slot) csatlakozik. És a fenti activate() metódus ezeket szépen végighivogatja.
 
 ## Záró megjegyzések
 
