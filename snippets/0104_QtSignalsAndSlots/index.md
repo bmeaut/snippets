@@ -73,7 +73,7 @@ A Simulator.cpp inicializálja a QObject őst, a pozíciót és a sebességet, v
     #include <QDebug>
     #include "Simulator.h"
 
-A konstruktorban fontos, hogy a QObject ősosztály konstruktorát is meghívjuk. Paramétere egy szölő osztály, de most ezt nullptr-re állítjuk. (A C++11 előtti időkre a Qt-nak lett egy saját objektum megszüntető rendszere, ez a szülő pointer ahhoz kellett.)
+A konstruktorban fontos, hogy a QObject ősosztály konstruktorát is meghívjuk. Paramétere egy szülő osztály, de most ezt nullptr-re állítjuk. (A C++11 előtti időkre a Qt-nak lett egy saját objektum megszüntető rendszere, ez a szülő pointer ahhoz kellett.)
 
     Simulator::Simulator(int velocity)
         : QObject(nullptr), x(0), v(velocity)
