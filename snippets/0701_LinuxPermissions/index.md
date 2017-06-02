@@ -18,9 +18,9 @@ Egy állomány jogosultságainak lekérdezésére a legegyszerűbb megoldás az 
 -rw-rw-r-- 1 gergo gergo 46 máj   11 13:14 level.txt
 ```
 
-A parancsot kiadva az válasz első oszlopában ehhez hasonlót kell látnunk: ``-rwxr-xr-x`` De mit is jelent ez?
+A parancsot kiadva a válasz első oszlopában ehhez hasonlót kell látnunk: ``-rwxr-xr-x`` De mit is jelent ez?
 
-A fenti sor négy oszlopba bontható:
+A fenti sor négy oszlopra bontható:
 
 ``-``|``rwx``|``r-x``|``r-x``
 
