@@ -1,0 +1,52 @@
+---
+layout: default
+codename: Index
+title: Index
+tags: snippets skipfromindex
+authors: Csorba Kristóf
+---
+
+<div class="home">
+
+  <a href="{{ "/fullList.html" | prepend: site.baseurl }}">Minden snippet egyszerre, kódnévvel</a><p/>
+  {% assign skippedTags = 'afhf skipfromindex' %}
+  {% assign skippedPageTag = 'skipfromindex' %}
+
+  {% capture allTags %}
+  {% for p in site.pages %} {% for t in p.tags %} {{t}} {% endfor %} {% endfor %}
+  {% endcapture %}
+  {% assign allTagsArrayWithDuplicates = allTags | split : ' ' | sort %}
+
+  {% assign prev = "" %}
+  {% capture allTags %}
+  {% for t in allTagsArrayWithDuplicates %}
+    {% if prev != t %} {% unless skippedTags contains t %} {{t}} {% endunless %} {% endif %}
+    {% assign prev = t %}
+  {% endfor %}
+  {% endcapture %}
+  {% assign allTagsArray = allTags | split : ' ' | sort %}
+
+  Minden címke: {% for t in allTagsArray %} <a href="#{{t}}">{{t}}</a> {% endfor %}
+
+  <p/><a href="{{ "/alkfejl.html" | prepend: site.baseurl }}">Csak az alkalmazásfejlesztés tárgy snippetjei</a><p/>
+
+  <h1 class="page-heading">Minden snippet címkék szerint</h1>
+
+{% for tag in allTagsArray %}
+  <h2 id="{{tag}}">{{tag}}</h2><br/>
+  <ul>
+  {% for page in site.pages %}
+    {% if page.tags contains tag %}
+    {% unless page.tags contains skippedPageTag %}
+    <li>
+      <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a> <small>{{page.tags}} ({{page.authors}})</small>
+    </li>
+    {% endunless %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+{% endfor %}
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
