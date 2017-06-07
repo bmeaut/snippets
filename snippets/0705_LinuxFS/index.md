@@ -14,7 +14,7 @@ A linux disztribúciók nagyon hasonló fájlrendszerrel rendelkeznek. A főbb k
 
 ![UbuntuFS](img/ubuntufs.png "Ubuntu gyökérkönyvtára")
 
-A fenti képen egy fát láthatunk. Ez a felépítés konkrétan az Ubuntu disztribúció könyvtárstruktúrája, más linux OS-ek eltérhetnek tőle, sőt a felépítés kedv szerint megváltoztatható, a könyvtárelnevezések is csak konvenciók.
+A fenti képen lévő felépítés konkrétan az Ubuntu disztribúció könyvtárstruktúrája, más linux OS-ek eltérhetnek tőle, sőt a felépítés kedv szerint megváltoztatható, a könyvtárelnevezések is csak konvenciók.
 
 A gyakorlatban viszont nincs akkora eltérés a fájlrendszerek között. 
 
