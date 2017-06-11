@@ -392,80 +392,11 @@ qml:  QQuickRootItem(0x291787db9f0) AF: true F: true
 qml: Actvie focus changed! -----------------------
 Debugging has finished
 ```
-Amikor ráklikkeltünk a User data tabra az fókuszba került és a mi mezőnk nem kapta meg a fókuszt. Sőt ha most visszalépünk az 1. tabra akkor már az sem fókuszál automatikusan, a TabBar-nál marad a fókusz.
+Amikor ráklikkeltünk a User data tabra az fókuszba került és a mi mezőnk nem kapta meg a fókuszt. Sőt ha most visszalépünk az 1. tabra akkor már az sem fókuszál automatikusan, a TabBar-nál marad a fókusz. Eszünkbe jut, hogy nem jó dolog teletűzdelni a programot focus: true propertykkel... Mit lehet ilyenkor tenni?
 
-Azt szeretnénk elérni, hogy minden esetben amikor az adott felületi elem megjelenik a kijelzőn akkor ő kapja meg az aktív fókuszt.
+Ezen a ponton megjegyezzük, hogy ügyes property bindingokkal továbbra is kikényszeríthetnénk a helyes fókuszálást (hint: visible property), azonban képzeljük el hogy egy ennél sokkal bonyolultabb programról van szó, amelyben sokkal több egymásba ágyazott komponens található, több fájlban szétszórva a resources könyvtárban és nehezen átlátható az egész.
 
-A láthatósághoz kellene kötni a focust!
-
-QML-ben minden Item-nek van egy visible propertyje ami a láthatóságot szabályozza!
-
-Bindoljuk rá az értékét a focus propertyre!
-
-```javascript
-                TextField {
-                    objectName: "user"
-                    anchors.verticalCenter: parent.verticalCenter
-                    focus: visible
-                }
-```
-
-```javascript
-                TextField {
-                    objectName: "email"
-                    anchors.verticalCenter: parent.verticalCenter
-                    focus: visible
-                }
-```
-
-Nézzük meg most mi történik:
-
-![Visible fókusz 1. oldal.](image/11_osszetett_visible_1_oldal.png "Visible fókusz 1. oldal.")
-
-Az első oldal jó!
-
-![Visible fókusz 2. oldal.](image/12_osszetett_visible_2_oldal.png "Visible fókusz 2. oldal.")
-
-A második is jó!
-
-Ha oda-vissza klikkelgetünk, nem romlik el!
-
-Nézzük meg a konzolon a kimenetet és gondoljuk végig mi történik:
-
-```console
-Debugging starts
-QML debugging is enabled. Only use this in a safe environment.
-QML Debugger: Waiting for connection on port 11672...
-qml: Actvie focus changed! -----------------------
-qml: user QQuickTextField(0x26b3c8e3860, "user") AF: true F: true
-qml:  QQuickRow(0x26b3c8dddd0) AF: false F: false
-qml:  QQuickColumn(0x26b3c8dd9c0) AF: false F: false
-qml:  QQuickStackLayout(0x26b3c8dd520) AF: false F: false
-qml:  QQuickItem(0x26ab80aaf90) AF: true F: true
-qml:  QQuickRootItem(0x26ab7f27360) AF: true F: true
-qml: Actvie focus changed! -----------------------
-qml:  QQuickTabButton(0x26b3c8da8f0) AF: true F: true
-qml:  QQuickItem(0x26b3c90b800) AF: false F: false
-qml:  QQuickListView(0x26b3c90ae90) AF: true F: true
-qml:  QQuickTabBar(0x26ab80b85c0) AF: true F: true
-qml:  QQuickItem(0x26ab80aaf90) AF: true F: true
-qml:  QQuickRootItem(0x26ab7f27360) AF: true F: true
-qml: Actvie focus changed! -----------------------
-qml: email QQuickTextField(0x26b3c8f0180, "email") AF: true F: true
-qml:  QQuickRow(0x26b3c8ee650) AF: false F: false
-qml:  QQuickColumn(0x26b3c8edb70) AF: false F: false
-qml:  QQuickStackLayout(0x26b3c8dd520) AF: false F: false
-qml:  QQuickItem(0x26ab80aaf90) AF: true F: true
-qml:  QQuickRootItem(0x26ab7f27360) AF: true F: true
-qml: Actvie focus changed! -----------------------
-Debugging has finished
-```
-
-* Ráklikkelünk a TabButtonra, ettől a TabBar currentIndexe megváltozott.
-* Ez rá van bindolva a StackLayout currentIndex-ére, vagyis a StackLayout currentIndexe is megváltozik. A StackLayoutban ezzel oldalváltást indítottunk el.
-* Ezt úgy viszi véghez, hogy az 1. oldal visible propertyjét falsera, a 2. oldal visible propertyjét truera állítja.
-* Ez a visible property rá van bindolva a mi beviteli mezőnk focus propertyjére, tehát az is igazra vált.
-* Mivel ez a fókusz kérés később jött mint a user inputból jövő TabButtonra fókuszálás ezért a Qt átadja a mezőnek a fókuszt.
+Ilyenkor nagy segítség a QML FocusScope nevű komponense.
 
 ### Összefoglaló
 
