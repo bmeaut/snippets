@@ -26,11 +26,11 @@ ApplicationWindow {
 }
 ```
 
-### Debuggolás
+### Debug
 
 A fókuszproblémák debuggolása nehéz feladat, mivel a felületi elemek nagy részénél nem látszik, hogy fókuszban vannak-e éppen vagy sem. (Ez alól például a TextField kivétel, hiszen ott a villogó kurzor jelzi.)
 
-Első lépésként ezért szúrjuk be a következő kódot az ApplicationWindow törzsébe.
+Első lépésként ezért szúrjuk be a következő kódot az ApplicationWindow törzsébe:
 
 ```javascript
 onActiveFocusItemChanged: {
@@ -43,23 +43,25 @@ onActiveFocusItemChanged: {
 }
 ```
 
-A fenti kódrészlet minden esetben meghívódik amikor az ApplicationWindow érzékeli hogy másik (nem feltétlenül közvetlen) gyereke került fókuszba. Az éppen fókuszban lévő gyermekét az activeFocusItem nevű propertyjén keresztül érhetjük el.
+A fenti kódrészlet minden esetben meghívódik amikor az ApplicationWindow érzékeli, hogy másik (nem feltétlenül közvetlen) gyereke került fókuszba. Az éppen fókuszban lévő gyermekét az activeFocusItem nevű propertyjén keresztül érhetjük el.
 
-Ebből az objektumból kiindulva felmászunk az objektumfán egészen a root elemig és minden megtalált szülő elemről kiírjuk az alábbiakat:
+Ebből az objektumból kiindulva felmászunk az objektumfán egészen a root elemig és minden megtalált szülőelemről kiírjuk az alábbiakat:
 
 * Az objectName propertyt, ezt manuálisan beállíthatjuk a komponenseinken, így könnyebb megkülönböztetni a felületi elemeket.
-* Az object.toString() eredményét, mely az objektumról ad információkat. Számunkra az objektum típusa érdekes, hiszen így nem kell a teljes alkalmazásunkat telerakni objectName-kkel, enélkül is nagyjából be tudjuk azonosítani ki kicsoda.
+* Az object.toString() eredményét, mely az objektumról ad információkat. Számunkra az objektum típusa érdekes, hiszen így nem kell a teljes alkalmazásunkat telerakni objectNamekkel, enélkül is nagyjából be tudjuk azonosítani, hogy ki kicsoda.
 * Az activeFocus és a focus propertyjét az aktuális elemnek. Ezek segítségével tudjuk meghatározni melyik elem került/kerüljön fókuszba, ezekről lesz a továbbiakban részletesebben szó.
 
 ### Jótanács
 
-Ha ilyen nehézkesen látható problémákat szeretnénk javítani saját alkalmazásunk fejlesztésekor, érdemes minden változtatás után manuálisan teljesen kitörölni a build könyvtárat. A qmake ugyanis még nem tökéletes, néha előfordul, hogy bizonyos változtatásokat nem érzékel a qml fájlokban és nagyon sokáig lehet keresni a hibát 'Miért nem működik?' amikor a mi kódunk jó lenne csak éppen még egy régebbi verziót látunk futtatáskor.
+Ha ilyen nehézkesen látható problémákat szeretnénk javítani saját alkalmazásunk fejlesztésekor, érdemes minden változtatás után manuálisan teljesen kitörölni a build könyvtárat. A Qt ugyanis még nem tökéletes, néha előfordul, hogy bizonyos változtatásokat nem érzékel a forrásfájlokban és nagyon sokáig lehet keresni a hibát, hogy 'Miért nem működik?' ha a mi kódunk jó lenne, csak éppen még egy régebbi verziót látunk futtatáskor.
+
+(Én azt vettem észre, hogy törlés helyett a Clean nem jó megoldás, mert a Makefileokat nem törli ki. Ha nagyon furcsa dolgokat művel az alkalmazásunk, tényleg érdemes kézzel kitörölni a build könyvtárat.)
 
 ## Egyszerű alkalmazások
 
 A fókusz kezeléséhez QML-ben két fontos propertyt tudunk használni.
 
-**Focus property:** Alapvetően minden komponensre false a default értéke, a programozó kézzel állíthatja be igazra. Ha az értéke igazra van állítva az azt jelenti hogy ez a komponens *szeretne* fókuszba kerülni.
+**Focus property:** Alapvetően minden komponensre hamis a default értéke, a programozó kézzel állíthatja be igazra. Ha az értéke igazra van állítva az azt jelenti, hogy ez a komponens *szeretne* fókuszba kerülni.
 
 **ActiveFocus property:** Ez egy csak olvasható property amely akkor válik igazzá, hogyha a komponens *megkapta* a fókuszt.
 
@@ -110,7 +112,7 @@ qml: Actvie focus changed! -----------------------
 Debugging has finished
 ```
 
-Látható, hogy induláskor csak a gyökérelem fókuszálódik. Ez nem ApplicationWindow típusú, mivel az ApplicationWindowba tett komponensek az ApplicationWindow contentItem nevű, QQuickRootItem típusú propertyjét kapják meg szülőnek. Ezért látjuk ezt az elemet a listában először.
+Látható, hogy induláskor csak a gyökérelem fókuszálódik. Ez nem ApplicationWindow típusú, mivel az ApplicationWindowba tett komponensek az ApplicationWindow contentItem nevű, QQuickRootItem típusú propertyjét kapják meg szülőnek. Ezért látjuk ezt az elemet a lista tetején.
 
 Ha beleklikkelünk az első TextFieldbe a következő képet fogjuk látni:
 
@@ -127,6 +129,7 @@ Nézzük meg mi történik ha hozzáadunk egy
 ```javascript
 focus: true
 ```
+
 sort például a második TextField törzsébe és úgy indítjuk el az alkalmazást!
 
 Azt fogjuk tapasztalni, hogy induláskor azonnal a második TextField fókuszálódik. Nem kellett beleklikkelnünk!
@@ -139,7 +142,7 @@ Ez jól jön olyan oldalak fejlesztésekor ahol a felhasználótól azonnal inpu
 
 Nézzünk egy kicsit bonyolultabb példát!
 
-Tegyük fel, hogy olyan alkalmazást írunk ahol opcionálisan megadható a felhasználó email címe. Először be kell jelölnünk hogy igen, meg szeretnénk adni az email címünket és utána írhatjuk be a megfelelő mezőbe.
+Tegyük fel, hogy olyan alkalmazást írunk ahol opcionálisan megadható a felhasználó email címe. Először be kell jelölnünk hogy igen, meg szeretnénk adni az email címünket és csak utána írhatjuk be a megfelelő mezőbe.
 
 Illesszük be a következő, ezt megvalósító kódot az ApplicationWindow törzsébe:
 
@@ -233,7 +236,7 @@ Próbáljuk ki mi történik ha egynél több komponensre tesszük rá a focus p
 
 ![Konkurens fókusz.](image/06_konkurens_fokusz.png "Konkurens fókusz.")
 
-A második elem focus propertyje hamis, pedig beleégettük a kódba hogy igaz legyen! Tehát a Qt motorja nem engedélyez egyszerre egynél több igaz focus propertyt. A prioritási sorrend nem dokumentált része a Qt-nek, de valójában attól függ, hogy melyik komponenst deklaráltuk előrébb. A fejlesztés során erre a tulajdonságára ne támaszkodjunk, hiszen bármikor megváltozhat egy frissítéssel!
+A második elem focus propertyje hamis, pedig beleégettük a kódba, hogy igaz legyen! Tehát a Qt motorja nem engedélyez egyszerre egynél több igaz focus propertyt. A prioritási sorrend nem dokumentált része a Qt-nek, de valójában attól függ, hogy melyik komponenst deklaráltuk előrébb. A fejlesztés során erre a tulajdonságára ne támaszkodjunk, hiszen bármikor megváltozhat egy frissítéssel!
 
 ### Tanulságok
 
@@ -241,7 +244,7 @@ Egyszerű alkalmazások esetén a focus property használatával programozottan 
 
 Hogy éppen melyik komponens van fókuszban az az activeFocus read-only propertyből derül ki, az éppen fókuszált elemen és annak a szülein lesz igaz az értéke.
 
-A focus propertyk programozott beállítását property binding segítségével célszerű végezni, hiszen ezek automatikusan aktiválódnak ha megváltozik az értékük és így nagyon könnyű bizonyos feltétlekkel megszabni hogy mikor hova kerüljön a fókusz az alkalmazásban.
+A focus propertyk programozott beállítását property binding segítségével célszerű végezni, hiszen ezek automatikusan aktiválódnak ha megváltozik az értékük és így nagyon könnyű bizonyos feltétlekkel megszabni, hogy mikor hova kerüljön a fókusz az alkalmazásban.
 
 Figyeljünk oda, hogy egyszerre mindig csak egyetlen elemnek legyen igazra állítva a focus propertyje, nagy galibát tud okozni ha össze-vissza állítgatjuk a fókuszt és elfelejtkezünk róla.
 
@@ -249,7 +252,7 @@ Figyeljünk oda, hogy egyszerre mindig csak egyetlen elemnek legyen igazra áll�
 
 A lenti példát érdemes QtCreatorben megírva követni.
 
-Tegyük fel hogy szoftverfejlesztőként dolgozunk egy alkalmazáson melynek a regisztrációs felülete így néz ki:
+Tegyük fel hogy szoftverfejlesztőként dolgozunk egy alkalmazáson, melynek a regisztrációs felülete így néz ki:
 
 ```javascript
 import QtQuick 2.7
@@ -336,14 +339,16 @@ ApplicationWindow {
 A felületünk 2 tabból áll.
 
 Az első tabon a bejelentkezési adatok adhatóak meg:
+
 ![Összetett alkalmazás 1. oldal.](image/07_osszetett_kezdetek_1_oldal.png "Összetett alkalmazás 1. oldal.")
 
 A második tabon egyéb adatok, jelen esetben egy email cím:
+
 ![Összetett alkalmazás 2. oldal.](image/08_osszetett_kezdetek_2_oldal.png "Összetett alkalmazás 2. oldal.")
 
-Egyik nap jön a főnökünk és azt mondja: Panaszkodnak a userek, hogy folyton rá kell klikkelni a beviteli mezőkre, ez így nem lesz jó, csináljuk meg hogy amint megnyílik a tab azonnal lehessen kezdeni gépelni!
+Egyik nap jön a főnökünk és azt mondja: Panaszkodnak a userek, hogy folyton rá kell klikkelni a beviteli mezőkre, ez így nem lesz jó, csináljuk meg hogy amint megnyílik a tab, azonnal el lehessen kezdeni gépelni!
 
-Rendben van, tegyünk rá focus: true propetyt mindkét tabon az első mezőre.
+Rendben van, tegyünk focus propetyt mindkét tabon az első mezőre!
 
 ```javascript
                 TextField {
@@ -365,7 +370,7 @@ Indítsuk el az alkalmazást, nézzük meg mi történik!
 
 ![Konstans fókusz 1. oldal.](image/09_osszetett_focus_konstans_1_oldal.png "Konstans fókusz 1. oldal.")
 
-Sikerült! Az első oldal azonnal befókuszált. Nézzük meg mi történt a második oldalon.
+Sikerült! Az első oldal azonnal befókuszált. Nézzük meg mi történt a második oldalon...
 
 ![Konstans fókusz 2. oldal.](image/10_osszetett_focus_konstans_2_oldal.png "Konstans fókusz 2. oldal.")
 
@@ -392,13 +397,14 @@ qml:  QQuickRootItem(0x291787db9f0) AF: true F: true
 qml: Actvie focus changed! -----------------------
 Debugging has finished
 ```
-Amikor ráklikkeltünk a User data tabra az fókuszba került és a mi mezőnk nem kapta meg a fókuszt. Sőt ha most visszalépünk az 1. tabra akkor már az sem fókuszál automatikusan, a TabBar-nál marad a fókusz. Eszünkbe jut, hogy nem jó dolog teletűzdelni a programot focus: true propertykkel... Mit lehet ilyenkor tenni?
+
+Amikor ráklikkeltünk a User data tabra az fókuszba került és a mi mezőnk nem kapta meg a fókuszt. Sőt ha most visszalépünk az 1. tabra akkor már az sem fókuszál automatikusan, a TabBarnál marad a fókusz. Eszünkbe jut, hogy nem jó dolog teletűzdelni a programot focus propertykkel... Mit lehet ilyenkor tenni?
 
 Egy jó módszer arra, hogy szabályozni tudjuk melyik Item kaphat aktív fókuszt az alkalmazásunkban az, hogy mindig kizárólag egyetlen Item focus propertyjét állítjuk igazra. Ügyes property bindingokkal továbbra is kikényszeríthetnénk a helyes fókuszálást (hint: visible property), kisebb alkalmazásokban ez a módszer megfelelő lenne.
 
-Nagyobb, bonyolultabb alkalmazásokban ennek a módszernek a használata exponenciálisan nehézzé válhat a rengeteg komponens miatt. Itt jön képbe a FocusScope, aminek a működésének megértéshez először nézzük meg milyen hatással van a gyerek Item-ekre az, ha a szülő focus propertyjét állítgatjuk.
+Nagyobb, bonyolultabb alkalmazásokban ennek a módszernek a használata exponenciálisan nehézzé válhat a rengeteg komponens miatt. Itt jön képbe a FocusScope, aminek a működésének megértéshez először nézzük meg milyen hatással van a gyerek Itemekre az, ha a szülő focus propertyjét állítgatjuk.
 
-Próbáljuk meg megoldani a fenti megoldást azzal hogy 'letiltjuk' a focust a megfelelő szülőn!
+Próbáljuk meg megoldani a fenti problémát azzal, hogy 'letiltjuk' a focust a megfelelő szülőn!
 
 ```javascript
     StackLayout {
@@ -456,7 +462,7 @@ Próbáljuk meg megoldani a fenti megoldást azzal hogy 'letiltjuk' a focust a m
     }
 ```
 
-Tehát mindig az a Column kap fókuszt amelyiknek az indexe megegyezik az aktuális indexszel. Ezzel elértük hogy csak az aktív Columnon belül lehessen fókuszt kiosztani. Ugye?
+Tehát mindig az a Column kap fókuszt amelyiknek az indexe megegyezik az aktuális indexszel. Ezzel elértük, hogy csak az aktív Columnon belül lehessen fókuszt kiosztani. Ugye?
 
 Sajnos nem!
 
@@ -479,7 +485,7 @@ qml: Actvie focus changed! -----------------------
 Debugging has finished
 ```
 
-A Column megkapta a fókuszt, de sajnos ez nem terjedt tovább a gyerek elemre. Ez azt jelenti hogyha egy Item focus propertyjét igazra állítjuk, azzal **megakadályozzuk** a gyerekelemeinek a fókuszba kerülését.
+A Column megkapta a fókuszt, de sajnos ez nem terjedt tovább a gyerekelemre. Ez azt jelenti, hogyha egy Item focus propertyjét igazra állítjuk, azzal **megakadályozzuk** a gyerekelemeinek a fókuszba kerülését.
 
 Szuper, akkor találtunk egy propertyt ami megakadályozza a gyerekek fókuszba kerülését, csak fordítva kellene használni!
 
@@ -487,11 +493,11 @@ Sajnos ez sem igaz, hiszen csak úgy tudjuk letiltani vele egy részfában a fó
 
 Tehát ez a módszer nem fog működni.
 
-Nekünk egy olyan komponensre lenne szükségünk, amely le tudja tiltani és engedélyezni tudja a gyermek elemeinek fókuszba kerülését, **úgy hogy közben ő maga soha nem veszi el mások elől az aktív fókuszt**, egyfajta adminisztrációs elem.
+Nekünk egy olyan komponensre lenne szükségünk, amely letiltani és engedélyezni tudja a gyerekelemeinek fókuszba kerülését, **úgy hogy közben ő maga soha nem veszi el mások elől az aktív fókuszt**, egyfajta adminisztrációs elemre.
 
 Ezt a komponenst hívják FocusScopenak.
 
-A FocusScope úgy működik, hogy ha a focus propertyjét igazra állítjuk, akkor az engedélyezi a gyermekei számára az aktív fókuszba kerülést, ha pedig hamisra állítjuk akkor az megakadályozza minden gyermekelem aktív fókuszba kerülését.
+A FocusScope úgy működik, hogyha a focus propertyjét igazra állítjuk, akkor az engedélyezi a gyermekei számára az aktív fókuszba kerülést, ha pedig hamisra állítjuk akkor az megakadályozza minden gyermekelem aktív fókuszba kerülését.
 
 Használjunk tehát FocusScopeokat!
 
@@ -559,14 +565,16 @@ Használjunk tehát FocusScopeokat!
 ```
 
 Az első oldal működik!
+
 ![FocusScope 1. oldal.](image/12_focusscope_1_oldal.png "FocusScope 1. oldal.")
 
 A második oldal is működik!
-![FocusScope 2. oldal.](image/13_focusscope_1_oldal.png "FocusScope 2. oldal.")
+
+![FocusScope 2. oldal.](image/13_focusscope_2_oldal.png "FocusScope 2. oldal.")
 
 Ha oda-vissza váltunk az oldalak között továbbra is működik!
 
-A konzolon látható, hogy megjelentek a FocusScope-ok az objektumfában.
+A konzolon látható, hogy megjelentek a FocusScopeok az objektumfában.
 
 ```console
 Debugging starts
