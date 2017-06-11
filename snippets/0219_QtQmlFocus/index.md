@@ -28,7 +28,7 @@ ApplicationWindow {
 
 ## Debuggolás
 
-A fókuszproblémák debuggolása nehéz feladat, mivel a felületi elemek nagy részénél nem látszik hogy fókuszban vannak-e éppen vagy sem. (Ez alól például a TextField kivétel, hiszen ott a villogó kurzor jelzi.)
+A fókuszproblémák debuggolása nehéz feladat, mivel a felületi elemek nagy részénél nem látszik, hogy fókuszban vannak-e éppen vagy sem. (Ez alól például a TextField kivétel, hiszen ott a villogó kurzor jelzi.)
 
 Első lépésként ezért szúrjuk be a következő kódot az ApplicationWindow törzsébe.
 
@@ -54,6 +54,67 @@ Ebből az objektumból kiindulva felmászunk az objektumfán egészen a root ele
 ### Jó tanács
 
 Ha ilyen nehézkesen látható problémákat szeretnénk javítani saját alkalmazásunk fejlesztésekor érdemes minden változtatás után manuálisan teljesen kitörölni a build könyvtárat. A qmake ugyanis még nem tökéletes, néha előfordul, hogy bizonyos változtatásokat nem érzékel a qml fájlokban és nagyon sokáig lehet keresni a hibát 'Miért nem működik?' amikor a mi kódunk működne csak éppen nem azt a verziót látjuk futni.
+
+## Első lépések
+
+A fókusz kezeléséhez QML-ben két fontos propertyt tudunk használni.
+
+Az első a focus property. Alapvetően minden komponensre false a default értéke, a programozó kézzel állíthatja be igazra. Ha az értéke igazra van állítva az azt jelenti hogy ez a komponens *szeretne* fókuszba kerülni.
+
+A második az activeFocus property. Ez egy read-only property amely akkor válik igazzá hogyha a komponens elnyerte a fókuszt.
+
+Szúrjuk be a következő komponenseket az ApplicationWindow törzsébe.
+
+```javascript
+    TextField  {
+        id: elso
+        objectName: "elso"
+        text: "Első: " + (focus ? "Fókuszt kér, " : "Fókuszt nem kér, ") + (activeFocus ? "fókuszt kap." : "fókuszt nem kap.")
+        width: 300
+        height: 30
+        anchors.horizontalCenter: parent.horizontalCenter
+    }
+
+    TextField {
+        id: masodik
+        objectName: "masodik"
+        text: "Második: " + (focus ? "Fókuszt kér, " : "Fókuszt nem kér, ") + (activeFocus ? "fókuszt kap." : "fókuszt nem kap.")
+        width: 300
+        height: 30
+        anchors.top: elso.bottom
+        anchors.topMargin: 10
+        anchors.horizontalCenter: parent.horizontalCenter
+    }
+```
+
+Elindítottam az alkalmazást, ráklikkeltem az első majd a második TextField-re, majd bezártam az alkalmazást. A debug consoleon az alábbiak jelentek meg:
+
+```console
+Debugging starts
+QML debugging is enabled. Only use this in a safe environment.
+QML Debugger: Waiting for connection on port 8624...
+qml: Actvie focus changed! -----------------------
+qml:  QQuickItem(0x2b687a853b0) AF: true F: true
+qml:  QQuickRootItem(0x2b687904cd0) AF: true F: true
+qml: Actvie focus changed! -----------------------
+qml: elso QQuickTextField(0x2b70c22e390, "elso") AF: true F: true
+qml:  QQuickItem(0x2b687a853b0) AF: true F: true
+qml:  QQuickRootItem(0x2b687904cd0) AF: true F: true
+qml: Actvie focus changed! -----------------------
+qml: masodik QQuickTextField(0x2b687a78880, "masodik") AF: true F: true
+qml:  QQuickItem(0x2b687a853b0) AF: true F: true
+qml:  QQuickRootItem(0x2b687904cd0) AF: true F: true
+qml: Actvie focus changed! -----------------------
+Debugging has finished
+```
+
+Nézzük meg mi történik ha hozzáadunk egy
+
+```javascript
+focus: true
+```
+
+sort például a második TextField törzsébe.
 
 ## Működése
 
