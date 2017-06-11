@@ -47,13 +47,13 @@ A fenti kódrészlet minden esetben meghívódik amikor az ApplicationWindow ér
 
 Ebből az objektumból kiindulva felmászunk az objektumfán egészen a root elemig és minden megtalált szülő elemről kiírjuk az alábbiakat:
 
-* Az objectName propertyt manuálisan beállíthatjuk a komponenseinken, így könnyebb megkülönböztetni a felületi elemeket.
-* Az object.toString() az objektumról ad információkat, számunkra az objektum típusa érdekes, hiszen így nem kell a teljes alkalmazásunkat telerakni objectName-kkel, enélkül is nagyjából be tudjuk azonosítani ki kicsoda.
-* Az activeFocus és a focus propertyk segítségével tudjuk meghatározni melyik elem került/kerüljön fókuszba, ezekről lesz a továbbiakban részletesebben szó.
+* Az objectName propertyt, ezt manuálisan beállíthatjuk a komponenseinken, így könnyebb megkülönböztetni a felületi elemeket.
+* Az object.toString() eredményét, mely az objektumról ad információkat. Számunkra az objektum típusa érdekes, hiszen így nem kell a teljes alkalmazásunkat telerakni objectName-kkel, enélkül is nagyjából be tudjuk azonosítani ki kicsoda.
+* Az activeFocus és a focus propertyjét az aktuális elemnek. Ezek segítségével tudjuk meghatározni melyik elem került/kerüljön fókuszba, ezekről lesz a továbbiakban részletesebben szó.
 
-### Jó tanács
+### Jótanács
 
-Ha ilyen nehézkesen látható problémákat szeretnénk javítani saját alkalmazásunk fejlesztésekor érdemes minden változtatás után manuálisan teljesen kitörölni a build könyvtárat. A qmake ugyanis még nem tökéletes, néha előfordul, hogy bizonyos változtatásokat nem érzékel a qml fájlokban és nagyon sokáig lehet keresni a hibát 'Miért nem működik?' amikor a mi kódunk jó lenne csak éppen még egy régebbi verziót látunk futtatáskor.
+Ha ilyen nehézkesen látható problémákat szeretnénk javítani saját alkalmazásunk fejlesztésekor, érdemes minden változtatás után manuálisan teljesen kitörölni a build könyvtárat. A qmake ugyanis még nem tökéletes, néha előfordul, hogy bizonyos változtatásokat nem érzékel a qml fájlokban és nagyon sokáig lehet keresni a hibát 'Miért nem működik?' amikor a mi kódunk jó lenne csak éppen még egy régebbi verziót látunk futtatáskor.
 
 ## Egyszerű alkalmazások
 
@@ -61,9 +61,9 @@ A fókusz kezeléséhez QML-ben két fontos propertyt tudunk használni.
 
 **Focus property:** Alapvetően minden komponensre false a default értéke, a programozó kézzel állíthatja be igazra. Ha az értéke igazra van állítva az azt jelenti hogy ez a komponens *szeretne* fókuszba kerülni.
 
-**ActiveFocus property:** Ez egy csak olvasható property amely akkor válik igazzá, hogyha a komponens elnyerte a fókuszt.
+**ActiveFocus property:** Ez egy csak olvasható property amely akkor válik igazzá, hogyha a komponens *megkapta* a fókuszt.
 
-### Egyszerű példa
+### Bevezető példa
 
 Szúrjuk be az alábbi két TextFieldet az ApplicationWindow törzsébe!
 
@@ -110,7 +110,7 @@ qml: Actvie focus changed! -----------------------
 Debugging has finished
 ```
 
-Látható, hogy induláskor csak a gyökérelem fókuszálódik. Ez nem ApplicationWindow típusú, mivel az ApplicationWindowba tett komponensek az ApplicationWindow contentItem nevű, QQuickRootItem típusú propertyjét kapják meg szülőnek. Ezért látunk ezt az elemet a listában először.
+Látható, hogy induláskor csak a gyökérelem fókuszálódik. Ez nem ApplicationWindow típusú, mivel az ApplicationWindowba tett komponensek az ApplicationWindow contentItem nevű, QQuickRootItem típusú propertyjét kapják meg szülőnek. Ezért látjuk ezt az elemet a listában először.
 
 Ha beleklikkelünk az első TextFieldbe a következő képet fogjuk látni:
 
@@ -133,9 +133,9 @@ Azt fogjuk tapasztalni, hogy induláskor azonnal a második TextField fókuszál
 
 ![Fókusz automatikusan.](image/03_fokusz_automatikusan.png "Fókusz automatikusan.")
 
-Ez jól jön olyan oldalak fejlesztésekor ahol a felhasználótól azonnal inputot fogunk kérni (például felhasználónév - jelszó párost). Ilyenkor megspóroljuk a usernek azt a kellemetlenséget hogy neki kelljen ráklikkelnie a megfelelő mezőre, hogy az adatait megadhassa.
+Ez jól jön olyan oldalak fejlesztésekor ahol a felhasználótól azonnal inputot fogunk kérni (például felhasználónév - jelszó párost). Ilyenkor megspóroljuk a usernek azt a kellemetlenséget, hogy neki kelljen ráklikkelnie a megfelelő mezőre, hogy az adatait megadhassa.
 
-### Property bindinggal
+### Property binding példa
 
 Nézzünk egy kicsit bonyolultabb példát!
 
@@ -168,7 +168,7 @@ Illesszük be a következő, ezt megvalósító kódot az ApplicationWindow tör
     }
 ```
 
-Indítsuk be az alkalmazást!
+Indítsuk el az alkalmazást!
 
 ![Email nincs fókuszban.](image/04_email_nincs_fokuszban.png "Email nincs fókuszban.")
 
@@ -176,7 +176,7 @@ Kapcsoljuk be a RadioButtont!
 
 ![Email fókuszban.](image/05_email_fokuszban.png "Email fókuszban.")
 
-A property binding segítségével a focus property igazzá válik amint a RadioButtont bekapcsoljuk és a TextField fókuszba kerül. Így a usernek nem kellett külön beleklikkelnie a mezőbe, hanem rögtön kezdheti írni az email címét.
+A property binding segítségével a focus property igazzá vált amint a RadioButtont bekapcsoljuk és ettől a TextField fókuszba került. Így a usernek nem kellett külön beleklikkelnie a mezőbe, hanem rögtön kezdheti írni az email címét.
 
 A konzolon eközben az alábbi kimenet látható:
 
@@ -203,7 +203,7 @@ Az alkalmazás bekapcsolása után rákattintottunk a RadioButtonre, ami emiatt 
 
 A szépség kedvéért az enabled propertyt is ugyanezen mechanizmus mentén kezeltem, így nem is lehet írni a mezőbe ha nem engedélyezett az email megadása.
 
-### Konkurens fókuszkérések
+### Konkurens fókuszkérés példa
 
 Próbáljuk ki mi történik ha egynél több komponensre tesszük rá a focus propertyt!
 
@@ -233,27 +233,21 @@ Próbáljuk ki mi történik ha egynél több komponensre tesszük rá a focus p
 
 ![Konkurens fókusz.](image/06_konkurens_fokusz.png "Konkurens fókusz.")
 
-A második elem focus propertyje hamis, pedig beleégettük a kódba hogy igaz legyen! Tehát a Qt motorja nem engedélyez egyszerre egynél több igaz fókusz propertyt. A prioritási sorrend nem dokumentált része a Qt-nek, de valójában attól függ, hogy melyik komponenst deklaráltuk előrébb. Szoftverfejlesztés során erre a tulajdonságára ne támaszkodjunk, hiszen bármikor megváltozhat egy frissítéssel.
+A második elem focus propertyje hamis, pedig beleégettük a kódba hogy igaz legyen! Tehát a Qt motorja nem engedélyez egyszerre egynél több igaz focus propertyt. A prioritási sorrend nem dokumentált része a Qt-nek, de valójában attól függ, hogy melyik komponenst deklaráltuk előrébb. A fejlesztés során erre a tulajdonságára ne támaszkodjunk, hiszen bármikor megváltozhat egy frissítéssel!
 
-### Összefoglaló
+### Tanulságok
 
 Egyszerű alkalmazások esetén a focus property használatával programozottan tudjuk irányítani, hogy a felhasználói felületen éppen mi kerüljön fókuszba. Ehhez annyit kell tennünk, hogy a megfelelő pillanatban a megfelelő elemen a focus propertyt igazra állítjuk.
 
-Hogy éppen melyik komponens van fókuszban az az activeFocus read-only propertyből derül ki, az éppen fókuszált elemen és annak a szülein lesz 
+Hogy éppen melyik komponens van fókuszban az az activeFocus read-only propertyből derül ki, az éppen fókuszált elemen és annak a szülein lesz igaz az értéke.
 
-Ha az activeFocus propertyje az Itemnek true akkor jelenleg ez az Item van fókuszban. Ez egy csak olvasható property.
+A focus propertyk programozott beállítását property binding segítségével célszerű végezni, hiszen ezek automatikusan aktiválódnak ha megváltozik az értékük és így nagyon könnyű bizonyos feltétlekkel megszabni hogy mikor hova kerüljön a fókusz az alkalmazásban.
 
-A focus propertyk programozott beállítását property binding segítségével célszerű végezni, hiszen ezek automatikusan aktiválódnak ha megváltozik az értéke és így nagyon könnyű bizonyos feltétlekkel megszabni hogy mikor hova kerüljön a fókusz az alkalmazásban.
-
-* 
-
-* Az egész applikációban egyetlen egy Itemnek lehet az activeFocus propertyje true, hiszen egyszerre egyetlen objektum lehet csak fókuszban. (Speciális objektumok a FocusScopeok, erről később.)
-
-* Ha egy item focus propertyje true-ra van állítva, akkor ez azt jelenti hogy ez az Item szeretne activeFocust kapni. Ezt nem feltétlenül fogja megkapni.
-
-* Ha a jelenleg betöltött qml komponensek között több mint egy Itemen található focus: true property, az hogy közülük ki fogja megkaptni az activeFocust nincs specifikálva a Qt dokumentációja szerint. A háttérben valójában a komponensek betöltési sorrendje dönti el, amit pedig a forráskódbeli elhelyezésük, azonban egy jó programozó nem használ ki nem specifikált viselkedést.
+Figyeljünk oda, hogy egyszerre mindig csak egyetlen elemnek legyen igazra állítva a focus propertyje, nagy galibát tud okozni ha össze-vissza állítgatjuk a fókuszt és elfelejtkezünk róla.
 
 ## Összetett alkalmazások
+
+Nézzünk meg egy kicsit összetettebb alkalmazást!
 
 ### Összefoglaló
 
