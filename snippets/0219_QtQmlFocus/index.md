@@ -168,7 +168,15 @@ Illesszük be a következő, ezt megvalósító kódot az ApplicationWindow tör
     }
 ```
 
-Látható, hogy az email TextField focus propertyjére rábindoltuk a RadioButtonunk checked propertyjét. A property binding segítségével a focus property igazzá válik amint a RadioButtont bekapcsoljuk. A focus property igazzá válása pillanatában ez a TextField szól az alkalmazásnak, hogy ő szeretne fókuszba kerülni, amit az alkalmazás engedélyez neki. Így a usernek nem kellett külön beleklikkelnie a mezőbe, hanem rögtön kezdheti írni az email címét.
+Indítsuk be az alkalmazást!
+
+![Email nincs fókuszban.](image/04_email_nincs_fokuszban.png "Email nincs fókuszban.")
+
+Kapcsoljuk be a RadioButtont!
+
+![Email fókuszban.](image/05_email_fokuszban.png "Email fókuszban.")
+
+A property binding segítségével a focus property igazzá válik amint a RadioButtont bekapcsoljuk és a TextField fókuszba kerül. Így a usernek nem kellett külön beleklikkelnie a mezőbe, hanem rögtön kezdheti írni az email címét.
 
 A konzolon eközben az alábbi kimenet látható:
 
@@ -195,18 +203,49 @@ Az alkalmazás bekapcsolása után rákattintottunk a RadioButtonre, ami emiatt 
 
 A szépség kedvéért az enabled propertyt is ugyanezen mechanizmus mentén kezeltem, így nem is lehet írni a mezőbe ha nem engedélyezett az email megadása.
 
-### Hekkelés
+### Konkurens fókuszkérések
 
+Próbáljuk ki mi történik ha egynél több komponensre tesszük rá a focus propertyt!
+
+```javascript
+    TextField  {
+        id: elso
+        objectName: "elso"
+        text: "Első: " + (focus ? "Fókuszt kér, " : "Fókuszt nem kér, ") + (activeFocus ? "fókuszt kap." : "fókuszt nem kap.")
+        width: 300
+        height: 30
+        focus: true
+        anchors.horizontalCenter: parent.horizontalCenter
+    }
+
+    TextField {
+        id: masodik
+        objectName: "masodik"
+        text: "Második: " + (focus ? "Fókuszt kér, " : "Fókuszt nem kér, ") + (activeFocus ? "fókuszt kap." : "fókuszt nem kap.")
+        width: 300
+        height: 30
+        anchors.top: elso.bottom
+        anchors.topMargin: 10
+        focus: true
+        anchors.horizontalCenter: parent.horizontalCenter
+    }
+```
+
+![Konkurens fókusz.](image/06_konkurens_fokusz.png "Konkurens fókusz.")
+
+A második elem focus propertyje hamis, pedig beleégettük a kódba hogy igaz legyen! Tehát a Qt motorja nem engedélyez egyszerre egynél több igaz fókusz propertyt. A prioritási sorrend nem dokumentált része a Qt-nek, de valójában attól függ, hogy melyik komponenst deklaráltuk előrébb. Szoftverfejlesztés során erre a tulajdonságára ne támaszkodjunk, hiszen bármikor megváltozhat egy frissítéssel.
 
 ### Összefoglaló
 
 Egyszerű alkalmazások esetén a focus property használatával programozottan tudjuk irányítani, hogy a felhasználói felületen éppen mi kerüljön fókuszba. Ehhez annyit kell tennünk, hogy a megfelelő pillanatban a megfelelő elemen a focus propertyt igazra állítjuk.
 
-Figyeljünk oda, hogy egyszerre ne állítsuk igazra egynél több komponens focus propertyjét. Ilyenkor ugyanis mindkét komponens kérni fogja az alkalmazást, hogy tegye őket fókuszba és nem biztos hogy az a komponens fog nyerni amit mi szerettünk volna. (A prioritási sorrend nem dokumentált része a Qt-nek, de valójában attól függ, hogy melyik komponenst deklaráltuk hamarabb, de erre ne támaszkodjunk, hiszen bármikor megváltozhat egy Qt frissítéssel.)
+Hogy éppen melyik komponens van fókuszban az az activeFocus read-only propertyből derül ki, az éppen fókuszált elemen és annak a szülein lesz 
 
-A focus propertyk programozott beállítását property binding segítségével célszerű végezni, hiszen ezek automatikusan aktiválódnak ha megváltozik az értéke és így nagyon könnyű elérni hogy egyszerre csak egy legyen igaz.
+Ha az activeFocus propertyje az Itemnek true akkor jelenleg ez az Item van fókuszban. Ez egy csak olvasható property.
 
-* Ha az activeFocus propertyje az Itemnek true akkor jelenleg ez az Item van fókuszban. Ez egy csak olvasható property.
+A focus propertyk programozott beállítását property binding segítségével célszerű végezni, hiszen ezek automatikusan aktiválódnak ha megváltozik az értéke és így nagyon könnyű bizonyos feltétlekkel megszabni hogy mikor hova kerüljön a fókusz az alkalmazásban.
+
+* 
 
 * Az egész applikációban egyetlen egy Itemnek lehet az activeFocus propertyje true, hiszen egyszerre egyetlen objektum lehet csak fókuszban. (Speciális objektumok a FocusScopeok, erről később.)
 
