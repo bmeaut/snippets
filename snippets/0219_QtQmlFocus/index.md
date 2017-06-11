@@ -247,7 +247,113 @@ Figyeljünk oda, hogy egyszerre mindig csak egyetlen elemnek legyen igazra áll�
 
 ## Összetett alkalmazások
 
-Nézzünk meg egy kicsit összetettebb alkalmazást!
+A lenti példát érdemes QtCreatorben megírva követni.
+
+Tegyük fel hogy szoftverfejlesztőként dolgozunk egy alkalmazáson melynek a regisztrációs felülete így néz ki:
+
+```javascript
+import QtQuick 2.7
+import QtQuick.Controls 2.0
+import QtQuick.Layouts 1.3
+
+ApplicationWindow {
+
+    onActiveFocusItemChanged:  {
+        console.log("Actvie focus changed! -----------------------")
+        var object = activeFocusItem
+        while(object) {
+            console.log(object.objectName + " " + object.toString() + " AF: " + object.activeFocus + " F: " + object.focus)
+            object = object.parent
+        }
+    }
+
+    visible: true
+    width: 640
+    height: 480
+    title: qsTr("Registration form")
+
+    header: TabBar {
+        id: tabBar
+        currentIndex: stackLayout.currentIndex
+        TabButton {
+            text: qsTr("Login data")
+        }
+        TabButton {
+            text: qsTr("User data")
+        }
+    }
+
+    StackLayout {
+        id: stackLayout
+        anchors.fill: parent
+        currentIndex: tabBar.currentIndex
+
+        Column {
+            Row {
+                height: 40
+                Label {
+                    text: "User:"
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+                TextField {
+                    objectName: "user"
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+            }
+
+            Row {
+                height: 40
+                Label {
+                    text: "Password:"
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+                TextField {
+                    objectName: "password"
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+            }
+            spacing: 10
+        }
+
+        Column {
+            Row {
+                height: 40
+                Label {
+                    text: "E-mail:"
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+                TextField {
+                    objectName: "email"
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+            }
+            spacing: 10
+        }
+    }
+}
+```
+
+A felületünk tabokból áll, lehet közöttük váltani. Az első tabon a bejelentkezési adatok, a második tabon egyéb adatok adhatóak meg.
+
+Egyik nap jön a főnökünk és azt mondja: Panaszkodnak a userek, hogy folyton rá kell klikkelni a beviteli mezőkre, ez így nem lesz jó, csináljuk meg hogy amint megnyílik a tab azonnal lehessen kezdeni gépelni!
+
+Rendben van, tegyünk rá focus: true propetyt mindkét tabon az első mezőre.
+
+```javascript
+                TextField {
+                    objectName: "user"
+                    anchors.verticalCenter: parent.verticalCenter
+                    focus: true
+                }
+```
+
+```javascript
+                TextField {
+                    objectName: "email"
+                    anchors.verticalCenter: parent.verticalCenter
+                    focus: true
+                }
+```
 
 ### Összefoglaló
 
