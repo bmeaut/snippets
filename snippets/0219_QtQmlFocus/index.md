@@ -63,7 +63,7 @@ Az első a focus property. Alapvetően minden komponensre false a default érté
 
 A második az activeFocus property. Ez egy read-only property amely akkor válik igazzá hogyha a komponens elnyerte a fókuszt.
 
-Szúrjuk be a következő komponenseket az ApplicationWindow törzsébe.
+Szúrjuk be a következő komponenseket az ApplicationWindow törzsébe!
 
 ```javascript
     TextField  {
@@ -108,13 +108,30 @@ qml: Actvie focus changed! -----------------------
 Debugging has finished
 ```
 
+Látható, hogy induláskor csak a gyökérelem fókuszálódik. Ez nem ApplicationWindow típusú, mivel az ApplicationWindow QQuickRootItem típusú contentItem propertyje lesz a szülője a benne lévő komponenseknek, ezért látjuk ezt a listában először.
+
+Ha beleklikkelünk az első TextFieldbe a következő képet fogjuk látni:
+![Fókuszt kér, fókuszt kap.](image/01_fokuszt_ker_fokuszt_kap.png "Fókuszt kér, fókuszt kap.")
+
+A második TextFieldbe klikkelés hasonlóan néz ki.
+
+Ha másik ablakra klikkelünk (jelen esetben én a QtCreator ablakára klikkeltem a leállításhoz) azáltal a teljes activeFocus elveszik, hiszen a főablakunk sem jutott fókuszhoz. Ilyenkor a focus propertyje a TextFieldnek igaz marad, tehát amint visszaváltunk erre az ablakra ismét ez a TextField fog fókuszba kerülni.
+
+![Fókuszt kér, fókuszt nem kap.](image/02_fokuszt_ker_fokuszt_nem_kap.png "Fókuszt kér, fókuszt nem kap.")
+
+
+
 Nézzük meg mi történik ha hozzáadunk egy
 
 ```javascript
 focus: true
 ```
 
-sort például a második TextField törzsébe.
+sort például a második TextField törzsébe és úgy indítjuk el az alkalmazást!
+
+Azt fogjuk tapasztalni, hogy induláskor azonnal a második TextField fókuszálódik. Nem kellett beleklikkelnünk!
+
+Ez jól jön olyan oldalak fejlesztésekor ahol a felhasználótól azonnal inputot fogunk kérni (például felhasználónév - jelszó párost). Ilyenkor megspóroljuk a usernek azt a kellemetlenséget hogy neki kelljen ráklikkelnie a megfelelő mezőre, hogy az adatait megadhassa.
 
 ## Működése
 
