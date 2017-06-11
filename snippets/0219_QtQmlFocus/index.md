@@ -8,10 +8,52 @@ authors: Nemkin Viktória
 
 # Qt Qml Focus
 
-[Markdown szintaxis összefoglaló](http://daringfireball.net/projects/markdown/syntax)
+## Kiinduló alkalmazás
 
-![AUT Logó](image/AUT_logo.png "AUT Logó")
+A bemutatót egy nagyon egyszerű Hello World alkalmazással kezdjük.
 
+```javascript
+import QtQuick 2.7
+import QtQuick.Controls 2.0
+
+ApplicationWindow {
+
+    visible: true
+    width: 640
+    height: 480
+    title: qsTr("Hello World")
+
+}
+```
+
+## Debuggolás
+
+A fókuszproblémák debuggolása nehéz feladat, mivel a felületi elemek nagy részénél nem látszik hogy fókuszban vannak-e éppen vagy sem. (Ez alól például a TextField kivétel, hiszen ott a villogó kurzor jelzi.)
+
+Első lépésként ezért szúrjuk be a következő kódot az ApplicationWindow törzsébe.
+
+```javascript
+onActiveFocusItemChanged: {
+    console.log("Actvie focus changed! -----------------------")
+    var object = activeFocusItem
+    while(object) {
+        console.log(object.objectName + " " + object.toString() + " AF: " + object.activeFocus + " F: " + object.focus)
+        object = object.parent
+    }
+}
+```
+
+A fenti kódrészlet minden esetben meghívódik amikor az ApplicationWindow érzékeli hogy másik (nem feltétlenül közvetlen) gyereke került fókuszba. Az éppen fókuszban lévő gyermekét az activeFocusItem nevű propertyjén keresztül érhetjük el.
+
+Ebből az objektumból kiindulva felmászunk az objektumfán egészen a root elemig és minden megtalált szülő elemről kiírjuk az alábbiakat:
+
+* Az objectName propertyt manuálisan beállíthatjuk a komponenseinken, így könnyebb beazonosítani a felületi elemeket.
+* Az object.toString() az objektum típusát és memóriacímét írja ki, számunkra főleg az előbbi érdekes, hiszen így nem kell a teljes alkalmazásunkat telerakni objectName-kkel ha egyébként azokat nem használnánk.
+* Az activeFocus és a focus propertyk segítségével tudjuk meghatározni melyik elem kerüljön fókuszba, ezekről lesz a továbbiakban részletesebben szó.
+
+### Jó tanács
+
+Ha ilyen nehézkesen látható problémákat szeretnénk javítani saját alkalmazásunk fejlesztésekor érdemes minden változtatás után manuálisan teljesen kitörölni a build könyvtárat. A qmake ugyanis még nem tökéletes, néha előfordul, hogy bizonyos változtatásokat nem érzékel a qml fájlokban és nagyon sokáig lehet keresni a hibát 'Miért nem működik?' amikor a mi kódunk működne csak éppen nem azt a verziót látjuk futni.
 
 ## Működése
 
@@ -40,35 +82,3 @@ authors: Nemkin Viktória
 * Egymásba ágyazott FocusScopek is működnek: ha mindnek igazra van állítva a focus propertyje akkor az aktív fókusz le tud jutni mindhez és elterjedni a szülő-gyerek láncban a legalsó szintekre.
 
 * Létezik egy függvény, a forceActiveFocus(), amely az Item minden közvetlen felmenőjén, ami FocusScope beállítja a focus propertyt truera. Ez jól jön ha sok egymásba ágyazott FocusScope-on belül van az Item.
-
-
-## Debug tippek:
-
-A top level komponenshez adjuk hozzá ezt a kódot:
-
-```javascript
-onActiveFocusItemChanged: {
-
-    console.log("Actvie focus changed! -----------------------")
-
-    var object = activeFocusItem
-
-    while(object) {
-
-        console.log(object.objectName + " " + object.toString() + " AF: " + object.activeFocus + " F: " + object.focus)
-
-        object = object.parent
-
-    }
-
-}
-
-```
-
-Az objectName propertyt manuálisan beállíthatjuk a komponenseinken, így egyedivé tehetjük őket a debug üzenetben.
-
-Egy egyszerűbb módszer az aktuális fókuszált komponens megmutatásához, ha annak van színe:
-
-`` color: activeFocus ? "red" : "white" ``
-
-Érdemes teljesen kitörölni a build könyvtárat, néha a qmake nem veszi észre a változásokat a qml fájlokban és még a régi verziót fogjuk futtatni, hiába írtuk át a kódot.
