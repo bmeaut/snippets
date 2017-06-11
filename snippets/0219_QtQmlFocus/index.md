@@ -8,7 +8,7 @@ authors: Nemkin Viktória
 
 # Qt Qml Focus
 
-## Kiinduló alkalmazás
+## Kezdetek
 
 A bemutatót egy nagyon egyszerű Hello World alkalmazással kezdjük.
 
@@ -26,7 +26,7 @@ ApplicationWindow {
 }
 ```
 
-## Debuggolás
+### Debuggolás
 
 A fókuszproblémák debuggolása nehéz feladat, mivel a felületi elemek nagy részénél nem látszik, hogy fókuszban vannak-e éppen vagy sem. (Ez alól például a TextField kivétel, hiszen ott a villogó kurzor jelzi.)
 
@@ -47,23 +47,25 @@ A fenti kódrészlet minden esetben meghívódik amikor az ApplicationWindow ér
 
 Ebből az objektumból kiindulva felmászunk az objektumfán egészen a root elemig és minden megtalált szülő elemről kiírjuk az alábbiakat:
 
-* Az objectName propertyt manuálisan beállíthatjuk a komponenseinken, így könnyebb beazonosítani a felületi elemeket.
-* Az object.toString() az objektum típusát és memóriacímét írja ki, számunkra főleg az előbbi érdekes, hiszen így nem kell a teljes alkalmazásunkat telerakni objectName-kkel ha egyébként azokat nem használnánk.
-* Az activeFocus és a focus propertyk segítségével tudjuk meghatározni melyik elem kerüljön fókuszba, ezekről lesz a továbbiakban részletesebben szó.
+* Az objectName propertyt manuálisan beállíthatjuk a komponenseinken, így könnyebb megkülönböztetni a felületi elemeket.
+* Az object.toString() az objektumról ad információkat, számunkra az objektum típusa érdekes, hiszen így nem kell a teljes alkalmazásunkat telerakni objectName-kkel, enélkül is nagyjából be tudjuk azonosítani ki kicsoda.
+* Az activeFocus és a focus propertyk segítségével tudjuk meghatározni melyik elem került/kerüljön fókuszba, ezekről lesz a továbbiakban részletesebben szó.
 
 ### Jó tanács
 
-Ha ilyen nehézkesen látható problémákat szeretnénk javítani saját alkalmazásunk fejlesztésekor érdemes minden változtatás után manuálisan teljesen kitörölni a build könyvtárat. A qmake ugyanis még nem tökéletes, néha előfordul, hogy bizonyos változtatásokat nem érzékel a qml fájlokban és nagyon sokáig lehet keresni a hibát 'Miért nem működik?' amikor a mi kódunk működne csak éppen nem azt a verziót látjuk futni.
+Ha ilyen nehézkesen látható problémákat szeretnénk javítani saját alkalmazásunk fejlesztésekor érdemes minden változtatás után manuálisan teljesen kitörölni a build könyvtárat. A qmake ugyanis még nem tökéletes, néha előfordul, hogy bizonyos változtatásokat nem érzékel a qml fájlokban és nagyon sokáig lehet keresni a hibát 'Miért nem működik?' amikor a mi kódunk jó lenne csak éppen még egy régebbi verziót látunk futtatáskor.
 
-## Első lépések
+## Egyszerű alkalmazások
 
 A fókusz kezeléséhez QML-ben két fontos propertyt tudunk használni.
 
-Az első a focus property. Alapvetően minden komponensre false a default értéke, a programozó kézzel állíthatja be igazra. Ha az értéke igazra van állítva az azt jelenti hogy ez a komponens *szeretne* fókuszba kerülni.
+**Focus property:** Alapvetően minden komponensre false a default értéke, a programozó kézzel állíthatja be igazra. Ha az értéke igazra van állítva az azt jelenti hogy ez a komponens *szeretne* fókuszba kerülni.
 
-A második az activeFocus property. Ez egy read-only property amely akkor válik igazzá hogyha a komponens elnyerte a fókuszt.
+**ActiveFocus property:** Ez egy csak olvasható property amely akkor válik igazzá, hogyha a komponens elnyerte a fókuszt.
 
-Szúrjuk be a következő komponenseket az ApplicationWindow törzsébe!
+### Egyszerű példa
+
+Szúrjuk be az alábbi két TextFieldet az ApplicationWindow törzsébe!
 
 ```javascript
     TextField  {
@@ -87,7 +89,7 @@ Szúrjuk be a következő komponenseket az ApplicationWindow törzsébe!
     }
 ```
 
-Elindítottam az alkalmazást, ráklikkeltem az első majd a második TextField-re, majd bezártam az alkalmazást. A debug consoleon az alábbiak jelentek meg:
+Elindítottam az alkalmazást, ráklikkeltem az első majd a második TextField-re, majd bezártam az alkalmazást. A debug konzolon az alábbiak jelentek meg:
 
 ```console
 Debugging starts
@@ -108,32 +110,101 @@ qml: Actvie focus changed! -----------------------
 Debugging has finished
 ```
 
-Látható, hogy induláskor csak a gyökérelem fókuszálódik. Ez nem ApplicationWindow típusú, mivel az ApplicationWindow QQuickRootItem típusú contentItem propertyje lesz a szülője a benne lévő komponenseknek, ezért látjuk ezt a listában először.
+Látható, hogy induláskor csak a gyökérelem fókuszálódik. Ez nem ApplicationWindow típusú, mivel az ApplicationWindowba tett komponensek az ApplicationWindow contentItem nevű, QQuickRootItem típusú propertyjét kapják meg szülőnek. Ezért látunk ezt az elemet a listában először.
 
 Ha beleklikkelünk az első TextFieldbe a következő képet fogjuk látni:
+
 ![Fókuszt kér, fókuszt kap.](image/01_fokuszt_ker_fokuszt_kap.png "Fókuszt kér, fókuszt kap.")
 
 A második TextFieldbe klikkelés hasonlóan néz ki.
 
-Ha másik ablakra klikkelünk (jelen esetben én a QtCreator ablakára klikkeltem a leállításhoz) azáltal a teljes activeFocus elveszik, hiszen a főablakunk sem jutott fókuszhoz. Ilyenkor a focus propertyje a TextFieldnek igaz marad, tehát amint visszaváltunk erre az ablakra ismét ez a TextField fog fókuszba kerülni.
+Ha másik ablakra klikkelünk (jelen esetben én a QtCreator ablakára klikkeltem a leállításhoz) azáltal a teljes alkalmazás fókusza elveszik. Ilyenkor a focus propertyje a TextFieldnek igaz marad, tehát amint visszaváltunk erre az ablakra ismét ez a TextField fog fókuszba kerülni.
 
 ![Fókuszt kér, fókuszt nem kap.](image/02_fokuszt_ker_fokuszt_nem_kap.png "Fókuszt kér, fókuszt nem kap.")
-
-
 
 Nézzük meg mi történik ha hozzáadunk egy
 
 ```javascript
 focus: true
 ```
-
 sort például a második TextField törzsébe és úgy indítjuk el az alkalmazást!
 
 Azt fogjuk tapasztalni, hogy induláskor azonnal a második TextField fókuszálódik. Nem kellett beleklikkelnünk!
 
+![Fókusz automatikusan.](image/03_fokusz_automatikusan.png "Fókusz automatikusan.")
+
 Ez jól jön olyan oldalak fejlesztésekor ahol a felhasználótól azonnal inputot fogunk kérni (például felhasználónév - jelszó párost). Ilyenkor megspóroljuk a usernek azt a kellemetlenséget hogy neki kelljen ráklikkelnie a megfelelő mezőre, hogy az adatait megadhassa.
 
-## Működése
+### Property bindinggal
+
+Nézzünk egy kicsit bonyolultabb példát!
+
+Tegyük fel, hogy olyan alkalmazást írunk ahol opcionálisan megadható a felhasználó email címe. Először be kell jelölnünk hogy igen, meg szeretnénk adni az email címünket és utána írhatjuk be a megfelelő mezőbe.
+
+Illesszük be a következő, ezt megvalósító kódot az ApplicationWindow törzsébe:
+
+```javascript
+   RadioButton {
+        id: radio
+        objectName: "radio"
+    }
+
+    Text {
+        id: question
+        objectName: "question1"
+        text: "Would you like to give me your email address?"
+        anchors.left: radio.right
+        anchors.verticalCenter: radio.verticalCenter
+    }
+
+    TextField  {
+        id: email
+        objectName: "email"
+        width: 300
+        height: 30
+        anchors.top: radio.bottom
+        focus: radio.checked
+        enabled: radio.checked
+    }
+```
+
+Látható, hogy az email TextField focus propertyjére rábindoltuk a RadioButtonunk checked propertyjét. A property binding segítségével a focus property igazzá válik amint a RadioButtont bekapcsoljuk. A focus property igazzá válása pillanatában ez a TextField szól az alkalmazásnak, hogy ő szeretne fókuszba kerülni, amit az alkalmazás engedélyez neki. Így a usernek nem kellett külön beleklikkelnie a mezőbe, hanem rögtön kezdheti írni az email címét.
+
+A konzolon eközben az alábbi kimenet látható:
+
+```console
+Debugging starts
+QML debugging is enabled. Only use this in a safe environment.
+QML Debugger: Waiting for connection on port 10680...
+qml: Actvie focus changed! -----------------------
+qml:  QQuickItem(0x197f2bc91a0) AF: true F: true
+qml:  QQuickRootItem(0x197f2a65880) AF: true F: true
+qml: Actvie focus changed! -----------------------
+qml: radio QQuickRadioButton(0x197f2a98900, "radio") AF: true F: true
+qml:  QQuickItem(0x197f2bc91a0) AF: true F: true
+qml:  QQuickRootItem(0x197f2a65880) AF: true F: true
+qml: Actvie focus changed! -----------------------
+qml: email QQuickTextField(0x19837153fe0, "email") AF: true F: true
+qml:  QQuickItem(0x197f2bc91a0) AF: true F: true
+qml:  QQuickRootItem(0x197f2a65880) AF: true F: true
+qml: Actvie focus changed! -----------------------
+Debugging has finished
+```
+
+Az alkalmazás bekapcsolása után rákattintottunk a RadioButtonre, ami emiatt fókuszba került. A klikkelésünk eredménye az lett, hogy a RadioButton checked propertyjének értéke igaz lett. Emiatt aktiválódott a hozzá tartozó property binding és a TextField focus propertyjének értékébe belemásolódott a checked új értéke. Ennek hatására a TextField elkérte és meg is kapta az aktív fókuszt.
+
+A szépség kedvéért az enabled propertyt is ugyanezen mechanizmus mentén kezeltem, így nem is lehet írni a mezőbe ha nem engedélyezett az email megadása.
+
+### Hekkelés
+
+
+### Összefoglaló
+
+Egyszerű alkalmazások esetén a focus property használatával programozottan tudjuk irányítani, hogy a felhasználói felületen éppen mi kerüljön fókuszba. Ehhez annyit kell tennünk, hogy a megfelelő pillanatban a megfelelő elemen a focus propertyt igazra állítjuk.
+
+Figyeljünk oda, hogy egyszerre ne állítsuk igazra egynél több komponens focus propertyjét. Ilyenkor ugyanis mindkét komponens kérni fogja az alkalmazást, hogy tegye őket fókuszba és nem biztos hogy az a komponens fog nyerni amit mi szerettünk volna. (A prioritási sorrend nem dokumentált része a Qt-nek, de valójában attól függ, hogy melyik komponenst deklaráltuk hamarabb, de erre ne támaszkodjunk, hiszen bármikor megváltozhat egy Qt frissítéssel.)
+
+A focus propertyk programozott beállítását property binding segítségével célszerű végezni, hiszen ezek automatikusan aktiválódnak ha megváltozik az értéke és így nagyon könnyű elérni hogy egyszerre csak egy legyen igaz.
 
 * Ha az activeFocus propertyje az Itemnek true akkor jelenleg ez az Item van fókuszban. Ez egy csak olvasható property.
 
@@ -143,7 +214,9 @@ Ez jól jön olyan oldalak fejlesztésekor ahol a felhasználótól azonnal inpu
 
 * Ha a jelenleg betöltött qml komponensek között több mint egy Itemen található focus: true property, az hogy közülük ki fogja megkaptni az activeFocust nincs specifikálva a Qt dokumentációja szerint. A háttérben valójában a komponensek betöltési sorrendje dönti el, amit pedig a forráskódbeli elhelyezésük, azonban egy jó programozó nem használ ki nem specifikált viselkedést.
 
-### Alkomponensek esetén
+## Összetett alkalmazások
+
+### Összefoglaló
 
 * Az ember azt hinné, hogy ha egy Item A-nak gyereke Item B akkor Item A-n egy focus:false property megakadályozza hogy Item B fókuszba kerüljön.  Ha pedig Item A-n focus:true property van beállítva akkor Item B-nek van esélye fókuszba kerülni. (Példáula visible property így működik.) Pontosan ellentétesen működik a focus property.
 
