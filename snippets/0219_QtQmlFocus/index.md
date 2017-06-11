@@ -394,24 +394,228 @@ Debugging has finished
 ```
 Amikor ráklikkeltünk a User data tabra az fókuszba került és a mi mezőnk nem kapta meg a fókuszt. Sőt ha most visszalépünk az 1. tabra akkor már az sem fókuszál automatikusan, a TabBar-nál marad a fókusz. Eszünkbe jut, hogy nem jó dolog teletűzdelni a programot focus: true propertykkel... Mit lehet ilyenkor tenni?
 
-Ezen a ponton megjegyezzük, hogy ügyes property bindingokkal továbbra is kikényszeríthetnénk a helyes fókuszálást (hint: visible property), azonban képzeljük el hogy egy ennél sokkal bonyolultabb programról van szó, amelyben sokkal több egymásba ágyazott komponens található, több fájlban szétszórva a resources könyvtárban és nehezen átlátható az egész.
+Egy jó módszer arra, hogy szabályozni tudjuk melyik Item kaphat aktív fókuszt az alkalmazásunkban az, hogy mindig kizárólag egyetlen Item focus propertyjét állítjuk igazra. Ügyes property bindingokkal továbbra is kikényszeríthetnénk a helyes fókuszálást (hint: visible property), kisebb alkalmazásokban ez a módszer megfelelő lenne.
 
-Ilyenkor nagy segítség a QML FocusScope nevű komponense.
+Nagyobb, bonyolultabb alkalmazásokban ennek a módszernek a használata exponenciálisan nehézzé válhat a rengeteg komponens miatt. Itt jön képbe a FocusScope, aminek a működésének megértéshez először nézzük meg milyen hatással van a gyerek Item-ekre az, ha a szülő focus propertyjét állítgatjuk.
 
-### Összefoglaló
+Próbáljuk meg megoldani a fenti megoldást azzal hogy 'letiltjuk' a focust a megfelelő szülőn!
 
-* Az ember azt hinné, hogy ha egy Item A-nak gyereke Item B akkor Item A-n egy focus:false property megakadályozza hogy Item B fókuszba kerüljön.  Ha pedig Item A-n focus:true property van beállítva akkor Item B-nek van esélye fókuszba kerülni. (Példáula visible property így működik.) Pontosan ellentétesen működik a focus property.
+```javascript
+    StackLayout {
+        id: stackLayout
+        anchors.fill: parent
+        currentIndex: tabBar.currentIndex
 
-* Ha az Item A-n a focus propertyt igazra állítjuk akkor ez azt jelenti, hogy a gyerekei közül egyik sem kerülhet fókuszba. Az objektumfában a fókusz terjedése megáll, megakad amint elér egy olyan Itemet, amelynek a focus propertyje igazra van állítva, vagyis a gyerekei nem kerülhetnek automatikusan aktív fókuszba. Természetesen a felhasználó klikkeléssel vagy tabulátorral fókuszba tudja hozni az adott Itemet, kizárólag induláskor az automatikusan kisztott fókuszt akadályozza ez meg.
+        Column {
+            focus: parent.currentIndex === 0
 
-* Ha egy Itemen a focus propertyt hamisra állítjuk, az nem fogja megakadályozni hogy a gyerekei fókuszba kerülhessenek.
+            Row {
+                height: 40
+                Label {
+                    text: "User:"
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+                TextField {
+                    id: user
+                    objectName: "user"
+                    anchors.verticalCenter: parent.verticalCenter
+                    focus: true
+                }
+            }
 
-* Egy jó módszer arra, hogy szabályozni tudjuk melyik Item kaphat aktív fókuszt az alkalmazásunkban az, hogy mindig kizárólag egyetlen Item focus propertyjét állítjuk igazra. Ezt könnyen el lehet érni, hiszen a QML property bindingja segítségével egyszerű feltételrendszert köthetünk a focus propertykhez. Kisebb alkalmazásokban ez elegendő.
+            Row {
+                height: 40
+                Label {
+                    text: "Password:"
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+                TextField {
+                    objectName: "password"
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+            }
+            spacing: 10
+        }
 
-* Nagyobb, bonyolultabb alkalmazásokban ennek a módszernek a használata exponenciálisan nehézzé válhat a rengeteg komponens miatt. Itt jön képbe a FocusScope, ami a következőképpen működik: Ha egy FocusScope focus propertyje igazra van állítva és megkapja az aktív fókuszt akkor ezt tovább terjeszti a gyermekei felé (a FocusScopeon belül ugyanazok a szabályok érvényesek mint egy egyszerű alkalmazásban, egyszerre csak egy Item kaphat fókuszt).
+        Column {
+            focus: parent.currentIndex === 1
+            Row {
+                height: 40
+                Label {
+                    text: "E-mail:"
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+                TextField {
+                    objectName: "email"
+                    anchors.verticalCenter: parent.verticalCenter
+                    focus: true
+                }
+            }
+            spacing: 10
+        }
+    }
+```
 
-* Ez pont az ellenkezője annak ahogyan az Item működik: a focus property hamisra állításával a FocusScope nem fogja engedni, hogy a gyerekei fókuszba kerülhessenek. Ha igazra állítjuk akkor pedig ez nem fogja megakadályozni azt.
+Tehát mindig az a Column kap fókuszt amelyiknek az indexe megegyezik az aktuális indexszel. Ezzel elértük hogy csak az aktív Columnon belül lehessen fókuszt kiosztani. Ugye?
 
-* Egymásba ágyazott FocusScopek is működnek: ha mindnek igazra van állítva a focus propertyje akkor az aktív fókusz le tud jutni mindhez és elterjedni a szülő-gyerek láncban a legalsó szintekre.
+Sajnos nem!
 
-* Létezik egy függvény, a forceActiveFocus(), amely az Item minden közvetlen felmenőjén, ami FocusScope beállítja a focus propertyt truera. Ez jól jön ha sok egymásba ágyazott FocusScope-on belül van az Item.
+![Fókusz letiltás?](image/11_fokusz_letiltas.png "Fókusz letiltás?")
+
+Mi történhetett?
+
+Nézzünk rá a konzolra!
+
+```console
+Debugging starts
+QML debugging is enabled. Only use this in a safe environment.
+QML Debugger: Waiting for connection on port 11837...
+qml: Actvie focus changed! -----------------------
+qml:  QQuickColumn(0x1cbc35d55c0) AF: true F: true
+qml:  QQuickStackLayout(0x1cbc35d50f0) AF: false F: false
+qml:  QQuickItem(0x1cbc3601300) AF: true F: true
+qml:  QQuickRootItem(0x1cb7ede4850) AF: true F: true
+qml: Actvie focus changed! -----------------------
+Debugging has finished
+```
+
+A Column megkapta a fókuszt, de sajnos ez nem terjedt tovább a gyerek elemre. Ez azt jelenti hogyha egy Item focus propertyjét igazra állítjuk, azzal **megakadályozzuk** a gyerekelemeinek a fókuszba kerülését.
+
+Szuper, akkor találtunk egy propertyt ami megakadályozza a gyerekek fókuszba kerülését, csak fordítva kellene használni!
+
+Sajnos ez sem igaz, hiszen csak úgy tudjuk letiltani vele egy részfában a fókuszt ha mi magunk kapjuk azt meg. Így hiába tiltódott most le az 1. oldalon a user TextField fókusza, a 2. oldalon az email field nem kaphatta volna meg a fókuszt, hiszen az 1. oldalon lévő Column elvette előle is.
+
+Tehát ez a módszer nem fog működni.
+
+Nekünk egy olyan komponensre lenne szükségünk, amely le tudja tiltani és engedélyezni tudja a gyermek elemeinek fókuszba kerülését, **úgy hogy közben ő maga soha nem veszi el mások elől az aktív fókuszt**, egyfajta adminisztrációs elem.
+
+Ezt a komponenst hívják FocusScopenak.
+
+A FocusScope úgy működik, hogy ha a focus propertyjét igazra állítjuk, akkor az engedélyezi a gyermekei számára az aktív fókuszba kerülést, ha pedig hamisra állítjuk akkor az megakadályozza minden gyermekelem aktív fókuszba kerülését.
+
+Használjunk tehát FocusScopeokat!
+
+```javascript
+    StackLayout {
+        id: stackLayout
+        anchors.fill: parent
+        currentIndex: tabBar.currentIndex
+
+        FocusScope {
+
+            focus: parent.currentIndex === 0
+
+            Column {
+                Row {
+                    height: 40
+                    Label {
+                        text: "User:"
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                    TextField {
+                        id: user
+                        objectName: "user"
+                        anchors.verticalCenter: parent.verticalCenter
+                        focus: true
+                    }
+                }
+
+                Row {
+                    height: 40
+                    Label {
+                        text: "Password:"
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                    TextField {
+                        objectName: "password"
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                }
+                spacing: 10
+            }
+        }
+
+        FocusScope {
+
+            focus: parent.currentIndex === 1
+
+            Column {
+                Row {
+                    height: 40
+                    Label {
+                        text: "E-mail:"
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                    TextField {
+                        objectName: "email"
+                        anchors.verticalCenter: parent.verticalCenter
+                        focus: true
+                    }
+                }
+                spacing: 10
+            }
+        }
+    }
+```
+
+Az első oldal működik!
+![FocusScope 1. oldal.](image/12_focusscope_1_oldal.png "FocusScope 1. oldal.")
+
+A második oldal is működik!
+![FocusScope 2. oldal.](image/13_focusscope_1_oldal.png "FocusScope 2. oldal.")
+
+Ha oda-vissza váltunk az oldalak között továbbra is működik!
+
+A konzolon látható, hogy megjelentek a FocusScope-ok az objektumfában.
+
+```console
+Debugging starts
+QML debugging is enabled. Only use this in a safe environment.
+QML Debugger: Waiting for connection on port 11893...
+qml: Actvie focus changed! -----------------------
+qml: user QQuickTextField(0x1f3aa3123b0, "user") AF: true F: true
+qml:  QQuickRow(0x1f3aa30c990) AF: false F: false
+qml:  QQuickColumn(0x1f3aa30c580) AF: false F: false
+qml:  QQuickFocusScope(0x1f3aa30c050) AF: true F: true
+qml:  QQuickStackLayout(0x1f3aa30bbb0) AF: false F: false
+qml:  QQuickItem(0x1f325ad9ba0) AF: true F: true
+qml:  QQuickRootItem(0x1f325abc7e0) AF: true F: true
+qml: Actvie focus changed! -----------------------
+qml:  QQuickTabButton(0x1f3aa347000) AF: true F: true
+qml:  QQuickItem(0x1f3aa341250) AF: false F: false
+qml:  QQuickListView(0x1f3aa3408e0) AF: true F: true
+qml:  QQuickTabBar(0x1f325b21390) AF: true F: true
+qml:  QQuickItem(0x1f325ad9ba0) AF: true F: true
+qml:  QQuickRootItem(0x1f325abc7e0) AF: true F: true
+qml: Actvie focus changed! -----------------------
+qml: email QQuickTextField(0x1f3aa31fdf0, "email") AF: true F: true
+qml:  QQuickRow(0x1f3aa31d980) AF: false F: false
+qml:  QQuickColumn(0x1f3aa31d570) AF: false F: false
+qml:  QQuickFocusScope(0x1f3aa31c7b0) AF: true F: true
+qml:  QQuickStackLayout(0x1f3aa30bbb0) AF: false F: false
+qml:  QQuickItem(0x1f325ad9ba0) AF: true F: true
+qml:  QQuickRootItem(0x1f325abc7e0) AF: true F: true
+qml: Actvie focus changed! -----------------------
+qml:  QQuickTabButton(0x1f322f314a0) AF: true F: true
+qml:  QQuickItem(0x1f3aa341250) AF: false F: false
+qml:  QQuickListView(0x1f3aa3408e0) AF: true F: true
+qml:  QQuickTabBar(0x1f325b21390) AF: true F: true
+qml:  QQuickItem(0x1f325ad9ba0) AF: true F: true
+qml:  QQuickRootItem(0x1f325abc7e0) AF: true F: true
+qml: Actvie focus changed! -----------------------
+qml: user QQuickTextField(0x1f3aa3123b0, "user") AF: true F: true
+qml:  QQuickRow(0x1f3aa30c990) AF: false F: false
+qml:  QQuickColumn(0x1f3aa30c580) AF: false F: false
+qml:  QQuickFocusScope(0x1f3aa30c050) AF: true F: true
+qml:  QQuickStackLayout(0x1f3aa30bbb0) AF: false F: false
+qml:  QQuickItem(0x1f325ad9ba0) AF: true F: true
+qml:  QQuickRootItem(0x1f325abc7e0) AF: true F: true
+qml: Actvie focus changed! -----------------------
+Debugging has finished
+```
+
+### Megjegyzések
+
+Egymásba ágyazott FocusScopek is működnek: ha mindegyiknek igazra van állítva a focus propertyje akkor az aktív fókusz el tud terjedni a szülő-gyerek láncban a legalsó szinten lévő gyerekekig ahol a focus propertyk alapján történik a választás.
+
+Létezik egy függvény, a forceActiveFocus(), amely az Item minden közvetlen felmenőjén, ami FocusScope beállítja a focus propertyt truera. Ez pont az ilyen többszörösen egymásba ágyazott FocusScope-ok esetében jön jól, bár nem eredményez túl szép kódot ha mindenhol ezt alkalmazzuk.
