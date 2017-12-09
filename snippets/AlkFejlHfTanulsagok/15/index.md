@@ -1,13 +1,12 @@
 ---
 layout: default
 codename: AlkFejlHf15
-title: AlkFejlHf15 (2017 ősz - Destroyerzz)
+title: AlkFejlHf15 (2017 ősz - DestroyerzZ)
 authors: Destroyerzz csapat (AlkFejl 2017 ősz)
 tags: alkfejl afhf skipfromindex
 ---
 
-# Alkalmazásfejlesztés Házi Feladat Snippet Oldal (Destroyerzz) #
-## Tanulságok a fejlesztés során ##
+# A DestroyerzZ csapat tanulságai a fejlesztés során #
 
 ## 1. Megfelelo Qt verzió és fordító kiválasztása ##
 
@@ -23,9 +22,11 @@ A projekthez hozzáadtunk egy új QML fájlt, azonban feltűnt, hogy akármit is
 a programba. A kezdeti amatőr megoldás az volt, hogy az egyik eredeti QML fájlt módosítottuk, ha látni akartuk az új QML fájlban
 történt változtatásokat. 
 
-Végül egy fórumon (https://bugreports.qt.io/browse/QTCREATORBUG-1627) egy Tim nevű felhasználó által 
+Végül egy fórumon (https://bugreports.qt.io/browse/QTCREATORBUG-1627) egy Tim nevű felhasználó hozzászólása által 
 találtunk rá az igazi megoldásra, ami annyi, hogy új QML fájl hozzáadása után a Qt Creatorban a Build menüponton belül 
 a Run Qmake parancsot kell futtatni, ez megoldja a problémát, innentől minden változás az új fájlban érvényre kerül.
+
+![A megfelelő parancs](images/qmake.png)
 
 ## 3. Adattípusok ##
 
@@ -48,4 +49,4 @@ Jópárszor előfordult a fejlesztés elején, hogy egyből munkához láttunk �
 óta valamelyik másik csapattagunk is fejlesztett az alkalmazáson, ezáltal tök fölösleges leágazást hoztunk létre, illetve 
 volt olyanra is példa, hogy ketten is kijavítottuk ugyanazt a problémás részt. 
 
-Készítette: Destroyerzz (Mendlik András, Ürge László, Varga Ádám)
+Készítette: DestroyerzZ (Mendlik András, Ürge László, Varga Ádám)
