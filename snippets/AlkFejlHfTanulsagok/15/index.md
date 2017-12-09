@@ -8,7 +8,7 @@ tags: alkfejl afhf skipfromindex
 
 # A DestroyerzZ csapat tanulságai a fejlesztés során #
 
-## 1. Megfelelo Qt verzió és fordító kiválasztása ##
+## 1. Megfelelő Qt verzió és fordító kiválasztása ##
 
 A háromfős csapatból kettőnknek is sikerült belefutni abba a hibába, hogy a telepítésnél nagy örömmel kiválasztottuk 
 a Qt Creator legújabb verzióját, azonban arra nem gondoltunk, hogy ebből mely komponensek kellenek igazán, így kb. 30GB-nyi 
