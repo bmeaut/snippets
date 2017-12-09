@@ -26,7 +26,7 @@ Végül egy fórumon (https://bugreports.qt.io/browse/QTCREATORBUG-1627) egy Tim
 találtunk rá az igazi megoldásra, ami annyi, hogy új QML fájl hozzáadása után a Qt Creatorban a Build menüponton belül 
 a Run Qmake parancsot kell futtatni, ez megoldja a problémát, innentől minden változás az új fájlban érvényre kerül.
 
-![A megfelelő parancs](images/qmake.png)
+![A megfelelő parancs](qmake.png)
 
 ## 3. Adattípusok ##
 
