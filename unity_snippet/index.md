@@ -35,13 +35,13 @@ ha Qt-val együtt telepítetted akkor a `Qt/Tools/mingw-verzó/bin`
   ![findItemByName metódus forráskódja](diagrams/findItemByName.png)
   * Ehelyett a QT egy kényelmes megoldást biztosít. Lehetőség nyílik arra, hogy a QML dokumentum belöltése előtt (amit a QQmlApplicationEngine végez), a QML fájlba bele tudjuk injektálni a C++ oszályunkat.
  Ehhez nem kell mást tenni, csupán létrehozni egy példányt a backend osztályunkból, majd a rootContext-be injektálni. Fontos, hogy csak ezután töltsük be a QML dokumentumot.
-  ![QmlInjection forráskódja](.\diagrams\QmlInjection.png)
+  ![QmlInjection forráskódja](diagrams/QmlInjection.png)
   * A backend oldalon nem kell mást tenni elkészíteni a setter (WRITE) és getter (READ) függvényeket, valamint a szignált amit emmitálunk megváltozáskor. Eztán a  Q_PROPERTY macro segtsévével regisztrálni ezeket a függvényeket.
-  ![singnalsAndSlots regisztráció forráskódja](.\diagrams\singnalsAndSlots.png)
+  ![singnalsAndSlots regisztráció forráskódja](diagrams/singnalsAndSlots.png)
   * Fontos, hogy ne felejtsük el a setter metódusban kibocsájtani az sziglált!
-  ![seter getter implementacio](.\diagrams\implementacio.png)
+  ![seter getter implementacio](diagrams/implementacio.png)
   * Eztán már a QML oldalon létre is jön a megfelelő nevű backend oszály. Nem szükséges példányosítani, és a szignálok bekötése is mertörtént. Egyszerűen csak használjuk.
-  ![qml oldali implementacio](.\diagrams\qmlSide.png)
+  ![qml oldali implementacio](diagrams/qmlSide.png)
   * Ha bármelyik oldalon módosul egy property akkor az onChanged metódusok meghívódnak. Így automatikusan megvalósul a C++ és QML közötti szinkronizáció.
   
 Készítette: Bóka Jenő, Kovács Péter Szabolcs, Medgyesi Zsolt
