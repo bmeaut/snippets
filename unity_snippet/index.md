@@ -1,3 +1,5 @@
+#Alkalamazásfejlesztés tanulságok
+
 0. **Fejlesztőkörnyezet beüzemelése**
  * Érdemes a félév során minél hamarabb beüzemelni és összeegyeztetni a csapattársakkal a fejlesztőkörnyezetet. Ha szerencsés az ember, ez egy pár perces feladat, ha nem, akkor előfordulhat, hogy az effektív fejlesztéssel összemérhető ideig tart. Bárhogy is legyen, nem árt minnél hamarabb túlesni rajta. A továbbiakban egy lista, a teljesség igénye nélkül, a nálunk felmerült beüzemelési problémákról.
 
@@ -41,4 +43,6 @@ ha Qt-val együtt telepítetted akkor a `Qt/Tools/mingw-verzó/bin`
   * Eztán már a QML oldalon létre is jön a megfelelő nevű backend oszály. Nem szükséges példányosítani, és a szignálok bekötése is mertörtént. Egyszerűen csak használjuk.
   ![qml oldali implementacio](.\diagrams\qmlSide.png)
   * Ha bármelyik oldalon módosul egy property akkor az onChanged metódusok meghívódnak. Így automatikusan megvalósul a C++ és QML közötti szinkronizáció.
+  
+Készítette: Bóka Jenő, Kovács Péter Szabolcs, Medgyesi Zsolt
  
