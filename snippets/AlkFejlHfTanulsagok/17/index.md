@@ -40,7 +40,7 @@ Image {
 }
 ```
 
-![Megynyújtott kép](/abra/qtlogo-stretch.png "Megnyújtott kép")
+![Megynyújtott kép](https://github.com/ajohntom/snippets/blob/gh-pages/snippets/AlkFejlHfTanulsagok/17/abra/qtlogo-stretch.png "Megnyújtott kép")
 
 Ahogyan látható, a képünk, ha gondolkodás nélkül skálázzuk, nem örzi meg arányait és az eredetileg 87x100 pixeles képünk, 130x100-asra módosult.. 
 Ezt elkerülendő hozzáadhatunk egy extra property-t, a *fillMode*-ot.
@@ -59,7 +59,7 @@ Image {
 ```
 Az eredmény, hogy a képünk 130x100 pixeles lett:
 
-![Megynyújtott kép, megőrzött arányokkal](/abra/qtlogo-preserveaspectfit.png "Megnyújtott kép, megőrzött arányokkal")
+![Megynyújtott kép, megőrzött arányokkal](https://github.com/ajohntom/snippets/blob/gh-pages/snippets/AlkFejlHfTanulsagok/17/abra/qtlogo-preserveaspectfit.png "Megnyújtott kép, megőrzött arányokkal")
 
 
 Ezzel, mint az elnevezéséből is látszik, a kép megőrzi az arányokat, és ennek megfelelően reagál majd a direkt dimenzió állításokra. 
@@ -71,7 +71,7 @@ A másik relatív hasznos property-e az Image típusnak a *smooth*, amely - bool
 Ennek eredménye egyes kép skálázások/transzformációk után igen szembetűnő. Ez a property egyébként alapból engedélyezve van. Engedélyezett esetben szimpla lineáris interpolációt használ a program, míg a másik esetben a legközelebbi szomszéd metódust.
 Jótékony hatása látható a következő képen, ahol a felső sorban ezen property *false* értékkel lett deiniálva, alul pedig nyilván, *true* értékkel.
 
-![A smooth property hatása](/abra/rectangle-smooth.png "A smooth property hatása")
+![A smooth property hatása](https://github.com/ajohntom/snippets/blob/gh-pages/snippets/AlkFejlHfTanulsagok/17/abra/rectangle-smooth.png "A smooth property hatása")
 
 ### További property-k ###
 
@@ -92,11 +92,11 @@ Ezen property-k állításával elvégezhetőek a képeket érintő alapvető ma
 Jogosan felmerülhet a kérdés, hogy hogyan lehet képeket betölteni, hogy elérhetőek legyenek a QML környezetben. Erre a legegyszerűbb mód, ha a QtCreator felületen a projektben a gyökérkönyvtáron(/) egy jobbklikk után az
 *Add existing direcotry* opciót választjuk.
  
-![Fájlok hozzáadása](/abra/qtcreator-rcc2.JPG "Menü 1")
+![Fájlok hozzáadása](https://github.com/ajohntom/snippets/blob/gh-pages/snippets/AlkFejlHfTanulsagok/17/abra/qtcreator-rcc2.JPG "Menü 1")
 
 Ezek után van lehetőségünk választani a projektmappában előkészített kép fájlokból (itt éppen a pic/car.png állományt kívántam hozzáadni).Ügyelni kell arra, hogy a .qrc fájlunk mellett (vagy almappában) legyenek a megadott fájlok.
  
-![Megfelelő fájlok kiválasztása](/abra/qtcreator-rcc3.JPG "Menü 2")
+![Megfelelő fájlok kiválasztása](https://github.com/ajohntom/snippets/blob/gh-pages/snippets/AlkFejlHfTanulsagok/17/abra/qtcreator-rcc3.JPG "Menü 2")
 
 Persze van mód, direkt a projektunk .qrc fájlját szerkeszteni. Ez a kicsit bonyolultabb módszer, lényegében a QtCreator is ezt hajtja számunkra végre. Ennek felépítésének tanulmányozásához nézzük a következő példákat:
 
@@ -131,7 +131,7 @@ Ezek után a képet lehetséges elérni a */sajatAbra/kep.png* hivatkozással.
 
 Most azt is nézzük meg, hogy saját példában, hogyan módosult a .qrc fájl, ha a QtCreator-al adtuk hozzá:
 
-![A .qrc fájl tartlama](/abra/qtcreator-rcc4.JPG "A .qrc fájl tartlama")
+![A .qrc fájl tartlama](https://github.com/ajohntom/snippets/blob/gh-pages/snippets/AlkFejlHfTanulsagok/17/abra/qtcreator-rcc4.JPG "A .qrc fájl tartlama")
 
 Látható, hogy itt is van egy prefix, ami a gyökérkönyvtár(/) elérési utat definiálja, de utána azt is lehet látni, hogy minden fájlt az eredeti nevén, és elérésvel tudunk megadni.
 
