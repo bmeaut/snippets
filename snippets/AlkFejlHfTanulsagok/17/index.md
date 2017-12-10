@@ -24,7 +24,7 @@ Image {
 	source: "abra/kep.png"
 }
 ```
-![A betölött kép](/abra/qtlogo-simple.png "A betöltött kép")
+![A betölött kép](https://github.com/ajohntom/snippets/blob/gh-pages/snippets/AlkFejlHfTanulsagok/17/abra/qtlogo-simple.png "A betöltött kép")
 
 Mint látható, a képek betöltéséhez szükség van *QtQuick 2.0* importálására, ami lényegében az alapvető típusokat biztosítja a QML alapú kezelőfelületek kialakításához.
 Alapesetben ha betöltünk egy képet, és nem adunk meg semmilyen property-t, kizárólag a *source*-ot definiáltuk, akkor a kép eredeti méreteiben kerül beillesztésre.
