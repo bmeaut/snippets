@@ -32,7 +32,7 @@ ha Qt-val együtt telepítetted akkor a `Qt/Tools/mingw-verzó/bin`
 
 8. **QML frontend és C++ backend készítés**
  * A [mintától](https://github.com/csorbakristof/alkalmazasfejlesztes/tree/master/QmlControlKupac) eltérő módon is lehet a QML és C++ oldal között kapcsolatot létrehozni. Méghozzá úgy, hogy nem kell végigkeresni a QML osztályokat, az ős osztálytól kezdve név szerint.
-  ![findItemByName metódus forráskódja](.\diagrams\findItemByName.png)
+  ![findItemByName metódus forráskódja](diagrams/findItemByName.png)
   * Ehelyett a QT egy kényelmes megoldást biztosít. Lehetőség nyílik arra, hogy a QML dokumentum belöltése előtt (amit a QQmlApplicationEngine végez), a QML fájlba bele tudjuk injektálni a C++ oszályunkat.
  Ehhez nem kell mást tenni, csupán létrehozni egy példányt a backend osztályunkból, majd a rootContext-be injektálni. Fontos, hogy csak ezután töltsük be a QML dokumentumot.
   ![QmlInjection forráskódja](.\diagrams\QmlInjection.png)
