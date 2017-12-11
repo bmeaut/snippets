@@ -2,7 +2,7 @@
 layout: default
 codename: Tanulságok
 title: Quit csapat tanulságai
-tags: snippets
+tags: snippets afhf
 authors: Buchmüller Patrik, Kolonits Dominik, Putnoki Roland
 ---
 
