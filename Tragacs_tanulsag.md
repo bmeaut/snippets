@@ -1,7 +1,7 @@
 ---
 layout: default
 codename: Tanulságok
-title: =Tragacs csapat tanulságai
+title: /Tragacs csapat tanulságai
 tags: snippets
 authors: Dávid Bence, Kovács Adorján, Pásztor Dániel
 ---
