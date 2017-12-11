@@ -4,7 +4,7 @@ layout: default
 codename: AlkFejlHf17
 title: AlkFejlHf17 (2017 ősz - mikrobi)
 authors: mikrobi csapat (AlkFejl 2017 ősz)
-tags: snippets alkfejl házi qml qrc
+tags: snippets alkfejl házi qml qrc afhf
 ---
 
 # QML Image típus és .QRC fájl #
