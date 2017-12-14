@@ -51,6 +51,8 @@ példányosítva az adott tab, nem lehetett elérni a Canvas requestPaint() slot
 felületet. Sok órát töltöttünk el mire rájöttünk, hogy nem a függvényeinkkel van baj, hanem a Cpp oldalról egyszerűen nem találja a 
 rajzoló objektumunkat.
 
+A különböző Itemeknél a fix méreteket lehetőleg el kell kerülni, inkább arányokra kell hivatkozni pl.: parent.width/3 stb.
+
 ![A vonalszenzor fül](images/25317269_10215672667317981_2054257522_o.png "A vonalszenzor fül")
 
 ## 3) Build/clean
@@ -92,4 +94,4 @@ persze mindenki foglalkozott mindennel a végén, de az elindulásban ez sokat s
 
 ## 8) Vírusírtó
 
-Futtatások közben volt rengeteg bajom a vírusírtómmal (Avast), ha teheted mást használj (SCHes license ESEThez), vagy kapcsold ki a fejelsztés idejére.
+Futtatások közben volt rengeteg bajom a vírusírtómmal (Avast), ha teheted mást használj (SCHes license ESEThez), vagy whitelisteld.
