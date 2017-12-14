@@ -35,9 +35,7 @@ példányosítva az adott tab, nem lehetett elérni a Canvas requestPaint() slot
 felületet. Sok órát töltöttünk el mire rájöttünk, hogy nem a függvényeinkkel van baj, hanem a Cpp oldalról egyszerűen nem találja a 
 rajzoló objektumunkat.
 
-Image {
- 	source: "images/25317269_10215672667317981_2054257522_o.png"
- }
+![A vonalszenzor fül](/images/25317269_10215672667317981_2054257522_o.png "A vonalszenzor fül")
 
 ## 3) Build/clean
 
