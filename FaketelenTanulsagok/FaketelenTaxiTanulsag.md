@@ -82,9 +82,9 @@ létrehozol egy új osztály/metódus. Sok időt lehet vele megspórolni.
 
 ## 7) Rendszerterv készítése, feladatok felosztása
 
-Miután sikerült megismerkedni a Qt-val és annak mechanizmusaival, érdemes 2-3 órát rászánni egy jól dokumentált rendszerterv 
-kidolgozása. A későbbiekben ha előre megbeszélitek milyen osztályokat akartok létrehozni, milyen paraméterekkel, hogyan kommunikáljanak 
-egymással, valamint a robottal. 
+Miután sikerült megismerkedni a Qt-val és annak mechanizmusaival (erre ajánlott a SimpleTelemetryVisualizer programot alaposan át 
+tanulmányozni/módosítgatni), érdemes 2-3 órát rászánni egy jól dokumentált rendszerterv kidolgozása. A későbbiekben ha előre 
+megbeszélitek milyen osztályokat akartok létrehozni, milyen paraméterekkel, hogyan kommunikáljanak egymással, valamint a robottal. 
 
 A feladatokat osszátok fel egymás között, legyen mindenkinek valami amivel specifikusan ő foglalkozik, azonfelül, hogy az alkalmazást 
 fejlesztitek. Nekünk jól bevált az, hogy az alábbi felosztást alkalmaztuk:  QML/Robot oldali kommunikáció/Cpp oldali kommunikáció , 
@@ -92,3 +92,4 @@ persze mindenki foglalkozott mindennel a végén, de az elindulásban ez sokat s
 
 ## 8) Vírusírtó
 
+Futtatások közben volt rengeteg bajom a vírusírtómmal (Avast), ha teheted mást használj (SCHes license ESEThez), vagy kapcsold ki a fejelsztés idejére.
