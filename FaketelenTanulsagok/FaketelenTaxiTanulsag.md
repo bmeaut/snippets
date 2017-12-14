@@ -23,6 +23,22 @@ azért volt furcsa mivel ha kézzel beírjuk egyesével a tömb elemeit, és az 
 működik. Végül hosszas keresgélés és beleölt órák után arra jutottunk, hogy igaz nem a legelegánsabb megoldás, de működés szempontjából 
 az elvárt eredményt adja. Feltöltés előtt érdemes clearelni az adott BarSeries-t , enélkül, egy  új BarSet-et adna hozzá a ChartViewhoz.
 
+```javascript
+function redraw1(){
+    mySeries1.clear();
+    var t = new Array(32);
+    var temp =0;
+    t = ls1data;
+    if(!ls1IsConnected) 
+    {
+   	 mySeries1.append(" ",[t[0],t[1],t[2],t[3],t[4],t[5],t[6],t[7],t[8],t[9],
+                    t[10],t[11],t[12],t[13],t[14],t[15],t[16],t[17],t[18],t[19],
+                    t[20],t[21],t[22],t[23],t[24],t[25],t[26],t[27],t[28],t[29],
+                    t[30],t[32],t[31]]);
+    }
+}
+```
+
 ## 2) QML
 
 Érdemes már az elején megfelelően struktúrálni a QML fájlokat, mivel igen hamar megtudnak szaladni a méretük több száz sorra.  A
@@ -74,16 +90,5 @@ A feladatokat osszátok fel egymás között, legyen mindenkinek valami amivel s
 fejlesztitek. Nekünk jól bevált az, hogy az alábbi felosztást alkalmaztuk:  QML/Robot oldali kommunikáció/Cpp oldali kommunikáció , 
 persze mindenki foglalkozott mindennel a végén, de az elindulásban ez sokat segített. 
 
+## 8) Vírusírtó
 
-Itt egy példa a bejegyzésekre:
-
-```html
-<RCC>
-    <qresource prefix="/">
-		<file>images/breakpedal.png</file>
-        <file>images/breakpedal_active.png</file>
-        <file>images/key.png</file>
-        <file>images/key_active.png</file>
-    </qresource>
-</RCC>
-```
