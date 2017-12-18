@@ -1,4 +1,10 @@
-
+---
+layout: default
+codename: AlkFejlHf26
+title: The Solid Guys tanulságok
+tags: alkfejl afhf skipfromindex
+authors: (nincs kitöltve)
+---
 
 # The Solid Guys csapat év végi tapasztalatai
 

@@ -1,8 +1,8 @@
 ---
 layout: default
-codename: Tanulságok
+codename: AlkFejlHf22
 title: Faketelen Taxi csapat tanulságai
-tags: snippets alkhf alkfjl
+tags: alkfejl afhf skipfromindex
 authors: Katona Attila Mihály, Láncz Gergő, Sárközy Balázs
 ---
 

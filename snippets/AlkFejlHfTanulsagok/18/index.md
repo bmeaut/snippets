@@ -1,8 +1,8 @@
 ---
 layout: default
-codename: Tanulságok
+codename: AlkFejlHf18
 title: Quit csapat tanulságai
-tags: snippets
+tags: alkfejl afhf skipfromindex
 authors: Buchmüller Patrik, Kolonits Dominik, Putnoki Roland
 ---
 

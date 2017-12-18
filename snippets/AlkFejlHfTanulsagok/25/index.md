@@ -1,3 +1,11 @@
+---
+layout: default
+codename: AlkFelHf25
+title: Csapatnev csapat tanulságai
+tags: alkfejl afhf skipfromindex
+authors: Katona Attila Mihály, Láncz Gergő, Sárközy Balázs
+---
+
 <body>
 <h1>Csapatnev csapat tanulságai</h1>
 

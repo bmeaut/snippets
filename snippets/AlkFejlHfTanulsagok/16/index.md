@@ -2,7 +2,7 @@
 layout: default
 codename: Tanulságok
 title: alkfejlhf-team csapat tanulságai
-tags: snippets
+tags: alkfejl afhf skipfromindex
 authors: Branauer Ágoston, Détári Balázs, Csuka Róbert
 ---
 

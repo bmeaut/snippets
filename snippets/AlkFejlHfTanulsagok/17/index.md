@@ -1,8 +1,8 @@
 ---
 layout: default
-codename: githunters_snippet
+codename: AlkFejlHf17
 title: Githunters csapat snippet
-tags: snippet
+tags: alkfejl afhf skipfromindex
 authors: Ölvedi Balázs, Szabó Zsolt, Szakály Balázs
 ---
 

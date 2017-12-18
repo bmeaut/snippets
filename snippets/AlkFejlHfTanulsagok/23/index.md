@@ -1,8 +1,8 @@
 ---
 layout: default
-codename: githunters_snippet
+codename: AlkFejlHf23
 title: Githunters csapat snippet
-tags: afhf
+tags: alkfejl afhf skipfromindex
 authors: Ölvedi Balázs, Szabó Zsolt, Szakály Balázs
 ---
 
@@ -16,9 +16,9 @@ Talán triviálisnak tűnik, de feltétlen figyeljünk oda, hogy a "Sources" fá
 
 A ".pro" kiterjesztésű projekt fájl feltétlen tartalmazza a következő kiegészítéseket:
 
-CONFIG += c++14
+    CONFIG += c++14
 
-QMAKE_CXXFLAGS_CXX11    = -std=c++1y
+    QMAKE_CXXFLAGS_CXX11    = -std=c++1y
 
 Ezzel a C++14 nyelvi kiegészítések (pl.: unique_ptr) is használhatóvá válnak.
 

@@ -71,4 +71,4 @@ egymáshoz, ezen kívül még egy olyan műveletet használtam, hogy a pontokat 
 
 ## Algoritmus eredménye
 
-![Festmeny Active contour](image/festmenyActiveContours.jpg)
+![Festmeny Active contour](image/festmenyActiveContours.JPG)

@@ -1,8 +1,8 @@
 ---
 layout: default
-codename: Tanulságok
+codename: AlkFejlHf21
 title: /Tragacs csapat tanulságai
-tags: snippets
+tags: alkfejl afhf skipfromindex
 authors: Dávid Bence, Kovács Adorján, Pásztor Dániel
 ---
 
