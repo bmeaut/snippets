@@ -135,7 +135,7 @@ A sor elején látszik, hogy most már a make üzeneteit látjuk. Először is b
 A make elindította a g++ fordítót. Itt elég sok parancssori kapcsoló van, melyeknek most csak egy része érdekes számunkra:
 
   * -Wall -Wextra: csomó warningot bekapcsol, vagyis elég kritikusan nézi a forráskódot.
-  * -I: Ez negy nagyon fontos kapcsoló: ezek adják meg az include könyvtárakat, vagyis hogy a fordító hol keresse a .h fájlokat.
+  * -I: Ez egy nagyon fontos kapcsoló: ezek adják meg az include könyvtárakat, vagyis hogy a fordító hol keresse a .h fájlokat.
   * -o: output file, vagyis a fordítás eredménye ide kerül. Jelen esetben a main.o object fájl az.
   * Végül kapcsoló nélkül a bemeneti cpp fájlt látjuk.  
 

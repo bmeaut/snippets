@@ -224,7 +224,7 @@ A propertyk egyszerű változók, amiket később tudunk használni. (Szükség 
 	    // C++ oldal is el tudja érni
 	    property int lineWidth : 3
 
-QML alatt könnyen lehet JavaScript függvényeket készíteni. A paramétereknek itt nincsen típusa. A függvényben értékat adunk a selectedColor változónak, a drawingCanvas elemünket újrarajzoltatjuk, a ListView modelljéül szoláló listára felveszünk egy új bejegyzést, valamint a konzolra is kiírjuk, hogy mi történt.
+QML alatt könnyen lehet JavaScript függvényeket készíteni. A paramétereknek itt nincsen típusa. A függvényben értékat adunk a selectedColor változónak, a drawingCanvas elemünket újrarajzoltatjuk, a ListView modelljéül szolgáló listára felveszünk egy új bejegyzést, valamint a konzolra is kiírjuk, hogy mi történt.
 	
 	    // C++ oldal is el tudja érni
 	    function selectColor(messageText, color)

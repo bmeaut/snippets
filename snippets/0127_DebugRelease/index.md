@@ -147,7 +147,7 @@ A cout utáni részeket már levágtam, mert nem az a lényeg. Ezután pedig a r
 		cout << "sum: " << sum << endl;
 	...
 
-Láthatjuk, hogy a debug fordítás sokkal több pakolgatást, másolgatást tartalmaz. Például a ciklusmagban minden iterációban a memóriából betölti i értékét (ő a "dword ptr [ebp-14h]"), leraja a stackre, mint a magic függvény paramétere, utána meghívja a függvényt és még a sum értékét is kiírja a memóriába. Ennek az az oka, hogy debuggolás közben minden részeredmény a memóriában legyen és minden soron meg tudjuk állni. Release módban egy csomó forráskód sorhoz nincs is natív kód, így ha ott próbálunk meg soronként ugrálni (vagyis a debuggert megkérni, hogy a következő sornak megfelelő gépi kódú parancsig fusson), akkor kisse össze-vissza fog ugrálni.
+Láthatjuk, hogy a debug fordítás sokkal több pakolgatást, másolgatást tartalmaz. Például a ciklusmagban minden iterációban a memóriából betölti i értékét (ő a "dword ptr [ebp-14h]"), lerakja a stackre, mint a magic függvény paramétere, utána meghívja a függvényt és még a sum értékét is kiírja a memóriába. Ennek az az oka, hogy debuggolás közben minden részeredmény a memóriában legyen és minden soron meg tudjuk állni. Release módban egy csomó forráskód sorhoz nincs is natív kód, így ha ott próbálunk meg soronként ugrálni (vagyis a debuggert megkérni, hogy a következő sornak megfelelő gépi kódú parancsig fusson), akkor kisse össze-vissza fog ugrálni.
 
 ## Hibaellenőrző kódrészek
 
