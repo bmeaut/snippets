@@ -182,7 +182,7 @@ A következőkben később csak a C++-ból eléréshez szükséges objektum neve
 	    objectName: "ApplicationWindow"
 	    signal addGreenEntry();
 	
-A menüt az ablak menuBar tulajdonságának adjuk értékül. A MenuItem-nek van egy signalja "Triggered" néven. Ehhez QML alatt egyből létre is jön egy slot onTriggered néven, aminek ha JavasScript kódot adunk értékül, akkor az a signal hatására le is fog futni.  
+A menüsort az ablak menuBar tulajdonságának adjuk értékül. A MenuItem-nek van egy signalja "Triggered" néven. Ehhez QML alatt egyből létre is jön egy slot onTriggered néven, aminek ha JavasScript kódot adunk értékül, akkor az a signal hatására le is fog futni.  
 
 	    menuBar: MenuBar {
 	        Menu {
