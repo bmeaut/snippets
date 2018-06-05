@@ -88,7 +88,7 @@ A konstruktorban fontos, hogy a QObject ősosztály konstruktorát is meghívjuk
         if (x % 10 == 0)
         {
 
-Kiadjuk ("emittáljuk") a jelet, hogy szép helyre érkeztünk. Vagyis ekkor egymás után meghívódók minden feliratkozott objektum erre a signalra csatlakoztatott slotja.
+Kiadjuk ("emittáljuk") a jelet, hogy szép helyre érkeztünk. Vagyis ekkor egymás után meghívódik minden feliratkozott objektum erre a signalra csatlakoztatott slotja.
 
             emit arrived(x);
         }
@@ -126,7 +126,7 @@ Az Application a konstruktorában létrehozza az alkalmazás többi objektumát 
 
     #endif // APPLICATION_H
 
-Érdemes megfigyelni, hogy a simulatorArrivedToNicePlace metódus paraméterlistája igazodika Simulator::arrived signalhoz.
+Érdemes megfigyelni, hogy a simulatorArrivedToNicePlace metódus paraméterlistája igazodik a Simulator::arrived signalhoz.
 
 ### Application.cpp
 
@@ -153,7 +153,7 @@ A szintaktika egyszerű: forrás objektum, signal, cél objektum, slot.
         connect(&simulator, &Simulator::arrived,
                 this, &Application::simulatorArrivedToNicePlace);
 
-A timert pedig elindítjuk 1000ms periódus idővel.
+A timert pedig elindítjuk 1000ms periódusidővel.
 
         timer.start(1000);
     }
@@ -189,7 +189,7 @@ Az a.exec() hívás a Qt-s ablakok eseménykezelőit tartalmazná, de most ilyen
 
 ## Mire fordul le a signal és a slot?
 
-A Qt Meta-object rendszerének nagy trükkje, hogy minden szabványos C++-ra fordul le, így bármly fordítóval használható. Na de mire fordulnak le ezek a kulcsszavak, mint slots, emit, meg maguk a signalok és slotok?
+A Qt Meta-object rendszerének nagy trükkje, hogy minden szabványos C++-ra fordul le, így bármely fordítóval használható. Na de mire fordulnak le ezek a kulcsszavak, mint slots, emit, meg maguk a signalok és slotok?
 
 A válasz meglepően egyszerű: a signal egy sima függvény lesz, amit megír helyettünk a MOC (Meta-Object Compiler). Így az emit kulcsszó igazából csak neki szól, valójában semmire nem fordul le: az "emit arrived(x);"-ból a tényleges C++ fordító már csak "arrived(x);"-et lát.
 
@@ -234,7 +234,7 @@ Valójában a signalhoz generált függvény továbbhív a QMetaObject ősosztá
         }
     }
 
-Ez a statikus metódus gyakorlatilag arra jó, hogy átadva neki egy Simulator objektumra mutató pointert és egy metódus sorszámot, meg tudjuk hívni azt a metódust. És ez a lényege a meta-object rendszernek: egy metódust nem csak pointerrel lehet meghívni, de sorszámmal is. A connect metódus a pointerek alapján megkeresi a metódusok sorszámát és egy nagy tárolóba csak azt menti le, hogy melyik forrás objektum melyik sorszámú metódusa (a signal) melyik cél objektumok mely sorszámú metódusaihoz (a slot) csatlakozik. És a fenti activate() metódus ezeket szépen végighivogatja.
+Ez a statikus metódus gyakorlatilag arra jó, hogy átadva neki egy Simulator objektumra mutató pointert és egy metódus sorszámot, meg tudjuk hívni azt a metódust. És ez a lényege a meta-object rendszernek: egy metódust nem csak pointerrel lehet meghívni, de sorszámmal is. A connect metódus a pointerek alapján megkeresi a metódusok sorszámát és egy nagy tárolóba csak azt menti le, hogy melyik forrás objektum melyik sorszámú metódusa (a signal) melyik cél objektumok mely sorszámú metódusaihoz (a slot) csatlakozik. És a fenti activate() metódus ezeket szépen végighívogatja.
 
 ## Záró megjegyzések
 
