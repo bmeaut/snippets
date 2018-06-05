@@ -8,7 +8,7 @@ authors: Csorba Kristóf
 
 # Qt toolchain és Hello world alkalmazás
 
-A Qt egy C++ és (elsősorban) GCC fölé épülő, cross-platform környezet. Náhány előnye, amit érdemes lehet kihasználni:
+A Qt egy C++ és (elsősorban) GCC fölé épülő, cross-platform környezet. Néhány előnye, amit érdemes lehet kihasználni:
 
   * C++-ban elérhetünk egy kiterjedt osztálykönyvtárat és nem csak az STL-re támaszkodhatunk.
   * A QML (vagy a Widgetek) segítségével könnyen tudunk GUI-t, vagyis grafikus felhasználói felületet készíteni.
@@ -37,7 +37,7 @@ A Qt Creatort elindítva és a New Projectre kattintva válasszuk az Application
 
 ![](image/001_NewProject.png)
 
-Ha többi toolchain is fent van a gépünkön (pl. Visual Studio), akkor választhatunk, hogy melyekre akarjuk előkészíteni a projektet. Lehet többre is, de most a MinGW elegendő lesz:
+Ha több toolchain is fent van a gépünkön (pl. Visual Studio), akkor választhatunk, hogy melyekre akarjuk előkészíteni a projektet. Lehet többre is, de most a MinGW elegendő lesz:
 
 ![](image/002_SelectToolchain.png)
 
@@ -65,7 +65,7 @@ Mivel a program akkor szép, ha nem generál csomó warningot, úgy illik, hogy 
 
 A kíváncsiak nyomhatnak a Q_UNUSED-on egy F2-t is (vagy jobb klikk, Follow symbol under cursor) és megnézhetik, pontosan mi van a makróban.
 
-(Megjegyzés: amit kitöröltük, egy QCoreApplication objektumot hozott létre és indított el. Ez az objektum például akkor kell, ha grafikus felületet akarunk készíteni, mert ő indítja el a Qt-s ablakok eseménykezelőit. De most ilyesmire nincsen szükségünk.)
+(Megjegyzés: amit kitöröltünk, egy QCoreApplication objektumot hozott létre és indított el. Ez az objektum például akkor kell, ha grafikus felületet akarunk készíteni, mert ő indítja el a Qt-s ablakok eseménykezelőit. De most ilyesmire nincsen szükségünk.)
 
 A qDebug() szintén egy makró, melynek visszatérési értéke egy debug célokra szolgáló stream. Olyasmi, mint az std::cout sima C++ alatt. A lényeg, hogy tudunk vele a konzolra írni.
 
