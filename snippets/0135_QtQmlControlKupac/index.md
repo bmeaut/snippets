@@ -58,7 +58,7 @@ A másik lehetőség az anchors: minden elemnek van egy anchors tulajdonsága, a
 
 A mostani példában alapvetően a layoutokat fogjuk használni, de például a ColumnLayout csak függőlegesen állít be méreteket, így vízszintesen az anchorokat fogjuk használni.
 
-A példaprogram RadioCanvasList elemének felépítése az alábbi. (A "..." részek a belső részletek, azokat is hamarosan megnézzük.) Alapvetően 3 oszlopa van, amik belül egymás alá rendezett elemeket tartalmaznak, kivéve a következőt, mely csak egy ListView elemet.
+A példaprogram RadioCanvasList elemének felépítése az alábbi. (A "..." részek a belső részletek, azokat is hamarosan megnézzük.) Alapvetően 3 oszlopa van, amik belül egymás alá rendezett elemeket tartalmaznak, kivéve a középsőt, mely csak egy ListView elemet.
 
 Az egész egy RowLayoutban van, ami kitölti a teljes szülőjét és "margin" távolságot tart ("margin" egy változó).
 
@@ -128,7 +128,7 @@ A delegate egy GroupBox, benne egy egymás mellé rakott Rectangle és Text elem
             }
         }
 
-A modell egy ListModel példány. Az id-ja alapján fogunk rá hivatkozni, ha további elemeket akarunk beleírni. Ilyenkor a lista ezt észre fogja venni is magától frissíti a megjelenítést. A ListElementek tetszőleges tulajdonságokat tartalmazhatnak. Az a fontos, hogy azokat is tartalmazzák, amikre a delegate hivatkozik: jelen esetben a "colorCode" és "message". 
+A modell egy ListModel példány. Az id-ja alapján fogunk rá hivatkozni, ha további elemeket akarunk beleírni. Ilyenkor a lista ezt észre fogja venni, és magától frissíti a megjelenítést. A ListElementek tetszőleges tulajdonságokat tartalmazhatnak. Az a fontos, hogy azokat is tartalmazzák, amikre a delegate hivatkozik: jelen esetben a "colorCode" és "message". 
 
         model: ListModel {
             id: eventLogModel
@@ -182,7 +182,7 @@ A következőkben később csak a C++-ból eléréshez szükséges objektum neve
 	    objectName: "ApplicationWindow"
 	    signal addGreenEntry();
 	
-A menüt az ablak menuBar tulajdonságának adjuk értékül. A MenuItem-nek van egy signalja "Triggered" néven. Ehhez QML alatt egyből létre is jön egy slot onTriggered néven, aminek ha JavasScript kódot adunk értékül, akkor az a signal hatására le is fog futni.  
+A menüsort az ablak menuBar tulajdonságának adjuk értékül. A MenuItem-nek van egy signalja "Triggered" néven. Ehhez QML alatt egyből létre is jön egy slot onTriggered néven, aminek ha JavasScript kódot adunk értékül, akkor az a signal hatására le is fog futni.  
 
 	    menuBar: MenuBar {
 	        Menu {
@@ -206,7 +206,7 @@ Végül pedig példányosítjuk a RadioCanvasList elemet. Nevét onnan kapta, ho
 
 ### RadioCanvasList.qml
 
-Ez az a fájl, ami (a menü kivételével) a teljes fejhasználói felületet leírja.
+Ez az a fájl, ami (a menü kivételével) a teljes felhasználói felületet leírja.
 
 	import QtQuick 2.4
 	import QtQuick.Controls 1.3
@@ -224,7 +224,7 @@ A propertyk egyszerű változók, amiket később tudunk használni. (Szükség 
 	    // C++ oldal is el tudja érni
 	    property int lineWidth : 3
 
-QML alatt könnyen lehet JavaScript függvényeket készíteni. A paramétereknek itt nincsen típusa. A függvényben értékat adunk a selectedColor változónak, a drawingCanvas elemünket újrarajzoltatjuk, a ListView modelljéül szolgáló listára felveszünk egy új bejegyzést, valamint a konzolra is kiírjuk, hogy mi történt.
+QML alatt könnyen lehet JavaScript függvényeket készíteni. A paramétereknek itt nincsen típusa. A függvényben értéket adunk a selectedColor változónak, a drawingCanvas elemünket újrarajzoltatjuk, a ListView modelljéül szolgáló listára felveszünk egy új bejegyzést, valamint a konzolra is kiírjuk, hogy mi történt.
 	
 	    // C++ oldal is el tudja érni
 	    function selectColor(messageText, color)

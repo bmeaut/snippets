@@ -8,7 +8,7 @@ authors: Csorba Kristóf
 
 # QTest, vagyis unit tesztelés Qt környezetben
 
-A unit tesztek célja, hogy az alkalmazásunk bizonyos funkcióit automatizáltan tudjuk ellenőrizni. Így elkerülhetők például a regressziós hibák, vagyis amikor valami már elkészült és működött, de aztán valami miatt megint elromlott. Ha a kód elég nagy részét lefedik a unit tesztek és mind zöld, akkor biztosak lehetünk benne, hogy a módosításaink olyan nagyon nagy bajt nem okozhattak. (Például a Team Foundation Server alatt be lehet állítani a gated checkint, vagyis hogy csak akkor lehessen módosításokat becheckolni a repositoryba, ha minden unit teszt lefutott.) A unit tesztek nagyon előtérbe helyező módszertan a Test Driven Development, amikor kódot csak azért írnak, mert egy teszt nem futott le. Vagyis először készülnek el a tesztek, és utána az ezeknek megfelelő funkciók. Így biztos, hogy minden elkészült funkcióhoz lesz unit teszt.
+A unit tesztek célja, hogy az alkalmazásunk bizonyos funkcióit automatizáltan tudjuk ellenőrizni. Így elkerülhetők például a regressziós hibák, vagyis amikor valami már elkészült és működött, de aztán valami miatt megint elromlott. Ha a kód elég nagy részét lefedik a unit tesztek és mind zöld, akkor biztosak lehetünk benne, hogy a módosításaink olyan nagyon nagy bajt nem okozhattak. (Például a Team Foundation Server alatt be lehet állítani a gated checkint, vagyis hogy csak akkor lehessen módosításokat becheckolni a repositoryba, ha minden unit teszt lefutott.) A unit teszteket nagyon előtérbe helyező módszertan a Test Driven Development, amikor kódot csak azért írnak, mert egy teszt nem futott le. Vagyis először készülnek el a tesztek, és utána az ezeknek megfelelő funkciók. Így biztos, hogy minden elkészült funkcióhoz lesz unit teszt.
 
 A unit tesztek Qt alatt egy külön alkalmazást jelentenek, melynek main() függvénye teszteket futtat egymás után, az eredményeket pedig kiírja a konzolra. (A konzolos kimenetet pl. a Jenkins szerver fel tudja dolgozni, így nem feltétlenül csak szöveges eredményeket kell nézni.)
 
@@ -89,6 +89,6 @@ Lefuttatva az alkalmazást az alábbi kimenetet kapjuk:
     Totals: 3 passed, 1 failed, 0 skipped, 0 blacklisted
     ********* Finished testing of QTestDemoTest *********
 
-Természetesen a unit tesztek ennél bonyolultabban szoktak lenni, de az alapvető koncepció nem változik.
+Természetesen a unit tesztek ennél bonyolultabbak szoktak lenni, de az alapvető koncepció nem változik.
 
 <small>Szerzők, verziók: Csorba Kristóf</small>

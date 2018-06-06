@@ -39,13 +39,13 @@ A main.cpp tartalma igen tömör:
 	    return app.exec();
 	}
 
-Létrehoz egy QApplication objektumot, aminek az app.exec() hívásával indul el az ablakkezelő rendszer eseménykezelő főciklusa. Vagyis a főprogram összerakja a felhasználó felületet, majd amíg ki nem lépünk, eseményekre vár és minden eseménynél végrehajtja a megfelelő eseménykezelőt.
+Létrehoz egy QApplication objektumot, aminek az app.exec() hívásával indul el az ablakkezelő rendszer eseménykezelő főciklusa. Vagyis a főprogram összerakja a felhasználói felületet, majd amíg ki nem lépünk, eseményekre vár és minden eseménynél végrehajtja a megfelelő eseménykezelőt.
 
 Ezen kívül létrejön egy QQmlApplicationEngine objektum is, ami pedig a QML felület betöltéséért, felépítéséért és üzemeltetéséért felelős.
 
 (A QStringLiteral majdnem ugyanaz, mintha QString()-et írnánk, csak fordítási időben létre tud jönni egy read-only QString objektum, így futási időben sokkal gyorsabb.)
 
-Ami itt igazán érdekes, az a QML fájl és az elérési útja (URI-je): a QRC fájl egy un. resource leíró fájl. Ezt a bal oldali könyvtárszerkezetben is láthatjuk. A lényege, hogy az ebben a qml.qrc fájlban szerelő fájlok belefordulnak az exe fájlba, így a program viszi őket magával, nem kell külön fájlként odamásolni őket a telepítéskor. Ilyen erőforrások tipikusan a QML fájlok és például képek szoktak lenni.
+Ami itt igazán érdekes, az a QML fájl és az elérési útja (URI-je): a QRC fájl egy un. resource leíró fájl. Ezt a bal oldali könyvtárszerkezetben is láthatjuk. A lényege, hogy az ebben a qml.qrc fájlban szereplő fájlok belefordulnak az exe fájlba, így a program viszi őket magával, nem kell külön fájlként odamásolni őket a telepítéskor. Ilyen erőforrások tipikusan a QML fájlok és például képek szoktak lenni.
 
 ## qml.qrc
 
@@ -89,13 +89,13 @@ Ha külső QML fájlokat is szeretnénk használni, itt adhatnánk meg a helyük
 	# Default rules for deployment.
 	include(deployment.pri)
 
-Itt egy másik projekt fájlt includeolunk. A kiterjesztése azért pri és nem pro, hogy ez is jelezze, hogy ezt includolásra szánták.
+Itt egy másik projekt fájlt includeolunk. A kiterjesztése azért pri és nem pro, hogy ez is jelezze, hogy ezt includeolásra szánták.
 
 A deployment.pri tartalmába most nem megyünk bele. Sok esetben nem is kell hozzányúlni. Elsősorban akkor van rá szükség, ha a program telepítése valamiért speciális, például mert Android alatt processzor architektúra függő, hogy mi hol van a fájlrendszerben.
 
 ## MainForm.ui.qml
 
-Ennek a fájlnak a tartalmát egyrészt megnézhetjük a QML designerben is, vagy szövegszerkesztőben is. (A bal oldali eszköztárban a "Design" és "Edit" gombokat kiválasztva.)
+Ennek a fájlnak a tartalmát egyrészt megnézhetjük a QML designerben is, vagy szövegszerkesztőben is. (A bal oldali eszköztárban a "Design" vagy "Edit" gombokat kiválasztva.)
 
 Ez a fájl egy összetett felhasználó felület elemet ír le: azt, ami a menü kivételével az alkalmazás ablakában megjelenik. Van rajta sorba rendezve 3 nyomógomb. 
 
@@ -134,7 +134,7 @@ Most egy Button osztályú elem jön.
 
 	            id: button1
 
-Ha konkrét azonosítót is szeretnénk a nyomógombnak adni, hogy tudjuk rá hivatkozni máshonnan, azt az "id" tulajdonság beállításával tudjuk megtenni. Eddig erre nem volt szükség, mert nem akarunk például magára a RowLayoutra hivatkozni. De most kelleni fog.
+Ha konkrét azonosítót is szeretnénk a nyomógombnak adni, hogy tudjunk rá hivatkozni máshonnan, azt az "id" tulajdonság beállításával tudjuk megtenni. Eddig erre nem volt szükség, mert nem akarunk például magára a RowLayoutra hivatkozni. De most kelleni fog.
 
 	            text: qsTr("Press Me 1")
 
@@ -162,7 +162,7 @@ A lényeg, hogy a viselkedést majd ott adjuk meg, ahol felhasználjuk ezt a fel
 
 ## main.qml
 
-A main.qml a felhasználó felületünk gyökéreleme. Definiál egy ablakot, benne egy menüt, valamint példányosítja a MainForm elemet (ami a MainForm.ui.qml fájlban van leírva) és beállítja az eseménykezelőket.
+A main.qml a felhasználói felületünk gyökéreleme. Definiál egy ablakot, benne egy menüt, valamint példányosítja a MainForm elemet (ami a MainForm.ui.qml fájlban van leírva) és beállítja az eseménykezelőket.
 
 	import QtQuick 2.4
 	import QtQuick.Controls 1.3
@@ -175,7 +175,7 @@ A main.qml a felhasználó felületünk gyökéreleme. Definiál egy ablakot, be
 	    height: 480
 	    visible: true
 
-Az ApplicationWindow az alkalmazás főablakat. Beállítjuk a címét, méretét és láthatóságát.
+Az ApplicationWindow az alkalmazás főablaka. Beállítjuk a címét, méretét és láthatóságát.
 	
 	    menuBar: MenuBar {
 	        Menu {
@@ -193,7 +193,7 @@ Az ApplicationWindow az alkalmazás főablakat. Beállítjuk a címét, méreté
 
 A menüsor egy MenuBar osztályú elem. A "menuBar : MenuBar" azt jeleti, hogy az ApplicationWindow menuBar tulajdonságának adunk értéket úgy, hogy az egy MenuBar osztályú elem lesz, aminek itt helyben adjuk meg az értékét. A MenuBar tartalmaz egy Menu elemet (ez lesz a File menü), aminek van címe, valamint benne vannak MenuItem-ek (Open és Exit). A címekben az "&" jel határozza meg a billentyűparancsokat: az Alt-F, Alt-O és Alt-x az egyes menüpontokat fogják aktiválni.
 
-Ezeknek az elemeknek már eseményeik (signaljaik) is vannak. QML alatt az eseményeknek megfelelő signalokat JavaScript kódrészletekhez tudjuk kötni. A signal neve "Triggered", amihez kódrészletet az "onTriggered"-nek értéket adva tudunk rendelni. A fenti esetben az Open triggerére meghívjük a messageDialog objektum show() metódusát, az Exit esetében pedig a Qt.quit() hívással leállítjuk a programot.
+Ezeknek az elemeknek már eseményeik (signaljaik) is vannak. QML alatt az eseményeknek megfelelő signalokat JavaScript kódrészletekhez tudjuk kötni. A signal neve "Triggered", amihez kódrészletet az "onTriggered"-nek értéket adva tudunk rendelni. A fenti esetben az Open triggerére meghívjuk a messageDialog objektum show() metódusát, az Exit esetében pedig a Qt.quit() hívással leállítjuk a programot.
 	
 	    MainForm {
 	        anchors.fill: parent
@@ -214,7 +214,7 @@ Itt példányosítjuk a MainForm elemet. Az "anchors.fill" tulajdonságnak megad
 	        }
 	    }
 
-Végül létrehozunk még egy MessageDialog objektumot is az ablakon belül, ami egy felugró üzenet ablakot jelent. Adunk neki "id"-t, mert így tudunk rá hivatkozni az eseménykezelőkben. Beállítjuk a title tulajdonságot, valamint definiálunk benne egy JavaScript függvényt. Olyan ez, mintha egy MessageDialog osztályból származtattunk volna egy sajátot és kiegészítjük egy újabb metódussal. A függvény pedig nem tesz mást, mint a paraméterül kapott szövegre állítja a text tulajdonságot, majd feldobja a dialógus ablakot. (A JavaScript gyengén típusos nyelv, a paraméter típusát nem kell megadni. Lehet bármi, amit a változót használó kódrészek le tudnak majd kezelni.
+Végül létrehozunk még egy MessageDialog objektumot is az ablakon belül, ami egy felugró üzenet ablakot jelent. Adunk neki "id"-t, mert így tudunk rá hivatkozni az eseménykezelőkben. Beállítjuk a title tulajdonságot, valamint definiálunk benne egy JavaScript függvényt. Olyan ez, mintha egy MessageDialog osztályból származtattunk volna egy sajátot, és kiegészítjük egy újabb metódussal. A függvény pedig nem tesz mást, mint a paraméterül kapott szövegre állítja a text tulajdonságot, majd feldobja a dialógus ablakot. (A JavaScript gyengén típusos nyelv, a paraméter típusát nem kell megadni. Lehet bármi, amit a változót használó kódrészek le tudnak majd kezelni.
 
 	}
 

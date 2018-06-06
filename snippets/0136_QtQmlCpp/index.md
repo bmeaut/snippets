@@ -20,7 +20,7 @@ A QML és C++ kapcsolatát az alábbi funkciókon kereszül fogom bemutatni:
 
 Ehhez az alábbiak kellenek:
 
-  * QML alatt az elérendő tulajdonságok és függvények létrehozása
+  * QML alatt az elérendő tulajdonságok és függvények létrehozása.
   * QML alatt az elérendő objektumoknak az objectName tulajdonság beállítása, mert ez alapján tudjuk majd megkeresni őket C++ oldalról és kérni rájuk egy pointert (mint QtQuickObject-ek).
   * C++ oldalon be kell kötni a QML oldali signalt és válaszul függvényt hívni és tulajdonságot beállítani a QML oldalon.
 
@@ -75,7 +75,7 @@ A RadioCanvasList.qml-ben már rendelkezésre áll minden, ami kell: az objectNa
 
 ## A C++ oldal alapjai
 
-Ahhoz, hogy a QML oldalhoz hozzáférjünk, a Qml motortól el kell kérni a legfelsőbb szintű QML objektumot (QObject pointerként). Mivel a QML oldal egy fa struktúrát követ, az objektumok gyerekein végig tudunk menni és meg tudjuk keresni azokat az objektumokat, amikre szükségünk van. A MainWindowCppSide konstruktora azért megkapja a QML motortól a gyökér objektumot:
+Ahhoz, hogy a QML oldalhoz hozzáférjünk, a Qml motortól el kell kérni a legfelsőbb szintű QML objektumot (QObject pointerként). Mivel a QML oldal egy fa struktúrát követ, az objektumok gyerekein végig tudunk menni és meg tudjuk keresni azokat az objektumokat, amikre szükségünk van. A MainWindowCppSide konstruktora ezért megkapja a QML motortól a gyökér objektumot:
 
 	#include <QApplication>
 	#include <QQmlApplicationEngine>
@@ -151,7 +151,7 @@ A MainWindowCppSide.cpp pedig:
 	    qDebug() << "MainWindowCppSide inicializálva.";
 	}
 	
-A csatlakoztatott eseménykezelő pedig a Zöld menüpont kiválasztása esetén megkeresni a RadioCanvasList elemet, meghívja a setColor metódusát és beállítja a lineWidth tulajdonságát. Mivel ezek a QML oldalon vannak, hivatkozni rájuk csak szövegesen, a nevükkel tudunk. Az invokeMethod egy adott QObject névvel adott metódusát meg tudja hívni, a QQmlProperty::write pedig értéket tud adni hasonló módszerrel. A változók, amikre az adatcsere során szükség van, azért QVariant típusúak, mivel a QML/JavaScript oldalon nincsennek típusok megadva. A QVariant egy nagyon ravasz osztály, mely egyszerre tud számos, gyakran használt típust tárolni, vagyis át tud vinni például szöveget és számot is. Tény, hogy a C++ kódban egy kicsit "körbe kell makrózni" ezeket a műveleteket, hogy a Qt meta-object rendszerének emészthető legyen, de ha megszokjuk, utána egyrészt kényelmesen használható, másrészt csak minimálisan változik esetről esetre.
+A csatlakoztatott eseménykezelő pedig a Zöld menüpont kiválasztása esetén megkeresi a RadioCanvasList elemet, meghívja a setColor metódusát és beállítja a lineWidth tulajdonságát. Mivel ezek a QML oldalon vannak, hivatkozni rájuk csak szövegesen, a nevükkel tudunk. Az invokeMethod egy adott QObject névvel adott metódusát meg tudja hívni, a QQmlProperty::write pedig értéket tud adni hasonló módszerrel. A változók, amikre az adatcsere során szükség van, azért QVariant típusúak, mivel a QML/JavaScript oldalon nincsenek típusok megadva. A QVariant egy nagyon ravasz osztály, mely egyszerre tud számos, gyakran használt típust tárolni, vagyis át tud vinni például szöveget és számot is. Tény, hogy a C++ kódban egy kicsit "körbe kell makrózni" ezeket a műveleteket, hogy a Qt meta-object rendszerének emészthető legyen, de ha megszokjuk, utána egyrészt kényelmesen használható, másrészt csak minimálisan változik esetről esetre.
 
 	void MainWindowCppSide::addGreenEntryHandler()
 	{

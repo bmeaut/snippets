@@ -47,7 +47,7 @@ Létrehozunk egy streamet, ami olvasni tud a bufferből. A két stream tetszőle
         QString readText1;
         QString readText2;
 
-Fontos, hogy a két QString tudja, hogy milyen hosszú, így nem kell megkeresni a határukat. Ez nagyon kényelmessé teszi az összetettebb adatstrultúrák sorosítását, mivel csak egymás után ki kell írni az adatokat.
+Fontos, hogy a két QString tudja, hogy milyen hosszú, így nem kell megkeresni a határukat. Ez nagyon kényelmessé teszi az összetettebb adatstruktúrák sorosítását, mivel csak egymás után ki kell írni az adatokat.
 
         readStream >> readText1;
         readStream >> readText2;
