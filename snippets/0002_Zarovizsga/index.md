@@ -8,6 +8,8 @@ authors: Csorba Kristóf
 
 # Alkalmazásfejlesztés záróvizsga
 
+FIGYELEM! Ez a snippet az Alkalmazásfejlesztés tantárgyra vonatkozik (VIAUMA09)! Ne keverjétek össze például az Alkalmazásfejlesztési környezetekkel (VIAUAC04)!
+
 A záróvizsgán a tananyag az Alkalmazásfejlesztés tárgy anyagát fedi le, a konkrét kérdések azonban a záróvizsga koncepciójának megfelelően sokkal inkább koncepciókra és témakörökre fókuszálnak és nem alacsony szintű részletekre. A záróvizsgán a kiinduló kérdések az alábbiak lehetnek:
 
   * Verziókövetés témakör
