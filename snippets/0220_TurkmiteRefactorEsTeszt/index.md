@@ -228,7 +228,7 @@ class TurkMite
 
 Na így már jobb egy kicsit. A színek kikerültek konstansokba osztály szintre, a ``Step()`` vége pedig így tömörebb és szerintem nem romlott a közérthetősége. A ``delta`` egy C# 7-es tuple tömb, amiben még az első és második mezőnek nevet (x és y) adtam, hogy ne csak Item1 és Item2 legyen. Lehetett volna Vector is, és akkor a léptetés mehetett volna a felülcsapott ``+`` operátorral, mint vektor összeadás, de akkor meg egy csomó ``new Vector`` jelenik meg, így ezt elvetettem.
 
-(Itt megjegyzem, hogy a ``Math.Min(Image.Cols, x)`` nem helyes, mert a szélességgel megegyező x koordinátát is megenged, ami már eggyel több, a kelleténél, de ezt ekkor még nem vettem észre. Legalább majd a tesztírásnál látszik, hogy ott milyen szépen kijönnek a hibák.)
+(Itt megjegyzem, hogy a ``Math.Min(Image.Cols, x)`` nem helyes, mert a szélességgel megegyező x koordinátát is megenged, ami már eggyel több a kelleténél, de ezt ekkor még nem vettem észre. Legalább majd a tesztírásnál látszik, hogy ott milyen szépen kijönnek a hibák.)
 
 És most mi legyen a következő lépés? Hmmm... ez a Step metódus kicsit nagy és egynél több dolgot végez el (a turkmite szabályai szerint lép, majd ellenőrzi a pozíció határokat és ilyesmi). Single Responsibility Principle, kérem szépen, nem ártana az általános ellenőrzéseket és léptetést leválasztani a turkmite specifikus részről. És egyébként is a ``Step()`` túl általános szó, ha feldaraboljuk, lesz benne pár új metúdus név, amik majd jobban elmondják, mi is történik akkor, amikor ``Step()`` van...
 
@@ -274,7 +274,7 @@ Helyette most akkor ideje belecsapni a lecsóba és végre behozni egy kis abszt
 
 ## Commit: "Extracted TurkmiteBase"
 
-Végre van egy ősosztályunk, benne egy absztrakt ``GetNextColorAndUpdateDirection`` metódussal, amit majd szépen minden konkrét turkmite felüldefiniál, mint ahogy most az ``OriginalTurkmite`` is teszi. A pozíció inicializálás, léptetés és a kép határainak figyelembe vétele közös lesz. Innentől kezdve egy turkmit többnyire a mozgási szabályát leíró metódust, valamint valószínűleg a kedvenc színkonstansait tartalmazza.
+Végre van egy ősosztályunk, benne egy absztrakt ``GetNextColorAndUpdateDirection`` metódussal, amit majd szépen minden konkrét turkmite felüldefiniál, mint ahogy most az ``OriginalTurkmite`` is teszi. A pozíció inicializálás, léptetés és a kép határainak figyelembe vétele közös lesz. Innentől kezdve egy turkmit többnyire a mozgási szabályát leíró metódust, valamint valószínűleg a kedvenc színkonstansait tartalmazza majd.
 
 ```cs
 class Program
@@ -353,15 +353,15 @@ class Program
 }
 ```
 
-Mi legyen a következő lépés? Nos az ``OriginalTurkmite.GetNextColorAndUpdateDirection`` valahogy nem szép: a választott új színt visszaadja, az irányt viszont ő maga állítja be. Egy metódus lehetőleg vagy legyen funkciónális (és akkor nem módosít állapotot, csak a paraméterei alapján valamit visszaad), vagy módosítsa, akkor viszont például neki illene a színt is beállítani. Ez amolyan felelősségi kör kavarodás: feladata az irány beállítása, a szín beállítása viszont nem? Nem hangzik túl konzisztensnek... így két osztály között nagyon komoly összefonódás lesz, mivel a feladat egyik felét az egyik, a másik felét a másik végzi el.
+Mi legyen a következő lépés? Nos az ``OriginalTurkmite.GetNextColorAndUpdateDirection`` valahogy nem szép: a választott új színt visszaadja, az irányt viszont ő maga állítja be. Egy metódus lehetőleg vagy legyen funkciónális (és akkor nem módosít állapotot, csak a paraméterei alapján valamit visszaad), vagy módosítsa az állapotot, akkor viszont például neki illene a színt is beállítani. Ez amolyan felelősségi kör kavarodás: feladata az irány beállítása, a szín beállítása viszont nem? Nem hangzik túl konzisztensnek... így két osztály között nagyon komoly összefonódás lesz, mivel a feladat egyik felét az egyik, a másik felét a másik végzi el.
 
-Na de mit lehetne itt tenni? Nyilván nem kellene a képet babrálni az ``OriginalTurkmite`` osztályból, az csak adja vissza a kívánt színt. Igen ám, de a szabály a ``direction`` változását írja le. Most akkor vagy csak a változást adjuk vissza, vagy a ``GetNextColorAndUpdateDirection`` kapja meg paraméterként az előző irányt és adja vissza az újat? Az még egy paraméter... lassan már átadhatnánk neki egy teljes turkmite állapotleírást is... és ő meg visszaad egy másikat... jajj... ebben nem kellene belemenni.
+Na de mit lehetne itt tenni? Nyilván nem kellene a képet babrálni az ``OriginalTurkmite`` osztályból, az csak adja vissza a kívánt színt. Igen ám, de a szabály a ``direction`` változását írja le. Most akkor vagy csak a változást adjuk vissza, vagy a ``GetNextColorAndUpdateDirection`` kapja meg paraméterként az előző irányt és adja vissza az újat? Az még egy paraméter... lassan már átadhatnánk neki egy teljes turkmite állapotleírást is... és ő meg visszaad egy másikat... jajj... ebbe nem kellene belemenni!
 
 Legyen inkább az, hogy az irány változását is visszaadja a ``GetNextColorAndUpdateDirection``. (Utólag belegondolva így az elnevezés már csak részben kifejező, de ez csak utólag jutott eszembe... hagyok valamit a kedves Olvasónak is.)
 
-## Commit: "Also return delte direction, more compact and functional."
+## Commit: "Also return delta direction, more compact and functional."
 
-Itt is kihasználjuk a C# 7 tuple újdonságát, mert így kényelmesen vissza tudunk adni két visszatérési értéket. És egyúttal plusz előny, hogy a ``TurkmiteBase.direction`` ismét lehet private, mivel a leszármazott osztálynak már nem kell vele foglalkoznia. A ``Step()``-nek lett egy kicsit több dolga, de hát még így KISS (Keep It Simple and Stupid).
+Itt is kihasználjuk a C# 7 tuple újdonságát, mert így kényelmesen vissza tudunk adni két visszatérési értéket. És egyúttal plusz előny, hogy a ``TurkmiteBase.direction`` ismét lehet private, mivel a leszármazott osztálynak már nem kell vele foglalkoznia. A ``Step()``-nek lett egy kicsit több dolga, de hát még így is KISS (Keep It Simple and Stupid).
 
 ```cs
 class OriginalTurkmite : TurkmiteBase
@@ -450,7 +450,7 @@ class ThreeColorTurkmite : TurkmiteBase
 }
 ```
 
-És ettől kezdve ha a főprogramban az újat példányosítom, akkor elkészül az új kép! Jujj de izgi, vajon hogy néz ki? (Mert hogy a szabályokoat csak úgy hasból írtam...)
+És ettől kezdve ha a főprogramban az újat példányosítom, akkor elkészül az új kép! Jujj de izgi, vajon hogy néz ki? (Mert hogy a szabályokat csak úgy hasból írtam...)
 
 ```cs
 var turkmite = new ThreeColorTurkmite(img);
@@ -477,7 +477,7 @@ abstract class TurkmiteBase
 
 és ezt mindenki szépen felülírja, amire szeretné. A főprogram ciklusa pedig lekérdezi és ennyiszer hívja meg a ``Step()``-et. Ezt is egy külön commitba raktam ("Moved PreferredIterationCount into implementations."), de ide nem másolom be.
 
-Most, hogy ilyen szépen összeállt kép turkmite implementáció, ideje áttérni arra, amivel TDD (Test Driven Development) esetén kezdeni kellett volna, de most útólag készül el: a unit tesztekre. Tesztelni kellene az ősosztály és a leszármazottak funkcióit is, hogy később ha valaki valamit refactorál, átír, kiegészít, akkor egy mozdulattal le tudja ellenőrizni, hogy még minden szépen működik-e.
+Most, hogy ilyen szépen összeállt két turkmite implementáció, ideje áttérni arra, amivel TDD (Test Driven Development) esetén kezdeni kellett volna, de most útólag készül el: a unit tesztekre. Tesztelni kellene az ősosztály és a leszármazottak funkcióit is, hogy később ha valaki valamit refactorál, átír, kiegészít, akkor egy mozdulattal le tudja ellenőrizni, hogy még minden szépen működik-e.
 
 ## Commit: "Exploded into separate files, added first (trivial) unit test."
 
@@ -749,7 +749,7 @@ public void StepUpdatesCorrectly()
 
 Tudom, a kommentár is code smell lehet... de itt szerintem hasznos megemlíteni, mert a kód itteni részéből nem derül ki, hogy a mock turkmite jobbra akar mindig fordulni.
 
-(Csak a teljesség kedvéért említem meg, hogy a teszt inicializálásakor létrehozott képet itt már beszíneztem fekete kezdőszínre, még ha a mock turkmite viselkedését a szín most nem is befolyásolja. De a Mat-oknak szerencsés kezdőszínt megadni, mert ha egy későbbi tesztben lehet, hogy megfeledkezünk róla, most meg pont eszembe jutott.)
+(Csak a teljesség kedvéért említem meg, hogy a teszt inicializálásakor létrehozott képet itt már beszíneztem fekete kezdőszínre, még ha a mock turkmite viselkedését a szín most nem is befolyásolja. De a Mat-oknak szerencsés kezdőszínt megadni, mert egy későbbi tesztben lehet, hogy megfeledkezünk róla, most meg pont eszembe jutott.)
 
 ## Commit: OriginalTurkmiteTests added, exposed internal colors to be safer in the test.
 
@@ -777,7 +777,7 @@ public class OriginalTurkmite : TurkmiteBase
 
 Nos ezen túl sok tesztelni való nincsen. Mivel szinte mindent az ősosztály végez és itt már tényleg csak maga a szabály maradt, igen kényelmes helyzetben vagyunk: egy állapotmentes metódust kell letesztelni, ami kétfére színt kaphat bemenetül és ezekre jól tudjuk, hogy mit kell reagálnia. (Milyen jó, hogy a direction beállítását kiszedtük innen, ugye? :) )
 
-Mivel itt is egy protected metódust kell megvizsgálni, kap egy szép ``TestOriginalTurkmite`` wrappert, ami publikussá csomagolja a tesztelendő metódust. Így két teszt metódust megvizsgálja a két esetet és készen is vagyunk.
+Mivel itt is egy protected metódust kell megvizsgálni, kap egy szép ``TestOriginalTurkmite`` wrappert, ami publikussá csomagolja a tesztelendő metódust. Így két teszt metódus megvizsgálja a két esetet és készen is vagyunk.
 
 ```cs
 [TestClass]
@@ -822,4 +822,4 @@ public class OriginalTurkmiteTests
 
 A fentiek fényében szerintem már mindenki le tudná tesztelni a 3 színű turkmitot is, ezt már nem részletezem. Remélem, tanulságos volt ez a kis fejlesztés, refaktorálás és tesztírás. Igyekeztem összefoglalni a mögöttes gondolatmeneteket is, ami közben a fejemben járt.
 
-Írjatok teszteket, mert a teszt lefedettség és a fejlesztéskori stresszfaktor szorzata állandó, fordítottan arányosak! :)
+Írjatok teszteket, mert a teszt lefedettség és a fejlesztéskori stresszfaktor szorzata állandó, fordítottan arányosak! :) Ha pedig úgy érzitek, hogy már túl sok mock osztályt, wrappert és hasonlót kellett leírni, akkor el lehet gondolkozni, hogy egy mocking keretrendszert akartok-e használni. Egy ekkora feladatnál szerintem még felesleges, de ez megint csak ízlés kérdése.
