@@ -1,13 +1,13 @@
 ---
 ---
 
-$ColorDarkNormal: #3A271E;
+$ColorDarkNormal: #000000;
 $ColorDarkEmph: #573923;
-$ColorLightNormal: #F0EBD0;
-$ColorLightEmph: #E8C182;
-$ColorCodeForeground: #462A69;
-$ColorCodeBackground: #F8F3CC;
-$ColorLink: #E8F1F2;
+$ColorLightNormal: #FFFFFF;
+$ColorLightEmph: #990000;
+$ColorCodeForeground: #000000;
+$ColorCodeBackground: #EEEEEE;
+$ColorLink: #0000FF;
 
 * {
   box-sizing: border-box; }
@@ -22,7 +22,7 @@ body {
   color: $ColorDarkNormal; }
 
 a {
-  color: #1e6bb8;
+  color: #0000FF;
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
@@ -74,7 +74,7 @@ a {
   color: #fff;
   text-align: center;
   background-color: #159957;
-  background-image: linear-gradient(120deg, #3A271E, #573923); }
+  background-image: linear-gradient(120deg, #CCCCCC, #DDDDDD); }
 
 @media screen and (min-width: 64em) {
   .page-header {
