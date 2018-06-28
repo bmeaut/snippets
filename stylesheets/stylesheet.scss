@@ -3,10 +3,13 @@
 
 $ColorDarkNormal: #000000;
 $ColorDarkEmph: #573923;
-$ColorLightNormal: #FFFFFF;
+$ColorDarkUnimportant: #555555;
+$ColorLightNormal: #FFFFDD;
+$ColorHeaderBackground: #CCCCBB;
+$ColorButtonBorder: #555555;
 $ColorLightEmph: #990000;
-$ColorCodeForeground: #000000;
-$ColorCodeBackground: #EEEEEE;
+$ColorCodeForeground: #440000;
+$ColorCodeBackground: #F2F2DD;
 $ColorLink: #0000FF;
 
 * {
@@ -22,7 +25,7 @@ body {
   color: $ColorDarkNormal; }
 
 a {
-  color: #0000FF;
+  color: $ColorLink;
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
@@ -30,9 +33,9 @@ a {
 .btn {
   display: inline-block;
   margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.7);
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  color: $ColorDarkEmph;
+  background-color: $ColorHeaderBackground;
+  border-color: $ColorButtonBorder;
   border-style: solid;
   border-width: 1px;
   border-radius: 0.3rem;
@@ -41,15 +44,15 @@ a {
     margin-left: 1rem; }
 
 .btnImportant {
-  color: rgba(255, 255, 100, 0.7);
-  background-color: rgba(255, 100, 100, 0.3);
+  color: $ColorDarkEmph;
+  background-color: $ColorLightEmph;
   }
 
 .btn:hover {
-  color: rgba(255, 255, 255, 0.8);
+  color: $ColorDarkNormal;
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.3); }
+  background-color: $ColorLightEmph;
+  border-color: $ColorDarkNormal; }
 
 @media screen and (min-width: 64em) {
   .btn {
@@ -71,14 +74,14 @@ a {
       margin-left: 0; } }
 
 .page-header {
-  color: #fff;
+  color: $ColorDarkNormal;
   text-align: center;
   background-color: #159957;
-  background-image: linear-gradient(120deg, #CCCCCC, #DDDDDD); }
+  background-image: linear-gradient(120deg, #CCCCBB, #DDDDCC); }
 
 @media screen and (min-width: 64em) {
   .page-header {
-    padding: 2rem 6rem; } }
+    padding: 1rem 4rem; } }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .page-header {
@@ -105,7 +108,7 @@ a {
     font-size: 1.75rem; } }
 
 .project-tagline {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-weight: normal;
   opacity: 0.7; }
 
@@ -129,7 +132,7 @@ a {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: normal;
-  color: #573923; }
+  color: $ColorDarkNormal; }
 .main-content p {
   margin-bottom: 1em; }
 /* Source code */
@@ -149,7 +152,7 @@ a {
   color: $ColorCodeForeground;
   word-wrap: normal;
   background-color: $ColorCodeBackground;
-  border: solid 1px #dce6f0;
+  border: solid 1px $ColorLightNormal;
   border-radius: 0.3rem; }
   .main-content pre > code {
     padding: 0;
@@ -188,8 +191,8 @@ a {
 .main-content blockquote {
   padding: 0 1rem;
   margin-left: 0;
-  color: #819198;
-  border-left: 0.3rem solid #dce6f0; }
+  color: $ColorCodeBackground;
+  border-left: 0.3rem solid $ColorCodeBackground; }
   .main-content blockquote > :first-child {
     margin-top: 0; }
   .main-content blockquote > :last-child {
@@ -204,7 +207,7 @@ a {
     font-weight: bold; }
   .main-content table th, .main-content table td {
     padding: 0.5rem 1rem;
-    border: 1px solid #e9ebec; }
+    border: 1px solid $ColorCodeBackground; }
 .main-content dl {
   padding: 0; }
   .main-content dl dt {
@@ -219,7 +222,7 @@ a {
   height: 2px;
   padding: 0;
   margin: 1rem 0;
-  background-color: #eff0f1;
+  background-color: $ColorCodeBackground;
   border: 0; }
 
 @media screen and (min-width: 64em) {
@@ -242,14 +245,14 @@ a {
 .site-footer {
   padding-top: 2rem;
   margin-top: 2rem;
-  border-top: solid 1px #eff0f1; }
+  border-top: solid 1px $ColorCodeBackground; }
 
 .site-footer-owner {
   display: block;
   font-weight: bold; }
 
 .site-footer-credits {
-  color: #819198; }
+  color: $ColorDarkUnimportant; }
 
 @media screen and (min-width: 64em) {
   .site-footer {
