@@ -10,7 +10,7 @@ authors: Csorba Kristóf
 
 A factory method célja, hogy egy ősosztály leszármazottjai közül az egyiknek létrehozzuk egy példányát, de azt máshol döntjük el, hogy melyiket.
 
-(A factory method mintánál ennél általánosabb Factory tervezési minta egy olyan objektumot takar, ami másik objektum példányokat hoz létre.)
+(A factory method mintánál általánosabb Factory tervezési minta egy olyan objektumot takar, ami másik objektum példányokat hoz létre.)
 
 ### Bevezető példa: játékprogram pályaszerkesztője
 
@@ -30,5 +30,6 @@ Megjegyzések
   * Ez a minta akkor hasznos, ha a létrehozás helyén nem akarom eldönteni, hogy pontosan milyen példányt akarok létrehozni. Vagy azért, mert a kliens osztálynak ehhez semmi köze, vagy azért, mert nagyon sok helyen kell példányosítani és macerás mindenhova odarakni a döntési logikát.
   * Szintén hasznos a minta akkor, ha a létrehozás nem triviális folyamat (nem csak a konstruktort kell meghívni), mivel akkor a létrehozási folyamat ahelyett, hogy sok helyen előfordulna a forráskódban, bekerül a factory methodba. (Ez egy kicsit hasonlít a Builder mintához.)
   * Ez a megoldás kapcsolódik a dependency injection koncepcióhoz is. Annak is az a lényege, hogy kívülről kapjuk azokat az objektumokat (jelen esetben a factoryt), amire később szükségünk lesz. (Ahelyett, hogy helyben be lenne drótozva.)
+  * Sokszor előfordul, hogy egy osztálynak sok konstruktora van, mert sokféle módon létre lehet hozni. És bizony nem mindig triviális, melyik konstruktor mire jó, mivel a nevük ugye egyforma... Ilyen esetekben igen hasznos lehet, ha az osztályt ellátjuk pár statikus factory methoddal, vagyis beszédes nevű metódusokkal, amik egy példányt hoznak létre az osztályból, megfelelően előkészítve. (Ha ilyen metódusokkal úgy érezzük, minden eshetőséget lefedtünk, a konstruktorokat akár privatetá is lehetjük, és akkor biztos, hogy mindenki a beszédes nevű factory methodok közül fog választani. Pl. `field = Field.CreateFieldWithMonster(10,10);`)
 
 <small>Szerzők, verziók: Csorba Kristóf</small>
