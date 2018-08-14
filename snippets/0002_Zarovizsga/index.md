@@ -14,15 +14,16 @@ A záróvizsgán a tananyag az Alkalmazásfejlesztés tárgy anyagát fedi le, a
 
   * Verziókövetés témakör
     * Elosztott és centralizált verziókövetés különbségei (előnyök, hátrányok), a repositoryk szinkronizálása (push, pull, fetch) Git alatt.
-    * Csapatmunka git alatt: merge és rebase, git flow (master, development, feature branchek, release branchek, hotfixek stb.)
+    * Csapatmunka git alatt: merge és rebase, git flow (master, development, feature branchek, release branchek, hotfixek stb.), hibák helyre hozása (force push, elrontott merge vagy rebase, visszaállás korábbi verzióra, detached head állapot jelentése).
   * C++14, Qt és QML
     * C++ smart pointerek (unique, shared és weak pointerek)
     * C++ lambda kifejezések, auto kulcsszó és range for
     * Teljes fordítási folyamat Qt alatt (compiler, linker, MOC, QRC mechanizmus, statikus és dinamikus library (DLL) jelentése)
     * A QML és QmlEngine működése
       * QML scriptnyelv, JavaScript, események kezelése, kapcsolat a C++ oldallal
-      * QML controlok: listák (model és delegate jelentése), rajzolás (onPaint működése, Context)
+      * QML controlok: listák (model és delegate jelentése), rajzolás (onPaint működése, Context szerepe)
     * A signals and slots mechanizmus célja, működése, mi mire fordul le (emit, signal, slot kulcsszavak, a működés alapgondolata és a MOC szerepe)
+    * A QRC mechanizmus jelentése, milyen fájlok és hogyan ágyazhatók be az exe fájlokba? Mit hoz létre ehhez a Meta-object compiler?
   * Tervezés
     * SOLID elvek és jelentésük
     * Létrehozási tervezési minták
