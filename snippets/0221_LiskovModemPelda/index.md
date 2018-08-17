@@ -6,7 +6,7 @@ tags: designpatterns alkfejl
 authors: Csorba Kristóf
 ---
 
-## Amikor nem sikerült taratani a Liskov Substitution Principlet
+# Amikor nem sikerült taratani a Liskov Substitution Principlet
 
 Az alábbi modemes példa alapgondolata Uncle Bobtól származik, a kapcsolódó protokollokat kicsit frissítettem aktuálisabb környezetre. A történet bemutatja, hogy az első hangzásra triviálisnak tűnő Liskov Substitution Principle megtartása nem is mindig olyan triviális dolog.
 
@@ -14,17 +14,17 @@ A történet egy fiktív cég fiktív fejlesztőiről szól, akiknek volt egy Fi
 
 A cégvezetés megkérte a fejlesztőket, hogy mindenféle logfájlok kezelése miatt a FileMover működjön RS-232 felett is.
 
-### Az egységes ősosztály
+## Az egységes ősosztály
 
 Mivel a fejlesztő csapat igyekezett szépen dolgozni, kiemelték a közös interfészt és létrehoztak egy Communication ősosztályt. Mivel a TCP/IP protokoll stackben 4 metódus volt (_open_, _close_, _send_ és _receive_), az egyeséges interfészbe is ezek kerültek  bele. Bár az RS-232 esetében az első kettő hiányzott, de semmi gond, azok majd megörökölnek egy üres metódust és nem csinálnak vele semmit.
 
 (Az RS-232 csapat már ennek sem örült, mert bele kellett nyúlni az ő kódjukba is, de végülis két üres metódus ha nem is szép, de még elfogadható.)
 
-### Anomáliák a soros vonali küldéskor
+## Anomáliák a soros vonali küldéskor
 
 A FileMover egy ideig szépen ment, de aztán időnként érdekes hibák jöttek elő, amikor RS-232-n kellett volna dolgoznia. Kis debuggolás után kiderült, hogy a soros vonalon néha korábban is jönnek adatok (kritikus versenyhelyzet és társai...), mint hogy a FileMover megnyitotta volna a kapcsolatot. Márcsak azért sem, mert a túloldal eleve nem ismeri azt a fogalmat, hogy "megnyitjuk az RS-232 kapcsolatot". (A CTS és RTR vezetékek már régen hiányoznak abból a kábelből és az implementációból.) A FileMover viszont ezt eléggé nehezen viselte.
 
-### A megoldás: IsOpened
+## A megoldás: IsOpened
 
 - Semmi gond, nem kell mást tenni, mint módosítani az RS-232 kommunikációt...
 - Grrr...
@@ -38,13 +38,13 @@ A FileMover egy ideig szépen ment, de aztán időnként érdekes hibák jöttek
 
 Ez van... és így is lett.
 
-### Egy újabb fejlesztés
+## Egy újabb fejlesztés
 
 Pár hónappal később felvetődött, hogy már nagyon ideje lenne haladni a korral és támogatni az IPv6-ot is. Ami annyiban rázós, hogy más a cím típusa, ami az _open_ paramétere. Mivel a címet nem egy sima stringként adták át neki, ami egyébként egy védhető és típus-biztosabb megközelítés, ez akkor azt is jelenti, hogy változik a közös interface! Izé, kedves soros port csapat... ki lehetne egészíteni úgy az implementációtokat, hogy az open-nek kicsit megválozott a paraméter listája?
 
 Na ekkor pöccent be a soros porti csapat másodjára. Most a közös interface miatt egy tőlük teljesen független változás náluk is módosítást követel. 15 évig nem kellett piszkálni azt a kódot és ment minden szépen. Erre most a nagy egységesítés nevében lassan havonta kell módosítani, ami egy csomó saját kis projektjükre is hatással van...
 
-### Mi lett volna a megoldás?
+## Mi lett volna a megoldás?
 
 No hát így lehet beleszaladni a Liskov Substitution Principle megsértésébe, vagyis abba, hogy az ősosztály alatt nem cserélgethetőek tetszőlegesen a leszármazottak. Az "_open_ és _close_ majd nem csinál semmit" megközelítés nem jött be, az RS-232 implementáció nem volt csereszabatos a TCP/IP-vel. Ellentmondásos elvárások ütköztek az egységes interfésznél és az nem tudott egyszerre mindkettőnek megfelelni.
 
