@@ -8,7 +8,6 @@ authors: Csorba Kristóf
 
 <div class="home">
 
-  <a href="{{ "/fullList.html" | prepend: site.baseurl }}">Minden snippet egyszerre, kódnévvel</a><p/>
   {% assign skippedTags = 'afhf skipfromindex' %}
   {% assign skippedPageTag = 'skipfromindex' %}
 
@@ -26,14 +25,11 @@ authors: Csorba Kristóf
   {% endcapture %}
   {% assign allTagsArray = allTags | split : ' ' | sort %}
 
-  Minden címke: {% for t in allTagsArray %} <a href="#{{t}}">{{t}}</a> {% endfor %}
-
-  <p/><a href="{{ "/alkfejl.html" | prepend: site.baseurl }}">Csak az alkalmazásfejlesztés tárgy snippetjei</a><p/>
-
-  <h1 class="page-heading">Minden snippet címkék szerint</h1>
+  <p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">Minden címke:
+    {% for t in allTagsArray %} <a href="#{{t}}">{{t}}</a> {% endfor %}</p>
 
 {% for tag in allTagsArray %}
-  <h2 id="{{tag}}">{{tag}}</h2><br/>
+  <h2 style="border:3px; border-style:solid; border-color:#000000; padding: 1em;" id="{{tag}}">{{tag}}</h2><br/>
   <ul>
   {% for page in site.pages %}
     {% if page.tags contains tag %}

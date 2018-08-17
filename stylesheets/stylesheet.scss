@@ -4,12 +4,12 @@
 $ColorDarkNormal: #000000;
 $ColorDarkEmph: #573923;
 $ColorDarkUnimportant: #555555;
-$ColorLightNormal: #FFFFDD;
+$ColorLightNormal: #FFFFEE;
 $ColorHeaderBackground: #CCCCBB;
 $ColorButtonBorder: #555555;
 $ColorLightEmph: #990000;
 $ColorCodeForeground: #440000;
-$ColorCodeBackground: #F2F2DD;
+$ColorCodeBackground: #F7F7DD;
 $ColorLink: #0000FF;
 
 * {
@@ -76,8 +76,7 @@ a {
 .page-header {
   color: $ColorDarkNormal;
   text-align: center;
-  background-color: #159957;
-  background-image: linear-gradient(120deg, #CCCCBB, #DDDDCC); }
+  background-image: linear-gradient(120deg,$ColorLightNormal, $ColorHeaderBackground); }
 
 @media screen and (min-width: 64em) {
   .page-header {
