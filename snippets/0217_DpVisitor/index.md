@@ -44,6 +44,6 @@ Ilyenkor lehet készíteni a meglátogatandó elemek tárolója számára egy ol
 
 ### További olvasnivaló
 
-A visitor tervezési mintára konkrét implementációs példa szerepel a [0216_VisitorObserverPelda](../0216_VisitorObserverPelda/0216_VisitorObserverPelda.html) snippetben.
+A visitor tervezési mintára konkrét implementációs példa szerepel a [0216_VisitorObserverPelda](../0216_VisitorObserverPelda/index.html) snippetben.
 
 <small>Szerzők, verziók: Csorba Kristóf</small>
