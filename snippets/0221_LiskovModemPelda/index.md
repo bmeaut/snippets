@@ -6,7 +6,7 @@ tags: designpatterns alkfejl
 authors: Csorba Kristóf
 ---
 
-# Amikor nem sikerült taratani a Liskov Substitution Principlet
+# Amikor nem sikerült tartani a Liskov Substitution Principlet
 
 Az alábbi modemes példa alapgondolata Uncle Bobtól származik, a kapcsolódó protokollokat kicsit frissítettem aktuálisabb környezetre. A történet bemutatja, hogy az első hangzásra triviálisnak tűnő Liskov Substitution Principle megtartása nem is mindig olyan triviális dolog.
 

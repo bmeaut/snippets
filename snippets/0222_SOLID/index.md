@@ -36,7 +36,7 @@ Például ha van egy beágyazott rendszerünk, ami szenzorokat használ, akkor �
 
 Az LSP az osztályok származtatásánál jelenik meg fontos szempontként: ha egy osztályból több másik származik le, akkor elvileg az ősosztályt interfészként használva mindegy kell, hogy legyen, melyik konkrét leszármazott példányával is dolgozunk. Első hangzásra ez triviálisnak tűnhet, hiszen erről szól a származtatás, a gyakorlatban viszont egész könnyű beleszaladni olyan hibákba, amikor az egyik leszármazott nem teljesen úgy működik, mint a társai, és ez oda vezet, hogy mégsem lehet teljesen észrevétlenül kicserélni őket. (Ha pedig egy metódus azt vizsgálja if-ek sorában, hogy a kapott objektum tényleges típusa mi, akkor valószínűleg már baj van... ezt az esetet hívják type casingnek.)
 
-Egy hosszabb példa található erre a [../0221_LiskovModemPelda/index.html](Modemes példa a Liskov Substitution Principlere) snippetben.
+Egy hosszabb példa található erre a [Modemes példa a Liskov Substitution Principlere](../0221_LiskovModemPelda/index.html) snippetben.
 
 ## Interface Segregation Principle (ISP)
 
