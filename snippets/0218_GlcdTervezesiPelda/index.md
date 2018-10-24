@@ -53,7 +53,7 @@ Bárki, akinek rendelkezésre áll egy GLCD példány, az tud írni rá. Ennek a
       SPI& spi;
     };
 
-Az SPI kommunikációt használó esetben érdemes az SPI kapcsolat részleteit egy másik, újrahasznosítható osztályba kiszervezni, hogy ott már csak át kelljen adni a kontruktorba (dependency injection módszer). Valószínűleg a main() függvény fog majd példányosítani egy SPI objektumot és amikor a grafikus LCD-hez ér, már csak átadja neki.
+Az SPI kommunikációt használó esetben érdemes az SPI kapcsolat részleteit egy másik, újrahasznosítható osztályba kiszervezni, hogy ott már csak át kelljen adni a konstruktorba (dependency injection módszer). Valószínűleg a main() függvény fog majd példányosítani egy SPI objektumot és amikor a grafikus LCD-hez ér, már csak átadja neki.
 
 (Az SPI referenciát nem lenne szerencsés az ősosztályban tárolni, mivel csak néhány leszármazott használja. Az ilyen adatoknak nem ott van a helye, hanem lentebb az osztály hierarchiában. Ha több SPI-os leszármazott lenne, akkor azoknak lehet egy közös ősosztályuk, ami a GLCD-ből származik le és már tartalmazza az SPI-ra a referenciát.)
 
@@ -61,7 +61,7 @@ A GPIO egy kicsit problémásabb: hogyan is kellene elegánsan megmondani, hogy 
 
 Lássuk, hogy állunk a tervezési SOLID elvekkel:
 
-  * Single Responsibility Principle: a GLCD interfésznek és leszármazottjainak csak GLCD kezelés a feladat, semmi más. Az SPI kommunikáció például nem ide tartozik, az ki van szervezve.
+  * Single Responsibility Principle: a GLCD interfésznek és leszármazottjainak csak GLCD kezelés a feladata, semmi más. Az SPI kommunikáció például nem ide tartozik, az ki van szervezve.
   * Open-Close Principle: Ha új GLCD hardvert kell támogatni, csak egy új GLCD leszármazottat kell létrehozni és a main()-ben azt kell példányosítani. Vagyis máshol nem kell módosítani már meglévő forráskódon.
   * Liskov Substitution Principle: minden GLCD leszármazott pontosan azt teszi az örökölt metódusaiban, amire azt az ősosztályban szántuk. Ez itt a példában nem látszik, de a Write metódusokban figyelünk rá, hogy más mellékhatás ne legyen.
   * Interface Segregation Principle: itt most nem sok szétválasztható dolog volt, így ez az elv most nem jött elő.
@@ -105,16 +105,16 @@ Nyilván az új interfész bevezetésével most sajnos módosítani kell a GLCD 
         FontSource& fontSource;
     };
 
-Érdemes megemlíteni, hogy a fontSource-ot érdemes az ősosztályban kezelni, a leszármazottaknak ezzel már ne legyen semmi dolga. (A láthatósága protected, különben nem tudnál a leszármazottak használni.) A GLCD leszármazottak szintén a konstruktorukban fogják megkapni a FontSource referenciát, amit továbbadnak majd a GLCD ősosztály kontruktorának. Például a GLCDSPI esetében:
+Érdemes megemlíteni, hogy a fontSource-ot érdemes az ősosztályban kezelni, a leszármazottaknak ezzel már ne legyen semmi dolga. (A láthatósága protected, különben nem tudnák a leszármazottak használni.) A GLCD leszármazottak szintén a konstruktorukban fogják megkapni a FontSource referenciát, amit továbbadnak majd a GLCD ősosztály konstruktorának. Például a GLCDSPI esetében:
 
-  class GLCDSPI : public GLCD
-  {
-  public:
-    GLCDSPI(SPI& spi, FontSource& fontSource) : GLCD(fontSource) { this->spi = spi; }
-    virtual void Write(uchar row, uchar col, const char* text);
-  private:
-    SPI& spi;
-  };
+    class GLCDSPI : public GLCD
+    {
+    public:
+        GLCDSPI(SPI& spi, FontSource& fontSource) : GLCD(fontSource) { this->spi = spi; }
+        virtual void Write(uchar row, uchar col, const char* text);
+    private:
+        SPI& spi;
+    };
 
 A Write metódusok megfelelő módosításával sikeresen ki is szerveztük a FontSource támogatást. A FontSource egyes leszármazottai belül valószínűleg egy a "fontdata" megoldáshoz hasonló tömböt fognak használni. Ez már belső magánügyük. A lényeg, hogy kintről ezeket lehet cserélgetni és a GLCD mindig az aktuálisat használja.
 
@@ -163,6 +163,6 @@ Az egyes GLCD::Write-ok módosítása és FontSource::GetFontWidth metódusok me
 
 ### Egyéb megjegyzések
 
-Azt még érdemes megemlíteni, hogy a 2. körben a GLCD kontruktorokból kihagyhattuk volna a FontSource referenciákat, ha bevezetünk egy globális default fontot. Így akkor egyszerűsödik az interfész, viszont meg kell oldani, hogy a GLCD ősosztály hogyan találja meg a default FontSource-ot a konstruktorában. Erre fel lehet használni a singleton tervezési mintát, amivel készíthetünk egy mindenhonnan elérhető FontCollection-t, amiből el lehet kérni pl. név alapján a FontSource-okat, és biztosítjuk, hogy egy "default" nevű mindig lesz.
+Azt még érdemes megemlíteni, hogy a 2. körben a GLCD konstruktorokból kihagyhattuk volna a FontSource referenciákat, ha bevezetünk egy globális default fontot. Így akkor egyszerűsödik az interfész, viszont meg kell oldani, hogy a GLCD ősosztály hogyan találja meg a default FontSource-ot a konstruktorában. Erre fel lehet használni a singleton tervezési mintát, amivel készíthetünk egy mindenhonnan elérhető FontCollection-t, amiből el lehet kérni pl. név alapján a FontSource-okat, és biztosítjuk, hogy egy "default" nevű mindig lesz.
 
 <small>Szerzők, verziók: Csorba Kristóf</small>
