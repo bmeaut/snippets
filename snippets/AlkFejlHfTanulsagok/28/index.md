@@ -22,7 +22,7 @@ Végül azt is tapasztaltuk, hogy nem mindig szerencsés a működés szerint (p
 QML változtatások után néha az újrafordítás nem történik meg automatikusan. Ekkor megoldást jelenthet a Clean project -> Run qmake -> Rebuild műveletsor végrehajtása.
 Konkrét példaként, amikor egy .qml fájlt töröltünk, mert már nem volt rá szükség, és a .qrc fájlból is eltávolítottuk, fordításkor "No rule to make target..." hibát kaptunk.
 
-![](no_rule_hiba.png) 
+![](no_rule_hiba.PNG) 
 
 Hosszabb időt elvett megpróbálni rendesen törölni a fájlt, de ez nem vezetett eredményre. Végül a fentebb leírt műveletsor jelentett megoldást.
 
