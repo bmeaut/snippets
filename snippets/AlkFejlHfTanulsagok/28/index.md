@@ -1,6 +1,6 @@
 ﻿---
 layout: default
-codename: AlkFejlHf28
+codename: AlkFejlHf29
 title: Anyajegy tanulságok
 tags: alkfejl afhf skipfromindex
 authors: Veszelovszki Soma, Nagy Bálint
