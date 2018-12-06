@@ -1,6 +1,6 @@
 ---
 layout: default
-codename: AlkFejlHf28
+codename: AlkFejlHf30
 title: E csapat tanulságai
 tags: alkfejl afhf skipfromindex
 authors: Babics Mátyás, Bede Fülöp
