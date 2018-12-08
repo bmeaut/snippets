@@ -33,7 +33,7 @@ Ha még nem használtál előtte gitet, akkor érdemes több git klienst is megn
 ![Tortoise git 2](images/tortoiseGit2.JPG) 
 
 ## 4. C# aszinkron taszk hívás
-Ha egy taszkot aszinkron módon hívsz meg, akkor a callBack függvényénél használnod kell az invoke metódust.
+Invoke-ot kell használni, ha másik szálról akarod módosítani a gui valamelyik elemét
 ### 4.1 Példa
 
 public partial class Form1 : Form
@@ -55,8 +55,8 @@ public partial class Form1 : Form
     {     
        Log.Information("Path ended");
        this.Invoke(new UpdateCallback(PathEndMakeGui));
-    }
-	
+    }	
+}
 ## 5. Dokumentáció
 A Doxygen-es dokumentációt folyamatosan készítsétek, így készőbb nem kell újra kitalálni, hogy mit is csinál egy adott kódrészlet, sőt a végén már még kevésbé szórakoztató a dokumentáció készítése.
 
