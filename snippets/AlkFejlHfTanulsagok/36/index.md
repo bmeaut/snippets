@@ -1,6 +1,6 @@
----
+﻿---
 layout: default
-codename: AlkFejlHf32
+codename: AlkFejlHf36
 title: AlkFejlHf1 - Glitter összefoglaló
 authors: Havasi Dávid, Papp Lilla, Nagy Tibor
 tags: alkfejl afhf skipfromindex
