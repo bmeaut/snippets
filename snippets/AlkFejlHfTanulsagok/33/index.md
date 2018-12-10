@@ -1,6 +1,6 @@
 ---
 layout: default
-codename: AlkFejlHf31
+codename: AlkFejlHf33
 title: Határozott határozatlanság csapat tanulságai
 tags: alkfejl afhf skipfromindex
 authors: Zolnai László, Schöberl Krisztián, Baumgartner Ádám
