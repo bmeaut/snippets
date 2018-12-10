@@ -1,6 +1,6 @@
----
+﻿---
 layout: default
-codename: AlkFejlHf30
+codename: AlkFejlHf37
 title: MáDaBa csapat tanulságai
 tags: alkalmazasFejlesztes
 authors: Fortágh Dávid, Kullai Máté, Stráhl Balázs
