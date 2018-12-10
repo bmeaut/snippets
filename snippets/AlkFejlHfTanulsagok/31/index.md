@@ -1,7 +1,7 @@
 
 ---
 layout: default
-codename: AlkFejlHf
+codename: AlkFejlHF35
 title: Git gyülekezete csapat tanulságok
 tags: snippets
 authors: Göntér Balázs, Kriszt Botond, Millner Balázs
