@@ -1,8 +1,10 @@
+---
 layout: default
-codename: AlkFejlHf
+codename: AlkFejlHf32
 title: Fantaziadus csapatnev tanulságai
 tags: alkamazasFejlesztes
 authors: Ádám Tibor, Fenyővári Boldizsár, Lakatos Dániel
+---
 
 Fantáziadús Csapatnév tanulságai
 
