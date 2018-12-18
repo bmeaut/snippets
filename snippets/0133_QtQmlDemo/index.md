@@ -214,7 +214,7 @@ Itt példányosítjuk a MainForm elemet. Az "anchors.fill" tulajdonságnak megad
 	        }
 	    }
 
-Végül létrehozunk még egy MessageDialog objektumot is az ablakon belül, ami egy felugró üzenet ablakot jelent. Adunk neki "id"-t, mert így tudunk rá hivatkozni az eseménykezelőkben. Beállítjuk a title tulajdonságot, valamint definiálunk benne egy JavaScript függvényt. Olyan ez, mintha egy MessageDialog osztályból származtattunk volna egy sajátot, és kiegészítjük egy újabb metódussal. A függvény pedig nem tesz mást, mint a paraméterül kapott szövegre állítja a text tulajdonságot, majd feldobja a dialógus ablakot. (A JavaScript gyengén típusos nyelv, a paraméter típusát nem kell megadni. Lehet bármi, amit a változót használó kódrészek le tudnak majd kezelni.
+Végül létrehozunk még egy MessageDialog objektumot is az ablakon belül, ami egy felugró üzenet ablakot jelent. Adunk neki "id"-t, mert így tudunk rá hivatkozni az eseménykezelőkben. Beállítjuk a title tulajdonságot, valamint definiálunk benne egy JavaScript függvényt. Olyan ez, mintha egy MessageDialog osztályból származtattunk volna egy sajátot, és kiegészítjük egy újabb metódussal. A függvény pedig nem tesz mást, mint a paraméterül kapott szövegre állítja a text tulajdonságot, majd feldobja a dialógus ablakot. (A JavaScript gyengén típusos nyelv, a paraméter típusát nem kell megadni. Lehet bármi, amit a változót használó kódrészek le tudnak majd kezelni.)
 
 	}
 
