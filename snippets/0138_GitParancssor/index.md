@@ -8,7 +8,7 @@ authors: Csorba Kristóf
 
 # A Git konzolos használata során gyakran előkerülő parancsok
 
-Változó, hogy ki mennyire szereti a konzolos megoldásokat. Sokak szerint sokkal gyorsabb, mint kattintgatni. Mivel a Git alapvetően egy parancssoros alkalmazás és a háttérben a grafikus felületei is konzolos parancsokat adnak ki, érdemes összeszedni, mik a leggyakrabban használat parancsok. A leírás feltételezi, hogy a parancsok mögötti koncepciókkal és a működésükkel már tisztában van az Olvasó.
+Változó, hogy ki mennyire szereti a konzolos megoldásokat. Sokak szerint sokkal gyorsabb, mint kattintgatni. Mivel a Git alapvetően egy parancssoros alkalmazás, és a háttérben a grafikus felületei is konzolos parancsokat adnak ki, érdemes összeszedni, mik a leggyakrabban használt parancsok. A leírás feltételezi, hogy a parancsok mögötti koncepciókkal és a működésükkel már tisztában van az Olvasó.
 
 Bármely git parancsról kaphatunk segítséget a ``--help`` opcióval. Pl.
 
