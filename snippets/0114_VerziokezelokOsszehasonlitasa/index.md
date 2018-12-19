@@ -42,7 +42,7 @@ A verziókezelők világában gyakori fogalmak az alábbiak:
 
 ## Verziókezelők összehasonlítása
 
-A verziókezelők összehasonlításával kapcsolatban most elsősorban az eloszott és a centralizált verziókövetők két neves képviselőjét, a Git-et és a Team Foundation Servert fogom röviden összehasonlítani, mivel ennek a két kategóriának a többi képviselője alapvetően nagyon hasonlóan működik.
+A verziókezelők összehasonlításával kapcsolatban most elsősorban az elosztott és a centralizált verziókövetők két neves képviselőjét, a Git-et és a Team Foundation Servert fogom röviden összehasonlítani, mivel ennek a két kategóriának a többi képviselője alapvetően nagyon hasonlóan működik.
 
   * CVS: egy egyetemi projektben készült az első verzió, amikor egy professzor közösen akart fejleszteni két hallgatójával és eltérő volt az időbeosztásuk. 1986, minden verziókezelő atyja, máig lehet vele találkozni.
   * SVN: A CVS utódja, nagyon elterjedt (de a GIT egyre inkább kiszorítja). Nagyon sok cégnél lehet vele találkozni, ahol centralizált verziókezelőt szerettek volna és nem akartak Microsoft technológiára építeni.
@@ -53,7 +53,7 @@ A verziókezelők összehasonlításával kapcsolatban most elsősorban az elosz
 A számos másik snippetben bemutatott Git-hez képest a TFS fő eltérései az alábbiak:
 
   * Centralizált verziókövető, így a munkához alapvetően online kapcsolat kell a szerverrel.
-  * Sokkal inkább a lináris (branch mentes) fejlesztést helyezi előtérbe: elágazások és mergelések helyett mindenki ugyanazon ágon dolgozik és gyakran checkin-el (a git-es commit megfelelője).
+  * Sokkal inkább a lineáris (branch mentes) fejlesztést helyezi előtérbe: elágazások és mergelések helyett mindenki ugyanazon az ágon dolgozik és gyakran checkin-el (a git-es commit megfelelője).
   * Amennyiben fejlesztők egymás között olyan kódrészletet akarnak megosztani, ami még nem alkalmas arra, hogy a főágba bekerüljön, a shelving segítségével "kirakhatják egy polcra" a változásokat, amiket egy másik fejlesztő levehet. (Git alatt ilyenkor a két fejlesztő nyitna erre a célra egy branchet.) 
   * A központi szerver lehetővé teszi fájlok zárolását, ami megakadályozza, hogy két fejlesztő egyszerre nyúljon egy fájl tartalmához. Ennek van egy árnyaltabb változata is, amit a Visual Studio automatikusan is megtesz: a szerkesztett fájlokat checkout-olja, ami azt jelenti, hogy a fájlt megjelöli szerkesztésre. Ezek a megoldások nagyban hozzájárulnak ahhoz, hogy ritkán legyen merge conflict. Jóval ritkábban, mint például Git esetében.
   * A TFS kiterjedt integrációs lehetőségei például lehetővé teszik a gated checkint, ami azt jelenti, hogy amíg a unit tesztek nem futnak le sikeresen, addig nem lehet a módosításokat checkinelni. Ez nagy segítség a programozási hibák ellen, viszont túlságosan macerássá is teheti a fejlesztést.

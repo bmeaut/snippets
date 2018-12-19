@@ -34,7 +34,7 @@ Most már csak egy fájl kell, amin lehet kísérletezni. Ez lett a NaivFajl.txt
 
 ## Reset current branch
 
-A következőkben tegyül fel, hogy Andezit kiegészítt a szövegünket egy sorral, és ezt a változtatást utána majd vissza akarja vonni.
+A következőkben tegyül fel, hogy Andezit kiegészíti a szövegünket egy sorral, és ezt a változtatást utána majd vissza akarja vonni.
  
 	Ez itt a naív fájl, ami azt hiszi, hogy nyugis helyen van.
 	Ez meg az a szöveg, aminek a beszúrását majd visszavonjuk.
@@ -103,7 +103,7 @@ Néhány megjegyzés:
 
 ## A revert commit (először)
 
-Ha egy olyan commitot akarunk visszavonni, ami már régebben volt és azóra ráépülek más commitok, akkor nem tudjuk a resettel ilyen könnyen megoldani. Ilyenkor kell a revert commit, vagyis egy olyan commit, ami egy másik "inverze".
+Ha egy olyan commitot akarunk visszavonni, ami már régebben volt, és azóta ráépülnek más commitok, akkor nem tudjuk a resettel ilyen könnyen megoldani. Ilyenkor kell a revert commit, vagyis egy olyan commit, ami egy másik "inverze".
 
 Ezért először Andezit felvesz egy új sort:
 
@@ -146,7 +146,7 @@ Most lássuk, mit mutat a Commit ablak.
 
 ![](image/017_RevertCommitCommit.png)
 
-Látszik, hogy a stagelt változás tényleg szépen visszavonja a törölni kívánt commitot. A commit szövegében pedig benne van, hogy mi történt és mivel volt gond. (Ezt persze nyugodtan átíthatjuk.)
+Látszik, hogy a stagelt változás tényleg szépen visszavonja a törölni kívánt commitot. A commit szövegében pedig benne van, hogy mi történt és mivel volt gond. (Ezt persze nyugodtan átírhatjuk.)
 
 Ami itt még érdekes, az egy "NaivFajl.txt.orig" nevű fájl, ami megjelent. Ennek tartalma:
 
@@ -191,9 +191,9 @@ Detached head állapotban vagyunk:
 
 ![](image/022_DetachedHeadResult.png)
 
-Ha innen commitolunk, akkor az semmilyen formában nem befolyásolja a brancheket, mivel egy új részfát kezdünk el. Ilyesmit leginkább csak akkor szoktunk tenni, ha valamit gyorsan ki akarunk próbáli egy korábbi verzión, bár akkor is szerencsésebb egy branchet létrehozni rá és azt checkout-olni. Erre a lehetőségre hívja fel a figyelmünket az üzenet is: ha meggondolnánk magunkat és amit innen commitolunk, mégis fontos, akkor bármikor létrehozhatunk egy új branchet, ami a mostani helyre fog mutatni.
+Ha innen commitolunk, akkor az semmilyen formában nem befolyásolja a brancheket, mivel egy új részfát kezdünk el. Ilyesmit leginkább csak akkor szoktunk tenni, ha valamit gyorsan ki akarunk próbálni egy korábbi verzión, bár akkor is szerencsésebb egy branchet létrehozni rá és azt checkout-olni. Erre a lehetőségre hívja fel a figyelmünket az üzenet is: ha meggondolnánk magunkat és amit innen commitolunk, mégis fontos, akkor bármikor létrehozhatunk egy új branchet, ami a mostani helyre fog mutatni.
 
-Csak a teljesség kevéért commitoljunk egyet, hogy megnézzük, milyen az:
+Csak a teljesség kedvéért commitoljunk egyet, hogy megnézzük, milyen az:
 
 ![](image/023_CommitDetachedHeadre1.png)
 
@@ -251,7 +251,7 @@ Nézzük meg mindkét verziót:
 
 ### A rebaselt ág hátrahagyása
 
-Áttérve a master ágra és azt fast-forwarddal előrehozva a fromDetachedHead branchre, végül pusholva mastert az alábbi helyzet kapjuk:
+Áttérve a master ágra és azt fast-forwarddal előrehozva a fromDetachedHead branchre, végül pusholva mastert az alábbi helyzetet kapjuk:
 
 ![](image/037_MovedToMaster.png)
 

@@ -128,7 +128,7 @@ Ekkor Bazalt még utoljára ellenőrzi, hogy tényleg minden szépen fut-e. Sajn
             assert(0);
             break;
 
-Még jó, hogy ellenőrizte. A merge még sem volt olyan zökkenőmentes. Semmi gond, gyors javítás, utána pedig commit. Jobban belegondolva ez a merge része kellett volna, hogy legyen. Mivel a merge commitot még nem pusholta, éppen módosíthatja is. Erre való az "amend commit": a mostani commitot beleolvasztja az előzőbe. Tipikusan akkor használjuk, ha valami lemaradt:
+Még jó, hogy ellenőrizte. A merge mégsem volt olyan zökkenőmentes. Semmi gond, gyors javítás, utána pedig commit. Jobban belegondolva ez a merge része kellett volna, hogy legyen. Mivel a merge commitot még nem pusholta, éppen módosíthatja is. Erre való az "amend commit": a mostani commitot beleolvasztja az előzőbe. Tipikusan akkor használjuk, ha valami lemaradt:
 
 ![](image/121_BazaltAmendMergeCommit.png)
 
