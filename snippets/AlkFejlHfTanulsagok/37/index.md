@@ -2,7 +2,7 @@
 layout: default
 codename: AlkFejlHf37
 title: MáDaBa csapat tanulságai
-tags: alkalmazasFejlesztes
+tags: alkfejl afhf skipfromindex
 authors: Fortágh Dávid, Kullai Máté, Stráhl Balázs
 ---
 

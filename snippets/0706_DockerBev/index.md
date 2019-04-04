@@ -2,7 +2,7 @@
 layout: default
 codename: DockerBev
 title: Docker bevezető
-tags: retelab docker
+tags: docker
 authors: Osman Omar
 ---
 

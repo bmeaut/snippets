@@ -2,7 +2,7 @@
 layout: default
 codename: AlkFejlHf38
 title: Appokalipszis csapat tanulságai
-tags: snippets
+tags: alkfejl afhf skipfromindex
 authors: Dori Zsófia, Tokaji András, Lovass Gábor
 ---
 
