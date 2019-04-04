@@ -2,7 +2,7 @@
 layout: default
 codename: AlkFejlHf32
 title: Fantaziadus csapatnev tanulságai
-tags: alkamazasFejlesztes
+tags: alkfejl afhf skipfromindex
 authors: Ádám Tibor, Fenyővári Boldizsár, Lakatos Dániel
 ---
 

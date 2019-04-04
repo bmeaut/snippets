@@ -2,7 +2,7 @@
 layout: default
 codename: Luis
 title: Introduction to LUIS
-tags: ai luis nlp
+tags: ai nlp
 authors: Dócs Zoltán
 ---
 
