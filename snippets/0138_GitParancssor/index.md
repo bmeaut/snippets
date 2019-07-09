@@ -182,6 +182,6 @@ A kdiff3 beállítása mergetoolnak (ebben a példában Windows alatt):
   * [Git dokumentáció](http://git-scm.com/docs/)
   * A legtöbb git parancs a --help opció hatására megmutatja a saját dokumentációját. (Pl. ``git status --help``)
   * Googlelel rákeresve a git parancsokra (pl. git init) általában első helyen az online dokumentációt kapjuk, ami igen részletes és hasznos.
-  * Számos "Git Cheat Sheet" található a weben, melyek tömören összefoglalják a legfontosabb parancsokat. [GitHub Training Cheat Sheet](https://training.github.com/kit/)
+  * Számos "Git Cheat Sheet" található a weben, melyek tömören összefoglalják a legfontosabb parancsokat. [GitHub Training Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
 
 <small>Szerzők, verziók: Csorba Kristóf</small>
