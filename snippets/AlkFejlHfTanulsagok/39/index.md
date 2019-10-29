@@ -1,9 +1,9 @@
 ---
 layout: default
-codename: groot
-title: groot
+codename: AlkFejlHf39
+title: Groot csapat tanulságai
 authors: Mihályi Gergely, Nemes Marcell, Nyáry Lõrinc
-tags: alkfejl groot
+tags: alkfejl afhf skipfromindex
 ---
 
 # Alkalmazásfejlesztés házi feladat tapasztalatok
