@@ -1,45 +1,45 @@
 ---
 layout: default
 codename: AlkFejlHf39
-title: Groot csapat tanulságai
-authors: Mihályi Gergely, Nemes Marcell, Nyáry Lõrinc
+title: Groot csapat tanulsÃ¡gai
+authors: MihÃ¡lyi Gergely, Nemes Marcell, NyÃ¡ry LÅ‘rinc
 tags: alkfejl afhf skipfromindex
 ---
 
-# Alkalmazásfejlesztés házi feladat tapasztalatok
+# AlkalmazÃ¡sfejlesztÃ©s hÃ¡zi feladat tapasztalatok
 
-## Fejlesztési Tapasztalatok
+## FejlesztÃ©si Tapasztalatok
 
-### Verziókezelésrõl
+### VerziÃ³kezelÃ©srÅ‘l
 
-A verziókezelés, és a távoli Git repository használata volt talán a legpozitívabb tapasztalat a feladat megoldása során. Használatával a közös munka gördülékeny tudott lenni, nem kellett kódokat mozgatni és ügyelni arra, hogy kinél van éppen a legfrissebb verzió. A beépített merge tool szintén nagyon hasznosnak bizonyult, amikor egyszerre egy kódrészen többen dolgoztunk. A konfliktusok túlnyomó részét autómatikusan kezelni tudta, és csak néhány kérdéses esetben kellett kézzel döntést hozni. A dokumentáció készítése során is nagy segitség volt a változtatások visszakövethetõsége. 
-A feladat megoldása során a GitKraken-t használtuk, ami jól átláthatóan, és azonnal jelzi a Qt Creator-ban megtett változtatásokat. Könnyû áttekintést ada a Git-fához, és felhasználóbarát felületet a commit üzenetek megírásához.
+A verziÃ³kezelÃ©s, Ã©s a tÃ¡voli Git repository hasznÃ¡lata volt talÃ¡n a legpozitÃ­vabb tapasztalat a feladat megoldÃ¡sa sorÃ¡n. HasznÃ¡latÃ¡val a kÃ¶zÃ¶s munka gÃ¶rdÃ¼lÃ©keny tudott lenni, nem kellett kÃ³dokat mozgatni Ã©s Ã¼gyelni arra, hogy kinÃ©l van Ã©ppen a legfrissebb verziÃ³. A beÃ©pÃ­tett merge tool szintÃ©n nagyon hasznosnak bizonyult, amikor egyszerre egy kÃ³drÃ©szen tÃ¶bben dolgoztunk. A konfliktusok tÃºlnyomÃ³ rÃ©szÃ©t autÃ³matikusan kezelni tudta, Ã©s csak nÃ©hÃ¡ny kÃ©rdÃ©ses esetben kellett kÃ©zzel dÃ¶ntÃ©st hozni. A dokumentÃ¡ciÃ³ kÃ©szÃ­tÃ©se sorÃ¡n is nagy segitsÃ©g volt a vÃ¡ltoztatÃ¡sok visszakÃ¶vethetÅ‘sÃ©ge. 
+A feladat megoldÃ¡sa sorÃ¡n a GitKraken-t hasznÃ¡ltuk, ami jÃ³l Ã¡tlÃ¡thatÃ³an, Ã©s azonnal jelzi a Qt Creator-ban megtett vÃ¡ltoztatÃ¡sokat. KÃ¶nnyÅ± Ã¡ttekintÃ©st ada a Git-fÃ¡hoz, Ã©s felhasznÃ¡lÃ³barÃ¡t felÃ¼letet a commit Ã¼zenetek megÃ­rÃ¡sÃ¡hoz.
 
-### A tervezési megfontolások
+### A tervezÃ©si megfontolÃ¡sok
 
-Az alkalmazás elkészítése során ügyeltünk arra, hogy minden osztály jól meghatározható feladatot lásson el. Például egy különálló osztály felelõs a “modell” -ért, azaz a kezelt változók összefogásáért. Ez az osztály nem foglalkozik kommunikációval, vagy megjelenítéssel, ezekre külön kommunikációs, közvetítõ és a QML között kapcsolatot tartó osztályok vannak. Ez a megközelítés könnyû átláthatóságot, és bõvítést tesz lehetõvé, hiszen ha lecserélnénk például a kommunikációt egy másik protokolra, akkor az üzleti logikát ez teljesen változatlanul hagyná, nem kéne azzal foglalkoznunk, ez mire lehet még hatással a különbözõ kódokban. Ugyanígy a megjelenítést attól teljesen függetlenül tudjuk kezelni, hogy éppen a megjelenített adat, hogy jön létre és hogy kerül továbbításra.
+Az alkalmazÃ¡s elkÃ©szÃ­tÃ©se sorÃ¡n Ã¼gyeltÃ¼nk arra, hogy minden osztÃ¡ly jÃ³l meghatÃ¡rozhatÃ³ feladatot lÃ¡sson el. PÃ©ldÃ¡ul egy kÃ¼lÃ¶nÃ¡llÃ³ osztÃ¡ly felelÅ‘s a Â“modellÂ” -Ã©rt, azaz a kezelt vÃ¡ltozÃ³k Ã¶sszefogÃ¡sÃ¡Ã©rt. Ez az osztÃ¡ly nem foglalkozik kommunikÃ¡ciÃ³val, vagy megjelenÃ­tÃ©ssel, ezekre kÃ¼lÃ¶n kommunikÃ¡ciÃ³s, kÃ¶zvetÃ­tÅ‘ Ã©s a QML kÃ¶zÃ¶tt kapcsolatot tartÃ³ osztÃ¡lyok vannak. Ez a megkÃ¶zelÃ­tÃ©s kÃ¶nnyÅ± Ã¡tlÃ¡thatÃ³sÃ¡got, Ã©s bÅ‘vÃ­tÃ©st tesz lehetÅ‘vÃ©, hiszen ha lecserÃ©lnÃ©nk pÃ©ldÃ¡ul a kommunikÃ¡ciÃ³t egy mÃ¡sik protokolra, akkor az Ã¼zleti logikÃ¡t ez teljesen vÃ¡ltozatlanul hagynÃ¡, nem kÃ©ne azzal foglalkoznunk, ez mire lehet mÃ©g hatÃ¡ssal a kÃ¼lÃ¶nbÃ¶zÅ‘ kÃ³dokban. UgyanÃ­gy a megjelenÃ­tÃ©st attÃ³l teljesen fÃ¼ggetlenÃ¼l tudjuk kezelni, hogy Ã©ppen a megjelenÃ­tett adat, hogy jÃ¶n lÃ©tre Ã©s hogy kerÃ¼l tovÃ¡bbÃ­tÃ¡sra.
 
-### Megjelenítés és UI
+### MegjelenÃ­tÃ©s Ã©s UI
 
-Mindenkinek tanácsolni tudjuk a QML készítésénél, hogy importálják a legfrissebb QtQuick objektumokat, mert ezek drasztikusan befolyásolják a vezérlõ elemek alapértelmezett kinézetét, és esztétikusabb, modernebb külsõt adnak az alkalmazásnak. Szintén fontos tapasztalat volt, hogy bár nem lebecsülve a csapat esztétikai érzékét, az internet számos elõre elkészített design-t tartalmaz, melyeket érdemes megfontolni, így az összkép kellemesebb lesz.
+Mindenkinek tanÃ¡csolni tudjuk a QML kÃ©szÃ­tÃ©sÃ©nÃ©l, hogy importÃ¡ljÃ¡k a legfrissebb QtQuick objektumokat, mert ezek drasztikusan befolyÃ¡soljÃ¡k a vezÃ©rlÅ‘ elemek alapÃ©rtelmezett kinÃ©zetÃ©t, Ã©s esztÃ©tikusabb, modernebb kÃ¼lsÅ‘t adnak az alkalmazÃ¡snak. SzintÃ©n fontos tapasztalat volt, hogy bÃ¡r nem lebecsÃ¼lve a csapat esztÃ©tikai Ã©rzÃ©kÃ©t, az internet szÃ¡mos elÅ‘re elkÃ©szÃ­tett design-t tartalmaz, melyeket Ã©rdemes megfontolni, Ã­gy az Ã¶sszkÃ©p kellemesebb lesz.
 
-![UI](images/ui.JPG "Felhasználói felület")
+![UI](images/ui.JPG "FelhasznÃ¡lÃ³i felÃ¼let")
 
 ### Qt signals and slots
 
-A fenti mechanizmussal a házi feladat keretei között találkoztunk elõször, és meglepõen gördülékenyen és könnyen használható megoldás a program részei közti asszinkron kommunikációra. Egy következõ C++ projekt készítésénél, biztosan alkalmazni fogjuk az itt megtanult patterneket, hogy átláthatóbb és hatékonyabb kódot tudjunk írni.
+A fenti mechanizmussal a hÃ¡zi feladat keretei kÃ¶zÃ¶tt talÃ¡lkoztunk elÅ‘szÃ¶r, Ã©s meglepÅ‘en gÃ¶rdÃ¼lÃ©kenyen Ã©s kÃ¶nnyen hasznÃ¡lhatÃ³ megoldÃ¡s a program rÃ©szei kÃ¶zti asszinkron kommunikÃ¡ciÃ³ra. Egy kÃ¶vetkezÅ‘ C++ projekt kÃ©szÃ­tÃ©sÃ©nÃ©l, biztosan alkalmazni fogjuk az itt megtanult patterneket, hogy Ã¡tlÃ¡thatÃ³bb Ã©s hatÃ©konyabb kÃ³dot tudjunk Ã­rni.
 
-## Tesztek és dokumentáció
-### Felhasználói tesztek
+## Tesztek Ã©s dokumentÃ¡ciÃ³
+### FelhasznÃ¡lÃ³i tesztek
 
-Mint ahogy a legtöbb GUI készítésénél, most is hasznosnak bizonyult a végsõ teszteket egy “laikussal” elvégeztetni. Bár erre a csapat több tagja is alkalmasnak érezte magát, egy nem szakértõ családtag bevonása rávilágított, hogy a készítõ tudja hova kell kattintatni, így sok hibát nem vesz észre. Tipikusan ilyen volt a gombok engedélyezésének szabályozása.
+Mint ahogy a legtÃ¶bb GUI kÃ©szÃ­tÃ©sÃ©nÃ©l, most is hasznosnak bizonyult a vÃ©gsÅ‘ teszteket egy Â“laikussalÂ” elvÃ©geztetni. BÃ¡r erre a csapat tÃ¶bb tagja is alkalmasnak Ã©rezte magÃ¡t, egy nem szakÃ©rtÅ‘ csalÃ¡dtag bevonÃ¡sa rÃ¡vilÃ¡gÃ­tott, hogy a kÃ©szÃ­tÅ‘ tudja hova kell kattintatni, Ã­gy sok hibÃ¡t nem vesz Ã©szre. Tipikusan ilyen volt a gombok engedÃ©lyezÃ©sÃ©nek szabÃ¡lyozÃ¡sa.
 
-### Dokumentáció készítés
+### DokumentÃ¡ciÃ³ kÃ©szÃ­tÃ©s
 
-Számos félrevezetõ információt találni interneten arról, hogy mi a célszerû módja a dokumentáció elkészítésének. Különösen igaz ez, ha a különbözõ diagrammok készítését nézzük. Végül ezekhez a Visual Paradigm programot használtuk, és a kommentezett kód felhasználásával tudtunk szintén sok energiát spórolni a Doxygen miatt. Tanulság a jövõre nézve, hogy érdemes azonnal kommentezni, ahogy egy új sor kód megszületik, így a leírt információ részletesebb, és utólag sokkal kellemetlenebb munka a kódot visszafejteni.
+SzÃ¡mos fÃ©lrevezetÅ‘ informÃ¡ciÃ³t talÃ¡lni interneten arrÃ³l, hogy mi a cÃ©lszerÅ± mÃ³dja a dokumentÃ¡ciÃ³ elkÃ©szÃ­tÃ©sÃ©nek. KÃ¼lÃ¶nÃ¶sen igaz ez, ha a kÃ¼lÃ¶nbÃ¶zÅ‘ diagrammok kÃ©szÃ­tÃ©sÃ©t nÃ©zzÃ¼k. VÃ©gÃ¼l ezekhez a Visual Paradigm programot hasznÃ¡ltuk, Ã©s a kommentezett kÃ³d felhasznÃ¡lÃ¡sÃ¡val tudtunk szintÃ©n sok energiÃ¡t spÃ³rolni a Doxygen miatt. TanulsÃ¡g a jÃ¶vÅ‘re nÃ©zve, hogy Ã©rdemes azonnal kommentezni, ahogy egy Ãºj sor kÃ³d megszÃ¼letik, Ã­gy a leÃ­rt informÃ¡ciÃ³ rÃ©szletesebb, Ã©s utÃ³lag sokkal kellemetlenebb munka a kÃ³dot visszafejteni.
 
-## Összefoglalás
+## Ã–sszefoglalÃ¡s
 
-Összességében az házi feladat elkészítése sok új és hasznos tudást adott, ami az egyetemi keretekbõl kilépve is megõrzi értékét és hasznosságát. Ez egyrészt igaz a felhasznált technológiára, valamint azokra a fejlesztési eszközökre, melyek használatát a projekt során elsajátítottuk.
+Ã–sszessÃ©gÃ©ben az hÃ¡zi feladat elkÃ©szÃ­tÃ©se sok Ãºj Ã©s hasznos tudÃ¡st adott, ami az egyetemi keretekbÅ‘l kilÃ©pve is megÅ‘rzi Ã©rtÃ©kÃ©t Ã©s hasznossÃ¡gÃ¡t. Ez egyrÃ©szt igaz a felhasznÃ¡lt technolÃ³giÃ¡ra, valamint azokra a fejlesztÃ©si eszkÃ¶zÃ¶kre, melyek hasznÃ¡latÃ¡t a projekt sorÃ¡n elsajÃ¡tÃ­tottuk.
 
-<small>Szerzõk: Mihályi Gergely, Nemes Marcell, Nyáry Lõrinc</small>
+<small>SzerzÅ‘k: MihÃ¡lyi Gergely, Nemes Marcell, NyÃ¡ry LÅ‘rinc</small>
