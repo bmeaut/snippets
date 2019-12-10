@@ -2,7 +2,7 @@
 layout: default
 codename: QtQmlJavascriptImage
 title: Qt Qml image insert to canvas
-tags: snippets
+tags: snippets qt qml
 authors: Kemenes Ákos
 ---
 
