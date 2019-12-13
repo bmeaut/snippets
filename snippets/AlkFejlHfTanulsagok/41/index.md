@@ -3,7 +3,7 @@
 layout: default
 codename: AlkFejlHF
 title: AFHF csapat tanulságok
-tags: snippets
+tags: alkfejl afhf skipfromindex
 authors: Kerekes Ákos, Gaják Tibor
 ---
 
