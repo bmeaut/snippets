@@ -7,15 +7,15 @@ Csapattagok:
 
 ## Git megfelelő használata 
 
-A git használatát, aki még nem ismeri, érdemes a legelején elsajátítani és használni a szoftvertfejlesztés mindennapjaiban használt koncepciókat.  
+A git használatát, aki még nem ismeri, érdemes a legelején elsajátítani és használni a szoftverfejlesztés mindennapjaiban használt koncepciókat.  
 
 Amit egyáltalán ne csináljunk, hogy mindenki ugyanazon a branch-en fejleszt. Sok fejfájástól menthet meg minket, hiszen a folyamatos pull és push-olás ugyanarra a branch-re több mint valószínű, hogy conflictokat fog okozni és ezt itt sokkal nehezebb kijavítani, mint egy másik branch-en. Így célszerű minden csapattagnak létrehoznia egy-egy saját branchet, ahol fejleszti a saját dolgait, majd **PullRequest** formájában merge-elni a **master branch**-re. 
 
-Ezen felül érdemes még az elején letölteni egy olyan **alkalmazást**, ahol egyszerű a **verziókezelni** (és merge-elni!). (GitHub Desktop, és VSCode nem annyira alkalmas a merge-re, de az alapműveletekre igen, merge-re én például IntelliJ-t használtam, mivel abban vagyok járatos a mindennapokban) 
+Ezen felül érdemes még az elején letölteni egy olyan **alkalmazást**, ahol egyszerű **verziókezelni** (és merge-elni!). (GitHub Desktop, és VSCode nem annyira alkalmas a merge-re, de az alapműveletekre igen, merge-re én például IntelliJ-t használtam, mivel abban vagyok járatos a mindennapokban) 
 
 ## QVector 
 
-Ez egy kis apróság..  Amikor TCP socket-en küldtük át, először úgy próbáltuk, hogy elküldtük először a vector méretét és utána a vectort, socketből kiolvasva pedig ugyanez. Ekkor mindenféle memóriaszemetet találtunk.. Mint kiderült a QVector alapból úgy megy át a socketen, hogy elküldi előre a méretét, így nekünk ezt már nem kellett pluszban megtenni. 
+Ez egy kis apróság..  Amikor TCP socket-en küldtük át, úgy próbáltuk, hogy először elküldtük a vector méretét és utána a vectort, socketből kiolvasva pedig ugyanez. Ekkor mindenféle memóriaszemetet találtunk.. Mint kiderült a QVector alapból úgy megy át a socketen, hogy elküldi előre a méretét, így nekünk ezt már nem kellett pluszban megtenni. 
 
 ## TeamViewer használata
 
