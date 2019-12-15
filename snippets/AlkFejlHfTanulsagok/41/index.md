@@ -22,7 +22,7 @@ A Qt Creator-ban történő fejlesztés során néhányszor előfordult, hogy a 
 ### 4.Debug üzenetek
 Sok esetben hasznos lehet a debug konzolra való üzenet kiírás. C-ben általában a printf függvényt használjuk erre a célra, de Qt környezetben a `qDebug() <<  "Hello world!";` parancs használható debug üzenetek kiírására. A QML oldalon is lehetőség van ilyen üzenetek megjelenítésére, ehhez az adott javascript függvényben a `console.log()` függvényt kell meghívni egy sztring paraméterrel.
 
-###5. Online dokumentáció
+### 5. Online dokumentáció
 A Qt QML nagyon jól van dokumentálva és sok példa található hozzá. Érdemes lehet az egyes dolgokra rákeresni, mielőtt túlbonyolítanánk valamit, mert valószínűleg van hozzá megfelelő QML type, aminek részletesen le van írva a használata. Ezek mellett érdemes átnézni az alkalmazás fejlesztéshez tartozó korábbi házi snippeteket.
 
 ### 6.QML import
