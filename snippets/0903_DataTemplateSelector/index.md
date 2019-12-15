@@ -7,11 +7,16 @@ authors: Faragó Timea
 ---
 
 # DataTemplateSelector használata ListView elemekhez
+
 Gyakran adódhat olyan, hogy egy heterogén kollekció elemeit kell megjelenítenünk egy listában és a lista egyes elemeinek máshogy kinézniük, más tulajdonságokat kell megjeleníteni a konkrét típusoktól függetlenül. Ehhez nézzünk most egy szemléltető példát.
+
 ## Lista
+
 Az elemeket egy ListView-ban tároljuk. Ez nem ritkaság XAML technológiás alkalmazásoknál.
 Először részletezzük egy kicsit a példát és a hozzá tartozó "mesét".
+
 ### Model osztályok
+
 Egy madarakat nyilvántartó rendszerünk van. A madarakról egységesen nyilvántartjuk az alábbi tulajdonságokat:
 * név (Name),
 * kor (Age),
@@ -40,7 +45,9 @@ Etetés és megijesztés hatására a madarunk fajtól függően változik valah
     }
 ```
 Közös interface a madarak leírására az IBird. Mivel a különböző fajtájú madarak máshogy reagálnak az etetésre és megijesztésre, ezért más az implementációjuk, külön osztályokba kerülnek. Lesz egy Bagoly, Owl és egy Galamb, Dove osztályunk most, amelyek megvalósítják az IBird interface-t.
+
 ### Mintaadatok
+
 Az egyszerűség kedvéért most a mintaadatokat a code-behind fájlba vesszük fel, nem használunk MVVM mintát, nem annak az ismertetése a cél. Ne felejtsük el beállítani a DataContext-et, property-ként egy ObservabeCollection-t használni a listához és ezt inicializálni!
 ```csharp
     public partial class MainWindow : Window
@@ -69,12 +76,16 @@ Az egyszerűség kedvéért most a mintaadatokat a code-behind fájlba vesszük 
     }
 ```
 *Megjegyzés: a jelenlegi példa WPF technológiát használ, UWP technológiánál ez egy Page objektumra fog vonatkozni, nem egy Window-ra. DataTemplete bemutatása szempontjából ez nem befolyásol semmit.*
+
 ### ListView
+
 Adjunk hozzá a megjelenő MainWindow-hoz (WPF)/MainPage-hez(UWP) egy ListView-t és csináljuk meg hozzá az adatkötést!
 ```xml
 <ListView ItemsSource="{Binding Birds}" Grid.Row="0"/>
 ```
+
 ## DataTemplate
+
 Ahhoz, hogy típus alapján tudjunk megjelenítést módosítani először definiáljuk a használandó template-eket, sablonokat XAML kódban.
 *Megjegyzés: WPF esetén ``<Window.Resources>``, UWP esetén ``<Page.Resources>`` használandó!*
 ```xml
@@ -106,7 +117,9 @@ Ahhoz, hogy típus alapján tudjunk megjelenítést módosítani először defin
     </Window.Resources>
 ```
 Ez mit is csinál? Lesz egy OwlDataTemplate, egy DoveDataTemplate és egy DefaultDataTemplate DataTemplate-ünk, amelyek stílusozásban egy kicsit eltérnek egymástól (pl. háttérszín).
+
 ## DataTemplateSelector
+
 A program nem fogja magától kitalálni, hogy Owl típus esetén az OwlDataTemplate-et használja. Ehhez meg kell írnunk egy saját DataTemplateSelector-t.
 ```csharp
     public class BirdDataTemplateSelector : DataTemplateSelector
@@ -130,9 +143,13 @@ A program nem fogja magától kitalálni, hogy Owl típus esetén az OwlDataTemp
     }
 ```
 Ügyeljünk arra, hogy a switch-case default ága is ott legyen!
+
 ## ... és az egész összecsatolása
+
 Az elkészült részeket "legózzuk" össze.
+
 ### App.xaml
+
 Először is az App.xaml-ben kell felvennünk erőforrásként a DataTemplateSelector-t.
 ```xml
     <Application.Resources>
@@ -140,13 +157,19 @@ Először is az App.xaml-ben kell felvennünk erőforrásként a DataTemplateSel
     </Application.Resources>
 ```
 Ezzel az alkalmazáson belül hivatkozhatóvá, használhatóvá tettük a DataTemplateSelector-t.
+
 ### ListView módosítása
+
 Már megvan az ItemsSource, most jön az ItemTemplateSelector.
 ```xml
 <ListView ItemsSource="{Binding Birds}" Grid.Row="0" ItemTemplateSelector="{StaticResource BirdDataTemplateSelector}"/>
 ```
 Ezzel készen is vagyunk.
+
 ## Későbbi módosítás
+
 Ha szeretnénk más típusú madarakat is nyilvántartani, akkor azoknak is lesz egy alapértelmezett megjelenése, ennek szemléltetésére vegyünk fel egy új madár fajt és adjunk hozzá egy ilyet a listánkhoz, majd nézzük meg az eredményt!
+
 ## További információk
+
 A DataTemplateSelector hivatalos dokumentációja [itt](https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.datatemplateselector?view=netcore-3.0).

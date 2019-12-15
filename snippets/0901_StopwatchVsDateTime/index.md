@@ -7,16 +7,25 @@ authors: Faragó Timea
 ---
 
 # Stopwatch és DateTime használata időmérésre
+
 Hasznos tud lenni ha már valamilyen meglévő kódot tesztelgetünk, elemezgetünk például  gyorsaság szempontból. Vannak helyzetek, amikor a helyes működés nem elegendő és szeretnénk megtudni, hogy mi lassít az alkalmazásunkon és szükségünk van egy pontos időmérésre alkalmas eszközre. Most két ilyen lehetőségről lesz só, melyek közül az egyik...
+
 ## DateTime.Now
+
 Ez egy C# property, ami éppen az aktuális dátumot adja vissza jó pontossággal. Egy mérendő művelet kezdete előttre írunk egy ``var start = DateTime.Now;``változót a programba, majd a mérendő rész után egy ``var stop = DateTime.Now;`` változót és megnézzük, hogy mennyi idő telt el a kettő között.
 Szerencsére a különbséget egy egyszerű kivonással meg tudjuk oldani a két DateTime típusú változó között és az eredményt TimeSpan típusú értékként kapjuk meg, amely képes az eredményt milliszekundum pontossággal kiírni.
+
 ## Stopwatch
+
 A másik lehetőség a Stopwatch használata. Létrehozunk egy új ``Stopwatch stopwatch = new Stopwatch();`` változót, elindítjuk a ``stopwatch.Start();`` hívással, majd megállítjuk a ``stopwatch.Stop();``-al. Az eltelt időt milliszekundumban megkaphatjuk a ``stopwatch.ElapsedMilliseconds`` property segítségével.
+
 ## Pontosság
+
 Noha mindkét lehetőség tud időtmérni a pontosságuk nem ugyanolyan jó. Nézzünk egy rövid ideig tartó műveletet, ezt szemléltesse most a ``await Task.Delay(100);`` hívás, ami hatására a végrehajtásunk várakozik 100 milliszekundumot.
 Egy kis statisztika miatt futtassuk le ezt a műveletet és nézzük meg milyen értékeket mér a DateTime és a Stopwatch! Nézzük meg, hogy átlagosan mennyi ideig tartottak a műveletek lemérve!
+
 ### Próbáljuk ki!
+
 ```csharp
 static async Task Main(string[] args)
         {
@@ -129,9 +138,9 @@ Stopwatch waited:       15
 Average value with Stopwatch:    14,9
 Done
 ```
-Ahogy láthatjuk, minnél rövidebb ideig tart egy művelet a DateTime annál pontatlanabb esz a Stopwatch-hoz képest. Tanulság: használjunk időmérésre Stopwatch-ot!
+Ahogy láthatjuk, minnél rövidebb ideig tart egy művelet a DateTime annál pontatlanabb lesz a Stopwatch-hoz képest. Tanulság: használjunk időmérésre Stopwatch-ot!
+
 ## További információk az osztályokról
 
 Hivatalos dokumentáció Stopwatch-ról [itt](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?view=netcore-3.0).
 Hivatalos dokumentáció DateTime-ről [itt](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netcore-3.0).
-

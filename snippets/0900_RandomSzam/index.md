@@ -9,6 +9,7 @@ authors: Faragó Timea
 # Random szám generálás
 
 Esetenként jól jöhet a kódunkban, ha nem mindig determinisztikusan ugyanazzal a számmal, értékkel dolgozunk, hanem viszünk egy kis véletlenszerűséget a számolásokban. Gondoljunk például egy játékra, ahol van n% esélyünk arra, hogy a fényesen csillogó ládikából valamilyen nagyon epik új felszerelést kapunk, de ez persze csak n% esély és nem biztos, nem is kizárt.
+
 ## Ténylegesen random
 
 De mégis hogyan lehet C# kódban random számot generáltatni?
@@ -16,12 +17,15 @@ De mégis hogyan lehet C# kódban random számot generáltatni?
  * Ebből hogyan kapunk véletlenszerű számot? ``rnd.Next();`` függvényhívással.
  * Vannak helyzetek, amikor meg szeretnénk adni, hogy maximum mekkora legyen az a random érték. Gondoljunk bele, érdemes lenne azt az előbb említett n%-ot valahol 100% alatt tartani (legjobb esetben is). Ehhez a ``rnd.Next(max);`` verzióját használhatjuk a randomnak.
  * Van tovább is. Megadhatjuk, hogy mely két érték közötti számot szeretnénk kapni: ``rnd.Next(min,max);``
+
 ## ... vagy kevésbé random
+
 Előfordulhatnak olyan esetek, amikor viszont szeretnénk, hogy ugyanazokat a random számokat kapjuk több random számot generáló változótól is. Vagy a program többszöri futására ugyanazokat a véletlen értékeket kapjuk, mert reprodukálni szeretnénk valamilyen viselkedést.
 * Továbbra is szükség lesz egy ``Random rnd;`` változóra.
 * Viszont most ennek adunk egy úgynevezett "seed" értéket, ami alapján számokat fog generálni: ``rnd = new Random(seed);``
 
 ### Próbáljuk ki!
+
 Futtassuk az alábbi kódot egymás után többször! A 2. sorban mindig ugyanaz a szám lesz.
 ```csharp
         static void Main(string[] args)
@@ -36,6 +40,7 @@ Futtassuk az alábbi kódot egymás után többször! A 2. sorban mindig ugyanaz
 ```
 
 ## Tesztelés?
+
 Tesztelés fontos. De ha az alábbi módrészlettel próbálnánk tesztelni a random szám generálását kevés esélyünk van sikeres tesztet kapni.
 ```csharp
             Random r = new Random();
@@ -56,4 +61,3 @@ Ha valamilyen algoritmus implementálásban random számmal dolgozunk akkor érd
 ## További információk a C# Random osztályáról
 
 Hivatalos dokumentáció [itt](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netcore-3.0).
-
