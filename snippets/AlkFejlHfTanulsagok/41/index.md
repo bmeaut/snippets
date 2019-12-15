@@ -16,19 +16,19 @@ A csapat tagjai közül ketten a RobonAut versenyben is részt vesznek, így a k
 ### 2. Clean build
 A Qt Creator-ban történő fejlesztés során néhányszor előfordult, hogy a Build gombra történő kattintás után nem érzékelte a változtatásokat. (Ez főleg a QML fájlokat érintő változásoknál fordult elő.) Ilyenkor hasznos lehet az egész projektet clean-elni, majd ezután újrafordítani.  
 
-### 3.Szóköz és ékezet az elérési útban
+### 3. Szóköz és ékezet az elérési útban
 Érdemes arra figyelni, hogy a projekt elérési útvonala ne tartalmazzon ékezeteket és/vagy szóközt, mivel rejtélyes hibák fordulhatnak így elő.
 
-### 4.Debug üzenetek
+### 4. Debug üzenetek
 Sok esetben hasznos lehet a debug konzolra való üzenet kiírás. C-ben általában a printf függvényt használjuk erre a célra, de Qt környezetben a `qDebug() <<  "Hello world!";` parancs használható debug üzenetek kiírására. A QML oldalon is lehetőség van ilyen üzenetek megjelenítésére, ehhez az adott javascript függvényben a `console.log()` függvényt kell meghívni egy sztring paraméterrel.
 
-###5. Online dokumentáció
+### 5. Online dokumentáció
 A Qt QML nagyon jól van dokumentálva és sok példa található hozzá. Érdemes lehet az egyes dolgokra rákeresni, mielőtt túlbonyolítanánk valamit, mert valószínűleg van hozzá megfelelő QML type, aminek részletesen le van írva a használata. Ezek mellett érdemes átnézni az alkalmazás fejlesztéshez tartozó korábbi házi snippeteket.
 
-### 6.QML import
+### 6. QML import
 Bár sok QML Type található online dokumentációkban, arra is figyelni kell, hogy az azokat tartalmazó könyvtár importálva van-e a QML kódunkba, illetve, hogy tudjuk-e egyáltalán importálni, azaz telepítve van-e a számítógépünkre. A fordító nem minden esetben dob erre hibát, csak egyszerűen nem jelenik meg a QML felület a program indításakor.
 
-### 7.Qt debug kitek
+### 7. Qt debug kitek
 Debug módban előfordult, hogy egy-egy breakpoint-nál nem állt meg a program futása ott, ahol biztosan meg kellett volna, viszont egy másik Kit-et használva igen. Ezért érdemes debugolás esetén ezt is figyelembe venni, akár még a kódban történő hibakeresés előtt.
 
 ### 8. QML Repeater
