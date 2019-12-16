@@ -1,3 +1,13 @@
+
+---
+layout: default     
+codename: AlkFejlHf42   
+title: RuntimeTerrors csapat tanulságai     
+authors: Csókási Marcell, Fekete Marcell, Majer Imre    
+tags: alkfejl afhf skipfromindex
+---
+
+
 # RuntimeTerrors csapat által levont tanulságok
 
 Csapattagok:
