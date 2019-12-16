@@ -2,7 +2,7 @@
 layout: default
 codename:
 title: kutyafulemacskafarka tanulságai
-tags: alkamazasFejlesztes
+tags: alkfejl afhf skipfromindex
 authors: Béres András, Szerencsi László, Virágh Anna
 ---
 
