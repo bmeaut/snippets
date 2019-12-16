@@ -1,6 +1,6 @@
 ---
 layout: default
-codename: AlkFejlHf42
+codename: AlkFejlHf44
 title: Korso a Qtra csapat tanulságai
 authors: Koi Bence, Marosi Dániel
 tags: alkfejl afhf skipfromindex
