@@ -1,8 +1,8 @@
 ---
 layout: default
-codename: 
+codename: AlkFejlHf42
 title: Team-Dwayne csapat tanulságai
-tags: snippets
+tags: alkfejl afhf skipfromindex
 authors: Détári András, Derzsi András
 ---
 
