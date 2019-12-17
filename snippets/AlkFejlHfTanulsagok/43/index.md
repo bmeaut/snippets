@@ -1,3 +1,11 @@
+---
+layout: default
+codename: AlkFejlHF43
+title: Byte Me csapat tanulságok
+tags: alkfejl afhf skipfromindex
+authors: Papp Zsófia, Varga Dávid, Vajda Levente
+---
+
 #Tanulságok
 A félév elejét azzal kezdtük, hogy egy excel táblába felírtuk, hogy milyen részfeladatokat kell megoldani. Ezeket felosztottuk egymás között, viszont a követelményeket nem tisztáztuk megfelelően, ebből később problémák lettek, mert a leadás előtt derültek ki, hogy bizonyos funkciók nem úgy lettek leimplementálva, ahogy azt kellett volna. 
 
