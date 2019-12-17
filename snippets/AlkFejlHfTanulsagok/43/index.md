@@ -6,7 +6,7 @@ tags: alkfejl afhf skipfromindex
 authors: Papp Zsófia, Varga Dávid, Vajda Levente
 ---
 
-#Tanulságok
+# Tanulságok
 A félév elejét azzal kezdtük, hogy egy excel táblába felírtuk, hogy milyen részfeladatokat kell megoldani. Ezeket felosztottuk egymás között, viszont a követelményeket nem tisztáztuk megfelelően, ebből később problémák lettek, mert a leadás előtt derültek ki, hogy bizonyos funkciók nem úgy lettek leimplementálva, ahogy azt kellett volna. 
 
 Az is sokat segített volna, hogy ha milestone-okat tűzünk ki, hogy a félév során folyamatosan haladjon a fejlesztés. A félév végére eléggé besűrűsödött a házifeladatok leadása és jobb lett volna nem a végére hagyni. 
