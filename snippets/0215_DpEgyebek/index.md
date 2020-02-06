@@ -2,11 +2,11 @@
 layout: default
 codename: DpEgyebek
 title: Egyéb tervezési minták
-tags: designpatterns alkfejl
+tags: designpatterns alkfejl skipfromindex
 authors: Csorba Kristóf
 ---
 
-# Más struktúrális minták
+# Más struktúrális minták (FÉLKÉSZ)
 
 ## Bridge (MED)
 
