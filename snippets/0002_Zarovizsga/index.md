@@ -10,7 +10,55 @@ authors: Csorba Kristóf
 
 FIGYELEM! Ez a snippet az Alkalmazásfejlesztés tantárgyra vonatkozik (VIAUMA09)! Ne keverjétek össze például az Alkalmazásfejlesztési környezetekkel (VIAUAC04)!
 
-A záróvizsgán a tananyag az Alkalmazásfejlesztés tárgy anyagát fedi le, a konkrét kérdések azonban a záróvizsga koncepciójának megfelelően sokkal inkább koncepciókra és témakörökre fókuszálnak és nem alacsony szintű részletekre. A záróvizsgán a kiinduló kérdések az alábbiak lehetnek:
+Mivel a tematika 2020. őszén megváltozott (C++ és Qt helyett C# és .NET UWP), ezért mindenki az általa hallgatótt anyagból záróvizsgázik, a nektek megfelelő részt vegyétek figyelembe!
+
+A záróvizsgán a tananyag az Alkalmazásfejlesztés tárgy anyagát fedi le, a konkrét kérdések azonban a záróvizsga koncepciójának megfelelően sokkal inkább koncepciókra és témakörökre fókuszálnak és nem alacsony szintű részletekre. A záróvizsgán a kiinduló kérdések például az alábbiak lehetnek:
+
+# Tematika 2020. ősztől (C# és .NET UWP)
+
+  * C#
+    * Delegate típusok és események
+    * IEnumerable és Linq
+    * Sorosítás, XML és JSON
+    * Kommunikáció, HttpClient
+    * Entity Framework
+    * Tesztelés: unit tesztek, Test Driven Development, mockolás és Moq package
+  * UWP témakör
+    * A xaml nyelv: szintaxis alapok, mire jó. Layout managerek, statikus erőforrások, adatkötés (x:Bind) beállításai, kapcsolat a .xaml és a .xaml.cs fájlok között.
+    * Rajzolás, a Shape osztály
+    * MVVM architektúra elemei, hol van adatkötés, INotifyPropertyChanged esemény jelentősége
+  * Tervezés
+    * Dependency injection
+    * SOLID elvek és jelentésük
+    * Létrehozási tervezési minták
+      * Factory és abstract factory
+      * Singleton
+    * Parancsvégrehajtási minták
+      * Command, CommandProcessor
+      * Memento
+    * További tervezési minták a tananyagból
+      * Observer
+      * Adapter
+      * Facade
+      * Composite
+      * Proxy
+      * Builder
+      * State
+
+Minden témakörben, de különösen a tervezéssel kapcsolatos kérdések esetében előfordulhat olyan kérdés, hogy a diplomatervben szerepel-e valamilyen tervezési minta vagy hogyan érvényesülnek a SOLID elvek. Ha nem szerepelnek benne, akkor hogyan lehetne őket felhasználni, alkalmazni.
+
+Néhány konkrétabb példa kérdés:
+
+  * Egy pályatervező algoritmus strategy patternként kerül bele egy programba. Hogyan lehet átadni a pályatervezést használó objektumoknak a pályatervezőt (stratégiát) úgy, hogy az a tesztelést is jól támogassa? (dependency injection)
+  * Singleton: hogyan lehet implementálni, többszálú programok esetén mire kell figyelni, milyen nehézséget okozhat egy singleton teszteléskor? (Teszteléskor nehéz lecserélni, nem lehet csak úgy egy másik objektumot átadni a tesztelendő kódnak, ha a függőség egy singleton.)
+  * A xaml adatkötés és az INotifyPropertyChanged melyik tervezési mintának felel meg? Hogyan működik és mire kell figyelni az adatkötött propertyk setterjében?
+  * Entity Framework használata esetén nem kell SQL lekérdezéseket írni a forráskódba, az adatbázist nem táblák soraiként érjük el. Hogyan működik ehelyett?
+  * Mi a feladata UWP alatt egy layout managernek? Mondjon pár példát Layout Managerre.
+  * Mire jó a Dependency Injection? Hogyan szokás átadni a függősegeket egy osztálynak?
+  * Mi a kapcsolat a .xaml és .xaml.cs fájlok között? Melyik tartalma melyik osztályba kerül?
+  * Unit tesztek készítésekor mikor van szükség egy osztály mockolására?
+
+# Tematika 2019. őszi félévvel bezárólag (C++ és Qt)
 
   * Verziókövetés témakör
     * Elosztott és centralizált verziókövetés különbségei (előnyök, hátrányok), a repositoryk szinkronizálása (push, pull, fetch) Git alatt.
