@@ -30,6 +30,7 @@ A záróvizsgán a tananyag az Alkalmazásfejlesztés tárgy anyagát fedi le, a
   * Tervezés
     * Dependency injection
     * SOLID elvek és jelentésük
+    * Test Driven Development
     * Létrehozási tervezési minták
       * Factory és abstract factory
       * Singleton
@@ -41,6 +42,7 @@ A záróvizsgán a tananyag az Alkalmazásfejlesztés tárgy anyagát fedi le, a
       * Adapter
       * Facade
       * Composite
+      * Prototype
       * Proxy
       * Builder
       * State
@@ -57,6 +59,9 @@ Néhány konkrétabb példa kérdés:
   * Mire jó a Dependency Injection? Hogyan szokás átadni a függősegeket egy osztálynak?
   * Mi a kapcsolat a .xaml és .xaml.cs fájlok között? Melyik tartalma melyik osztályba kerül?
   * Unit tesztek készítésekor mikor van szükség egy osztály mockolására?
+  * A dependency injection mit jelent? Mivel könnyíti a tesztelhetőséget? Miért nem jó, ha a függőségeket a konstruktor példányosítja? Mi a különbség, ha konstruktor paraméterként vagy propertynek adjuk át a függőséget? Mit jelent a mockolás?
+  * Mire ad megoldást az Observer minta? Hogyan tudunk változást detektálni, ha nem használjuk? Milyen szereplői vannak? UWP XAML környezetben hogyan jelenik meg? Mire jó az INotifyPropertyChanged interfész és hogyan működik az x:Bind?
+  * Mutassa be a Builder mintát a StringBuilder klasszikus megoldáson keresztül. Miért választjuk le ezeket a funkciókat a string osztályról? Miben tér el a Builder, a Factory és a Prototype minta?
 
 # Tematika 2019. őszi félévvel bezárólag (C++ és Qt)
 
