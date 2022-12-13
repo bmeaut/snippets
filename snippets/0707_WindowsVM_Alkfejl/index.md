@@ -1,3 +1,11 @@
+---
+layout: default
+codename: WinVMQemu
+title: Windows VM készítése Qemu környezetben
+tags: alkfejl
+authors: Koloszár Gergely
+---
+
 # Windows VM készítése Qemu környezetben
 
 Az Alkalmazásfejlesztés tárgy keretein belül elkerülhetetlenül szükség van
