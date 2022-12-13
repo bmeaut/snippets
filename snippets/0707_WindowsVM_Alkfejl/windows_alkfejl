@@ -1,0 +1,110 @@
+#!/bin/bash
+
+# system config
+RAM=12G
+CORES=4
+DEFAULT_IMG_SIZE="128G"
+
+ARG_GOOD=0
+bold=$(tput bold)
+normal=$(tput sgr0)
+SCRIPT_PATH=$(pwd)
+
+# help text
+if [ -z $1 ] || [ $1 = "--help" ] || [ $1 = "-h" ]; then
+        printf "This script helps you create and manage a Windows 10 virtual machine. Arguments:
+
+  ${bold}-h, --help:
+      ${normal}Displays help text.
+
+  ${bold}-c, --create <size>: 
+      ${normal}Creates an image with given size. If size is undefined, 
+      a default value of 128 GB will be used. (The created image is smaller than given size, 
+      that represents only the maximum allowed size.)
+
+      Windows should take around 40G space, Visual Studio is another 20-25G, 
+      so it is recommended to have these values as or above recommended value.
+
+  ${bold}-i, --install <image.ISO>:
+      ${normal}Runs virtual machine and starts Windows installer. 
+      The second argument specifies the Windows installer ISO file. This can be obtained from Microsofts webiste.
+
+  ${bold}-l, --launch: 
+      ${normal}Starts the VM in normal mode.
+
+(You can run these commands manually if you wish of course)
+
+${bold}To run this script you must have qemu installed on your system, install it with your package manager.
+"
+
+ARG_GOOD=1
+fi
+
+# image creation
+if [ $1 ] && ([ $1 = "--create" ] || [ $1 = "-c" ]); then
+        SIZE=$2
+        if [ -z $SIZE ]; then
+                printf "No size was given, default value is being used!\n"
+                SIZE=$DEFAULT_IMG_SIZE
+        fi
+        
+        printf "Creating $SIZE image for windows...\n"
+        qemu-img create \
+                -f qcow2 \
+                windows-10-alkfejl.img \
+                $SIZE 
+        printf "Done!\n"
+
+        ARG_GOOD=1
+fi
+
+# default install
+if [ $1 ] && ([ $1 = "--install" ] || [ $1 = "-i" ]); then
+        mkdir shared
+        ISOPATH=$2
+        if [ -z $ISOPATH ]; then
+                printf "Please specify the Windows installer iso file\n"
+        else
+                printf "Launching windows installer, this might take a while...\n"
+                qemu-system-x86_64 \
+                        -cdrom $ISOPATH \
+                        -boot order=d \
+                        -m $RAM \
+                        -enable-kvm \
+                        -smp $CORES \
+                        -net nic \
+                        -net user \
+                        -hda windows-10-alkfejl.img 
+        fi
+        ARG_GOOD=1
+fi
+
+# start windows VM
+if [ $1 ] && ([ $1 = "--launch" ] || [ $1 = "-l" ]); then
+        printf "Launching windows machine\n"
+        qemu-system-x86_64 \
+                -boot menu=on \
+                -m $RAM \
+                -enable-kvm \
+                -smp $CORES \
+                -net nic \
+                -net user \
+                -vga qxl \
+                -device virtio-serial-pci\
+                -spice port=5900,addr=127.0.0.1,disable-ticketing=on \
+                -hda windows-10-alkfejl.img \
+                -display spice-app
+        # -vga virtio \ 
+#        printf "Machine is running, detached from current shell"
+#        ps
+                #-net user,smb=$SCRIPT_PATH/shared \
+                #-net nic,model=virtio \
+ 
+        ARG_GOOD=1
+fi
+
+# error message
+if [ $ARG_GOOD -eq 0 ]; then
+        printf "Ismeretlen parancs! A segítségért használd a --help vagy -h parancsot!\n"
+fi
+
