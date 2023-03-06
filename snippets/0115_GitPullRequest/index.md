@@ -54,7 +54,7 @@ Itt érdemes megjegyezni, hogy ha egy desktop git klienst használunk és a saj�
 
 # Klasszikus git munkafolyamat: repository klónozása és a helyi repositoryba dolgozás
 
-A klasszikus megközelítés szerint a github repositoryt klónozzuk (másokatot hozunk létre a saját gépünkre), abba dolgozunk és végül "pusholjuk" a változásokat (fájl módosítások, új branchek) a szerverre.
+A klasszikus megközelítés szerint a github repositoryt klónozzuk (másolatot hozunk létre a saját gépünkre), abba dolgozunk és végül "pusholjuk" a változásokat (fájl módosítások, új branchek) a szerverre.
 
 Ehhez a saját gépünkön vagy parancssorból használjuk a git-et, vagy egy kliensen keresztül, mint a GitExtensions (van egy csomó ilyen és valójában mindegyik csak helyettünk adja ki a parancssori git parancsokat, így sokszor szinte csak a designban térnek el.)
 
@@ -63,6 +63,7 @@ Az első lépés a klónozás, amihez a github felé authentikálni is kell magu
 ## Github personal access token generálása
 
 A github.com oldalra belépve a beállításaink között a bal oldali menü alján található egy Developer Settings:
+
 ![](image/20_GithubSettings.png)
 
 Azon belül pedig most a "Personal Access Tokens - Tokens (classic)" rész kell nekünk. Itt vannak az eddig generált tokenjeink. A "Generate new token"-re kattintva generálhatunk egy újat, például minden labor elején, mert a labor gépeken jobb nem elmenteni a korábbiakat. Ha saját gépet használunk, ahhoz nem kell mindig újat létrehozni.
@@ -71,10 +72,12 @@ Azon belül pedig most a "Personal Access Tokens - Tokens (classic)" rész kell 
 Új token generálása:
 ![](image/22_GenerateToken.png)
 
-Az új tokennek kell adni egy nevet, amiről tudjuk azonosítani, ha több van. Egy lejárati idő, valamint hogy milyen jogokat biztosít. Nekünk most a "repo" jog kell majd. Ezután a lista alján lévő nyomógombbal tudjuk legeneráltatni a tokent.
+Az új tokennek kell adni egy nevet, amiről tudjuk azonosítani, ha több van. Meg kell adni egy lejárati időt, valamint hogy milyen jogokat biztosítson. Nekünk most a "repo" jog kell majd. Ezután a lista alján lévő nyomógombbal tudjuk legeneráltatni a tokent.
+
 ![](image/23_NewTokenSettings.png)
 
-A kész tokent itt kimásolhatjuk a vágólapra. A github is figyelmeztet, hogy ez többször nem fog megjelenni nekünk, vagyis most másoljuk ki oda, ahova kell.
+A kész tokent itt kimásolhatjuk a vágólapra. Tegyük is meg, mert ahogy a github is figyelmeztet, többet ez nem fog megjelenni.
+
 ![](image/24_TokenReady.png)
 
 Ha kész a token, ezt használhatjuk az alkalmazásokban jelszónak. Vagyis ha egy bármilyen git kliens felhasználó nevet és jelszót kér, a felhasználói név a githubos usernevünk, a jelszó pedig ez a token!
@@ -89,11 +92,11 @@ A klónozáshoz kelleni fog a repository elérési útja, amit a github oldalon 
 
 ![](image/25_RepoHttpsUrl.png)
 
-A GitExtensions alkalmazás kezdő képernyőjén vagy a program "Start" menüpontján belül "Clone repository"-t választva ha az URL a vágólapon van, már csak a célkönyvtárat kell megadni (innen nyílik majd a repository nevével megegyező nevű alkönyvtár):
+A GitExtensions alkalmazás kezdő képernyőjén vagy a program "Start" menüpontján belül "Clone repository"-t választva meg kell adni a repository URL-t és a célkönyvtárat (innen nyílik majd a repository nevével megegyező nevű alkönyvtár):
 
 ![](image/26_Clone.png)
 
-A klónozás utána  repositoryban elvégezhetjük a labor feladatokat. Mivel más snippetekben ( [Got példafejlesztés](http://bmeaut.github.io/snippets/snippets/0103_GitPeldafejlesztes/) ) ez részletesen le van írva, itt most csak a labor szempontjából legfontosabb pontokat emelem ki.
+A klónozás után a repositoryban elvégezhetjük a labor feladatokat. Mivel más snippetekben ( [Git példafejlesztés](http://bmeaut.github.io/snippets/snippets/0103_GitPeldafejlesztes/) ) ez részletesen le van írva, itt most csak a labor szempontjából legfontosabb pontokat emelem ki.
 
 Első lépésként fontos, hogy létrehozzunk egy új branchet, a master ágon állva jobb gombbal az aktuális commitra kattintva és a "Create new branch here" menüpontot választva:
 
