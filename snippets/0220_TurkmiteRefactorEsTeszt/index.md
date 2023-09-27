@@ -8,13 +8,13 @@ authors: Csorba Kristóf
 
 # Turkmite esettanulmány: refactor és tesztek írása
 
-Több helyről nőtt az igény, hogy mutassak egy kerek egész példát arra, hogy egy már elkészült kis programot hogyan lehet szépíteni, majd tesztekkel körülvenni. Az erre kiválasztott példa egy régi kedvencem, a turkmesz vagy turkmite, ami a turing gép és a termesz összetételéből áll. Matematikailag egy sejt automata, ami egy "végtelen" képen szaladgál és minden pixelen valami egyszerű szabály szerint átszínezheti azt és irányt vált. A legegyszerűbb eset fekete-fehér és ha fekete mezőn áll, fehérre festi és jobbra fordul, ha pedig fehéren áll, akkor feketére festi és balra fordul, majd meg egy pixelnyit előre. Ha elég sokáig futtatjuk, az alábbi kép jön ki:
+Több helyről nőtt az igény, hogy mutassak egy kerek egész példát arra, hogy egy már elkészült kis programot hogyan lehet szépíteni, majd tesztekkel körülvenni. Az erre kiválasztott példa egy régi kedvencem, a turkmesz vagy turkmite, ami a Turing-gép és a termesz összetételéből áll. Matematikailag egy sejt automata, ami egy "végtelen" képen szaladgál és minden pixelen valami egyszerű szabály szerint átszínezheti azt és irányt vált. A legegyszerűbb eset fekete-fehér és ha fekete mezőn áll, fehérre festi és jobbra fordul, ha pedig fehéren áll, akkor feketére festi és balra fordul, majd meg egy pixelnyit előre. Ha elég sokáig futtatjuk, az alábbi kép jön ki:
 
 ![Turkmite kimenet](images/OriginalTurkmiteOutput.png "Turkmite kimenet")
 
 Érdekessége, hogy a kezdeti össze-vissza kolbászolás után a balra lefelé haladó, periodikus mintát kezdi el építeni és folytatja a végtelenségig.
 
-A leíráshoz kapcsolódó program C# nyelven íródott és elérhető [egy github repositoryban](https://github.com/csorbakristof/turkmite). A leírás egyes lépései commitonként haladnak majd végig a repositoryban lévő forráskódon, így minden állapotot ki tudsz próbálni, meg tudsz nézni részletesen is.
+A leíráshoz kapcsolódó program C# nyelven íródott és elérhető [egy github repository-ban](https://github.com/csorbakristof/turkmite). A leírás egyes lépései commitonként haladnak majd végig a repository-ban lévő forráskódon, így minden állapotot ki tudsz próbálni, meg tudsz nézni részletesen is.
 
 ## Commit: "Initial working version"
 
@@ -230,7 +230,7 @@ Na így már jobb egy kicsit. A színek kikerültek konstansokba osztály szintr
 
 (Itt megjegyzem, hogy a ``Math.Min(Image.Cols, x)`` nem helyes, mert a szélességgel megegyező x koordinátát is megenged, ami már eggyel több a kelleténél, de ezt ekkor még nem vettem észre. Legalább majd a tesztírásnál látszik, hogy ott milyen szépen kijönnek a hibák.)
 
-És most mi legyen a következő lépés? Hmmm... ez a Step metódus kicsit nagy és egynél több dolgot végez el (a turkmite szabályai szerint lép, majd ellenőrzi a pozíció határokat és ilyesmi). Single Responsibility Principle, kérem szépen, nem ártana az általános ellenőrzéseket és léptetést leválasztani a turkmite specifikus részről. És egyébként is a ``Step()`` túl általános szó, ha feldaraboljuk, lesz benne pár új metúdus név, amik majd jobban elmondják, mi is történik akkor, amikor ``Step()`` van...
+És most mi legyen a következő lépés? Hmmm... ez a Step metódus kicsit nagy és egynél több dolgot végez el (a turkmite szabályai szerint lép, majd ellenőrzi a pozíció határokat és ilyesmi). Single Responsibility Principle, kérem szépen, nem ártana az általános ellenőrzéseket és léptetést leválasztani a turkmite specifikus részről. És egyébként is a ``Step()`` túl általános szó, ha feldaraboljuk, lesz benne pár új metódusnév, amik majd jobban elmondják, mi is történik akkor, amikor ``Step()`` van...
 
 ## Commit: "Explode Step into private methods"
 
@@ -268,13 +268,13 @@ private Vec3b GetNextColorAndUpdateDirection(Vec3b currentColor)
 
 Tadaaa! Mostantól van egy ``GetNextColorAndUpdateDirection``, ami leírja a turkmite viselkedését (majd egyszer ebből biztosan absztrakt metódus lesz egy ősosztályban), valamint egy ``PerformMove()``, ami meg figyel a korlátok betartására.
 
-Itt most egy elég rövid kis szépítés jön... a ``delta`` kikerülhetne osztály szinte, hogy csak egyszer hozzuk létre (és persze akkor már legyen readonly), meg a két szín konstant ``black`` és ``white`` is legyen private, az ``indexer`` deklarációja meg lehetne a hozzá tartozó kép mellett, ha már összetartoznak. Ezek vannak az "Extracted delta, reordered attributes" commitban, ami tényleg annyira apróság, hogy most nem másolom ide.
+Itt most egy elég rövid kis szépítés jön... a ``delta`` kikerülhetne osztályszintre, hogy csak egyszer hozzuk létre (és persze akkor már legyen readonly), meg a két szín konstant ``black`` és ``white`` is legyen private, az ``indexer`` deklarációja meg lehetne a hozzá tartozó kép mellett, ha már összetartoznak. Ezek vannak az "Extracted delta, reordered attributes" commitban, ami tényleg annyira apróság, hogy most nem másolom ide.
 
 Helyette most akkor ideje belecsapni a lecsóba és végre behozni egy kis absztrakciót, ha már azt mondogatjuk, hogy OOP meg ilyenek: ideje kiszervezni a turkmite-független funkciókat egy ősosztályba.
 
 ## Commit: "Extracted TurkmiteBase"
 
-Végre van egy ősosztályunk, benne egy absztrakt ``GetNextColorAndUpdateDirection`` metódussal, amit majd szépen minden konkrét turkmite felüldefiniál, mint ahogy most az ``OriginalTurkmite`` is teszi. A pozíció inicializálás, léptetés és a kép határainak figyelembe vétele közös lesz. Innentől kezdve egy turkmit többnyire a mozgási szabályát leíró metódust, valamint valószínűleg a kedvenc színkonstansait tartalmazza majd.
+Végre van egy ősosztályunk, benne egy absztrakt ``GetNextColorAndUpdateDirection`` metódussal, amit majd szépen minden konkrét turkmite felüldefiniál, mint ahogy most az ``OriginalTurkmite`` is teszi. A pozíció inicializálás, léptetés és a kép határainak figyelembe vétele közös lesz. Innentől kezdve egy turkmite többnyire a mozgási szabályát leíró metódust, valamint valószínűleg a kedvenc színkonstansait tartalmazza majd.
 
 ```cs
 class Program
@@ -419,7 +419,7 @@ abstract class TurkmiteBase
 }
 ```
 
-Kicsit haboztam, hogy az absztrakt ``GetNextColorAndUpdateDirection`` deklarációjában ilyen hosszú nevet adjak-e a két visszatérési értéknek, mert elég hosszú lett, de végül ezt választottam, mert erre távolabbi helyekről, leszármazott osztályokból is fogunk hivatkozni, vagyis a scopeja nagy. Akkor pedig jobb, ha kifejező a neve, mert ha csak c és d lett volna, akkor innen messze már nem derül ki, hogy mit jelent. Márpedig ha nem derül ki, akkor el kell jönnie a fejlesztőnek ide a deklarációhoz, beleolvasni... na pont ezt kellene elkerülni a beszédes forráskóddal.
+Kicsit haboztam, hogy az absztrakt ``GetNextColorAndUpdateDirection`` deklarációjában ilyen hosszú nevet adjak-e a két visszatérési értéknek, mert elég hosszú lett, de végül ezt választottam, mert erre távolabbi helyekről, leszármazott osztályokból is fogunk hivatkozni, vagyis a scope-ja nagy. Akkor pedig jobb, ha kifejező a neve, mert ha csak c és d lett volna, akkor innen messze már nem derül ki, hogy mit jelent. Márpedig ha nem derül ki, akkor el kell jönnie a fejlesztőnek ide a deklarációhoz, beleolvasni... na pont ezt kellene elkerülni a beszédes forráskóddal.
 
 Mi legyen a következő lépés? Nos úgy érzem, ez az implementáció már elég szép és OO ahhoz, hogy létrehozzunk egy másik turkmitet is... mondjuk valami három színűt!
 
@@ -477,7 +477,7 @@ abstract class TurkmiteBase
 
 és ezt mindenki szépen felülírja, amire szeretné. A főprogram ciklusa pedig lekérdezi és ennyiszer hívja meg a ``Step()``-et. Ezt is egy külön commitba raktam ("Moved PreferredIterationCount into implementations."), de ide nem másolom be.
 
-Most, hogy ilyen szépen összeállt két turkmite implementáció, ideje áttérni arra, amivel TDD (Test Driven Development) esetén kezdeni kellett volna, de most útólag készül el: a unit tesztekre. Tesztelni kellene az ősosztály és a leszármazottak funkcióit is, hogy később ha valaki valamit refactorál, átír, kiegészít, akkor egy mozdulattal le tudja ellenőrizni, hogy még minden szépen működik-e.
+Most, hogy ilyen szépen összeállt két turkmite implementáció, ideje áttérni arra, amivel TDD (Test Driven Development) esetén kezdeni kellett volna, de most utólag készül el: a unit tesztekre. Tesztelni kellene az ősosztály és a leszármazottak funkcióit is, hogy később ha valaki valamit refactorál, átír, kiegészít, akkor egy mozdulattal le tudja ellenőrizni, hogy még minden szépen működik-e.
 
 ## Commit: "Exploded into separate files, added first (trivial) unit test."
 
@@ -633,7 +633,7 @@ Ez a teszt valemennyit már tesztel a ``PerformMove`` metódusból, de azért me
 
 ## Commit: Extend direction test and extract assert method.
 
-Bővítünk egy kicsit a tesztünkön, viszont mivel elég sok mindent kell ellenőrizni, érdemes egy ``AssertTurkmiteState`` segédmetódust is bevezetni. Fontos, hogy a tesztjeink esetében is ugyanúgy figyeljünk a kód áttekinthetőségére, újrahasznosíthatóságára, mint a production kódban! Egy hosszabb ideig tartó projektben a tesztek nagyon fontosak lesznek később! Ott sem szabad megjelennie a kód rothadás jeleinek!
+Bővítünk egy kicsit a tesztünkön, viszont mivel elég sok mindent kell ellenőrizni, érdemes egy ``AssertTurkmiteState`` segédmetódust is bevezetni. Fontos, hogy a tesztjeink esetében is ugyanúgy figyeljünk a kód áttekinthetőségére, újrahasznosíthatóságára, mint a production kódban! Egy hosszabb ideig tartó projektben a tesztek nagyon fontosak lesznek később! Ott sem szabad megjelennie a kódrothadás jeleinek!
 
 ```cs
 [TestMethod]
@@ -820,6 +820,6 @@ public class OriginalTurkmiteTests
 
 ## Befejezés
 
-A fentiek fényében szerintem már mindenki le tudná tesztelni a 3 színű turkmitot is, ezt már nem részletezem. Remélem, tanulságos volt ez a kis fejlesztés, refaktorálás és tesztírás. Igyekeztem összefoglalni a mögöttes gondolatmeneteket is, ami közben a fejemben járt.
+A fentiek fényében szerintem már mindenki le tudná tesztelni a 3 színű turkmite-ot is, ezt már nem részletezem. Remélem, tanulságos volt ez a kis fejlesztés, refaktorálás és tesztírás. Igyekeztem összefoglalni a mögöttes gondolatmeneteket is, ami közben a fejemben járt.
 
 Írjatok teszteket, mert a teszt lefedettség és a fejlesztéskori stresszfaktor szorzata állandó, fordítottan arányosak! :) Ha pedig úgy érzitek, hogy már túl sok mock osztályt, wrappert és hasonlót kellett leírni, akkor el lehet gondolkozni, hogy egy mocking keretrendszert akartok-e használni. Egy ekkora feladatnál szerintem még felesleges, de ez megint csak ízlés kérdése.
