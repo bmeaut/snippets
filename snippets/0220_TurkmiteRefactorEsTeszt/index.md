@@ -14,7 +14,7 @@ Több helyről nőtt az igény, hogy mutassak egy kerek egész példát arra, ho
 
 Érdekessége, hogy a kezdeti össze-vissza kolbászolás után a balra lefelé haladó, periodikus mintát kezdi el építeni és folytatja a végtelenségig.
 
-A leíráshoz kapcsolódó program C# nyelven íródott és elérhető [egy github repository-ban](https://github.com/csorbakristof/turkmite). A leírás egyes lépései commitonként haladnak majd végig a repository-ban lévő forráskódon, így minden állapotot ki tudsz próbálni, meg tudsz nézni részletesen is.
+A leíráshoz kapcsolódó program C# nyelven íródott és elérhető [egy github repositoryban](https://github.com/csorbakristof/turkmite). A leírás egyes lépései commitonként haladnak majd végig a repositoryban lévő forráskódon, így minden állapotot ki tudsz próbálni, meg tudsz nézni részletesen is.
 
 ## Commit: "Initial working version"
 
