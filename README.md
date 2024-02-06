@@ -10,7 +10,9 @@ To test the webpage locally, you can serve the page using docker. On Windows, yo
 1. Run the following command in case of Windows (PowerShell), Linux or MacOS:
 
 ```bash
-docker run --rm  -v ${PWD}:/srv/jekyll -p 4000:4000 jekyll/jekyll jekyll serve
+docker run --rm  -v ${PWD}:/srv/jekyll -p 4000:4000 jekyll/jekyll jekyll serve --force_polling --livereload
 ```
 
 1. Open the [http://localhost:4000/snippets/](http://localhost:4000/snippets/) link in a browser.
+
+1. After every modification, you can see the result in the browser.
