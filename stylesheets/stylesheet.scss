@@ -11,6 +11,7 @@ $ColorLightEmph: #990000;
 $ColorCodeForeground: #440000;
 $ColorCodeBackground: #FFFFFF;
 $ColorLink: #0000FF;
+$ColorBlockquote: #573923;
 
 * {
   box-sizing: border-box; }
@@ -190,8 +191,8 @@ a {
 .main-content blockquote {
   padding: 0 1rem;
   margin-left: 0;
-  color: $ColorCodeBackground;
-  border-left: 0.3rem solid $ColorCodeBackground; }
+  color: $ColorBlockquote; 
+  border-left: 0.3rem solid $ColorBlockquote; }
   .main-content blockquote > :first-child {
     margin-top: 0; }
   .main-content blockquote > :last-child {
