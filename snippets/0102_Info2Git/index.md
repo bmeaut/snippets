@@ -116,6 +116,9 @@ Annak érdekében, hogy a repository-n dolgozni tudjuk, szükségünk van egy lo
 
 Klónozás után a kiindulási kódunk a master branchen található, ahol még semmilyen nyoma nincs a labor megoldásnak. A beadás során a laborvezető mindig a te munkádara lesz kíváncsi, ezért a beadott megoldást mindig a kiindulási alappal fogja összehasonlítani és a változásokat értékelni. Ennek érdekében a kiindulási alapot meg kell tartanunk abban az állapotban, amiben van, vagyis a **master** branchre ne kommitolj soha! Helyette létrehozunk egy új ágat (branch) és azon fogunk dolgozni, majd pedig a pull requestet adunk be, ami pontosan ezt a két ágat fogja összehasonlítani.
 
+> **Figyelem**:
+> Abban az esetben ha ezt a branchet már korábban létrehoztad és csak folytatni szeretnéd a megkezdett munkád, akkor hagyd ki ezt a lépést és ugorj a [Váltás meglévő branchre](#váltás-meglévő-branchre) lépésre. 
+
 1. Hozzunk létre egy új branchet.
     - Válasszuk a `Commands` > `Create branch...` menüpontot.
     - Adjunk meg egy nevet az új branchnek. Bármilyen neved adhatunk, de az egységesség kedvéért legyen `megoldas`.
@@ -155,6 +158,29 @@ Klónozás után a kiindulási kódunk a master branchen található, ahol még 
 
     git commit -m <kommit üzenet> # stagelt változtatások kommitolása
     ```
+
+## Váltás meglévő branchre
+
+Előfordulhat olyan eset, hogy a laboron laborgépen dolgoztál, de nem sikerült befejezni a munkát, ezért otthon folytatni szeretnéd. Ebben az esetben nem kell újra létrehozni a `megoldas` branchet, hanem a meglévőt tudod folytatni. Ahhoz, hogy folytatni tudd, először ki kell választanod a megfelelő branchet.
+
+1. Nyisd le a branch választó legördülő menüt és menj a `Checkout branch` opcióra.
+
+    ![](images/git-ext-checkout.png)
+
+2. Menj a `Remote branch`-re, válaszd az `origin/megoldas` branchet, majd `Checkout` és `OK`.
+
+    ![](images/git-ext-checkout-remote.png)
+
+**Parancssorban**
+
+```bash
+git checkout <branch> 
+
+# például ebben az esetben:
+
+git checkout megoldas
+```
+
 
 ## Megoldások elkészítése
 
@@ -312,6 +338,11 @@ Ha a feladatok értékelésével vagy az eredménnyel kapcsolatban kérdésed va
 - Ha a forráskód szinten maradt le valami, esetleg valamit utólag javítassz, akkor ha a pull request ágára (a fenti példában a “labor” ágra) kommitolsz a pull request létrehozása után, a módosítás automatikusan bekerül a pull requestbe is. Igaz, a laborvezetőd látni fogja az időbeli különbséget, így a határidő utáni módosítást is észre fogja venni, de a határidő előtt nyugodtan utólag is “hozzá lehet még csapni” pár módosítást, ahhoz nem is kell új pull requestet létrehozni.
 
 - És ami még egy kavarodási forrás: mi van akkor, ha elfelejtettél új branchet létrehozni és a masterre kommitoltad a megoldást? Általános szabály, hogy a pull request két ág különbsége. Vagyis ilyen esetben létre hozhatsz egy új branchet a labor megoldása előtti kommitra (ahova eredetileg a masternek kellett volna mutatnia), és a pull requestben akkor megfordulnak a szerepek: a master lesz a megoldást tartalmazó és ez az új ág a “base”, vagyis a kiindulási alap. Gondolj arra, hogy a kommitok gráfja a lényeg és az ágak csak egy-egy kommitra mutatnak. Új ágakkal bármikor bárhova mutathatsz, bármelyiket bárhova áthelyezheted (reset művelet). Kommitot elveszíteni igencsak nehéz, az ágakat meg át lehet helyezni, így elég nagy kavarodásokat is viszonylag könnyen rendbe lehet rakni. Ami fontos, hogy mindig a kommit gráfot nézd és abban gondolkodj! 
+
+- Előfordulhat olyan is, hogy a masterre kommitoltál és nem tudsz pusholni. Ez azért van, mert egyes beállításoktól függően lehet, hogy a master védett, és nem enged közvetlenül pusholni. Ez egy jó indikátor arra, hogy valamit elrontottál. Ilyenkor több lehetőséged is van.
+   - Létrehozol egy új branchet az utolsó commithoz és azt az új branchet pusholod. Ilyenkor a masteren lévő extra kommitok nem zavarnak be, mivel az csak a saját gépeden léteznek. Ha zavar akkor akár egy git resettel ezeket törölheted is (de csak óvatosan, mivel ezzel a művelettel akár commitokat örökre elveszíthetsz!).
+   - Másik lehetőség, ha nem tudsz új branchet létrehozni (mivel például már adott egy másik amin dolgoznod kéne), akkor egyszerűen állj át arra a branchre amin dolgoznod kéne, majd pedig az egyes commitokat másold át a cherry-pick funkcióval (Jobb klikk a commitra, majd `Cherry-pick this commit` majd `OK`).
+
 
 - Ha megakadsz, kérj segítséget bizalommal!
 
