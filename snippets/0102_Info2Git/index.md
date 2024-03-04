@@ -272,7 +272,7 @@ Miután feltöltöttünk mindent, még nem vagyunk készen. Még be kell adni a 
     >   ![](images/github-pr-draft.png)
     > - Ha elégedett vagy a végeredménnyel, és szeretnéd ismét lefuttatni az ellenőrzőt, állítsd a pull request állapotát vissza.
     >   ![](images/github-pr-ready.png)
-    > - **Maximum 5 alkalommal** futtathatod a kiértékelést, utána nem fogadjuk el a beadott megoldást. Az értékelések számát a **Checks** felirat mellől lehet legkönnyebben leolvasni.
+    > - **Maximum 5 alkalommal** futtathatod a kiértékelést, utána nem fogadjuk el a beadott megoldást. Az értékelések számát az **Actions** fülön lehet legkönnyebben leolvasni. Itt azok a futtatások számítanak, amik ténylegesen lefutottak és a státuszuk nem `Skipped`.
     >   ![](images/github-pr-checks.png)
 
 
