@@ -10,9 +10,14 @@ authors: Csorba Kristóf
 
 Ide jön a snippet teljes szövege, GitHub Markdown formátumban.
 
-Ezek a snippetek egy konkrét MI esettanulmányról tartalmaznak egy leírást, ami később mások számára összefoglalja a tapasztalatokat és a tanulságokat. Egyetlen markdown fájl a hozzá kapcsolódó egyéb fájlokkal, amikre hivatkozik (képek, screenshotok, mellékelt forráskód vagy scriptek, esetleg ha például a konkrét használathoz tartozik egy Excel fájl is, azt is lehet mellékelni.)
+Ezek a snippetek egy konkrét MI esettanulmányról tartalmaznak egy leírást, ami később mások számára összefoglalja a tapasztalatokat és a tanulságokat. Egy teljes snippet az alábbiakból áll (ami releváns is a konkrét esetben):
 
-A dokumentum formájához használd ennek a sablonnak a második felében lévő mintát.
+- A snippet legfontosabb része az egyeteln weboldal (markdown fájl), mely ennek a sablonnak a második fele alapján készül és összefoglalja a feladatot és a tanulságokat.
+- Ha a snippet eredménye megosztható és futtatható/használható is (például egy hasznos kis Python script vagy Excel makró), akkor
+  - az index.md mellett lehetnek forrásfájlok, xlsx fájlok, képek és ami még a futtatáshoz kell (ne legyen túl nagy!). Ezekre a fájlokra hivatkozzon az index.md is.
+  - Ha a használati útmutató túl terjedelmes a snippethez, akkor külön markdown fájlba kerüljön és az index.md csak hivatkozzon rá.
+- Bármilyen egyéb melléklet, külön fáljként, hivatkozva. (Például ha a feladathoz egy spec.md fájlba írtad le a specifikációt az LLM számára, azt is mellékelheted.)
+- Bármilyen az index.md által tartalmazott screenshot, esetleg minta eredmények, mind belinkelve az index.md-ben.
 
 ## Új snippet létrehozása
 
