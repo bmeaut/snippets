@@ -1,3 +1,11 @@
+---
+layout: default
+codename: AlkFejlHf31B
+title: jeti123 csapat tanulságai
+tags: alkfejl afhf skipfromindex
+authors: ismeretlen
+---
+
 # A jeti123 csapat tanulságai az Alkalmazásfejlesztés házi feladattal kapcsolatban.
 
 ## .c .h fileok

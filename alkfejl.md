@@ -26,25 +26,4 @@ authors: Csorba Kristóf
     {%- endif -%}
     {%- endfor %}
   </table>
-
-
-
-
-{% for tag in allTagsArray %}
-  <h2 id="{{tag}}">{{tag}}</h2><br/>
-  <ul>
-  {% for page in site.pages -%}
-    {%- if page.tags contains tag and page.tags contains "alkfejl" -%}
-    {%- unless page.tags contains skippedTags -%}
-    <li>
-      <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a> <small>{{page.tags}} ({{page.authors}})</small>
-    </li>
-    {%- endunless -%}
-    {%- endif -%}
-  {%- endfor %}
-  </ul>
-{% endfor %}
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
 </div>

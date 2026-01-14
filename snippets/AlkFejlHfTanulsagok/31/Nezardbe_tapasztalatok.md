@@ -1,3 +1,11 @@
+---
+layout: default
+codename: AlkFejlHf31A
+title: Nezárdbe! csapat tanulságai
+tags: alkfejl afhf skipfromindex
+authors: ismeretlen
+---
+
 # Nezárdbe! csapat tapasztalatai
 
 Föbb probléma körök, azaz mire figyeljünk: 
