@@ -9,6 +9,17 @@ if errorlevel 1 (
   exit /b 1
 )
 
+REM Check Docker daemon is running
+echo Checking if Docker Desktop is running...
+docker info >nul 2>&1
+if errorlevel 1 (
+  echo ERROR: Docker Desktop is not running!
+  echo Please start Docker Desktop and wait for it to be ready, then try again.
+  pause
+  exit /b 1
+)
+echo Docker Desktop is running.
+
 REM Image names
 set OFFICIAL_IMAGE=jekyll/jekyll:pages
 set LOCAL_IMAGE=jekyll-local-pages:latest
