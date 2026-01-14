@@ -1,0 +1,43 @@
+name: Jekyll Build Check
+
+on:
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.1'
+        bundler-cache: true
+    
+    - name: Install dependencies
+      run: bundle install
+    
+    - name: Build Jekyll site
+      run: bundle exec jekyll build --verbose
+      env:
+        JEKYLL_ENV: production
+    
+    - name: Verify build output
+      run: |
+        if [ -d "_site" ]; then
+          echo "✓ Jekyll build successful - _site directory created"
+          ls -la _site
+        else
+          echo "✗ Jekyll build failed - _site directory not found"
+          exit 1
+        fi
+    
+    - name: HTML Proofer (optional validation)
+      run: |
+        gem install html-proofer
+        htmlproofer ./_site --disable-external --allow-hash-href --ignore-urls "/snippets/.*/" || echo "HTML validation warnings (non-blocking)"
+      continue-on-error: true
