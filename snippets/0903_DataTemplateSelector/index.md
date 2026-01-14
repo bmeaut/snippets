@@ -2,7 +2,7 @@
 layout: default
 codename: DataTemplateSelector
 title: DataTemplateSelector használata ListView elemekhez
-tags: xaml, snippet
+tags: xaml snippet
 authors: Faragó Timea
 ---
 

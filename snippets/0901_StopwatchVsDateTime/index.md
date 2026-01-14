@@ -2,7 +2,7 @@
 layout: default
 codename: StopwatchVsDateTime
 title: Stopwatch és DateTime használata időmérésre
-tags: time, snippet
+tags: time snippet
 authors: Faragó Timea
 ---
 

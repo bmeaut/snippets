@@ -2,7 +2,7 @@
 layout: default
 codename: SyncVsAsync
 title: Szinkron és aszinkron műveletvégzés összehasonlítása
-tags: threading, snippet
+tags: threading snippet
 authors: Faragó Timea
 ---
 
