@@ -36,10 +36,23 @@ jobs:
           exit 1
         fi
     
-    - name: Upload site artifact
+    - name: Upload site artifact (with baseurl for GitHub Pages)
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: jekyll-site
+        name: jekyll-site-github
+        path: _site/
+        retention-days: 7
+    
+    - name: Build Jekyll site for local viewing
+      run: bundle exec jekyll build --verbose --baseurl ""
+      env:
+        JEKYLL_ENV: production
+    
+    - name: Upload site artifact (local viewing without baseurl)
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: jekyll-site-local
         path: _site/
         retention-days: 7
