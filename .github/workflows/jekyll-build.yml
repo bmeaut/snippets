@@ -35,3 +35,11 @@ jobs:
           echo "✗ Jekyll build failed - _site directory not found"
           exit 1
         fi
+    
+    - name: Upload site artifact
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: jekyll-site
+        path: _site/
+        retention-days: 7
