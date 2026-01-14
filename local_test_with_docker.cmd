@@ -21,13 +21,13 @@ if %ERRORLEVEL%==0 (
   echo Found local image %LOCAL_IMAGE%; using it.
   set IMAGE_NAME=%LOCAL_IMAGE%
 ) else (
-  echo Local image %LOCAL_IMAGE% not found — building local image from Dockerfile (this may take a few minutes)...
+  echo Local image %LOCAL_IMAGE% not found — building local image from Dockerfile (this may take a few minutes)
   docker build --pull -t %LOCAL_IMAGE% -f Dockerfile .
   if %ERRORLEVEL%==0 (
     echo Built %LOCAL_IMAGE% successfully; using it.
     set IMAGE_NAME=%LOCAL_IMAGE%
   ) else (
-    echo Local build failed; attempting to pull official image %OFFICIAL_IMAGE%...
+    echo Local build failed; attempting to pull official image %OFFICIAL_IMAGE%
     docker pull %OFFICIAL_IMAGE%
     if %ERRORLEVEL%==0 (
       echo Pulled %OFFICIAL_IMAGE%; using official image.
@@ -41,7 +41,7 @@ if %ERRORLEVEL%==0 (
 )
 
 REM Start the container in a new window (attached so you can stop it there)
-echo Starting container (attached) in a new window...
+echo Starting container (attached) in a new window
 echo Note: first run may install gems and may take several minutes.
 start "Jekyll Docker" cmd /k docker run --rm -it -p 4000:4000 -v "%CD%:/srv/jekyll" %IMAGE_NAME% jekyll serve --watch --incremental --host 0.0.0.0
 
@@ -58,7 +58,7 @@ if %ERRORLEVEL%==0 (
 set /a ATTEMPT+=1
 if %ATTEMPT% GEQ %MAX_ATTEMPTS% (
   echo Timeout waiting for http://localhost:4000/snippets/
-  echo Opening browser anyway...
+  echo Opening browser anyway
   goto :ready
 )
 
