@@ -2,7 +2,7 @@ name: Jekyll Build Check
 
 on:
   pull_request:
-    branches: [ main, master ]
+    branches: [ gh-pages ]
 
 jobs:
   build:
@@ -35,9 +35,3 @@ jobs:
           echo "✗ Jekyll build failed - _site directory not found"
           exit 1
         fi
-    
-    - name: HTML Proofer (optional validation)
-      run: |
-        gem install html-proofer
-        htmlproofer ./_site --disable-external --allow-hash-href --ignore-urls "/snippets/.*/" || echo "HTML validation warnings (non-blocking)"
-      continue-on-error: true
