@@ -2,7 +2,7 @@
 layout: default
 codename: RandomSzam
 title: Random szám generálásról
-tags: random, snippet
+tags: random snippet
 authors: Faragó Timea
 ---
 
