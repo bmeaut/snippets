@@ -21,11 +21,33 @@ jobs:
     - name: Install dependencies
       run: bundle install
     
-    - name: Build Jekyll site
-      run: bundle exec jekyll build --verbose
+    - name: Build Jekyll site for local viewing
+      run: bundle exec jekyll build --verbose --baseurl ""
       env:
         JEKYLL_ENV: production
     
+    - name: Create local viewing instructions
+      run: |
+        cat > _site/README_LOCAL_VIEWING.txt << 'EOF'
+        To view this site locally:
+        
+        Option 1 - Python HTTP Server (recommended):
+          cd to this directory and run:
+          python -m http.server 8000
+          Then open: http://localhost:8000/
+        
+        Option 2 - Node.js HTTP Server:
+          npm install -g http-server
+          http-server -p 8000
+          Then open: http://localhost:8000/
+        
+        Option 3 - VS Code Live Server extension:
+          Open this folder in VS Code and use the Live Server extension
+        
+        Note: Due to absolute paths, you cannot simply open index.html in a browser.
+        You must use a local HTTP server.
+        EOF
+
     - name: Verify build output
       run: |
         if [ -d "_site" ]; then
@@ -35,3 +57,11 @@ jobs:
           echo "✗ Jekyll build failed - _site directory not found"
           exit 1
         fi
+
+    - name: Upload site artifact (local viewing without baseurl)
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: jekyll-site-local
+        path: _site/
+        retention-days: 7
