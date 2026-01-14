@@ -9,11 +9,11 @@ authors: Csorba Kristóf
 
 <div class="home">
   <h1 class="page-heading">Alkalmazásfejlesztés snippetek összefűzve</h1>
-  {% for page in site.pages %}
-    {% if page.tags contains "alkfejl" %}
+  {% for page in site.pages -%}
+    {%- if page.tags contains "alkfejl" -%}
     <div id="{{page.url}}" style="width: auto; height: auto">
       <script type="text/javascript"> document.getElementById("{{page.url}}").innerHTML='<object type="text/html" data="{{ page.url | prepend: site.baseurl }}/index.html" ></object>'; </script>
     </div>
-    {% endif %}
-  {% endfor %}
+    {%- endif -%}
+  {%- endfor %}
 </div>
