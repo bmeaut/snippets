@@ -14,28 +14,38 @@ set OFFICIAL_IMAGE=jekyll/jekyll:pages
 set LOCAL_IMAGE=jekyll-local-pages:latest
 set IMAGE_NAME=
 
-echo Trying to pull %OFFICIAL_IMAGE%...
-docker pull %OFFICIAL_IMAGE% >nul 2>&1
+REM Prefer a locally built image (includes build tools). If missing, build it first;
+REM if build fails, fall back to pulling the official image as a last resort.
+docker image inspect %LOCAL_IMAGE% >nul 2>&1
 if %ERRORLEVEL%==0 (
-  set IMAGE_NAME=%OFFICIAL_IMAGE%
-) else (
-  echo Pull failed — attempting to build local image from Dockerfile...
-  docker build -t %LOCAL_IMAGE% -f Dockerfile .
-  if %ERRORLEVEL% neq 0 (
-    echo Docker build failed. Aborting.
-    pause
-    exit /b 1
-  )
+  echo Found local image %LOCAL_IMAGE%; using it.
   set IMAGE_NAME=%LOCAL_IMAGE%
+) else (
+  echo Local image %LOCAL_IMAGE% not found — building local image from Dockerfile (this may take a few minutes)...
+  docker build --pull -t %LOCAL_IMAGE% -f Dockerfile .
+  if %ERRORLEVEL%==0 (
+    echo Built %LOCAL_IMAGE% successfully; using it.
+    set IMAGE_NAME=%LOCAL_IMAGE%
+  ) else (
+    echo Local build failed; attempting to pull official image %OFFICIAL_IMAGE%...
+    docker pull %OFFICIAL_IMAGE%
+    if %ERRORLEVEL%==0 (
+      echo Pulled %OFFICIAL_IMAGE%; using official image.
+      set IMAGE_NAME=%OFFICIAL_IMAGE%
+    ) else (
+      echo Both local build and pull failed. Aborting.
+      pause
+      exit /b 1
+    )
+  )
 )
 
-REM Start the container in a new window (interactive) so you can stop it there
+REM Start the container in a new window (attached so you can stop it there)
 echo Starting container (attached) in a new window...
 echo Note: first run may install gems and may take several minutes.
 start "Jekyll Docker" cmd /k docker run --rm -it -p 4000:4000 -v "%CD%:/srv/jekyll" %IMAGE_NAME% jekyll serve --watch --incremental --host 0.0.0.0
 
 REM Poll http://localhost:4000/snippets/ until the site responds (max 5 minutes), then open browser
-
 set MAX_ATTEMPTS=300
 set ATTEMPT=0
 

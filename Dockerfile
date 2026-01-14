@@ -13,6 +13,9 @@ RUN apk add --no-cache \
 	gcc \
 	g++
 
+# Ensure webrick is available for Jekyll runtime (required by some Jekyll versions)
+RUN gem install webrick
+
 WORKDIR /srv/jekyll
 
 ENV JEKYLL_ENV=development
