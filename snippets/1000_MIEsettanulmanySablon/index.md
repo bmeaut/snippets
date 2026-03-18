@@ -21,7 +21,7 @@ Ezek a snippetek egy konkrét MI esettanulmányról tartalmaznak egy leírást, 
 
 ## Új snippet létrehozása
 
-Mivel a snippeteknek egyedi sorszáma és kódneve van, a munka elkezdésekor egyeztetni kell a snippet gyűjtemény karbantartójával (jelenleg Csorba Kristóf). Küldd el neki a témakört egy mondatban és ha van javaslat a kódnévre, akkor azt. Ő ad neked egy sorszámot és egy kódnevet (előbbi az alkönyvtár nevébe, utóbbi az index.md elején a fejlécbe kerül). Ezzel hozz létre egy alkönyvtárat a többi snippet mellé (pl. ennek 1000_MIEsettanulmanySablon), másold oda ezt a sablont és egy külön branchen kezdj el dolgozni rajta.
+Mivel a snippeteknek egyedi sorszáma és kódneve van, a munka elkezdésekor egyeztetni kell a snippet gyűjtemény karbantartójával (jelenleg Csorba Kristóf). Küldd el neki a témakört egy mondatban és ha van javaslat a kódnévre, akkor azt. Ő ad neked egy sorszámot és egy kódnevet (előbbi az alkönyvtár nevébe, utóbbi az index.md elején a fejlécbe kerül). Ezzel hozz létre egy alkönyvtárat a többi snippet mellé (pl. ennek 1000_MIEsettanulmanySablon), másold oda ezt a sablont és egy külön branchen kezdj el dolgozni rajta. (Github pages esetén a tartalom nem a master, hanem a gh-pages branchen található!)
 
 Ha készen vagy, pull requestként adhatod be az eredményt, reviewerként rendeld hozzá Kristófot (csorbakristof) és a biztonság kedvéért írj neki emailt vagy Teams üzenetet.
 
