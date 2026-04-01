@@ -226,3 +226,4 @@ Why It Works: Provides context, specific action, and implementation guidance.
 ```
 
 A legfőbb dolog amiben még tudok fejlődni, az, ami a konkrét, promptolási technikába is foglalt, hogy konkrét specifikációt fűzzek az egyes promptokhoz. Először egy kontextus megadásával (hol, hogyan változtasson) utána a specifikus kérés (mit szeretnék látni a promptom eredményeként) végül a kényszerek, vagy Constraintek megadásával ki kell kötnöm, hogy mi az amit mindenképpen teljesítenie kell a megoldásnak, mi az ami kötött. Ezekhez az ajánlott prompting technikákhoz a saját alkalmazásomból hozott példákat is az alkalmazására, ami hasznos segítség az értelmezésükben. Összességében a prompt quality-m egy promptot kivéve 7 felett volt, ami a legjobb 20%-ba tesz az átlag developer promptok tekintetében, az előbbi prompting technikák alkalmazásával lehet hogy a top 5%-ot is elértem volna.
+[Conversation history](conversation_summary.md)
