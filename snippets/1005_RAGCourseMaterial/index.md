@@ -16,14 +16,13 @@ A modell által generált feladatsor használható volt és teljes mértékben m
 
 ## Tanulságok
 
-* A könyvtárverziót érdemes a legelső promptba belefoglalni (pl. `langchain>=0.2.0`). Enélkül a Claude vegyes verziókból merít, és deprecated importokat generál – ez volt a legtöbb hibakeresési körülfordulás gyökere.
-* A kérdéseket és a szerkesztési kéréseket érdemes élesen szétválasztani. A „Don't modify anything, just tell me..." formula hatékonyan megakadályozza, hogy a Claude kéretlen módosításokat végezzen, miközben egy kérdésre válaszol.
+* A könyvtárverziót érdemes a legelső promptba belefoglalni (pl. `langchain>=0.2.0`). Enélkül a modell vegyes verziókból merít, és deprecated importokat generál. Az eltérő vagy hibás verzió nagyon gyakori hibaforrás volt.
+* A kérdéseket és a szerkesztési kéréseket érdemes élesen szétválasztani. A „Don't modify anything, just tell me..." formula hatékonyan megakadályozta, hogy a modell kéretlen módosításokat végezzen, miközben egy kérdésre válaszol.
 * Ha megakad a hibakeresés, érdemes kimondani, mi az, ami biztosan működik: „We know for sure that Ollama and vector store works correctly." Ez azonnal leszűkíti a keresési teret.
-* A tényleges kódot illik beilleszteni a promptba, nem csak leírni. Amikor a felhasználó bemásolta az `OllamaLLM` osztályt, a Claude azonnal megtalálta a hiányzó `_llm_type` tulajdonságot – ami korábbi köröket megspórolt volna.
 * Hosszú munkamenetben a Claude időnként egy korábbi állapotra „emlékezik" vissza, nem a legutóbbira. Ha elhúzódó hibakeresésnél elakad a folyamat, érdemes teljes resettel újraindítani: csatolni a fájl aktuális verzióját, és tiszta utasításlistával folytatni.
-* A Claude alapértelmezés szerint bőkezűen magyaráz – ez oktatási szövegekben különösen szembetűnő. A hintek könnyen szinte-megoldásokká dagadnak, a válaszok pedig belső gondolkodást is tartalmaznak. Ezt érdemes explicit utasítással visszafogni, de hosszabb session-ökben hajlamos visszacsúszni.
-* Elnevezési konvenciót érdemes a munkamenet elején rögzíteni. A tesztfájl és a notebook más körökben születtek, ezért eltérő változóneveket használtak (`similarity_1_2` vs. `sim_cat_feline`), ami teszthibákat okozott.
-* A statikus átnézés nem helyettesíti az éles futtatást. A FAISS IVF kernel-összeomlás és az Ollama „I don't know" probléma egyaránt csak futás közben derült ki.
+* A Claude alapértelmezés szerint bőkezűen magyaráz, ez oktatási szövegekben különösen szembetűnő. A hintek majdnem teljes megoldások lettek, a válaszok pedig belső gondolkodást is tartalmazták. Ezt érdemes explicit utasítással visszafogni, de hosszabb kontextusablakoknál hajlamos ezt elfelejteni.
+* Elnevezési konvenciót érdemes a munkamenet elején rögzíteni. A tesztfájl és a notebook külön iterációs körökben születtek, ezért eltérő változóneveket használtak (`similarity_1_2` vs. `sim_cat_feline`), ami teszthibákat okozott.
+* A statikus átnézés nem helyettesíti az éles futtatást. Rengeteg futásidejű hibát kellett javítani, ami különösen feltűnő volt a kézi kódolással való összehasonlításkor. 
 
 ---
 
@@ -33,12 +32,12 @@ A generált fájlok:
 
 | Fájl | Tartalom |
 |------|----------|
-| `RAG_Lab_Syllabus.md` | Előlaboratóriumi anyag: RAG-fogalmak, embeddingek, vektortárak |
-| `RAG_Lab_Notebook.ipynb` | Fő feladatsor (4 rész, ~90 perc) |
-| `rag_cli_exercise.py` | CLI alkalmazás – a tárolt folyamattörténet kezelése hallgatói feladat |
-| `rag_cli_solution.py` | CLI megoldás manuális RAG-gal és conversation buffer-rel |
-| `rag_streamlit_exercise.py` | Streamlit alkalmazás – a lekérdezés bekötése hallgatói feladat |
-| `rag_streamlit_solution.py` | Streamlit megoldás `ConversationalRetrievalChain`-nel |
+| `RAG_Lab_Syllabus.md` | Feladatokat és tananyagot bemutató dokumentum |
+| `RAG_Lab_Notebook.ipynb` | Fő feladatsor |
+| `rag_cli_exercise.py` | CLI alkalmazás |
+| `rag_cli_solution.py` | CLI megoldás |
+| `rag_streamlit_exercise.py` | Streamlit alkalmazás |
+| `rag_streamlit_solution.py` | Streamlit megoldás |
 | `test_rag_lab.py` | pytest tesztcsomag az exportált notebookhoz |
 
 A labor felépítése:
@@ -133,7 +132,7 @@ Give me a feedback about the main issues.
 
 Amikor egy használható, közel helyes notebook fájlt kaptam, mindig futtattam rajta egy külön ellenőrző feladatot, hogy kiderüljenek az esetleges hibák. Tapasztalataim szerint ezek az ellenőrzések nagyon hasznosak és fel tudják deríteni a hallucinációból és az elavult információk felhasználásából eredő kritikus hibákat.
 
-### Teljes reset és tiszta újraindítás
+### Teljes reset és újraindítás
 
 Miután a hibakeresés túltelitett kontextus felett zajlott, teljes resettel, akár új kontextus-ablak nyitásával indítottam újra a feladatot:
 
