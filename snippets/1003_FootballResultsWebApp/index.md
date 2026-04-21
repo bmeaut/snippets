@@ -8,17 +8,17 @@ authors: Pigler András
 
 # Futball Eredménykövető Webalkalmazás – Esettanulmány
 
-Fullstack webalkalmazás fejlesztést szerettem volna kipróbálni, de nem tudtam hol kezdjem, ötletelésre és kezdési tanácsokra az MI - a GitHub Copilot, Claude-sonnet 4.5-ös verzióját használtam - azt ajánlotta hogy válasszak egy olyan projektet, ami hozzám közel áll, így egy eredményrögzítő alkalmazást készítettem egyedi football ligákhoz. A teljes web projektet MI generálta én csak promptokkal kértem a változtatásokat a projekthez Node.js backend és html - js frontend tartozik.
+Fullstack webalkalmazás fejlesztést szerettem volna kipróbálni, de nem tudtam hol kezdjem. Ötletelésre és kezdési tanácsokra az MI - a GitHub Copilot, Claude-sonnet 4.5-ös verzióját használtam - azt ajánlotta hogy válasszak egy olyan projektet, ami hozzám közel áll, így egy eredményrögzítő alkalmazást készítettem egyedi football ligákhoz. A teljes web projektet MI generálta én csak promptokkal kértem a változtatásokat. A projekthez Node.js backend és html - js frontend tartozik.
 
 ## Tanulságok
 
-Az egész beszélgetés ablak a GitHub Copilotban VS 2026 alatt időközönként lefagyott egy bug miatt és új beszélgetést kellett kezdenem így elvesztve a teljes besezélgetés előzményt, hogy ne vesszenek el az egyes részletek kíváncsiságból megkértem az MI-t, hogy amellett, hogy rögzíti az egyes promptjaimat, és az arra kapott reakciót, próbálja meg értékelni is azokat, ez egy elég érdekes eredményt adott, ami a conversation_summary markdown fájlban teljes egészében megtalálható, de a főbb tanulságok:
+Az egész beszélgetés ablak a GitHub Copilotban VS 2026 alatt időközönként lefagyott egy bug miatt és új beszélgetést kellett kezdenem így elvesztve a teljes beszélgetés előzményt. Hogy ne vesszenek el az egyes részletek kíváncsiságból megkértem az MI-t, hogy amellett, hogy rögzíti az egyes promptjaimat, és az arra kapott reakciót, próbálja meg értékelni is azokat. Ez egy elég érdekes eredményt adott, ami a conversation_summary markdown fájlban teljes egészében megtalálható. A főbb tanulságok:
 
-- A legfőbb tanulság, hogy ha nem vagy biztos abban amit változtatásként kérsz akkor próbálj minél kisebb lépésekben haladni kis iterációkkal, így pontosabb eredményt kapsz.
-- Minél összetettebb egy projekt annál lassabb, és annál több hibával dolgozott az MI.
-- Érdemes elkerülni a túlságosan általános promptokat, például: adj hozzá "valami" designt a projekthez hogy jobban nézzen ki.
+- A legfőbb tanulság, hogy ha nem vagy biztos abban amit változtatásként kérsz, akkor próbálj minél kisebb lépésekben haladni kis iterációkkal, így pontosabb eredményt kapsz.
+- Minél összetettebb egy projekt, annál lassabb, és annál több hibával dolgozott az MI.
+- Érdemes elkerülni a túlságosan általános promptokat, például: "adj hozzá 'valami' designt a projekthez hogy jobban nézzen ki".
 - Ugyanakkor viszont azt vettem észre, hogy bizonyos esetekben meg tudja oldani az általánosabb promptokat is (több kevesebb sikerrel).
-- Fontos a verziókövetés MI használatánál volt egy pár prompt az én projektemben is, ami teljesen tévútra terelte az MI-t, verziókövetés nélkül sokkal nehezebbb volt az eredeti már működő projektet visszaállítani.
+- Fontos a verziókövetés MI használatánál: volt egy pár prompt az én projektemben is, ami teljesen tévútra terelte az MI-t, verziókövetés nélkül sokkal nehezebbb volt az eredeti, már működő projektet visszaállítani.
 
 
 ## A munkafolyamat tanulságos részletei
@@ -49,11 +49,11 @@ Tips
 •	Pick something that interests you personally—you'll be more motivated to complete it!
 ```
 
-A válaszban főleg a tippek voltak érdekesek, azok mentén haladtam a projekt során kezdve az ötlet választással.
+A válaszban főleg a tippek voltak érdekesek, azok mentén haladtam a projekt során, kezdve az ötlet választással.
 
 ### Kezdeti projekt struktúra
 
-Néhány projekt létrehozásával kapcsolatos kérdés után létrejött az első kezdetleges projekt, az ahhoz tarozó utolsó prompt:
+Néhány projekt létrehozásával kapcsolatos kérdés után létrejött az első kezdetleges projekt, az ahhoz tartozó utolsó prompt:
 
 ```
 Add ability to have multiple leagues and a backend for these leagues, with darker colors and better navbar.
@@ -82,11 +82,19 @@ API Endpoints Created:
 - GET/POST /api/leagues/:id/matches
 ```
 
-Itt létrehozta a projektben az ahhoz tartozó backendet, REST API-t használva a frontenddel való kommunikációra, ekkor még a frontendben sokminden nem működött megfelelően, így a következő promptokkal azoknak a javítására fókuszáltam.
+Itt létrehozta a projektben az ahhoz tartozó backendet, REST API-t használva a frontenddel való kommunikációra. Ekkor még a frontendben sokminden nem működött megfelelően, így a következő promptokkal azoknak a javítására fókuszáltam.
 
 ### Frontend fejlesztések és az első prompt értékelések
 
-Itt kezdtem el kérni az MI-t hogy értékelje is a promptjaimat egyesével, egyből egy rossz példával kezdve:
+Itt kezdtem el kérni az MI-t hogy értékelje is a promptjaimat egyesével:
+
+```
+Could you rate my promtping technique based on my prompts and their effectiveness in a separate md file?
+```
+
+Az MI erre a kérésre hozta létre a csatolt [Conversation history](conversation_summary.md) fájlt, amiben megtalálható az összes értékelés, illetve javaslat.
+
+Egy rossz példával kezdve:
 
 ```
 could you add some design in the colours for the whole page?
@@ -105,14 +113,14 @@ MI:
 **How This Could Be Improved**:
 > *"Could you enhance the color scheme across all pages? Maybe add more blue accents to match the active card highlighting, and improve visual contrast between different sections?"*
 
-Látható, hogy nem elég pontos, hiába a cél felismerhető, de sok minden más nem egyertélmű, ilyen, hogy melyik oldalra kell a design, annak melyik részére, milyen design, mit jelent az hogy "some design", milyen színekkel dolgozzon (azon túl milyen stílusban nézzen ki az oldal stb.). Ennek ellenére megváltoztatta az MI minden oldalnak a designját főként színek változatatásával, de stílusbeli elemeket is adott például kártyákban kezdett el mindent megjeleníteni.
+Látható, hogy nem elég pontos. Hiába a cél felismerhető, de sok minden más nem egyertélmű. Ilyen, hogy melyik oldalra kell a design, annak melyik részére, milyen design, mit jelent az hogy "some design", milyen színekkel dolgozzon (azon túl milyen stílusban nézzen ki az oldal stb.). Ennek ellenére megváltoztatta az MI minden oldalnak a designját főként színek változatatásával, de stílusbeli elemeket is adott például kártyákban kezdett el mindent megjeleníteni.
 
 ![Frontend result2](image/result2.png "Frontend result2")
 Modernebb kinézete lett az oldalnak az új színekkel.
 
 ### Játékosok létrehozása, egy jó prompt
 
-Ahhoz hogy az eredményeket érdemben is meg tudjuk nézni, először tudnunk kell hozzáadni játékosokat is, mivel eddig nem is voltak ilyen típusú bejegyzések a backenden, így azt is és a kommunikációt is létre kellett hozni, erre egy jó prompt volt:
+Ahhoz hogy az eredményeket érdemben is meg tudjuk nézni, először tudnunk kell hozzáadni játékosokat is. Mivel eddig nem is voltak ilyen típusú bejegyzések a backenden, így azt is és a kommunikációt is létre kellett hozni. Erre egy jó prompt volt:
 
 ```
 can we add players to the teams on the current nodejs setup if we can can you implement them and a new page for adding players to a selected team
@@ -156,18 +164,18 @@ app.post('/api/leagues/:id/teams/:teamId/players', (req, res) => {
 });
 ```
 
-Ez az előző példának az ellentétje, abban az értelemben, hogy itt az általam kért új feature részletei is szerepelnek a promptban, azaz, hogy a nodejs backenden adjon hozzá úgy játékosokat, hogy azok csapatokhoz is tartozzanak, azokhoz, amiket már korábban hozzáadtunk, ehhez az MI létrehozott új API endpontokat is, aminek a segítségével tudjuk ezeket kezelni, létrehozott egy frontend nézetet is, ami így nézett ki:
+Ez az előző példának az ellentétje, abban az értelemben, hogy itt az általam kért új feature részletei is szerepelnek a promptban. Azaz, hogy a nodejs backenden adjon hozzá úgy játékosokat, hogy azok csapatokhoz is tartozzanak, azokhoz, amiket már korábban hozzáadtunk. Ehhez az MI létrehozott új API endpontokat is, aminek a segítségével tudjuk ezeket kezelni, létrehozott egy frontend nézetet is, ami így nézett ki:
 
 ![Frontend result3](image/result3.png "Frontend result3")
 
 ### Meccs kártyák és értékelés
 
-Most hogy vannak játékosaink és csapataink, rögzíthetünk meccseket is eseményekkel, azok megjelenítésére a korábban említett kártyát használhatjuk, néhány debug prompt után a végső prompt ami ehhez tartozik:
+Most, hogy vannak játékosaink és csapataink, rögzíthetünk meccseket is eseményekkel. Azok megjelenítésére a korábban említett kártyát használhatjuk. Néhány debug prompt után a végső prompt, ami ehhez tartozik:
 
 ```
 It would be great if by clicking on a result in the recent matches you could view the events of that match
 ```
-Az eredménye, egy olyan kártya, amin látszanak az egyes események, az azokhoz tartozó játékosok és csapatok vizuálisan:
+Az eredménye egy olyan kártya, amin vizuálisan látszanak az egyes események, az azokhoz tartozó játékosok és csapatok:
 
 ![Frontend result3](image/result_card.png "Frontend result3")
 
@@ -225,5 +233,5 @@ Example:
 Why It Works: Provides context, specific action, and implementation guidance.
 ```
 
-A legfőbb dolog amiben még tudok fejlődni, az, ami a konkrét, promptolási technikába is foglalt, hogy konkrét specifikációt fűzzek az egyes promptokhoz. Először egy kontextus megadásával (hol, hogyan változtasson) utána a specifikus kérés (mit szeretnék látni a promptom eredményeként) végül a kényszerek, vagy Constraintek megadásával ki kell kötnöm, hogy mi az amit mindenképpen teljesítenie kell a megoldásnak, mi az ami kötött. Ezekhez az ajánlott prompting technikákhoz a saját alkalmazásomból hozott példákat is az alkalmazására, ami hasznos segítség az értelmezésükben. Összességében a prompt quality-m egy promptot kivéve 7 felett volt, ami a legjobb 20%-ba tesz az átlag developer promptok tekintetében, az előbbi prompting technikák alkalmazásával lehet hogy a top 5%-ot is elértem volna.
+A legfőbb dolog amiben még tudok fejlődni az, amit a konkrét, promptolási technikába is foglalt az MI: hogy konkrét specifikációt fűzzek az egyes promptokhoz. Először egy kontextus megadásával (hol, hogyan változtasson), utána a specifikus kérés (mit szeretnék látni a promptom eredményeként), végül a kényszerek megadásával ki kell kötnöm, hogy mi az amit mindenképpen teljesítenie kell a megoldásnak, mi az ami kötött. Ezeknek az ajánlott prompting technikáknak az alkalmazására a saját alkalmazásomból is hozott példákat, ami hasznos segítség az értelmezésükben. Összességében a prompt quality-m egy promptot kivéve 7 felett volt, ami a legjobb 20%-ba tesz az átlag developer promptok tekintetében, az előbbi prompting technikák alkalmazásával lehet hogy a top 5%-ot is elértem volna.
 [Conversation history](conversation_summary.md)
