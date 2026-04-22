@@ -11,11 +11,16 @@ authors: Várhegyi Melinda
 ## A feladat leírása
 
 A feladat egy Wordle szójáték klón elkészítése volt .NET MAUI keretrendszerben, C# nyelven,
-Windows platformra célozva (`net8.0-windows10.0.19041.0`), Visual Studio 2022-ben.
+Windows platformra célozva (`net8.0-windows10.0.19041.0`), Visual Studio 2022-ben. 
+A Wordle játék lényege röviden: Egy 5 betűs szavakat tartalmazó szólistából sorsolunk egy feladványt, 
+melyet a felhasználó megpróbál megfeljebb 6 próbálkozásból kitalálni. Minden beküldött tippjének 
+betűit kiértéklejük aszerint, hogy a feladvány tartalmazza-e az adott betűt. 
+(Ugyanazon a helyen tartalmazza - zöld, tartalmazza, de másik helyen - sárga, nem tartalmazza -  szürke.)
+
 A fejlesztés során használt MI eszközök:
 
 - **GitHub Copilot Chat (Claude Haiku 4.5)** — a kód generálásához és a TDD ciklus végrehajtásához
-- **Claude Sonnet 4.6** — tervezéshez, architektúra döntésekhez, prompt íráshoz és
+- **Claude Sonnet 4.6 (desktop alkalmazás)** — tervezéshez, architektúra döntésekhez, prompt íráshoz és
   hibakereséshez
 
 A projekt MVVM architektúrán alapul, a fejlesztés TDD (Test Driven Development)
@@ -39,8 +44,8 @@ módszerrel történt, xUnit, Moq és FluentAssertions könyvtárak használatá
 - **A kontextus elvész** — ha a Copilot Chat ablak bezárul (pl. VS összeomlás vagy fájlok
   áthelyezése után), az összes korábbi kontextus elveszik. Érdemes a kontextus promptot
   külön fájlban tárolni és újra beadni.
-- **Claude és Copilot jól kiegészítik egymást** — Claude erős volt a tervezésben,
-  architektúrában és hibakeresésben, a Copilot pedig a kód generálásban.
+- **Claude Sonnet 4.6 és Copilot (Claude Haiku 4.5) jól kiegészítik egymást** — Claude 
+erős volt a tervezésben, architektúrában és hibakeresésben, a Copilot pedig a kód generálásban.
 - **A mutációs tesztelés és az MI jól kombinálható** — a Stryker által talált túlélő
   mutánsokat Copilottal hatékonyan meg lehet ölni, de a promptot pontosan kell
   megfogalmazni: meg kell adni a mutáns pontos helyét és viselkedését.
@@ -65,6 +70,7 @@ WordleMAUI.Tests/        ← xUnit tesztprojekt
 - `WordleMAUI` → `WordleMAUI.ViewModels` → `WordleMAUI.Core`
 - `WordleMAUI.Tests` → `WordleMAUI.ViewModels` és `WordleMAUI.Core`
 - `WordleMAUI.Tests` nem hivatkozik `WordleMAUI`-ra (WinRT inicializálási hiba miatt)
+*Ennek a részleteiről a 3. pontban lesz szó.*
 
 ### Főbb komponensek
 
@@ -72,7 +78,7 @@ WordleMAUI.Tests/        ← xUnit tesztprojekt
 |---|---|
 | `LetterState` | enum: Correct, Misplaced, Absent |
 | `GuessResult` | record: char Letter, LetterState State |
-| `WordValidator` | 5 betűs, csak alfa, szótárban szereplő szavak ellenőrzése |
+| `WordValidator` | 5 betűs, szótárban szereplő szavak ellenőrzése |
 | `GuessEvaluator` | Betűnkénti kiértékelés, duplikált betűk helyes kezelésével |
 | `GameStateManager` | Játékállapot kezelése (6 kísérlet, nyerés/vesztés) |
 | `WordSelector` | Véletlenszerű szókiválasztás |
@@ -248,24 +254,23 @@ A Stryker apró változtatásokat ("mutációkat") végez a forráskódon, majd 
 a teszteket. Ha egy mutáció nem buktatja el a teszteket, az azt jelenti, hogy
 a tesztek nem fedik le megfelelően azt a logikát — ez egy túlélő mutáns.
 
-**Eredmények — a fejlesztés során:**
+**A tesztelés eredményei:**
 
-| Iteráció | Mutáció score | Változás |
-|---|---|---|
-| Első futtatás | 74.00% | kiindulópont |
-| `SelectByDate` eltávolítása után | 80.43% | +6.43% |
-| `GameStateManager` tesztek után | 89.13% | +8.70% |
-| `WordSelector` tesztek után | 93.48% | +4.35% |
-| `WordValidator` + `GuessEvaluator` tesztek után | **100.00%** | +6.52% |
-
-**Végső eredmény — 100% mutáció score:**
-
-| Fájl | Score |
-|---|---|
-| `GameStateManager.cs` | 100% |
-| `WordSelector.cs` | 100% |
-| `WordValidator.cs` | 100% |
-| `GuessEvaluator.cs` | 100% |
+- **Első futtatás: 74.00%**
+- **`SelectByDate` eltávolítása után: 80.43%**
+  A `SelectByDate` egy olyan teszt volt, amely a TDD fejlesztés során megírásra került, 
+  viszont később ez a funkció mégsem került implementálásra a fejlesztő döntése miatt. 
+  Így ennek a tesztnek az eltávolítása rögtön növelte a mutáció score-t.
+- **`GameStateManager` tesztek után: 89.13%**
+  A hibák abból eredtek, hogy nem volt lekezelve az, ha az egyes függvéynek 
+  bemeneti paraméterül null-t kapnak.
+- **`WordSelector` tesztek után: 93.48%**
+  A `wordList` konstruktorában null argumentum kezelése.
+- **`WordValidator` + `GuessEvaluator` tesztek után: 100.00%**
+  `WordValidator` - null kezelése. `GuessEvaluator` - Ha egy betűt már megjelöltünk 
+  Correct-ként, akkor az ő helye `processed[i] = true` jelölést kap. A mutáns ezt false-ra 
+  állította, ekkor a betű a következő iterációban újra kiértékelésre került Misplaced 
+  vagy Absent-ként, ami hibás, ezt kellett lekezelni.
 
 **A Stryker konfigurálásának nehézségei:**
 A Stryker beüzemelése számos kihívással járt, amelyek mind a `.csproj` konfiguráció
