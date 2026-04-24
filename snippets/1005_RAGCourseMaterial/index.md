@@ -10,7 +10,7 @@ authors: Domonkos Ádám
 
 Claude segítségével egy 90 perces egyetemi laborgyakorlat teljes anyagát állítottam elő RAG pipeline és LangChain témakörben, mesterszakos hallgatók számára. A végeredmény: előlaboratóriumi szillabus, négyrészes Jupyter notebook feladatsorral, CLI és Streamlit alkalmazáscsonkok, automatizált tesztfájlok és oktatói megoldások. Az MI eszköz: Claude Sonnet 4.5 (claude.ai, ~99 üzenetváltás).
 
-A modell által generált feladatsor használható volt és teljes mértékben megfelelt az elvártaknak. A dokumentumban felsorolt nehézségek és limitációk miatt azonban egy ez csak egy iránymutatás volt a feladatkidolgozás során mintsem egy kész, használható kimenet.
+A modell által generált feladatsor használható volt és teljes mértékben megfelelt az elvártaknak. A dokumentumban felsorolt nehézségek és limitációk miatt azonban ez csak egy iránymutatás volt a feladatkidolgozás során mintsem egy kész, használható kimenet.
 
 ---
 
@@ -20,7 +20,7 @@ A modell által generált feladatsor használható volt és teljes mértékben m
 * A kérdéseket és a szerkesztési kéréseket érdemes élesen szétválasztani. A „Don't modify anything, just tell me..." formula hatékonyan megakadályozta, hogy a modell kéretlen módosításokat végezzen, miközben egy kérdésre válaszol.
 * Ha megakad a hibakeresés, érdemes kimondani, mi az, ami biztosan működik: „We know for sure that Ollama and vector store works correctly." Ez azonnal leszűkíti a keresési teret.
 * Hosszú munkamenetben a Claude időnként egy korábbi állapotra „emlékezik" vissza, nem a legutóbbira. Ha elhúzódó hibakeresésnél elakad a folyamat, érdemes teljes resettel újraindítani: csatolni a fájl aktuális verzióját, és tiszta utasításlistával folytatni.
-* A Claude alapértelmezés szerint bőkezűen magyaráz, ez oktatási szövegekben különösen szembetűnő. A hintek majdnem teljes megoldások lettek, a válaszok pedig belső gondolkodást is tartalmazták. Ezt érdemes explicit utasítással visszafogni, de hosszabb kontextusablakoknál hajlamos ezt elfelejteni.
+* A Claude alapértelmezés szerint bőkezűen magyaráz, ez oktatási szövegekben különösen szembetűnő. A hintek majdnem teljes megoldások lettek, a válaszok pedig a belső gondolkodást is tartalmazták. Ezt érdemes explicit utasítással visszafogni, de hosszabb kontextusablakoknál hajlamos ezt elfelejteni.
 * Elnevezési konvenciót érdemes a munkamenet elején rögzíteni. A tesztfájl és a notebook külön iterációs körökben születtek, ezért eltérő változóneveket használtak (`similarity_1_2` vs. `sim_cat_feline`), ami teszthibákat okozott.
 * A statikus átnézés nem helyettesíti az éles futtatást. Rengeteg futásidejű hibát kellett javítani, ami különösen feltűnő volt a kézi kódolással való összehasonlításkor. 
 
