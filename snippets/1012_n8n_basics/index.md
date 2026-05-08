@@ -1,3 +1,11 @@
+---
+layout: default
+codename: n8n_basics
+title: Email alapú dipterv feladatkiírás generátor n8n-ben, ChatGPT-vel
+tags: snippets mieset
+authors: Völgyesi Soma
+---
+
 # Email alapú dipterv feladatkiírás generátor n8n-ben, ChatGPT-vel
 
 Docker, Node JS, n8n és ChatGPT segítségével létrehoztam egy diplomaterv sablon generátort. Az elkészült feladat: az alkalmazás előre configolt email címre vár egy neptun kód, cím, leírás hármast tartalmazó üzenetet, a neptun kód alapján Excel fájlból kikeresi a hallgató nevét és szakját, majd az adatokkal feltölti a diplomaterv sablont és visszaküldi azt.
@@ -86,7 +94,8 @@ Az AI egész szépen megoldotta a feladatot elsőre, a válaszában már nagyjá
 
 A node szerver első tesztje során leállt, ugyanis a Word valamiért több sorba tördelte a placeholderek nyitó- és záró tagjeit, emiatt nyilván nem ismerte fel őket az app.
 
-Itt megadtam az AI-nak a docker konténer logját, ez alapján rájött a problémára és azt javasolta, hogy használjak egyedi placeholdert:
+Itt megadtam az AI-nak a docker konténer logját, ez alapján rájött a problémára és azt javasolta, hogy használjak egyedi placeholdert.
+A következő kódrészlet a NodeJS szerver kódjában található, ezzel van paraméterezve egy Docxtemplater példány, ami a sablonba való behelyettesítést segíti:
 ```
      delimiters: {
         start: '[[', 
