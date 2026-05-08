@@ -40,7 +40,7 @@ Ahol:
 
 ### A pipeline elemeinek meghatározása
 
-Itt szeretném megemlíteni, hogy az eredeti elképzelés szerint nem csak a hallgatók email-jeit fogadta a rendszer, hanem egy Config email is, amivel a hallgatók adatait lehetett felvinni (vagy cserélni) a rendszerbe.
+Itt szeretném megemlíteni, hogy az eredeti elképzelés szerint nem csak a hallgatók email-jeit fogadta a rendszer, hanem egy Config emailt is, amivel a hallgatók adatait lehetett felvinni (vagy cserélni) a rendszerbe.
 
 ```
 My task is to create a workflow with n8n that can accept a configuration email and save its content as a JSON file, and another kind of email, which contains a title, a multi-line description and an ID. Based on the ID, we have to retrieve further data from the JSON file that we saved in the config section, then merge all data and generate a word document from a template. Finally, we have to send the document back to the email address where we got the input data from.
@@ -142,7 +142,7 @@ Az emailnek kötött formátuma van:
 2. A téma címe "Cím: " után
 3. Végül a részletes leírás "Feladat: " után
 
-Mivel a beérkező email nem egy nyelvi modell értelmezi, hanem egyszerű regex-ek alapján történik a feldolgozás, így a formátumtól nem lehet eltérni.
+Mivel a beérkező emailt nem egy nyelvi modell értelmezi, hanem egyszerű regex-ek alapján történik a feldolgozás, így a formátumtól nem lehet eltérni.
 
 ### Word sablon formázása
 
