@@ -2,7 +2,7 @@
 layout: default
 codename: AutomatAd
 title: AutomatAd - az automata apróhirdetés feladó
-tags: ai vibecoding
+tags: snippets mieset vibecoding
 authors: Hollós Bálint
 ---
 
