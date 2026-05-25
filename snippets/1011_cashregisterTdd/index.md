@@ -1,139 +1,127 @@
 ---
 layout: post
 title: Okos Pénztárgép (Shop) fejlesztése TDD módszerrel
-tags: tdd programming
-author: Szakszon Ádám
+tags: tdd programming vibe-coding
+author: Szakszon Ádám Dániel
 ---
 
-# Pénztárgép Esettanulmány
+# Pénztárgép Esettanulmány: Vibe kódolás kontrolláltan
 
-## Áttekintés
-Ez a projekt egy fokozatosan bővített, tesztvezérelt (TDD) pénztárgép-motor megvalósítása C# nyelven. A cél nem csak egy helyes árkalkulátor volt, hanem egy olyan, folyamatosan fejleszthető domain motor létrehozása, amelyben az új üzleti követelmények (CRD-k) kis lépésekben, regresszió nélkül bevezethetők.
+Ez az esettanulmány egy okos pénztárgép, vagyis Shop motor fejlesztését mutatja be C# nyelven. A fő cél nem csak egy helyes árkalkulátor megírása volt, hanem egy olyan domain motor létrehozása, amelyet a TDD módszerrel folyamatosan, biztonságosan lehetett bővíteni a változó üzleti igények mentén.
+
+> **Megjegyzés az olvasónak:** a történet megértéséhez hasznos a projekt gyökerében lévő feladatkiírás és a CRD-k, vagyis a Change Request Documentek ismerete is. Az alábbiakban a funkciók mellett hivatkozom a megfelelő CRD azonosítókra is, hogy az összefüggések egyértelműek legyenek.
+
+## Az alapfeladat
+
+A kiindulási követelmény nagyon egyszerű volt: létre kell hozni egy `Shop` osztályt, aminek megadhatók a termékek és az áraik. Egy terméket egyetlen nagybetű jelölt, az ár pedig egész szám volt. Ha a rendszer kapott egy kosarat stringként, például `"ABC"`, akkor vissza kellett adnia az összesített fizetendő árat.
+
+```csharp
+Shop.RegisterProduct('A', 10);
+Shop.RegisterProduct('C', 20);
+
+var price = Shop.GetPrice("AAC"); // 40
+```
+
+## A mozgó célpont
+
+A kihívás ott kezdődött, hogy a megrendelői követelmények folyamatosan bővültek úgynevezett CRD-k formájában. Ezek új üzleti szabályokat hoztak be, és úgy kellett őket beépíteni, hogy a korábbi működés ne törjön el.
+
+Korai példa volt a CRD P01, amely mennyiségi kedvezményt vezetett be: ha egy termékből legalább öt darabot veszünk, akkor 10% kedvezmény jár az adott termékre. Ezt követték a "3-at fizet, 4-et vihet" típusú akciók, a komplex kombó kedvezmények, a klubtagságok és a kuponkódok.
+
+## Áttekintés és fejlesztési alapelvek
+
+A cél egy olyan, folyamatosan fejleszthető domain motor létrehozása volt, amelyben az új üzleti követelmények kis lépésekben, regresszió nélkül vezethetők be.
 
 A fejlesztés alapelve:
-1. Először piros tesztet írni.
-2. Ai megkérése, hogy implamentáljon pontosan annyit, hogy zöld legyen a teszt.
+
+1. Először piros tesztet írni az új CRD alapján.
+2. AI asszisztenssel pontosan annyi implementációt készíttetni, hogy a teszt zöld legyen.
 3. Folyamatosan futtatni a teljes tesztkészletet.
 
-Az eredmény egy olyan Shop motor lett, amely már nem csak árat számol, hanem eseményvezérelt pénztári folyamatokat, hardver-integrációkat, készletkezelést, napi riportot, valamint jogi/üzleti kontrollokat (pl. kiskorú tiltás) is támogat.
+Az eredmény egy olyan Shop motor lett, amely már nem csak árat számol, hanem eseményvezérelt pénztári folyamatokat, hardver-integrációkat, készletkezelést, napi riportot, valamint jogi és üzleti kontrollokat is támogat.
 
 ## Használt technológiák
-1. .NET 9
-2. xUnit
-3. FluentAssertions
-4. NSubstitute
-5. WinForms (külön GUI kliens a kipróbáláshoz)
+
+* .NET 9
+* xUnit
+* FluentAssertions
+* NSubstitute
+* WinForms, külön GUI kliens a kipróbáláshoz
 
 ## Architektúra röviden
 
 ### Projektek
-1. `TddShop.Core`: üzleti logika (Shop, interfészek, domain műveletek)
-2. `TddShop.Tests`: automata tesztek (unit + viselkedési tesztek)
-3. `TddShop.Gui`: grafikus kipróbáló felület
+
+* `TddShop.Core`: üzleti logika, a `Shop` és a domain műveletek
+* `TddShop.Tests`: automata tesztek, unit és viselkedési tesztek
+* `TddShop.Gui`: grafikus kipróbáló felület
 
 ### Integrációs interfészek
-A core réteg több külső függőséget interfészeken keresztül kezel:
+
+A core réteg több külső függőséget interfészeken keresztül kezel.
 
 ```csharp
 public interface IInventory
 {
-	void Update(char product, int delta);
+    void Update(char product, int delta);
 }
 
 public interface IScale
 {
-	double GetCurrentWeight();
+    double GetCurrentWeight();
 }
 
 public interface IPosTerminal
 {
-	void StartPayment(double amount);
+    void StartPayment(double amount);
 }
 
 public interface IPaymentNotifier
 {
-	void NotifySuccessfulPayment(double amount);
+    void NotifySuccessfulPayment(double amount);
 }
 
 public interface IMinorCustomerNotifier
 {
-	void NotifyMinorCustomer();
+    void NotifyMinorCustomer();
 }
 
 public interface IIllegalPurchaseNotifier
 {
-	void NotifyIllegalPurchase(char product);
+    void NotifyIllegalPurchase(char product);
 }
 ```
 
-Ez a megoldás lehetővé teszi, hogy a program működését a valódi gépek nélkül is ellenőrizni tudjuk. Így a tesztelés gyorsabb és biztosabb, mert nem kell hozzá az igazi hardver, elég csak szimulálni azt.
+Ez a megoldás lehetővé teszi, hogy a program működését a valódi gépek nélkül is ellenőrizni lehessen. Így a tesztelés gyorsabb és biztosabb, mert elég a hardvereket szimulálni.
 
 ## Funkcionális fejlődési út
 
-### 1. Alap árkalkuláció
-Kezdetben a rendszer egyszerű kosár-stringből számolt végösszeget, pl. `GetPrice("ACEE")`.
+### 1. Kedvezményrendszer
 
-### 2. Kedvezményrendszer
-Bevezetésre kerültek:
-1. Mennyiségi kedvezmény (`RegisterAmountDiscount`)
-2. Darabos kedvezmény (`RegisterCountDiscount`)
-3. Kombó kedvezmény (`RegisterComboDiscount`)
+A rendszer egy rendkívül egyszerű árkalkulátorként indult, a kihívások pedig a kedvezményrendszerek bevezetésével kezdődtek. Első lépésként a mennyiségi kedvezményeket (CRD P01), majd a "3-at fizet, 4-et vihet" típusú darabos akciókat (CRD P02), végül az összetett kombó kedvezményeket (CRD P03) kellett implementálni. A nehézséget itt az adta, hogy ezek a kedvezmények sokszor versenyeztek egymással (CRD P07), amit egy minimálár-alapú döntési logikával és szigorú kombinációs szabályokkal oldottam meg.
 
-A logika nem triviális, mert különböző kedvezmények versenyeznek egymással. A megoldás minimálár-alapú döntésekkel és kontrollált kombinációs szabályokkal működik.
+### 2. Meta-információk a kosárban
 
-### 3. Tagság, azonosítók, kupon
-A kosár-parsing képes meta-információkat értelmezni:
-1. tagság (`t`)
-2. user id (`v` + számjegyek)
-3. pontgyűjtés (`p` + számjegyek)
-4. kupon (`k` + kód)
+Ezt követően a motor képessé vált a meta-információk kezelésére is anélkül, hogy a termékszámlálás felborult volna. Így került be a kosár-parsingba a klubtagság (CRD P04), a vásárlói azonosító és az ahhoz kötött pontgyűjtés (CRD P06, P08), valamint a kuponkódok beváltásának lehetősége (CRD P11). Szintén ehhez a szakaszhoz tartozott a vonalkód-beolvasás finomítása is: a rendszer megtanulta értelmezni a rövidített, darabszámos (CRD P12), illetve a tömegalapú (CRD P13) bemeneteket is.
 
-Kiemelt követelmény volt, hogy ezek ne borítsák fel a termékszámlálást.
+### 3. Eseményvezérelt pénztár üzemmód
 
-### 4. Speciális mennyiségkezelés
-1. Darabos rövid jelölés: pl. `A3B3C`
-2. Tömeges termékek: pl. `A300`, ahol a gram-egység alapján darabra konvertálódik
+A legnagyobb architekturális ugrást az eseményvezérelt pénztár üzemmódra való átállás jelentette (CRD C01). Az egyszeri, stringes kiértékelést felváltotta egy valós kasszafolyamatot szimuláló API a Scan és Checkout metódusokkal. Ez az új struktúra tette lehetővé a külső hardverek, például a mérleg integrációját (CRD C02), a készlet valós idejű frissítését egy IInventory interfészen keresztül (CRD D01), és a fizetett összeget pontosan visszatérítő visszáru szakszerű kezelését (CRD D02).
 
-### 5. Eseményvezérelt pénztár üzemmód
-Az egyszeri stringes `GetPrice` mellé megjelent a pénztárgép-jellegű esemény API:
-1. `Scan(char)`
-2. `Checkout()`
+### 4. Fizetési folyamatok és üzleti kontrollok
 
-Ez közelebb viszi a motort egy valós kasszafolyamathoz.
-
-### 6. Készlet és visszáru
-1. Vásárlás utáni készletfrissítés (`IInventory`)
-2. Visszáru kezelés (`ReturnProducts`)
-3. Vásárlási kontextus tárolása (mennyi volt vásárolva, milyen áron)
-
-### 7. Fizetési folyamatok
-1. Készpénzes fizetés (`ProcessCashPayment`)
-2. POS indítás (`ProcessPosPayment`)
-3. POS visszajelzés kezelése (`OnPaymentResult`)
-4. Stornó (`Storno`)
-
-### 8. Nap végi riport
-A rendszer képes termékszintű napi összesítést adni:
-1. eladott mennyiség
-2. realizált bevétel
-
-Kiemelt üzleti döntés: kombó bevétel felosztása listaárarányosan történik a termékek között.
-
-### 9. CRD X02 - Kiskorúak kezelése
-Bevezetett szabályok:
-1. A vásárló állapotát explicit lehet kiskorúra állítani.
-2. Termékenként regisztrálható, hogy kiskorúnak tiltott-e.
-3. Tiltott termék vásárlási kísérletnél külön illegális vásárlás esemény megy ki.
-4. Kiskorú állapotváltás külön eseményen jelezhető.
+A projekt utolsó fázisában a fizetési folyamatok és az üzleti kontrollok kerültek fókuszba. Dedikált interfészeken keresztül valósult meg a készpénzes és a POS terminálos fizetés (CRD C03-C04), illetve bekerült a stornó funkció (CRD C05), amely a kosárfolyamat fizetés előtti, készletmozgás nélküli teljes megszakításáért felel. Végül a motor kibővült a nap végi riportok generálásával (CRD X01), valamint egy komoly jogi védelemmel: a kiskorúak vásárlásának állapotfüggő ellenőrzésével és a tiltott tranzakciók eseményalapú blokkolásával (CRD X02).
 
 ## TDD működés közben
 
-### Miért volt fontos a TDD ebben a projektben?
+### Miért volt fontos a TDD?
+
 1. A követelmények folyamatosan változtak.
 2. Sok, egymást keresztező üzleti szabály jelent meg.
-3. Regresszióveszély magas volt (egy új CRD könnyen törhetett régi működést).
+3. Magas volt a regresszióveszély, mert egy új CRD könnyen törhette volna a régi működést.
 
 ### Minta ciklus
+
 1. Új követelményhez bukó teszt.
 2. Minimális implementáció.
 3. Teljes tesztfuttatás.
@@ -141,26 +129,23 @@ Bevezetett szabályok:
 
 Ez tette lehetővé, hogy a rendszer 50+ tesztesetre bővülve is stabil maradjon.
 
-## Fontosabb üzleti döntések (nem-specifikált pontoknál)
-1. A stornó hard cancel-ként kezeli az aktuális kosárfolyamatot.
-2. A napi riport lekérdezése read-only művelet, nem nulláz adatot.
-3. Sikertelen POS fizetés nem könyvelődik bevételbe.
-4. A sikeres fizetés a könyvelés trigger pontja (készlet, riport, események konzisztenciája).
-
 ## Minőség és tesztelhetőség
 
 ### Erősségek
-1. Interfész-alapú függőségek miatt jó mockolhatóság.
-2. Eseményvezérelt működés jól tesztelhető állapotgépre bontható.
-3. A kritikus pénzügyi logika több szinten fedett (egyszerű, kombinált, edge case).
+
+1. Interfész-alapú függőségek miatt jól mockolható.
+2. Az eseményvezérelt működés jól tesztelhető állapotgépre bontható.
+3. A kritikus pénzügyi logika több szinten fedett, az egyszerű, kombinált és edge case helyzetekre is.
 
 ## Grafikus kipróbálás
+
 Készült egy külön WinForms kliens, amiben a fő funkciók kézzel kipróbálhatók:
+
 1. termékregisztráció
 2. szkennelés
 3. fizetés és stornó
 4. napi összesítés
-5. kiskorú / illegális vásárlás események
+5. kiskorú és illegális vásárlás események
 
 Indítás:
 
@@ -169,6 +154,7 @@ dotnet run --project TddShop.Gui/TddShop.Gui.csproj
 ```
 
 ## Összegzés
+
 Ez a projekt jól mutatja, hogy a TDD nem csak tesztelési technika, hanem tervezési eszköz is. A Shop motor egy kezdetben egyszerű árkalkulátorból fokozatosan egy valós üzleti szabályokat és külső integrációkat kezelő, stabilan fejleszthető rendszerré nőtt.
 
-A legfontosabb tanulság: Amikor vibe codeolni szeretnénk, akkor egy TDD/test-first módszer nagyon jó arra, hogy átlássuk mi történik a kódunkban. Az AI fejlődése mellett pedig már a teszteket is érdemesebb vele íratni, hiszen kevesebb hibát vét és gyorsabb mint a fejlesztők.
+A legfontosabb tanulság az, hogy amikor vibe codeolni szeretnénk, akkor a TDD vagy test-first módszer nagyon jó arra, hogy átlássuk, mi történik a kódunkban. Az AI fejlődésével már a teszteket is érdemes vele íratni, mert kevesebb hibát vét és gyorsabb, mint a manuális írás. Nekünk pedig mérnökként a pontos specifikációra, az architektúrára és a kimenet validálására kell fókuszálnunk.
