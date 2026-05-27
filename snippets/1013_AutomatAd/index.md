@@ -37,7 +37,7 @@ Alapvetően ezeket a funkciókat úgy tudjuk megvalósítani például, hogy egy
 
 ## A munkafolyamat tanulságos részletei
 
-Én személy szerint eddig programozáshoz AI-t többnyire csak a webes chates felületen használtam, azt is inkább egy "advanced google search"-ként, esetleg néha megírattam vele pl. boilerplate kódokat, vagy esetleg egyszerűbb függvényeket. Most viszont ezen feladat keretein belül kipróbáltam milyen, ha úgy fejlesztek valamit, hogy csak és kizárólag promptokolok, és semmit se írok manuálisan. Először adtam neki egy kezdőpromptot ami alapján elkészítette az alap komponenseket.
+Én személy szerint eddig programozáshoz AI-t többnyire csak a webes chates felületen használtam, azt is inkább egy "advanced google search"-ként, esetleg néha megírattam vele pl. boilerplate kódokat, vagy esetleg egyszerűbb függvényeket. Most viszont ezen feladat keretein belül kipróbáltam milyen, ha úgy fejlesztek valamit, hogy csak és kizárólag promptolok, és semmit se írok manuálisan. Először adtam neki egy kezdőpromptot ami alapján elkészítette az alap komponenseket.
 
 ```
 I would like to use selenium with C# programming language. I would like to log into different webpages and do some kind of actions on the webpage (pressing buttons, entering inputs, uploading images etc.). I would like to ask you to import all the required dependencies and prepare the different c# classes that have the capabilities to do this. Do it in such a way that it is easily extendable with further logic.  (More that 1 advertisements) With this system I would like to automate a workflow of posting advertisements (for now Jofogas.hu).
