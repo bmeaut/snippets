@@ -29,7 +29,7 @@ Alapvetően ezeket a funkciókat úgy tudjuk megvalósítani például, hogy egy
 - Nagyon sok .md fájlt generált (17 db), amiben mindenféle guide szerepelt, ám így csak összezavaró volt, hogy azt se tudtam melyikbe mi van, és voltak redundánsok is
 - Készített pár felesleges fájlt, amik nem voltak használva sehol
 - A futtatást nem úgy csinálta meg, hogy az a Visual Studio start gombjával könnyen elindítható legyen
-- Volt többször olyan is, hogy ő azt állította, hogy kijavította a hibákat, viszont ez a valójában nem így volt, bekellett neki adni ezeket a hibaüzeneteket
+- Volt többször olyan is, hogy ő azt állította, hogy kijavította a hibákat, viszont ez valójában nem így volt, be kellett neki adni ezeket a hibaüzeneteket
 - Egy ideig nem volt hajlandó a program futtatására, azt várta mindvégig hogy én futtassam le, még úgy is ha pont hogy erre kértem
 - Sokszor teliszemetelte a kódot különböző túlcsicsázott console-os üzenetekkel
 - Volt hogy valami hibát csak többszöri promptolásra javított meg
