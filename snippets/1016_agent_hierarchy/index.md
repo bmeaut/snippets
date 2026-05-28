@@ -40,6 +40,8 @@ Ahol:
 | tests/ | Az egyik agent által írt tesztek (összesen 37) |
 | spec.md | A teljes projekt rövid specifikációja. Ezt olvassa el a controller agent és ez alapján osztja ki a feladatokat a worker agenteknek |
 
+A specifikációs fálj itt olvasható: [specifikáció](spec.md)
+
 ## A munkafolyamat tanulságos részletei
 
 ### A struktúra kialakítása, illetve hogyan kell nekiállni egy ilyen feladatnak
@@ -86,6 +88,12 @@ A szerkezet fontosabb részei:
 3. Rules: Esetleges megkötések az agenttel szemben, pl. a controller agent ne írjon nagy kódrészleteket, mert nem ez a dolga.
 4. Egyéb, specifikusabb részletek, pl. controllerben az egyes worker agenteknek mi a szerepköre, ami alapján tud nekik feladatot kiosztani.
 
+Az elkészült fájlok itt láthatók:
+* [contoller agent](controller.agent.md)
+* [board-worker agent](board-worker.agent.md)
+* [solver-worker agent](solver-worker.agent.md)
+* [test-worker agent](test-worker.agent.md)
+
 ### A tényleges kódolás kezdete
 
 Miután létrehoztam kézzel a projekt vázát, megnyitottam a mappát VSCode Agent Mode-ban, és az agentek közül kiválasztottam az általam definiált `contoller` agentet. Ennek adtam meg a következő prompt-ot:
@@ -109,6 +117,10 @@ Ezután szétválasztotta a feladatokat a három meghatározott agent képesség
 ### Megfelelő részletességű specializáció
 
 Jelen projektben ugyan egyszerű Sudoku játék volt a cél, de talán nem ennyire egyszerű. Az elkészült alkalmazás konzolon kirajzolja a játéktáblát, majd közvetlenül alatta a megoldását. Ez nyilván azért van, mert nem volt kellően részletes a specifikáció, például nem tértem ki benne arra, hogy milyen UI technológiát használjon az agent.
+
+Egy kép az elkészült projektről:
+
+![running-app](image/running_app.png)
 
 ### Tokenek
 
