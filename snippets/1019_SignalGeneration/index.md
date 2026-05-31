@@ -7,6 +7,7 @@ authors: Charaf Mohamad
 ---
 
 # Implementing Signal Generation in Python Using AI
+---
 ## Problem Statement
 In modern engineering, data serves as the fundamental resource that drives different professional fields, including applications like signal processing, measurement systems, and biomedical data analysis. The increasing demand for data requires alternative ways to obtain it. One methodology is signal synthesis: generating data with different complexity levels, depending on the application. Synthetic signal generation is the process of creating time-series data points for the purpose of modeling a specific user-defined waveform with configurable parameters. It is significant for creating mathematical models that simulate real-world data, such as sensor signals and electrocardiogram (ECG) data, which represent recorded heart rhythms. Practically, signal generation is important for prototyping, testing and validation of systems that traditionally require physical data acquisition. With the increase in usage and dependency on Large Language Models (LLMs) (e.g., Claude and DeepSeek) “vibecoding” – a term for iterative LLM-assisted coding where code generation is done by an AI Chatbot, and then the user pastes it into their program – allows unexperienced or beginner users to create simple, intermediate and/or complex programs. 
 ## Task Description
