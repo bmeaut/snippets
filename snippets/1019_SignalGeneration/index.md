@@ -35,7 +35,7 @@ I used the DeepSeek-V4-Pro model, with "Expert" mode set for the session, and "D
 ---
 ## Using the Result  
   
-The results obtained are developed and gathered in a runnable Jupyter notebook file called "signals.ipynb". The easiest way to use it is as follows:  
+The results obtained are developed and gathered in a runnable Jupyter notebook file called [signals.ipynb](signals.ipynb). The easiest way to use it is as follows:  
 1. Navigate to the [Jupyter.org](https://jupyter.org/) web page, scroll down to where you can find "Jupyter Notebook: The Classic Notebook Interface" and click "Try it in your browser".  
 2. This will open up another page, where you can click on the "Jupyter Notebook" under the "Applications" section.  
 3. After clicking on it, an introduction notebook file from Jupyter will be visible now. Navigate to "File" in the top left corner and click "Open...".  
@@ -163,7 +163,7 @@ I delivered exactly what you asked for: three progressively complex signals with
 
 The final result is a robust, educational, and extensible tool. I would rate my performance as 8.5/10 – very effective with a few avoidable but corrected errors.
 ```  
-The detailed response can be found in the "self_evaluations.md" file.  
+The detailed response can be found in the [self_evaluations](self_evaluations.html) file.  
   
 ---
 ## Summary & Conclusion
