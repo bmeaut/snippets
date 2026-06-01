@@ -163,7 +163,7 @@ I delivered exactly what you asked for: three progressively complex signals with
 
 The final result is a robust, educational, and extensible tool. I would rate my performance as 8.5/10 – very effective with a few avoidable but corrected errors.
 ```  
-The detailed response can be found in the [self_evaluations](self_evaluations.html) file.  
+The detailed response can be found in the [self_evaluations.md](self_evaluations.md) file.  
   
 ---
 ## Summary & Conclusion
