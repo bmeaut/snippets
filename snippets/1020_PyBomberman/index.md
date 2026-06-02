@@ -64,7 +64,7 @@ Ezeket a promptokat használtam a játék generálása során, azonban nem volta
 
 ### Képernyőképek az egyes mérföldkövek utáni eredményekről
 
-Az első kép a 2. mérföldkő utáni állapotot tartalmazza, vagyis már van ablak azon belül pedig egy játéktér karakterek nélkül:
+Az első kép a 2. mérföldkő utáni állapotot tartalmazza, vagyis már van ablak, azon belül pedig egy játéktér karakterek nélkül:
 
 ![Bomb_grid](image/Bomb_grid.png "Bomberman grid")
 
