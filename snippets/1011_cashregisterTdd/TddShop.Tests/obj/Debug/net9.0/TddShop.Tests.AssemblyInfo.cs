@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TddShop.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+300c11d3c747265803acf8f8447245bf782ee390")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+474e5e72af0deda0c38380bfdb8f696da7c70404")]
 [assembly: System.Reflection.AssemblyProductAttribute("TddShop.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TddShop.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
