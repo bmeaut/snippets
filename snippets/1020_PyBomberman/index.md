@@ -8,7 +8,7 @@ authors: Pigler András
 
 # Pygames Bomberman Játék Esettanulmány
 
-A Pygame könyvtár használatával szerettem volna egy olyan játékot fejleszteni, amely felépítésében a Bomberman játékokhoz hasonlít. Ehhez GitHub Copilot integrációval, VS 2026-ban a Gemini 3.1 Pro MI-t használtam. Első lépésként az MI segítségével készítettem egy [specifikációt](Bomberman_Game_Spec.md), amely mérföldköveket is tartalmazott. Ezeket a mérföldköveket használva promptoltam az MI-t, amely így generálta a játékot.
+A Pygame könyvtár használatával szerettem volna egy olyan játékot fejleszteni, amely felépítésében a Bomberman játékokhoz hasonlít. Ehhez GitHub Copilot integrációval, VS 2026-ban a Gemini 3.1 Pro MI-t használtam. Első lépésként az MI segítségével készítettem egy [specifikációt](Bomberman_Game_Spec.html), amely mérföldköveket is tartalmazott. Ezeket a mérföldköveket használva promptoltam az MI-t, amely így generálta a játékot.
 
 ## Tanulságok
 
