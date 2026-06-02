@@ -45,7 +45,7 @@ MI: Létrehozott 5 különböző mérföldkövet, amelyeket szintén kissé át 
 - **Milestone 6 (Core Gameplay Loop)**: "Add the hidden Level Exit Door (spawns under a random block) and Power-Ups. Tie the Win/Lose conditions to the State Manager."
 - **Milestone 7 (Polish)**: "Add sprite images/animations, sound effects, UI (score/lives/bombs available), and a pause menu."
 
-Ezeken látszik, hogy kis lépésekben kerül létrehozásra a játék, először a környezet azután a mezők majd bele a karakterek.
+Ezeken látszik, hogy kis lépésekben kerül létrehozásra a játék: először a környezet, azután a mezők, majd bele a karakterek.
 
 ### Mérföldkövek használata
 
