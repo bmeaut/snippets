@@ -68,7 +68,7 @@ Az első kép a 2. mérföldkő utáni állapotot tartalmazza, vagyis már van a
 
 ![Bomb_grid](image/Bomb_grid.png "Bomberman grid")
 
-A második a 4. mérföldkő utánit, ahol már vannak bombák van karaketer ami le tud tenni bombát és azokkal fel lehet robbantani narancs színű falakat:
+A második a 4. mérföldkő utánit, ahol már vannak bombák, van karaketer ami le tud tenni bombát és azokkal fel lehet robbantani narancs színű falakat:
 
 ![Bomb_bomb](image/Bomb_bomb.png "Bomberman bomb")
 
