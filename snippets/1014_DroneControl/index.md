@@ -143,7 +143,7 @@ Az ilyen hibák nagy részénél a Visual Studio-ban volt lehetőség "Quick fix
 Resolve all IDE0055 warnings in files xyz...
 ```
 
-Itt nem a "Quick fix" általi megoldást alkalmazta, hanem új ötletet talált ki. A probléma ezzel több esetben is az volt, hogy a javítási nem voltak minden esetben effektívek, valamint több új warning és hiba is jelentkezett utána. Mivel minden parancs futtatására kapott engedélyt az agent, így az új hibákat is javította. Az eredmény általában az lett, hogy minden hibát megoldott, amire kértem de rengeteg olyan sor is bekerült a kódbázisba, ami a "Quick fix" használatával elkerülhető. Rengeteg tokenbe is kerültek ezek a folyamatok, így pár próbálkozás után minden így készült kódrészletet töröltem és manuálisan kattingattam végig a warningokat. Utólag eszembe jutott, hogy lehettem volna pontosabb is a promptokkal, utasíthattam volna, hogy a Visual Studio által felkínált megoldásokat alkalmazza. 
+Itt nem a "Quick fix" általi megoldást alkalmazta, hanem új ötletet talált ki. A probléma ezzel több esetben is az volt, hogy a javításai nem voltak minden esetben effektívek, valamint több új warning és hiba is jelentkezett utána. Mivel minden parancs futtatására kapott engedélyt az agent, így az új hibákat is javította. Az eredmény általában az lett, hogy minden hibát megoldott, amire kértem, de rengeteg olyan sor is bekerült a kódbázisba, ami a "Quick fix" használatával elkerülhető. Rengeteg tokenbe is kerültek ezek a folyamatok, így pár próbálkozás után minden így készült kódrészletet töröltem és manuálisan kattintgattam végig a warningokat. Utólag eszembe jutott, hogy lehettem volna pontosabb is a promptokkal, utasíthattam volna, hogy a Visual Studio által felkínált megoldásokat alkalmazza. 
 
 ## Rövid zárás
 
