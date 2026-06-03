@@ -29,7 +29,7 @@ Alapvetően ezeket a funkciókat úgy tudjuk megvalósítani például, hogy egy
 - Nagyon sok .md fájlt generált (17 db), amiben mindenféle guide szerepelt, ám így csak összezavaró volt, hogy azt se tudtam melyikbe mi van, és voltak redundánsok is
 - Készített pár felesleges fájlt, amik nem voltak használva sehol
 - A futtatást nem úgy csinálta meg, hogy az a Visual Studio start gombjával könnyen elindítható legyen
-- Volt többször olyan is, hogy ő azt állította, hogy kijavította a hibákat, viszont ez a valójában nem így volt, bekellett neki adni ezeket a hibaüzeneteket
+- Volt többször olyan is, hogy ő azt állította, hogy kijavította a hibákat, viszont ez valójában nem így volt, be kellett neki adni ezeket a hibaüzeneteket
 - Egy ideig nem volt hajlandó a program futtatására, azt várta mindvégig hogy én futtassam le, még úgy is ha pont hogy erre kértem
 - Sokszor teliszemetelte a kódot különböző túlcsicsázott console-os üzenetekkel
 - Volt hogy valami hibát csak többszöri promptolásra javított meg
@@ -37,7 +37,7 @@ Alapvetően ezeket a funkciókat úgy tudjuk megvalósítani például, hogy egy
 
 ## A munkafolyamat tanulságos részletei
 
-Én személy szerint eddig programozáshoz AI-t többnyire csak a webes chates felületen használtam, azt is inkább egy "advanced google search"-ként, esetleg néha megírattam vele pl. boilerplate kódokat, vagy esetleg egyszerűbb függvényeket. Most viszont ezen feladat keretein belül kipróbáltam milyen, ha úgy fejlesztek valamit, hogy csak és kizárólag promptokolok, és semmit se írok manuálisan. Először adtam neki egy kezdőpromptot ami alapján elkészítette az alap komponenseket.
+Én személy szerint eddig programozáshoz AI-t többnyire csak a webes chates felületen használtam, azt is inkább egy "advanced google search"-ként, esetleg néha megírattam vele pl. boilerplate kódokat, vagy esetleg egyszerűbb függvényeket. Most viszont ezen feladat keretein belül kipróbáltam milyen, ha úgy fejlesztek valamit, hogy csak és kizárólag promptolok, és semmit se írok manuálisan. Először adtam neki egy kezdőpromptot ami alapján elkészítette az alap komponenseket.
 
 ```
 I would like to use selenium with C# programming language. I would like to log into different webpages and do some kind of actions on the webpage (pressing buttons, entering inputs, uploading images etc.). I would like to ask you to import all the required dependencies and prepare the different c# classes that have the capabilities to do this. Do it in such a way that it is easily extendable with further logic.  (More that 1 advertisements) With this system I would like to automate a workflow of posting advertisements (for now Jofogas.hu).
