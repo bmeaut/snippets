@@ -15,7 +15,7 @@ A második résznél pedig a vizsgálatot viszonylag egyszerű, ASP.NET Core Web
 
 ## Internetes kutatás eredménye
 
-A első részhez elkészült Deep Research eredménye [itt található](AImless_research.md).
+A első részhez elkészült Deep Research eredménye [itt található](AImless_research.html).
 
 ## Saját tapasztalatok
 
