@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.vscode/
+.env
+.env.*
+*.log
+
+# AI tooling
+.claude/
+.specify/
+
+# Stryker
+.stryker-tmp/
+reports/
+
+# Temp / dev scripts
+test-bj.js
+test-bj.cjs
