@@ -1,3 +1,11 @@
+---
+layout: default
+codename: AImless
+title: AImless - a programozási módszerek és az ezekhez társított érzések vizsgálata
+tags: snippets mieset vibecoding
+authors: Hollós Bálint
+---
+
 # MI esettanulmány – AImless a programozási módszerek és az ezekhez társított érzések vizsgálata
 
 A feladat célja, annak a felderítése, hogy különböző mértékű AI segítség használata a programozáshoz, mennyire és hogyan befolyásolja a programozás élményét.
