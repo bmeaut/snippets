@@ -1,3 +1,10 @@
+---
+layout: post
+title: Arcade Játékterem fejlesztése Vibe Coding módszerrel és AI segítségével
+tags: typescript react vibecoding mieset
+author: Szakszon Ádám Dániel
+---
+
 # Arcade Játékterem — Vibe Coding Önlaborban
 
 > **Önálló laboratórium projekt** · TypeScript · React · Canvas 2D · GitHub Copilot · Claude Sonnet
@@ -38,7 +45,7 @@ A hatékonyság kulcsa: **mennyire pontosan tudod megfogalmazni, amit szeretnél
 
 ### Miért fontos a spec?
 
-Az AI-modell minden egyes kérésnél "hidegen indul" — nincs kontextusa arról, hogyan fog kinézni a kész funkció, milyen edge-case-ek fontosak, milyen architektúrával illeszkedjen a meglévő kódba. A **spec (specifikáció)** egy strukturált leírás, amely:
+Az AI-modell minden egyes kérésnél "hidegen indul" — nincs kontextusa arról, hogyan fog kinézni a kész funkció, milyen edge-case-ek fontosak, milyen architektúrával illeszkedjen a meglévő kódba. A **spec (specifikáció)** egy strukturált leírás (lásd még: [spec-kit](https://github.com/github/spec-kit)), amely:
 
 - **User story-kba** szervezi a funkciókat (Mit lát a felhasználó? Mi történik ha...?)
 - **Acceptance scenario-kat** ad (*Given / When / Then* formában)
