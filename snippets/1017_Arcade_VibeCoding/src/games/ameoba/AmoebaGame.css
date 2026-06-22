@@ -1,0 +1,196 @@
+.ameoba-board {
+  display: grid;
+  gap: 3px;
+  padding: 12px;
+  background: #1a1f2e;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.ameoba-cell {
+  width: 48px;
+  height: 48px;
+  background: #0f172a;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 6px;
+  font-size: 22px;
+  font-weight: 800;
+  color: transparent;
+  cursor: default;
+  transition:
+    background 0.1s ease,
+    border-color 0.1s ease,
+    transform 0.08s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  user-select: none;
+}
+
+.ameoba-cell--x {
+  color: #f97316;
+  text-shadow: 0 0 12px rgba(249, 115, 22, 0.6);
+}
+
+.ameoba-cell--o {
+  color: #38bdf8;
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+}
+
+.ameoba-cell--clickable:hover {
+  background: #1e293b;
+  border-color: rgba(148, 163, 184, 0.35);
+  cursor: pointer;
+  transform: scale(1.06);
+}
+
+.ameoba-cell--last::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.ameoba-cell--win {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: #22c55e;
+  animation: win-pulse 0.9s ease-in-out infinite alternate;
+}
+
+.ameoba-cell--win.ameoba-cell--x {
+  background: rgba(249, 115, 22, 0.25);
+  border-color: #f97316;
+}
+
+.ameoba-cell--win.ameoba-cell--o {
+  background: rgba(56, 189, 248, 0.25);
+  border-color: #38bdf8;
+}
+
+@keyframes win-pulse {
+  from { box-shadow: 0 0 6px rgba(34, 197, 94, 0.4); }
+  to   { box-shadow: 0 0 18px rgba(34, 197, 94, 0.9); }
+}
+
+.ameoba-status {
+  font-size: 15px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-align: center;
+  min-height: 22px;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+
+.ameoba-status--player {
+  color: #f97316;
+}
+
+.ameoba-status--ai {
+  color: #38bdf8;
+}
+
+.ameoba-status--win-player {
+  color: #22c55e;
+  font-size: 17px;
+}
+
+.ameoba-status--win-ai {
+  color: #f43f5e;
+  font-size: 17px;
+}
+
+.ameoba-status--draw {
+  color: #a78bfa;
+  font-size: 17px;
+}
+
+/* ── Difficulty selection ───────────────────────────────────────────────── */
+
+.ameoba-difficulty {
+  position: relative;
+  background: #0b1120;
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  border-radius: 14px;
+  padding: 40px 48px 36px;
+  text-align: center;
+  z-index: 100;
+  box-shadow:
+    0 0 0 1px rgba(56, 189, 248, 0.08),
+    0 24px 64px rgba(0, 0, 0, 0.7);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 47px,
+      rgba(148, 163, 184, 0.04) 47px,
+      rgba(148, 163, 184, 0.04) 48px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 47px,
+      rgba(148, 163, 184, 0.04) 47px,
+      rgba(148, 163, 184, 0.04) 48px
+    );
+}
+
+.ameoba-difficulty__deco {
+  position: absolute;
+  font-size: 22px;
+  font-weight: 900;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.13;
+}
+
+.ameoba-difficulty__deco--x {
+  color: #f97316;
+  top: 14px;
+  left: 18px;
+}
+
+.ameoba-difficulty__deco--o {
+  color: #38bdf8;
+  bottom: 14px;
+  right: 18px;
+}
+
+.ameoba-difficulty__title {
+  color: #e2e8f0;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  margin: 0 0 28px;
+  text-transform: uppercase;
+}
+
+.ameoba-difficulty__title span {
+  color: #f97316;
+}
+
+.ameoba-difficulty__buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+
+/* ── Stats ──────────────────────────────────────────────────────────────── */
+
+.ameoba-stats {
+  font-size: 13px;
+  color: #64748b;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.ameoba-stats span {
+  color: #94a3b8;
+  font-weight: 700;
+}

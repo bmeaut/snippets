@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "mutate": [
+    "src/games/blackjack/gameLogic.ts",
+    "src/games/roulette/gameLogic.ts"
+  ],
+  "packageManager": "npm",
+  "reporters": ["clear-text", "html"],
+  "testRunner": "vitest",
+  "coverageAnalysis": "off",
+  "disableTypeChecks": true,
+  "timeoutMS": 120000,
+  "plugins": [
+    "@stryker-mutator/vitest-runner"
+  ],
+  "vitest": {
+    "configFile": "vitest.config.ts"
+  }
+}
