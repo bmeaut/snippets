@@ -1,0 +1,45 @@
+Table Food{
+    id long [pk]
+    name varchar
+    isAvailable bit
+    isComplex bit
+}
+
+Table Ingridients{
+    parentId long [ref: > Food.id, not null]
+    childId long [ref: > Food.id, not null]
+}
+
+Table ComplexFood{
+    parentId long [ref: > Food.id, not null]
+    childId long [ref: > Food.id, not null]
+    size double
+
+    indexes{
+     (parentId, childId) [pk]
+    }
+}
+
+Table Consumption{
+    foodId long  [ref: > Food.id, not null]
+    dateTime dateTime [pk]
+    size double
+}
+
+Table Nutirtion{
+    id long [pk]
+    name varchar
+    measurement varchar
+}
+
+Table NutritionData{
+    id long [pk]
+    nutritionId long [ref: > Nutirtion.id, not null]
+    foodId long [ref: > Food.id, not null]
+}
+
+Table NutritionGoal{
+    id long [pk]
+    nutritionId long [ref: > Nutirtion.id, not null]
+    goalValue double
+}
