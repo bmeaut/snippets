@@ -48,7 +48,7 @@ A feladat megoldása során a ChatGPT ingyenes verzióját használtam.
 
 ## Technológiák kiválasztása
 
-A használni kívánt helyes technológiák kiválasztása összhangban kell legyen az aktuális trendekkel és konvenciókkal. Ahhoz, hogy egy alkalmazás doménjét minél jobban lefedjük elengedhetetlen az évek és a rutin. Ennek hiányában a feladatot, hogy milyen use-case-ek milyen architektúrákkal és technológiákkal valósítható meg rengeteg órányi kutatást igényel meg, amelyet ebben a stádiumban egy LLM-nek szerveztem ki. 
+A használni kívánt helyes technológiák kiválasztása összhangban kell legyen az aktuális trendekkel és konvenciókkal. Ahhoz, hogy egy alkalmazás doménjét minél jobban lefedjük, elengedhetetlen az évek és a rutin. Ennek hiányában a feladatot, hogy milyen use-case-ek milyen architektúrákkal és technológiákkal valósíthatók meg, rengeteg órányi kutatást igényel, amelyet ebben a stádiumban egy LLM-nek szerveztem ki. 
 
 A technológia kiválasztásához a következő prompt-ot használtam, illetve a  `high_level_spec.md` fájl tartalmát beillesztettem:
 ```txt
@@ -138,7 +138,7 @@ Kiindulási fázisban teljes mértékben a segítségemre tudott lenni.
 
 Ugyanakkor fontos megjegyezni, hogy ez a fejlesztés egyik legkoraibb fázisa, ahol még implementációra nem is került sor, így nehéz ellenőrizni, hogy a modell által javasolt megoldások hosszú távon is megfelelőek lesznek, csupán lebontotta azt további technológia alfeladatokra.
 Az alfeladatok stabil kiindulás alappal tudnak szolgálni, amellyel könnyebb megfogni, illetve becsülni a teljes projektet.
-A gyakorlat, azonban azt mutatja, hogy az AI által adott válaszok esetén általában a részletekben adódnak a problémák, így ebben a stádiumban ezeket rendkívül nehéz kiszűrni.
+A gyakorlat azonban azt mutatja, hogy az AI által adott válaszok esetén általában a részletekben adódnak a problémák, így ebben a stádiumban ezeket rendkívül nehéz kiszűrni.
 
 
 ## Konkrét implementációk kiválasztása és importálása
@@ -218,20 +218,20 @@ DataStore
 
 ### Eredmények
 
-Az Android blokkra vonatkozó és az opcionális ajánlásokat leszámítva kapott válaszok alapján frissítettem a `build.gradke.kts` fájljaim, azonban sajnos a projekt nem build-elt sikeresen, a syntax highlight alapján `ksp` típusú referenciát képtelen feloldani, de a valódi hiba egy hilt referencia hiánya volt (`The Hilt Android Gradle plugin is applied but no com.google.dagger:hilt-android dependency was found.`).
+Az Android blokkra vonatkozó és az opcionális ajánlásokat leszámítva kapott válaszok alapján frissítettem a `build.gradle.kts` fájljaim, azonban sajnos a projekt nem buildelt sikeresen, a syntax highlight alapján `ksp` típusú referenciát képtelen feloldani, de a valódi hiba egy hilt referencia hiánya volt (`The Hilt Android Gradle plugin is applied but no com.google.dagger:hilt-android dependency was found.`).
 
 Ellenőriztem és valóban nem a legújabb implementációkat szolgáltatta a modell, továbbá a verziók kompatibilitásából önmagában nem is származott probléma. 
 
 A hibaüzenet és a `build.gradle.kts ` fájlom tartalmát a modellnek biztosítva sem volt képes felismerni, hogy mi a baj.
-Többedszeri próbálkozásra sem sikerült a modellnek a problémát orvosolnia. Igyekeztem több üres session-t nyitni és azon alkalmakkor, amikor nagyon rossz úton keresett megoldásokat a kódot a kontextusába helyezni, azonban sajnos nem volt eredményes. Minél mélyebben jártam egy beszélgetésben annál inkább növekedtek az újabb hibaüzenetek komplexitásai a modell által tett javaslatok alkalmazását követve. A problémát megpróbáltam egy Claude modellel is, azonban az sem járt sikerrel.
+Többedszeri próbálkozásra sem sikerült a modellnek a problémát orvosolnia. Igyekeztem több üres session-t nyitni és azon alkalmakkor, amikor nagyon rossz úton keresett megoldásokat, a kódot a kontextusába helyeztem, azonban sajnos eredménytelenül. Minél mélyebben jártam egy beszélgetésben, a modell által tett javaslatokat követve annál inkább növekedett az újabb hibaüzenetek komplexitása. A problémát megpróbáltam megoldani egy Claude modellel is, azonban az sem járt sikerrel.
 
-A problémát egy már korábbi projektem alapján sikerült megoldani és a forrása annyi volt, hogy a hilt-hez tartozó compiler-t hiányolta, ugyanakkor mivel a ksp-hez tartozó könyvtárat nem volt lehetősége letölteni, mivel a build előbb megakadt, így a syntax highlight helytelenül mutatott egy a ksp referencia hiányt is.
+A problémát egy már korábbi projektem alapján sikerült megoldani és a forrása annyi volt, hogy a hilt-hez tartozó compiler-t hiányolta, ugyanakkor mivel a ksp-hez tartozó könyvtárat nem volt lehetősége letölteni, mivel a build előbb megakadt, így a syntax highlight helytelenül mutatott egy ksp referencia hiányt is.
 
 Az Android Studio sajnos nem tudott a modelleknek megfelelő minőségű hibaleírást adni, azok pedig csupán az aktuális build fájlok alapján nem voltak képesek a hiba okának felderítésére.
 
 ### Tanulság
 
-Ezen alfeladat megoldása során az LLM-ek sajnos nem voltak segítségemre, sőt több időt töltöttem a hibaüzenetekkel és kódokkal való oda-vissza küldözgetésével, mint amennyi időbe telt magamtól megtalálni és javítani a hiba forrását. 
+Ezen alfeladat megoldása során az LLM-ek sajnos nem voltak segítségemre, sőt több időt töltöttem a hibaüzenetekkel és a kódok oda-vissza küldözgetésével, mint amennyi időbe telt magamtól megtalálni és javítani a hiba forrását. 
 Azaz specifikus könyvtárak implementációinak ismeretében vagy azok kombinációjának összeválogatásában gyenge teljesítményt nyújtott.
 
 Fellelhető volt továbbá, hogy minél többször adtam vissza neki a hibaüzenetet, annál rosszabb minőségű válaszokat nyújtott és csak új chat nyitásával tudtam előre lépéseket tenni. 
@@ -242,7 +242,7 @@ Fellelhető volt továbbá, hogy minél többször adtam vissza neki a hibaüzen
 Általánosságban az Android alkalmazások az átláthatóság érdekében hasonló mappastruktúrát igyekeznek követni.
 Ennek kialakítása projektről-projektre közel azonos, így könnyedén egy modellre bízható egy ilyen kialakítása és az üres fájlok létrehozása.
 
-Az én esetemben az Android Studio-ban mint Google termékbe alapesetben a Gemini van beleintegrálva és fiók regisztrációját követően használható, azonban a napi token limit miatt, ezt a feladatot is a ChatGPT modellre bíztam, mégpedig attól Powershell script-eket kérve az egyes mappák és fájlok létrehozására.
+Az én esetemben az Android Studioban - mint Google termékben - alapesetben a Gemini van beleintegrálva és fiók regisztrációját követően használható, azonban a napi token limit miatt ezt a feladatot is a ChatGPT modellre bíztam, mégpedig attól Powershell scripteket kérve az egyes mappák és fájlok létrehozására.
 
 ```txt
 Egy Compose alapú android alkalmazást szeretnék készíteni, a feladatot egy skeleton létrehozása, amely magábafoglalja mappastruktúrát és az üres fájlokat.
@@ -365,11 +365,11 @@ Egyszer használatos script-ek generálására kompetens és megfelelően kielé
 
 ## Adatmodell implementálása
 
-Az adatmodellt személyesen már korábban kidolgoztam és egy köztes **DBML** nyelvben ledefiniáltam. A modellnek a feladata ebben a stádiumban csupán a ROOM ORM objektumok leképezése és az azok összekapcsolása.
+Az adatmodellt személyesen már korábban kidolgoztam és egy köztes **DBML** nyelvben ledefiniáltam. A modellnek a feladata ebben a stádiumban csupán a ROOM ORM objektumok leképezése és azok összekapcsolása.
 
 Maga az adatmodell nem nagy, de vannak benne komplex kapcsolatok, mint például a több a többhöz kapcsolat leírása kapcsoló táblán keresztül, vagy a navigálhatóság definiálása, mivel míg adatbázis oldalon tetszőleges irányba lehet navigálni, addig kódban szükségesek gyűjtemények és referenciák ezekre az esetekre.
 
->Érdekesség továbbá, hogy android oldalon az egyes kapcsolatok leírásához külön osztály létrehozása szükséges, azaz `Food` *many-to-one* `NutritionData` kapcsolathoz szükséges egy FoodWithNutritionData osztály és felvenni benne az irányokat és referenciákat.
+>Érdekesség továbbá, hogy android oldalon az egyes kapcsolatok leírásához külön osztály létrehozása szükséges, azaz `Food` *many-to-one* `NutritionData` kapcsolathoz szükséges egy FoodWithNutritionData osztály és fel kell venni benne az irányokat és referenciákat.
 
 ![dbmodel](dbschema.png)
 
@@ -434,7 +434,7 @@ A leírást elemezve továbbá megtalált egy fontos tervezési hibát, amit vé
 
 ### Tanulságok
 
-Egy pontos adatbázis definíció mellett az MI képes nem csupán adott platformra lefordítani a struktúrát, hanem még képes volt kihasználni az adott platform adottságait. A nyelvfüggetlen sémaspecifikációt továbbá sikerült olyan szinten megértenie, hogy még logikailag is tudott rajta javítani.
+Egy pontos adatbázis definíció mellett az MI képes nem csupán adott platformra lefordítani a struktúrát, hanem még képes volt kihasználni az adott platform adottságait is. A nyelvfüggetlen sémaspecifikációt továbbá sikerült olyan szinten megértenie, hogy még logikailag is tudott rajta javítani.
 
 
 ## Felhasználói felület kialakítása
@@ -551,7 +551,7 @@ Mivel ezek az eltérések főleg kisebb padding és színek alakítását jelent
 A fejlesztés során az alábbi általános tanulságok vonhatóak le.
 
 * Magas szintű tervek, technológiák kialakításában, kiválasztásában, apró részfeladatokra bontásban hatékonynak minősül. Valószínűleg egy szaktekintély tudását még csak meg sem tudja közelíteni, de számomra (mint laikus az aktuális trendekben) nagy segítséget nyújtott. Ez a tulajdonság ugyanakkor veszélyes is tud lenni, mivel mint laikus nincs lehetőségem egyszerűen ellenőrizni a javasoltakat.
-* Specifikus könyvtárverziókkal, dependenciákkal átfogóan csak limitáltan tud csak segíteni. A bizonyos kompatibilitációk ellenőrzésére első körben érdemesebb lehet a kiadó weboldalaihoz fordulni, probléma esetén Stack Overflow, és ha csak sokadik próbálkozásra sem sikerül, lehet érdemes az LLM-el is megpróbálni.
-* Ha gyorsan szeretnénk valami végletekig egyszerű azonban nagyon repetitív feladatot elvégezni érdemes lehet LLM-el script-eket generálni erre. Mappaszerkezet, struktúra kialakításában, de akár fájlok között kikereséshez, módosításban Powershell vagy Bash script-ek írásával rengeteg órát tud megspórolni. A feladat definiálása ilyen esetekben többnyire egyszerű, a modellek pedig gyorsabban gépelnek és több beépített függvényt ismernek.
-* Egy platformfüggetlen specifikáció alapján képes volt nem csupán platformspecifikus implementációt generálni, hanem használni a platform adottságait. Az adatmodell generálása során az adatmodellt nem csupán szintaktikailag, hanem logikailag is értelmezni tudta és felhívta a figyelmet dizájnból adódó problémákra. Érdemes lehet minél több dokumentáció és platformfüggetlen leírásokkal prompt-olni, hogy ki tudja használni a platform adottságait.
-* Erős képek elemzésében. Kis leírás és pár képet követően hatékonyan képes megjelenítéssel kapcsolatos funkciók és kódok gyors prototipizálásában és generálásban. Szem előtt kell tartani, hogy a kontextus befejeztével ugyanazon bemenetre más kimenetet generál, ennek következtében az eredmények nem feltétlen kompatibilisek. Ennek orvoslására érdemes lehet dizájnt értintő megszorításokat is a kontextusba tenni, illetve lehetőség szerint megőrizni a korábbi kontextust. 
+* Specifikus könyvtárverziókkal, dependenciákkal átfogóan csak limitáltan tud segíteni. A bizonyos kompatibilitások ellenőrzésére első körben érdemesebb lehet a kiadó weboldalaihoz fordulni, probléma esetén Stack Overflow, és csak ha sokadik próbálkozásra sem sikerül, lehet érdemes az LLM-el is megpróbálni.
+* Ha gyorsan szeretnénk valami végletekig egyszerű, azonban nagyon repetitív feladatot elvégezni, érdemes lehet LLM-mel scripteket generálni erre. Mappaszerkezet, struktúra kialakításában, de akár fájlok között kikereséshez, módosításban Powershell vagy Bash scriptek írásával rengeteg órát tud megspórolni. A feladat definiálása ilyen esetekben többnyire egyszerű, a modellek pedig gyorsabban gépelnek és több beépített függvényt ismernek.
+* Egy platformfüggetlen specifikáció alapján képes volt nem csupán platformspecifikus implementációt generálni, hanem használni a platform adottságait. Az adatmodell generálása során az adatmodellt nem csupán szintaktikailag, hanem logikailag is értelmezni tudta és felhívta a figyelmet dizájnból adódó problémákra. Érdemes lehet minél több dokumentációval és platformfüggetlen leírásokkal promptolni, hogy ki tudja használni a platform adottságait.
+* Erős képek elemzésében. Kis leírást és pár képet követően hatékony megjelenítéssel kapcsolatos funkciók és kódok gyors prototipizálásában és generálásban. Szem előtt kell tartani, hogy a kontextus befejeztével ugyanazon bemenetre más kimenetet generál, ennek következtében az eredmények nem feltétlen kompatibilisek. Ennek orvoslására érdemes lehet dizájnt értintő megszorításokat is a kontextusba tenni, illetve lehetőség szerint megőrizni a korábbi kontextust. 

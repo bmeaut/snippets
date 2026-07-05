@@ -23,7 +23,7 @@ Egy külön panel-en a felhasználó vissza tudja nézni, hogy adott múltbéli 
 
 **Mérleg hibák kezelése**
 
-Az alkalmazás lehetőséget bizotsít a mérleg hibáinak korrigálására is, annak mért értékekhez tartozó hibáinak megadásával. Ezt tömegek megadásakor, teheti meg a felhasználó egy checkbox formájában. Ilyenkor a fix pontok közötti interpolációval korrigálja az alkalmazás a bevitt tömeget. Pl.: 100g -> 102g, 500g -> 504g értékek esetén 300g esetén 3g lesz a hiba. Az alkalmazás egy időben egy mérleg korrigációjával képes dolgozni. A mérleghibák felvételére egy külön képernyő szolgál
+Az alkalmazás lehetőséget biztosít a mérleg hibáinak korrigálására is, annak mért értékekhez tartozó hibáinak megadásával. Ezt tömegek megadásakor teheti meg a felhasználó egy checkbox formájában. Ilyenkor a fix pontok közötti interpolációval korrigálja az alkalmazás a bevitt tömeget. Pl.: 100g -> 102g, 500g -> 504g értékek esetén 300g esetén 3g lesz a hiba. Az alkalmazás egy időben egy mérleg korrigációjával képes dolgozni. A mérleghibák felvételére egy külön képernyő szolgál.
 
 Az alkalmazás az adatokat csupán lokálisan tárolja és alapvető működése nem igényel internethez való kapcsolódást, leszámítva a tápértékek becslését.
 
