@@ -1,0 +1,116 @@
+**Done.** Implemented the first PRD task: User authentication (login/logout, JWT).
+
+- Backend: Express + better-sqlite3 + httpOnly-cookie JWT auth, 7 passing tests.
+- Frontend: Vite + React + TS, with routing (react-router) and an `AppLayout` shell set up from this first feature — directly addressing the PRD's UI/UX hint, since v1's main complaint was no navigation structure at all. 6 passing tests, clean `tsc` build.
+- Committed as `fb5dce5`, checked off in PRD.md, progress.txt updated.
+- Couldn't do a live browser smoke test (curl to the dev server was denied, and self-escalating permissions is blocked as before), but both test suites and the production build pass cleanly.
+
+Next up: **Role system (Student, Teacher, Administrator, Super-administrator)**.
+Implemented the Role system task (Student/Teacher/Administrator/Super-administrator): backend role column + privilege-gated `/api/users` endpoints, frontend role-aware nav + Users management page. 21 backend and 11 frontend tests pass, build is clean, committed as `edd4876`. PRD.md checked off and progress.txt updated.
+
+Next task up: **Class management (start date + identifier, e.g. 2009/C)** — stopping here since only one task should be done at a time.
+Committed. Implemented **Class management** (start date + identifier, e.g. `2009/C`):
+
+- Backend: `classes` table, `/api/classes` CRUD routes (list open to all authenticated users, mutations admin-gated), identifier/date validation, seed data, 16 new tests (36/36 backend passing).
+- Frontend: `/classes` admin page with create form, inline edit, and delete (with confirm), wired into nav and route guards, 4 new tests (15/15 frontend passing).
+- Verified via test suites, production build, lint, and a real `npm run seed` run.
+- Checked off in PRD.md, progress.txt updated.
+
+Next task queued for the following run: Subject management (description, required books, lessons).
+Committed. Summary of this run:
+
+- Implemented **Subject management** (description, required books, lessons): new `subjects` table, `/api/subjects` CRUD routes (read for any authenticated role, write gated to administrator/super-administrator), seed data, and 16 new backend tests — 51/51 backend tests passing.
+- Added a `SubjectsPage` with a single add/edit form (one-per-line textareas for required books and lessons, since inline table editing would be cramped for multi-item lists), nav entry, and 5 new frontend tests — 20/20 frontend tests passing.
+- Verified with `npm run build`, `npm run lint`, and a real `npm run seed` run against the SQLite file.
+- Checked off the task in `PRD.md`, logged details in `progress.txt`, and committed.
+
+Next task per the PRD: **Assign subjects to classes per year, including which teacher holds it.**
+Implemented and committed: **Assign subjects to classes per year, including which teacher holds it.**
+
+Summary:
+- Backend: new `assignments` table (class/subject/teacher FKs + year, unique per class+subject+year), `/api/assignments` REST routes (admin-gated writes, any-role reads) with validation that the teacher field actually references a `teacher`-role user, joined response data (class identifier, subject name, teacher name), seed data, and 22 new tests (69/69 backend tests passing).
+- Frontend: new `AssignmentsPage` at `/assignments` with class/subject/teacher dropdowns (teacher list filtered to actual teachers) and year input, wired into nav/routing, plus 5 new tests (25/25 frontend tests passing).
+- Verified with both test suites, `npm run build`, `npm run lint`, and a real `npm run seed` run against the SQLite file.
+
+PRD.md checked off and progress.txt updated. Next task up is **Grade entry for students by teacher**, but per instructions I stopped after this one task.
+Committed as `3cacb68`. Implemented **Grade entry for students by teacher**:
+
+- **Backend**: new `class_students` roster table (needed since nothing previously linked students to classes) and a `grades` table (1–5 scale, multiple entries per student allowed since this is ongoing grading, distinct from the still-pending "year-end" grade task). Added roster endpoints to `classes.js` and a new `grades.js` router with role-aware access (students see only their own; teachers must own the assignment; admins can view/manage anything).
+- **Frontend**: `ClassesPage` gained an inline roster manager per class; new `GradesPage` (`/grades`, visible to all roles) gives students a read-only grades table and teachers/admins a class-picker + grade-entry form with edit/delete.
+- **Tests**: 30 new backend tests (99/99 passing) and 11 new/updated frontend tests (34/34 passing). Full production build and lint are clean (only pre-existing warnings).
+- Verified `npm run seed` against the real SQLite file works with the new tables.
+
+PRD.md checkbox updated and progress.txt has the full writeup. Next task queued: **Year-end grade entry by teacher**.
+Done. Here's what was implemented for **Year-end grade entry by teacher**:
+
+**Backend:**
+- New `year_end_grades` table with `UNIQUE(assignment_id, student_id)` — one final mark per student per assignment, enforced at the DB level
+- Full CRUD at `/api/year-end-grades` with the same role-based access as regular grades (students see only their own; teachers need to own the assignment; admins can filter or list all); `POST` returns 409 if a year-end grade already exists for that pair
+- 23 new backend tests — all 122 passing
+
+**Frontend:**
+- New `YearEndGradesPage` at `/year-end-grades`, visible in the nav for all roles
+- Student view: read-only table with grade pill + descriptive label
+- Teacher/admin view: assignment picker → per-student table with contextual inline actions: "Set grade" (if ungraded) or "Edit"/"Delete" (if already set) — no separate form since year-end grades are just a single 1–5 value
+- 7 new frontend tests — all 41 passing; build clean
+
+Next task from PRD: **README with setup instructions**.
+All 8 mandatory features are checked off. Every optional feature remains unchecked.
+
+<promise>COMPLETE</promise>
+[ralph-loop] PRD complete, stopping.
+Semester grade entry is complete. Here's a summary of what was done:
+
+**Backend:**
+- New `semester_grades` table with a `UNIQUE(assignment_id, student_id, semester)` constraint (semester is 1 or 2)
+- `/api/semester-grades` route mirroring year-end-grades access rules; POST validates semester field, returns 409 on duplicate
+- Seed data: semester 1 (grade 4) and semester 2 (grade 5) for the demo student in Mathematics
+- 25 new tests → **147 backend tests, all passing**
+
+**Frontend:**
+- `SemesterGradesPage` at `/semester-grades` — student view shows a row per grade with a "Semester 1/2" column; teacher/admin view shows a roster table with two independent grade cells per student, each supporting Set/Edit/Delete inline
+- Nav item added between Grades and Year-end Grades
+- 7 new tests → **48 frontend tests, all passing**; build passes with 0 errors
+Done. Here's what was implemented:
+
+**Weighted grade average calculation and display** — committed in two commits.
+
+**Backend (`/api/averages`):**
+- Uses SQLite `AVG()` grouped by student+assignment to compute each student's grade average per subject
+- Role-scoped: students see only their own; teachers require `assignmentId` and only see their assignments; admins can filter or list all
+- 11 new tests — all 158 backend tests passing
+
+**Frontend (`/averages`):**
+- **Student view**: table of per-subject averages (subject, class, year, grade count, pill + label) with a weighted overall average in the page header
+- **Teacher/admin view**: assignment picker → per-student averages table with a class average badge
+- `gradeLabel()` maps the floating-point average to Excellent/Good/Satisfactory/Pass/Fail
+- Added to nav and route
+- 5 new tests — all 55 frontend tests passing, build clean
+Done. Here's what was implemented for **Class average statistics for teachers**:
+
+**Backend** (`/api/class-stats`):
+- Single query with `LEFT JOIN grades` (so assignments with no grades still appear), `AVG()` for class average, and `SUM(CASE WHEN ...)` for per-grade distribution counts
+- Teachers see only their own assignments; admins see all; students get 403
+- 9 new tests — 167 total, all passing
+
+**Frontend** (`/class-stats`, "Class Stats" nav item):
+- Summary table showing all assignments at once: Subject, Class, Year, Teacher (admin only), Grade count, Class average (pill + label), and a colored distribution bar
+- Distribution bar uses `.dist-chip--N` colored chips (red=1 → blue=5) showing count per grade value — only shown when grades exist
+- Visible to teachers and admins via `RequireRole` guard and nav role filter
+- 6 new tests — 61 total, all passing; production build passes
+Done. Here's a summary of what was implemented:
+
+**Event creation by admin, visible to all**
+
+- **Backend** — new `events` table + `/api/events` route: GET is open to all authenticated users; POST/PATCH/DELETE require `administrator` or `super_administrator`. Title and date (YYYY-MM-DD) are required; description defaults to empty. 19 new tests, 186/186 passing.
+
+- **Frontend** — new `EventsPage` at `/events` added to the nav for all roles. Students and teachers get a read-only table (date, title, description). Admins get an add/edit form above the table and per-row Edit/Delete buttons. Client-side validation catches empty title/date before the API call. 8 new tests, 69/69 passing. Build and lint clean.
+Timetable management is complete and committed. Here's what was built:
+
+**Backend:** New `timetable_entries` table and `/api/timetable` route — any authenticated user can GET (filtered by classId/year), admins can POST/PATCH/DELETE. The slot-conflict check (no two subjects at the same day+period for the same class+year) is enforced at the API layer. 22 new tests, 208 backend total passing.
+
+**Frontend:** `TimetablePage` with a class+year selector and an interactive week grid (8 periods × Mon–Fri). Admins click any cell to open an edit panel that lets them assign a subject or clear the slot; students get a read-only view. New timetable grid CSS added to `index.css`. 7 new tests, 77 frontend total passing. Build and lint clean.
+Every task is checked off.
+
+<promise>COMPLETE</promise>
+[ralph-loop] PRD complete, stopping.
