@@ -1,0 +1,392 @@
+<?xml version="1.0"?>
+<robot name="mobile_robot_with_arm">
+
+  <!-- ===================== MATERIALS ===================== -->
+  <!-- Mobile base -->
+  <material name="chassis_gray">
+    <color rgba="0.6 0.6 0.6 1.0"/>
+  </material>
+  <material name="wheel_black">
+    <color rgba="0.1 0.1 0.1 1.0"/>
+  </material>
+  <material name="camera_dark">
+    <color rgba="0.15 0.15 0.15 1.0"/>
+  </material>
+  <material name="lens_blue">
+    <color rgba="0.2 0.5 0.9 1.0"/>
+  </material>
+  <material name="sensor_black">
+    <color rgba="0.08 0.08 0.08 1.0"/>
+  </material>
+
+  <!-- Arm -->
+  <material name="gray">
+    <color rgba="0.5 0.5 0.5 1"/>
+  </material>
+  <material name="blue">
+    <color rgba="0.2 0.4 0.8 1"/>
+  </material>
+  <material name="green">
+    <color rgba="0.2 0.7 0.3 1"/>
+  </material>
+  <material name="orange">
+    <color rgba="0.9 0.5 0.1 1"/>
+  </material>
+  <material name="dark_gray">
+    <color rgba="0.25 0.25 0.25 1"/>
+  </material>
+  <material name="black">
+    <color rgba="0.05 0.05 0.05 1"/>
+  </material>
+
+  <!-- ===================== ROOT / FOOTPRINT ===================== -->
+  <!-- Standard mobile-robot convention: base_footprint is the ground-level
+       root link (no geometry), with base_link offset above it. This makes
+       the model easier to drop into a TF tree / RViz / navigation stack. -->
+  <link name="base_footprint"/>
+
+  <joint name="joint_base_footprint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0.10" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ===================== BASE / CHASSIS ===================== -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.40 0.30 0.12"/>
+      </geometry>
+      <material name="chassis_gray"/>
+    </visual>
+  </link>
+
+  <!-- ===================== WHEELS (continuous joints) ===================== -->
+
+  <!-- Front Left Wheel -->
+  <link name="wheel_front_left">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.04"/>
+      </geometry>
+      <material name="wheel_black"/>
+    </visual>
+  </link>
+  <joint name="joint_wheel_front_left" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_front_left"/>
+    <origin xyz="0.13 0.17 -0.04" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Front Right Wheel -->
+  <link name="wheel_front_right">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.04"/>
+      </geometry>
+      <material name="wheel_black"/>
+    </visual>
+  </link>
+  <joint name="joint_wheel_front_right" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_front_right"/>
+    <origin xyz="0.13 -0.17 -0.04" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Rear Left Wheel -->
+  <link name="wheel_rear_left">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.04"/>
+      </geometry>
+      <material name="wheel_black"/>
+    </visual>
+  </link>
+  <joint name="joint_wheel_rear_left" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_rear_left"/>
+    <origin xyz="-0.13 0.17 -0.04" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Rear Right Wheel -->
+  <link name="wheel_rear_right">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.04"/>
+      </geometry>
+      <material name="wheel_black"/>
+    </visual>
+  </link>
+  <joint name="joint_wheel_rear_right" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_rear_right"/>
+    <origin xyz="-0.13 -0.17 -0.04" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- ===================== PAN-TILT CAMERA ===================== -->
+  <!-- Previously fully fixed and forward-only. Now mounted on a pan-tilt
+       stage so it can track the arm/gripper or look around independently
+       of the chassis heading. Limits kept modest (±60deg pan, ±45deg tilt)
+       to keep the lens cabling/housing visually plausible. -->
+
+  <link name="camera_pan_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.015" length="0.01"/>
+      </geometry>
+      <material name="camera_dark"/>
+    </visual>
+  </link>
+  <joint name="joint_camera_pan" type="revolute">
+    <parent link="base_link"/>
+    <child link="camera_pan_link"/>
+    <origin xyz="0.21 0 0.04" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.047" upper="1.047" effort="2" velocity="1"/>
+  </joint>
+
+  <link name="camera_body">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.05 0.03"/>
+      </geometry>
+      <material name="camera_dark"/>
+    </visual>
+  </link>
+  <joint name="joint_camera_tilt" type="revolute">
+    <parent link="camera_pan_link"/>
+    <child link="camera_body"/>
+    <origin xyz="0 0 0.01" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-0.785" upper="0.785" effort="2" velocity="1"/>
+  </joint>
+
+  <!-- Camera Lens (fixed to camera body, facing forward) -->
+  <link name="camera_lens">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry>
+        <cylinder radius="0.012" length="0.02"/>
+      </geometry>
+      <material name="lens_blue"/>
+    </visual>
+  </link>
+  <joint name="joint_camera_lens" type="fixed">
+    <parent link="camera_body"/>
+    <child link="camera_lens"/>
+    <origin xyz="0.025 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ===================== LIDAR (navigation sensor, visual only) ===================== -->
+  <!-- Mounted toward the rear-top of the chassis so it has a clear scan
+       plane and stays clear of the arm's swing envelope at the front. -->
+  <link name="lidar_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.03" length="0.04"/>
+      </geometry>
+      <material name="sensor_black"/>
+    </visual>
+  </link>
+  <joint name="joint_lidar_mount" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+    <origin xyz="-0.10 0 0.08" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ===================== ARM MOUNT ===================== -->
+  <!-- Mount pulled in to x=0.03 (near chassis center) since the arm is now
+       2.5x larger and its full reach (~0.67m) comfortably covers the
+       0.40m x 0.30m chassis footprint regardless of mount position; a
+       centered mount keeps the swept envelope balanced on all sides.
+       Riser raised slightly to 0.01m to give the now-larger arm base
+       (radius 0.0875) a touch more visual clearance off the chassis top. -->
+  <joint name="joint_arm_mount" type="fixed">
+    <parent link="base_link"/>
+    <child link="arm_base_link"/>
+    <origin xyz="0.03 0 0.07" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ===================== 6DOF ARM ===================== -->
+  <!-- All link/joint chain dimensions scaled 2.5x from the original arm
+       (radii, lengths, origins, and gripper/finger geometry) so the arm's
+       horizontal reach grows from ~0.27m to ~0.67m, enough to cover the
+       chassis footprint (half-diagonal ~0.25m) and reach well beyond it
+       for manipulation tasks around the robot. Joint angle LIMITS are
+       unchanged, since angles are scale-invariant; effort values were
+       bumped up to stay plausible for the larger links (visual-only file,
+       so this has no functional effect, just keeps the numbers sane). -->
+
+  <!-- Arm Base -->
+  <link name="arm_base_link">
+    <visual>
+      <origin xyz="0 0 0.0225" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.0875" length="0.045"/>
+      </geometry>
+      <material name="gray"/>
+    </visual>
+  </link>
+
+  <!-- Joint arm 1: base rotation (yaw) -->
+  <joint name="joint_arm_1" type="revolute">
+    <parent link="arm_base_link"/>
+    <child link="arm_link1"/>
+    <origin xyz="0 0 0.045" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14159" upper="3.14159" effort="30" velocity="1"/>
+  </joint>
+
+  <!-- Arm Link 1: vertical column -->
+  <link name="arm_link1">
+    <visual>
+      <origin xyz="0 0 0.15625" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.055" length="0.3125"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+  </link>
+
+  <!-- Joint arm 2: shoulder pitch.
+       With axis (0 1 0), a POSITIVE angle swings arm_link2 downward (toward
+       -z, i.e. into the arm_link1 column) and a NEGATIVE angle swings it
+       upward (away from arm_link1). Limit restricted to -1.5708..1.0 rad
+       (-90deg..57deg) so it can swing fully upward but only slightly
+       downward, preventing it from reaching 90deg straight down and
+       intersecting arm_link1 (self-collision fix). -->
+  <joint name="joint_arm_2" type="revolute">
+    <parent link="arm_link1"/>
+    <child link="arm_link2"/>
+    <origin xyz="0 0 0.3125" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5708" upper="1.0" effort="30" velocity="1"/>
+  </joint>
+
+  <!-- Arm Link 2: upper arm (horizontal) -->
+  <link name="arm_link2">
+    <visual>
+      <origin xyz="0.13125 0 0" rpy="0 1.5708 0"/>
+      <geometry>
+        <cylinder radius="0.045" length="0.2625"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+  </link>
+
+  <!-- Joint arm 3: elbow pitch -->
+  <joint name="joint_arm_3" type="revolute">
+    <parent link="arm_link2"/>
+    <child link="arm_link3"/>
+    <origin xyz="0.2625 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.0" upper="2.0" effort="20" velocity="1"/>
+  </joint>
+
+  <!-- Arm Link 3: forearm (horizontal) -->
+  <link name="arm_link3">
+    <visual>
+      <origin xyz="0.10625 0 0" rpy="0 1.5708 0"/>
+      <geometry>
+        <cylinder radius="0.0375" length="0.2125"/>
+      </geometry>
+      <material name="orange"/>
+    </visual>
+  </link>
+
+  <!-- Joint arm 4: wrist roll -->
+  <joint name="joint_arm_4_wrist_roll" type="revolute">
+    <parent link="arm_link3"/>
+    <child link="arm_wrist_link"/>
+    <origin xyz="0.2125 0 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.14159" upper="3.14159" effort="10" velocity="1"/>
+  </joint>
+
+  <!-- Wrist link -->
+  <link name="arm_wrist_link">
+    <visual>
+      <origin xyz="0.0275 0 0" rpy="0 1.5708 0"/>
+      <geometry>
+        <cylinder radius="0.0325" length="0.055"/>
+      </geometry>
+      <material name="gray"/>
+    </visual>
+  </link>
+
+  <!-- Fixed mount to gripper base -->
+  <joint name="joint_arm_5_gripper_mount" type="fixed">
+    <parent link="arm_wrist_link"/>
+    <child link="arm_gripper_base"/>
+    <origin xyz="0.055 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Gripper base: width (y) = 0.0875, so half-width = 0.04375 -->
+  <link name="arm_gripper_base">
+    <visual>
+      <origin xyz="0.01875 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0375 0.0875 0.0375"/>
+      </geometry>
+      <material name="dark_gray"/>
+    </visual>
+  </link>
+
+  <!-- Joint arm 6: right finger.
+       origin y=0.02, travel up to 0.0175, finger half-thickness 0.00625
+       => max extent = 0.02+0.0175+0.00625 = 0.04375 = gripper_base half-width,
+       so the finger can never travel past the gripper mount's edge
+       (same proportional safety margin as the original, preserved by the
+       uniform 2.5x scale). -->
+  <joint name="joint_arm_6_finger_right" type="prismatic">
+    <parent link="arm_gripper_base"/>
+    <child link="arm_finger_right"/>
+    <origin xyz="0.0375 0.02 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="0" upper="0.0175" effort="8" velocity="0.1"/>
+  </joint>
+
+  <!-- Right finger -->
+  <link name="arm_finger_right">
+    <visual>
+      <origin xyz="0.025 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.0125 0.025"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <!-- Joint arm 7: left finger (mirrored, same travel-bound logic) -->
+  <joint name="joint_arm_7_finger_left" type="prismatic">
+    <parent link="arm_gripper_base"/>
+    <child link="arm_finger_left"/>
+    <origin xyz="0.0375 -0.02 0" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.0175" effort="8" velocity="0.1"/>
+  </joint>
+
+  <!-- Left finger -->
+  <link name="arm_finger_left">
+    <visual>
+      <origin xyz="0.025 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.0125 0.025"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+  </link>
+
+</robot>
