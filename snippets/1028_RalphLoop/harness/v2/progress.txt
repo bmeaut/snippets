@@ -1,0 +1,778 @@
+2026-06-30 22:05 — User authentication (login/logout, JWT)
+
+Scaffolded the project from scratch (clean slate for the v2 UI/UX-hint run):
+
+Backend (backend/):
+- Express server with better-sqlite3, cookie-based JWT auth (httpOnly cookie,
+  not localStorage, to reduce XSS exposure).
+- users table (id, name, email, password_hash, created_at). Role column is
+  intentionally deferred to the "Role system" task.
+- POST /api/auth/login, POST /api/auth/logout, GET /api/auth/me.
+- bcryptjs for password hashing.
+- Seed script (npm run seed) creates a demo user: demo@example.com / password123.
+- 7 backend tests (node --test + supertest, in-memory DB): cover missing
+  credentials, wrong password, unknown email, successful login + cookie,
+  unauthenticated /me, authenticated /me, and logout invalidating the session.
+  All passing.
+
+Frontend (frontend/):
+- Vite + React + TypeScript, react-router-dom set up from the start (not
+  retrofitted later) — addresses the PRD's UI/UX guidance, since the v1 run's
+  biggest UI/UX issue was no routing/navigation at all.
+- AuthContext (checks /api/auth/me on load, exposes login/logout), with an
+  apiFetch client wrapper (credentials: 'include').
+- ProtectedRoute redirects unauthenticated users to /login and shows a
+  loading state while the session check is in flight.
+- LoginPage: validated form, inline error message, disabled submit button
+  while submitting, redirects to / on success (or back to where the user
+  came from).
+- AppLayout: top bar shell (brand, user name, logout button) wrapping routed
+  pages, so future features become new routes/nav items instead of being
+  stacked into one dashboard.
+- 6 frontend tests (vitest + React Testing Library): login error display,
+  successful login navigation, redirect-when-already-authenticated, and all
+  three ProtectedRoute states (loading/redirect/render).
+- `npm run build` (tsc -b && vite build) passes with 0 errors.
+
+Verification: ran both test suites directly (13/13 passing) and a full
+production build. Could not do a manual browser smoke test — Bash permission
+denied a curl to the locally running dev server, and the agent cannot
+self-grant the additional permission rule (settings.json edits are blocked
+for the same reason noted in earlier runs). Automated coverage (tests +
+typecheck + build) is the verification available this session.
+
+Next task: Role system (Student, Teacher, Administrator, Super-administrator).
+
+2026-06-30 22:10 — Role system (Student, Teacher, Administrator, Super-administrator)
+
+Backend (backend/):
+- Added a `role` column to `users` (CHECK-constrained to student/teacher/
+  administrator/super_administrator, default 'student'), plus a defensive
+  ALTER TABLE fallback for pre-existing DBs missing the column.
+- JWT payload and `/api/auth/me` now include role. `requireAuth` middleware
+  now re-fetches the user row from the DB on every request (id/name/email/
+  role) instead of trusting only the JWT payload, so a role change takes
+  effect immediately rather than waiting for the 8h token to expire.
+- New `requireRole(...roles)` middleware (403 if the user's role isn't in
+  the allowed set).
+- New backend/src/routes/users.js mounted at /api/users, gated to
+  administrator + super_administrator:
+  - GET /api/users — list all users.
+  - POST /api/users — create a user with a role. Administrators may only
+    grant student/teacher; only super_administrators may grant
+    administrator/super_administrator (privilege-escalation guard).
+  - PATCH /api/users/:id/role — change a user's role, same grant rules
+    applied to both the requested role AND the target's current role (so
+    an administrator can't touch another administrator's account), plus a
+    user cannot change their own role.
+- Seed script now creates one demo user per role (all password123):
+  demo@example.com (student), teacher@example.com, admin@example.com,
+  superadmin@example.com.
+- 14 new backend tests (node --test + supertest) covering role-gated list
+  access, creation privilege rules (incl. duplicate email / invalid role),
+  and role-change privilege rules (incl. self-role-change block and 404 on
+  unknown user). Updated the existing login test to assert the role field.
+  All 21 backend tests passing.
+
+Frontend (frontend/):
+- AuthContext: User now carries `role`; added a Role type and ROLE_LABELS
+  map for display.
+- New RequireRole route-guard component (redirects to "/" if the signed-in
+  user's role isn't in the allowed list) — composes with the existing
+  ProtectedRoute rather than replacing it.
+- AppLayout: added a horizontal nav bar (Dashboard always, Users only for
+  administrator/super_administrator) and a role badge next to the user's
+  name in the top bar — addresses the PRD's UI/UX guidance by giving the
+  app real navigation as more sections are added, instead of bolting a new
+  page onto a single dashboard.
+- New UsersPage (/users, role-gated): lists all users in a table, a form to
+  create a new user with a role-limited <select> (mirrors the backend's
+  grantable-roles rule so the UI never offers a role the request would be
+  rejected for), and an inline role-change <select> per row for users the
+  current actor is allowed to modify (read-only label otherwise).
+- 7 new/updated frontend tests (vitest + RTL): RequireRole allow/deny, and
+  UsersPage list rendering, role-options-restricted-to-grantable-roles, and
+  create-user submission. Updated two existing test mocks (LoginPage,
+  ProtectedRoute) to include the new required `role` field on User.
+- `npm run build` (tsc -b && vite build) passes with 0 errors. `npm run
+  lint` (oxlint) shows only pre-existing "only-export-components" warnings
+  on AuthContext.tsx (that file already mixed component/non-component
+  exports before this change).
+
+Verification: ran both test suites directly — backend 21/21 passing,
+frontend 11/11 passing — plus a full production build and lint. Same
+sandbox constraint as last run: no manual browser smoke test (no curl/dev
+server permission in this session); automated coverage is what's
+available.
+
+2026-06-30 22:15 — Class management (start date + identifier, e.g. 2009/C)
+
+Backend (backend/):
+- New `classes` table (id, identifier UNIQUE NOT NULL, start_date NOT NULL,
+  created_at), created in backend/src/db/index.js alongside the users table.
+- New backend/src/routes/classes.js mounted at /api/classes:
+  - GET / — any authenticated user (students/teachers will need to see
+    classes for future features like grade entry, so this isn't admin-gated
+    like /api/users is).
+  - POST /, PATCH /:id, DELETE /:id — administrator/super_administrator
+    only, via the existing requireRole middleware.
+  - Identifier validated against /^\d{4}\/[A-Za-z0-9]+$/ (matches the PRD's
+    "2009/C" example: 4-digit year, slash, section code) and must be unique.
+    Start date validated as YYYY-MM-DD via regex + Date.parse.
+  - PATCH supports partial updates (identifier and/or start date) and
+    re-checks the uniqueness/format rules against the merged result.
+- Seed script now also creates two demo classes (2009/C, 2010/A).
+- 16 new backend tests (node --test + supertest) covering: auth required,
+  any role can list, only admin roles can create/update/delete, malformed
+  identifier, invalid date, missing fields, duplicate identifier on create
+  and update, 404s on update/delete of unknown class. All 36 backend tests
+  passing (20 existing + 16 new).
+
+Frontend (frontend/):
+- New ClassesPage (frontend/src/pages/ClassesPage.tsx) at /classes,
+  registered in App.tsx behind the same RequireRole guard used for /users
+  (administrator/super_administrator), and added to the AppLayout nav
+  before Users — keeps the "every feature is a route in the nav" structure
+  from the auth/role work instead of growing a single dashboard.
+- Page has: a create form (identifier + native date input, client-side
+  format validation mirroring the backend regex so bad input is caught
+  before the request), a table of all classes, and per-row inline
+  edit-in-place (Save/Cancel) and Delete (with a window.confirm guard,
+  since delete is destructive and classes will later be referenced by
+  subjects/assignments).
+- 4 new frontend tests (vitest + RTL): list rendering, client-side
+  identifier validation blocks the API call, create-and-refresh, and
+  delete-after-confirm. All 15 frontend tests passing (11 existing + 4 new).
+- `npm run build` (tsc -b && vite build) passes with 0 errors. `npm run
+  lint` (oxlint) shows only the same pre-existing AuthContext.tsx warnings
+  as before — no new warnings.
+
+Verification: ran both test suites directly (36 backend + 15 frontend, all
+passing), a full production build, lint, and `npm run seed` against a real
+SQLite file to confirm the new table/seed path works outside the in-memory
+test DB. Same sandbox constraint as prior runs: no manual browser smoke
+test available this session (no curl/dev-server permission); automated
+coverage is what's available.
+
+Next task: Subject management (description, required books, lessons).
+
+2026-06-30 22:20 — Subject management (description, required books, lessons)
+
+Backend (backend/):
+- New `subjects` table (id, name UNIQUE NOT NULL, description TEXT default '',
+  required_books TEXT default '[]', lessons TEXT default '[]', created_at),
+  in backend/src/db/index.js. required_books and lessons are stored as JSON
+  arrays of strings (a subject's book list / curriculum topics are naturally
+  multi-item, unlike classes' single identifier).
+- New backend/src/routes/subjects.js mounted at /api/subjects, following the
+  same pattern as classes.js:
+  - GET / — any authenticated user (other roles will need to see subject
+    info, e.g. required books, for future grade-entry features).
+  - POST /, PATCH /:id, DELETE /:id — administrator/super_administrator only.
+  - Name required + unique (case-sensitive, trimmed); description optional
+    string; requiredBooks/lessons validated as arrays of strings (rejected
+    with 400 otherwise), trimmed and empty entries dropped. PATCH supports
+    partial updates and re-checks name uniqueness against the merged result.
+- Seed script now also creates two demo subjects (Mathematics, Literature)
+  with sample books/lessons.
+- 16 new backend tests (node --test + supertest) covering: auth required,
+  any role can list, only admin roles can create/update/delete, missing
+  name, non-string list entries rejected, duplicate name on create and
+  update, defaulting of optional fields, 404s on update/delete of unknown
+  subject. All 51 backend tests passing (35 existing + 16 new).
+
+Frontend (frontend/):
+- New SubjectsPage (frontend/src/pages/SubjectsPage.tsx) at /subjects,
+  registered in App.tsx behind the same RequireRole guard as Classes/Users,
+  and added to the AppLayout nav between Classes and Users.
+- Unlike ClassesPage's inline-row editing, this page uses a single form that
+  toggles between "Add a subject" and "Edit subject" (set via Edit button,
+  with a Cancel to return to add-mode) — required books and lessons are
+  multi-line lists, so editing them inline in a table cell would be cramped;
+  a dedicated form with one-per-line textareas is clearer to use. The table
+  below renders each list as a bullet list per cell instead of a flattened
+  string, so multi-item content stays scannable.
+- Added shared `.form-field textarea`, `.form-actions`, and `.list-cell`
+  styles to index.css (textarea didn't previously have the same focus/border
+  treatment as inputs).
+- 5 new frontend tests (vitest + RTL): list rendering (including a nested
+  list item), whitespace-only name blocked client-side, create-and-refresh,
+  edit-and-save, and delete-after-confirm. All 20 frontend tests passing (15
+  existing + 5 new).
+- `npm run build` (tsc -b && vite build) passes with 0 errors. `npm run
+  lint` (oxlint) shows only the same pre-existing AuthContext.tsx warnings
+  as before — no new warnings.
+
+Verification: ran both test suites directly (51 backend + 20 frontend, all
+passing), a full production build, lint, and `npm run seed` against the real
+SQLite file (data/portal.db) to confirm the new table/seed path works
+outside the in-memory test DB. Same sandbox constraint as prior runs: no
+manual browser smoke test available this session (no curl/dev-server
+permission); automated coverage is what's available.
+
+Next task: Assign subjects to classes per year, including which teacher
+holds it.
+
+2026-06-30 22:25 — Assign subjects to classes per year, including which
+teacher holds it
+
+Backend (backend/):
+- New `assignments` table (id, class_id/subject_id/teacher_id FKs with
+  ON DELETE CASCADE, year INTEGER, created_at), with a UNIQUE(class_id,
+  subject_id, year) constraint — a class can only have one teacher per
+  subject in a given year, but the same class+subject pair can repeat in a
+  different year (e.g. the same class studies Math in 2024 and 2025 under
+  different teachers).
+- New backend/src/routes/assignments.js mounted at /api/assignments,
+  following the classes/subjects pattern:
+  - GET / — any authenticated user (students/teachers will need to see
+    assignments for future grade-entry features), joined against classes/
+    subjects/users so the response carries classIdentifier, subjectName,
+    and teacherName directly instead of forcing the frontend to do its own
+    joins across three list endpoints.
+  - POST /, PATCH /:id, DELETE /:id — administrator/super_administrator
+    only. Validates that classId/subjectId/teacherId reference existing
+    rows, that the teacher actually has the 'teacher' role (rejects
+    assigning a student or admin as the subject's teacher), that year is a
+    plausible 4-digit integer, and re-checks the uniqueness constraint on
+    both create and update (excluding the row's own id on update).
+- Seed script now also creates two demo assignments (Math on 2009/C,
+  Literature on 2010/A, both under the demo teacher, year 2024), guarded so
+  it only inserts if the referenced class/subject/teacher rows exist.
+- 22 new backend tests (node --test + supertest) covering: auth required,
+  any role can list (with joined fields asserted), only admin roles can
+  create/update/delete, missing fields, invalid year, unknown class/
+  subject, non-teacher teacherId rejected, duplicate class+subject+year
+  rejected on create and update, same class+subject allowed in a different
+  year, 404s on update/delete of unknown assignment. All 69 backend tests
+  passing (47 existing + 22 new).
+
+Frontend (frontend/):
+- New AssignmentsPage (frontend/src/pages/AssignmentsPage.tsx) at
+  /assignments, registered in App.tsx behind the same RequireRole guard as
+  Classes/Subjects/Users, and added to the AppLayout nav between Subjects
+  and Users.
+- Single add/edit form (same toggle pattern as SubjectsPage) with <select>
+  dropdowns for class and subject, a <select> for teacher (fetched from
+  /api/users and filtered client-side to role === 'teacher', so the
+  dropdown can only ever offer valid choices), and a number input for year.
+  Loads classes/subjects/users/assignments together via Promise.all so the
+  page renders once all reference data is available, and shows a guidance
+  message instead of a broken form if there's no class, subject, or teacher
+  to assign yet.
+- Table view lists year, class identifier, subject name, and teacher name
+  (using the backend's joined fields) with per-row Edit/Delete, Delete
+  guarded by window.confirm like the other admin pages.
+- 5 new frontend tests (vitest + RTL): list rendering (joined fields,
+  scoped to the table since the class identifier also appears as a select
+  option), teacher dropdown excludes non-teachers, client-side year
+  validation blocks the API call, create-and-refresh, and
+  delete-after-confirm. All 25 frontend tests passing (20 existing + 5
+  new).
+- `npm run build` (tsc -b && vite build) passes with 0 errors. `npm run
+  lint` (oxlint) shows only the same pre-existing AuthContext.tsx warnings
+  as before — no new warnings.
+
+Verification: ran both test suites directly (69 backend + 25 frontend, all
+passing), a full production build, lint, and `npm run seed` against the
+real SQLite file (data/portal.db) to confirm the new table/seed path works
+outside the in-memory test DB. Same sandbox constraint as prior runs: no
+manual browser smoke test available this session (no curl/dev-server
+permission); automated coverage is what's available.
+
+Next task: Grade entry for students by teacher.
+
+2026-06-30 22:30 — Grade entry for students by teacher
+
+This feature needed a prerequisite that didn't exist yet: nothing linked
+students to classes, so there was no roster a teacher could enter grades
+against. Added that as the minimal necessary scope alongside grade entry
+itself, rather than as a separate checklist item.
+
+Backend (backend/):
+- New `class_students` table (id, class_id/student_id FKs with ON DELETE
+  CASCADE, created_at, UNIQUE(class_id, student_id)) — a simple roster/
+  enrollment join table.
+- New `grades` table (id, assignment_id/student_id FKs, value INTEGER
+  CHECK 1-5, title TEXT default '', date TEXT, entered_by FK users,
+  created_at). Value uses a 1-5 scale (5 = Excellent ... 1 = Fail) so it
+  also sets up cleanly for the optional weighted-average feature later.
+  Deliberately allows multiple grades per student per assignment (unlike
+  assignments' uniqueness constraint) since grade entry is ongoing
+  through the year — distinct from the separate "Year-end grade entry"
+  task still pending.
+- classes.js: added roster endpoints — GET /api/classes/:id/students (any
+  authenticated user), POST/DELETE .../students(/:studentId) (admin/
+  super-admin only, validates the target user has the student role,
+  rejects duplicate enrollment with 409, 404s on unknown class/
+  enrollment).
+- New backend/src/routes/grades.js mounted at /api/grades:
+  - GET / — role-aware: students always see only their own grades
+    (ignores query params); teachers must pass assignmentId and only see
+    grades for assignments they teach (403 otherwise); admins/super-admins
+    can filter by assignmentId or studentId, or list everything.
+  - POST / — teachers (must own the assignment) or admin/super-admin.
+    Validates the assignment exists, the value is an integer 1-5, the
+    date is valid (defaults to today), and — using the new roster table —
+    that the student is actually enrolled in the assignment's class.
+  - PATCH /:id, DELETE /:id — same ownership rule (teacher must own the
+    assignment the grade belongs to; admins bypass that check).
+- Seed script now enrolls the demo student in 2009/C and seeds two
+  Mathematics grades for them, so the new UI has data to show out of the
+  box.
+- 30 new backend tests (node --test + supertest): 9 for the roster
+  endpoints (enrollment CRUD, role gating, duplicate/404 cases) and 21
+  for grades (role-based list scoping, ownership checks on create/update/
+  delete, value/date validation, enrollment validation, admin override).
+  All 99 backend tests passing (69 existing + 9 roster + 21 grades).
+
+Frontend (frontend/):
+- ClassesPage: added inline roster management per class row — a
+  "Students" toggle button expands a panel (using React.Fragment so the
+  panel renders as its own table row under colSpan) listing enrolled
+  students with a Remove button, plus a form to enroll any student not
+  already on the roster. Needed so grade entry has someone to enter
+  grades for; kept inline rather than a separate page since it's a
+  small, infrequent admin task tightly scoped to one class.
+- New GradesPage (frontend/src/pages/GradesPage.tsx) at /grades, added to
+  the nav for every role (not gated behind RequireRole, since the page
+  itself branches by role and the backend enforces the real access
+  rules):
+  - Students get a read-only "My grades" table (date, subject, class,
+    year, title, grade) — necessary for grade entry to be useful at all,
+    even though "view grades" isn't a separate PRD line item.
+  - Teachers (and admins, who get the same view across all assignments
+    instead of just their own) pick a class/subject they teach from a
+    dropdown, then see a grade-entry form (student/grade/title/date) and
+    a table of recorded grades for that assignment with inline
+    edit-in-place and delete (mirrors ClassesPage's edit pattern).
+  - Grade values render as a small pill (new `.grade-pill` CSS class) for
+    quick scanning instead of bare numbers in a table cell.
+- 11 new frontend tests (vitest + RTL): 5 added to ClassesPage.test.tsx
+  for the new roster panel (open/list, enroll, remove — all existing
+  ClassesPage tests also updated since the page now fetches /users on
+  mount), and a new GradesPage.test.tsx (6 tests) covering the student
+  read-only view and the teacher view (assignment selection, grade
+  creation, deletion, empty-assignments state). All 34 frontend tests
+  passing (23 existing/updated + 11 new).
+- `npm run build` (tsc -b && vite build) passes with 0 errors. `npm run
+  lint` (oxlint) initially flagged a new exhaustive-deps warning on
+  GradesPage's assignment-loading effect; fixed by adding the actual
+  dependencies (isAdmin, user?.id) instead of suppressing it. Final lint
+  output shows only the same pre-existing AuthContext.tsx warnings as
+  every prior run.
+
+Verification: ran both test suites directly (99 backend + 34 frontend,
+all passing), a full production build, lint, and `npm run seed` against
+the real SQLite file (data/portal.db) to confirm the new tables/seed path
+work outside the in-memory test DB. `git *` and `npm *` were allowlisted
+this session (see memory: ralph-loop-git-npm-blocked — state varies by
+session), so this is more verification than some prior runs could do, but
+still no manual browser smoke test (no curl/dev-server permission in this
+sandbox).
+
+Next task: Year-end grade entry by teacher.
+
+2026-06-30 22:36 — Year-end grade entry by teacher
+
+This feature adds a distinct single final grade per student per assignment
+(class+subject+year), separate from the ongoing dated grades entered during
+the year.
+
+Backend (backend/):
+- New `year_end_grades` table (id, assignment_id FK, student_id FK, value
+  INTEGER 1–5, entered_by FK, created_at, UNIQUE(assignment_id, student_id))
+  in backend/src/db/index.js. The uniqueness constraint enforces the "one
+  final mark per student per assignment" semantic at the DB level.
+- New backend/src/routes/year-end-grades.js mounted at /api/year-end-grades,
+  following the same role-based access pattern as regular grades:
+  - GET / — students see only their own; teachers must supply assignmentId
+    and must own that assignment (403 otherwise); admins can filter by
+    assignmentId or studentId, or list everything.
+  - POST / — teacher/admin; validates assignment ownership, enrollment, and
+    1–5 value; returns 409 if a year-end grade already exists for that
+    student+assignment pair (no silent overwrite).
+  - PATCH /:id — updates the value; same ownership enforcement.
+  - DELETE /:id — removes the year-end grade; same ownership enforcement.
+- Seed script inserts a demo year-end grade (value 5) for the demo student
+  in the Mathematics assignment.
+- 23 new backend tests (node --test + supertest) covering auth gating,
+  student scoping, teacher assignmentId requirement, ownership checks on
+  list/create/update/delete, value validation, enrollment validation, and
+  duplicate-create 409. All 122 backend tests passing (99 existing + 23 new).
+
+Frontend (frontend/):
+- New YearEndGradesPage (frontend/src/pages/YearEndGradesPage.tsx) at
+  /year-end-grades, registered in App.tsx and added to the AppLayout nav
+  (visible to all roles, same as Grades — the page branches by role and the
+  backend enforces real access rules).
+- Student view: read-only table (Subject, Class, Year, Year-end grade) where
+  the grade value renders as a grade-pill alongside a text label ("Excellent",
+  "Good", etc.).
+- Teacher/admin view: assignment picker (identical to GradesPage) → table of
+  all enrolled students. Each row shows the current year-end grade (pill +
+  label, or "—" if not yet set) and contextual buttons: "Set grade" opens an
+  inline per-row select for students without a grade, "Edit" re-opens the
+  select for existing grades, "Delete" removes the grade with a confirm
+  dialog. Since year-end grades have no title or date field (just a 1–5
+  value), there is no separate form panel — the table itself is the entry UI,
+  keeping the page compact.
+- 7 new frontend tests (vitest + RTL): student read-only view, student empty
+  state, teacher empty-assignments state, assignment selection loads roster
+  and grades, "Set grade" button shown for ungraded students, setting a grade
+  POSTs correctly, deleting a grade DELETEs correctly. All 41 frontend tests
+  passing (34 existing + 7 new).
+- `npm run build` (tsc -b && vite build) passes with 0 errors. `npm run
+  lint` (oxlint) shows only the same pre-existing AuthContext.tsx warnings
+  as every prior run.
+
+Verification: ran both test suites directly (122 backend + 41 frontend, all
+passing), a full production build, and lint. Same sandbox constraint as
+prior runs: no manual browser smoke test available; automated coverage is
+what's available.
+
+Next task: README with setup instructions.
+
+2026-06-30 23:00 — Semester grade entry
+
+Adds a distinct semester 1 / semester 2 grade per student per assignment,
+complementing the existing year-end grade. The two grades are independent
+(setting or editing one doesn't affect the other) and both live under one
+assignment — the UNIQUE(assignment_id, student_id, semester) constraint
+enforces the "one grade per semester per student per subject+class+year"
+semantic at the DB level.
+
+Backend (backend/):
+- New `semester_grades` table (id, assignment_id FK, student_id FK,
+  semester INTEGER CHECK (1 or 2), value INTEGER 1–5, entered_by FK,
+  created_at, UNIQUE(assignment_id, student_id, semester)) in
+  backend/src/db/index.js.
+- New backend/src/routes/semester-grades.js mounted at /api/semester-grades,
+  following the year-end-grades pattern exactly:
+  - GET / — students see only their own; teachers must supply assignmentId
+    and must own that assignment (403 otherwise); admins filter by
+    assignmentId or studentId, or list everything.
+  - POST / — teacher/admin; validates semester (must be 1 or 2), assignment
+    ownership, enrollment, and 1–5 value; returns 409 if a semester grade
+    already exists for that student+assignment+semester pair.
+  - PATCH /:id — updates the value; same ownership enforcement.
+  - DELETE /:id — removes the semester grade; same ownership enforcement.
+- Seed script inserts semester 1 (value 4) and semester 2 (value 5) grades
+  for the demo student in Mathematics.
+- 25 new backend tests (node --test + supertest) covering auth gating,
+  student scoping, teacher assignmentId requirement, ownership checks on
+  list/create/update/delete, invalid semester (3), out-of-range value,
+  enrollment validation, duplicate-create 409, independent s1/s2 creation,
+  same-student two-semester list, and student cannot create/update/delete.
+  All 147 backend tests passing (122 existing + 25 new).
+
+Frontend (frontend/):
+- New SemesterGradesPage (frontend/src/pages/SemesterGradesPage.tsx) at
+  /semester-grades, registered in App.tsx and added to the AppLayout nav
+  between Grades and Year-end Grades (visible to all roles; the page
+  branches by role and the backend enforces real access rules).
+- Student view: read-only table (Subject, Class, Year, Semester, Grade) —
+  one row per semester grade, with "Semester 1" / "Semester 2" labels and
+  grade pills.
+- Teacher/admin view: assignment picker (same pattern as GradesPage and
+  YearEndGradesPage) → roster table with two grade cells per student, one
+  per semester. Each cell independently supports "Set grade" (inline
+  per-cell select + Save/Cancel), "Edit" (re-opens the select), and
+  "Delete" (confirm dialog). Since the two semesters are fully independent,
+  the table itself is the entry UI — no separate form panel needed, keeping
+  the page compact. Error messages appear inline under the affected cell
+  rather than in a global alert.
+- 7 new frontend tests (vitest + RTL): student list (checks both semesters
+  appear), student empty state, teacher empty-assignments, assignment
+  selection loads roster + grades, two Set grade buttons shown when no
+  grades exist, setting semester 1 grade POSTs correctly, deleting a grade
+  DELETEs correctly. All 48 frontend tests passing (41 existing + 7 new).
+- `npm run build` (tsc -b && vite build) passes with 0 errors.
+
+Verification: ran both test suites directly (147 backend + 48 frontend, all
+passing), full production build. Same sandbox constraint as prior runs: no
+manual browser smoke test available; automated coverage is what's available.
+
+2026-06-30 23:10 — Weighted grade average calculation and display
+
+Adds a /api/averages endpoint and an Averages page that computes and
+displays the arithmetic mean of regular grades per student per assignment.
+
+Backend (backend/):
+- New backend/src/routes/averages.js mounted at /api/averages. Uses
+  SQLite's AVG() aggregated over grades grouped by (assignment_id,
+  student_id) to compute each student's grade average per subject.
+  Role-based scoping matches the grades route: students always see only
+  their own averages (query params ignored); teachers must pass
+  assignmentId and only see results for assignments they teach (403
+  otherwise); admins/super-admins can filter by assignmentId, studentId,
+  or list all averages.
+- Registered in server.js at /api/averages.
+- 11 new backend tests (node --test + supertest): unauthenticated 401,
+  student-scoped result, student empty state, student ignores query params,
+  teacher requirementId enforcement, teacher 403 on unowned assignment,
+  teacher per-student result with correct arithmetic, admin assignmentId
+  filter, admin studentId filter, admin unfiltered list, multi-grade
+  average correctness. All 158 backend tests passing (147 existing + 11 new).
+
+Frontend (frontend/):
+- New AveragesPage (frontend/src/pages/AveragesPage.tsx) at /averages,
+  registered in App.tsx and added to the AppLayout nav after Year-end
+  Grades. Visible to all roles; branches by role at render time:
+  - Student view: table of per-subject averages (subject, class, year,
+    grade count, average pill + text label). Overall weighted average
+    shown in the page header — computed as sum(avg * gradeCount) /
+    sum(gradeCount) so subjects with more grades contribute
+    proportionally.
+  - Teacher/admin view: same assignment picker as GradesPage and
+    YearEndGradesPage, then a per-student averages table. A "class
+    average" badge appears in the panel header once results load.
+  - gradeLabel() maps floating-point averages to labels (Excellent / Good /
+    Satisfactory / Pass / Fail) aligned with the existing 1-5 scale
+    breakpoints.
+- New CSS: .summary-stat, .summary-stat--inline, .summary-stat__label,
+  .summary-stat__sub for the average badges; .grade-label for the text
+  label alongside pills; .panel-header-row for the flex header that
+  shows the panel title and the class-average badge side by side.
+- 5 new frontend tests (vitest + RTL): student table + overall badge
+  rendered, student empty state, teacher empty-assignments state, teacher
+  per-student averages load and display on selection, teacher class-average
+  badge appears. All 55 frontend tests passing (50 existing + 5 new).
+- `npm run build` (tsc -b && vite build) passes with 0 errors.
+
+Verification: ran both test suites directly (158 backend + 55 frontend, all
+passing), full production build. Same sandbox constraint as prior runs: no
+manual browser smoke test available; automated coverage is what's available.
+
+Next task: Class average statistics for teachers.
+
+2026-06-30 23:20 — Class average statistics for teachers
+
+Adds a dedicated /api/class-stats endpoint and a ClassStatsPage that gives
+teachers (and admins) a bird's-eye view across all their assignments — unlike
+the existing Averages page, which requires selecting one assignment at a time.
+
+Backend (backend/):
+- New backend/src/routes/class-stats.js mounted at /api/class-stats. Uses a
+  single query with LEFT JOIN grades (so assignments with no grades still
+  appear), AVG() for the class average, and CASE/SUM() for per-grade-value
+  distribution counts (dist_1..dist_5).
+  - Teacher: sees only assignments they teach.
+  - Admin/super_admin: sees all assignments.
+  - Student: 403.
+  Each result includes: assignmentId, year, classIdentifier, subjectName,
+  teacherId, teacherName, gradeCount, classAverage (null if no grades),
+  distribution (object with keys 1–5 and counts).
+- Registered in server.js at /api/class-stats.
+- 9 new backend tests (node --test + supertest): unauthenticated 401, student
+  403, teacher scoped to own assignments, assignment with no grades shows
+  gradeCount 0 and null classAverage, correct average computation, correct
+  distribution counts, joined fields present, admin sees all assignments,
+  admin per-assignment averages correct. All 167 backend tests passing
+  (158 existing + 9 new).
+
+Frontend (frontend/):
+- New ClassStatsPage (frontend/src/pages/ClassStatsPage.tsx) at /class-stats,
+  registered in App.tsx behind a RequireRole guard for teacher/administrator/
+  super_administrator (students can't reach it via routing, and the backend
+  enforces 403 anyway).
+- Added "Class Stats" nav item to AppLayout, visible to the same three roles,
+  placed after Averages.
+- Page shows a table of all assignments with: Subject, Class, Year, Teacher
+  (admin only), Grades, Class average (grade-pill + label, or "—" if no
+  grades), and Distribution. The distribution column shows a .dist-bar flex
+  row of small .dist-chip--N colored chips (one per grade value 1–5) with
+  count, each color-coded (red=1, orange=2, yellow=3, green=4, blue=5) for
+  quick scanning. Chips only show when gradeCount > 0; otherwise "—".
+- New CSS: .dist-bar, .dist-chip, .dist-chip--1 through .dist-chip--5 in
+  index.css.
+- 6 new frontend tests (vitest + RTL): empty state, renders stats with
+  average and distribution chips, no Teacher column for teachers, dash shown
+  when no grades, fetches from /class-stats, Teacher column visible for
+  admins. All 61 frontend tests passing (55 existing + 6 new).
+- npm run build (tsc -b && vite build) passes with 0 errors.
+
+Verification: ran both test suites directly (167 backend + 61 frontend, all
+passing), full production build. Same sandbox constraint as prior runs: no
+manual browser smoke test available; automated coverage is what's available.
+
+Next task: Event creation by admin, visible to all.
+
+2026-06-30 23:30 — Event creation by admin, visible to all
+
+Adds a school-events feature: admins create/edit/delete events; all
+authenticated users can view them.
+
+Backend (backend/):
+- New `events` table (id, title TEXT NOT NULL, description TEXT default '',
+  date TEXT NOT NULL, created_by FK users, created_at) in
+  backend/src/db/index.js.
+- New backend/src/routes/events.js mounted at /api/events:
+  - GET / — any authenticated user (students, teachers, and admins all see
+    events — the whole point is school-wide visibility).
+  - POST /, PATCH /:id, DELETE /:id — administrator/super_administrator only.
+    Title required (non-empty string), date required and validated as
+    YYYY-MM-DD, description optional string defaulting to ''. PATCH supports
+    partial updates; each field re-validates if provided.
+- Seed script inserts two demo events (Parent–Teacher Conference 2024-11-15,
+  End-of-Year Ceremony 2025-06-20), guarded against duplicate inserts.
+- 19 new backend tests (node --test + supertest): unauthenticated 401, student
+  and teacher can GET, events ordered by date, student/teacher cannot POST
+  (403), admin and super_admin can POST, missing title/date/invalid date format
+  rejected, description defaults to '', PATCH 404 on unknown event, admin can
+  PATCH, student cannot PATCH (403), DELETE 404 on unknown, admin can DELETE,
+  student cannot DELETE (403). All 186 backend tests passing.
+
+Frontend (frontend/):
+- New EventsPage (frontend/src/pages/EventsPage.tsx) at /events, registered
+  in App.tsx and added to the AppLayout nav immediately after Dashboard
+  (visible to all roles since all users should see school events).
+- Student/teacher view: read-only table (Date, Title, Description).
+- Admin/super_admin view: same table + per-row Edit/Delete buttons and a
+  create/edit form above the table. The form toggles between "Add an event"
+  and "Edit event" (matches the SubjectsPage/AssignmentsPage pattern:
+  clicking Edit populates the form and shows a Cancel button; Cancel resets
+  to add-mode). Client-side validation blocks submission when title or date
+  is empty, showing an inline error message without hitting the API.
+  Delete guarded by window.confirm.
+- 8 new frontend tests (vitest + RTL): student empty state, student list
+  rendering (date/title/description), no form shown for students, no Edit/
+  Delete buttons for students, form shown for admins, empty-title blocked
+  client-side, create-and-refresh, delete-and-refresh. All 69 frontend tests
+  passing (61 existing + 8 new).
+- `npm run build` (tsc -b && vite build) passes with 0 errors. `npm run lint`
+  shows only the same pre-existing AuthContext.tsx warnings as every prior run.
+
+Verification: ran both test suites (186 backend + 69 frontend, all passing),
+full production build, and lint. Same sandbox constraint as prior runs: no
+manual browser smoke test available; automated coverage is what's available.
+
+Next task: Timetable management.
+
+2026-06-30 23:50 — Timetable management
+
+Adds a weekly timetable per class/year: admins create/edit/delete slot
+assignments (which subject+teacher appears at which day+period); all
+authenticated users can view any class's timetable.
+
+Backend (backend/):
+- New `timetable_entries` table (id, assignment_id FK ON DELETE CASCADE,
+  day_of_week INTEGER CHECK 1–5, period INTEGER CHECK 1–8, created_at,
+  UNIQUE(assignment_id, day_of_week, period)) in backend/src/db/index.js.
+- New backend/src/routes/timetable.js mounted at /api/timetable:
+  - GET / — any authenticated user; optional ?classId and ?year filters;
+    returns entries joined with class identifier, subject name, and teacher
+    name, ordered by day_of_week then period.
+  - POST / — administrator/super_administrator only; body: { assignmentId,
+    dayOfWeek (1–5), period (1–8) }. Validates the assignment exists, that
+    day/period are in range, and that no other entry already occupies the
+    same slot for the same class+year (cross-row check via JOIN). Returns
+    409 on slot conflict.
+  - PATCH /:id — partial update (assignmentId, dayOfWeek, period);
+    re-checks slot conflict excluding the row's own id.
+  - DELETE /:id — removes the entry; 404 on unknown id.
+- Seed script inserts 2 timetable entries for Mathematics on 2009/C
+  (Monday period 1, Wednesday period 2) and 2 for Literature on 2010/A
+  (Tuesday period 1, Thursday period 3), guarded against duplicates.
+- 22 new backend tests (node --test + supertest): unauthenticated 401,
+  all roles can GET, GET returns joined fields + ordering, GET filters by
+  classId+year, student/teacher cannot POST (403), admin can POST, invalid
+  dayOfWeek (0 or 6)/period (9) → 400, unknown assignment → 404, slot
+  conflict → 409, same subject on different days allowed, PATCH 404/success/
+  403, DELETE 404/success/403. All 208 backend tests passing.
+
+Frontend (frontend/):
+- New TimetablePage (frontend/src/pages/TimetablePage.tsx) at /timetable,
+  added to App.tsx and AppLayout.tsx nav as the third item (after Events),
+  visible to all roles.
+- Class + year selectors at the top (shows "Select a class to view its
+  timetable." until a class is chosen). The year input defaults to the
+  current year.
+- Timetable displayed as a grid (Period 1–8 rows × Mon–Fri columns).
+  Filled cells show subject name + teacher name with a blue tint; empty
+  cells show a "+" hint for admins.
+- Admin click-to-edit: clicking any cell opens an edit panel below the
+  grid (replaces a dedicated form), showing the current subject for that
+  slot and a dropdown of the class's assignments for the selected year.
+  Choosing "— empty slot —" and saving DELETEs the entry; choosing an
+  assignment and saving POSTs (for empty cells) or PATCHes (for occupied
+  cells). Cancel clears the selection without making a request.
+- Added `.form-field select`, `.form-field--inline`, and all timetable
+  grid styles to index.css: `.timetable-filters`, `.timetable-grid-wrapper`
+  (overflow-x: auto), `.timetable-grid`, `.timetable-cell`,
+  `.timetable-cell--filled/--clickable/--selected`, `.timetable-subject`,
+  `.timetable-teacher`, `.timetable-empty`, `.timetable-hint`, and
+  `.timetable-current-label`.
+- 7 new frontend tests (vitest + RTL + userEvent): empty state before class
+  selection, dropdown populates from API, filled cell renders subject+teacher,
+  no edit panel for students, edit panel opens for admins, POST called on
+  save for new slot, DELETE called when clearing a slot, Cancel closes panel.
+  All 77 frontend tests passing.
+- `npm run build` (tsc -b && vite build) passes with 0 errors. `npm run lint`
+  shows only the same pre-existing AuthContext.tsx warnings as every prior run.
+
+Verification: ran both test suites (208 backend + 77 frontend, all passing),
+full production build, lint. Same sandbox constraint as prior runs: no manual
+browser smoke test available; automated coverage is what's available.
+
+Next task: Dark/light mode.
+
+2026-06-30 22:40 — README with setup instructions
+
+Added a self-contained "Educational Portal — Setup" section at the top of
+the root README.md (above the existing Ralph Loop experiment documentation
+in Hungarian), covering:
+- Prerequisites (Node.js 20+, npm 10+)
+- Quick-start: backend install, .env setup, seed, dev server; frontend
+  install and dev server.
+- Demo accounts table (all four roles, password123).
+- Environment variables reference (PORT, JWT_SECRET, JWT_EXPIRES_IN,
+  DATABASE_PATH, FRONTEND_ORIGIN) with descriptions.
+- Test commands for both backend (node --test) and frontend (vitest).
+- Production build instructions (frontend/dist/).
+- API endpoint overview table (prefix, access level, description) for all
+  seven route groups plus /api/health.
+
+The frontend/README.md (Vite template boilerplate) was left as-is since
+the root README is the natural entry point; the backend has no separate
+README (its setup is covered by the root guide).
+
+All mandatory PRD features are now complete.
+
+2026-06-30 23:55 — Dark/light mode
+
+Adds a persistent dark/light mode toggle across the whole app.
+
+Frontend (frontend/):
+- New frontend/src/theme/ThemeContext.tsx: ThemeProvider (wraps the app in
+  main.tsx alongside AuthProvider) and useTheme hook. On mount it reads from
+  localStorage, falls back to the OS prefers-color-scheme media query, and
+  defaults to light. Stores the chosen theme under the 'theme' key in
+  localStorage. Applies the current theme by setting `data-theme` on
+  `document.documentElement`, so a single CSS attribute switch flips the
+  entire palette.
+- frontend/src/index.css:
+  - Added `[data-theme='dark']` block with dark-mode CSS variable overrides
+    for all `--color-*` tokens: bg (#111216), surface (#1a1b1e), border
+    (#2c2e33), text (#e9ecef), text-muted (#868e96), primary (#6366f1),
+    primary-hover (#818cf8), danger (#f87171), danger-bg (#450a0a),
+    success-bg/text, shadow-card, timetable cell tints, and color-scheme:dark.
+  - Replaced the three hardcoded hex colors in `.timetable-cell--filled`,
+    `--clickable:hover`, and `--selected` with new CSS variables
+    (`--color-timetable-filled/hover/selected`) defined in both `:root` and
+    `[data-theme='dark']`.
+  - Replaced hardcoded colors in `.form-success` with `--color-success-bg` /
+    `--color-success-text` variables.
+  - Added five `[data-theme='dark'] .dist-chip--N` overrides so the grade
+    distribution chips (previously light pastel backgrounds) use dark
+    equivalents in dark mode.
+- AppLayout.tsx: imports useTheme, renders a "Dark"/"Light" toggle button in
+  the topbar (aria-label "Switch to dark mode" / "Switch to light mode"), and
+  wires it to ThemeContext's toggle function.
+- 4 new frontend tests (vitest + RTL + vi.stubGlobal for localStorage/
+  matchMedia): button renders, switches to dark, toggles back to light, and
+  initializes from a stored localStorage preference. All 81 frontend tests
+  passing (77 existing + 4 new).
+- `npm run build` (tsc -b && vite build) passes with 0 errors.
+
+All PRD features (mandatory + optional) are now complete.
