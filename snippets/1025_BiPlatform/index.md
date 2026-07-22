@@ -279,14 +279,14 @@ A felmerülő problémák:
 - Spark és Airflow-t nem rakta azonos volume-ba így nem láttak rá közösen a töltésre
 - Spark és Airflow alapból más Python verziókat használ
 - A Spark más verzióban volt az Airflow esetén beimportálva, mint a worker, illetve master-ben
-- Az adatbázis driver-ek nem voltak megfelelően az egyes konténerekbe másolva, illetve azok nem voltak használva az Airflow által
+- Az adatbázis driver-ek nem voltak megfelelően az egyes konténerekbe másolva, illetve azokat nem használta az Airflow
 - A Spark worker és master más Python verziókkal jöttek létre
 
-Összességében ezt a feladatot az AI használata csak nehezítette. A felül felsorolt problémákra, egyenként alsóhangon egy legalább 2-3 iterációból álló beszélegtés szolgált csupán arra, hogy a hiba okát megértse, annak ellenére, hogy a kezdő prompt-ban szerepeltek a Docker, illetve compose és további konfigurációs állományok. Ebből kifolyólag lassan és gyengén tudott előrelépéseket javasolni a megoldás felé, viszont, amely megoldás gyakran, még így is kevésnek bizonyult. A kezdetei konfiguráció bár első megközelítésre hasznosnak tűnhetett, a véget nem érő javítási terációk a kiinduló állapotot teljes mértékben megváltoztatták.
+Összességében ezt a feladatot az AI használata csak nehezítette. A felül felsorolt problémáknál egyenként alsóhangon egy legalább 2-3 iterációból álló beszélegtés kellett csupán arra, hogy a hiba okát megértse. Annak ellenére, hogy a kezdő prompt-ban szerepeltek a Docker, illetve compose és további konfigurációs állományok. Ebből kifolyólag lassan és gyengén tudott előrelépéseket javasolni és a javasolt megoldás gyakran még így is kevésnek bizonyult. A kezdetei konfiguráció bár első megközelítésre hasznosnak tűnhetett, a véget nem érő javítási terációk a kiinduló állapotot teljes mértékben megváltoztatták.
 
 Az LLM minden egyes komponens esetén képes volt további hibákat tartalmazó konfigurációs állományokat generálni.
 
-A debug-olás során érdekes volt, hogy az LLM gyakran, egy orvos módjára tünetek alapján próbálta diagnosztizálni hibákat. Gyakran önmagából a hibaüzenetből nem tudta kikövetkeztetni a megoldást, így megkért, hogy debug-olásra szolgáló ellenőrző bash parancsokat futtassak.
+A debug-olás során érdekes volt, hogy az LLM gyakran egy orvos módjára tünetek alapján próbálta diagnosztizálni hibákat. Gyakran önmagából a hibaüzenetből nem tudta kikövetkeztetni a megoldást, így megkért, hogy debug-olásra szolgáló ellenőrző bash parancsokat futtassak.
 
 ```txt
 Worker konténerben:
@@ -317,7 +317,7 @@ szintén:
 
 3.5.2
 ```
-Ez lényegében pont egyenértékű azzal, mint, amihhez hasonlót én is kezdtem volna mint laikus, azonban az AI-ra úgy tekintettem, mint, amely nálam jártasabb ezen a területen, így a hibaüzenetek alapján képes diagnosztizálni és megfelelő kódot generálni. 
+Ez lényegében pont egyenértékű azzal, mint, amihhez hasonlót én is kezdtem volna mint laikus, azonban az AI-ra úgy tekintettem, mint amely nálam jártasabb ezen a területen, így a hibaüzenetek alapján képes diagnosztizálni és megfelelő kódot generálni. 
 A végeláthatatlannak tűnő iterációkat követve, pusztán az hibaüzenetre rákeresve gyakran megoldásokat találtam StackOverflow, amely tovább erősíti az AI-val szemben a kételyt.
 
 
@@ -568,7 +568,7 @@ SQL Write
 
 Megkértem ezt követően, hogy adja vissza a konkrét módosításokat és generálja le az új szükséges fájlokat, azonban ehelyett azt javasolta, hogy haladjunk lépésről lépésre. Kíváncsiság képpen kipróbáltam a Claude-al is, amely 30 perc gondolkodás után adott hasonló választ.
 > Az AI bár képes lenne gyakran megoldani a problémát, ha az rengeteg generálással, kimenettel járna, akkor hajlamos megállni és feltartani a választ egy alapvetőnek tűnő kérdéssel, esetleg kéréssel. 
->Például, akárhogy kérjük meg sem hajlandó elszámolni 1-től 1000-ig, hiába képes rá, akárhogyan is próbálkozunk nem lehet rávenni, hogy egyben számoljon el.
+>Például, akárhogy kérjük meg, nem hajlandó elszámolni 1-től 1000-ig, hiába képes rá. Akárhogyan is próbálkozunk nem lehet rávenni, hogy egyben számoljon el.
 
 ### Eredmények
 
@@ -595,7 +595,7 @@ A modelleket, pedig a következő formátumban egy volume-on keresztül mentette
 
 ## Tanulságok
 
-A fejlesztés során az alábbi tanulságok vonhatóak le.
+A fejlesztés során az alábbi tanulságok vonhatóak le:
 
 * Az LLM-ek komplex rendszer tervezésére alkalmas és hatékony, de csak adott logikai szinten belül maradva. Az a kontextus, amely a magas szintű tervre ad választ, az implementációban pontatlan lesz, ellentétben vele, az a modell, amely csak adott problémát old meg, nem látja át a rendszert és képtelen hosszú távon hatékony megoldással szolgálni.
 * Konfigurációs állományok előállítására alkalmatlan. Rengeteg hibát vét a különböző verziók közötti inkompatibilitásból kifolyólag, továbbá a változtatásai gyakran már helyes konfigurációs állományokat rontanak el.
