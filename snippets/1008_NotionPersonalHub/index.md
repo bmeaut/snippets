@@ -7,7 +7,7 @@ authors: Técsi Zsuzsanna Vilma
 ---
 
 # Notion-alapú étrend-nyilvántartó hub felépítése
-A Notion egy "all-in-one" workspace (munkaterület), amelyben adatbázisok, jegyzetek és feladatlisták egyetlen felületen kezelhetők. Alapfunkciói könnyen elsajátíthatók, és a platform kiterjedt sablonkönyvtárral rendelkezik, amelyet a felhasználói közösség tölt fel.
+A [Notion](https://www.notion.com/) egy "all-in-one" workspace (munkaterület), amelyben adatbázisok, jegyzetek és feladatlisták egyetlen felületen kezelhetők. Alapfunkciói könnyen elsajátíthatók, és a platform kiterjedt sablonkönyvtárral rendelkezik, amelyet a felhasználói közösség tölt fel.
 A komplexebb igényekhez azonban a Notion relációs adatbázis-logikát alkalmaz, azaz a Relation, Rollup és Formula tulajdonságok segítségével különböző adatbázisok kommunikálhatnak egymással. Ez az a pont, ahol az eszköz már nem magától értetődő, és ahol a mások által készített sablonok sem feltétlenül segítenek, hiszen érdemben módosítani csak azt lehet, aminek értjük a felépítését.
 Ebbe a helyzetbe kerültem, amikor egy személyre szabott étrend- és tünetkövető rendszert, az Étrend Master Hubot szerettem volna felépíteni, amelyben nyomon tudom követni az egyes ételek hatását, a spájzom tartalmát, és az étkezési szokásaimat.
 A feladat megoldásához egy statikus lista nem lett volna elegendő, mert az összefüggő adatokból automatikusan következő információk, mint például a spájz tartalma alapján szűrhető receptek listája, csak dinamikus, relációs adatmodellel valósíthatók meg.
@@ -78,7 +78,7 @@ A megfelelő instrukció megadásának érdekében megkértem a Geminit, hogy ad
 
 Prompt:
 ```
-Hogy adjak megy egy promptot, hogy pontosan ez a rendszerterv valósuljon meg Notionben?
+Hogy adjak meg egy promptot, hogy pontosan ez a rendszerterv valósuljon meg Notionben?
 ```
 
 MI:
