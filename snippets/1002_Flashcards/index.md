@@ -19,7 +19,7 @@ https://github.com/Cipralex1201/flashcard-learning-app
 You can try the application by following the link below:
 https://pathoflightuganda.org/flashcards/
 
-(Here U're able to practice different field specific vocab in romani language)
+(Here you are able to practice different field specific vocab in romani language.)
 
 
 # Experiences related to software development using AI
