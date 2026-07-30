@@ -2,7 +2,7 @@
 layout: default
 codename: Flashcards
 title: Flashcard Learning App
-tags: snippets
+tags: snippets mieset
 authors: Győry Ádám
 ---
 # Task description (briefly):
