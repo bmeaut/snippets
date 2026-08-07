@@ -45,7 +45,7 @@ A folyamat lépésről lépésre:
 4. **Inaktív tagok kiválogatása:**
    - **Szűrés (Filter array):** A "Csapattagok listázása" kimenetéből kiszűri azokat, akiknek a `userId`-ja *nincs benne* a `PosterIds` tömbben.
 5. **Üzenetküldés:**
-   - LLM hívás a figyelmeztető szöveg generálására (átadva a csatorna nevét és a címmelzett nevét). 
+   - LLM hívás a figyelmeztető szöveg generálására (átadva a csatorna nevét és a címzett nevét). 
 	  Prompt: 
 	  `Írj egy rövid, barátságos, nem számonkérő emlékeztető üzenetet [[név]] csapattagnak, mert az elmúlt 7 napban nem posztolt a [[csoport_neve]] nevű Teams csatornában. A hangnem legyen kolléga-szintű, ne feletteshez illő. Maximum 2-3 mondat. Ne használj sablonos "kérlek jelentkezz be" fordulatot, változatosan fogalmazz minden alkalommal.`
 	- "Üzenet küldése csevegésben vagy csatornában" (Post message in a chat or channel) a Flow bot nevében az inaktív felhasználónak.
