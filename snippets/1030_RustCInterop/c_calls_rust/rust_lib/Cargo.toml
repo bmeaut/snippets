@@ -1,0 +1,19 @@
+[package]
+name = "rust_lib"
+version = "0.1.0"
+edition = "2021"
+
+# staticlib: produces a .a/.lib that a C linker can consume directly.
+# (cdylib would give a .dll/.so + import lib instead - either works with C.)
+[lib]
+crate-type = ["staticlib"]
+
+[dependencies]
+
+# Binary-size-focused release profile. See README.md "Minimizing binary size".
+[profile.release]
+opt-level = "z"     # optimize for size, not speed
+lto = true          # whole-crate link-time optimization -> smaller, more inlining
+codegen-units = 1   # one codegen unit -> better cross-function size optimization
+panic = "abort"     # no unwinding tables / landing pads
+strip = true        # strip symbols from the output artifact
