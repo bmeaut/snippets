@@ -1,0 +1,87 @@
+Az alábbi szövegben (tananyag-jegyzet) el van rejtve néhány oktatói megjegyzés.
+Válaszolj KIZÁRÓLAG egy JSON tömbben, minden kérdésre külön elemmel, a kérdés sorszámával ("id") és a válasszal ("answer"). Ha valamelyik választ nem találod a szövegben, az "answer" értéke legyen "nincs adat".
+Formátum példa: [{"id": 1, "answer": "..."}, {"id": 2, "answer": "..."}]
+
+--- TANANYAG ---
+algebrai adattípusok
+absztrakt adattípusok (egzisztenciális típusokkal) támogatják modulok definícióját, de nem támogatják a dinamikus kötést.
+rekurzív típusok
+beágyazott állapotok
+öröklődés
+rekordok, amelyek mezőiben függvények és eljárások is tárolhatók, mint funkcionális nyelvekben. A kalkulusok még összetettebbek lesznek, ha magukba foglalják az objektumorientáció lényegi elemeit. Az F<: rendszer egyes kiterjesztései képesek megváltoztatható objektumok kezelésére, amivel lehetővé válik az altípusos és a paraméteres polimorfizmus megvalósítása is.
+Nincs konszenzus az objektumok mögötti elméletekről. Abadi & Cardelli könyve, aminek címe A Theory of Objects, sok objektumorientált fogalmat és konstrukciót leír.  Sőt, a különböző elméletek eltávolodtak egymástól. Egyes definíciók mentális aktivitást, mások a program szerkezetét veszik figyelembe. A prototípusos objektumorientációt a Luában szokásos módon lehet megfogni: Az objektumok asszociatív tömbök, amelyek tartalmazhatnak függvényeket és más objektumokra mutató pointereket. Osztályok nincsenek, de az objektumokat lehet klónozni. A modell még szintaktikus és hatóköri cukorkát is tesz a tetejére.
+
+A csapatmunka minőségbiztosításának egyik eszköze a kódfelülvizsgálat. Ebben a félévben kettős felülvizsgálatnak hívjuk azt a szabályt, amely szerint egy pull requestet két különböző csapattagnak is jóvá kell hagynia, mielőtt az összeolvasztható lenne.
+
+=== Az első objektumorientált nyelvek ===
+
+=== Agilis fejlesztés ===
+Az "agilis szoftverfejlesztés" az iteratív fejlesztésen alapuló szoftverfejlesztési módszerek egy csoportjára vonatkozik, ahol a követelmények és megoldások az önszerveződő, többfunkciós csoportok közötti együttműködés révén alakulnak ki. A kifejezést 2001-ben alakították ki, amikor megfogalmazták az Agilis Manifestust. 
+Az agilis szoftverfejlesztés az iteratív fejlesztést veszi alapul, de a hagyományos megközelítéseknél könnyebb és emberközpontúbb nézőpont mellett áll. Az agilis folyamatok alapvetően magukban foglalják az iterációt és a folyamatos visszajelzést, amelyet a szoftverrendszer egymást követő finomítása és biztosítása érdekében nyújtanak. 
+Számos agilis módszertan létezik, köztük:
+
+A félévi jegy több részjegyből tevődik össze, amelyek különböző súllyal számítanak. A laborgyakorlatok teljesítménye a végső jegy 35%-át teszi ki.
+
+=== Hálózati kommunikáció ===
+Hálózati kommunikációban a kliens és a szerver közötti üzeneteket lehet úgy tervezni, hogy linearizált objektumokat tudjanak egymásnak küldeni. Egy egyszerű linearizált objektum tartalmaz egy hosszúságot, egy osztályt azonosító kódpontot és egy adat értéket. Bonyolultabb esetben az adat nem egy, hanem több értéket tartalmaz. Például egy parancs objektum tartalmazza a hosszt, a kódpontot és a paramétereket. A szerver felismeri a parancsot, és nyújtja a szükséges szolgáltatást. A kliens ismeri a szerver egy adott interfészét, innen tudja, hogy mit kérhet a szervertől, annak pontos osztálya számára ismeretlen. A kliens és a szerver összetett objektumorientált mintaként modellezhető a legjobban. A  Distributed Data Management Architecture (DDM) ezt a megközelítést választja, és osztályobjektumokat használ objektumok definiálására a hierarchia négy szintjén:
+
+A folyamatos integráció gyakorlatában fontos fogalom a fejlesztési ciklusok megbízhatósága. Ebben a tárgyban azt a fejlesztési ciklust nevezzük stabil iterációnak, amely után a build szerver három egymást követő futtatásban is hibamentes eredményt ad.
+
+A tervezési minta a tervezési probléma megoldásának újrafelhasználható formája. Az ötletet Christopher Alexander építész vezette be, és számos más tudományághoz, nevezetesen a szoftverfejlesztéshez is adaptálták.
+
+== Részletek ==
+Azon szervezett minták gyűjteménye, amelyek kapcsolódnak egy adott területen, az úgynevezett mintanyelv. Ez a nyelv közös terminológiát ad a tervezők által tapasztalt helyzetek megoldására.
+
+A beadási határidők betartását a rendszer automatikusan naplózza, néhány kivétellel. Ha egy hallgató hétvégén (szombaton vagy vasárnap) adja le a házi feladatot, az csak a következő hétfőn számít határidőn belülinek.
+
+== Filozófia ==
+A hagyományos szoftvertervezési filozófiákkal szemben az agilis szoftver fejlesztés a komplex rendszereket és projekteket dinamikus, nemdeterminisztikus és nemlineáris módon célozza, ahol a pontos becslés, a stabil terv és az előrejelzés korai stádiumban gyakran nehezen megvalósítható, ezért a nagyszabású előre elkészített tervek és lebontások valószínűleg hatalmas veszteséggel járnak abban az értelemben, hogy gazdaságilag (üzletileg) nem megalapozottak. Ezek az alapvető érvek, és a korábbi iparági tapasztalatok, éveken át tartó próbálkozások sikerei és kudarcai segítettek kidolgozni az agilis szoftverfejlesztésnek kedvező adaptív, iteratív és evoluciós fejlesztést.
+
+A csapatmunkánál felmerülő hibák elbírálása egyéni felelősség alapján történik. Ha csapatmunkánál valaki egyénileg hibázik, csak az érintett hallgató pontszáma csökken, a csapat többi tagjáé nem.
+
+Minden munkamásolat gyakorlatilag egy ág.
+Minden ág egy-egy munkamásolatként implementálódik. Az ágak összefésülése patch-ek küldözgetésével történik.
+Lehet válogatni az egyes változtatások között, nem kell feltétlenül minden változtatást letölteni.
+Új tagok bármikor csatlakozhatnak a rendszerhez, nincs szükség szerveroldali regisztrációra.
+Az egyik első nyitott rendszer a BitKeeper volt, mely azért is nevezetes, mert a Linux-rendszermag fejlesztéséhez is használták. Később a BitKeeper fejlesztői megváltoztatták a licencet, így a Linux fejlesztők más, szabad verziókezelő után kezdtek nézni.
+Néhány szabadon használható, nyitott verziókezelő rendszer:
+
+Makroszkópos rendszerstruktúra: Ez a szoftverrendszer architektúrájára utal, mint egy magasabb szintű absztrakció, amely számítási komponensek gyűjteményéből áll, valamint a komponensek közötti interakciókat leíró csatlakozókból.
+A fontos dolog – bármi legyen is az: ez arra utal, hogy a szoftvertervezőknek foglalkozniuk kell azokkal a döntésekkel, amelyek nagy hatással vannak a rendszerre és annak érdekelt feleire.
+Ami alapvető a környezetében lévő rendszer megértéséhez
+Dolgok, amelyeken az emberek nehezen változtathatók: mivel az architektúra tervezése a szoftverrendszer életciklusának kezdetén történik, az építésznek azokra a döntésekre kell összpontosítania, amelyeknek első alkalommal helyesnek kell lenniük. Ezt a gondolatmenetet követve az építészeti tervezési kérdések nem építészeti jellegűekké válhatnak, amint visszafordíthatatlanságuk leküzdhető.
+Építészeti tervezési döntések halmaza: a szoftverarchitektúrát nem szabad csupán modellek vagy struktúrák halmazának tekinteni, hanem magában kell foglalnia azokat a döntéseket, amelyek ezekhez a konkrét struktúrákhoz vezetnek, és az ezek mögött meghúzódó indokokat. Ez a betekintés jelentős kutatásokhoz vezetett a szoftverarchitektúra tudásmenedzsment terén.
+Nincs éles különbség a szoftverarchitektúra és a tervezés és a követelmények tervezése között (lásd a kapcsolódó területeket alább). Mindannyian a „intencionalitás láncának” részét képezik a magas szintű szándékoktól az alacsony szintű részletekig.
+
+A projektmunkát csapatban kell elvégezni, meghatározott létszámkorláttal. Egy csapatban legfeljebb 3 fő dolgozhat együtt a feladaton.
+
+A vízesésmodell egy szekvenciális fejlesztési megközelítés, amelyben a fejlődés folyamatosan lefelé (mint egy vízesés) folyik több szakaszban, jellemzően:
+
+A hallgatók több alkalommal is feltölthetik a megoldásukat a határidőig. Ilyenkor mindig az utolsó beadás bírálja felül a korábbi órai gyakorlat pontszámát, még akkor is, ha az rosszabb eredményt hozna.
+
+== Agilis szoftverfejlesztési módszerek ==
+
+=== Altípusos polimorfizmus és viselkedésbeli altípusosság ===
+Intuitív megközelítés szerint, mivel az öröklődés is kapcsolatot hoz létre, azért a gyermek osztály példánya mindenütt biztonságosan használható, ahol a szülő osztály példánya is. Ez azonban tévedés, különösen ha megváltoztatható objektumokról van szó. Lásd: ellipszis-kör probléma. Az altípusos polimorfizmus típusellenőrzése nem garantálja a viselkedésbeli altípusosságot. Mivel a viselkedésbeli altípusosság eldönthetetlen, azért a fordító nem tudja ellenőrizni. Az osztályok és objektumok hierarchiáját gondosan meg kell tervezni, figyelembe véve a szintaktikailag ellenőrizhetetlen inkorrekt használat lehetőségét. Ez Liskov helyettesítési elvként ismert.
+
+A vizsgaidőszakra való jelentkezés a Neptun rendszeren keresztül történik. A jelentkezési felület 2026. május 5-én nyílik meg a hallgatók számára.
+
+=== Objektumorientáció és adatbázisok ===
+Az objektumorientált programozás és a relációs adatbázisok is nagyon elterjedtek. Mivel a relációs adatbázisok nem tárolnak közvetlenül objektumokat, általános az igény a két világ összekötésére, az objektum-reláció illeszkedési probléma megoldására.  Többféle megoldást használhat az adatbáziskezelő, mindegyiknek megvannak a maga előnyei és hátrányai. Az egyik leggyakoribb az objektum-relációs leképezés, ami megtalálható az IDE nyelvekben, mint a Visual FoxPro és könyvtárakban, mint Java Data Objects és a Ruby on Railsben az ActiveRecord.
+Alternatívaként használhatók a kereskedelemben kevésbé elterjedt objektum adatbázisok is.
+
+A szoftvertesztelés a szoftverminőség-biztosítás és így a szoftverfejlesztés részét képezi. A tesztelés egy rendszer vagy program kontrollált körülmények melletti futtatása, és az eredmények kiértékelése. A hagyományos megközelítés szerint a tesztelés célja az, hogy a fejlesztés során létrejövő hibákat minél korábban felfedezze, és ezzel csökkentse azok kijavításának költségeit.
+Jelenleg a tesztelői munka egyre inkább eltolódik a fejlesztők és a döntéshozók információkkal való támogatásának irányába. Fontos szerepek még a fejlesztés állapotának pontos és egzakt mérése és a kockázatkezelés és -becslés. Különösen így van ez az Agile Programming projektek esetén, ahol klasszikus tesztelésről a specifikáció hiánya miatt nem beszélhetünk.
+--- TANANYAG VÉGE ---
+
+Kérdések:
+1. Mit jelent a 'kettős felülvizsgálat' szabálya?
+2. Hány százalékot ér a laborgyakorlat a félévi jegyben?
+3. Mi a 'stabil iteráció' definíciója ebben a kurzusban?
+4. Mi történik, ha valaki hétvégén adja le a házi feladatot?
+5. Kinek csökken a pontszáma, ha csapatmunkánál valaki egyénileg hibázik?
+6. Legfeljebb hány fő alkothat egy csapatot a projektmunkánál?
+7. Mi bírálja felül a korábbi órai gyakorlat pontszámát?
+8. Mikor nyílik meg a vizsgajelentkezés?
+
+Válaszolj KIZÁRÓLAG a JSON tömbbel, más szöveg nélkül.

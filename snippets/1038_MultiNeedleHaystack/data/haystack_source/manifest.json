@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Szoftvertesztelés",
+    "url": "https://hu.wikipedia.org/wiki/Szoftvertesztel%C3%A9s",
+    "license": "CC BY-SA 4.0",
+    "fetched": "2026-08-01",
+    "chars": 5628,
+    "file": "data/haystack_source/Szoftvertesztelés.txt"
+  },
+  {
+    "title": "Tervezési minta",
+    "url": "https://hu.wikipedia.org/wiki/Tervez%C3%A9si_minta",
+    "license": "CC BY-SA 4.0",
+    "fetched": "2026-08-01",
+    "chars": 4174,
+    "file": "data/haystack_source/Tervezési_minta.txt"
+  },
+  {
+    "title": "Verziókezelés",
+    "url": "https://hu.wikipedia.org/wiki/Verzi%C3%B3kezel%C3%A9s",
+    "license": "CC BY-SA 4.0",
+    "fetched": "2026-08-01",
+    "chars": 9386,
+    "file": "data/haystack_source/Verziókezelés.txt"
+  },
+  {
+    "title": "Objektumorientált programozás",
+    "url": "https://hu.wikipedia.org/wiki/Objektumorient%C3%A1lt_programoz%C3%A1s",
+    "license": "CC BY-SA 4.0",
+    "fetched": "2026-08-01",
+    "chars": 39575,
+    "file": "data/haystack_source/Objektumorientált_programozás.txt"
+  },
+  {
+    "title": "Adatbázis-kezelő rendszer",
+    "url": "https://hu.wikipedia.org/wiki/Adatb%C3%A1zis-kezel%C5%91_rendszer",
+    "license": "CC BY-SA 4.0",
+    "fetched": "2026-08-01",
+    "chars": 12020,
+    "file": "data/haystack_source/Adatbázis-kezelő_rendszer.txt"
+  },
+  {
+    "title": "Szoftverfejlesztési folyamat",
+    "url": "https://hu.wikipedia.org/wiki/Szoftverfejleszt%C3%A9si_folyamat",
+    "license": "CC BY-SA 4.0",
+    "fetched": "2026-08-01",
+    "chars": 19885,
+    "file": "data/haystack_source/Szoftverfejlesztési_folyamat.txt"
+  },
+  {
+    "title": "Agilis szoftverfejlesztés",
+    "url": "https://hu.wikipedia.org/wiki/Agilis_szoftverfejleszt%C3%A9s",
+    "license": "CC BY-SA 4.0",
+    "fetched": "2026-08-01",
+    "chars": 17874,
+    "file": "data/haystack_source/Agilis_szoftverfejlesztés.txt"
+  },
+  {
+    "title": "Szoftverarchitektúra",
+    "url": "https://hu.wikipedia.org/wiki/Szoftverarchitekt%C3%BAra",
+    "license": "CC BY-SA 4.0",
+    "fetched": "2026-08-01",
+    "chars": 33777,
+    "file": "data/haystack_source/Szoftverarchitektúra.txt"
+  }
+]

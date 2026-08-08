@@ -1,0 +1,84 @@
+Az adatbázis-kezelő rendszer (angolul Database Management System, DBMS) többfelhasználós, hálózatos környezetben, adatbázisokhoz való hozzáférést, rendszeres és a felhasználói folyamatok zavartalan működését biztosító szoftveralkalmazás.
+Eredetileg csak nagy cégek alkalmaztak adatbázis-kezelőket, melyek nagy mennyiségű adatot kezeltek nagy teljesítményű számítógépekkel, de mára ezek elterjedt komponensei a cégek számítástechnikai rendszereinek.
+
+
+== Alapelvek ==
+Az adatbázis-kezelő általánosított vázát az ún. ANSI/X3/SPARC-modellen (lásd ábra) lehet a legjobban áttekinteni. Mint az ábrán látható, maga az adatbázis-kezelő különféle felhasználói folyamatok és a fizikai adatbázis – tipikusan egy fájlrendszer vagy más állománykezelő – között teremt kapcsolatot. A felhasználók különféle szándékkal és szemlélettel fordulhatnak a rendszerhez (például segédalkalmazás kapcsolódik a rendszerhez, lekérdezést akar futtatni, sémát hoz létre) – éppen ezért a rendszerhez kapcsolódó felhasználói folyamatokat egységesen nézetnek szokás nevezni.
+A nézeteket élesen megkülönböztetjük aszerint, hogy azok az adatbázisban tárolt adategységek lekérdezésével („manipulálásával”) vagy az adatszerkezetek változtatásával, kialakításával („definiálásával”) foglalkoznak. A két nézettípusnak eltérő nyelvezete van, illetve lehet, előbbit általában az adatlekérdező DML (Data Manipulation Language) nyelv, utóbbit az adatszerkezetet kialakító DDL (Data Definition Language) vezérli. A legtöbb adatbázis-kezelő nyelve mindkét elemet integráltan tartalmazza, de tipikusan más nyelvi szabályok érvényesek az egyikre és másikra is (lásd például SQL nyelv).
+Mindkét nyelv feldolgozását, értelmezését maga az adatbázis-kezelő végzi – a két nyelvhez pedig két értelmezést végző
+szoftverkomponens tartozik, amelyeket rendre lekérdezésfeldolgozónak, illetve sémafordítónak nevezünk (az adatbázis-kezelő típusától függetlenül). A DDL és DML nyelvek kialakításának egyik célja az volt, hogy a felhasználónak elegendő legyen kizárólag az adatok logikai adatszerkezetével (lásd adatbázisok) tisztában lenniük, ne kelljen ismerniük az adatok fizikai tárolásának formáját, mikéntjét. Ha ezekhez a nyelvekhez külön fordító tartozik, akkor értelemszerűen több DDL és DML nyelven is kapcsolódhatunk akár ugyanahhoz az adatbázishoz is – tehát egyfajta függetlenséget, nevezetesen logikai adatfüggetlenséget tudunk általa biztosítani. Például ma tipikusan objektumorientált DDL-en (lásd például OQL megfelelő részét) keresztül is hozzáférhetünk egy relációs adatbázis-kezelőhöz.
+A felhasználói utasítások értelmezése után annak konkrét végrehajtására kerül sor, amely az adatbázis-kezelő motor (angolul: database engine) egyik feladata. Az adatbázis-kezelő motor ezt egyrészt úgy teszi meg, hogy a felhasználói folyamatok egyidejű futásából eredő potenciális problémák elkerülése (például közösen írnak és olvasnak egy adategységet, egyik folyamat elől mindig elveszik az erőforrásokat, folyamatok egymásra várnak), illetve zavartalan futásuk biztosítása érdekében mindenféle szabályozást eszközöl, más szóval: tranzakció-kezelést végez. Másrészt pedig magát a fizikai adatbázist kezelő rendszert kell megfelelő utasításokkal vezérelni úgy, hogy az a kapott utasításokat optimalizálva a felhasználói folyamatot a lehető legrövidebb idő alatt szolgálja ki (lásd adatbázis-optimalizálás).
+
+
+== Adatbázis-kezelés, állománykezelés ==
+Sokak szerint az adatbázis-kezelő tartalmaz egy állománykezelőt is, de ez nem feltétlenül igaz. A legtöbb kereskedelmi termék önálló, az adatbázis-kezelő magját képező adatbázis-kezelő motortól független állományszervezési rendszert dolgozott ki elsősorban amiatt, hogy a háttértár szervezése, illetve eszközfüggőségéből (például máshogy viselkedik egy optikai, egy lyuk-, egy mágnesszalagos és egy merevlemezes háttértár is, hogy a memóriaadatbázisokról ne is beszéljünk) eredő sajátosságai ne befolyásolják jelentősen az adatbázis-kezelő motor kialakítását, illetve hatékonyságát. A szétválasztás azt is lehetővé teszi, hogy a háttér optimalizálását (például töredezettségmentesítését) az adatbázis-kezelő motortól függetlenül, azt nem befolyásolva is végrehajthassuk; de arra is lehetőséget teremt, hogy elosztott, akár több önálló (idegen szóval: autonóm) számítógépből rendszereket is kezelni tudjunk egyetlen adatbázis-kezelő motor segítségével. A szétválasztás tehát egy másik fajta adatfüggetlenséget biztosít, vagyis az ún. fizikai adatfüggetlenséget garantálja.
+Összefoglalóan, az adatbázis-kezelők meghatározó része a logikai adatbázis kialakítására koncentrál. A logikai adatbázisokat szerkezetük, felépítési és működési sajátosságaik alapján különböztetjük meg, amelyet összefoglalóan, tömören adatmodellnek nevezünk. Értelemszerűen tehát az adatbázis-kezelőket az általuk kezelt, vezérelt, valamint megvalósított adatmodellek alapján osztályozzuk. Ennek megfelelően beszélhetünk relációs, objektumorientált, hálós, deduktív, illetve ezek elegyítéséből létrejött objektumrelációs, deduktív relációs adatbázis, deduktív objektumorientált adatbázis-kezelőkről, röviden és ilyen értelemben: adatbázisokról – bár az adatbázis szó elsősorban mindig a ténylegesen tárolt adathalmazra utal.
+
+
+== Rövid történet ==
+Az adatbázisok története értelemszerűen az adatmodellek és az adatbázis-kezelő rendszerek történetével szoros összefüggésben áll.
+Az adatok gyors, gépesített tárolásának és visszakeresésének igénye már az 1900-as évek elején is felmerült, amikor az első népesség-nyilvántartást végző (valójában halálozási statisztikákat készítő) lyukszalagos számítógépek megjelentek. Mindazonáltal a lyukkártyás technológia a jelenlegi rekordokban gondolkodó szemléletben éppúgy jelen van, mint a kezdetek kezdetén. Az adatbázisok jelenlegi, korszerű formái csak az 1960-as évek közepén kezdtek el kialakulni, elsősorban intézmény bérszámfejtési, adatsor elemzési problémáinak kezelésére. A rutinszerű feladatokat először egy hálós adatbázis segítségével igyekeztek lerövidíteni. E korszak terméke például a CODASYL. A hálós szemléleten még nagyon jól érződik a számítógép alacsony szintű programozásának az igénye; azonban látni kell, hogy a tényleges számítógép-felhasználók akkor is, ma is elsősorban nem számítástechnikai szakemberek voltak.
+A számítógéppel való kommunikációt javítani kellett, azaz szét kellett választani az alacsony szintű programozást a magas szintű logikai szerkezettől. Az első adatmodell, amelyben már élesen szétvált a logikai és a fizikai adatbázis, az a relációs adatmodell volt. Bár Edgar F. Codd 1969-ben, az IBM munkatársaként már kidolgozta a mai napig is a legnépszerűbb adatbázis-fajta logikai modelljét, csak 1970-ben publikálta. Téved azonban az, aki azt hiszi, hogy a relációs adatbázis sikertörténetnek indult. Magával az adatbázis logikai szerkezetével semmi baj nem volt, kísértetiesen hasonlít egy közönséges táblázatkezeléshez, csakhogy a lekérdezéssel gondok adódtak. A lekérdezés nyelve ugyanis halmazelméleti és logikai ismereteket igényelt – ami még a számítógép-programozásnál is mostohább feltételnek tűnt a felhasználók szemében. Maga az IBM sem fűzött hozzá komolyabb reményeket, hat év alatt hozták létre az első modern adatbázis-kezelőt, a System-R (ma DB/2) kódnevű szoftvert. Nem úgy a CIA, aki többek között Larry Ellison és Bob Miner segédletével egy grandiózus projektbe fogott bele, amelynek célja egy olyan adattár létrehozása volt, amely a CIA minden felmerülő kérdését gyorsan, hatékonyan, és aránylag olcsón megválaszolja. A projekt éppen az orákulum nevet kapta, angolul: Oracle. Maga a projekt pénz hiányában 1976-ban nem folytatódott, de Ellison és Miner tovább dolgozott a munkán az általuk 1977-ben alapított Relational Software Inc. (RSI, 1982-től Oracle Corp.) keretein belül. 1977-ben pedig létrejött az első Oracle.
+A lekérdező nyelv problémáját azonban nem ők, hanem a System-R fejlesztői oldották meg. Mivel az IBM akkor még nem különösebben érdeklődvén az adatbázisok iránt, nem tiltotta le az adatbázisokkal kapcsolatos információk kiadását, így az RSI nagyon könnyen hozzájutott az SEQUEL nyelv (ma SQL) leírásához. Márpedig több hónappal az IBM-et megelőzve az IBM kijövő termékével kompatibilis, versenyképes terméket sikerült a piacra dobniuk. A teljesség igénye nélkül, az egykori legnagyobbak:
+
+Oracle Database
+DB/2
+SyBase
+Informix
+Ingres
+A jó időben, a számítástechnikai robbanás idején végrehajtott korai piacszerzés ellehetetlenítette a többi lehetséges adatmodell virágzását. Hiába jelent meg 1977-ben az első értekezés egy tisztán logikára épülő adatmodellről, az elterjedésére nem volt ideje. 1982-re, amikor az első ipari alkalmazásra is bevethető Datalog adatbázis-kezelőt létrehozzák, már számos cégnek teljesen önálló relációs adatmodell alapú terméke van a piacon.
+Ráadásul 1986-ban az SQL mint a relációs adatbázisok lekérdezőnyelve az Egyesült Államokban is, és Európában is szabványossá válik, ami a többi adatbázisról még nagyon sokáig nem mondható el. Az 1990-es évek elején egy új programozási szemléletmód, az objektumorientáltság jelent meg. Mivel a legtöbb programozási nyelvet aránylag hamar kiszorította, sokáig úgy tűnt, az adatbázisok világában is megtöri a relációs adatbázisok uralmát. Ez azonban korántsem következett be. Jelenleg az adatbázispiac kevesebb, mint 3%-a objektumorientált adatbázis. A legfontosabb objektumorientált termékeket azért érdemes megemlíteni, ezeket bizonyos feladatokra mind a mai napig lehet és érdemes is használni:
+
+Gemstone
+Jasmine
+ObjectStore
+O2
+Manapság a legfontosabb intézményi információs rendszerek alapját maguk az adatbázisok alkotják, ugyanakkor tipikusan objektumorientált programozási nyelveken írt alkalmazások használnak relációs adatbázisokat. Ezt a fajta tudathasadást egy öszvér megoldással igyekeznek napjainkban áthidalni úgy, hogy objektumszerűen lehet elérni relációs adatbázis tartalmakat. Erre, mint tudjuk, a logikai adatbázis fogalma eleve lehetőséget ad. Ennek mikéntjét szabványban is rögzítették; ez az SQL legújabb változata (hívják ezt OQL-nek, SQL3-nak, SQL99-nek stb.).
+A fejlődés persze azóta sem állt meg, bár lényegesen lelassult. Tim Berners-Lee, az Internet atyja, 1999-ben hirdette meg a Szemantikus web programját, amely többek között az XML nyelv általános elterjedéséhez vezetett. Ezzel párhuzamosan megjelentek az első ún. XML dokumentumokra épülő adatbázisok. Az XML adatbázisok alapvetően nem, vagy nem tipikusan XML struktúrákban tárolják az adatokat (ez felesleg helypazarlás lenne) – ismét nem a fizikai, hanem kizárólag a logikai adatbázis felépítése változott meg. Az XML dokumentumok lekérdezésére létrehozták a W3C konzorcium ajánlásaként az XQuery és XPath lekérdezőnyelveket. Az XML alapú adatbázisok elterjedéséhez az adja az alapot, hogy az uralkodó trendek szerint ma nem a felhasználók, hanem szoftverek, szoftverügynökök állítanak elő és dolgoznak fel automatikusan és félautomatikusan lekérdezéseket. Az XQuery és XPath alapú megoldások az ilyen jellegű elvárásoknak sokkal jobban megfelelnek, mint a főleg emberi intelligenciát igénylő SQL alapú rendszerek.
+
+
+== Jelenleg elérhető termékek ==
+
+
+=== Gyártó (forgalmazó) és terméknév szerint ===
+Oracle: Oracle Database, BerkeleyDB
+IBM: DB/2, Informix, Illustra
+Microsoft: MS-SQL
+SyBase: SyBase (korábban System NN – NN helyén egy verzió állt)
+Borland: FireBird (korábban, illetve Borland termékeknél InterBase)
+Computer Associates (CA): Ingres, Jasmine
+Progress: ObjectStore
+SAP AG: MaxDB
+Novell: FLAIM
+
+
+=== Nyílt forráskódban elérhető adatbázis-kezelők ===
+Apache Cassandra
+BerkeleyDB
+CouchDB
+Derby (ugyanaz, mint az IBM Cloudscape, Sun Java DB)
+FireBird (ugyanaz, mint az InterBase)
+FLAIM
+Ingres (ugyanaz, mint az openIngres)
+MaxDB (ugyanaz, mint az SAPDB)
+MongoDB
+MySQL
+MariaDB
+postgreSQL
+Redis
+SQLite
+
+
+== Kapcsolódó oldalak ==
+Adatbázis
+Adatmodell
+Adatbázis-optimalizálás
+Adatbázis-tervezés
+OQL
+Relációs adatbázis
+SQL
+Tudásreprezentáció
+
+
+== Források ==
+Gavin Powell: Beginning Database Design, Wiley Publishing, Inc., ISBN 978-0-7645-7490-0 , ISBN 0-7645-7490-6

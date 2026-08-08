@@ -1,0 +1,126 @@
+{
+  "needles": [
+    {
+      "id": "N01", "type": "hatarido",
+      "statement": "A félév során több számonkérési forma is szerepel a tárgykövetelményben. A második zárthelyi dolgozatra 2026. március 14-én, 10:15-kor kerül sor a nagyelőadó teremben.",
+      "question": "Mikor lesz a 2. zárthelyi dolgozat?",
+      "expected_answer": "2026. március 14"
+    },
+    {
+      "id": "N02", "type": "hatarido",
+      "statement": "A nagy házi feladat a félév egyik legnagyobb súlyú beadandója. Ennek határideje 2026. április 3-án, 23:59-kor jár le, ezt követően a rendszer már nem fogadja el a feltöltést.",
+      "question": "Mi a nagy házi feladat beadási határideje?",
+      "expected_answer": "2026. április 3"
+    },
+    {
+      "id": "N03", "type": "hatarido",
+      "statement": "A vizsgaidőszakra való jelentkezés a Neptun rendszeren keresztül történik. A jelentkezési felület 2026. május 5-én nyílik meg a hallgatók számára.",
+      "question": "Mikor nyílik meg a vizsgajelentkezés?",
+      "expected_answer": "2026. május 5"
+    },
+    {
+      "id": "N04", "type": "hatarido",
+      "statement": "Azok a hallgatók, akiknek kérdésük merül fel az anyaggal kapcsolatban, konzultációs alkalmakon vehetnek részt. A következő konzultáció időpontja 2026. február 20-án, 14:00-kor lesz.",
+      "question": "Mikor lesz a következő konzultáció?",
+      "expected_answer": "2026. február 20"
+    },
+    {
+      "id": "N05", "type": "hatarido",
+      "statement": "Azok, akik valamilyen okból nem tudtak részt venni a rendes zárthelyin, pótlási lehetőséget kapnak. A pótzárthelyi időpontja 2026. június 2-án, 8:00-kor van.",
+      "question": "Mikor lesz a pótzárthelyi?",
+      "expected_answer": "2026. június 2"
+    },
+    {
+      "id": "N06", "type": "definicio",
+      "statement": "A folyamatos integráció gyakorlatában fontos fogalom a fejlesztési ciklusok megbízhatósága. Ebben a tárgyban azt a fejlesztési ciklust nevezzük stabil iterációnak, amely után a build szerver három egymást követő futtatásban is hibamentes eredményt ad.",
+      "question": "Mi a 'stabil iteráció' definíciója ebben a kurzusban?",
+      "expected_answer": "három egymást követő futtatásban"
+    },
+    {
+      "id": "N07", "type": "definicio",
+      "statement": "A leadási határidők betartása mellett a hallgatók néha a hivatalos értékelés előtt is módosítanak a kódon. Az ilyen, a leadási határidő után, de a manuális értékelés megkezdése előtt privát branch-re feltett commitot árnyék-commitnak nevezzük ebben a tárgyban.",
+      "question": "Mit jelent az 'árnyék-commit' fogalma ebben a kurzusban?",
+      "expected_answer": "leadási határidő után"
+    },
+    {
+      "id": "N08", "type": "definicio",
+      "statement": "A csapatmunka minőségbiztosításának egyik eszköze a kódfelülvizsgálat. Ebben a félévben kettős felülvizsgálatnak hívjuk azt a szabályt, amely szerint egy pull requestet két különböző csapattagnak is jóvá kell hagynia, mielőtt az összeolvasztható lenne.",
+      "question": "Mit jelent a 'kettős felülvizsgálat' szabálya?",
+      "expected_answer": "két különböző csapattagnak"
+    },
+    {
+      "id": "N09", "type": "definicio",
+      "statement": "A technikai problémák miatti méltánytalan pontlevonás elkerülésére a tárgy bevezetett egy rövid haladékot. Ezt türelmi ablaknak nevezzük: ez egy 15 perces időszak a beadási határidő után, amely alatt a leadás technikai hiba esetén még pontlevonás nélkül elfogadható.",
+      "question": "Mennyi a 'türelmi ablak' hossza?",
+      "expected_answer": "15 perc"
+    },
+    {
+      "id": "N10", "type": "definicio",
+      "statement": "A projektmunka előrehaladását félidőben egy közös bemutató keretében ellenőrzik. Ezt a mérföldkövet, amikor a csapat bemutatja a működő prototípust az oktatónak, forduló-pontnak nevezik a tárgy keretében.",
+      "question": "Mi a 'forduló-pont' ebben a kurzusban?",
+      "expected_answer": "működő prototípust"
+    },
+    {
+      "id": "N11", "type": "szam",
+      "statement": "A félévi jegy több részjegyből tevődik össze, amelyek különböző súllyal számítanak. A laborgyakorlatok teljesítménye a végső jegy 35%-át teszi ki.",
+      "question": "Hány százalékot ér a laborgyakorlat a félévi jegyben?",
+      "expected_answer": "35%"
+    },
+    {
+      "id": "N12", "type": "szam",
+      "statement": "A projektmunka önálló elbírálás alá esik, külön ponthatárral. A projektmunka elfogadásához legalább 42 pontot kell elérni a lehetséges 100-ból.",
+      "question": "Mennyi a projektmunka minimum ponthatára?",
+      "expected_answer": "42 pont"
+    },
+    {
+      "id": "N13", "type": "szam",
+      "statement": "A beadott kód formai minőségét automatikus eszköz ellenőrzi feltöltéskor. A kódstílus-ellenőrző (linter) legfeljebb 12 figyelmeztetést enged meg ahhoz, hogy a beadás hibátlannak minősüljön.",
+      "question": "Legfeljebb hány linter-figyelmeztetés engedhető meg hibátlan beadáshoz?",
+      "expected_answer": "12"
+    },
+    {
+      "id": "N14", "type": "szam",
+      "statement": "A projektmunkát csapatban kell elvégezni, meghatározott létszámkorláttal. Egy csapatban legfeljebb 3 fő dolgozhat együtt a feladaton.",
+      "question": "Legfeljebb hány fő alkothat egy csapatot a projektmunkánál?",
+      "expected_answer": "3"
+    },
+    {
+      "id": "N15", "type": "szam",
+      "statement": "A backend kód minőségét automatikus tesztekkel is ellenőrzik. Az elvárt minimális tesztlefedettség a forráskód 78%-a.",
+      "question": "Mennyi a minimum elvárt tesztlefedettség?",
+      "expected_answer": "78%"
+    },
+    {
+      "id": "N16", "type": "kivetel",
+      "statement": "A beadási határidők betartását a rendszer automatikusan naplózza, néhány kivétellel. Ha egy hallgató hétvégén (szombaton vagy vasárnap) adja le a házi feladatot, az csak a következő hétfőn számít határidőn belülinek.",
+      "question": "Mi történik, ha valaki hétvégén adja le a házi feladatot?",
+      "expected_answer": "hétfőn"
+    },
+    {
+      "id": "N17", "type": "kivetel",
+      "statement": "Az igazolt hiányzások esetén a tárgy rugalmasan kezeli a pótlási lehetőségeket. Ha a hallgató igazoltan hiányzott a zárthelyiről, a pótzárthelyin 10%-kal több időt kap a feladatok megoldására.",
+      "question": "Milyen kedvezményt kap az, aki igazoltan hiányzik a zárthelyiről?",
+      "expected_answer": "10%"
+    },
+    {
+      "id": "N18", "type": "kivetel",
+      "statement": "A csapatmunkánál felmerülő hibák elbírálása egyéni felelősség alapján történik. Ha csapatmunkánál valaki egyénileg hibázik, csak az érintett hallgató pontszáma csökken, a csapat többi tagjáé nem.",
+      "question": "Kinek csökken a pontszáma, ha csapatmunkánál valaki egyénileg hibázik?",
+      "match": "all_keywords",
+      "expected_answer": ["érintett", "hallgató"]
+    },
+    {
+      "id": "N19", "type": "kivetel",
+      "statement": "A hallgatók több alkalommal is feltölthetik a megoldásukat a határidőig. Ilyenkor mindig az utolsó beadás bírálja felül a korábbi órai gyakorlat pontszámát, még akkor is, ha az rosszabb eredményt hozna.",
+      "question": "Mi bírálja felül a korábbi órai gyakorlat pontszámát?",
+      "expected_answer": "utolsó beadás"
+    },
+    {
+      "id": "N20", "type": "kivetel",
+      "statement": "A jelenléti követelmények betartását a tárgy szigorúan veszi. Két igazolatlan hiányzás után a hallgató elveszti a féléves aláírás jogát.",
+      "question": "Hány igazolatlan hiányzás után veszíti el a hallgató az aláírás jogát?",
+      "match": "any",
+      "expected_answer": ["két", "kettő", "2"]
+    }
+  ]
+}

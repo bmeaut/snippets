@@ -1,0 +1,135 @@
+Az agilis szoftverfejlesztés a szoftverfejlesztési módszerek egy csoportja, ahol a szoftverkövetelmények és a megoldások együttműködésen keresztül együtt fejlődnek az önszerveződő és keresztfunkcionális csapatok között. Ez elősegíti az alkalmazkodó tervezést, az evolúciós fejlesztést, korai szállítást, folytonos továbbfejlesztést és bátorít a változásokra adható gyors és rugalmas válaszokra.
+A Kiáltvány az agilis szoftverfejlesztésért, először 2001-ben vezette be az agilis kifejezést a szoftverfejlesztés keretében. Habár mindez ez a DuPont-nál a 80-as évek közepén fejlesztett technikákból fejlődött ki és később James Martin és James Kerr et al. definiálta.
+
+
+== Története ==
+
+
+=== Elődök ===
+A növekményes szoftverfejlesztési módszerek egészen 1957-ig vezethetők vissza. 1974-ben E. A. Edmonds írt egy dolgozatot, amelyben bevezetett egy alkalmazkodó szoftverfejlesztési folyamatot. Ezzel párhuzamosan, és teljesen függetlenül ugyanazt a módszert fejlesztette ki és alkalmazta a New York Telefon Társaság Rendszerfejlesztési Központja Dan Gielan igazgatása alatt. A korai 1970-es években Tom Gilb elkezdte publikálni az evolúciós projektmenedzsment (EVO) koncepcióját, amely a competitive engineering-é nőtte ki magát. Az 1970-es évek közepétől a végéig Gielan alapos előadásokat tartott Amerika szerte erről a módszertanról és gyakorlatáról és előnyeiről.
+A pehelysúlyú szoftverfejlesztési módszerek egy csoportja kezdett kifejlődni az 1990-es évek közepén válaszul a nehézsúlyú vízesés-orientált módszerekre, amely kritikákat nevezik nehezen szabályozhatónak, nagyszámúnak és mikromenedzseltnek; habár egyes hívei ezen pehelysúlyú módszereknek azt állították, hogy csak visszatértek a korai szoftverfejlesztési gyakorlathoz. Ezek a pehelysúlyú módszerek a következők voltak: 1994-ből a Unified Process és a dinamikus rendszerfejlesztési módszer (angol rövidítéssel DSDM); 1995-ből a Scrum; 1996-ból a crystal clear és az extrém programozás (angol rövidítéssel XP) és 1997-ből az adaptív szoftverfejlesztés és a funkcióvezérelt fejlesztés. Habár ezek a Kiáltvány az agilis szoftverfejlesztésért 2001-es közzététele előttről származnak, mostanra együttesen hivatkoznak rájuk, mint agilis módszerekre; és gyakran rövidítik egyszerűen Agilisnek, nagy kezdő A-val.
+Érdemes megjegyezni, hogy az agilis jelző csak részben fedi a Kiáltvány az agilis szoftverfejlesztésért-ben megfogalmazottakat, az adaptív, alkalmazkodóképes jelzők pontosabban jellemzik az alapvető értékeket. Ezért is szoktuk inkább nagy kezdőbetűvel írni, ha a Kiáltványra és annak értelmezésére gondolunk.
+
+
+=== Kiáltvány az agilis szoftverfejlesztésért ===
+2001 februárjában 17 szoftverfejlesztési szakértő (lásd alább) találkozott Snowbird Üdülőközpontban Utah-ban, hogy megbeszéljék a tapasztalataikat a pehelysúlyú szoftverfejlesztési módszerekkel kapcsolatban. Megfogalmazták és kiadták az alábbi kiáltványt: Kiáltvány az agilis szoftverfejlesztésért
+Néhány szerző megalakította az Agilis Szövetséget (angolul Agile Alliance), egy nonprofit szervezetet, amely segíti a szoftverfejlesztést a kiáltvány értékei és alapelvei szerint.
+
+
+==== Agilis szoftverfejlesztés elvei ====
+A S.O.L.I.D. alapelvek adják az agilis szoftverfejlesztés alapját.
+
+
+== Áttekintés ==
+
+Számos konkrét agilis fejlesztési módszer létezik. Legtöbbjük elősegíti a fejlesztést, csoportmunkát, együttműködést és folyamat alkalmazkodását a projekt életciklusán keresztül.
+
+
+=== Ismétlődő, növekményes és evolúciós ===
+A legtöbb agilis módszer lebontja a feladatot kisebb feladatokra. Egy fejlesztési ciklus (azaz iteráció vagy sprint) maximum 4 hétig tart. Ezt az időtartamot idődoboznak hívjuk. Minden iterációban lévő feladat elkészítése egy keresztfunkcionális fejlesztői csoport feladata, amely a tervezéstől, elemzéstől a programozáson át a tesztelésig és átvételi tesztig mindent elvégez. Az iteráció végén bemutatják az elkészült feladatokat a megrendelőnek. Így minimalizálhatóak a hosszú fejlesztésből fakadó kockázatok, és a projekt gyorsan alkalmazkodhat a változásokhoz. A növekmény talán nem alkalmas az értékesítésre önmagában, azonban cél, hogy minden fejlesztési ciklus végén potenciálisan szállítható termék készüljön el. A módszer ismétlődésen (iteráción) alapul (minden alkalommal azonos szakaszokon megy végig a fejlesztőcsoport), és növekményes (inkrementális), mert mindig a már elkészült növekményt egészítik ki.
+
+
+=== Eredményes és szemtől-szembe való kommunikáció ===
+Az agilis módszerek nagyobb hangsúlyt fektetnek a közvetlen, mint az írásbeli kommunikációra. A csapatok mérete ezért 3-9 fő ideális esetben, ennél nagyobb csapatban nem alakul ki a csapatszellem, vagy több csapatot kell létrehozni, amelyek között kommunikációs problémák léphetnek fel. A csapattagok ideális esetben egy térben dolgoznak, és kereszt-funkcionálisak, ami azt jelenti, hogy a csapat rendelkezik azokkal a készségekkel, amelyek szükségesek a feladat, munka vagy projekt elvégzéséhez.
+Minden csapatban van egy delegált a megrendelő részéről, a Scrum keretrendszerben ő a Terméktulajdonos (angolul Product Owner). A fejlesztés egész ideje alatt rendelkezésre áll, hogy a felmerülő kérdéseket megválaszolja. Az iterációs szakasz végén a fejlesztők és a megbízó delegáltja együtt kiértékelik a növekményt. A megbízótól érkező személy fontos feladata, hogy az elkészítendő funkciókat fontossági sorrendjét felállítsa üzleti szempontból (megtérülési mutató, azaz return of investment - ROI). A fejlesztői csapat a legmagasabb prioritású funkciókat veszi előre.
+Az agilis szoftverfejlesztésben általában elhelyeznek az iroda egyik feltűnő pontján egy általában nagyméretű információs táblát (information radiator). Ezen mindenki láthatja a szoftver vagy más termék projektje fejlesztésének naprakész állapotát. A kifejezést Alistair Cockburn alkotta meg és írta le 2002-es könyvében, az Agilis szoftverfejlesztésben. Egy úgynevezett build light indicator (a projekt elkészültségi fokára utaló fényjelző) szintén tájékoztathatja a csapat tagjait a feladat állásáról.
+
+
+=== Nagyon rövid visszajelzési és alkalmazkodási ciklus ===
+
+
+=== Összpontosítás a minőségre ===
+Speciális eszközöket és technikákat, mint pl. a folyamatos integráció, automatikus egységtesztelés, páros programozás, tesztvezérelt fejlesztés, tervezési minták, domainvezérelt tervezés, kódrefaktorálás és másokat gyakran használnak a minőség javítására és a projektagilitás fokozására.
+
+
+== Filozófia ==
+A hagyományos szoftvertervezési filozófiákkal szemben az agilis szoftver fejlesztés a komplex rendszereket és projekteket dinamikus, nemdeterminisztikus és nemlineáris módon célozza, ahol a pontos becslés, a stabil terv és az előrejelzés korai stádiumban gyakran nehezen megvalósítható, ezért a nagyszabású előre elkészített tervek és lebontások valószínűleg hatalmas veszteséggel járnak abban az értelemben, hogy gazdaságilag (üzletileg) nem megalapozottak. Ezek az alapvető érvek, és a korábbi iparági tapasztalatok, éveken át tartó próbálkozások sikerei és kudarcai segítettek kidolgozni az agilis szoftverfejlesztésnek kedvező adaptív, iteratív és evoluciós fejlesztést.
+
+
+=== Iterációs kontra vízesésmodell ===
+Az agilis és a vízeséses módszertanok közötti egyik fő különbség az, hogy hogyan tekintenek a minőség és a tesztelés kérdéskörére. A vízesésmodell mindig külön-külön tesztelési és építési (build) szakaszt definiál; ezzel szemben az agilis szoftverfejlesztés során a tesztelés rendszerint a tényleges fejlesztési (programozási) munkával egyidejűleg, vagy legalábbis ugyanazon iterációban zajlik.
+Mivel a tesztelés minden, a szoftver egy-egy kicsiny részét előállító iterációnak része, a felhasználóknak sűrűbben lesz lehetőségük az új részeket használatba venni, és megismerni azok működését.
+Miután a felhasználók pontos képet kapnak a továbbfejlesztett szoftver működéséről, jobb döntéseket tudnak hozni a szoftver jövőjéről. Azzal, hogy minden iterációban visszatekintő (retrospektív) és tervezési megbeszéléseket tartunk — a scrum módszertan szerint például általában kéthetente —, segítjük a fejlesztőket abban, hogy a terveket a lehető legcélszerűbb, leghasznosabb módon valósíthassák meg.
+Ez az iteratív gyakorlat a vízesésmodell projektalapú szemléletmódjával szemben a terméket helyezi előtérbe. A szoftverre, mintegy élő szervezetként tekint, amely a környezet változásaira maga is változásokkal reagál. A szoftver teljes életútján, különösen pedig versenyhelyzetekben jelentkeznek változási igények; az iteratív szoftverfejlesztés ezen változások megvalósításának a kulcsa. Ugyanezért érdemi módosítások nélkül korlátozottan alkalmazható olyan környezetben (pl. orvostechnika), ahol a fejlesztési folyamatra, valamint a termékre vonatkozóan nagy számú változatlan, sőt megváltoztathatatlan – a projekt szervezet szempontjából – külső (pl. hatósági) követelmény van jelen. 
+
+
+== Agilis szoftverfejlesztési módszerek ==
+
+Az agilis szoftverfejlesztési módszerek a szoftverfejlesztési életciklus széles körét támogatják.  Néhányuk a gyakorlatokra összpontosít (pl. XP, pragmatikus programozás, agilis modellezés), míg mások a munkafolyamat menedzsmentjére összpontosítanak (pl. Scrum, Kanban). Néhány támogató tevékenység a követelmények meghatározásához és fejlesztéséhez (például FDD), míg mások a teljes fejlesztési életciklus lefedésére törekszenek (például DSDM,  RUP).
+A főbb agilis szoftverfejlesztési keretrendszerek, módszerek az alábbiak:
+
+
+=== Agilis szoftverfejlesztési gyakorlatok ===
+Az agilis szoftverfejlesztést számos konkrét gyakorlat támogatja, amelyek olyan területeket ölelnek fel, mint a követelmények, a tervezés, modellezés, kódolás, tesztelés, tervezés, kockázatkezelés, folyamat, minőség stb. Néhány figyelemre méltó agilis szoftverfejlesztési gyakorlat a következőket foglalja magában: 
+
+
+== Az agilis módszertan terjedése más területeken ==
+Az agilis megközelítést már nem csak a szoftver-, de a szervezetfejlesztés is alkalmazza. Terjedését az indokolja, hogy a módszertan jó választ ad a mai korra jellemző bizonytalanságra és komplexitásra. A módszertan használatával ugyanis általánosságban is gyorsabb a termékfejlesztés, nem csak a szoftver esetében. Gyorsabban lehet választ találni a piaci változásokra és magasabb termelékenység érhető el, mint hagyományos módon.
+Ezért a legkülönfélébb ágazatokban vannak már példák a szervezet agilissá való alakítására, vagyis agilis transzformációra. Ilyenkor az alapoktól átgondolják a folyamatokat és kultúraváltásra is szükség van. Nem véletlen, hogy elsősorban olyan szervezetek vállalkoznak erre, ahol már az IT fejlesztés is agilis módon történik.
+
+
+== Nagyvállalati agilitás ==
+A SAFe (Scaled Agile Framework) Dean Leffingwell által kidolgozott módszertan, amely portfólió-, program- és csapatszintű agilis gyakorlatokat integrál egységes keretrendszerbe. A Scrum@Scale keretrendszert Jeff Sutherland fejlesztette ki, amely a scrum módszertan skálázható változatát valósítja meg, lehetővé téve több csapat koordinált együttműködését.
+A Scrum@Scale módszertan legismertebb hazai alkalmazása a Lufthansa Systems globális agilis transzformációja, amelyet a Jeff Sutherland nevével fémjelzett Scrum Inc. hivatalos esettanulmányként ismer el. Az esettanulmányt a TAL Consulting két managing partnere, Csaba Zoltán és Földesi Árpád készítette, akik a hivatalos fordítását is jegyzik Scrum@Scale Guide-nak.
+
+
+== Agilis menedzsment ==
+
+
+=== Az agilis menedzsment fogalma és jelentősége ===
+Az agilis menedzsment a vezetés olyan megközelítése, amely a változáshoz való gyors alkalmazkodást, a folyamatos tanulást és az önszerveződő csapatok támogatását helyezi középpontba. Az agilis szervezetekben a vezetés célja nem a hierarchia fenntartása, hanem az, hogy képessé tegye a csapatokat az autonóm döntéshozatalra, a felelősségvállalásra és az innovációra.
+Az agilis vezető szerepe abban áll, hogy irányt ad, nem utasításokat – támogató, facilitáló és inspiráló szerepet tölt be. Ez a szemlélet gyakran a servant leadership (szolgáló vezetés) és a leader-as-enabler (a vezető mint képessé tevő) koncepciókon alapul, amelyek az emberközpontú, tanulásra épülő kultúrát helyezik előtérbe.
+
+
+=== A vezető szerepe ===
+Az agilis környezetben a vezetés szerepe jelentősen eltér a hagyományos hierarchikus vagy parancsnoki szemlélettől. A vezetők szolgáló vezetőkké (servant leaders) válnak, akiknek elsődleges feladata nem az irányítás, hanem a csapatok támogatása. Feladatuk a célok világos kommunikálása, az akadályok elhárítása és a csapattagok fejlődésének elősegítése. A hangsúly a bizalomra, felhatalmazásra és a kollektív felelősségvállalásra helyeződik.
+Az agilis vezetők felelőssége kiterjed a megfelelő szervezeti kultúra kialakítására, ahol a kísérletezés, a tanulás és a hibákból való fejlődés természetes része a működésnek. A hatékony agilis vezető pszichológiai biztonságot teremt, amelyben a csapat tagjai nyíltan megoszthatják ötleteiket és kétségeiket. A vezetés fókusza nem a kontrollon, hanem a tanulási ciklusok gyorsításán és az önszerveződés támogatásán van. Az ilyen vezető engedélyt ad a kísérletezésre, és nem bünteti a kudarcot, hanem tanulási lehetőségként kezeli azt.
+
+
+=== Döntéshozatal az agilis környezetben ===
+Az agilis szervezetekben a döntéshozatal decentralizált, vagyis a döntéseket ott hozzák meg, ahol a legtöbb információ és kontextus rendelkezésre áll. Ez nemcsak a reakcióidőt rövidíti le, hanem növeli a döntések minőségét és a csapatok autonómiáját is. A vezetők szerepe ebben a modellben a keretek és irányelvek meghatározása, nem pedig az egyes döntések közvetlen meghozatala.
+Az agilis átalakulás mindig a vezetői szemléletváltással kezdődik: a vezető példát mutat abban, hogyan lehet a kontrollról a bizalomra, a mikromenedzsmentről a felhatalmazásra, valamint az utasításról a tanulási kultúrára építeni. Az agilis vezetés így nem csupán szervezeti eszköztár, hanem mentális és kulturális transzformáció, amely meghatározza az egész szervezet agilitását.
+
+
+== Magyar agilis közösség és szakmai szervezetek ==
+A IVSZ – Informatikai, Távközlési és Elektronikai Vállalkozások Szövetsége 2024-ben hozta létre az Agilis Munkacsoportot, amely a hazai agilis menedzsmenttel és szervezetfejlesztéssel foglalkozó tanácsadó és fejlesztő cégek szakmai összefogását tűzte ki célul.
+A munkacsoport célja a közös szakmai sztenderdek kialakítása, a piaci minőségbiztosítás, valamint a kiemelkedő egyéni és szervezeti teljesítmények elismerése és láthatóvá tétele. A kezdeményezés emellett a nemzetközi jó gyakorlatok hazai adaptálását, az agilis tudás kodifikálását és megosztását is támogatja, elősegítve ezzel az innovációt és a versenyképesség növelését a magyar technológiai szektorban.
+Az Agilis Munkacsoportot Szmola Roland (Methodology Architects), Csaba Zoltán (TAL Consulting) és Hoffmann Bence (Shiwaforce) alapították. Tagjai az alapítókon túl többek közt a Magyar Telekom, Sprint Consulting, Delta Systems, Vialto Consulting. A szervezet rendszeresen szervez szakmai eseményeket, meetupokat és esettanulmány-bemutatókat, amelyek célja a hazai agilis közösség erősítése, a nemzetközi tapasztalatok beemelése, valamint a magyarországi jó gyakorlatok nemzetközi szintű megismertetése.
+A munkacsoport tevékenysége hozzájárul a hazai agilis transzformáció új lendületéhez, és olyan szakmai fórumot biztosít, ahol az agilitás elvei, módszertanai és szervezeti alkalmazásai ágazatközi párbeszédben fejlődhetnek tovább.
+
+
+== Jegyzetek ==
+
+
+== További olvasnivaló ==
+Abrahamsson, P., Salo, O., Ronkainen, J., & Warsta, J. (2002). Agile Software Development Methods: Review and Analysis. VTT Publications 478.
+Cohen, D., Lindvall, M., & Costa, P. (2004). An introduction to agile methods. In Advances in Computers (pp. 1–66). New York: Elsevier Science.
+Dingsøyr, Torgeir, Dybå, Tore and Moe, Nils Brede (ed.): Agile Software Development: Current Research and Future Directions, Springer, Berlin Heidelberg, 2010.
+Fowler, Martin. Is Design Dead?. Appeared in Extreme Programming Explained, G. Succi and M. Marchesi, ed., Addison-Wesley, Boston. 2001.
+Larman, Craig and Basili, Victor R. Iterative and Incremental Development: A Brief History  IEEE Computer, June 2003
+Riehle, Dirk. A Comparison of the Value Systems of Adaptive Software Development and Extreme Programming: How Methodologies May Learn From Each Other. Appeared in Extreme Programming Explained, G. Succi and M. Marchesi, ed., Addison-Wesley, Boston. 2001.
+M. Stephens, D. Rosenberg. Extreme Programming Refactored: The Case Against XP. Apress L.P., Berkeley, California. 2003. (ISBN 1-59059-096-1)
+Shore, J., & Warden S. (2008). The Art of Agile Development. O'Reilly Media, Inc.
+Willison, Brian (2008). Iterative Milestone Engineering Model. New York, NY.
+Willison, Brian (2008). Visualization Driven Rapid Prototyping. Parsons Institute for Information Mapping.
+Csaba Zoltán, Mizsei Szabolcs (2019): Kiáltvány az agilis módszertani zaklatás ellen Archiválva 2020. január 13-i dátummal a Wayback Machine-ben
+Two Ways to Build a Pyramid Archiválva 2013. szeptember 6-i dátummal a Wayback Machine-ben, John Mayo-Smith (VP Of Technology At R/GA), October 22, 2001
+The New Methodology Martin Fowler's description of the background to agile methods
+Ten Authors of The Agile Manifesto Celebrate its Tenth Anniversary
+https://www.horvath-partners.com/hu/media-center/cikkek/12-jo-tanacs-agilis-transzformaciohoz/
+https://hu.asystems.as/konferencia-ne-legyen-az-agile-fragile/
+https://www.pmi.org/learning/library/agile-problems-challenges-failures-5869
+https://www.infoq.com/articles/agile-agile-blah-blah/
+https://ronjeffries.com/articles/018-01ff/abandon-1/
+Tom Gilb élete és munkássága Archiválva 2024. szeptember 10-i dátummal a Wayback Machine-ben
+
+
+== További információk ==
+Agile Manifesto
+Agnostic Agile alapelvek
+Heart of Agile
+Agile Rapid Website Development
+https://age-of-product.com/sprint-anti-patterns/
+Agile az Open Directory Project-ben
+
+agilepatterns.org

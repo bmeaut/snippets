@@ -1,0 +1,33 @@
+{
+  "cell_id": "ctx2000_k3_rep2",
+  "context_tokens_target": 2000,
+  "k": 3,
+  "repeat": 2,
+  "actual_chars": 8820,
+  "needles": [
+    {
+      "id": "N13",
+      "type": "szam",
+      "question": "Legfeljebb hány linter-figyelmeztetés engedhető meg hibátlan beadáshoz?",
+      "expected_answer": "12",
+      "match": "substring",
+      "position_frac": 0.25
+    },
+    {
+      "id": "N04",
+      "type": "hatarido",
+      "question": "Mikor lesz a következő konzultáció?",
+      "expected_answer": "2026. február 20",
+      "match": "substring",
+      "position_frac": 0.5
+    },
+    {
+      "id": "N16",
+      "type": "kivetel",
+      "question": "Mi történik, ha valaki hétvégén adja le a házi feladatot?",
+      "expected_answer": "hétfőn",
+      "match": "substring",
+      "position_frac": 0.75
+    }
+  ]
+}

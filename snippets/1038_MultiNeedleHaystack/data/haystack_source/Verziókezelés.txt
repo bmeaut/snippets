@@ -1,0 +1,128 @@
+Verziókezelés alatt több verzióval rendelkező adatok kezelését értjük. Leggyakrabban a mérnöki tudományokban és a szoftverfejlesztésben használnak verziókezelő rendszereket fejlesztés alatt álló dokumentumok, tervek, forráskódok és egyéb olyan adatok verzióinak kezelésére, amelyeken több ember dolgozik egyidejűleg. Az egyes változtatásokat verziószámokkal vagy verzióbetűkkel követik nyomon.
+A legtöbb verziókezelő rendszert szoftverfejlesztési projektekben használták először, de egyes szövegszerkesztők (például az Microsoft Word, az OpenOffice Writer és a KOffice), táblázatkezelők (például az OpenOffice Calc) és egyes tartalomkezelő szoftverek is támogatják az adatok különböző verzióinak a kezelését.
+A beépített verziókezelés a wikiszoftvereknél (mint például a MediaWiki és a TWiki) is kulcsfontosságú. A wikirendszerek integrált verziókezelői teszik lehetővé, hogy a felhasználók nyomonkövethessék egymás szerkesztéseit, és visszaállíthassanak oldalakat azok korábbi verzióira, ezzel védekezve a vandalizmus és a spam ellen.
+A verziókezelő szoftverek szükségességét és hasznosságát egyre szélesebb körben ismerik fel a különböző többszemélyes projektekben.
+
+
+== Kezelési modellek ==
+A hagyományos verziókezelők központosított modellel dolgoznak, ahol minden verziókezelési művelet egy közösen használt szerveren történik. Ha két fejlesztő egyidejűleg próbálja meg módosítani valamelyik fájlt, akkor valami módon el kell kerülni azt, hogy a két személy felülírja egymás munkáját. Az ilyen (centralizált) rendszerek kétféleképpen oldják meg ezt a problémát: zárolással és összefésüléssel.
+
+
+=== Zárolás (lock) ===
+A konkurens hozzáférés kezelésének legegyszerűbb módja, ha megtiltjuk a konkurens hozzáférést, azaz ha egy valaki már elkezd módosítani egy fájlt, akkor azt már más felhasználó nem nyithatja meg írásra. Ezt hívják elterjedt kifejezéssel lock-olásnak, a magyarosabb, de kevésbé elterjedt zárolás szó helyett. Ha egy felhasználó kivesz (kicsekkel) egy fájlt, akkor a többi felhasználó már csak olvasásra nyithatja meg azt egészen addig, amíg a kicsekkelő felhasználó visszateszi (becsekkeli) a módosított változatot (vagy elveti a módosítást).
+Ennek a módszernek előnyei és hátrányai is vannak. A nagyobb vagy sok fájlt érintő változtatásoknál célszerű ezt választani, mert bonyolult összefésülési műveleteket lehet megtakarítani vele. Ha azonban egy fájl túl sokáig zárolt állapotban marad, akkor a többi fejlesztő esetleg arra kényszerülhet, hogy a verziókezelést megkerülve a fájl lokális másolatát módosítsa, ami nagyobb bonyodalmakhoz vezethet.
+
+
+=== Összefésülés (merge) ===
+Itt is az angol szóhasználat az elterjedtebb a magyarosabb összefésülés helyett. A legtöbb verziókezelő, például a CVS is, lehetővé teszi, hogy több felhasználó dolgozzon egyidejűleg ugyanazon a fájlon. Ekkor a saját változtatását elsőként becsekkelő felhasználó mindenképpen sikerrel fog járni. A rendszer a többi felhasználónak összefésülési lehetőséget ad, mellyel a különböző módosítások összeolvaszthatóak, így a felhasználók nem írják felül egymás munkáját. Az összefésülés lehet automatikus vagy kézi.
+Általában az összefésülésre képes verziókezelők is adnak lehetőséget fájlok egyfelhasználós, kizárólagos szerkesztésére reserved edit néven.
+
+
+== Elosztott verziókezelő rendszerek ==
+Szemben a kliens-szerver modellel, az elosztott verziókezelők decentralizált rendszerek. Itt egy központi tároló (angolul repository) helyett minden felhasználó gépe egy-egy külön tárolóként jelenik meg. A szinkronizáció az egyes gépek között küldött patch-ek (módosításcsomagok) által valósul meg. Ez a megközelítés jelentős változásokat okoz:
+
+Nincs nagy központi adatbázis, csak munkamásolatok vannak.
+A gyakori műveletek, mint a becsekkelés, verziótörténet böngészés és a változtatások visszaállítása gyorsak, mert nem kell központi szerverrel kommunikálni.
+Minden munkamásolat egy-egy backup, ami természetes védelmet ad az adatvesztés ellen.
+Két fajta elosztott verziókezelő létezik, a nyitott és a zárt. A nyitott rendszereket inkább nyílt forráskódú termékeknél használják, a zártakat inkább a nem nyilvános forráskódú termékeknél.
+
+
+=== Nyitott rendszerek ===
+A nyitott, elosztott verziókezelők támogatják különböző ágak létezését, és erősen függenek a fent tárgyalt összefésülés (merge) művelettől. Általános jellemzőik a következők:
+
+Minden munkamásolat gyakorlatilag egy ág.
+Minden ág egy-egy munkamásolatként implementálódik. Az ágak összefésülése patch-ek küldözgetésével történik.
+Lehet válogatni az egyes változtatások között, nem kell feltétlenül minden változtatást letölteni.
+Új tagok bármikor csatlakozhatnak a rendszerhez, nincs szükség szerveroldali regisztrációra.
+Az egyik első nyitott rendszer a BitKeeper volt, mely azért is nevezetes, mert a Linux-rendszermag fejlesztéséhez is használták. Később a BitKeeper fejlesztői megváltoztatták a licencet, így a Linux fejlesztők más, szabad verziókezelő után kezdtek nézni.
+Néhány szabadon használható, nyitott verziókezelő rendszer:
+
+Cvs
+Bazaar
+Darcs
+Git
+Mercurial
+Monotone
+SVK
+Apache Subversion
+
+
+=== Zárt rendszerek ===
+A zárt, eloszott verziókezelők adatbázis replikáción alapulnak. Csak egy baseline van, minden becsekkelt változás ebbe kerül bele. Egyik ilyen szoftver a Code Co-op.
+
+
+== Integráció ==
+A fejlettebb verziókezelők további lehetőségeket is kínálnak, melyek lehetővé teszik az integrációt más eszközökkel. Különböző IDE-khez (IntelliJ IDEA, Eclipse és Visual Studio) gyakran letölthetőek különböző verziókezelői pluginok. A NetBeans IDE-t beépített verziókezelővel szállítják.
+
+
+== Közös szókincs ==
+A terminológia rendszerenként változik, de vannak általánosan használt szakkifejezések:
+
+Baseline
+Egy dokumentum vagy fájl jóváhagyott verziója, melyhez az azt követő változtatásokat viszonyítják.
+
+Branch (ág)
+A verziókezelt fájlok egy részhalmaza elágazhat, így azoknak több aktuális változatuk lesz egyidejűleg, melyeket akár különböző sebességgel és különböző irányokba is fejleszthetnek.
+
+Check-out
+Lokális másolat készítése valamely verziókezelt fájlról. Alapértelmezésben ilyenkor a legfrissebb verziót kapja a felhasználó, de általában van lehetőség konkrét verzió kikérésére is verziószám alapján.
+
+Check-in, Commit vagy Submit
+Az a művelet, amikor a lokális példány változtatásai beíródnak (vagy egyszerű másolás vagy összefésülés eredményeként) a szerveren tárolt változatba.
+
+Conflict
+Konfliktusról akkor beszélünk, ha ketten akarnak megváltoztatni egy dokumentumot vagy fájlt és a rendszer nem képes összeépíteni a változásokat. A felhasználónak ekkor fel kell oldania a konfliktust, amit vagy úgy tehet meg, hogy a változtatásokat összekombinálja vagy úgy, hogy kiválasztja az egyik változtatást és csak azt juttatja érvényre.
+
+Change
+Egy változtatás (change, diff vagy delta) mindig egy verziókezelt dokumentumon vagy fájlon tett változtatást jelenti. Rendszerfüggő, hogy milyen mértékű módosítások számítanak change-nek.
+
+Change list
+Egy change list vagy change set egy check-in művelet során bevitt változtatások listája, olyan rendszereken, melyek támogatják atomi műveletként több változás egyidejű becsekkelését.
+
+Dynamic stream
+Egy olyan adatszerkezet, amely egy adott tárolón lévő elemek konfigurációját reprezentálja, és időben változik.
+
+Export
+Az export a checkouthoz hasonlít azzal a különbséggel, hogy tiszta könyvtárat csinál a verziókezeléshez szükséges metaadatok nélkül. Ezt a műveletet általában közvetlenül a tartalom publikálása előtt szokták használni.
+
+Head
+A legutóbbi checkin.
+
+Import
+Az import művelettel lehet egy lokálisan tárolt adathalmazt, amely még nem munkamásolat, felmásolni a tárolóra és verziókontroll alá helyezni.
+
+Mainline
+Hasonlít a trunk-hoz, de minden ágnak lehet saját mainline-ja.
+
+Merge
+A merge művelettel két változtatáslistát lehet összefésülni, s ezáltal egy közös verziót létrehozni. Erre a következő esetekben lehet szükség:
+
+Ha egy felhasználó módosítja a saját munkamásolatát, majd letölt a szerverről egy másik módosított változatot. Ekkor a szerveren lévő változásokat össze kell fésülni a lokális munkapéldány változásaival a kliensen.
+Ha a fejlesztésben elágazás történt, majd egy hibát kijavítottak valamely ágban, s a javítást alkalmazni kell a másik ágra is.
+Ha a fejlesztésben elágazás történt, majd az ágakat különböző irányba fejlesztettek tovább, s a különböző fejlesztéseket össze kell vonni egy közös változatba (trunk-ba).
+Repository
+A repository, depot vagy tároló az a hely (tipikusan egy szerver), ahol az aktuális és a korábbi verziók tárolódnak.
+
+Reverse integration
+Az egyes ágak összedolgozása és bedolgozása a verziókezelő fő trunk-jába.
+
+Revision
+A revision szó ugyanazt jelenti, mint a version. Egy verzió.
+
+Tag
+A tag, label vagy címke egy fontos időpillanatot jelöl. Egy adott fájlcsoporthoz hozzárendelhető egy címke, amely beszédes, felhasználóbarát nevet vagy verziószámot adhat a csoportnak.
+
+Trunk
+A fejlesztés egyik olyan vonala, amely nem branch.
+
+Resolve
+Változási konfliktusok feloldására irányuló felhasználói tevékenység.
+
+Update
+Az update vagy sync a repositoryban lévő változtatásokat dolgozza bele a felhasználó munkamásolatába.
+
+Working copy
+Magyarul munkamásolat. A repository fájljainak másolata a felhasználó lokális gépén. Minden olyan munka, ami bekerül a repository-ba, először mindig egy munkamásolatban történik meg, innen a neve. Fogalmilag a munkamásolat egy homokozó.
+
+
+== Hivatkozások ==

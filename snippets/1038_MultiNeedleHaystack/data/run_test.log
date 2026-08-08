@@ -1,0 +1,266 @@
+=== Teljes rács (full_grid modellek, minden cella) ===
+[run] ctx150000_k15_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k15_rep1__haiku.json [is_error=true: Prompt is too long · the request is ~232179 tokens (limit 200000) but this conversation is only ~15]
+[run] ctx150000_k15_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k15_rep1__sonnet.json (cost: $1.3318542000000002)
+[run] ctx150000_k15_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k15_rep2__haiku.json [is_error=true: Prompt is too long · the request is ~232000 tokens (limit 200000) but this conversation is only ~15]
+[run] ctx150000_k15_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k15_rep2__sonnet.json (cost: $1.3315602)
+[run] ctx150000_k20_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k20_rep1__haiku.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[skip] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k20_rep1__sonnet.json már létezik
+[run] ctx150000_k20_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k20_rep2__haiku.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx150000_k20_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k20_rep2__sonnet.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx150000_k3_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k3_rep1__haiku.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx150000_k3_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k3_rep1__sonnet.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx150000_k3_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k3_rep2__haiku.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx150000_k3_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k3_rep2__sonnet.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx150000_k8_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k8_rep1__haiku.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx150000_k8_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k8_rep1__sonnet.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx150000_k8_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k8_rep2__haiku.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx150000_k8_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k8_rep2__sonnet.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx16000_k15_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k15_rep1__haiku.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx16000_k15_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k15_rep1__sonnet.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx16000_k15_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k15_rep2__haiku.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx16000_k15_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k15_rep2__sonnet.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx16000_k20_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k20_rep1__haiku.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx16000_k20_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k20_rep1__sonnet.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx16000_k20_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k20_rep2__haiku.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx16000_k20_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k20_rep2__sonnet.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx16000_k3_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k3_rep1__haiku.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx16000_k3_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k3_rep1__sonnet.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx16000_k3_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k3_rep2__haiku.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx16000_k3_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k3_rep2__sonnet.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx16000_k8_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k8_rep1__haiku.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx16000_k8_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k8_rep1__sonnet.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx16000_k8_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k8_rep2__haiku.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx16000_k8_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k8_rep2__sonnet.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx2000_k15_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k15_rep1__haiku.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx2000_k15_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k15_rep1__sonnet.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx2000_k15_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k15_rep2__haiku.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx2000_k15_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k15_rep2__sonnet.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx2000_k20_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k20_rep1__haiku.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx2000_k20_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k20_rep1__sonnet.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx2000_k20_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k20_rep2__haiku.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx2000_k20_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k20_rep2__sonnet.json [is_error=true: You've hit your session limit · resets 8:30pm (Europe/Budapest)]
+[run] ctx2000_k3_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k3_rep1__haiku.json (cost: $0.0297339)
+[run] ctx2000_k3_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k3_rep1__sonnet.json (cost: $0.17812999999999998)
+[run] ctx2000_k3_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k3_rep2__haiku.json (cost: $0.028540299999999998)
+[run] ctx2000_k3_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k3_rep2__sonnet.json (cost: $0.170144)
+[run] ctx2000_k8_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k8_rep1__haiku.json (cost: $0.0263554)
+[run] ctx2000_k8_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k8_rep1__sonnet.json (cost: $0.0531635)
+[run] ctx2000_k8_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k8_rep2__haiku.json (cost: $0.0242204)
+[run] ctx2000_k8_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k8_rep2__sonnet.json (cost: $0.050778500000000004)
+[run] ctx64000_k15_rep1 / haiku (claude-haiku-4-5-20251001)
+=== Teljes rács (full_grid modellek, minden cella) ===
+[skip] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k15_rep1__haiku.json már létezik (kontextusablak-túlcsordulás, végleges eredmény, nem próbáljuk újra)
+[skip] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k15_rep1__sonnet.json már létezik (sikeres)
+[skip] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k15_rep2__haiku.json már létezik (kontextusablak-túlcsordulás, végleges eredmény, nem próbáljuk újra)
+[skip] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k15_rep2__sonnet.json már létezik (sikeres)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k20_rep1__haiku.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx150000_k20_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k20_rep1__haiku.json [is_error=true: Prompt is too long · the request is ~239409 tokens (limit 200000) but this conversation is only ~15]
+[skip] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k20_rep1__sonnet.json már létezik (sikeres)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k20_rep2__haiku.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx150000_k20_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k20_rep2__haiku.json [is_error=true: Prompt is too long · the request is ~239433 tokens (limit 200000) but this conversation is only ~15]
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k20_rep2__sonnet.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx150000_k20_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k20_rep2__sonnet.json (cost: $1.3600044)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k3_rep1__haiku.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx150000_k3_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k3_rep1__haiku.json [is_error=true: Prompt is too long · the request is ~237927 tokens (limit 200000) but this conversation is only ~15]
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k3_rep1__sonnet.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx150000_k3_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k3_rep1__sonnet.json (cost: $1.3024292999999998)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k3_rep2__haiku.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx150000_k3_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k3_rep2__haiku.json [is_error=true: Prompt is too long · the request is ~238250 tokens (limit 200000) but this conversation is only ~15]
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k3_rep2__sonnet.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx150000_k3_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k3_rep2__sonnet.json (cost: $1.3050123)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k8_rep1__haiku.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx150000_k8_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k8_rep1__haiku.json [is_error=true: Prompt is too long · the request is ~238019 tokens (limit 200000) but this conversation is only ~15]
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k8_rep1__sonnet.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx150000_k8_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k8_rep1__sonnet.json (cost: $1.3090263)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k8_rep2__haiku.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx150000_k8_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k8_rep2__haiku.json [is_error=true: Prompt is too long · the request is ~238895 tokens (limit 200000) but this conversation is only ~15]
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k8_rep2__sonnet.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx150000_k8_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k8_rep2__sonnet.json (cost: $1.3141473)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k15_rep1__haiku.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx16000_k15_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k15_rep1__haiku.json (cost: $0.1002343)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k15_rep1__sonnet.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx16000_k15_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k15_rep1__sonnet.json (cost: $0.1985083)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k15_rep2__haiku.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx16000_k15_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k15_rep2__haiku.json (cost: $0.09475099999999999)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k15_rep2__sonnet.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx16000_k15_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k15_rep2__sonnet.json (cost: $0.2028143)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k20_rep1__haiku.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx16000_k20_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k20_rep1__haiku.json (cost: $0.09887000000000001)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k20_rep1__sonnet.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx16000_k20_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k20_rep1__sonnet.json (cost: $0.2288903)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k20_rep2__haiku.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx16000_k20_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k20_rep2__haiku.json (cost: $0.094895)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k20_rep2__sonnet.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx16000_k20_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k20_rep2__sonnet.json (cost: $0.2052453)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k3_rep1__haiku.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx16000_k3_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k3_rep1__haiku.json (cost: $0.08040499999999999)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k3_rep1__sonnet.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx16000_k3_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k3_rep1__sonnet.json (cost: $0.18473530000000002)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k3_rep2__haiku.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx16000_k3_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k3_rep2__haiku.json (cost: $0.079969)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k3_rep2__sonnet.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx16000_k3_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k3_rep2__sonnet.json (cost: $0.18434630000000002)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k8_rep1__haiku.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx16000_k8_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k8_rep1__haiku.json (cost: $0.086113)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k8_rep1__sonnet.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx16000_k8_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k8_rep1__sonnet.json (cost: $0.2065523)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k8_rep2__haiku.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx16000_k8_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k8_rep2__haiku.json (cost: $0.085707)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k8_rep2__sonnet.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx16000_k8_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx16000_k8_rep2__sonnet.json (cost: $0.1914783)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k15_rep1__haiku.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx2000_k15_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k15_rep1__haiku.json (cost: $0.029746)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k15_rep1__sonnet.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx2000_k15_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k15_rep1__sonnet.json (cost: $0.061454299999999996)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k15_rep2__haiku.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx2000_k15_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k15_rep2__haiku.json (cost: $0.030610000000000002)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k15_rep2__sonnet.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx2000_k15_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k15_rep2__sonnet.json (cost: $0.060955300000000004)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k20_rep1__haiku.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx2000_k20_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k20_rep1__haiku.json (cost: $0.036293)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k20_rep1__sonnet.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx2000_k20_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k20_rep1__sonnet.json (cost: $0.0953274)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k20_rep2__haiku.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx2000_k20_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k20_rep2__haiku.json (cost: $0.0394341)
+[retry] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k20_rep2__sonnet.json korábban átmeneti hibával futott (pl. session limit) - újrapróbáljuk
+[run] ctx2000_k20_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k20_rep2__sonnet.json (cost: $0.0967916)
+[skip] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k3_rep1__haiku.json már létezik (sikeres)
+[skip] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k3_rep1__sonnet.json már létezik (sikeres)
+[skip] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k3_rep2__haiku.json már létezik (sikeres)
+[skip] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k3_rep2__sonnet.json már létezik (sikeres)
+[skip] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k8_rep1__haiku.json már létezik (sikeres)
+[skip] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k8_rep1__sonnet.json már létezik (sikeres)
+[skip] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k8_rep2__haiku.json már létezik (sikeres)
+[skip] /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k8_rep2__sonnet.json már létezik (sikeres)
+[run] ctx64000_k15_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx64000_k15_rep1__haiku.json (cost: $0.11508120000000001)
+[run] ctx64000_k15_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx64000_k15_rep1__sonnet.json (cost: $0.7028376000000001)
+[run] ctx64000_k15_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx64000_k15_rep2__haiku.json (cost: $0.2974711)
+[run] ctx64000_k15_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx64000_k15_rep2__sonnet.json (cost: $0.6954446)
+[run] ctx64000_k20_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx64000_k20_rep1__haiku.json (cost: $0.3000961)
+[run] ctx64000_k20_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx64000_k20_rep1__sonnet.json (cost: $0.7057896000000001)
+[run] ctx64000_k20_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx64000_k20_rep2__haiku.json (cost: $0.3008761)
+[run] ctx64000_k20_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx64000_k20_rep2__sonnet.json (cost: $0.7144746)
+[run] ctx64000_k3_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx64000_k3_rep1__haiku.json (cost: $0.2857721)
+[run] ctx64000_k3_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx64000_k3_rep1__sonnet.json (cost: $0.6687186)
+[run] ctx64000_k3_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx64000_k3_rep2__haiku.json (cost: $0.2841051)
+[run] ctx64000_k3_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx64000_k3_rep2__sonnet.json (cost: $0.6664906)
+[run] ctx64000_k8_rep1 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx64000_k8_rep1__haiku.json (cost: $0.28791710000000004)
+[run] ctx64000_k8_rep1 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx64000_k8_rep1__sonnet.json (cost: $0.6800885999999999)
+[run] ctx64000_k8_rep2 / haiku (claude-haiku-4-5-20251001)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx64000_k8_rep2__haiku.json (cost: $0.2912841)
+[run] ctx64000_k8_rep2 / sonnet (claude-sonnet-4-6)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx64000_k8_rep2__sonnet.json (cost: $0.6804016)
+=== Szűkített összehasonlító minta (comparison_sample modellek, 4 szélső cella) ===
+[run] ctx2000_k3_rep1 / opus (claude-opus-4-8)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k3_rep1__opus.json (cost: $0.272399)
+[run] ctx2000_k3_rep1 / claude-sonnet-4-5 (claude-sonnet-4-5)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k3_rep1__claude-sonnet-4-5.json (cost: $0.191969)
+[run] ctx2000_k20_rep1 / opus (claude-opus-4-8)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k20_rep1__opus.json (cost: $0.154129)
+[run] ctx2000_k20_rep1 / claude-sonnet-4-5 (claude-sonnet-4-5)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx2000_k20_rep1__claude-sonnet-4-5.json (cost: $0.09195910000000002)
+[run] ctx150000_k3_rep1 / opus (claude-opus-4-8)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k3_rep1__opus.json (cost: $2.803937)
+[run] ctx150000_k3_rep1 / claude-sonnet-4-5 (claude-sonnet-4-5)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k3_rep1__claude-sonnet-4-5.json [is_error=true: Prompt is too long · the request is ~237924 tokens (limit 200000) but this conversation is only ~15]
+[run] ctx150000_k20_rep1 / opus (claude-opus-4-8)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k20_rep1__opus.json (cost: $2.857847)
+[run] ctx150000_k20_rep1 / claude-sonnet-4-5 (claude-sonnet-4-5)
+  -> /Users/pank/Documents/AI_things/snippets/snippets/_draft_MultiNeedleHaystack/harness/../data/raw/ctx150000_k20_rep1__claude-sonnet-4-5.json [is_error=true: Prompt is too long · the request is ~239406 tokens (limit 200000) but this conversation is only ~15]
+Kész.

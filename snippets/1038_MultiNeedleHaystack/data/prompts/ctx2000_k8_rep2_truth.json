@@ -1,0 +1,73 @@
+{
+  "cell_id": "ctx2000_k8_rep2",
+  "context_tokens_target": 2000,
+  "k": 8,
+  "repeat": 2,
+  "actual_chars": 9479,
+  "needles": [
+    {
+      "id": "N07",
+      "type": "definicio",
+      "question": "Mit jelent az 'árnyék-commit' fogalma ebben a kurzusban?",
+      "expected_answer": "leadási határidő után",
+      "match": "substring",
+      "position_frac": 0.111
+    },
+    {
+      "id": "N10",
+      "type": "definicio",
+      "question": "Mi a 'forduló-pont' ebben a kurzusban?",
+      "expected_answer": "működő prototípust",
+      "match": "substring",
+      "position_frac": 0.222
+    },
+    {
+      "id": "N15",
+      "type": "szam",
+      "question": "Mennyi a minimum elvárt tesztlefedettség?",
+      "expected_answer": "78%",
+      "match": "substring",
+      "position_frac": 0.333
+    },
+    {
+      "id": "N11",
+      "type": "szam",
+      "question": "Hány százalékot ér a laborgyakorlat a félévi jegyben?",
+      "expected_answer": "35%",
+      "match": "substring",
+      "position_frac": 0.444
+    },
+    {
+      "id": "N03",
+      "type": "hatarido",
+      "question": "Mikor nyílik meg a vizsgajelentkezés?",
+      "expected_answer": "2026. május 5",
+      "match": "substring",
+      "position_frac": 0.556
+    },
+    {
+      "id": "N14",
+      "type": "szam",
+      "question": "Legfeljebb hány fő alkothat egy csapatot a projektmunkánál?",
+      "expected_answer": "3",
+      "match": "substring",
+      "position_frac": 0.667
+    },
+    {
+      "id": "N13",
+      "type": "szam",
+      "question": "Legfeljebb hány linter-figyelmeztetés engedhető meg hibátlan beadáshoz?",
+      "expected_answer": "12",
+      "match": "substring",
+      "position_frac": 0.778
+    },
+    {
+      "id": "N02",
+      "type": "hatarido",
+      "question": "Mi a nagy házi feladat beadási határideje?",
+      "expected_answer": "2026. április 3",
+      "match": "substring",
+      "position_frac": 0.889
+    }
+  ]
+}
