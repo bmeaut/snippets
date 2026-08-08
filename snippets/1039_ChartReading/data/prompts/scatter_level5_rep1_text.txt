@@ -1,0 +1,110 @@
+Az alábbi táblázat egy mérés adatait tartalmazza:
+
+Sorozat | Pont sorszáma | Idő (s) | Mért feszültség (V)
+A minta | 1 | 8.5 | 65.14
+A minta | 2 | 4.61 | 42.28
+A minta | 3 | 10.45 | 45.73
+A minta | 4 | 28.04 | 54.97
+A minta | 5 | 23.02 | 57.23
+A minta | 6 | 5.83 | 95.95
+A minta | 7 | 19.27 | 87.79
+A minta | 8 | 16.72 | 18.15
+A minta | 9 | 29.48 | 51.23
+A minta | 10 | 8.95 | 88.51
+A minta | 11 | 0.19 | 99.42
+A minta | 12 | 4.91 | 52.68
+A minta | 13 | 5.77 | 32.59
+A minta | 14 | 27.26 | 43.41
+A minta | 15 | 14.72 | 79.2
+A minta | 16 | 6.74 | 56.94
+A minta | 17 | 12.16 | 56.28
+A minta | 18 | 34.83 | 68.21
+A minta | 19 | 25.14 | 23.38
+A minta | 20 | 45.8 | 35.64
+A minta | 21 | 31.61 | 56.25
+A minta | 22 | 26.28 | 25.71
+A minta | 23 | 47.58 | 12.68
+A minta | 24 | 13.52 | 59.72
+B minta | 1 | 39.43 | 33.16
+B minta | 2 | 35.28 | 20.39
+B minta | 3 | 40.78 | 53.52
+B minta | 4 | 6.43 | 27.27
+B minta | 5 | 41.94 | 55.67
+B minta | 6 | 9.37 | 95.69
+B minta | 7 | 5.5 | 78.25
+B minta | 8 | 41.82 | 31.81
+B minta | 9 | 7.41 | 86.21
+B minta | 10 | 26.32 | 35.6
+B minta | 11 | 16.63 | 41.16
+B minta | 12 | 41.24 | 89.7
+B minta | 13 | 32.81 | 70.96
+B minta | 14 | 34.36 | 65.29
+B minta | 15 | 47.84 | 14.13
+B minta | 16 | 36.52 | 85.82
+B minta | 17 | 21.38 | 60.93
+B minta | 18 | 11.64 | 40.27
+B minta | 19 | 15.27 | 83.4
+B minta | 20 | 22.52 | 69.45
+B minta | 21 | 16.76 | 48.25
+B minta | 22 | 39.82 | 28.6
+B minta | 23 | 33.14 | 27.35
+B minta | 24 | 8.62 | 98.47
+C minta | 1 | 24.75 | 26.98
+C minta | 2 | 13.32 | 77.9
+C minta | 3 | 12.66 | 86.79
+C minta | 4 | 13.31 | 44.87
+C minta | 5 | 46.59 | 55.98
+C minta | 6 | 49.24 | 66.91
+C minta | 7 | 16.1 | 40.86
+C minta | 8 | 45.18 | 27.86
+C minta | 9 | 29.33 | 35.13
+C minta | 10 | 26.44 | 68.82
+C minta | 11 | 14.72 | 64.32
+C minta | 12 | 37.65 | 51.52
+C minta | 13 | 25.67 | 95.86
+C minta | 14 | 4.3 | 53.79
+C minta | 15 | 20.81 | 35.69
+C minta | 16 | 44.84 | 96.55
+C minta | 17 | 35.77 | 19.73
+C minta | 18 | 33.37 | 46.75
+C minta | 19 | 22.42 | 26.37
+C minta | 20 | 11.4 | 66.6
+C minta | 21 | 3.1 | 98.35
+C minta | 22 | 46.39 | 55.53
+C minta | 23 | 18.46 | 86.34
+C minta | 24 | 10.69 | 40.8
+D minta | 1 | 42.1 | 33.63
+D minta | 2 | 21.09 | 81.78
+D minta | 3 | 11.46 | 11.67
+D minta | 4 | 7.15 | 60.25
+D minta | 5 | 33.91 | 60.29
+D minta | 6 | 11.01 | 55.48
+D minta | 7 | 3.58 | 97.83
+D minta | 8 | 1.16 | 36.85
+D minta | 9 | 26.49 | 93.74
+D minta | 10 | 3.24 | 47.95
+D minta | 11 | 29.22 | 12.82
+D minta | 12 | 6.81 | 34.84
+D minta | 13 | 31.11 | 98.13
+D minta | 14 | 46.38 | 75.33
+D minta | 15 | 35.54 | 82.1
+D minta | 16 | 38.75 | 83.88
+D minta | 17 | 3.18 | 57.5
+D minta | 18 | 18.54 | 55.48
+D minta | 19 | 13.15 | 65.28
+D minta | 20 | 46.22 | 89.94
+D minta | 21 | 40.69 | 42.8
+D minta | 22 | 3.45 | 72.39
+D minta | 23 | 1.53 | 97.27
+D minta | 24 | 40.09 | 25.75
+
+Válaszolj KIZÁRÓLAG egy JSON tömbben, minden kérdésre külön elemmel, a kérdés sorszámával ("id") és a válasszal ("answer"). Ha nem tudod megállapítani a választ, az "answer" értéke legyen "nincs adat".
+Formátum példa: [{"id": 1, "answer": "..."}, {"id": 2, "answer": "..."}]
+
+Kérdések:
+1. Mennyi a(z) C minta sorozat 19. pontjának y-értéke (a mért feszültség)?
+2. Mennyivel tér el egymástól a(z) C minta 19. pontjának és a(z) B minta 9. pontjának y-értéke?
+3. Hányadik pontnak (sorszám) a legnagyobb az y-értéke a(z) A minta sorozat pontjai közül?
+4. Mennyi a(z) A minta sorozat pontjainak átlagos y-értéke?
+
+Válaszolj KIZÁRÓLAG a JSON tömbbel, más szöveg nélkül.

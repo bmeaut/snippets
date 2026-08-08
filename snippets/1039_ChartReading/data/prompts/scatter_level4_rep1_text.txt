@@ -1,0 +1,62 @@
+Az alábbi táblázat egy mérés adatait tartalmazza:
+
+Sorozat | Pont sorszáma | Idő (s) | Mért feszültség (V)
+A minta | 1 | 8.7 | 20.98
+A minta | 2 | 42.55 | 96.79
+A minta | 3 | 22.55 | 96.98
+A minta | 4 | 46.26 | 39.93
+A minta | 5 | 37.01 | 74.04
+A minta | 6 | 31.12 | 20.87
+A minta | 7 | 20.65 | 49.6
+A minta | 8 | 47.7 | 99.3
+A minta | 9 | 25.29 | 31.7
+A minta | 10 | 40.57 | 50.86
+A minta | 11 | 20.04 | 84.29
+A minta | 12 | 40.56 | 55.55
+A minta | 13 | 13.7 | 31.59
+A minta | 14 | 26.3 | 98.3
+A minta | 15 | 3.62 | 79.15
+A minta | 16 | 21.26 | 46.93
+B minta | 1 | 7.91 | 10.98
+B minta | 2 | 22.72 | 82.88
+B minta | 3 | 22.92 | 41.62
+B minta | 4 | 15.5 | 41.98
+B minta | 5 | 3.99 | 83.58
+B minta | 6 | 43.73 | 11.53
+B minta | 7 | 46.68 | 28.5
+B minta | 8 | 43.0 | 25.82
+B minta | 9 | 4.29 | 95.69
+B minta | 10 | 2.72 | 23.13
+B minta | 11 | 31.06 | 15.29
+B minta | 12 | 13.44 | 70.13
+B minta | 13 | 40.68 | 30.7
+B minta | 14 | 45.78 | 19.74
+B minta | 15 | 29.2 | 45.85
+B minta | 16 | 31.22 | 66.12
+C minta | 1 | 36.3 | 27.43
+C minta | 2 | 7.02 | 19.98
+C minta | 3 | 35.32 | 71.19
+C minta | 4 | 15.67 | 35.98
+C minta | 5 | 33.25 | 37.97
+C minta | 6 | 22.62 | 16.35
+C minta | 7 | 31.63 | 23.84
+C minta | 8 | 8.51 | 51.23
+C minta | 9 | 15.31 | 48.11
+C minta | 10 | 15.61 | 16.64
+C minta | 11 | 5.73 | 54.39
+C minta | 12 | 38.74 | 94.85
+C minta | 13 | 24.67 | 12.82
+C minta | 14 | 18.46 | 12.63
+C minta | 15 | 0.12 | 38.63
+C minta | 16 | 39.66 | 27.79
+
+Válaszolj KIZÁRÓLAG egy JSON tömbben, minden kérdésre külön elemmel, a kérdés sorszámával ("id") és a válasszal ("answer"). Ha nem tudod megállapítani a választ, az "answer" értéke legyen "nincs adat".
+Formátum példa: [{"id": 1, "answer": "..."}, {"id": 2, "answer": "..."}]
+
+Kérdések:
+1. Mennyi a(z) C minta sorozat 14. pontjának y-értéke (a mért feszültség)?
+2. Mennyivel tér el egymástól a(z) C minta 14. pontjának és a(z) A minta 5. pontjának y-értéke?
+3. Hányadik pontnak (sorszám) a legnagyobb az y-értéke a(z) B minta sorozat pontjai közül?
+4. Mennyi a(z) A minta sorozat pontjainak átlagos y-értéke?
+
+Válaszolj KIZÁRÓLAG a JSON tömbbel, más szöveg nélkül.

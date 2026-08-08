@@ -1,0 +1,8 @@
+{
+  "models": [
+    { "alias": "haiku", "resolved_id": "claude-haiku-4-5-20251001" },
+    { "alias": "sonnet", "resolved_id": "claude-sonnet-4-6" },
+    { "alias": "opus", "resolved_id": "claude-opus-4-8" },
+    { "alias": "claude-sonnet-4-5", "resolved_id": "claude-sonnet-4-5" }
+  ]
+}

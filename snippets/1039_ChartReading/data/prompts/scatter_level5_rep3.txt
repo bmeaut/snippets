@@ -1,0 +1,11 @@
+Nézd meg a mellékelt diagramot: @data/charts/scatter_level5_rep3.png
+Válaszolj KIZÁRÓLAG egy JSON tömbben, minden kérdésre külön elemmel, a kérdés sorszámával ("id") és a válasszal ("answer"). Ha nem tudod megállapítani a választ, az "answer" értéke legyen "nincs adat".
+Formátum példa: [{"id": 1, "answer": "..."}, {"id": 2, "answer": "..."}]
+
+Kérdések:
+1. Mennyi a(z) C minta sorozat 11. pontjának y-értéke (a mért feszültség)?
+2. Mennyivel tér el egymástól a(z) C minta 11. pontjának és a(z) C minta 18. pontjának y-értéke?
+3. Hányadik pontnak (sorszám) a legnagyobb az y-értéke a(z) B minta sorozat pontjai közül?
+4. Mennyi a(z) A minta sorozat pontjainak átlagos y-értéke?
+
+Válaszolj KIZÁRÓLAG a JSON tömbbel, más szöveg nélkül.
