@@ -1,0 +1,5 @@
+target/
+*.exe
+*.o
+*.a
+*.d

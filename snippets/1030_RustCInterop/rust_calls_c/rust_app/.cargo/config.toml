@@ -1,0 +1,10 @@
+[build]
+target = "thumbv7em-none-eabihf"
+
+[target.thumbv7em-none-eabihf]
+rustflags = [
+    "-C", "link-arg=-Tmemory.x",
+    "-C", "link-arg=--nmagic",   # don't page-align sections - saves space
+]
+# Requires QEMU (qemu-system-arm) on PATH to run via `cargo run`.
+runner = "qemu-system-arm -cpu cortex-m4 -machine lm3s6965evb -nographic -semihosting-config enable=on,target=native -kernel"
