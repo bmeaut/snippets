@@ -1,0 +1,63 @@
+Az alábbi szövegben (tananyag-jegyzet) el van rejtve néhány oktatói megjegyzés.
+Válaszolj KIZÁRÓLAG egy JSON tömbben, minden kérdésre külön elemmel, a kérdés sorszámával ("id") és a válasszal ("answer"). Ha valamelyik választ nem találod a szövegben, az "answer" értéke legyen "nincs adat".
+Formátum példa: [{"id": 1, "answer": "..."}, {"id": 2, "answer": "..."}]
+
+--- TANANYAG ---
+=== Nagyon rövid visszajelzési és alkalmazkodási ciklus ===
+
+== Történelem ==
+A szoftverfejlesztési módszertan kerete csak az 1960-as években alakult ki. Elliott (2004) szerint a rendszerfejlesztési életciklus tekinthető az információs rendszerek építésének legrégebbi formalizált módszertani keretének. Az SDLC fő gondolata az volt, hogy „az információs rendszerek fejlesztését egy nagyon megfontolt, strukturált és módszertani módon folytassák, megkövetelve az életciklus minden szakaszát – az ötlet kezdetétől a végső rendszer átadásáig – szigorúan és szekvenciálisan hajtják végre” az alkalmazott keretrendszerekkel összefüggésben. Ennek a módszertani keretnek az 1960-as években a fő célja a „nagy léptékű funkcionális üzleti rendszerek kifejlesztése volt a nagyszabású üzleti konglomerátumok korában. Az információs rendszerekkel kapcsolatos tevékenységek a nagy mennyiségű numerikus adatokat feldolgozó rutinok felé fordultak.”
+A módszertan, a folyamatok és a keretek a specifikus kizárási lépésektől kezdődnek, amelyeket egy szervezet közvetlenül használhat a napi munka során, a rugalmas keretrendszerekig, amelyeket a szervezet egy adott projekt vagy csoport igényeihez igazított egyedi lépések készítéséhez használ. Egyes esetekben a „szponzor” vagy a "karbantartó" szervezet hivatalos dokumentumkészletet terjeszt, amely leírja a folyamatot. Különleges példák a következők:
+
+Az igazolt hiányzások esetén a tárgy rugalmasan kezeli a pótlási lehetőségeket. Ha a hallgató igazoltan hiányzott a zárthelyiről, a pótzárthelyin 10%-kal több időt kap a feladatok megoldására.
+
+==== Más korai programozási nyelvek ====
+A Smalltalk első verzióját Alan Kay, Dan Ingalls és Adele Goldberg fejlesztette ki a Xerox PARC-nál. A Smaltalk-71 tartalmazott teljes programozási környeztetet, és dinamikusan típusos szkript nyelv volt. Grafikus fejlesztőkörnyezetet is készítettek hozzá, és az objektumorientációt nyelvi szinten tartalmazta. Több verziója is megjelent, és a nyelv iránti érdeklődés egyre jobban nőtt.  Amellett, hogy a Simula 67-ben bevezetett fogalmakat használta, dinamikusan lehetett benne osztályokat létrehozni és módosítani.
+Az 1970-es években a Lisp közösség is érdeklődni kezdett az objektumorientáció iránt. Különböző kísérleteket végeztek, a LOOPS és a Flavors bevezette a többszörös öröklődést és a mixineket. Ezekből alakították ki a CLOS-t (Common Lisp Object System), ami integrálta a funkcionális és az objektumorientált programozást, és metaobjektum protokollal a további bővítéseket is lehetővé tette. Az 1980-as években  olyan architektúrák kifejlesztésével próbálkoztak, amelyek hardveres támogatást nyújtottak volna az objektumorientációnak, de nem jártak sikerrel. Erre példák az Intel iAPX 432 és a Linn Smart Rekursiv.
+
+=== Az agilis menedzsment fogalma és jelentősége ===
+Az agilis menedzsment a vezetés olyan megközelítése, amely a változáshoz való gyors alkalmazkodást, a folyamatos tanulást és az önszerveződő csapatok támogatását helyezi középpontba. Az agilis szervezetekben a vezetés célja nem a hierarchia fenntartása, hanem az, hogy képessé tegye a csapatokat az autonóm döntéshozatalra, a felelősségvállalásra és az innovációra.
+Az agilis vezető szerepe abban áll, hogy irányt ad, nem utasításokat – támogató, facilitáló és inspiráló szerepet tölt be. Ez a szemlélet gyakran a servant leadership (szolgáló vezetés) és a leader-as-enabler (a vezető mint képessé tevő) koncepciókon alapul, amelyek az emberközpontú, tanulásra épülő kultúrát helyezik előtérbe.
+
+== Irodalom ==
+Angster Erzsébet: Az objektumorientált tervezés és programozás alapjai (magánkiadás 1999; ISBN 978-963-650-818-0)
+Raffai Mária: Objektumtechnológia sorozat kötetei: (1) Objektumok az üzleti modellezésben (ISBN 963-9056-28-6; 2001) (2) Egységesített megoldások a fejlesztésben (ISBN 963-9056-29-4; 2001) (3) Objektumorientált alkalmazásfejlesztés (ISBN 963-9056-31-6; 2002) (4) UML 2' modellező nyelvi kézikönyv' (ISBN 963-7692-01-0; 2005, 2007)
+Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides: Programtervezési minták (Kiskapu 2004; ISBN 963-9301-77-9)
+Raffai Mária: Információrendszer-fejlesztés (Novadat 1999; ISBN 963-9056-19-7)
+
+A félév során több számonkérési forma is szerepel a tárgykövetelményben. A második zárthelyi dolgozatra 2026. március 14-én, 10:15-kor kerül sor a nagyelőadó teremben.
+
+A kockázat a veszteség valószínűsége, és ennek mértéke. A kockázatkezelés a kockázati tényezők azonosítása, besorolása, priorizálása, és életciklusuk követése.
+
+=== Szoftverarchitektúra és agilis fejlesztés ===
+Az is aggodalomra ad okot, hogy a szoftverarchitektúra túlságosan nagy tervezéshez vezet, különösen az agilis szoftverfejlesztés hívei körében. Számos módszert fejlesztettek ki az előzetes tervezés és az agilitás közötti kompromisszumok kiegyensúlyozására, beleértve az agilis DSDM- módszert, amely előírja az "Alapok" fázist, amely során "éppen elég" építészeti alapokat raknak le. Az IEEE Software külön témakört szentelt az agilitás és az architektúra közötti kölcsönhatásnak.
+
+Széchenyi István Egyetem, Oktatási anyag
+Szoftvertesztelés.lap.hu - linkgyűjtemény
+Magyar Szoftvertesztelési Tanács Egyesület(HTB), mely a nemzetközi ISTQB szervezet magyarországi testülete
+
+A csapatmunka minőségbiztosításának egyik eszköze a kódfelülvizsgálat. Ebben a félévben kettős felülvizsgálatnak hívjuk azt a szabályt, amely szerint egy pull requestet két különböző csapattagnak is jóvá kell hagynia, mielőtt az összeolvasztható lenne.
+
+== Példák ==
+Szoftvertervezési minta a szoftvertervezésben
+Építészeti minta a szoftver architektúrájához
+Interakciós tervezési minta, amelyet az interakció tervezésében / az ember-számítógép interakcióban használnak
+Pedagógiai minták a tanításban
+Mintakertészet, a kertészetben
+
+Az objektumorientált vagy objektumelvű programozás (angolul object-oriented programming, röviden OOP) az objektumok fogalmán alapuló programozási paradigma. Az objektumok egységbe foglalják az adatokat és a hozzájuk tartozó műveleteket. Az adatokat ismerik „mezők”, „attribútumok” vagy „tulajdonságok” néven, a műveleteket „metódusokként” szokták emlegetni. Az objektum által tartalmazott adatokon általában az objektum metódusai végeznek műveletet. A program egymással kommunikáló objektumok összességéből áll. A legtöbb objektumorientált programozási nyelv osztályalapú, azaz az objektumok osztályok példányai, és típusuk az osztály.
+Például egy hétköznapi fogalom, a „kutya” felfogható egy osztály (a kutyák osztálya) tagjaként, annak egyik objektumaként. Minden kutya objektum rendelkezik a kutyákra jellemző tulajdonságokkal (például szőrszín, méret stb.) és cselekvési képességekkel (például futás, ugatás).
+A legtöbb széles körben alkalmazott nyelv többek között az objektumorientált programozást is támogatja, tipikusan az imperatív, procedurális programozással együtt. A legfontosabb objektumorientált nyelvek: Java, C++, C#, Python, PHP, Ruby, Perl, Object Pascal, Objective-C, Dart, Swift, Scala, Common Lisp, és Smalltalk.
+
+Az 1990-es évek elején és közepén az objektumorientáció vált a programozás fő paradigmájává. Ezt támogatták azok az eszközök, amelyekkel az objektumorientált nyelvek elterjedhettek és népszerűvé váltak. Ezek közé tartozott a Visual FoxPro 3.0, a C++ és a Delphi. Dominanciáját az elterjedő vizuális felületek is erősítették, mivel ezek szerkesztéséhez az objektumorientált programozást támogatták. A szorosan összetartozó GUI könyvtár és objektumorientált nyelvre példa a Cocoa keretrendszera Mac OS X operációs rendszer számára az Object-C nyelvhez. Az Object-C alapjában véve a C egy bővítése objektumorientált eszközökkel a Smalltalk alapján. Ezek az eszközök az eseményvezérelt programozást is elterjesztették.
+Az ETH Zürichnél Niklaus Wirth és társai vizsgálták az 1960-as évek óta használt adatabsztrakciót és a moduláris programozást. A  Modula-2 (1978) mindkettőpt magába foglalta. Továbbfejlesztése az Oberon újszerűen közelítette meg az objektumorientációt és az osztályokat.
+Több már korábban létező nyelvet bővítettek objektumorientált eszközökkel, például ezeket: Ada, BASIC, Fortran, Pascal, és COBOL. Ez kompatibilitási problémákat okozott és rontotta a karbantarthatóságot.
+Azóta számos olyan nyelv jelent meg, amelyek támogatják az objektumorientációt, de a procedurálisat is. Ezek közé tartozik a  Python és a Ruby. A kereskedelmileg legfontosabb objektumorientált programozási nyelvek a Java  , a C++, a C# és a  Visual Basic.NET (VB.NET). Ez utóbbiak eredetileg a Windowsra készültek, és mindegyik a maga módján használja az objektumorientációt. Támogatják a nyelvközi öröklést is, azaz az egyik nyelven írt osztályból lehet örökölni egy másik nyelven.
+--- TANANYAG VÉGE ---
+
+Kérdések:
+1. Milyen kedvezményt kap az, aki igazoltan hiányzik a zárthelyiről?
+2. Mikor lesz a 2. zárthelyi dolgozat?
+3. Mit jelent a 'kettős felülvizsgálat' szabálya?
+
+Válaszolj KIZÁRÓLAG a JSON tömbbel, más szöveg nélkül.

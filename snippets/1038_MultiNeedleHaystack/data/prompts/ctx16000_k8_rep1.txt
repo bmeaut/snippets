@@ -1,0 +1,459 @@
+Az alábbi szövegben (tananyag-jegyzet) el van rejtve néhány oktatói megjegyzés.
+Válaszolj KIZÁRÓLAG egy JSON tömbben, minden kérdésre külön elemmel, a kérdés sorszámával ("id") és a válasszal ("answer"). Ha valamelyik választ nem találod a szövegben, az "answer" értéke legyen "nincs adat".
+Formátum példa: [{"id": 1, "answer": "..."}, {"id": 2, "answer": "..."}]
+
+--- TANANYAG ---
+A szoftvertesztelés a szoftverminőség-biztosítás és így a szoftverfejlesztés részét képezi. A tesztelés egy rendszer vagy program kontrollált körülmények melletti futtatása, és az eredmények kiértékelése. A hagyományos megközelítés szerint a tesztelés célja az, hogy a fejlesztés során létrejövő hibákat minél korábban felfedezze, és ezzel csökkentse azok kijavításának költségeit.
+Jelenleg a tesztelői munka egyre inkább eltolódik a fejlesztők és a döntéshozók információkkal való támogatásának irányába. Fontos szerepek még a fejlesztés állapotának pontos és egzakt mérése és a kockázatkezelés és -becslés. Különösen így van ez az Agile Programming projektek esetén, ahol klasszikus tesztelésről a specifikáció hiánya miatt nem beszélhetünk.
+
+Az objektumorientált vagy objektumelvű programozás (angolul object-oriented programming, röviden OOP) az objektumok fogalmán alapuló programozási paradigma. Az objektumok egységbe foglalják az adatokat és a hozzájuk tartozó műveleteket. Az adatokat ismerik „mezők”, „attribútumok” vagy „tulajdonságok” néven, a műveleteket „metódusokként” szokták emlegetni. Az objektum által tartalmazott adatokon általában az objektum metódusai végeznek műveletet. A program egymással kommunikáló objektumok összességéből áll. A legtöbb objektumorientált programozási nyelv osztályalapú, azaz az objektumok osztályok példányai, és típusuk az osztály.
+Például egy hétköznapi fogalom, a „kutya” felfogható egy osztály (a kutyák osztálya) tagjaként, annak egyik objektumaként. Minden kutya objektum rendelkezik a kutyákra jellemző tulajdonságokkal (például szőrszín, méret stb.) és cselekvési képességekkel (például futás, ugatás).
+A legtöbb széles körben alkalmazott nyelv többek között az objektumorientált programozást is támogatja, tipikusan az imperatív, procedurális programozással együtt. A legfontosabb objektumorientált nyelvek: Java, C++, C#, Python, PHP, Ruby, Perl, Object Pascal, Objective-C, Dart, Swift, Scala, Common Lisp, és Smalltalk.
+
+Cvs
+Bazaar
+Darcs
+Git
+Mercurial
+Monotone
+SVK
+Apache Subversion
+
+== Magyar agilis közösség és szakmai szervezetek ==
+A IVSZ – Informatikai, Távközlési és Elektronikai Vállalkozások Szövetsége 2024-ben hozta létre az Agilis Munkacsoportot, amely a hazai agilis menedzsmenttel és szervezetfejlesztéssel foglalkozó tanácsadó és fejlesztő cégek szakmai összefogását tűzte ki célul.
+A munkacsoport célja a közös szakmai sztenderdek kialakítása, a piaci minőségbiztosítás, valamint a kiemelkedő egyéni és szervezeti teljesítmények elismerése és láthatóvá tétele. A kezdeményezés emellett a nemzetközi jó gyakorlatok hazai adaptálását, az agilis tudás kodifikálását és megosztását is támogatja, elősegítve ezzel az innovációt és a versenyképesség növelését a magyar technológiai szektorban.
+Az Agilis Munkacsoportot Szmola Roland (Methodology Architects), Csaba Zoltán (TAL Consulting) és Hoffmann Bence (Shiwaforce) alapították. Tagjai az alapítókon túl többek közt a Magyar Telekom, Sprint Consulting, Delta Systems, Vialto Consulting. A szervezet rendszeresen szervez szakmai eseményeket, meetupokat és esettanulmány-bemutatókat, amelyek célja a hazai agilis közösség erősítése, a nemzetközi tapasztalatok beemelése, valamint a magyarországi jó gyakorlatok nemzetközi szintű megismertetése.
+A munkacsoport tevékenysége hozzájárul a hazai agilis transzformáció új lendületéhez, és olyan szakmai fórumot biztosít, ahol az agilitás elvei, módszertanai és szervezeti alkalmazásai ágazatközi párbeszédben fejlődhetnek tovább.
+
+== Agilis szoftverfejlesztési módszerek ==
+
+Ha egy felhasználó módosítja a saját munkamásolatát, majd letölt a szerverről egy másik módosított változatot. Ekkor a szerveren lévő változásokat össze kell fésülni a lokális munkapéldány változásaival a kliensen.
+Ha a fejlesztésben elágazás történt, majd egy hibát kijavítottak valamely ágban, s a javítást alkalmazni kell a másik ágra is.
+Ha a fejlesztésben elágazás történt, majd az ágakat különböző irányba fejlesztettek tovább, s a különböző fejlesztéseket össze kell vonni egy közös változatba (trunk-ba).
+Repository
+A repository, depot vagy tároló az a hely (tipikusan egy szerver), ahol az aktuális és a korábbi verziók tárolódnak.
+
+== Karakterisztikák ==
+A szoftver architektúra a következőket mutatja be:
+Érintettek sokasága: a szoftverrendszereknek számos érintett igényeit kell kielégíteniük, például üzleti vezetőkét, tulajdonosokét, felhasználókét és üzemeltetőkét. Ezek az érintettek mind saját szempontjaikkal rendelkeznek a rendszerrel kapcsolatban. Az ezek közötti egyensúly megteremtése és annak bemutatása, hogy a szempontjaikat figyelembe vették, a rendszer tervezésének része. Ez azt jelenti, hogy az architektúra számos különböző nézőpontot és érintettet kezel, valamint multidiszciplináris jelleget ölt.
+A aggályok szétválasztása: az építészek számára a bonyolultság csökkentésének bevett módja az, hogy szétválasztják a tervezést irányító szempontokat. Az architektúra dokumentációja azt mutatja, hogy az érdekelt felek minden aggályát kezelik az architektúra modellezése és leírása a különböző érdekelt felek aggályaihoz kapcsolódó különböző nézőpontokból. Ezeket a külön leírásokat építészeti nézeteknek nevezzük (lásd például a 4+1 építészeti nézet modellt).
+Minőségvezérelt: a klasszikus szoftvertervezési megközelítéseket (pl. Jackson Structured Programming) a szükséges funkcionalitás és a rendszeren keresztüli adatáramlás vezérelte, de a jelenlegi betekintésAz, hogy egy szoftverrendszer architektúrája szorosabban kapcsolódik a minőségi jellemzőihez, mint például a hibatűrés, a visszamenőleges kompatibilitás, a bővíthetőség, a megbízhatóság, a karbantarthatóság, a rendelkezésre állás, a biztonság, a használhatóság és más hasonló szolgáltatások. Az érdekelt felek aggodalmai gyakran ezekre a minőségi jellemzőkre vonatkozó követelményekben fogalmazódnak meg, amelyeket más néven nem funkcionális követelményeknek, extrafunkcionális követelményeknek, viselkedési követelményeknek vagy minőségi attribútum követelményeknek neveznek.
+Ismétlődő stílusok: az épületarchitektúrához hasonlóan a szoftverarchitektúra is szabványos módszereket dolgozott ki a visszatérő problémák kezelésére. Ezeket a "szabványos módokat" különféle neveken nevezik az absztrakció különböző szintjein. Az ismétlődő megoldások gyakori kifejezései az építészeti stílus, taktika, referenciaépítészet és építészeti minta.
+Fogalmi integritás: ezt a kifejezést Fred Brooks vezette be 1975-ös The Mythical Man-Month című könyvében, azzal az elképzeléssel jelölve, hogy egy szoftverrendszer architektúrája egy átfogó víziót képvisel arról, hogy mit és hogyan kell csinálnia. Ezt az elképzelést el kell választani a megvalósításától. Az építész vállalja a "látás őrzőjének" szerepét, ügyelve arra, hogy a rendszer kiegészítései összhangban legyenek az architektúrával, megőrizve ezzel a koncepcionális integritást.
+Kognitív megszorítások: Melvin Conway számítógép-programozó 1967-es tanulmányában tett megfigyelés először, miszerint a rendszereket tervező szervezetek olyan terveket készítenek, amelyek e szervezetek kommunikációs struktúráinak másolatai. Fred Brooks bemutatta a szélesebb közönségnek, amikor a The Mythical Man-Month -ban idézte az újságot és az ötletet, és Conway törvényének nevezte el.
+
+=== Építészeti keretrendszerek ===
+Az architektúra-keretrendszer rögzíti "az architektúrák leírására vonatkozó konvenciókat, elveket és gyakorlatokat, amelyeket egy adott alkalmazási területen és/vagy az érintettek közösségében hoztak létre" (ISO/IEC/IEEE 42010). A keretrendszert általában egy vagy több nézőpont vagy ADL alapján valósítják meg.
+
+A hallgatók több alkalommal is feltölthetik a megoldásukat a határidőig. Ilyenkor mindig az utolsó beadás bírálja felül a korábbi órai gyakorlat pontszámát, még akkor is, ha az rosszabb eredményt hozna.
+
+Osztályok: az adatformátum és az elérhető metódusok definíciója az adott típus vagy a típushoz tartozó objektumok számára. Az osztályok is tartalmazhatnak adattagokat és metódusokat, amelyek műveleteket végeznek az osztály adattagjain. Összetartozó adatok és függvények, eljárások egysége.
+Objektumok: az osztály példányai.
+Az objektumok gyakran megfeleltethetők a való élet objektumainak vagy egyedeinek. Például egy rajzolóprogram tartalmazhat olyan objektumokat, mint kör, négyzet vagy menü. Egy online áruházban lehetnek olyan objektumok, mint bevásárlókosár, vásárló és termék. Néha az objektumok absztraktabb entitásoknak felelnek meg, például egy megnyitott fájlnak; vagy egy objektum, ami mértékegységek között vált át.
+Az objektumok valamelyik osztály példányai. Például, egy objektum, aminek név mezője "Mary", lehet az Employee (Alkalmazott) osztály példánya. A függvényeket és eljárásokat az objektumorientált programozásban metódusoknak nevezik, a változókat adattagnak, attribútumnak, mezőnek vagy tulajdonságnak. Az objektumorientált programozás bevezeti a következő kifejezéseket:
+
+Dynamic stream
+Egy olyan adatszerkezet, amely egy adott tárolón lévő elemek konfigurációját reprezentálja, és időben változik.
+
+=== Nagyon rövid visszajelzési és alkalmazkodási ciklus ===
+
+== Motiváció ==
+A szoftver architektúra egy összetett rendszer "intellektuálisan megragadható" absztrakciója.Ez az absztrakció számos előnnyel jár:
+
+Change
+Egy változtatás (change, diff vagy delta) mindig egy verziókezelt dokumentumon vagy fájlon tett változtatást jelenti. Rendszerfüggő, hogy milyen mértékű módosítások számítanak change-nek.
+
+== Fordítás ==
+Ez a szócikk részben vagy egészben  az   Object-oriented programming című angol Wikipédia-szócikk fordításán alapul.  Az eredeti cikk szerkesztőit annak laptörténete sorolja fel. Ez a jelzés csupán a megfogalmazás eredetét és a szerzői jogokat jelzi, nem szolgál a cikkben szereplő információk forrásmegjelöléseként.
+
+=== Szoftver architektúra helyreállítása ===
+A szoftverarchitektúra helyreállítása (vagy rekonstrukciója vagy visszafejtése) magában foglalja azokat a módszereket, technikákat és folyamatokat, amelyek segítségével a szoftverrendszer architektúrája a rendelkezésre álló információkból feltárható, beleértve a megvalósítást és a dokumentációt. Az építészet helyreállítása gyakran szükséges megalapozott döntések meghozatalához az elavult vagy elavult dokumentációval és az architektúra eróziójával szemben: a megvalósítási és karbantartási döntések eltérnek az elképzelt architektúrától.  Léteznek gyakorlatok a szoftverarchitektúra statikus programelemzésként történő helyreállítására. Ez a szoftverintelligencia gyakorlat tárgykörébe tartozik.
+
+=== Altípusos polimorfizmus és viselkedésbeli altípusosság ===
+Intuitív megközelítés szerint, mivel az öröklődés is kapcsolatot hoz létre, azért a gyermek osztály példánya mindenütt biztonságosan használható, ahol a szülő osztály példánya is. Ez azonban tévedés, különösen ha megváltoztatható objektumokról van szó. Lásd: ellipszis-kör probléma. Az altípusos polimorfizmus típusellenőrzése nem garantálja a viselkedésbeli altípusosságot. Mivel a viselkedésbeli altípusosság eldönthetetlen, azért a fordító nem tudja ellenőrizni. Az osztályok és objektumok hierarchiáját gondosan meg kell tervezni, figyelembe véve a szintaktikailag ellenőrizhetetlen inkorrekt használat lehetőségét. Ez Liskov helyettesítési elvként ismert.
+
+A rendszerek egy családját a strukturális szerveződés mintázata alapján.
+Egy komponensekből és csatlakozókból álló szókészletet, valamint az ezek kombinálására vonatkozó korlátozásokat.
+Az architekturális stílusok újrahasználható „csomagok” tervezési döntésekből és korlátozásokból, amelyeket egy architektúrára alkalmaznak annak érdekében, hogy elérjenek bizonyos kívánatos tulajdonságokat.
+Számos elismert építészeti minta és stílus létezik, köztük:
+
+A csapatmunkánál felmerülő hibák elbírálása egyéni felelősség alapján történik. Ha csapatmunkánál valaki egyénileg hibázik, csak az érintett hallgató pontszáma csökken, a csapat többi tagjáé nem.
+
+Az ISO / IEC 12207 a nemzetközi szabvány, amely leírja a szoftver életciklusának kiválasztási, bevezetési és ellenőrzési módszerét.
+A Kapacitási Érettség Modell Integráció (CMMI) az egyik vezető modell és a bevált gyakorlatra épül. Független értékelések alapján osztályozzák a szervezeteket abban, hogy mennyire követik meghatározott folyamataikat, nem pedig ezeknek a folyamatoknak vagy a készített szoftvernek a minőségét.
+Az ISO 9000 leírja a termékek előállításának hivatalosan szervezett folyamatát, valamint az előrehaladás irányításának és nyomon követésének módszereit. Habár a szabványt eredetileg a gyártási ágazat számára hozták létre, az ISO 9000 szabványokat a szoftverfejlesztésre is alkalmazták. A CMMI-hez hasonlóan az ISO 9000-es tanúsítás sem garantálja a végeredmény minőségét, csak hogy a formalizált üzleti folyamatokat követték.
+ISO / IEC 15504 Információs technológia — folyamatértékelés, más néven a szoftverfolyamat-fejlesztési képesség meghatározása (SPICE), "a szoftverfolyamatok értékelésének kerete". Ennek a szabványnak az a célja, hogy egyértelmű modellt állítson fel a folyamatok összehasonlítására. A SPICE-t ugyanúgy használják, mint a CMMI-t. Modellezi a szoftverfejlesztés menedzselésére, irányítására, irányítására és figyelésére szolgáló folyamatokat. Ezt a modellt arra használják, hogy megnézzék, hogy egy fejlesztési szervezet vagy projektcsapat hogyan dolgozik a szoftverfejlesztés során. Ezt az információt elemzik a gyengeségek azonosítása és a javulás ösztönzése érdekében. Meghatározza azokat az erősségeket is, amelyek folytathatók vagy beépíthetők az adott szervezet vagy csapat általános gyakorlatába.
+Az ISO / IEC 24744 szoftverfejlesztés – Metamodel for Development Methodologies, egy Powertype-alapú metamodell szoftverfejlesztési módszertanhoz.
+SPEM 2.0 az Objektumkezelő Csoport részéről
+Lágy rendszerek módszertana – általános módszer a menedzsment folyamatok fejlesztésére
+Módszertan – általános módszer az információs rendszer folyamatainak fejlesztésére
+
+A szoftverarchitektúra leírásait általában nézetekbe rendezik, amelyek hasonlóak az épületépítészetben készült különböző típusú tervrajzokhoz. Minden nézet a rendszer egy adott problémakörét kezeli, követve a hozzá tartozó nézőpont konvencióit. A nézőpont egy olyan specifikáció, amely meghatározza az alkalmazandó jelöléseket, modellezési és elemzési technikákat egy nézetben, amely az érintett architektúrát az adott érintetti csoport és az ő szempontjaik szerint mutatja be (ISO/IEC/IEEE 42010).
+A nézőpont nemcsak azokat a problémaköröket határozza meg, amelyeket kezelni kell, hanem azt is, hogyan kell azokat bemutatni, milyen modelleket és konvenciókat kell alkalmazni, valamint azokat a szabályokat is, amelyek biztosítják a nézet konzisztenciáját más nézetekkel.
+
+Az agilis szoftverfejlesztés a szoftverfejlesztési módszerek egy csoportja, ahol a szoftverkövetelmények és a megoldások együttműködésen keresztül együtt fejlődnek az önszerveződő és keresztfunkcionális csapatok között. Ez elősegíti az alkalmazkodó tervezést, az evolúciós fejlesztést, korai szállítást, folytonos továbbfejlesztést és bátorít a változásokra adható gyors és rugalmas válaszokra.
+A Kiáltvány az agilis szoftverfejlesztésért, először 2001-ben vezette be az agilis kifejezést a szoftverfejlesztés keretében. Habár mindez ez a DuPont-nál a 80-as évek közepén fejlesztett technikákból fejlődött ki és később James Martin és James Kerr et al. definiálta.
+
+A tudásmenedzsment és -kommunikáció a tudás feltárásának és menedzselésének művelete, amely elengedhetetlen a szoftverarchitektúra megtervezéséhez. A szoftvertervező nem elszigetelten dolgozik. Inputokat, funkcionális és nem funkcionális követelményeket, valamint tervezési összefüggéseket kapnak a különböző érdekelt felektől; és eredményeket nyújtson az érdekelt feleknek. A szoftverarchitektúrával kapcsolatos ismeretek gyakran hallgatólagosak, és az érintettek fejében maradnak meg. A szoftverarchitektúra tudásmenedzsment tevékenysége a tudás megtalálásáról, kommunikálásáról és megőrzéséről szól. Mivel a szoftverarchitektúra tervezési kérdései bonyolultak és kölcsönösen függenek egymástól, a tervezési érvelésben lévő tudáshiány helytelen szoftverarchitektúra-tervezéshez vezethet. A tudásmenedzsment és kommunikációs tevékenységek példái közé tartozik a tervezési minták keresése, prototípus készítés, tapasztalt fejlesztők és építészek megkérdezése, hasonló rendszerek terveinek értékelése, tudás megosztása más tervezőkkel és érdekelt felekkel, valamint a tapasztalatok dokumentálása egy wiki oldalon.
+A tervezési érvelés és döntéshozatal a tervezési döntések értékelésének tevékenysége. Ez a tevékenység alapvető mindhárom alapvető szoftverarchitektúra-tevékenységhez. Ez magában foglalja a döntési összefüggések összegyűjtését és társítását, a tervezési döntési problémák megfogalmazását, a megoldási lehetőségek megtalálását és a kompromisszumok értékelését a döntések meghozatala előtt. Ez a folyamat a döntési granularitás különböző szintjein megy végbe, miközben értékeli a jelentős építészeti követelményeket és a szoftverarchitektúrával kapcsolatos döntéseket, valamint szoftverarchitektúra elemzést, szintézist és értékelést végez. Az érvelési tevékenységek közé tartozik például egy követelmény vagy egy terv minőségi jellemzőkre gyakorolt hatásának megértése, a tervezés által okozott problémák megkérdőjelezése, a lehetséges megoldási lehetőségek felmérése és a megoldások közötti kompromisszumok értékelése.
+A dokumentáció a szoftverarchitektúra folyamata során keletkezett terv rögzítésének aktusa. A rendszertervezést számos nézet segítségével írják le, amelyek gyakran tartalmaznak egy statikus nézetet, amely a rendszer kódszerkezetét mutatja, egy dinamikus nézetet, amely a rendszer műveleteit mutatja a végrehajtás során, és egy telepítési nézetet, amely bemutatja, hogy a rendszer hogyan kerül végrehajtásra a hardverre. Kruchten 4+1 nézete a szoftverarchitektúra dokumentálására általánosan használt nézetek leírását javasolja; Szoftverarchitektúrák dokumentálása: A Views and Beyond tartalmazza a nézet leírásában használható jelölések típusainak leírását. A dokumentációs tevékenységek példái közé tartozik a specifikáció írása, a rendszertervezési modell rögzítése, a tervezési indoklás dokumentálása, a nézőpont kialakítása, a nézetek dokumentálása.
+
+Nincs nagy központi adatbázis, csak munkamásolatok vannak.
+A gyakori műveletek, mint a becsekkelés, verziótörténet böngészés és a változtatások visszaállítása gyorsak, mert nem kell központi szerverrel kommunikálni.
+Minden munkamásolat egy-egy backup, ami természetes védelmet ad az adatvesztés ellen.
+Két fajta elosztott verziókezelő létezik, a nyitott és a zárt. A nyitott rendszereket inkább nyílt forráskódú termékeknél használják, a zártakat inkább a nem nyilvános forráskódú termékeknél.
+
+=== Elődök ===
+A növekményes szoftverfejlesztési módszerek egészen 1957-ig vezethetők vissza. 1974-ben E. A. Edmonds írt egy dolgozatot, amelyben bevezetett egy alkalmazkodó szoftverfejlesztési folyamatot. Ezzel párhuzamosan, és teljesen függetlenül ugyanazt a módszert fejlesztette ki és alkalmazta a New York Telefon Társaság Rendszerfejlesztési Központja Dan Gielan igazgatása alatt. A korai 1970-es években Tom Gilb elkezdte publikálni az evolúciós projektmenedzsment (EVO) koncepcióját, amely a competitive engineering-é nőtte ki magát. Az 1970-es évek közepétől a végéig Gielan alapos előadásokat tartott Amerika szerte erről a módszertanról és gyakorlatáról és előnyeiről.
+A pehelysúlyú szoftverfejlesztési módszerek egy csoportja kezdett kifejlődni az 1990-es évek közepén válaszul a nehézsúlyú vízesés-orientált módszerekre, amely kritikákat nevezik nehezen szabályozhatónak, nagyszámúnak és mikromenedzseltnek; habár egyes hívei ezen pehelysúlyú módszereknek azt állították, hogy csak visszatértek a korai szoftverfejlesztési gyakorlathoz. Ezek a pehelysúlyú módszerek a következők voltak: 1994-ből a Unified Process és a dinamikus rendszerfejlesztési módszer (angol rövidítéssel DSDM); 1995-ből a Scrum; 1996-ból a crystal clear és az extrém programozás (angol rövidítéssel XP) és 1997-ből az adaptív szoftverfejlesztés és a funkcióvezérelt fejlesztés. Habár ezek a Kiáltvány az agilis szoftverfejlesztésért 2001-es közzététele előttről származnak, mostanra együttesen hivatkoznak rájuk, mint agilis módszerekre; és gyakran rövidítik egyszerűen Agilisnek, nagy kezdő A-val.
+Érdemes megjegyezni, hogy az agilis jelző csak részben fedi a Kiáltvány az agilis szoftverfejlesztésért-ben megfogalmazottakat, az adaptív, alkalmazkodóképes jelzők pontosabban jellemzik az alapvető értékeket. Ezért is szoktuk inkább nagy kezdőbetűvel írni, ha a Kiáltványra és annak értelmezésére gondolunk.
+
+== Integráció ==
+A fejlettebb verziókezelők további lehetőségeket is kínálnak, melyek lehetővé teszik az integrációt más eszközökkel. Különböző IDE-khez (IntelliJ IDEA, Eclipse és Visual Studio) gyakran letölthetőek különböző verziókezelői pluginok. A NetBeans IDE-t beépített verziókezelővel szállítják.
+
+A prototípus-készítés nem önálló, komplett fejlesztési módszertan, hanem inkább megközelítés, amely a sajátos tulajdonságok kipróbálására szolgál egy teljes módszertan összefüggésében (például inkrementális, spirális vagy gyors alkalmazásfejlesztés (RAD)).
+Arra törekszik, hogy csökkentse a velejáró projektkockázatot azáltal, hogy egy projektet kisebb szegmensekre bont, és nagyobb változtathatóságot biztosít a fejlesztési folyamat során.
+Az ügyfelet bevonják a fejlesztési folyamatba, ami növeli annak valószínűségét, hogy az ügyfél elfogadja a végső megvalósítást.
+Míg néhány prototípust azzal a tudattal fejlesztenek ki, hogy el fogják távolítani, bizonyos esetekben lehetséges a prototípusról a működő rendszerre történő áttérés.
+A helytelen problémák megoldásának elkerülése érdekében szükséges az alapvető üzleti probléma megértése, de ez igaz minden szoftver módszertanra.
+
+== További irodalom ==
+Alexander, Christopher. A Pattern Language: Towns, Buildings, Construction. Oxford University Press (1977). ISBN 0-19-501919-9 
+Erl, Thomas. SOA Design Patterns. New York: Prentice Hall/PearsonPTR, 864. o. (2009). ISBN 0-13-613516-1 
+Frank Buschmann, Kevlin Henney, Douglas C. Schmidt: Pattern-Oriented Software Architecture: On Patterns and Pattern Languages
+Gamma, Erich. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley (1994). ISBN 0-201-63361-2 
+James Coplien (2014. július 11.). "Patterns: The Notion is Grounded in Alexander's Work". Hozzáférés: 2014. július 16.. The GoF claims to take its pattern inspiration from Christopher Alexander (as they say in the front matter of the book), who popularized the term in the broader field of design. To Alexander a pattern: is always an element of pattern language; contributes to deep human feeling; and is always geometric in nature. At least some of the GoF patterns fail on at least one of these points, and several fail on all three.
+Jenifer Tidwell: Designing Interfaces: Patterns For Effective Interaction Design
+Wolfgang Pree: Design Patterns for Object-Oriented Software Development
+Leitner, Helmut (2015): Pattern Theory: Introduction and Perspectives on the Tracks of Christopher Alexander ISBN 1505637430    .
+
+A félév során több számonkérési forma is szerepel a tárgykövetelményben. A második zárthelyi dolgozatra 2026. március 14-én, 10:15-kor kerül sor a nagyelőadó teremben.
+
+=== Ismétlődő, növekményes és evolúciós ===
+A legtöbb agilis módszer lebontja a feladatot kisebb feladatokra. Egy fejlesztési ciklus (azaz iteráció vagy sprint) maximum 4 hétig tart. Ezt az időtartamot idődoboznak hívjuk. Minden iterációban lévő feladat elkészítése egy keresztfunkcionális fejlesztői csoport feladata, amely a tervezéstől, elemzéstől a programozáson át a tesztelésig és átvételi tesztig mindent elvégez. Az iteráció végén bemutatják az elkészült feladatokat a megrendelőnek. Így minimalizálhatóak a hosszú fejlesztésből fakadó kockázatok, és a projekt gyorsan alkalmazkodhat a változásokhoz. A növekmény talán nem alkalmas az értékesítésre önmagában, azonban cél, hogy minden fejlesztési ciklus végén potenciálisan szállítható termék készüljön el. A módszer ismétlődésen (iteráción) alapul (minden alkalommal azonos szakaszokon megy végig a fejlesztőcsoport), és növekményes (inkrementális), mert mindig a már elkészült növekményt egészítik ki.
+
+A követelmények elemzése szoftverkövetelmény-specifikációt eredményez
+Szoftver tervezés
+Végrehajtás
+Tesztelés
+Integráció, ha több alrendszer van
+Telepítés )
+Karbantartás
+A módszer első hivatalos leírását gyakran idézik Winston W. Royce által 1970-ben közzétett cikként, bár Royce ebben a cikkben nem használta a „vízesés” kifejezést. Royce ezt a modellt bemutatta egy hibás, nem működő modell példájaként. 
+Az alapelvek a következők:
+
+=== Szószedet ===
+business
+A szoftvert megrendelő szervezet
+business analyst, BA
+A megrendelő elvárásait közvetítő megbízott
+business requirements
+A megfogalmazott elvárások
+Software Quality Assurance, SQA
+Szoftverminőség-biztosítás
+test requirements
+A tesztelendő funkcionalitások listája
+test coverage
+Funkcionalitás tesztekkel való lefedésének mértéke
+test plan
+Előzetes tesztelési terv a megfelelő test coverage elérése érdekében
+test scenario
+Egy alternatív tesztelési módszertan, a scenario testing esetében – és csak ott – hasonló szerepet tölt be, mint a test suite. Részletek itt.
+test script
+Ezt a kifejezést helytelenül használják az automated test case helyett. A scripted testing ellentéte nem a manual testing, hanem az exploratory. A test script a test case szinonimája. Részletek itt.
+test case
+Egy elvárás egy adott részének működését ellenőrző dokumentum. Nagyon pontosan leírt feltételek és inputok mellett nagyon pontosan leírt funkcionalitást és outputot vár az ellenőrzött szoftvertől.
+test suite
+Egy adott funkcionalitást leíró test case-ek összessége a test suite.
+validation
+Ellenőrzés: "you built the right product" – tehát a specifikáció tényleg a megrendelő elvárásait tartalmazza
+verification
+Ellenőrzés: "you built the product right" – tehát a programozó a specifikáció szerint írta meg a szoftvert
+fault
+Programozási hiba, mely funkcionális hibával nem jár.
+failure
+Programozási hiba, mely a funkcionalitásra hatással van.
+defect
+Tesztelő által észlelt failure, programozó által vissza nem igazolt
+bug
+Defect, mely a programozó szerint is az
+
+== Kapcsolódó szócikkek ==
+Rendszerfejlesztési életciklus
+Projektmenedzsment
+Szoftverfejlesztés
+A szoftverkiadás életciklusa
+Könnyű módszertan
+
+== Kezelési modellek ==
+A hagyományos verziókezelők központosított modellel dolgoznak, ahol minden verziókezelési művelet egy közösen használt szerveren történik. Ha két fejlesztő egyidejűleg próbálja meg módosítani valamelyik fájlt, akkor valami módon el kell kerülni azt, hogy a két személy felülírja egymás munkáját. Az ilyen (centralizált) rendszerek kétféleképpen oldják meg ezt a problémát: zárolással és összefésüléssel.
+
+=== Analízisszintű gondolkodás ===
+A szoftver fejlesztésének korai fázisaiban a megvalósítandó rendszer feladatait szeretnénk feltérképezni: a funkcionális és egyéb jellegű követelményeket. Más szóval, a kérdés ilyenkor az, hogy a rendszernek mit kellene tennie. Ilyenkor határozzuk meg a szoftver (formális és informális) specifikációját, majd abból kiindulva kezdjük magasabb szintű absztrakciók segítségével előállítani a rendszer modelljét, amely a konkrét megvalósítás alapját fogja képezni.
+
+1970
+Strukturált programozás 1969 óta
+Cap Gemini SDM, az első angol fordítást kiadták 1974-ben.
+1980-as évek
+Strukturált rendszerelemzés és tervezési módszer (SSADM) 1980-tól kezdve
+Információs követelmények elemzése / puha rendszerek módszertana
+1990-es évek
+Objektumorientált programozás (OOP) az 1960-as évek elején alakult ki, és az 1990-es évek közepén vált domináns programozási megközelítéssé.
+Gyors alkalmazásfejlesztés (RAD), 1991 óta
+Dinamikus rendszerek fejlesztési módszere (DSDM), 1994 óta
+Scrum, 1995 óta
+Csapatszoftver-folyamat, 1998 óta
+Racionális egységes folyamat, amelyet az IBM 1998 óta tart fenn
+Extrém programozás, 1999 óta
+2000-es évek
+Agile Unified Process (AUP), 2005 óta karbantartja Scott Ambler
+Fegyelmezett agilis szállítás (DAD) felülírja az AUP-t
+2010-es évek
+
+Home of Tester
+NASA, Software Metrics Tutorials
+ISO 9126 Archiválva 2008. november 13-i dátummal a Wayback Machine-ben
+ISTQB - International Software Testing Qualifications Board
+ISQTB-CTFL Foundation exam (Hungary)
+Magyarul
+
+Az igazolt hiányzások esetén a tárgy rugalmasan kezeli a pótlási lehetőségeket. Ha a hallgató igazoltan hiányzott a zárthelyiről, a pótzárthelyin 10%-kal több időt kap a feladatok megoldására.
+
+Az 1990-es évek elején és közepén az objektumorientáció vált a programozás fő paradigmájává. Ezt támogatták azok az eszközök, amelyekkel az objektumorientált nyelvek elterjedhettek és népszerűvé váltak. Ezek közé tartozott a Visual FoxPro 3.0, a C++ és a Delphi. Dominanciáját az elterjedő vizuális felületek is erősítették, mivel ezek szerkesztéséhez az objektumorientált programozást támogatták. A szorosan összetartozó GUI könyvtár és objektumorientált nyelvre példa a Cocoa keretrendszera Mac OS X operációs rendszer számára az Object-C nyelvhez. Az Object-C alapjában véve a C egy bővítése objektumorientált eszközökkel a Smalltalk alapján. Ezek az eszközök az eseményvezérelt programozást is elterjesztették.
+Az ETH Zürichnél Niklaus Wirth és társai vizsgálták az 1960-as évek óta használt adatabsztrakciót és a moduláris programozást. A  Modula-2 (1978) mindkettőpt magába foglalta. Továbbfejlesztése az Oberon újszerűen közelítette meg az objektumorientációt és az osztályokat.
+Több már korábban létező nyelvet bővítettek objektumorientált eszközökkel, például ezeket: Ada, BASIC, Fortran, Pascal, és COBOL. Ez kompatibilitási problémákat okozott és rontotta a karbantarthatóságot.
+Azóta számos olyan nyelv jelent meg, amelyek támogatják az objektumorientációt, de a procedurálisat is. Ezek közé tartozik a  Python és a Ruby. A kereskedelmileg legfontosabb objektumorientált programozási nyelvek a Java  , a C++, a C# és a  Visual Basic.NET (VB.NET). Ez utóbbiak eredetileg a Windowsra készültek, és mindegyik a maga módján használja az objektumorientációt. Támogatják a nyelvközi öröklést is, azaz az egyik nyelven írt osztályból lehet örökölni egy másik nyelven.
+
+=== Dinamikus kötés és üzenetátadás ===
+Nem a kliens, hanem az objektum feladata megválasztani, hogyan reagáljon egy metódushívásra. Ezt tipikusan futás időben végzi el, és a metódushívást a hozzá társított táblából választja ki. Ez dinamikus kötés néven ismert, és megkülönbözteti az objektumot az absztrakt adattípustól és a modultól, amelyek rögzített megvalósítással bírnak minden példány számára. Ha a metódus kiválasztásába beleszól a többi paraméter, akkor többszörös kötésről van szó (lásd kettős metódus, multimetódus, többszörös metódus).
+A metódushívást tekintik üzenetátadásnak is, ahol a kliens a kötésben részt vevő objektumnak küld üzenetet.
+
+=== Kezdetei ===
+Az objektumorientáció kifejezést mai értelmében az  MIT  kezdte el használni 1960 körül. A mesterséges intelligencia csoportban objektumok alatt LISP atomokat értettek, melyeket tulajdonságokkal láttak el. Alan Kay 1966-ban azt írta, hogy a LISP internálokban való elmélyedése behatóan megváltoztatta gondolkodását.
+Egy másik korai MIT példa volt az Ivan Sutherland  által 1960–61-ben alkotott Sketchpad. Az 1963-as technikai jelentés a Sketchpadról szóló értékezés kifejezéseit magyarázta glosszáriumában. Innen származik az objekt (objektum), az instance (példány); viszont az osztályra használt kifejezései (master, definition) nem maradtak használatban. Ez ekkor még a grafikus interakciókra korlátozódott. A MIT ALGOL verziója, az AED-0 közvetlen kapcsolatot hozott létre adatszerkezetek (plexes) és eljárások között, a későbbi metódusokhoz hasonlóan.
+
+== Tervezési minták ==
+Az objektumorientált programozásban adódó problémák megoldását több megközelítés is célozza. Legjobban ismert a Gamma és társai (Erich Gamma, Richard Helm, Ralph Johnson és John Vlissides) által írt mintagyűjtemény. Tágabb értelemben, a Programtervezési minták: Újrafelhasználható objektumorientált szoftver elemei általánosan használható, ismételhető megoldásminták gyakran előforduló problémákhoz. Ezek egy része kifejezetten az objektumorientált programozásra jellemző, vagy következményei vannak az objektumorientált tervezés számára.
+
+=== Tervezésszintű gondolkodás ===
+A meglévő modell alapján a szoftver konkrét implementációjához (megvalósításához) vezető utat tervezzük meg. Ilyenkor arra keressük a választ, hogy a meghatározott specifikációt hogyan valósítsa meg a rendszer. Ezen a szinten már képbe kerülnek különböző alacsony szintű technikák is, mint például a kommunikációs protokollok, programozási nyelvek és technológiák.
+
+Trunk
+A fejlesztés egyik olyan vonala, amely nem branch.
+
+=== Szoftver architektúra eróziójaEzenkívül az architektúra erózió kezelésére használt intézkedések két fő típusra oszthatók: megelőző és helyreállító intézkedésekre. ===
+A szoftverarchitektúra eróziója a szoftverrendszer tervezett és megvalósított architektúrája közötti fokozatos szakadékra utal az idő múlásával. A szoftverarchitektúra eróziójának jelenségét 1992-ben hozták napvilágra Perry és Wolf a szoftverarchitektúra meghatározása mellett.
+A szoftverarchitektúra eróziója a szoftverfejlesztési életciklus minden szakaszában előfordulhat, és eltérő hatással van a fejlesztés sebességére és a karbantartási költségekre. A szoftverarchitektúra eróziója különféle okok miatt következhet be, mint például az architektúra megsértése, a technikai adósság felhalmozódása és a tudás elpárologtatása. Az architektúra eróziójának híres esete a Mozilla webböngésző meghibásodása.  A Mozilla a Netscape által létrehozott alkalmazás, összetett kódbázissal, amelyet a folyamatos változtatások miatt nehezebbé vált a karbantartása. A kezdeti rossz tervezés és a növekvő architektúra-erózió miatt a Netscape két évet töltött a Mozilla webböngésző újrafejlesztésével, bemutatva, milyen fontos az architektúra eróziójának kezelése a kiterjedt javítási erőfeszítések, idő- és költségveszteségek elkerülése érdekében.
+Az architektúra eróziója csökkentheti a szoftver teljesítményét, jelentősen növelheti a fejlesztési költségeket, és rontja a szoftver minőségét. Számos megközelítést és eszközt javasoltak az architektúra eróziójának felismerésére. Ezeket a megközelítéseket négy fő kategóriába sorolják: konzisztencián alapuló, evolúció-alapú, hibákra fókuszáló és döntéseken alapuló megközelítés. Ezenkívül az architektúra erózió kezelésére használt intézkedések két fő típusra oszthatók: megelőző és helyreállító intézkedésekre.
+
+=== Hasonlóság a szekvenciális nyelvekkel ===
+Kevés fajta beépített típushoz tartozó változókban tárolnak információt. Ezek lehetnek egész, lebegőpontos típusok, lehetnek karaktertípusok; adatszerkezetek, mint stringek vagy tömbök, listák, hashtáblák, vagy pointerek.
+Függvények és eljárások, rutinok, szubrutinok, metódusok, amelyek műveleteket végeznek bemenő paramétereiken, és visszaadhatnak értékeket. A modern programozási nyelvek struktuált vezérlési szerkezeteket tartalmaznak, mint feltételes szerkezetek és ciklusok.
+A moduláris programozás támogatja a változók, függvények és eljárások csoportosítását szervezési célokkal. A névterek használata elkülöníti a különböző modulokban levő azonos nevű változókat, függvényeket, eljárásokat.
+
+== Rövid történet ==
+Az adatbázisok története értelemszerűen az adatmodellek és az adatbázis-kezelő rendszerek történetével szoros összefüggésben áll.
+Az adatok gyors, gépesített tárolásának és visszakeresésének igénye már az 1900-as évek elején is felmerült, amikor az első népesség-nyilvántartást végző (valójában halálozási statisztikákat készítő) lyukszalagos számítógépek megjelentek. Mindazonáltal a lyukkártyás technológia a jelenlegi rekordokban gondolkodó szemléletben éppúgy jelen van, mint a kezdetek kezdetén. Az adatbázisok jelenlegi, korszerű formái csak az 1960-as évek közepén kezdtek el kialakulni, elsősorban intézmény bérszámfejtési, adatsor elemzési problémáinak kezelésére. A rutinszerű feladatokat először egy hálós adatbázis segítségével igyekeztek lerövidíteni. E korszak terméke például a CODASYL. A hálós szemléleten még nagyon jól érződik a számítógép alacsony szintű programozásának az igénye; azonban látni kell, hogy a tényleges számítógép-felhasználók akkor is, ma is elsősorban nem számítástechnikai szakemberek voltak.
+A számítógéppel való kommunikációt javítani kellett, azaz szét kellett választani az alacsony szintű programozást a magas szintű logikai szerkezettől. Az első adatmodell, amelyben már élesen szétvált a logikai és a fizikai adatbázis, az a relációs adatmodell volt. Bár Edgar F. Codd 1969-ben, az IBM munkatársaként már kidolgozta a mai napig is a legnépszerűbb adatbázis-fajta logikai modelljét, csak 1970-ben publikálta. Téved azonban az, aki azt hiszi, hogy a relációs adatbázis sikertörténetnek indult. Magával az adatbázis logikai szerkezetével semmi baj nem volt, kísértetiesen hasonlít egy közönséges táblázatkezeléshez, csakhogy a lekérdezéssel gondok adódtak. A lekérdezés nyelve ugyanis halmazelméleti és logikai ismereteket igényelt – ami még a számítógép-programozásnál is mostohább feltételnek tűnt a felhasználók szemében. Maga az IBM sem fűzött hozzá komolyabb reményeket, hat év alatt hozták létre az első modern adatbázis-kezelőt, a System-R (ma DB/2) kódnevű szoftvert. Nem úgy a CIA, aki többek között Larry Ellison és Bob Miner segédletével egy grandiózus projektbe fogott bele, amelynek célja egy olyan adattár létrehozása volt, amely a CIA minden felmerülő kérdését gyorsan, hatékonyan, és aránylag olcsón megválaszolja. A projekt éppen az orákulum nevet kapta, angolul: Oracle. Maga a projekt pénz hiányában 1976-ban nem folytatódott, de Ellison és Miner tovább dolgozott a munkán az általuk 1977-ben alapított Relational Software Inc. (RSI, 1982-től Oracle Corp.) keretein belül. 1977-ben pedig létrejött az első Oracle.
+A lekérdező nyelv problémáját azonban nem ők, hanem a System-R fejlesztői oldották meg. Mivel az IBM akkor még nem különösebben érdeklődvén az adatbázisok iránt, nem tiltotta le az adatbázisokkal kapcsolatos információk kiadását, így az RSI nagyon könnyen hozzájutott az SEQUEL nyelv (ma SQL) leírásához. Márpedig több hónappal az IBM-et megelőzve az IBM kijövő termékével kompatibilis, versenyképes terméket sikerült a piacra dobniuk. A teljesség igénye nélkül, az egykori legnagyobbak:
+
+A csapatmunka minőségbiztosításának egyik eszköze a kódfelülvizsgálat. Ebben a félévben kettős felülvizsgálatnak hívjuk azt a szabályt, amely szerint egy pull requestet két különböző csapattagnak is jóvá kell hagynia, mielőtt az összeolvasztható lenne.
+
+=== Interfészek ===
+Az interfészek tulajdonképpen absztrakt osztályok. Nem tartalmazhatnak megvalósítási részleteket, csak előírhatják bizonyos metódusok jelenlétét, illetve konstansokat definiálhatnak. Olyan nyelvekben, ahol nincs a megvalósítások többszörös öröklődése, interfészekkel érhető el a többszörös öröklés korlátozott formája. A káró problémára  rendszerint az összeolvasztás a megoldás; ha több interfész is előírja ugyanazt a metódust, akkor ugyanazzal a metódussal megvalósítható. C#-ban van lehetőség arra is, hogy a különböző interfészek által megadott ugyanolyan nevű és szignatúrájú metódusokat külön-külön lehessen megvalósítani.
+Nagyobb projektekben interfészek fejezik ki a kliensek elvárásait az objektumokkal szemben. Amellett, hogy a kliens biztos lehet abban, hogy az objektum rendelkezik az interfészben előírt metódusokkal, elvárhat csak egy adott interfészű objektumot ahelyett, hogy meghatározná a pontos osztályt. Ez megkönnyíti a megvalósítások és az objektumok cseréjét. Amellett, hogy az objektum megvalósít egy interfészt, még lehetnek további tagjai is, amikről azonban a kliensek nem tudnak, mivel az interfész nem garantálja. Az interfész egy szerződést ad meg az objektum és kliensei között.
+
+A fő cél a magas színvonalú rendszer gyors fejlesztése és szállítása viszonylag alacsony beruházási költségek mellett.
+Arra törekszik, hogy csökkentse a velejáró projektkockázatot azáltal, hogy egy projektet kisebb szegmensekre bont, és nagyobb változtathatóságot biztosít a fejlesztési folyamat során.
+Célja, hogy gyorsan kiváló minőségű rendszereket állítson elő, elsősorban iteratív prototípus-készítéssel (a fejlesztés bármely szakaszában), aktív felhasználói bevonással és számítógépes fejlesztési eszközökkel. Ezek az eszközök tartalmazhatnak grafikus felhasználói felület (GUI) készítőket, számítógépes szoftverfejlesztési (CASE) eszközöket, adatbázis-kezelő rendszereket (DBMS), negyedik generációs programozási nyelveket, kódgenerátorokat és objektumorientált technikákat.
+A legfontosabb hangsúly az üzleti igény kielégítésén áll, míg a technológiai vagy a mérnöki kiválóság kevésbé fontos.
+A projekt ellenőrzése magában foglalja a fejlesztés prioritását és a kézbesítési határidők vagy „idődobozok” meghatározását. Ha a projekt elcsúszik, akkor a hangsúly a követelmények csökkentésére kell hogy fókuszáljon, azért, hogy illeszkedjen az idődobozba, és nem pedig a határidő növelésére.
+Általában magában foglalja a közös alkalmazástervezést (JAD), ahol a felhasználók intenzíven részt vesznek a rendszertervezésben, konszenzus kialakításával akár strukturált műhelyekben, akár elektronikusan megkönnyített interakción keresztül.
+Az aktív felhasználói részvétel nélkülözhetetlen.
+Iteratív módon készít sorozatszoftvert, szemben az eldobható prototípussal.
+A jövőbeli fejlesztés és karbantartás megkönnyítéséhez szükséges dokumentációt állít elő.
+A szokásos rendszerelemzési és tervezési módszerek illeszthetők ebbe a keretbe.
+
+=== Más típusú „architektúra” ===
+Számítógép-architektúra
+A számítógép-architektúra a számítógépes rendszer belső struktúráját célozza meg az együttműködő hardverelemek, például a CPU – vagy processzor – a busz és a memória tekintetében.
+Szerver nélküli architektúra
+A szerver nélküli architektúra egy felhőalapú számítástechnikai paradigma, amelyet gyakran félreértenek szervermentességként. Lényegében a szerverkezelési feladatokat a fejlesztőkről a felhőszolgáltatókra helyezi át. Ez lehetővé teszi a vállalkozások számára, hogy felhőinfrastruktúrán futtassák háttérkódjukat, így nincs szükség fizikai szerverkezelésre. A kiszolgáló nélküli architektúra eseményvezérelt megközelítése kicsi, feladat-specifikus funkciókra támaszkodik, amelyeket igény szerint hajtanak végre. Ezeket a funkciókat Function as a Service (FaaS) néven ismerik, és költséghatékonyságot kínálnak a felosztó-kirovó számlázási modellen és az alkalmazásigényen alapuló dinamikus erőforrás-skálázáson keresztül. </link>
+Rendszer architektúra
+A rendszerarchitektúra kifejezést eredetileg a hardverből és szoftverből álló rendszerek architektúrájára használták. A rendszerarchitektúra által kezelt fő probléma a szoftver és a hardver integrálása egy teljes, megfelelően működő eszközbe. Egy másik elterjedt – jóval tágabb – jelentésben a kifejezés bármely összetett rendszer architektúrájára vonatkozik, amely lehet technikai, szociotechnikai vagy társadalmi jellegű.
+Vállalati architektúra
+A vállalati architektúra célja, hogy "az üzleti jövőképet és stratégiát hatékony vállalkozássá alakítsa". A vállalati architektúra keretrendszerei, például a TOGAF és a Zachman-keretrendszer általában különbséget tesznek a különböző vállalati architektúra rétegek között. Bár a terminológia keretrendszerenként eltérő, sok esetben legalább különbséget tesznek az üzleti réteg, az alkalmazási (vagy információs) réteg és a technológiai réteg között. A vállalati architektúra többek között az e rétegek közötti igazítással foglalkozik, általában felülről lefelé irányuló megközelítésben.
+
+=== Nyílt forráskódban elérhető adatbázis-kezelők ===
+Apache Cassandra
+BerkeleyDB
+CouchDB
+Derby (ugyanaz, mint az IBM Cloudscape, Sun Java DB)
+FireBird (ugyanaz, mint az InterBase)
+FLAIM
+Ingres (ugyanaz, mint az openIngres)
+MaxDB (ugyanaz, mint az SAPDB)
+MongoDB
+MySQL
+MariaDB
+postgreSQL
+Redis
+SQLite
+
+Oracle Database
+DB/2
+SyBase
+Informix
+Ingres
+A jó időben, a számítástechnikai robbanás idején végrehajtott korai piacszerzés ellehetetlenítette a többi lehetséges adatmodell virágzását. Hiába jelent meg 1977-ben az első értekezés egy tisztán logikára épülő adatmodellről, az elterjedésére nem volt ideje. 1982-re, amikor az első ipari alkalmazásra is bevethető Datalog adatbázis-kezelőt létrehozzák, már számos cégnek teljesen önálló relációs adatmodell alapú terméke van a piacon.
+Ráadásul 1986-ban az SQL mint a relációs adatbázisok lekérdezőnyelve az Egyesült Államokban is, és Európában is szabványossá válik, ami a többi adatbázisról még nagyon sokáig nem mondható el. Az 1990-es évek elején egy új programozási szemléletmód, az objektumorientáltság jelent meg. Mivel a legtöbb programozási nyelvet aránylag hamar kiszorította, sokáig úgy tűnt, az adatbázisok világában is megtöri a relációs adatbázisok uralmát. Ez azonban korántsem következett be. Jelenleg az adatbázispiac kevesebb, mint 3%-a objektumorientált adatbázis. A legfontosabb objektumorientált termékeket azért érdemes megemlíteni, ezeket bizonyos feladatokra mind a mai napig lehet és érdemes is használni:
+
+== Fordítás ==
+Ez a szócikk részben vagy egészben  a   Design pattern című angol Wikipédia-szócikk ezen változatának fordításán alapul.  Az eredeti cikk szerkesztőit annak laptörténete sorolja fel. Ez a jelzés csupán a megfogalmazás eredetét és a szerzői jogokat jelzi, nem szolgál a cikkben szereplő információk forrásmegjelöléseként.
+
+== Adatbázis-kezelés, állománykezelés ==
+Sokak szerint az adatbázis-kezelő tartalmaz egy állománykezelőt is, de ez nem feltétlenül igaz. A legtöbb kereskedelmi termék önálló, az adatbázis-kezelő magját képező adatbázis-kezelő motortól független állományszervezési rendszert dolgozott ki elsősorban amiatt, hogy a háttértár szervezése, illetve eszközfüggőségéből (például máshogy viselkedik egy optikai, egy lyuk-, egy mágnesszalagos és egy merevlemezes háttértár is, hogy a memóriaadatbázisokról ne is beszéljünk) eredő sajátosságai ne befolyásolják jelentősen az adatbázis-kezelő motor kialakítását, illetve hatékonyságát. A szétválasztás azt is lehetővé teszi, hogy a háttér optimalizálását (például töredezettségmentesítését) az adatbázis-kezelő motortól függetlenül, azt nem befolyásolva is végrehajthassuk; de arra is lehetőséget teremt, hogy elosztott, akár több önálló (idegen szóval: autonóm) számítógépből rendszereket is kezelni tudjunk egyetlen adatbázis-kezelő motor segítségével. A szétválasztás tehát egy másik fajta adatfüggetlenséget biztosít, vagyis az ún. fizikai adatfüggetlenséget garantálja.
+Összefoglalóan, az adatbázis-kezelők meghatározó része a logikai adatbázis kialakítására koncentrál. A logikai adatbázisokat szerkezetük, felépítési és működési sajátosságaik alapján különböztetjük meg, amelyet összefoglalóan, tömören adatmodellnek nevezünk. Értelemszerűen tehát az adatbázis-kezelőket az általuk kezelt, vezérelt, valamint megvalósított adatmodellek alapján osztályozzuk. Ennek megfelelően beszélhetünk relációs, objektumorientált, hálós, deduktív, illetve ezek elegyítéséből létrejött objektumrelációs, deduktív relációs adatbázis, deduktív objektumorientált adatbázis-kezelőkről, röviden és ilyen értelemben: adatbázisokról – bár az adatbázis szó elsősorban mindig a ténylegesen tárolt adathalmazra utal.
+
+== További információk ==
+Magyarázat az IBM Developerworksről
+Szoftverarchitektúra-definíciók gyűjteménye a Software Engineering Institute -nál (SEI), a Carnegie Mellon Egyetemen (CMU)
+IT Építészek Nemzetközi Szövetsége (IASA Global), korábban Szoftverépítészek Nemzetközi Szövetsége (IASA)
+SoftwareArchitecturePortal.org – az IFIP 2.10 szoftverarchitektúrával foglalkozó munkacsoportjának webhelye
+SoftwareArchitectures.com Archiválva 2023. október 29-i dátummal a Wayback Machine-ben – független információforrás a tudományágról
+Szoftverarchitektúra, Roy Fielding REST disszertációjának 1. fejezete
+Amikor a jó építészet elromlik
+A spirálarchitektúra által vezérelt fejlesztés – a spirálmodellre épülő SDLC célja a nem hatékony architektúra kockázatának csökkentése
+Szoftverarchitektúra valós esettanulmányok
+
+Baseline
+Egy dokumentum vagy fájl jóváhagyott verziója, melyhez az azt követő változtatásokat viszonyítják.
+
+A backend kód minőségét automatikus tesztekkel is ellenőrzik. Az elvárt minimális tesztlefedettség a forráskód 78%-a.
+
+== Közös szókincs ==
+A terminológia rendszerenként változik, de vannak általánosan használt szakkifejezések:
+
+=== További programozási nyelvek ===
+Goldberg a Byte Magazine 1981 augusztusi számában bemutatta a Smalltalkot és vele az objektumorientált programozást. 1986-ban az  Association for Computing Machinery megrendezte az első Conference on Object-Oriented Programming, Systems, Languages, and Applications (OOPSLA) konferenciát, amire meglepően sokan, ezren jöttek el. Az 1980-as évek közepén újabb objektumorientált nyelveket fejlesztettek ki, Brad Cox (Smalltalkot használt az ITT inc-nél) az Objective-C nyelvet és   Bjarne Stroustrup (Simulával írta a doktori értekezését) a C++ nyelvet. 1985-ben Bertrand Meyer kidolgozta az Eiffel első változatát. Az Eiffel a szoftverminőséget támogató tisztán objektumorientált nyelv, ami végigsegíti a programot a teljes életcikluson. Meyer az Object-Oriented Software Construction című művében leírta az Eiffel szoftverfejlesztési módszert, amit a számítógép-programozásban és a fejlesztésben alkalmazott módszerekben használt néhány kulcsmotívumra aslapozott. Az egyik ilyen a minőségbiztosítás, amit szerződés alapú programozással valósít meg a módszer és a nyelv is.
+
+=== Egyéb ===
+Egyéb magas szintű szoftverprojekt-módszertanok a következők:
+
+=== Zárolás (lock) ===
+A konkurens hozzáférés kezelésének legegyszerűbb módja, ha megtiltjuk a konkurens hozzáférést, azaz ha egy valaki már elkezd módosítani egy fájlt, akkor azt már más felhasználó nem nyithatja meg írásra. Ezt hívják elterjedt kifejezéssel lock-olásnak, a magyarosabb, de kevésbé elterjedt zárolás szó helyett. Ha egy felhasználó kivesz (kicsekkel) egy fájlt, akkor a többi felhasználó már csak olvasásra nyithatja meg azt egészen addig, amíg a kicsekkelő felhasználó visszateszi (becsekkeli) a módosított változatot (vagy elveti a módosítást).
+Ennek a módszernek előnyei és hátrányai is vannak. A nagyobb vagy sok fájlt érintő változtatásoknál célszerű ezt választani, mert bonyolult összefésülési műveleteket lehet megtakarítani vele. Ha azonban egy fájl túl sokáig zárolt állapotban marad, akkor a többi fejlesztő esetleg arra kényszerülhet, hogy a verziókezelést megkerülve a fájl lokális másolatát módosítsa, ami nagyobb bonyodalmakhoz vezethet.
+
+Reverse integration
+Az egyes ágak összedolgozása és bedolgozása a verziókezelő fő trunk-jába.
+
+Széchenyi István Egyetem, Oktatási anyag
+Szoftvertesztelés.lap.hu - linkgyűjtemény
+Magyar Szoftvertesztelési Tanács Egyesület(HTB), mely a nemzetközi ISTQB szervezet magyarországi testülete
+
+=== Objektumok és osztályok ===
+Az objektumorientált programozást támogató nyelvek tipikusan öröklődéssel támogatják az újrahasznosítást osztályok vagy prototípusok formájában. Az osztályokat használók két alapfogalmat vezettek be:
+
+=== Agilis fejlesztés ===
+Az "agilis szoftverfejlesztés" az iteratív fejlesztésen alapuló szoftverfejlesztési módszerek egy csoportjára vonatkozik, ahol a követelmények és megoldások az önszerveződő, többfunkciós csoportok közötti együttműködés révén alakulnak ki. A kifejezést 2001-ben alakították ki, amikor megfogalmazták az Agilis Manifestust. 
+Az agilis szoftverfejlesztés az iteratív fejlesztést veszi alapul, de a hagyományos megközelítéseknél könnyebb és emberközpontúbb nézőpont mellett áll. Az agilis folyamatok alapvetően magukban foglalják az iterációt és a folyamatos visszajelzést, amelyet a szoftverrendszer egymást követő finomítása és biztosítása érdekében nyújtanak. 
+Számos agilis módszertan létezik, köztük:
+
+A beadott kód formai minőségét automatikus eszköz ellenőrzi feltöltéskor. A kódstílus-ellenőrző (linter) legfeljebb 12 figyelmeztetést enged meg ahhoz, hogy a beadás hibátlannak minősüljön.
+
+== Fordítás ==
+Ez a szócikk részben vagy egészben  a   Software architecture című angol Wikipédia-szócikk ezen változatának fordításán alapul.  Az eredeti cikk szerkesztőit annak laptörténete sorolja fel. Ez a jelzés csupán a megfogalmazás eredetét és a szerzői jogokat jelzi, nem szolgál a cikkben szereplő információk forrásmegjelöléseként.
+
+=== Folyamatos integráció ===
+A folyamatos integráció az a gyakorlat, ahol minden fejlesztői munkapéldányt naponta többször összevonnak egy megosztott fővonallal. Grady Booch először 1991-ben alkalmazott módszerével nevezte el és javasolta a Folyamatos integrációt, bár nem ösztönözte a napi többszöri integrációt. Az extrém programozás (XP) átvette ezt a fogalmat, és támogatja a napi egynél több integrációt – talán akár több tízszer is.
+
+=== Szoftverarchitektúra és agilis fejlesztés ===
+Az is aggodalomra ad okot, hogy a szoftverarchitektúra túlságosan nagy tervezéshez vezet, különösen az agilis szoftverfejlesztés hívei körében. Számos módszert fejlesztettek ki az előzetes tervezés és az agilitás közötti kompromisszumok kiegyensúlyozására, beleértve az agilis DSDM- módszert, amely előírja az "Alapok" fázist, amely során "éppen elég" építészeti alapokat raknak le. Az IEEE Software külön témakört szentelt az agilitás és az architektúra közötti kölcsönhatásnak.
+
+== Hatály ==
+A szoftverarchitektúrák terjedelmével kapcsolatban megoszlanak a vélemények:
+
+Minivízesések sorozatát hajtják végre, ahol a vízesés minden fázisa a rendszer egy kis részén befejeződik, mielőtt a következő lépésre lép
+Az általános követelményeket meghatározzák, mielőtt továbblépnének a rendszer egyes növekményeinek evolúciós, minivízeséses fejlesztésére
+A kezdeti szoftver koncepciót, a követelmények elemzését, valamint az architektúra és a rendszermag megtervezését a vízesés határozza meg, amelyet egy növekményes megvalósítás követ, ami pedig a végleges verziót eredményezi.
+
+== Irodalom ==
+Angster Erzsébet: Az objektumorientált tervezés és programozás alapjai (magánkiadás 1999; ISBN 978-963-650-818-0)
+Raffai Mária: Objektumtechnológia sorozat kötetei: (1) Objektumok az üzleti modellezésben (ISBN 963-9056-28-6; 2001) (2) Egységesített megoldások a fejlesztésben (ISBN 963-9056-29-4; 2001) (3) Objektumorientált alkalmazásfejlesztés (ISBN 963-9056-31-6; 2002) (4) UML 2' modellező nyelvi kézikönyv' (ISBN 963-7692-01-0; 2005, 2007)
+Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides: Programtervezési minták (Kiskapu 2004; ISBN 963-9301-77-9)
+Raffai Mária: Információrendszer-fejlesztés (Novadat 1999; ISBN 963-9056-19-7)
+
+=== Osztály alapú és prototípus alapú ===
+Osztály alapú nyelvekben az osztályokat előre kell definiálni, az objektumokat ezekből példányosítással kapjuk. Ha az apple (alma) és orange (narancs) alapvetően gyümölcsök, a Fruit osztály példányai, ami garantálja, hogy ugyanúgy kezelhetők, például a szín, a cukortartalom vagy az, hogy érett-e.
+Prototípus alapú nyelvekben az objektumok elsődleges entitások. Osztályok nincsenek. Ehelyett az objektumoknak prototípusuk van, amit prototípus hivatkozással tartanak számon. Egy objektumnak egy prototípusa lehet. Egy objektum akkor hozható létre, ha már létezik a prototípusa. Ha például az apple és orange alapvetően gyümölcsök, akkor van egy közös fruit prototípusuk. Maga a gyümölcs nem lép fel külön nyelvi elemként, de ekvivalenciaosztályként lehet gondolni rá: azok az objektumok, amelyeknek prototípusa a fruit. A prototípus delegálja adattagjait és metódusait az általa definiált ekvivalenciaosztálynak, de az egyedileg birtokolt attribútumait és metódusait nem. Így például lehet, hogy az alma nem örökli a cukortartalmat. Szemben az osztály alapú objektumorientációval, a prototípusokkal csak egyszeres öröklődés valósítható meg.
+
+=== Kompozíció, öröklődés és delegáció ===
+Az objektumok lehetnek más objektumok mezői, ez az objektumok kompozíciója. Nevezik aggregálásnak is. Például az Employee (alkalmazott) osztály példánya tartalmazhat egy Address (lakcím) objektumot, amellett hogy van például first_name (keresztnév) és position (pozíció) attribútuma is. A kompozíció "has-a" (van neki) kapcsolat: az alkalmazottnak van lakcíme, így ezt az információt az Employee osztály példánya tartalmazza.
+Majdnem minden osztály alapú nyelv támogatja az öröklődést. Ezzel egy másik fajta kapcsolat jön létre, ami "is-a" kapcsolat, azaz például egy Employee objektum Person (személy) objektum is. Használható egy Person objektum helyett is. A szülő osztály minden adata és metódusa jelen van a gyermek osztályban (alosztálynak is nevezik) is, így például ha a Person osztály tartalmaz first_name és last_name (vezetéknév) mezőket és egy make_full_name() metódust, ami a teljes nevet állítja elő, akkor ezek az Employee objektumból is elérhetők. Az Employee osztály további attribútumokat és metódusokat definiálhat, és felülírhat öröklött metódusokat. Ez megkönnyíti az újrafelhasználást, és segíti lemodellezni a valóban létező kapcsolatokat. Adattáblák és függvények, eljárások helyett a programozó használhat olyan objektumokat, amelyeket a felhasználó is ismer, hiszen ezek a tárgyköri modell elemei.
+Több programozási nyelv is megengedi a többszörös öröklődést, azonban a felülírással együtt ez a káró problémához vezet. Ez megoldható azzal, hogy a programozó explicit megjelöli, hogy most melyik öröklött metódust használja. Más nyelvek (például Java, C#, Ruby) megtiltják a megvalósítások több úton való öröklését, csak az absztrakt szerkezet öröklődhet többszörösen, ami interfészekkel valósítható meg. Egy osztály több interfészt is megvalósíthat. A mixinek olyan osztályok, amelyekből való öröklés nem valósít meg is-a kapcsolatot. Például az UnicodeConversionMixin nyújthat egy unicode_to_ascii() metódust a unicode szöveg ascii-re való konvertálásához, ezt felhasználhatja a FileReader (fájlolvasó) és a WebPageScraper, amelyeknek ettől nem lesz közös szülőjük.
+Az absztrakt osztályok nem példányosíthatók közvetlenül, hanem csak közvetve, konkrét leszármazottaik által. Egy absztrakt osztály tartalmazhat megvalósítást is, de egyes részleteket leszármazottaira hagy (lásd sablon programtervezési minta).
+Egyes nyelvekben, mint a Java és a C# megtiltható a leszármazás egyes osztályokból (Javában final, C#-ban sealed a kulcsszó). Visual Basicben a leszármazási lánc egyetlen fájlra korlátozható. C#-ban megtiltható a metódusok felülírása illetve elfedése. Ezek a tiltások nem alkalmazhatók absztrakt osztályokra, illetve metódusokra.
+Az öröklődés altípusos polimorfizmust eredményez, a kliens nem ismeri, hogy pontosan milyen osztályú objektum szolgálja ki. A kliens nem tudja, hogy például a make_full_name() függvény vajon úgy működik-e, ahogy azt a megadott osztályban megírták. Ez az absztrakció egy újabb szintje.
+Azokban a nyelvekben, amelyek támogatják a nyílt rekurziót, a metódusok hívhatják az azonos objektum metódusait. Az objektum hivatkozható self vagy this pointerrel. Ez a változó késő kötésű, ami lehetővé teszi, hogy az adott osztályban definiált metódus helyett egy leszármazott osztályban felülírt metódus hívódjon meg.
+
+Working copy
+Magyarul munkamásolat. A repository fájljainak másolata a felhasználó lokális gépén. Minden olyan munka, ami bekerül a repository-ba, először mindig egy munkamásolatban történik meg, innen a neve. Fogalmilag a munkamásolat egy homokozó.
+
+A projektmunkát csapatban kell elvégezni, meghatározott létszámkorláttal. Egy csapatban legfeljebb 3 fő dolgozhat együtt a feladaton.
+
+=== Szoftverarchitektúra leírása ===
+A szoftverarchitektúra leírása magában foglalja az architektúrák modellezésének és ábrázolásának alapelveit és gyakorlatait, olyan mechanizmusok használatával, mint az architektúraleíró nyelvek, architektúra nézőpontok és architektúra-keretrendszerek.
+Az architektúraleíró nyelv (ADL) bármely kifejezési eszköz, amelyet egy szoftverarchitektúra leírására használnak (ISO/IEC/IEEE 42010). Az 1990-es évek óta számos speciális célú ADL-t fejlesztettek ki, köztük az AADL-t (SAE szabvány), a Wrightot (a Carnegie Mellon fejlesztette), az Acme-t (a Carnegie Mellon fejlesztette), az xADL-t (a UCI fejlesztette), a Darwint (az Imperial College London fejlesztette), DAOP-ADL (a Málagai Egyetem fejlesztette), SBC-ADL (a National fejlesztette Sun Yat-Sen Egyetem), és ByADL (University of L'Aquila, Olaszország).
+
+Osztályváltozók: az osztályhoz tartoznak, elérhetők az osztályon, de példányokon keresztül is. Minden példány számára ugyanaz.
+Példányváltozók vagy attribútumok: az egyedi objektumok jellemzői, minden objektumnak sajátja van.
+Tagváltozók: az osztály- és a példányváltozók együttese, amik egy osztályban vannak definiálva.
+Osztálymetódusok: osztály szintű metódusok, csak az osztályváltozókhoz és paramétereikhez férhetnek hozzá, példányváltozókhoz nem.
+Példánymetódusok: példány szintű metódusok, hozzáférnek az adott példány összes adatához és metódusához, és paramétereik is lehetnek.
+Az objektumok hozzáférhetők változókként, de belső szerkezetük van. Absztrakciós szintet adnak, ami elválatsztja a belső és a külső kódot. A külső kód az objektum kliense, ami kérheti bizonyos metódusok végrehajtását az objektumtól, írhatja, olvashatja annak változóit. Sok nyelvben a példányokat közvetve, pointerekkel kezelik; maga az objektum a heapen vagy a stacken van.
+Az objektumokat az osztályban definiált speciális metódus, konstruktor hozza létre. A program több példányt is létrehozhat egy osztályból, amelyek egymástól függetlenül működnek; így a program ugyanazokat a műveleteket végezheti különböző adathalmazokon.
+Az osztályokat használó objektumorientált programozást osztály alapú programozásnak is nevezik, míg a prototípus alapú programozásban nincsenek osztályok. Emiatt analóg, de szignifikánsan különböző terminológiát használnak az objektum és példány definiálására.
+Egyes nyelvekben további kombinációs lehetőségek is vannak, mint vonások és mixinek.
+
+=== Nyitott rendszerek ===
+A nyitott, elosztott verziókezelők támogatják különböző ágak létezését, és erősen függenek a fent tárgyalt összefésülés (merge) művelettől. Általános jellemzőik a következők:
+
+=== A szoftvertesztelés célja ===
+A klasszikus szoftvertesztelés célja a szoftverhibák felfedezése. A fejlesztésnek minél korábbi szakaszában derül fény egy hibára, annál olcsóbb annak korrigálása. Újabb keletű elvárás a szoftverminőség mérése. Főleg az Agile Programming módszertanával futó projektek esetén a tesztelés a kockázatok becslését és menedzselését is magába foglalja.
+
+=== Agilis szoftverfejlesztési gyakorlatok ===
+Az agilis szoftverfejlesztést számos konkrét gyakorlat támogatja, amelyek olyan területeket ölelnek fel, mint a követelmények, a tervezés, modellezés, kódolás, tesztelés, tervezés, kockázatkezelés, folyamat, minőség stb. Néhány figyelemre méltó agilis szoftverfejlesztési gyakorlat a következőket foglalja magában:
+
+A magas ügyfél-elégedettség megköveteli a rendelkezésre állást, a hibatűrést, a biztonságot, a tesztelhetőséget, a helyreállíthatóságot, az agilitást és a rendszer teljesítményét.
+A fúziók és felvásárlások (M&A) bővíthetőséget, méretezhetőséget, alkalmazkodóképességet és interoperabilitást igényelnek
+A korlátozott költségvetés és idő megköveteli a megvalósíthatóságot és az egyszerűséget
+A gyorsabb forgalomba hozatalhoz karbantarthatóság, tesztelhetőség és elkeseríthetőség szükséges.
+A szoftverarchitektúra tervezésének négy fő tevékenysége van. Ezeket az alapvető architektúra tevékenységeket iteratív módon hajtják végre a kezdeti szoftverfejlesztési életciklus különböző szakaszaiban, valamint a rendszer fejlődése során.
+Az építészeti elemzés a környezet megértésének folyamata, amelyben a javasolt rendszer működni fog, és meghatározza a rendszer követelményeit. Az elemzési tevékenység bemenete vagy követelményei tetszőleges számú érdekelttől származhatnak, és olyan elemeket tartalmazhatnak, mint például:
+
+== Részletek ==
+Azon szervezett minták gyűjteménye, amelyek kapcsolódnak egy adott területen, az úgynevezett mintanyelv. Ez a nyelv közös terminológiát ad a tervezők által tapasztalt helyzetek megoldására.
+
+Update
+Az update vagy sync a repositoryban lévő változtatásokat dolgozza bele a felhasználó munkamásolatába.
+
+Minden egy kompromisszum
+"A miért fontosabb, mint a hogyan"
+Az "Architectural Kata" egy csapatmunka, amivel az igényeknek megfelelő építészeti megoldást lehet készíteni. Minden csapat kivonja és rangsorolja az építészeti jellemzőket (más néven nem funkcionális követelményeket), majd ennek megfelelően modellezi az összetevőket. A csapat használhatja a C4 Modellt, amely egy rugalmas módszer az architektúra modellezésére. Vegye figyelembe, hogy az építészeti elemek közötti szinkron kommunikáció összefonja őket, és ugyanazokkal az építészeti jellemzőkkel kell rendelkezniük.
+A szoftverarchitektúra dokumentálása megkönnyíti az érdekelt felek közötti kommunikációt, rögzíti a magas szintű tervezéssel kapcsolatos korai döntéseket, és lehetővé teszi a tervezési összetevők projektek közötti újrafelhasználását.
+A szoftverarchitektúra tervezését általában a szoftveralkalmazások tervezésével állítják szembe. Míg az alkalmazástervezés a szükséges funkcionalitást támogató folyamatok és adatok (a rendszer által kínált szolgáltatások) tervezésére összpontosít, addig a szoftverarchitektúra tervezése annak az infrastruktúrának a megtervezésére összpontosít, amelyen belül az alkalmazás funkcionalitása megvalósítható és végrehajtható úgy, hogy a funkcionalitás egy olyan módon, amely megfelel a rendszer nem funkcionális követelményeinek.
+A szoftverarchitektúrák két fő típusba sorolhatók: monolit és elosztott architektúra, mindegyiknek megvan a maga alkategóriája.
+A szoftverarchitektúra idővel bonyolultabbá válik. A szoftvertervezőknek fitneszfüggvényeket kell használniuk az architektúra folyamatos ellenőrzése érdekében.
+--- TANANYAG VÉGE ---
+
+Kérdések:
+1. Mi bírálja felül a korábbi órai gyakorlat pontszámát?
+2. Kinek csökken a pontszáma, ha csapatmunkánál valaki egyénileg hibázik?
+3. Mikor lesz a 2. zárthelyi dolgozat?
+4. Milyen kedvezményt kap az, aki igazoltan hiányzik a zárthelyiről?
+5. Mit jelent a 'kettős felülvizsgálat' szabálya?
+6. Mennyi a minimum elvárt tesztlefedettség?
+7. Legfeljebb hány linter-figyelmeztetés engedhető meg hibátlan beadáshoz?
+8. Legfeljebb hány fő alkothat egy csapatot a projektmunkánál?
+
+Válaszolj KIZÁRÓLAG a JSON tömbbel, más szöveg nélkül.

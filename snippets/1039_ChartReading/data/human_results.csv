@@ -1,0 +1,118 @@
+chart_id,chart_type,level,repeat,condition,model_alias,question_id,question_kind,expected_answer,given_answer,exact_match,tolerance_match,parse_ok
+bar_level1_rep1,bar,1,1,image,human,1,exact_value,19.0,19,1,1,1
+bar_level1_rep1,bar,1,1,image,human,2,difference,3.0,3,1,1,1
+bar_level1_rep1,bar,1,1,image,human,3,extremum,1. mérés,1,1,1,1
+bar_level1_rep2,bar,1,2,image,human,1,exact_value,34.0,34,1,1,1
+bar_level1_rep2,bar,1,2,image,human,2,difference,33.0,32,0,1,1
+bar_level1_rep2,bar,1,2,image,human,3,extremum,2. mérés,2,1,1,1
+bar_level2_rep1,bar,2,1,image,human,1,exact_value,70.0,71,0,1,1
+bar_level2_rep1,bar,2,1,image,human,2,difference,12.0,14,0,0,1
+bar_level2_rep1,bar,2,1,image,human,3,extremum,3. mérés,3,1,1,1
+bar_level2_rep2,bar,2,2,image,human,1,exact_value,90.0,88,0,1,1
+bar_level2_rep2,bar,2,2,image,human,2,difference,36.0,33,0,0,1
+bar_level2_rep2,bar,2,2,image,human,3,extremum,2. mérés,2,1,1,1
+bar_level3_rep1,bar,3,1,image,human,1,exact_value,69.4,70,0,1,1
+bar_level3_rep1,bar,3,1,image,human,2,difference,39.2,40,0,1,1
+bar_level3_rep1,bar,3,1,image,human,3,extremum,9. mérés,9,1,1,1
+bar_level3_rep2,bar,3,2,image,human,1,exact_value,97.3,97,0,1,1
+bar_level3_rep2,bar,3,2,image,human,2,difference,74.0,74,1,1,1
+bar_level3_rep2,bar,3,2,image,human,3,extremum,1. mérés,1,1,1,1
+bar_level4_rep1,bar,4,1,image,human,1,exact_value,76.75,77,0,1,1
+bar_level4_rep1,bar,4,1,image,human,2,difference,1.45,2,0,0,1
+bar_level4_rep1,bar,4,1,image,human,3,extremum,2. mérés,2,1,1,1
+bar_level4_rep2,bar,4,2,image,human,1,exact_value,38.56,38,0,1,1
+bar_level4_rep2,bar,4,2,image,human,2,difference,13.34,13,0,1,1
+bar_level4_rep2,bar,4,2,image,human,3,extremum,15. mérés,15,1,1,1
+bar_level5_rep1,bar,5,1,image,human,1,exact_value,64.62,65,0,1,1
+bar_level5_rep1,bar,5,1,image,human,2,difference,1.51,2,0,0,1
+bar_level5_rep1,bar,5,1,image,human,3,extremum,13. mérés,13,1,1,1
+bar_level5_rep2,bar,5,2,image,human,1,exact_value,19.76,20,0,1,1
+bar_level5_rep2,bar,5,2,image,human,2,difference,6.58,7,0,1,1
+bar_level5_rep2,bar,5,2,image,human,3,extremum,2. mérés,2,1,1,1
+bar_level5_rep3,bar,5,3,image,human,1,exact_value,17.4,18,0,1,1
+bar_level5_rep3,bar,5,3,image,human,2,difference,31.65,33,0,1,1
+bar_level5_rep3,bar,5,3,image,human,3,extremum,1. mérés,17,0,0,1
+bar_level5_rep4,bar,5,4,image,human,1,exact_value,40.51,41,0,1,1
+bar_level5_rep4,bar,5,4,image,human,2,difference,24.19,23,0,1,1
+bar_level5_rep4,bar,5,4,image,human,3,extremum,13. mérés,23,0,0,1
+bar_level5_rep5,bar,5,5,image,human,1,exact_value,62.28,63,0,1,1
+bar_level5_rep5,bar,5,5,image,human,2,difference,9.64,10,0,1,1
+bar_level5_rep5,bar,5,5,image,human,3,extremum,8. mérés,8,1,1,1
+line_level1_rep1,line,1,1,image,human,1,exact_value,23.0,16,0,0,1
+line_level1_rep1,line,1,1,image,human,2,difference,3.0,4,0,0,1
+line_level1_rep1,line,1,1,image,human,3,extremum,4. mérés,4,1,1,1
+line_level1_rep2,line,1,2,image,human,1,exact_value,49.0,51,0,1,1
+line_level1_rep2,line,1,2,image,human,2,difference,48.0,53,0,0,1
+line_level1_rep2,line,1,2,image,human,3,extremum,2. mérés,2,1,1,1
+line_level2_rep1,line,2,1,image,human,1,exact_value,67.0,67,1,1,1
+line_level2_rep1,line,2,1,image,human,2,difference,30.0,30,1,1,1
+line_level2_rep1,line,2,1,image,human,3,extremum,5. mérés,5,1,1,1
+line_level2_rep2,line,2,2,image,human,1,exact_value,14.0,14,1,1,1
+line_level2_rep2,line,2,2,image,human,2,difference,38.0,39,0,1,1
+line_level2_rep2,line,2,2,image,human,3,extremum,4. mérés,4,1,1,1
+line_level3_rep1,line,3,1,image,human,1,exact_value,78.4,79,0,1,1
+line_level3_rep1,line,3,1,image,human,2,difference,43.8,43,0,1,1
+line_level3_rep1,line,3,1,image,human,3,extremum,1. mérés,1,1,1,1
+line_level3_rep2,line,3,2,image,human,1,exact_value,69.7,70,0,1,1
+line_level3_rep2,line,3,2,image,human,2,difference,2.9,3,0,1,1
+line_level3_rep2,line,3,2,image,human,3,extremum,5. mérés,5,1,1,1
+line_level4_rep1,line,4,1,image,human,1,exact_value,59.49,59,0,1,1
+line_level4_rep1,line,4,1,image,human,2,difference,6.38,5,0,0,1
+line_level4_rep1,line,4,1,image,human,3,extremum,1. mérés,1,1,1,1
+line_level4_rep2,line,4,2,image,human,1,exact_value,65.65,66,0,1,1
+line_level4_rep2,line,4,2,image,human,2,difference,28.5,29,0,1,1
+line_level4_rep2,line,4,2,image,human,3,extremum,2. mérés,2,1,1,1
+line_level5_rep1,line,5,1,image,human,1,exact_value,38.71,38,0,1,1
+line_level5_rep1,line,5,1,image,human,2,difference,5.7,6,0,1,1
+line_level5_rep1,line,5,1,image,human,3,extremum,22. mérés,23,0,0,1
+line_level5_rep2,line,5,2,image,human,1,exact_value,80.82,81,0,1,1
+line_level5_rep2,line,5,2,image,human,2,difference,19.46,19,0,1,1
+line_level5_rep2,line,5,2,image,human,3,extremum,24. mérés,24,1,1,1
+line_level5_rep3,line,5,3,image,human,1,exact_value,66.95,68,0,1,1
+line_level5_rep3,line,5,3,image,human,2,difference,36.79,37,0,1,1
+line_level5_rep3,line,5,3,image,human,3,extremum,22. mérés,22,1,1,1
+line_level5_rep4,line,5,4,image,human,1,exact_value,67.15,68,0,1,1
+line_level5_rep4,line,5,4,image,human,2,difference,1.43,1,0,0,1
+line_level5_rep4,line,5,4,image,human,3,extremum,12. mérés,12,1,1,1
+line_level5_rep5,line,5,5,image,human,1,exact_value,13.34,12,0,0,1
+line_level5_rep5,line,5,5,image,human,2,difference,67.6,70,0,1,1
+line_level5_rep5,line,5,5,image,human,3,extremum,19. mérés,19,1,1,1
+scatter_level1_rep1,scatter,1,1,image,human,1,exact_value,56.0,57,0,1,1
+scatter_level1_rep1,scatter,1,1,image,human,2,difference,25.0,24,0,1,1
+scatter_level1_rep1,scatter,1,1,image,human,3,extremum,4,4,1,1,1
+scatter_level1_rep2,scatter,1,2,image,human,1,exact_value,90.0,90,1,1,1
+scatter_level1_rep2,scatter,1,2,image,human,2,difference,27.0,26,0,1,1
+scatter_level1_rep2,scatter,1,2,image,human,3,extremum,2,2,1,1,1
+scatter_level2_rep1,scatter,2,1,image,human,1,exact_value,50.0,50,1,1,1
+scatter_level2_rep1,scatter,2,1,image,human,2,difference,45.0,46,0,1,1
+scatter_level2_rep1,scatter,2,1,image,human,3,extremum,6,6,1,1,1
+scatter_level2_rep2,scatter,2,2,image,human,1,exact_value,31.0,32,0,1,1
+scatter_level2_rep2,scatter,2,2,image,human,2,difference,40.0,40,1,1,1
+scatter_level2_rep2,scatter,2,2,image,human,3,extremum,6,6,1,1,1
+scatter_level3_rep1,scatter,3,1,image,human,1,exact_value,80.7,81,0,1,1
+scatter_level3_rep1,scatter,3,1,image,human,2,difference,8.2,9,0,0,1
+scatter_level3_rep1,scatter,3,1,image,human,3,extremum,11,11,1,1,1
+scatter_level3_rep2,scatter,3,2,image,human,1,exact_value,29.6,30,0,1,1
+scatter_level3_rep2,scatter,3,2,image,human,2,difference,21.7,23,0,1,1
+scatter_level3_rep2,scatter,3,2,image,human,3,extremum,4,4,1,1,1
+scatter_level4_rep1,scatter,4,1,image,human,1,exact_value,12.63,37,0,0,1
+scatter_level4_rep1,scatter,4,1,image,human,2,difference,61.41,28,0,0,1
+scatter_level4_rep1,scatter,4,1,image,human,3,extremum,9,9,1,1,1
+scatter_level4_rep2,scatter,4,2,image,human,1,exact_value,77.05,78,0,1,1
+scatter_level4_rep2,scatter,4,2,image,human,2,difference,28.05,29,0,1,1
+scatter_level4_rep2,scatter,4,2,image,human,3,extremum,5,5,1,1,1
+scatter_level5_rep1,scatter,5,1,image,human,1,exact_value,26.37,27,0,1,1
+scatter_level5_rep1,scatter,5,1,image,human,2,difference,59.84,61,0,1,1
+scatter_level5_rep1,scatter,5,1,image,human,3,extremum,11,11,1,1,1
+scatter_level5_rep2,scatter,5,2,image,human,1,exact_value,99.92,100,0,1,1
+scatter_level5_rep2,scatter,5,2,image,human,2,difference,13.38,14,0,1,1
+scatter_level5_rep2,scatter,5,2,image,human,3,extremum,2,2,1,1,1
+scatter_level5_rep3,scatter,5,3,image,human,1,exact_value,17.84,18,0,1,1
+scatter_level5_rep3,scatter,5,3,image,human,2,difference,46.86,47,0,1,1
+scatter_level5_rep3,scatter,5,3,image,human,3,extremum,12,12,1,1,1
+scatter_level5_rep4,scatter,5,4,image,human,1,exact_value,96.5,97,0,1,1
+scatter_level5_rep4,scatter,5,4,image,human,2,difference,1.64,3,0,0,1
+scatter_level5_rep4,scatter,5,4,image,human,3,extremum,17,17,1,1,1
+scatter_level5_rep5,scatter,5,5,image,human,1,exact_value,25.96,27,0,1,1
+scatter_level5_rep5,scatter,5,5,image,human,2,difference,39.76,39,0,1,1
+scatter_level5_rep5,scatter,5,5,image,human,3,extremum,19,19,1,1,1

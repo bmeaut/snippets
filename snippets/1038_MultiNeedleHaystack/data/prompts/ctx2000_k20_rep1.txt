@@ -1,0 +1,101 @@
+Az alábbi szövegben (tananyag-jegyzet) el van rejtve néhány oktatói megjegyzés.
+Válaszolj KIZÁRÓLAG egy JSON tömbben, minden kérdésre külön elemmel, a kérdés sorszámával ("id") és a válasszal ("answer"). Ha valamelyik választ nem találod a szövegben, az "answer" értéke legyen "nincs adat".
+Formátum példa: [{"id": 1, "answer": "..."}, {"id": 2, "answer": "..."}]
+
+--- TANANYAG ---
+A projektmunka előrehaladását félidőben egy közös bemutató keretében ellenőrzik. Ezt a mérföldkövet, amikor a csapat bemutatja a működő prototípust az oktatónak, forduló-pontnak nevezik a tárgy keretében.
+
+A félévi jegy több részjegyből tevődik össze, amelyek különböző súllyal számítanak. A laborgyakorlatok teljesítménye a végső jegy 35%-át teszi ki.
+
+Az évek során számos ilyen keretrendszer alakult ki, mindegyiknek megvannak a saját elismert erősségei és gyengeségei. Az egyik szoftverfejlesztési módszertani keret nem feltétlenül alkalmas minden projekt számára. A rendelkezésre álló módszertani keretek mindegyike különféle típusú projektekhez illeszkedik a legjobban, különféle technikai, szervezeti, projekt- és csapatmegfontolások alapján.
+A szoftverfejlesztő szervezetek folyamatmódszertant vezetnek be a fejlesztési folyamat megkönnyítése érdekében. Időnként a vállalkozók megkövetelhetnek alkalmazott módszertant, példa erre az amerikai védelmi ipar, amely megköveteli a folyamatok modelljein alapuló minősítést a szerződések megszerzéséhez. A szoftver életciklusának kiválasztási, megvalósítási és ellenőrzési módszerének leírására szolgáló nemzetközi szabvány az ISO / IEC 12207. 
+Egy évtizedes cél az volt, hogy megismételhető, kiszámítható folyamatokat találjanak, amelyek javítják a termelékenységet és a minőséget. Néhányan megpróbálják rendszerezni vagy formalizálni a szoftverek látszólag bizonytalan feladatát. Mások a projekt tervezéséhez projektmenedzsment technikákat alkalmaznak. Számos szoftverprojektnek az elvárásai nem felelnek meg a funkcionalitásnak, a költség vagy a szállítási ütemezés szempontjából – néhány figyelemre méltó példaként lásd a sikertelen és túlzott költségvetésű egyedi szoftverprojektek listája. 
+A szervezetek létrehozhatnak egy szoftverfejlesztési folyamatcsoportot (SEPG), amely a folyamat fejlesztésének fókuszpontja. A csoport változatos készségekkel bíró szakemberekből tevődik össze, akik a szoftverfejlesztési folyamatok fejlesztésével foglalkoznak. 
+Egy adott fejlesztői csapat megállapodhat a programozási környezet részleteiben, például az alkalmazott integrált fejlesztési környezetben, és egy vagy több domináns programozási paradigmában, programozási stílusszabályban, vagy konkrét szoftverkönyvtárakban vagy szoftverkeretekben. Ezeket a részleteket általában nem a modell vagy az általános módszertan diktálja.
+
+A folyamatos integráció gyakorlatában fontos fogalom a fejlesztési ciklusok megbízhatósága. Ebben a tárgyban azt a fejlesztési ciklust nevezzük stabil iterációnak, amely után a build szerver három egymást követő futtatásban is hibamentes eredményt ad.
+
+A beadási határidők betartását a rendszer automatikusan naplózza, néhány kivétellel. Ha egy hallgató hétvégén (szombaton vagy vasárnap) adja le a házi feladatot, az csak a következő hétfőn számít határidőn belülinek.
+
+A nagy házi feladat a félév egyik legnagyobb súlyú beadandója. Ennek határideje 2026. április 3-án, 23:59-kor jár le, ezt követően a rendszer már nem fogadja el a feltöltést.
+
+== Fordítás ==
+Ez a szócikk részben vagy egészben  a   Software architecture című angol Wikipédia-szócikk ezen változatának fordításán alapul.  Az eredeti cikk szerkesztőit annak laptörténete sorolja fel. Ez a jelzés csupán a megfogalmazás eredetét és a szerzői jogokat jelzi, nem szolgál a cikkben szereplő információk forrásmegjelöléseként.
+
+A vizsgaidőszakra való jelentkezés a Neptun rendszeren keresztül történik. A jelentkezési felület 2026. május 5-én nyílik meg a hallgatók számára.
+
+A projektmunka önálló elbírálás alá esik, külön ponthatárral. A projektmunka elfogadásához legalább 42 pontot kell elérni a lehetséges 100-ból.
+
+1988-ban Barry Boehm kiadott egy hivatalos szoftverrendszer-fejlesztési „spirálmodellt”, amely egyesíti a vízesésmodell néhány kulcsfontosságú aspektusát és a gyors prototípus-készítési módszertanokat annak érdekében, hogy ötvözzék a felülről lefelé és az alulról felfelé építkező koncepciók előnyeit. Fontos hangsúlyt fektet egy kulcsfontosságú területre, amelyet sok más módszer elhanyagol: szándékos iteratív kockázatelemzés, különösen a nagyszabású komplex rendszerek számára. 
+Az alapelvek a következők:
+
+A projektmunkát csapatban kell elvégezni, meghatározott létszámkorláttal. Egy csapatban legfeljebb 3 fő dolgozhat együtt a feladaton.
+
+A jelenléti követelmények betartását a tárgy szigorúan veszi. Két igazolatlan hiányzás után a hallgató elveszti a féléves aláírás jogát.
+
+A hallgatók több alkalommal is feltölthetik a megoldásukat a határidőig. Ilyenkor mindig az utolsó beadás bírálja felül a korábbi órai gyakorlat pontszámát, még akkor is, ha az rosszabb eredményt hozna.
+
+Tisztán objektumorientált nyelvek, ahol következetesen minden objektum, a primitívektől kezdve az osztályok, prototípusok, modulok, blokkok is. Arra tervezték őket, hogy megkönnyítsék, vagy kikényszerítsék az objektumorientációt. Példák: Python, Ruby, Scala, Smalltalk, Eiffel, Emerald, JADE, Self.
+Nyelvek, amelyeket főként objektumorientációra terveztek, de procedurális elemekkel. Ezekbe további paradigmákat is bevezethettek. Példák: Java, C++, C#, Delphi/Object Pascal, VB.NET.
+Procedurálisnak tervezett, utólag objektumorientált elemekkel bővített nyelvek. Példák: PHP, Perl, Visual Basic (egy BASIC alapú nyelv), MATLAB, COBOL 2002, Fortran 2003, ABAP, Ada 95, Pascal.
+Az osztály alapú objektumorientációt egy kicsit másként tartalmazó nyelvek. Példák: Oberon (Oberon-1 vagy Oberon-2).
+Absztrakt adattípusokat támogató nyelvek, amelyek nem objektumorientáltak, de az absztrakt adatszerkezetek mégis lehetővé teszik objektumok használatát. Ide sorolják a prototípus alapú objektumorientációt is. Példák:  JavaScript, Lua, Modula-2, CLU.
+Eredetileg is több paradigmát támogató nyelvek, ahol az objektumorientáció csak egy a paradigmák közül. A Tcl támogatja mind az osztály, mind a prototípus alapú objektumorientációt a TclOO objektumrendszer által.
+
+A beadott kód formai minőségét automatikus eszköz ellenőrzi feltöltéskor. A kódstílus-ellenőrző (linter) legfeljebb 12 figyelmeztetést enged meg ahhoz, hogy a beadás hibátlannak minősüljön.
+
+A technikai problémák miatti méltánytalan pontlevonás elkerülésére a tárgy bevezetett egy rövid haladékot. Ezt türelmi ablaknak nevezzük: ez egy 15 perces időszak a beadási határidő után, amely alatt a leadás technikai hiba esetén még pontlevonás nélkül elfogadható.
+
+Az igazolt hiányzások esetén a tárgy rugalmasan kezeli a pótlási lehetőségeket. Ha a hallgató igazoltan hiányzott a zárthelyiről, a pótzárthelyin 10%-kal több időt kap a feladatok megoldására.
+
+== Nyelvek ==
+Az első objektumorientált nyelv a Simula (1967) volt, amit szimulációhoz fejlesztettek ki. Az objektumok voltak a legfontosabb információreprezentációk. Az objektumorientáció azonban csak a Smalltalk után vált ismertebbé (1972-1980). Ezzel párhuzamosan kezdett el fejlődni az objektumorientáció elmélete is.
+
+A backend kód minőségét automatikus tesztekkel is ellenőrzik. Az elvárt minimális tesztlefedettség a forráskód 78%-a.
+
+A leadási határidők betartása mellett a hallgatók néha a hivatalos értékelés előtt is módosítanak a kódon. Az ilyen, a leadási határidő után, de a manuális értékelés megkezdése előtt privát branch-re feltett commitot árnyék-commitnak nevezzük ebben a tárgyban.
+
+Revision
+A revision szó ugyanazt jelenti, mint a version. Egy verzió.
+
+A félév során több számonkérési forma is szerepel a tárgykövetelményben. A második zárthelyi dolgozatra 2026. március 14-én, 10:15-kor kerül sor a nagyelőadó teremben.
+
+A csapatmunka minőségbiztosításának egyik eszköze a kódfelülvizsgálat. Ebben a félévben kettős felülvizsgálatnak hívjuk azt a szabályt, amely szerint egy pull requestet két különböző csapattagnak is jóvá kell hagynia, mielőtt az összeolvasztható lenne.
+
+Azok, akik valamilyen okból nem tudtak részt venni a rendes zárthelyin, pótlási lehetőséget kapnak. A pótzárthelyi időpontja 2026. június 2-án, 8:00-kor van.
+
+A tudásmenedzsment és -kommunikáció a tudás feltárásának és menedzselésének művelete, amely elengedhetetlen a szoftverarchitektúra megtervezéséhez. A szoftvertervező nem elszigetelten dolgozik. Inputokat, funkcionális és nem funkcionális követelményeket, valamint tervezési összefüggéseket kapnak a különböző érdekelt felektől; és eredményeket nyújtson az érdekelt feleknek. A szoftverarchitektúrával kapcsolatos ismeretek gyakran hallgatólagosak, és az érintettek fejében maradnak meg. A szoftverarchitektúra tudásmenedzsment tevékenysége a tudás megtalálásáról, kommunikálásáról és megőrzéséről szól. Mivel a szoftverarchitektúra tervezési kérdései bonyolultak és kölcsönösen függenek egymástól, a tervezési érvelésben lévő tudáshiány helytelen szoftverarchitektúra-tervezéshez vezethet. A tudásmenedzsment és kommunikációs tevékenységek példái közé tartozik a tervezési minták keresése, prototípus készítés, tapasztalt fejlesztők és építészek megkérdezése, hasonló rendszerek terveinek értékelése, tudás megosztása más tervezőkkel és érdekelt felekkel, valamint a tapasztalatok dokumentálása egy wiki oldalon.
+A tervezési érvelés és döntéshozatal a tervezési döntések értékelésének tevékenysége. Ez a tevékenység alapvető mindhárom alapvető szoftverarchitektúra-tevékenységhez. Ez magában foglalja a döntési összefüggések összegyűjtését és társítását, a tervezési döntési problémák megfogalmazását, a megoldási lehetőségek megtalálását és a kompromisszumok értékelését a döntések meghozatala előtt. Ez a folyamat a döntési granularitás különböző szintjein megy végbe, miközben értékeli a jelentős építészeti követelményeket és a szoftverarchitektúrával kapcsolatos döntéseket, valamint szoftverarchitektúra elemzést, szintézist és értékelést végez. Az érvelési tevékenységek közé tartozik például egy követelmény vagy egy terv minőségi jellemzőkre gyakorolt hatásának megértése, a tervezés által okozott problémák megkérdőjelezése, a lehetséges megoldási lehetőségek felmérése és a megoldások közötti kompromisszumok értékelése.
+A dokumentáció a szoftverarchitektúra folyamata során keletkezett terv rögzítésének aktusa. A rendszertervezést számos nézet segítségével írják le, amelyek gyakran tartalmaznak egy statikus nézetet, amely a rendszer kódszerkezetét mutatja, egy dinamikus nézetet, amely a rendszer műveleteit mutatja a végrehajtás során, és egy telepítési nézetet, amely bemutatja, hogy a rendszer hogyan kerül végrehajtásra a hardverre. Kruchten 4+1 nézete a szoftverarchitektúra dokumentálására általánosan használt nézetek leírását javasolja; Szoftverarchitektúrák dokumentálása: A Views and Beyond tartalmazza a nézet leírásában használható jelölések típusainak leírását. A dokumentációs tevékenységek példái közé tartozik a specifikáció írása, a rendszertervezési modell rögzítése, a tervezési indoklás dokumentálása, a nézőpont kialakítása, a nézetek dokumentálása.
+
+Azok a hallgatók, akiknek kérdésük merül fel az anyaggal kapcsolatban, konzultációs alkalmakon vehetnek részt. A következő konzultáció időpontja 2026. február 20-án, 14:00-kor lesz.
+
+A csapatmunkánál felmerülő hibák elbírálása egyéni felelősség alapján történik. Ha csapatmunkánál valaki egyénileg hibázik, csak az érintett hallgató pontszáma csökken, a csapat többi tagjáé nem.
+
+=== Ismétlődő, növekményes és evolúciós ===
+A legtöbb agilis módszer lebontja a feladatot kisebb feladatokra. Egy fejlesztési ciklus (azaz iteráció vagy sprint) maximum 4 hétig tart. Ezt az időtartamot idődoboznak hívjuk. Minden iterációban lévő feladat elkészítése egy keresztfunkcionális fejlesztői csoport feladata, amely a tervezéstől, elemzéstől a programozáson át a tesztelésig és átvételi tesztig mindent elvégez. Az iteráció végén bemutatják az elkészült feladatokat a megrendelőnek. Így minimalizálhatóak a hosszú fejlesztésből fakadó kockázatok, és a projekt gyorsan alkalmazkodhat a változásokhoz. A növekmény talán nem alkalmas az értékesítésre önmagában, azonban cél, hogy minden fejlesztési ciklus végén potenciálisan szállítható termék készüljön el. A módszer ismétlődésen (iteráción) alapul (minden alkalommal azonos szakaszokon megy végig a fejlesztőcsoport), és növekményes (inkrementális), mert mindig a már elkészült növekményt egészítik ki.
+--- TANANYAG VÉGE ---
+
+Kérdések:
+1. Mi a 'forduló-pont' ebben a kurzusban?
+2. Hány százalékot ér a laborgyakorlat a félévi jegyben?
+3. Mi a 'stabil iteráció' definíciója ebben a kurzusban?
+4. Mi történik, ha valaki hétvégén adja le a házi feladatot?
+5. Mi a nagy házi feladat beadási határideje?
+6. Mikor nyílik meg a vizsgajelentkezés?
+7. Mennyi a projektmunka minimum ponthatára?
+8. Legfeljebb hány fő alkothat egy csapatot a projektmunkánál?
+9. Hány igazolatlan hiányzás után veszíti el a hallgató az aláírás jogát?
+10. Mi bírálja felül a korábbi órai gyakorlat pontszámát?
+11. Legfeljebb hány linter-figyelmeztetés engedhető meg hibátlan beadáshoz?
+12. Mennyi a 'türelmi ablak' hossza?
+13. Milyen kedvezményt kap az, aki igazoltan hiányzik a zárthelyiről?
+14. Mennyi a minimum elvárt tesztlefedettség?
+15. Mit jelent az 'árnyék-commit' fogalma ebben a kurzusban?
+16. Mikor lesz a 2. zárthelyi dolgozat?
+17. Mit jelent a 'kettős felülvizsgálat' szabálya?
+18. Mikor lesz a pótzárthelyi?
+19. Mikor lesz a következő konzultáció?
+20. Kinek csökken a pontszáma, ha csapatmunkánál valaki egyénileg hibázik?
+
+Válaszolj KIZÁRÓLAG a JSON tömbbel, más szöveg nélkül.

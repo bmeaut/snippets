@@ -1,0 +1,104 @@
+Az alábbi szövegben (tananyag-jegyzet) el van rejtve néhány oktatói megjegyzés.
+Válaszolj KIZÁRÓLAG egy JSON tömbben, minden kérdésre külön elemmel, a kérdés sorszámával ("id") és a válasszal ("answer"). Ha valamelyik választ nem találod a szövegben, az "answer" értéke legyen "nincs adat".
+Formátum példa: [{"id": 1, "answer": "..."}, {"id": 2, "answer": "..."}]
+
+--- TANANYAG ---
+A leadási határidők betartása mellett a hallgatók néha a hivatalos értékelés előtt is módosítanak a kódon. Az ilyen, a leadási határidő után, de a manuális értékelés megkezdése előtt privát branch-re feltett commitot árnyék-commitnak nevezzük ebben a tárgyban.
+
+== Történelem ==
+A szoftvertervezés és a (polgári) architektúra összehasonlítása először az 1960-as évek végén merült fel, de a "szoftverarchitektúra" kifejezést csak a 90-es években használták széles körben. A számítástechnika területe megalakulása óta a komplexitáshoz kapcsolódó problémákkal szembesült. A korábbi komplexitási problémákat a fejlesztők a megfelelő adatszerkezetek kiválasztásával, algoritmusok fejlesztésével és az aggodalmak szétválasztásának koncepciójával oldották meg. Bár a „szoftverarchitektúra” kifejezés viszonylag új az iparban, a terület alapelveit a szoftverfejlesztés úttörői az 1980-as évek közepe óta szórványosan alkalmazzák. A rendszer szoftverarchitektúrájának rögzítésére és magyarázatára tett korai kísérletek pontatlanok és szervezetlenek voltak, gyakran doboz- és vonaldiagramok jellemezték.
+A szoftverarchitektúra mint fogalom Edsger Dijkstra 1968-as és David Parnas 1970-es évek elején végzett kutatásából ered. Ezek a tudósok hangsúlyozták, hogy a szoftverrendszer felépítése számít, és a struktúra megfelelő kialakítása kritikus fontosságú. Az 1990-es években összehangolt erőfeszítések folytak a tudományág alapvető aspektusainak meghatározására és kodifikálására, az építészeti stílusokra (mintázatokra), építészeti leírási nyelvekre, építészeti dokumentációra és formai módszerekre összpontosítva.
+A kutatóintézetek kiemelkedő szerepet játszottak a szoftverarchitektúra, mint tudományág továbbfejlesztésében. Mary Shaw és David Garlan (Carnegie Mellon) 1996-ban könyvet írt Software Architecture: Perspectives on an Emerging Discipline címmel, amely olyan szoftverarchitektúra koncepciókat hirdetett, mint az összetevők, csatlakozók és stílusok. A Kaliforniai Egyetem (Irvine 's Institute for Software Research) szoftverarchitektúra-kutatási erőfeszítései elsősorban az építészeti stílusokra, az architektúraleíró nyelvekre és a dinamikus architektúrákra irányulnak.
+Az IEEE 1471-2000, "A szoftverintenzív rendszerek architektúrájának leírása javasolt gyakorlat" volt az első formális szabvány a szoftverarchitektúra területén. 2007-ben fogadta el az ISO ISO/IEC 42010:2007 szabványként. 2011 novemberében az IEEE 1471–2000 szabványt felváltotta az ISO/IEC/IEEE 42010:2011, "Rendszer- és szoftverfejlesztés – Architektúra leírása" (az IEEE és az ISO közösen publikálta).
+Míg az IEEE 1471- ben a szoftverarchitektúra a „szoftverintenzív rendszerek” architektúrájáról szólt, amelyet úgy határoztak meg, mint „minden olyan rendszert, ahol a szoftver alapvetően befolyásolja a rendszer egészének tervezését, felépítését, telepítését és fejlődését”, a 2011-es kiadás. tovább megy az ISO/IEC 15288 és az ISO/IEC 12207 rendszerdefiníciók beépítésével, amelyek nemcsak hardvert és szoftvert foglalnak magukban, hanem „emberek, folyamatok, eljárások, létesítmények, anyagok és természetben előforduló entitások”. Ez tükrözi a szoftver-architektúra, a vállalati architektúra és a megoldás-architektúra közötti kapcsolatot.
+
+A projektmunka előrehaladását félidőben egy közös bemutató keretében ellenőrzik. Ezt a mérföldkövet, amikor a csapat bemutatja a működő prototípust az oktatónak, forduló-pontnak nevezik a tárgy keretében.
+
+=== Inkrementális fejlesztés ===
+Különböző módszerek elfogadhatók a lineáris és az iteratív rendszerek fejlesztési módszertanának kombinálására, amelynek elsődleges célja az, hogy csökkentse a velejáró projektkockázatot a projekt kisebb szegmensekre bontásával és a változtatások egyszerűbbé tételével a fejlesztési folyamat során. 
+Az inkrementális fejlesztésnek három fő változata van:
+
+A backend kód minőségét automatikus tesztekkel is ellenőrzik. Az elvárt minimális tesztlefedettség a forráskód 78%-a.
+
+A félévi jegy több részjegyből tevődik össze, amelyek különböző súllyal számítanak. A laborgyakorlatok teljesítménye a végső jegy 35%-át teszi ki.
+
+== További információk ==
+Magyarázat az IBM Developerworksről
+Szoftverarchitektúra-definíciók gyűjteménye a Software Engineering Institute -nál (SEI), a Carnegie Mellon Egyetemen (CMU)
+IT Építészek Nemzetközi Szövetsége (IASA Global), korábban Szoftverépítészek Nemzetközi Szövetsége (IASA)
+SoftwareArchitecturePortal.org – az IFIP 2.10 szoftverarchitektúrával foglalkozó munkacsoportjának webhelye
+SoftwareArchitectures.com Archiválva 2023. október 29-i dátummal a Wayback Machine-ben – független információforrás a tudományágról
+Szoftverarchitektúra, Roy Fielding REST disszertációjának 1. fejezete
+Amikor a jó építészet elromlik
+A spirálarchitektúra által vezérelt fejlesztés – a spirálmodellre épülő SDLC célja a nem hatékony architektúra kockázatának csökkentése
+Szoftverarchitektúra valós esettanulmányok
+
+A vizsgaidőszakra való jelentkezés a Neptun rendszeren keresztül történik. A jelentkezési felület 2026. május 5-én nyílik meg a hallgatók számára.
+
+=== Szószedet ===
+business
+A szoftvert megrendelő szervezet
+business analyst, BA
+A megrendelő elvárásait közvetítő megbízott
+business requirements
+A megfogalmazott elvárások
+Software Quality Assurance, SQA
+Szoftverminőség-biztosítás
+test requirements
+A tesztelendő funkcionalitások listája
+test coverage
+Funkcionalitás tesztekkel való lefedésének mértéke
+test plan
+Előzetes tesztelési terv a megfelelő test coverage elérése érdekében
+test scenario
+Egy alternatív tesztelési módszertan, a scenario testing esetében – és csak ott – hasonló szerepet tölt be, mint a test suite. Részletek itt.
+test script
+Ezt a kifejezést helytelenül használják az automated test case helyett. A scripted testing ellentéte nem a manual testing, hanem az exploratory. A test script a test case szinonimája. Részletek itt.
+test case
+Egy elvárás egy adott részének működését ellenőrző dokumentum. Nagyon pontosan leírt feltételek és inputok mellett nagyon pontosan leírt funkcionalitást és outputot vár az ellenőrzött szoftvertől.
+test suite
+Egy adott funkcionalitást leíró test case-ek összessége a test suite.
+validation
+Ellenőrzés: "you built the right product" – tehát a specifikáció tényleg a megrendelő elvárásait tartalmazza
+verification
+Ellenőrzés: "you built the product right" – tehát a programozó a specifikáció szerint írta meg a szoftvert
+fault
+Programozási hiba, mely funkcionális hibával nem jár.
+failure
+Programozási hiba, mely a funkcionalitásra hatással van.
+defect
+Tesztelő által észlelt failure, programozó által vissza nem igazolt
+bug
+Defect, mely a programozó szerint is az
+
+A projektmunkát csapatban kell elvégezni, meghatározott létszámkorláttal. Egy csapatban legfeljebb 3 fő dolgozhat együtt a feladaton.
+
+A beadott kód formai minőségét automatikus eszköz ellenőrzi feltöltéskor. A kódstílus-ellenőrző (linter) legfeljebb 12 figyelmeztetést enged meg ahhoz, hogy a beadás hibátlannak minősüljön.
+
+A prototípus-készítés nem önálló, komplett fejlesztési módszertan, hanem inkább megközelítés, amely a sajátos tulajdonságok kipróbálására szolgál egy teljes módszertan összefüggésében (például inkrementális, spirális vagy gyors alkalmazásfejlesztés (RAD)).
+Arra törekszik, hogy csökkentse a velejáró projektkockázatot azáltal, hogy egy projektet kisebb szegmensekre bont, és nagyobb változtathatóságot biztosít a fejlesztési folyamat során.
+Az ügyfelet bevonják a fejlesztési folyamatba, ami növeli annak valószínűségét, hogy az ügyfél elfogadja a végső megvalósítást.
+Míg néhány prototípust azzal a tudattal fejlesztenek ki, hogy el fogják távolítani, bizonyos esetekben lehetséges a prototípusról a működő rendszerre történő áttérés.
+A helytelen problémák megoldásának elkerülése érdekében szükséges az alapvető üzleti probléma megértése, de ez igaz minden szoftver módszertanra.
+
+A nagy házi feladat a félév egyik legnagyobb súlyú beadandója. Ennek határideje 2026. április 3-án, 23:59-kor jár le, ezt követően a rendszer már nem fogadja el a feltöltést.
+
+Makroszkópos rendszerstruktúra: Ez a szoftverrendszer architektúrájára utal, mint egy magasabb szintű absztrakció, amely számítási komponensek gyűjteményéből áll, valamint a komponensek közötti interakciókat leíró csatlakozókból.
+A fontos dolog – bármi legyen is az: ez arra utal, hogy a szoftvertervezőknek foglalkozniuk kell azokkal a döntésekkel, amelyek nagy hatással vannak a rendszerre és annak érdekelt feleire.
+Ami alapvető a környezetében lévő rendszer megértéséhez
+Dolgok, amelyeken az emberek nehezen változtathatók: mivel az architektúra tervezése a szoftverrendszer életciklusának kezdetén történik, az építésznek azokra a döntésekre kell összpontosítania, amelyeknek első alkalommal helyesnek kell lenniük. Ezt a gondolatmenetet követve az építészeti tervezési kérdések nem építészeti jellegűekké válhatnak, amint visszafordíthatatlanságuk leküzdhető.
+Építészeti tervezési döntések halmaza: a szoftverarchitektúrát nem szabad csupán modellek vagy struktúrák halmazának tekinteni, hanem magában kell foglalnia azokat a döntéseket, amelyek ezekhez a konkrét struktúrákhoz vezetnek, és az ezek mögött meghúzódó indokokat. Ez a betekintés jelentős kutatásokhoz vezetett a szoftverarchitektúra tudásmenedzsment terén.
+Nincs éles különbség a szoftverarchitektúra és a tervezés és a követelmények tervezése között (lásd a kapcsolódó területeket alább). Mindannyian a „intencionalitás láncának” részét képezik a magas szintű szándékoktól az alacsony szintű részletekig.
+--- TANANYAG VÉGE ---
+
+Kérdések:
+1. Mit jelent az 'árnyék-commit' fogalma ebben a kurzusban?
+2. Mi a 'forduló-pont' ebben a kurzusban?
+3. Mennyi a minimum elvárt tesztlefedettség?
+4. Hány százalékot ér a laborgyakorlat a félévi jegyben?
+5. Mikor nyílik meg a vizsgajelentkezés?
+6. Legfeljebb hány fő alkothat egy csapatot a projektmunkánál?
+7. Legfeljebb hány linter-figyelmeztetés engedhető meg hibátlan beadáshoz?
+8. Mi a nagy házi feladat beadási határideje?
+
+Válaszolj KIZÁRÓLAG a JSON tömbbel, más szöveg nélkül.
