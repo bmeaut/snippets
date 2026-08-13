@@ -12,7 +12,7 @@ from googleapiclient.discovery import build
 mcp = FastMCP("Smart_Student_Calendar")
 
 # Neptun Configuration
-NEPTUN_ICS_URL = "https://neptun.bme.hu/hallgatoi/api/Calendar/CalendarExportFileToSyncronization?id=4CDF580BDD814428F34E5561CD4E33ACF504CC9DFF8E9111.ics"
+NEPTUN_ICS_URL = "[[ICS file weblink]]"
 
 # Google Calendar Configuration
 SCOPES = ['https://www.googleapis.com/auth/calendar.events']
