@@ -1,12 +1,12 @@
 ---
 layout: default
 codename: SnippetManager
-title: Vágólap-kezelő applikáció kkészítése esettanulmány
+title: Vágólap-kezelő applikáció készítése esettanulmány
 tags: snippets mieset
 authors: Honvéd Péter
 ---
 
-# MI esettanulmány – Vágólap-kezelő applikáció kkészítése esettanulmány
+# MI esettanulmány – Vágólap-kezelő applikáció készítése esettanulmány
 
 A kész projekt elérhető [itt](https://github.com/peterz0ne/snippet-manager).
 
@@ -50,7 +50,7 @@ sőt akár integrálni is VSCode-al.
 Milyen megvalósítási architektúrát, eszközöket javasolsz?
 ```
 
-A válaszban egy aránylag egyértelmű és tálátható architektúrális tervet vázolt fel a modell
+A válaszban egy aránylag egyértelmű és átlátható architektúrális tervet vázolt fel a modell
 
 ```txt
 ...
@@ -118,7 +118,7 @@ function {{functionName}}({{parameters}}) {
 ...
 ```
 
-Az adattárolásnak SQLite-ot ajánlott, a futtatáshoz Tauri-t, a megjelenítéshez pedig Reactot.
+Az adattárolásnak SQLite-ot ajánlott, a futtatáshoz Taurit, a megjelenítéshez pedig Reactot.
 Továbbá a keresés mikéntjére is hozott ötleteket.
 A végén pedig egy összefoglaló roadmap-et kaptam, hogy mit milyen sorrendben lenne érdemes lefejleszteni::
 ```txt
@@ -266,9 +266,9 @@ Az egyes funkciók fejlesztését követően gyakran ugrott vissza és változta
 Az alkalmazásból csupán a VS Code-integráció hiányzott, ugyanakkor ezen a ponton sajnos a kódbázissal egyáltalán nem voltam már tisztában. Ezt elősegítette továbbá az is, hogy az egyes hibák javítása/funkciók implementálása csak függvények és változók bevezetését jelentette. Ebből kifolyólag a funkcionalitás és megjelenés leírásáért felelős fájlok mérete hatalmasra nőtt (250-500 sor).
 
 A kész desktop app:
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
+![mainscreen](image.png)
+![edit snippet](image-1.png)
+![edit categories](image-2.png)
 
 ## VSCode integráció
 
@@ -331,15 +331,12 @@ Itt, miután bepromptoltam a korábbi fájlokat, a modell képes volt helyesen k
 A kész extension a következő képpen működik:
 1. `Ctrl + P` > `Snippet Manager`
 
-   ![alt text](image-3.png)
+   ![open snippet manager](image-3.png)
 2. Rákerseni majd kiválasztani a megfelelő snippetet
 
-   ![alt text](image-4.png)
+   ![search for snippet](image-4.png)
 3. Kitölteni a template elemeket, amelyek között `tab`-al lehet lépkedni
-   ![alt text](image-5.png)
-
-
-
+   ![apply templates](image-5.png)
 
 ## Tanulságok össszefoglalva
 
@@ -350,7 +347,7 @@ A kész extension a következő képpen működik:
   Ugyanakkor, ha csupán debugolás céljából vagy kisebb javításokra, minimális fejlesztésekre szeretnénk felhasználni, nagyon résen kell lennünk és végig kell elemeznünk a kapott megoldást, különben könnyen elveszítjük a kontrollt a saját kódbázisunk felett.
 * **Nem véd a refaktorálás ellen.**
   
-  Kezdetben elegánsnak tűnő, egyszerű kódokat generált, azonban ahogyan jöttek be az új funkciók és javultak meg az egyes hibák, a kód is egyre inkább átláthatatlanná vált. Sok ilyen lépést követve az AI által generált kód is spagettikóddá válik. Erre megoldás tud lenni a refaktorálás. Ezt a lépést szintén végezheti az AI, viszont a hatékony eredmény érdekében egy olyan modellel vagy ágenssel érdemes dolgozni, amelynek rálátása van a teljes kódázisra és pontos módosításokat tud javasolni.
+  Kezdetben elegánsnak tűnő, egyszerű kódokat generált, azonban ahogyan jöttek be az új funkciók és javultak meg az egyes hibák, a kód is egyre inkább átláthatatlanná vált. Sok ilyen lépést követve az AI által generált kód is spagettikóddá válik. Erre megoldás tud lenni a refaktorálás. Ezt a lépést szintén végezheti az AI, viszont a hatékony eredmény érdekében egy olyan modellel vagy ágenssel érdemes dolgozni, amelynek rálátása van a teljes kódbázisra és pontos módosításokat tud javasolni.
 * **A mai modellek kontextusablaka hatalmas, azonos doménen belül.**
 
   A teljes alkalmazást csupán egy chatablak igénybevételével fejlesztettem le, közel 60 prompt segítségével, amely tartalmazza a debugolást is. Ez azonban csupán azért volt lehetséges, mivel ugyanazon a doménen belül maradtam. A kész alkalmazást követően, az extension fejlesztésekor, a domén változása esetén már megkérdőjelezhető pontossággal emlékezett vissza a korábbi részekre.
