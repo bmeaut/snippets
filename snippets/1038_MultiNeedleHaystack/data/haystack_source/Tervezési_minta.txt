@@ -1,0 +1,41 @@
+A tervezési minta a tervezési probléma megoldásának újrafelhasználható formája. Az ötletet Christopher Alexander építész vezette be, és számos más tudományághoz, nevezetesen a szoftverfejlesztéshez is adaptálták.
+
+
+== Részletek ==
+Azon szervezett minták gyűjteménye, amelyek kapcsolódnak egy adott területen, az úgynevezett mintanyelv. Ez a nyelv közös terminológiát ad a tervezők által tapasztalt helyzetek megoldására. 
+
+– Christopher Alexander
+
+A minta dokumentálásához el kell magyarázni, hogy egy adott helyzet miért okoz problémát, és hogy a minta alkotóelemei hogyan kapcsolódnak egymáshoz a megoldás érdekében. Christopher Alexander azt írja le, hogy a közös tervezési problémák "ellentmondásos erőkből" származnak - például az a konfliktus, amely szerint a szoba napfényes legyen, és ne melegedjen túl a nyári délutánokon. A minta nem mondja meg a tervezőnek, hogy hány ablakot kell a szobába helyezni; ehelyett egy olyan értékkészletet javasol, amely a tervezőt egy adott alkalmazáshoz legmegfelelőbb döntés irányába vezeti. Például Alexander azt javasolja, hogy elegendő ablakot kell beépíteni, hogy a fény megvilágítsa a helyiséget. Ezt jó megoldásnak tekinti, mivel úgy gondolja, hogy ez növeli az élvezeti értékét az ott tartózkodók számára. Más szerzők eltérő következtetésekre juthatnak, ha nagyobb értéket tulajdonítanak a fűtési költségeknek vagy az anyagköltségeknek. Ezeket az értékeket, amelyeket a mintázat szerzője használ a "legjobb" megoldás meghatározására, a mintán belül is dokumentálni kell. 
+A mintadokumentációnak meg kell magyaráznia azt is, mikor alkalmazható. Mivel két ház nagyon különbözhet egymástól, a házak tervezési mintájának elég széleskörűnek kell lennie, hogy mindkettőre alkalmazható legyen, de nem olyan homályosnak, hogy ne segítse a tervezőt a döntések meghozatalában. Azokat a helyzeteket, amelyekben a minta felhasználható, a minta kontextusának nevezzük. Néhány példa lehet: "minden ház", "minden kétszintes ház" vagy "minden olyan hely, ahol az emberek időt töltenek". 
+Például Christopher Alexander munkájában a buszmegállók és a műtéti központok várótermei egyaránt az "EGY HELY A VÁRAKOZÁSRA" minta kontextusában vannak.
+
+
+== Példák ==
+Szoftvertervezési minta a szoftvertervezésben
+Építészeti minta a szoftver architektúrájához
+Interakciós tervezési minta, amelyet az interakció tervezésében / az ember-számítógép interakcióban használnak
+Pedagógiai minták a tanításban
+Mintakertészet, a kertészetben
+
+
+== Jegyzetek ==
+
+
+== További irodalom ==
+Alexander, Christopher. A Pattern Language: Towns, Buildings, Construction. Oxford University Press (1977). ISBN 0-19-501919-9 
+Erl, Thomas. SOA Design Patterns. New York: Prentice Hall/PearsonPTR, 864. o. (2009). ISBN 0-13-613516-1 
+Frank Buschmann, Kevlin Henney, Douglas C. Schmidt: Pattern-Oriented Software Architecture: On Patterns and Pattern Languages
+Gamma, Erich. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley (1994). ISBN 0-201-63361-2 
+James Coplien (2014. július 11.). "Patterns: The Notion is Grounded in Alexander's Work". Hozzáférés: 2014. július 16.. The GoF claims to take its pattern inspiration from Christopher Alexander (as they say in the front matter of the book), who popularized the term in the broader field of design. To Alexander a pattern: is always an element of pattern language; contributes to deep human feeling; and is always geometric in nature. At least some of the GoF patterns fail on at least one of these points, and several fail on all three.
+Jenifer Tidwell: Designing Interfaces: Patterns For Effective Interaction Design
+Wolfgang Pree: Design Patterns for Object-Oriented Software Development
+Leitner, Helmut (2015): Pattern Theory: Introduction and Perspectives on the Tracks of Christopher Alexander ISBN 1505637430    .
+
+
+== Fordítás ==
+Ez a szócikk részben vagy egészben  a   Design pattern című angol Wikipédia-szócikk ezen változatának fordításán alapul.  Az eredeti cikk szerkesztőit annak laptörténete sorolja fel. Ez a jelzés csupán a megfogalmazás eredetét és a szerzői jogokat jelzi, nem szolgál a cikkben szereplő információk forrásmegjelöléseként.
+
+
+== Kapcsolódó szócikk ==
+Antiminta

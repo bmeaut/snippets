@@ -1,0 +1,36 @@
+{
+  "cell_id": "ctx150000_k3_rep2",
+  "context_tokens_target": 150000,
+  "k": 3,
+  "repeat": 2,
+  "actual_chars": 602207,
+  "needles": [
+    {
+      "id": "N18",
+      "type": "kivetel",
+      "question": "Kinek csökken a pontszáma, ha csapatmunkánál valaki egyénileg hibázik?",
+      "expected_answer": [
+        "érintett",
+        "hallgató"
+      ],
+      "match": "all_keywords",
+      "position_frac": 0.25
+    },
+    {
+      "id": "N19",
+      "type": "kivetel",
+      "question": "Mi bírálja felül a korábbi órai gyakorlat pontszámát?",
+      "expected_answer": "utolsó beadás",
+      "match": "substring",
+      "position_frac": 0.5
+    },
+    {
+      "id": "N08",
+      "type": "definicio",
+      "question": "Mit jelent a 'kettős felülvizsgálat' szabálya?",
+      "expected_answer": "két különböző csapattagnak",
+      "match": "substring",
+      "position_frac": 0.75
+    }
+  ]
+}

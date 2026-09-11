@@ -1,0 +1,11 @@
+Nézd meg a mellékelt diagramot: @data/charts/line_level2_rep1.png
+Válaszolj KIZÁRÓLAG egy JSON tömbben, minden kérdésre külön elemmel, a kérdés sorszámával ("id") és a válasszal ("answer"). Ha nem tudod megállapítani a választ, az "answer" értéke legyen "nincs adat".
+Formátum példa: [{"id": 1, "answer": "..."}, {"id": 2, "answer": "..."}]
+
+Kérdések:
+1. Mennyi a mért érték itt: A minta, 3. mérés?
+2. Mennyivel tér el egymástól a következő két érték: A minta, 3. mérés és A minta, 6. mérés?
+3. Melyik ponton (minta/mérés) a legnagyobb az érték a diagramon a(z) B minta sorozatban?
+4. Mennyi B minta értékeinek átlaga a diagramon?
+
+Válaszolj KIZÁRÓLAG a JSON tömbbel, más szöveg nélkül.

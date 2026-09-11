@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<robot name="diff_drive_robot">
+
+  <!-- ===================== MATERIALS ===================== -->
+  <material name="chassis_gray">
+    <color rgba="0.6 0.6 0.6 1.0"/>
+  </material>
+  <material name="wheel_black">
+    <color rgba="0.1 0.1 0.1 1.0"/>
+  </material>
+  <material name="camera_dark">
+    <color rgba="0.15 0.15 0.15 1.0"/>
+  </material>
+  <material name="lens_blue">
+    <color rgba="0.2 0.5 0.9 1.0"/>
+  </material>
+
+  <!-- ===================== BASE / CHASSIS ===================== -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.40 0.30 0.12"/>
+      </geometry>
+      <material name="chassis_gray"/>
+    </visual>
+  </link>
+
+  <!-- ===================== WHEELS (continuous joints) ===================== -->
+
+  <!-- Front Left Wheel -->
+  <link name="wheel_front_left">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.04"/>
+      </geometry>
+      <material name="wheel_black"/>
+    </visual>
+  </link>
+  <joint name="joint_wheel_front_left" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_front_left"/>
+    <origin xyz="0.13 0.17 -0.04" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Front Right Wheel -->
+  <link name="wheel_front_right">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.04"/>
+      </geometry>
+      <material name="wheel_black"/>
+    </visual>
+  </link>
+  <joint name="joint_wheel_front_right" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_front_right"/>
+    <origin xyz="0.13 -0.17 -0.04" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Rear Left Wheel -->
+  <link name="wheel_rear_left">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.04"/>
+      </geometry>
+      <material name="wheel_black"/>
+    </visual>
+  </link>
+  <joint name="joint_wheel_rear_left" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_rear_left"/>
+    <origin xyz="-0.13 0.17 -0.04" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Rear Right Wheel -->
+  <link name="wheel_rear_right">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.04"/>
+      </geometry>
+      <material name="wheel_black"/>
+    </visual>
+  </link>
+  <joint name="joint_wheel_rear_right" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_rear_right"/>
+    <origin xyz="-0.13 -0.17 -0.04" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- ===================== FRONT CAMERA (fully fixed) ===================== -->
+  <link name="camera_body">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.05 0.03"/>
+      </geometry>
+      <material name="camera_dark"/>
+    </visual>
+  </link>
+  <joint name="joint_camera_body" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_body"/>
+    <origin xyz="0.21 0 0.04" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Camera Lens (fixed to camera body, facing forward) -->
+  <link name="camera_lens">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry>
+        <cylinder radius="0.012" length="0.02"/>
+      </geometry>
+      <material name="lens_blue"/>
+    </visual>
+  </link>
+  <joint name="joint_camera_lens" type="fixed">
+    <parent link="camera_body"/>
+    <child link="camera_lens"/>
+    <origin xyz="0.025 0 0" rpy="0 0 0"/>
+  </joint>
+
+</robot>

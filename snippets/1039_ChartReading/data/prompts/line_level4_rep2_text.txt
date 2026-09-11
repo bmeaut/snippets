@@ -1,0 +1,30 @@
+Az alábbi táblázat egy mérés adatait tartalmazza:
+
+Mérés | A minta | B minta | C minta
+1. mérés | 85.09 | 65.65 | 46.14
+2. mérés | 98.53 | 43.42 | 58.98
+3. mérés | 87.06 | 26.46 | 29.58
+4. mérés | 31.44 | 21.06 | 10.32
+5. mérés | 11.84 | 29.14 | 94.15
+6. mérés | 35.04 | 34.39 | 32.41
+7. mérés | 34.92 | 82.79 | 27.33
+8. mérés | 63.43 | 39.01 | 24.36
+9. mérés | 33.83 | 92.39 | 61.86
+10. mérés | 58.02 | 39.16 | 52.52
+11. mérés | 79.17 | 17.91 | 34.69
+12. mérés | 26.21 | 66.43 | 65.33
+13. mérés | 44.46 | 53.17 | 23.26
+14. mérés | 31.87 | 88.63 | 51.9
+15. mérés | 43.93 | 61.29 | 27.41
+16. mérés | 88.04 | 43.09 | 60.85
+
+Válaszolj KIZÁRÓLAG egy JSON tömbben, minden kérdésre külön elemmel, a kérdés sorszámával ("id") és a válasszal ("answer"). Ha nem tudod megállapítani a választ, az "answer" értéke legyen "nincs adat".
+Formátum példa: [{"id": 1, "answer": "..."}, {"id": 2, "answer": "..."}]
+
+Kérdések:
+1. Mennyi a mért érték itt: B minta, 1. mérés?
+2. Mennyivel tér el egymástól a következő két érték: B minta, 1. mérés és C minta, 5. mérés?
+3. Melyik ponton (minta/mérés) a legnagyobb az érték a diagramon a(z) A minta sorozatban?
+4. Mennyi A minta értékeinek átlaga a diagramon?
+
+Válaszolj KIZÁRÓLAG a JSON tömbbel, más szöveg nélkül.

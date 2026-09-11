@@ -1,0 +1,33 @@
+{
+  "cell_id": "ctx2000_k3_rep1",
+  "context_tokens_target": 2000,
+  "k": 3,
+  "repeat": 1,
+  "actual_chars": 8650,
+  "needles": [
+    {
+      "id": "N17",
+      "type": "kivetel",
+      "question": "Milyen kedvezményt kap az, aki igazoltan hiányzik a zárthelyiről?",
+      "expected_answer": "10%",
+      "match": "substring",
+      "position_frac": 0.25
+    },
+    {
+      "id": "N01",
+      "type": "hatarido",
+      "question": "Mikor lesz a 2. zárthelyi dolgozat?",
+      "expected_answer": "2026. március 14",
+      "match": "substring",
+      "position_frac": 0.5
+    },
+    {
+      "id": "N08",
+      "type": "definicio",
+      "question": "Mit jelent a 'kettős felülvizsgálat' szabálya?",
+      "expected_answer": "két különböző csapattagnak",
+      "match": "substring",
+      "position_frac": 0.75
+    }
+  ]
+}

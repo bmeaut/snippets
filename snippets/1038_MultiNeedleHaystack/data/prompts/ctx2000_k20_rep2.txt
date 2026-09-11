@@ -1,0 +1,139 @@
+Az alábbi szövegben (tananyag-jegyzet) el van rejtve néhány oktatói megjegyzés.
+Válaszolj KIZÁRÓLAG egy JSON tömbben, minden kérdésre külön elemmel, a kérdés sorszámával ("id") és a válasszal ("answer"). Ha valamelyik választ nem találod a szövegben, az "answer" értéke legyen "nincs adat".
+Formátum példa: [{"id": 1, "answer": "..."}, {"id": 2, "answer": "..."}]
+
+--- TANANYAG ---
+A backend kód minőségét automatikus tesztekkel is ellenőrzik. Az elvárt minimális tesztlefedettség a forráskód 78%-a.
+
+Resolve
+Változási konfliktusok feloldására irányuló felhasználói tevékenység.
+
+Az igazolt hiányzások esetén a tárgy rugalmasan kezeli a pótlási lehetőségeket. Ha a hallgató igazoltan hiányzott a zárthelyiről, a pótzárthelyin 10%-kal több időt kap a feladatok megoldására.
+
+A jelenléti követelmények betartását a tárgy szigorúan veszi. Két igazolatlan hiányzás után a hallgató elveszti a féléves aláírás jogát.
+
+=== Egyéb ===
+Egyéb magas szintű szoftverprojekt-módszertanok a következők:
+
+A technikai problémák miatti méltánytalan pontlevonás elkerülésére a tárgy bevezetett egy rövid haladékot. Ezt türelmi ablaknak nevezzük: ez egy 15 perces időszak a beadási határidő után, amely alatt a leadás technikai hiba esetén még pontlevonás nélkül elfogadható.
+
+A beadott kód formai minőségét automatikus eszköz ellenőrzi feltöltéskor. A kódstílus-ellenőrző (linter) legfeljebb 12 figyelmeztetést enged meg ahhoz, hogy a beadás hibátlannak minősüljön.
+
+A szoftverarchitektúra leírásait általában nézetekbe rendezik, amelyek hasonlóak az épületépítészetben készült különböző típusú tervrajzokhoz. Minden nézet a rendszer egy adott problémakörét kezeli, követve a hozzá tartozó nézőpont konvencióit. A nézőpont egy olyan specifikáció, amely meghatározza az alkalmazandó jelöléseket, modellezési és elemzési technikákat egy nézetben, amely az érintett architektúrát az adott érintetti csoport és az ő szempontjaik szerint mutatja be (ISO/IEC/IEEE 42010).
+A nézőpont nemcsak azokat a problémaköröket határozza meg, amelyeket kezelni kell, hanem azt is, hogyan kell azokat bemutatni, milyen modelleket és konvenciókat kell alkalmazni, valamint azokat a szabályokat is, amelyek biztosítják a nézet konzisztenciáját más nézetekkel.
+
+Azok a hallgatók, akiknek kérdésük merül fel az anyaggal kapcsolatban, konzultációs alkalmakon vehetnek részt. A következő konzultáció időpontja 2026. február 20-án, 14:00-kor lesz.
+
+=== Az agilis menedzsment fogalma és jelentősége ===
+Az agilis menedzsment a vezetés olyan megközelítése, amely a változáshoz való gyors alkalmazkodást, a folyamatos tanulást és az önszerveződő csapatok támogatását helyezi középpontba. Az agilis szervezetekben a vezetés célja nem a hierarchia fenntartása, hanem az, hogy képessé tegye a csapatokat az autonóm döntéshozatalra, a felelősségvállalásra és az innovációra.
+Az agilis vezető szerepe abban áll, hogy irányt ad, nem utasításokat – támogató, facilitáló és inspiráló szerepet tölt be. Ez a szemlélet gyakran a servant leadership (szolgáló vezetés) és a leader-as-enabler (a vezető mint képessé tevő) koncepciókon alapul, amelyek az emberközpontú, tanulásra épülő kultúrát helyezik előtérbe.
+
+A vizsgaidőszakra való jelentkezés a Neptun rendszeren keresztül történik. A jelentkezési felület 2026. május 5-én nyílik meg a hallgatók számára.
+
+A projektmunkát csapatban kell elvégezni, meghatározott létszámkorláttal. Egy csapatban legfeljebb 3 fő dolgozhat együtt a feladaton.
+
+Tábla
+Bróker minta
+Kliens-szerver (2-szintű, 3-szintű, n- szintű, a felhőalapú számítástechnika ezt a stílust mutatja)
+Komponens alapú
+Adatközpontú
+Eseményvezérelt (vagy implicit meghívás)
+Tolmács minta
+Réteges (vagy többrétegű architektúra)
+Mester-szolga
+Mikroszolgáltatások architektúrája
+Modell-nézet-vezérlő
+Monolit alkalmazás
+Peer-to-peer (P2P)
+Csövek és szűrők
+Beépülő modulok
+Reaktív architektúra
+Reprezentatív állapot transzfer (REST)
+Szabály alapú
+Szolgáltatás-orientált
+Megosztott semmi architektúra
+Tér-alapú architektúra
+Szerver nélküli architektúra
+Vannak, akik az építészeti mintákat és az építészeti stílusokat azonosként,  vannak, akik a stílusokat minták specializációjaként kezelik. Közös bennük, hogy mind a minták, mind a stílusok az építészek által használt idiómák, „közös nyelvet” vagy „szókincset” biztosítanak, amellyel rendszerosztályokat írhatnak le.
+
+A csapatmunka minőségbiztosításának egyik eszköze a kódfelülvizsgálat. Ebben a félévben kettős felülvizsgálatnak hívjuk azt a szabályt, amely szerint egy pull requestet két különböző csapattagnak is jóvá kell hagynia, mielőtt az összeolvasztható lenne.
+
+A hallgatók több alkalommal is feltölthetik a megoldásukat a határidőig. Ilyenkor mindig az utolsó beadás bírálja felül a korábbi órai gyakorlat pontszámát, még akkor is, ha az rosszabb eredményt hozna.
+
+A prototípus-készítés nem önálló, komplett fejlesztési módszertan, hanem inkább megközelítés, amely a sajátos tulajdonságok kipróbálására szolgál egy teljes módszertan összefüggésében (például inkrementális, spirális vagy gyors alkalmazásfejlesztés (RAD)).
+Arra törekszik, hogy csökkentse a velejáró projektkockázatot azáltal, hogy egy projektet kisebb szegmensekre bont, és nagyobb változtathatóságot biztosít a fejlesztési folyamat során.
+Az ügyfelet bevonják a fejlesztési folyamatba, ami növeli annak valószínűségét, hogy az ügyfél elfogadja a végső megvalósítást.
+Míg néhány prototípust azzal a tudattal fejlesztenek ki, hogy el fogják távolítani, bizonyos esetekben lehetséges a prototípusról a működő rendszerre történő áttérés.
+A helytelen problémák megoldásának elkerülése érdekében szükséges az alapvető üzleti probléma megértése, de ez igaz minden szoftver módszertanra.
+
+A leadási határidők betartása mellett a hallgatók néha a hivatalos értékelés előtt is módosítanak a kódon. Az ilyen, a leadási határidő után, de a manuális értékelés megkezdése előtt privát branch-re feltett commitot árnyék-commitnak nevezzük ebben a tárgyban.
+
+A beadási határidők betartását a rendszer automatikusan naplózza, néhány kivétellel. Ha egy hallgató hétvégén (szombaton vagy vasárnap) adja le a házi feladatot, az csak a következő hétfőn számít határidőn belülinek.
+
+=== Eredményes és szemtől-szembe való kommunikáció ===
+Az agilis módszerek nagyobb hangsúlyt fektetnek a közvetlen, mint az írásbeli kommunikációra. A csapatok mérete ezért 3-9 fő ideális esetben, ennél nagyobb csapatban nem alakul ki a csapatszellem, vagy több csapatot kell létrehozni, amelyek között kommunikációs problémák léphetnek fel. A csapattagok ideális esetben egy térben dolgoznak, és kereszt-funkcionálisak, ami azt jelenti, hogy a csapat rendelkezik azokkal a készségekkel, amelyek szükségesek a feladat, munka vagy projekt elvégzéséhez.
+Minden csapatban van egy delegált a megrendelő részéről, a Scrum keretrendszerben ő a Terméktulajdonos (angolul Product Owner). A fejlesztés egész ideje alatt rendelkezésre áll, hogy a felmerülő kérdéseket megválaszolja. Az iterációs szakasz végén a fejlesztők és a megbízó delegáltja együtt kiértékelik a növekményt. A megbízótól érkező személy fontos feladata, hogy az elkészítendő funkciókat fontossági sorrendjét felállítsa üzleti szempontból (megtérülési mutató, azaz return of investment - ROI). A fejlesztői csapat a legmagasabb prioritású funkciókat veszi előre.
+Az agilis szoftverfejlesztésben általában elhelyeznek az iroda egyik feltűnő pontján egy általában nagyméretű információs táblát (information radiator). Ezen mindenki láthatja a szoftver vagy más termék projektje fejlesztésének naprakész állapotát. A kifejezést Alistair Cockburn alkotta meg és írta le 2002-es könyvében, az Agilis szoftverfejlesztésben. Egy úgynevezett build light indicator (a projekt elkészültségi fokára utaló fényjelző) szintén tájékoztathatja a csapat tagjait a feladat állásáról.
+
+A projektmunka önálló elbírálás alá esik, külön ponthatárral. A projektmunka elfogadásához legalább 42 pontot kell elérni a lehetséges 100-ból.
+
+A szoftverfejlesztésben a szoftverfejlesztési folyamat az a folyamat, ahol felosztjuk a szoftverfejlesztési munkát különböző fázisokra, hogy fejlesszük a tervezést, a termékmenedzsmentet és a projektmenedzsmentet. Ez szoftverfejlesztési életciklusként is ismert. A módszertan magában foglalhatja azon konkrét eredmények és előzetes elemek meghatározását, amelyeket egy projektcsapat készít egy alkalmazás kifejlesztése vagy karbantartása céljából. 
+A legtöbb modern fejlesztési folyamat leírható agilisnak. Egyéb módszerek: vízesés, prototípus-készítés, iteratív és inkrementális fejlesztés, spirálfejlesztés, gyors alkalmazásfejlesztés és extrém programozás. 
+Néhányan az életciklusos "modellt" általánosabb fogalomnak tekintik egy módszertankategória számára, a szoftverfejlesztési „folyamatot” pedig egy konkrétabb kifejezésnek, amely egy adott szervezet által kiválasztott adott folyamatra utal. Például számos olyan szoftverfejlesztési folyamat létezik, amelyek illeszkednek a spirális életciklus-modellhez. Ezt a területet gyakran a rendszerfejlesztési életciklus részhalmazának tekintik.
+
+A folyamatos integráció gyakorlatában fontos fogalom a fejlesztési ciklusok megbízhatósága. Ebben a tárgyban azt a fejlesztési ciklust nevezzük stabil iterációnak, amely után a build szerver három egymást követő futtatásban is hibamentes eredményt ad.
+
+A csapatmunkánál felmerülő hibák elbírálása egyéni felelősség alapján történik. Ha csapatmunkánál valaki egyénileg hibázik, csak az érintett hallgató pontszáma csökken, a csapat többi tagjáé nem.
+
+== Formális szemantikája ==
+Egy objektumorientált rendszerben az objektumok futásidejű entitások. Reprezentálhatnak személyt, helyet, bankszámlát, vagy bármi mást, amit a program kezel.
+Több próbálkozás is volt az objektumorientált programozásban használt fogalmak formalizálására. A következő fogalmakat és konstrukciókat használták az objektumorientáció fogalmainak értelmezésére:
+
+A félévi jegy több részjegyből tevődik össze, amelyek különböző súllyal számítanak. A laborgyakorlatok teljesítménye a végső jegy 35%-át teszi ki.
+
+A félév során több számonkérési forma is szerepel a tárgykövetelményben. A második zárthelyi dolgozatra 2026. március 14-én, 10:15-kor kerül sor a nagyelőadó teremben.
+
+Change
+Egy változtatás (change, diff vagy delta) mindig egy verziókezelt dokumentumon vagy fájlon tett változtatást jelenti. Rendszerfüggő, hogy milyen mértékű módosítások számítanak change-nek.
+
+Azok, akik valamilyen okból nem tudtak részt venni a rendes zárthelyin, pótlási lehetőséget kapnak. A pótzárthelyi időpontja 2026. június 2-án, 8:00-kor van.
+
+A projektmunka előrehaladását félidőben egy közös bemutató keretében ellenőrzik. Ezt a mérföldkövet, amikor a csapat bemutatja a működő prototípust az oktatónak, forduló-pontnak nevezik a tárgy keretében.
+
+Az építészet tervezés, de nem minden tervezés építészeti. A gyakorlatban az építész az, aki meghúzza a határt a szoftverarchitektúra (építészeti tervezés) és a részletes tervezés (nem építészeti tervezés) között. Nincsenek olyan szabályok vagy irányelvek, amelyek minden esetre megfelelnének, bár voltak próbálkozások a megkülönböztetés formalizálására. Az Intension/Locality Hypothesis szerint az építészeti és a részlettervezés közötti különbséget a Locality Criterion határozza meg, amely szerint a szoftvertervezésre vonatkozó állítás akkor és csak akkor nem lokális (architektúra), ha egy program, kielégíti, ki lehet bővíteni olyan programmal, amely nem. Például a kliens-szerver stílus architekturális (stratégiai), mivel egy ezen az elven felépített program egy nem kliens-szerver programmá bővíthető, például peer-to-peer csomópontok hozzáadásával.
+
+A nagy házi feladat a félév egyik legnagyobb súlyú beadandója. Ennek határideje 2026. április 3-án, 23:59-kor jár le, ezt követően a rendszer már nem fogadja el a feltöltést.
+
+== Karakterisztikák ==
+A szoftver architektúra a következőket mutatja be:
+Érintettek sokasága: a szoftverrendszereknek számos érintett igényeit kell kielégíteniük, például üzleti vezetőkét, tulajdonosokét, felhasználókét és üzemeltetőkét. Ezek az érintettek mind saját szempontjaikkal rendelkeznek a rendszerrel kapcsolatban. Az ezek közötti egyensúly megteremtése és annak bemutatása, hogy a szempontjaikat figyelembe vették, a rendszer tervezésének része. Ez azt jelenti, hogy az architektúra számos különböző nézőpontot és érintettet kezel, valamint multidiszciplináris jelleget ölt.
+A aggályok szétválasztása: az építészek számára a bonyolultság csökkentésének bevett módja az, hogy szétválasztják a tervezést irányító szempontokat. Az architektúra dokumentációja azt mutatja, hogy az érdekelt felek minden aggályát kezelik az architektúra modellezése és leírása a különböző érdekelt felek aggályaihoz kapcsolódó különböző nézőpontokból. Ezeket a külön leírásokat építészeti nézeteknek nevezzük (lásd például a 4+1 építészeti nézet modellt).
+Minőségvezérelt: a klasszikus szoftvertervezési megközelítéseket (pl. Jackson Structured Programming) a szükséges funkcionalitás és a rendszeren keresztüli adatáramlás vezérelte, de a jelenlegi betekintésAz, hogy egy szoftverrendszer architektúrája szorosabban kapcsolódik a minőségi jellemzőihez, mint például a hibatűrés, a visszamenőleges kompatibilitás, a bővíthetőség, a megbízhatóság, a karbantarthatóság, a rendelkezésre állás, a biztonság, a használhatóság és más hasonló szolgáltatások. Az érdekelt felek aggodalmai gyakran ezekre a minőségi jellemzőkre vonatkozó követelményekben fogalmazódnak meg, amelyeket más néven nem funkcionális követelményeknek, extrafunkcionális követelményeknek, viselkedési követelményeknek vagy minőségi attribútum követelményeknek neveznek.
+Ismétlődő stílusok: az épületarchitektúrához hasonlóan a szoftverarchitektúra is szabványos módszereket dolgozott ki a visszatérő problémák kezelésére. Ezeket a "szabványos módokat" különféle neveken nevezik az absztrakció különböző szintjein. Az ismétlődő megoldások gyakori kifejezései az építészeti stílus, taktika, referenciaépítészet és építészeti minta.
+Fogalmi integritás: ezt a kifejezést Fred Brooks vezette be 1975-ös The Mythical Man-Month című könyvében, azzal az elképzeléssel jelölve, hogy egy szoftverrendszer architektúrája egy átfogó víziót képvisel arról, hogy mit és hogyan kell csinálnia. Ezt az elképzelést el kell választani a megvalósításától. Az építész vállalja a "látás őrzőjének" szerepét, ügyelve arra, hogy a rendszer kiegészítései összhangban legyenek az architektúrával, megőrizve ezzel a koncepcionális integritást.
+Kognitív megszorítások: Melvin Conway számítógép-programozó 1967-es tanulmányában tett megfigyelés először, miszerint a rendszereket tervező szervezetek olyan terveket készítenek, amelyek e szervezetek kommunikációs struktúráinak másolatai. Fred Brooks bemutatta a szélesebb közönségnek, amikor a The Mythical Man-Month -ban idézte az újságot és az ötletet, és Conway törvényének nevezte el.
+--- TANANYAG VÉGE ---
+
+Kérdések:
+1. Mennyi a minimum elvárt tesztlefedettség?
+2. Milyen kedvezményt kap az, aki igazoltan hiányzik a zárthelyiről?
+3. Hány igazolatlan hiányzás után veszíti el a hallgató az aláírás jogát?
+4. Mennyi a 'türelmi ablak' hossza?
+5. Legfeljebb hány linter-figyelmeztetés engedhető meg hibátlan beadáshoz?
+6. Mikor lesz a következő konzultáció?
+7. Mikor nyílik meg a vizsgajelentkezés?
+8. Legfeljebb hány fő alkothat egy csapatot a projektmunkánál?
+9. Mit jelent a 'kettős felülvizsgálat' szabálya?
+10. Mi bírálja felül a korábbi órai gyakorlat pontszámát?
+11. Mit jelent az 'árnyék-commit' fogalma ebben a kurzusban?
+12. Mi történik, ha valaki hétvégén adja le a házi feladatot?
+13. Mennyi a projektmunka minimum ponthatára?
+14. Mi a 'stabil iteráció' definíciója ebben a kurzusban?
+15. Kinek csökken a pontszáma, ha csapatmunkánál valaki egyénileg hibázik?
+16. Hány százalékot ér a laborgyakorlat a félévi jegyben?
+17. Mikor lesz a 2. zárthelyi dolgozat?
+18. Mikor lesz a pótzárthelyi?
+19. Mi a 'forduló-pont' ebben a kurzusban?
+20. Mi a nagy házi feladat beadási határideje?
+
+Válaszolj KIZÁRÓLAG a JSON tömbbel, más szöveg nélkül.

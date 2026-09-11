@@ -29,8 +29,8 @@ authors: Csorba Kristóf
     {% for t in allTagsArray %} <a href="#{{t}}">{{t}}</a> {% endfor %}</p>
 
 {% for tag in allTagsArray %}
-  <h2 style="border:3px; border-style:solid; border-color:#000000; padding: 1em;" id="{{tag}}">{{tag}}</h2><br/>
-  <ul>
+  <h2 style="border:3px; border-style:solid; border-color:#000000; padding: 0.2em; margin-top: 0.5em; margin-bottom: 0.3em;" id="{{tag}}">{{tag}}</h2>
+  <ul style="margin-top: 0;">
   {% for page in site.pages %}
     {% if page.tags contains tag %}
     {% unless page.tags contains skippedPageTag %}
@@ -42,7 +42,5 @@ authors: Csorba Kristóf
   {% endfor %}
   </ul>
 {% endfor %}
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>

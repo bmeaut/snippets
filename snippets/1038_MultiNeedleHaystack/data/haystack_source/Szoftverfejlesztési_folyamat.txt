@@ -1,0 +1,177 @@
+A szoftverfejlesztésben a szoftverfejlesztési folyamat az a folyamat, ahol felosztjuk a szoftverfejlesztési munkát különböző fázisokra, hogy fejlesszük a tervezést, a termékmenedzsmentet és a projektmenedzsmentet. Ez szoftverfejlesztési életciklusként is ismert. A módszertan magában foglalhatja azon konkrét eredmények és előzetes elemek meghatározását, amelyeket egy projektcsapat készít egy alkalmazás kifejlesztése vagy karbantartása céljából. 
+A legtöbb modern fejlesztési folyamat leírható agilisnak. Egyéb módszerek: vízesés, prototípus-készítés, iteratív és inkrementális fejlesztés, spirálfejlesztés, gyors alkalmazásfejlesztés és extrém programozás. 
+Néhányan az életciklusos "modellt" általánosabb fogalomnak tekintik egy módszertankategória számára, a szoftverfejlesztési „folyamatot” pedig egy konkrétabb kifejezésnek, amely egy adott szervezet által kiválasztott adott folyamatra utal. Például számos olyan szoftverfejlesztési folyamat létezik, amelyek illeszkednek a spirális életciklus-modellhez. Ezt a területet gyakran a rendszerfejlesztési életciklus részhalmazának tekintik. 
+
+
+== Történelem ==
+A szoftverfejlesztési módszertan kerete csak az 1960-as években alakult ki. Elliott (2004) szerint a rendszerfejlesztési életciklus tekinthető az információs rendszerek építésének legrégebbi formalizált módszertani keretének. Az SDLC fő gondolata az volt, hogy „az információs rendszerek fejlesztését egy nagyon megfontolt, strukturált és módszertani módon folytassák, megkövetelve az életciklus minden szakaszát – az ötlet kezdetétől a végső rendszer átadásáig – szigorúan és szekvenciálisan hajtják végre” az alkalmazott keretrendszerekkel összefüggésben. Ennek a módszertani keretnek az 1960-as években a fő célja a „nagy léptékű funkcionális üzleti rendszerek kifejlesztése volt a nagyszabású üzleti konglomerátumok korában. Az információs rendszerekkel kapcsolatos tevékenységek a nagy mennyiségű numerikus adatokat feldolgozó rutinok felé fordultak.”
+A módszertan, a folyamatok és a keretek a specifikus kizárási lépésektől kezdődnek, amelyeket egy szervezet közvetlenül használhat a napi munka során, a rugalmas keretrendszerekig, amelyeket a szervezet egy adott projekt vagy csoport igényeihez igazított egyedi lépések készítéséhez használ. Egyes esetekben a „szponzor” vagy a "karbantartó" szervezet hivatalos dokumentumkészletet terjeszt, amely leírja a folyamatot. Különleges példák a következők: 
+
+1970
+Strukturált programozás 1969 óta
+Cap Gemini SDM, az első angol fordítást kiadták 1974-ben.
+1980-as évek
+Strukturált rendszerelemzés és tervezési módszer (SSADM) 1980-tól kezdve
+Információs követelmények elemzése / puha rendszerek módszertana
+1990-es évek
+Objektumorientált programozás (OOP) az 1960-as évek elején alakult ki, és az 1990-es évek közepén vált domináns programozási megközelítéssé.
+Gyors alkalmazásfejlesztés (RAD), 1991 óta
+Dinamikus rendszerek fejlesztési módszere (DSDM), 1994 óta
+Scrum, 1995 óta
+Csapatszoftver-folyamat, 1998 óta
+Racionális egységes folyamat, amelyet az IBM 1998 óta tart fenn
+Extrém programozás, 1999 óta
+2000-es évek
+Agile Unified Process (AUP), 2005 óta karbantartja Scott Ambler
+Fegyelmezett agilis szállítás (DAD) felülírja az AUP-t
+2010-es évek 
+
+Scaled Agile Framework (SAFe)
+Nagy léptékű Scrum (LeSS)
+DevOps
+Figyelemre méltó, hogy a DSDM 1994 óta a fenti listán szereplő összes módszertan, a RUP kivételével, agilis módszer volt – mégis sok szervezet, különösen a kormányok továbbra is alkalmaznak agilis előzetes folyamatokat (gyakran vízesés vagy hasonló). A szoftver folyamata és a szoftver minősége szorosan kapcsolódnak egymáshoz; néhány váratlan aspektus és hatás megfigyelhető volt a gyakorlatban 
+A 2000-es évek eleje óta az agilis szállítási folyamatok méretezése a legnagyobb kihívássá vált az agilis folyamatokat használó csapatok számára.
+Ezek között egy másik szoftverfejlesztési folyamat alakult ki nyílt forráskódban. Ezen ismert, bevált gyakorlatokat egy cég keretein belül belső forrásnak nevezik. 
+
+
+== Prototípus ==
+A szoftver prototípusának meghatározása prototípusok létrehozását jelenti, azaz a fejlesztés alatt álló szoftver hiányos verzióit. 
+Az alapelvek a következők: 
+
+A prototípus-készítés nem önálló, komplett fejlesztési módszertan, hanem inkább megközelítés, amely a sajátos tulajdonságok kipróbálására szolgál egy teljes módszertan összefüggésében (például inkrementális, spirális vagy gyors alkalmazásfejlesztés (RAD)).
+Arra törekszik, hogy csökkentse a velejáró projektkockázatot azáltal, hogy egy projektet kisebb szegmensekre bont, és nagyobb változtathatóságot biztosít a fejlesztési folyamat során.
+Az ügyfelet bevonják a fejlesztési folyamatba, ami növeli annak valószínűségét, hogy az ügyfél elfogadja a végső megvalósítást.
+Míg néhány prototípust azzal a tudattal fejlesztenek ki, hogy el fogják távolítani, bizonyos esetekben lehetséges a prototípusról a működő rendszerre történő áttérés.
+A helytelen problémák megoldásának elkerülése érdekében szükséges az alapvető üzleti probléma megértése, de ez igaz minden szoftver módszertanra. 
+
+
+== Módszerek ==
+
+
+=== Agilis fejlesztés ===
+Az "agilis szoftverfejlesztés" az iteratív fejlesztésen alapuló szoftverfejlesztési módszerek egy csoportjára vonatkozik, ahol a követelmények és megoldások az önszerveződő, többfunkciós csoportok közötti együttműködés révén alakulnak ki. A kifejezést 2001-ben alakították ki, amikor megfogalmazták az Agilis Manifestust. 
+Az agilis szoftverfejlesztés az iteratív fejlesztést veszi alapul, de a hagyományos megközelítéseknél könnyebb és emberközpontúbb nézőpont mellett áll. Az agilis folyamatok alapvetően magukban foglalják az iterációt és a folyamatos visszajelzést, amelyet a szoftverrendszer egymást követő finomítása és biztosítása érdekében nyújtanak. 
+Számos agilis módszertan létezik, köztük: 
+
+Dinamikus rendszerfejlesztési módszer (DSDM)
+Kanban
+Scrum
+
+
+=== Folyamatos integráció ===
+A folyamatos integráció az a gyakorlat, ahol minden fejlesztői munkapéldányt naponta többször összevonnak egy megosztott fővonallal. Grady Booch először 1991-ben alkalmazott módszerével nevezte el és javasolta a Folyamatos integrációt, bár nem ösztönözte a napi többszöri integrációt. Az extrém programozás (XP) átvette ezt a fogalmat, és támogatja a napi egynél több integrációt – talán akár több tízszer is.
+
+
+=== Inkrementális fejlesztés ===
+Különböző módszerek elfogadhatók a lineáris és az iteratív rendszerek fejlesztési módszertanának kombinálására, amelynek elsődleges célja az, hogy csökkentse a velejáró projektkockázatot a projekt kisebb szegmensekre bontásával és a változtatások egyszerűbbé tételével a fejlesztési folyamat során. 
+Az inkrementális fejlesztésnek három fő változata van: 
+
+Minivízesések sorozatát hajtják végre, ahol a vízesés minden fázisa a rendszer egy kis részén befejeződik, mielőtt a következő lépésre lép
+Az általános követelményeket meghatározzák, mielőtt továbblépnének a rendszer egyes növekményeinek evolúciós, minivízeséses fejlesztésére
+A kezdeti szoftver koncepciót, a követelmények elemzését, valamint az architektúra és a rendszermag megtervezését a vízesés határozza meg, amelyet egy növekményes megvalósítás követ, ami pedig a végleges verziót eredményezi.
+
+
+=== Gyors alkalmazásfejlesztés ===
+
+A gyors alkalmazásfejlesztés (RAD) egy szoftverfejlesztési módszertan, amely az iteratív fejlesztést és a prototípusok gyors felépítését támogatja a nagy mennyiségű előzetes tervezés helyett. A RAD segítségével kifejlesztett szoftverek „tervezését” magában foglalja a szoftver írása. A kiterjedt előzetes tervezés hiánya általában lehetővé teszi a szoftver sokkal gyorsabb írását, és megkönnyíti a követelmények megváltoztatását. 
+A gyors fejlesztési folyamat előzetes adatmodellek és üzleti folyamatmodellek fejlesztésével kezdődik, strukturált technikák felhasználásával. A következő szakaszban a követelményeket prototípus-formálással ellenőrzik, az adatok és a folyamatmodellek finomítása érdekében. Ezeket a szakaszokat iteratívan megismételjük; A további fejlesztés eredményeként "kombinált üzleti követelmények és műszaki tervezési nyilatkozat kerül felhasználásra az új rendszerek építéséhez".
+A kifejezést először James Martin által 1991-ben bevezetett szoftverfejlesztési folyamat leírására használták. Whitten (2003) szerint ez különféle strukturált technikák, különösen az adatközpontú információtechnológiai tervezés és a prototípus-technikák egyesítése a szoftverrendszerek fejlesztésének felgyorsítása érdekében.
+A gyors alkalmazásfejlesztés alapelvei a következők: 
+
+A fő cél a magas színvonalú rendszer gyors fejlesztése és szállítása viszonylag alacsony beruházási költségek mellett.
+Arra törekszik, hogy csökkentse a velejáró projektkockázatot azáltal, hogy egy projektet kisebb szegmensekre bont, és nagyobb változtathatóságot biztosít a fejlesztési folyamat során.
+Célja, hogy gyorsan kiváló minőségű rendszereket állítson elő, elsősorban iteratív prototípus-készítéssel (a fejlesztés bármely szakaszában), aktív felhasználói bevonással és számítógépes fejlesztési eszközökkel. Ezek az eszközök tartalmazhatnak grafikus felhasználói felület (GUI) készítőket, számítógépes szoftverfejlesztési (CASE) eszközöket, adatbázis-kezelő rendszereket (DBMS), negyedik generációs programozási nyelveket, kódgenerátorokat és objektumorientált technikákat.
+A legfontosabb hangsúly az üzleti igény kielégítésén áll, míg a technológiai vagy a mérnöki kiválóság kevésbé fontos.
+A projekt ellenőrzése magában foglalja a fejlesztés prioritását és a kézbesítési határidők vagy „idődobozok” meghatározását. Ha a projekt elcsúszik, akkor a hangsúly a követelmények csökkentésére kell hogy fókuszáljon, azért, hogy illeszkedjen az idődobozba, és nem pedig a határidő növelésére.
+Általában magában foglalja a közös alkalmazástervezést (JAD), ahol a felhasználók intenzíven részt vesznek a rendszertervezésben, konszenzus kialakításával akár strukturált műhelyekben, akár elektronikusan megkönnyített interakción keresztül.
+Az aktív felhasználói részvétel nélkülözhetetlen.
+Iteratív módon készít sorozatszoftvert, szemben az eldobható prototípussal.
+A jövőbeli fejlesztés és karbantartás megkönnyítéséhez szükséges dokumentációt állít elő.
+A szokásos rendszerelemzési és tervezési módszerek illeszthetők ebbe a keretbe.
+
+
+=== Spirális fejlesztés ===
+
+1988-ban Barry Boehm kiadott egy hivatalos szoftverrendszer-fejlesztési „spirálmodellt”, amely egyesíti a vízesésmodell néhány kulcsfontosságú aspektusát és a gyors prototípus-készítési módszertanokat annak érdekében, hogy ötvözzék a felülről lefelé és az alulról felfelé építkező koncepciók előnyeit. Fontos hangsúlyt fektet egy kulcsfontosságú területre, amelyet sok más módszer elhanyagol: szándékos iteratív kockázatelemzés, különösen a nagyszabású komplex rendszerek számára. 
+Az alapelvek a következők: 
+
+A hangsúly a kockázatértékelésre és a projekt kockázatának minimalizálására irányul. A projektet kisebb szegmensekre bontja és nagyobb változtathatóságot biztosít a fejlesztési folyamat során, valamint lehetőséget kínál a kockázatok felmérésére és a projekt folytatásának mérlegelésére az életciklus során.
+"Minden ciklus a termék minden egyes részén és minden kidolgozási szintjén ugyanazon lépések sorozatával halad előre, a működési koncepció átfogó dokumentumától kezdve az egyes programok kódolásáig."
+Minden spirál körüli utazás négy alapvető kvadránson megy át: (1) meghatározza az iteráció céljait, alternatíváit és korlátait; (2) alternatívák értékelése; Azonosítsa és oldja meg a kockázatokat; (3) az iterációból származó eredmények kidolgozása és ellenőrzése; és (4) megtervezi a következő iterációt.
+Minden ciklust kezdjünk a „nyerési feltételek” azonosításával, és az egyes ciklusokat áttekintéssel és elkötelezettséggel fejezzük be.
+
+
+=== Vízesésmodell ===
+
+A vízesésmodell egy szekvenciális fejlesztési megközelítés, amelyben a fejlődés folyamatosan lefelé (mint egy vízesés) folyik több szakaszban, jellemzően: 
+
+A követelmények elemzése szoftverkövetelmény-specifikációt eredményez
+Szoftver tervezés
+Végrehajtás
+Tesztelés
+Integráció, ha több alrendszer van
+Telepítés )
+Karbantartás
+A módszer első hivatalos leírását gyakran idézik Winston W. Royce által 1970-ben közzétett cikként, bár Royce ebben a cikkben nem használta a „vízesés” kifejezést. Royce ezt a modellt bemutatta egy hibás, nem működő modell példájaként. 
+Az alapelvek a következők: 
+
+A projektet szekvenciális fázisokra osztják, a fázisok között némi átfedés és visszaesés is elfogadható.
+A hangsúly a tervezés, az ütemtervek, a kitűzött dátumok, a költségvetések és a teljes rendszer egyidejű végrehajtására irányul.
+A szigorú ellenőrzést a projekt teljes időtartama alatt átfogó írásbeli dokumentáció, hivatalos áttekintések, valamint a felhasználó és az információtechnológiai menedzsment jóváhagyása / kijelentése jelenti, a legtöbb szakasz végén, a következő szakasz megkezdése előtt. Az írásbeli dokumentáció az egyes szakaszok kifejezett teljesítménye.
+A vízesésmodell a szoftverfejlesztéshez alkalmazott hagyományos mérnöki megközelítés. A szigorú vízesés-megközelítés visszatartja a korábbi szakaszok felülvizsgálatát, miután azok befejeződtek. A tiszta vízesésmodellekben ez a „rugalmatlanság” a többi „rugalmasabb” modell támogatóinak kritikáját váltotta ki. Széles körben vádolták számos nagyszabású kormányzati projekt kudarca miatt, amelyek kifutottak a költségvetésből vagy nem lettek kész időben, és gyakran a Big Design Up Front megközelítés miatt nem teljesítette a követelményeket. A szerződéses előírások kivételével a vízesésmodellt nagyrészt felváltotta a kifejezetten a szoftverfejlesztésre kifejlesztett rugalmasabb és sokoldalúbb módszertan. 
+
+
+=== Egyéb ===
+Egyéb magas szintű szoftverprojekt-módszertanok a következők: 
+
+Magatartásvezérelt fejlesztés és üzleti folyamatok menedzsmentje
+Káoszmodell – A fő szabály az, hogy először mindig oldja meg a legfontosabb kérdést.
+Kiegészítő finanszírozási módszertan – iteratív megközelítés
+Könnyű módszer – általános kifejezés olyan módszerekre, amelyeknek csak néhány szabálya és gyakorlata van
+Strukturált rendszerelemzés és tervezési módszer – a vízesés speciális változata
+A lassú programozás a nagyobb Lassú mozgás részeként hangsúlyozza a gondos és fokozatos munkavégzést minimális, vagy időnyomás nélkül. A lassú programozás célja a hibák és a túlságosan gyors kiadási ütemezések elkerülése.
+V-Model (szoftverfejlesztés) – a vízesésmodell kiterjesztése
+Az Unified Process (UP) egy iteratív szoftverfejlesztési módszertani keret, amely Unified Modeling Language (UML) alapul. Az UP négy szakaszba szervezi a szoftverfejlesztést, amelyek mindegyike a szoftver egy vagy több végrehajtható iterációjából áll, a fejlesztési szakaszban: beindítás, kidolgozás, felépítés és iránymutatások. Számos eszköz és termék létezik az UP végrehajtásának megkönnyítésére. A UP egyik népszerűbb verziója a Rational Unified Process (RUP).
+
+
+== Folyamat metamodellek ==
+A " folyamatmodellek" elvont leírások a szervezet által alkalmazott konkrét folyamatok értékeléséhez, összehasonlításához és fejlesztéséhez. 
+
+Az ISO / IEC 12207 a nemzetközi szabvány, amely leírja a szoftver életciklusának kiválasztási, bevezetési és ellenőrzési módszerét.
+A Kapacitási Érettség Modell Integráció (CMMI) az egyik vezető modell és a bevált gyakorlatra épül. Független értékelések alapján osztályozzák a szervezeteket abban, hogy mennyire követik meghatározott folyamataikat, nem pedig ezeknek a folyamatoknak vagy a készített szoftvernek a minőségét.
+Az ISO 9000 leírja a termékek előállításának hivatalosan szervezett folyamatát, valamint az előrehaladás irányításának és nyomon követésének módszereit. Habár a szabványt eredetileg a gyártási ágazat számára hozták létre, az ISO 9000 szabványokat a szoftverfejlesztésre is alkalmazták. A CMMI-hez hasonlóan az ISO 9000-es tanúsítás sem garantálja a végeredmény minőségét, csak hogy a formalizált üzleti folyamatokat követték.
+ISO / IEC 15504 Információs technológia — folyamatértékelés, más néven a szoftverfolyamat-fejlesztési képesség meghatározása (SPICE), "a szoftverfolyamatok értékelésének kerete". Ennek a szabványnak az a célja, hogy egyértelmű modellt állítson fel a folyamatok összehasonlítására. A SPICE-t ugyanúgy használják, mint a CMMI-t. Modellezi a szoftverfejlesztés menedzselésére, irányítására, irányítására és figyelésére szolgáló folyamatokat. Ezt a modellt arra használják, hogy megnézzék, hogy egy fejlesztési szervezet vagy projektcsapat hogyan dolgozik a szoftverfejlesztés során. Ezt az információt elemzik a gyengeségek azonosítása és a javulás ösztönzése érdekében. Meghatározza azokat az erősségeket is, amelyek folytathatók vagy beépíthetők az adott szervezet vagy csapat általános gyakorlatába.
+Az ISO / IEC 24744 szoftverfejlesztés – Metamodel for Development Methodologies, egy Powertype-alapú metamodell szoftverfejlesztési módszertanhoz.
+SPEM 2.0 az Objektumkezelő Csoport részéről
+Lágy rendszerek módszertana – általános módszer a menedzsment folyamatok fejlesztésére
+Módszertan – általános módszer az információs rendszer folyamatainak fejlesztésére
+
+
+== Gyakorlatban ==
+
+Az évek során számos ilyen keretrendszer alakult ki, mindegyiknek megvannak a saját elismert erősségei és gyengeségei. Az egyik szoftverfejlesztési módszertani keret nem feltétlenül alkalmas minden projekt számára. A rendelkezésre álló módszertani keretek mindegyike különféle típusú projektekhez illeszkedik a legjobban, különféle technikai, szervezeti, projekt- és csapatmegfontolások alapján.
+A szoftverfejlesztő szervezetek folyamatmódszertant vezetnek be a fejlesztési folyamat megkönnyítése érdekében. Időnként a vállalkozók megkövetelhetnek alkalmazott módszertant, példa erre az amerikai védelmi ipar, amely megköveteli a folyamatok modelljein alapuló minősítést a szerződések megszerzéséhez. A szoftver életciklusának kiválasztási, megvalósítási és ellenőrzési módszerének leírására szolgáló nemzetközi szabvány az ISO / IEC 12207. 
+Egy évtizedes cél az volt, hogy megismételhető, kiszámítható folyamatokat találjanak, amelyek javítják a termelékenységet és a minőséget. Néhányan megpróbálják rendszerezni vagy formalizálni a szoftverek látszólag bizonytalan feladatát. Mások a projekt tervezéséhez projektmenedzsment technikákat alkalmaznak. Számos szoftverprojektnek az elvárásai nem felelnek meg a funkcionalitásnak, a költség vagy a szállítási ütemezés szempontjából – néhány figyelemre méltó példaként lásd a sikertelen és túlzott költségvetésű egyedi szoftverprojektek listája. 
+A szervezetek létrehozhatnak egy szoftverfejlesztési folyamatcsoportot (SEPG), amely a folyamat fejlesztésének fókuszpontja. A csoport változatos készségekkel bíró szakemberekből tevődik össze, akik a szoftverfejlesztési folyamatok fejlesztésével foglalkoznak. 
+Egy adott fejlesztői csapat megállapodhat a programozási környezet részleteiben, például az alkalmazott integrált fejlesztési környezetben, és egy vagy több domináns programozási paradigmában, programozási stílusszabályban, vagy konkrét szoftverkönyvtárakban vagy szoftverkeretekben. Ezeket a részleteket általában nem a modell vagy az általános módszertan diktálja. 
+
+
+== Jegyzetek ==
+
+
+== Fordítás ==
+Ez a szócikk részben vagy egészben  a   Software development process című angol Wikipédia-szócikk ezen változatának fordításán alapul.  Az eredeti cikk szerkesztőit annak laptörténete sorolja fel. Ez a jelzés csupán a megfogalmazás eredetét és a szerzői jogokat jelzi, nem szolgál a cikkben szereplő információk forrásmegjelöléseként.
+
+
+== Kapcsolódó szócikkek ==
+Rendszerfejlesztési életciklus
+Projektmenedzsment
+Szoftverfejlesztés
+A szoftverkiadás életciklusa
+Könnyű módszertan
+
+
+== További információk ==
+Fejlesztési megközelítés kiválasztása a cms.hhs.gov webhelyen
+Gerhard Fischer, A 21. század szoftvertechnológiája: a szoftver újrafelhasználásától az együttműködő szoftvertervezésig, 2001
+Az agilis gyakorlatok metrótérképe az Agile Alliance-n

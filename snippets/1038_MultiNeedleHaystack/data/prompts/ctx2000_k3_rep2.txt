@@ -1,0 +1,76 @@
+Az alábbi szövegben (tananyag-jegyzet) el van rejtve néhány oktatói megjegyzés.
+Válaszolj KIZÁRÓLAG egy JSON tömbben, minden kérdésre külön elemmel, a kérdés sorszámával ("id") és a válasszal ("answer"). Ha valamelyik választ nem találod a szövegben, az "answer" értéke legyen "nincs adat".
+Formátum példa: [{"id": 1, "answer": "..."}, {"id": 2, "answer": "..."}]
+
+--- TANANYAG ---
+== Nagyvállalati agilitás ==
+A SAFe (Scaled Agile Framework) Dean Leffingwell által kidolgozott módszertan, amely portfólió-, program- és csapatszintű agilis gyakorlatokat integrál egységes keretrendszerbe. A Scrum@Scale keretrendszert Jeff Sutherland fejlesztette ki, amely a scrum módszertan skálázható változatát valósítja meg, lehetővé téve több csapat koordinált együttműködését.
+A Scrum@Scale módszertan legismertebb hazai alkalmazása a Lufthansa Systems globális agilis transzformációja, amelyet a Jeff Sutherland nevével fémjelzett Scrum Inc. hivatalos esettanulmányként ismer el. Az esettanulmányt a TAL Consulting két managing partnere, Csaba Zoltán és Földesi Árpád készítette, akik a hivatalos fordítását is jegyzik Scrum@Scale Guide-nak.
+
+==== Más korai programozási nyelvek ====
+A Smalltalk első verzióját Alan Kay, Dan Ingalls és Adele Goldberg fejlesztette ki a Xerox PARC-nál. A Smaltalk-71 tartalmazott teljes programozási környeztetet, és dinamikusan típusos szkript nyelv volt. Grafikus fejlesztőkörnyezetet is készítettek hozzá, és az objektumorientációt nyelvi szinten tartalmazta. Több verziója is megjelent, és a nyelv iránti érdeklődés egyre jobban nőtt.  Amellett, hogy a Simula 67-ben bevezetett fogalmakat használta, dinamikusan lehetett benne osztályokat létrehozni és módosítani.
+Az 1970-es években a Lisp közösség is érdeklődni kezdett az objektumorientáció iránt. Különböző kísérleteket végeztek, a LOOPS és a Flavors bevezette a többszörös öröklődést és a mixineket. Ezekből alakították ki a CLOS-t (Common Lisp Object System), ami integrálta a funkcionális és az objektumorientált programozást, és metaobjektum protokollal a további bővítéseket is lehetővé tette. Az 1980-as években  olyan architektúrák kifejlesztésével próbálkoztak, amelyek hardveres támogatást nyújtottak volna az objektumorientációnak, de nem jártak sikerrel. Erre példák az Intel iAPX 432 és a Linn Smart Rekursiv.
+
+== Hatály ==
+A szoftverarchitektúrák terjedelmével kapcsolatban megoszlanak a vélemények:
+
+A beadott kód formai minőségét automatikus eszköz ellenőrzi feltöltéskor. A kódstílus-ellenőrző (linter) legfeljebb 12 figyelmeztetést enged meg ahhoz, hogy a beadás hibátlannak minősüljön.
+
+=== Az első objektumorientált nyelvek ===
+
+== Magyar agilis közösség és szakmai szervezetek ==
+A IVSZ – Informatikai, Távközlési és Elektronikai Vállalkozások Szövetsége 2024-ben hozta létre az Agilis Munkacsoportot, amely a hazai agilis menedzsmenttel és szervezetfejlesztéssel foglalkozó tanácsadó és fejlesztő cégek szakmai összefogását tűzte ki célul.
+A munkacsoport célja a közös szakmai sztenderdek kialakítása, a piaci minőségbiztosítás, valamint a kiemelkedő egyéni és szervezeti teljesítmények elismerése és láthatóvá tétele. A kezdeményezés emellett a nemzetközi jó gyakorlatok hazai adaptálását, az agilis tudás kodifikálását és megosztását is támogatja, elősegítve ezzel az innovációt és a versenyképesség növelését a magyar technológiai szektorban.
+Az Agilis Munkacsoportot Szmola Roland (Methodology Architects), Csaba Zoltán (TAL Consulting) és Hoffmann Bence (Shiwaforce) alapították. Tagjai az alapítókon túl többek közt a Magyar Telekom, Sprint Consulting, Delta Systems, Vialto Consulting. A szervezet rendszeresen szervez szakmai eseményeket, meetupokat és esettanulmány-bemutatókat, amelyek célja a hazai agilis közösség erősítése, a nemzetközi tapasztalatok beemelése, valamint a magyarországi jó gyakorlatok nemzetközi szintű megismertetése.
+A munkacsoport tevékenysége hozzájárul a hazai agilis transzformáció új lendületéhez, és olyan szakmai fórumot biztosít, ahol az agilitás elvei, módszertanai és szervezeti alkalmazásai ágazatközi párbeszédben fejlődhetnek tovább.
+
+== Motiváció ==
+A szoftver architektúra egy összetett rendszer "intellektuálisan megragadható" absztrakciója.Ez az absztrakció számos előnnyel jár:
+
+Azok a hallgatók, akiknek kérdésük merül fel az anyaggal kapcsolatban, konzultációs alkalmakon vehetnek részt. A következő konzultáció időpontja 2026. február 20-án, 14:00-kor lesz.
+
+=== Szoftver architektúra eróziójaEzenkívül az architektúra erózió kezelésére használt intézkedések két fő típusra oszthatók: megelőző és helyreállító intézkedésekre. ===
+A szoftverarchitektúra eróziója a szoftverrendszer tervezett és megvalósított architektúrája közötti fokozatos szakadékra utal az idő múlásával. A szoftverarchitektúra eróziójának jelenségét 1992-ben hozták napvilágra Perry és Wolf a szoftverarchitektúra meghatározása mellett.
+A szoftverarchitektúra eróziója a szoftverfejlesztési életciklus minden szakaszában előfordulhat, és eltérő hatással van a fejlesztés sebességére és a karbantartási költségekre. A szoftverarchitektúra eróziója különféle okok miatt következhet be, mint például az architektúra megsértése, a technikai adósság felhalmozódása és a tudás elpárologtatása. Az architektúra eróziójának híres esete a Mozilla webböngésző meghibásodása.  A Mozilla a Netscape által létrehozott alkalmazás, összetett kódbázissal, amelyet a folyamatos változtatások miatt nehezebbé vált a karbantartása. A kezdeti rossz tervezés és a növekvő architektúra-erózió miatt a Netscape két évet töltött a Mozilla webböngésző újrafejlesztésével, bemutatva, milyen fontos az architektúra eróziójának kezelése a kiterjedt javítási erőfeszítések, idő- és költségveszteségek elkerülése érdekében.
+Az architektúra eróziója csökkentheti a szoftver teljesítményét, jelentősen növelheti a fejlesztési költségeket, és rontja a szoftver minőségét. Számos megközelítést és eszközt javasoltak az architektúra eróziójának felismerésére. Ezeket a megközelítéseket négy fő kategóriába sorolják: konzisztencián alapuló, evolúció-alapú, hibákra fókuszáló és döntéseken alapuló megközelítés. Ezenkívül az architektúra erózió kezelésére használt intézkedések két fő típusra oszthatók: megelőző és helyreállító intézkedésekre.
+
+Nincs nagy központi adatbázis, csak munkamásolatok vannak.
+A gyakori műveletek, mint a becsekkelés, verziótörténet böngészés és a változtatások visszaállítása gyorsak, mert nem kell központi szerverrel kommunikálni.
+Minden munkamásolat egy-egy backup, ami természetes védelmet ad az adatvesztés ellen.
+Két fajta elosztott verziókezelő létezik, a nyitott és a zárt. A nyitott rendszereket inkább nyílt forráskódú termékeknél használják, a zártakat inkább a nem nyilvános forráskódú termékeknél.
+
+== További információk ==
+Weblabor.hu – Az objektumorientált programozás előnyei a kódújrahasznosítás jegyében
+Codex Magazin – Programozzunk objektumokkal
+Prog.hu – Öröklés és konstruktorok C++-ban
+Prog.hu – Aspektus-orientált programozás
+
+A beadási határidők betartását a rendszer automatikusan naplózza, néhány kivétellel. Ha egy hallgató hétvégén (szombaton vagy vasárnap) adja le a házi feladatot, az csak a következő hétfőn számít határidőn belülinek.
+
+Tisztán objektumorientált nyelvek, ahol következetesen minden objektum, a primitívektől kezdve az osztályok, prototípusok, modulok, blokkok is. Arra tervezték őket, hogy megkönnyítsék, vagy kikényszerítsék az objektumorientációt. Példák: Python, Ruby, Scala, Smalltalk, Eiffel, Emerald, JADE, Self.
+Nyelvek, amelyeket főként objektumorientációra terveztek, de procedurális elemekkel. Ezekbe további paradigmákat is bevezethettek. Példák: Java, C++, C#, Delphi/Object Pascal, VB.NET.
+Procedurálisnak tervezett, utólag objektumorientált elemekkel bővített nyelvek. Példák: PHP, Perl, Visual Basic (egy BASIC alapú nyelv), MATLAB, COBOL 2002, Fortran 2003, ABAP, Ada 95, Pascal.
+Az osztály alapú objektumorientációt egy kicsit másként tartalmazó nyelvek. Példák: Oberon (Oberon-1 vagy Oberon-2).
+Absztrakt adattípusokat támogató nyelvek, amelyek nem objektumorientáltak, de az absztrakt adatszerkezetek mégis lehetővé teszik objektumok használatát. Ide sorolják a prototípus alapú objektumorientációt is. Példák:  JavaScript, Lua, Modula-2, CLU.
+Eredetileg is több paradigmát támogató nyelvek, ahol az objektumorientáció csak egy a paradigmák közül. A Tcl támogatja mind az osztály, mind a prototípus alapú objektumorientációt a TclOO objektumrendszer által.
+
+=== Tervezésszintű gondolkodás ===
+A meglévő modell alapján a szoftver konkrét implementációjához (megvalósításához) vezető utat tervezzük meg. Ilyenkor arra keressük a választ, hogy a meghatározott specifikációt hogyan valósítsa meg a rendszer. Ezen a szinten már képbe kerülnek különböző alacsony szintű technikák is, mint például a kommunikációs protokollok, programozási nyelvek és technológiák.
+
+Resolve
+Változási konfliktusok feloldására irányuló felhasználói tevékenység.
+
+== Példák ==
+Szoftvertervezési minta a szoftvertervezésben
+Építészeti minta a szoftver architektúrájához
+Interakciós tervezési minta, amelyet az interakció tervezésében / az ember-számítógép interakcióban használnak
+Pedagógiai minták a tanításban
+Mintakertészet, a kertészetben
+--- TANANYAG VÉGE ---
+
+Kérdések:
+1. Legfeljebb hány linter-figyelmeztetés engedhető meg hibátlan beadáshoz?
+2. Mikor lesz a következő konzultáció?
+3. Mi történik, ha valaki hétvégén adja le a házi feladatot?
+
+Válaszolj KIZÁRÓLAG a JSON tömbbel, más szöveg nélkül.

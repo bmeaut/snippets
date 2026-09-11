@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
-gem 'RedCloth', :platforms => :mswin
-gem 'github-pages'
-gem 'webrick'
+source "https://rubygems.org"
+
+gem "github-pages", group: :jekyll_plugins
+gem "webrick", "~> 1.7"

@@ -1,0 +1,80 @@
+{
+  "cell_id": "ctx64000_k8_rep1",
+  "context_tokens_target": 64000,
+  "k": 8,
+  "repeat": 1,
+  "actual_chars": 258199,
+  "needles": [
+    {
+      "id": "N01",
+      "type": "hatarido",
+      "question": "Mikor lesz a 2. zárthelyi dolgozat?",
+      "expected_answer": "2026. március 14",
+      "match": "substring",
+      "position_frac": 0.111
+    },
+    {
+      "id": "N13",
+      "type": "szam",
+      "question": "Legfeljebb hány linter-figyelmeztetés engedhető meg hibátlan beadáshoz?",
+      "expected_answer": "12",
+      "match": "substring",
+      "position_frac": 0.222
+    },
+    {
+      "id": "N06",
+      "type": "definicio",
+      "question": "Mi a 'stabil iteráció' definíciója ebben a kurzusban?",
+      "expected_answer": "három egymást követő futtatásban",
+      "match": "substring",
+      "position_frac": 0.333
+    },
+    {
+      "id": "N16",
+      "type": "kivetel",
+      "question": "Mi történik, ha valaki hétvégén adja le a házi feladatot?",
+      "expected_answer": "hétfőn",
+      "match": "substring",
+      "position_frac": 0.444
+    },
+    {
+      "id": "N20",
+      "type": "kivetel",
+      "question": "Hány igazolatlan hiányzás után veszíti el a hallgató az aláírás jogát?",
+      "expected_answer": [
+        "két",
+        "kettő",
+        "2"
+      ],
+      "match": "any",
+      "position_frac": 0.556
+    },
+    {
+      "id": "N18",
+      "type": "kivetel",
+      "question": "Kinek csökken a pontszáma, ha csapatmunkánál valaki egyénileg hibázik?",
+      "expected_answer": [
+        "érintett",
+        "hallgató"
+      ],
+      "match": "all_keywords",
+      "position_frac": 0.667
+    },
+    {
+      "id": "N10",
+      "type": "definicio",
+      "question": "Mi a 'forduló-pont' ebben a kurzusban?",
+      "expected_answer": "működő prototípust",
+      "match": "substring",
+      "position_frac": 0.778
+    },
+    {
+      "id": "N05",
+      "type": "hatarido",
+      "question": "Mikor lesz a pótzárthelyi?",
+      "expected_answer": "2026. június 2",
+      "match": "substring",
+      "position_frac": 0.889
+    }
+  ]
+}

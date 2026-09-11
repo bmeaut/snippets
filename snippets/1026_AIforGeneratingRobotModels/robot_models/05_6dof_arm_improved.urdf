@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<robot name="simple_3dof_arm">
+
+  <material name="gray">
+    <color rgba="0.5 0.5 0.5 1"/>
+  </material>
+  <material name="blue">
+    <color rgba="0.2 0.4 0.8 1"/>
+  </material>
+  <material name="green">
+    <color rgba="0.2 0.7 0.3 1"/>
+  </material>
+  <material name="orange">
+    <color rgba="0.9 0.5 0.1 1"/>
+  </material>
+  <material name="dark_gray">
+    <color rgba="0.25 0.25 0.25 1"/>
+  </material>
+  <material name="black">
+    <color rgba="0.05 0.05 0.05 1"/>
+  </material>
+
+  <!-- Base -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0.009" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.035" length="0.018"/>
+      </geometry>
+      <material name="gray"/>
+    </visual>
+  </link>
+
+  <!-- Joint 1: base rotation (yaw) -->
+  <joint name="joint1" type="revolute">
+    <parent link="base_link"/>
+    <child link="link1"/>
+    <origin xyz="0 0 0.018" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14159" upper="3.14159" effort="10" velocity="1"/>
+  </joint>
+
+  <!-- Link 1: vertical column -->
+  <link name="link1">
+    <visual>
+      <origin xyz="0 0 0.0625" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.022" length="0.125"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+  </link>
+
+  <!-- Joint 2: shoulder pitch.
+       With axis (0 1 0), a POSITIVE angle swings link2 downward (toward -z,
+       i.e. into the link1 column) and a NEGATIVE angle swings it upward
+       (away from link1). Limit restricted to -1.5708..0.3 rad
+       (-90deg..17deg) so it can swing fully upward but only slightly
+       downward, preventing it from reaching 90deg straight down and
+       intersecting link1 (self-collision fix). -->
+  <joint name="joint2" type="revolute">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <origin xyz="0 0 0.125" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5708" upper="0.3" effort="10" velocity="1"/>
+  </joint>
+
+  <!-- Link 2: upper arm (horizontal) -->
+  <link name="link2">
+    <visual>
+      <origin xyz="0.0525 0 0" rpy="0 1.5708 0"/>
+      <geometry>
+        <cylinder radius="0.018" length="0.105"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+  </link>
+
+  <!-- Joint 3: elbow pitch -->
+  <joint name="joint3" type="revolute">
+    <parent link="link2"/>
+    <child link="link3"/>
+    <origin xyz="0.105 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.0" upper="2.0" effort="10" velocity="1"/>
+  </joint>
+
+  <!-- Link 3: forearm (horizontal) -->
+  <link name="link3">
+    <visual>
+      <origin xyz="0.0425 0 0" rpy="0 1.5708 0"/>
+      <geometry>
+        <cylinder radius="0.015" length="0.085"/>
+      </geometry>
+      <material name="orange"/>
+    </visual>
+  </link>
+
+  <!-- Joint 4: wrist roll -->
+  <joint name="joint4_wrist_roll" type="revolute">
+    <parent link="link3"/>
+    <child link="wrist_link"/>
+    <origin xyz="0.085 0 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.14159" upper="3.14159" effort="5" velocity="1"/>
+  </joint>
+
+  <!-- Wrist link -->
+  <link name="wrist_link">
+    <visual>
+      <origin xyz="0.011 0 0" rpy="0 1.5708 0"/>
+      <geometry>
+        <cylinder radius="0.013" length="0.022"/>
+      </geometry>
+      <material name="gray"/>
+    </visual>
+  </link>
+
+  <!-- Fixed mount to gripper base -->
+  <joint name="joint5_gripper_mount" type="fixed">
+    <parent link="wrist_link"/>
+    <child link="gripper_base"/>
+    <origin xyz="0.022 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Gripper base: width (y) = 0.035, so half-width = 0.0175 -->
+  <link name="gripper_base">
+    <visual>
+      <origin xyz="0.0075 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.015 0.035 0.015"/>
+      </geometry>
+      <material name="dark_gray"/>
+    </visual>
+  </link>
+
+  <!-- Joint 6: right finger.
+       origin y=0.008, travel up to 0.007, finger half-thickness 0.0025
+       => max extent = 0.008+0.007+0.0025 = 0.0175 = gripper_base half-width,
+       so the finger can never travel past the gripper mount's edge. -->
+  <joint name="joint6_finger_right" type="prismatic">
+    <parent link="gripper_base"/>
+    <child link="finger_right"/>
+    <origin xyz="0.015 0.008 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="0" upper="0.007" effort="5" velocity="0.1"/>
+  </joint>
+
+  <!-- Right finger -->
+  <link name="finger_right">
+    <visual>
+      <origin xyz="0.01 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.02 0.005 0.01"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <!-- Joint 7: left finger (mirrored, same travel-bound logic) -->
+  <joint name="joint7_finger_left" type="prismatic">
+    <parent link="gripper_base"/>
+    <child link="finger_left"/>
+    <origin xyz="0.015 -0.008 0" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.007" effort="5" velocity="0.1"/>
+  </joint>
+
+  <!-- Left finger -->
+  <link name="finger_left">
+    <visual>
+      <origin xyz="0.01 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.02 0.005 0.01"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+  </link>
+
+</robot>
