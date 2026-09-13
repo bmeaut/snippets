@@ -1,16 +1,16 @@
 ---
 layout: default
-codename: Info2Git
-title: Info2 feladatok beadása
-tags: git info2
+codename: EviplabsGit
+title: EViP feladatok beadása
+tags: git ahk eviplabs
 authors: Knyihár Gábor
 ---
 
 > Az utóbbi félévekben több változás is történt laborok beadásának tekintetében, így a korábbi leírások már nem minden esetben érvényesek.
 
-# Info2 feladatok beadása (2024)
+# EViP feladatok beadása
 
-Minden feladat beadásához (labor, házi feladat, zh) a **GitHub** platformot használjuk. Minden labor beadása egy-egy GitHub repository-ban történik, melyet a Moodle-ben található linken keresztül fogtok megkapni. A feladatok megoldását ezen repository-ban kell majd elkészíteni, és ide kell feltölteni. A kész megoldás beadása a repository-ba való feltöltés után egy un. **pull request** formájában történik, amelyet mindig a saját laborvezetőtökhöz kell rendelnetek. Ez a snippet, ennek a folyamatnak a részletes leírását tartalmazza.
+Minden feladat beadásához (labor, zh) a **GitHub** platformot használjuk. Minden labor beadása egy-egy GitHub repository-ban történik, melyet a Moodle-ben található linken keresztül fogtok megkapni. A feladatok megoldását ezen repository-ban kell majd elkészíteni, és ide kell feltölteni. A kész megoldás beadása a repository-ba való feltöltés után egy un. **pull request** formájában történik, amelyet mindig a saját laborvezetőtökhöz kell rendelnetek. Ez a snippet, ennek a folyamatnak a részletes leírását tartalmazza.
 
 > **Fontos**: 
 > Az itt leírt formai előírások betartása elvárás. A nem ilyen formában beadott megoldásokat nem értékeljük.
@@ -27,17 +27,17 @@ Minden héten az aktuális feladathoz egy meghívó url-t fogtok kapni a Moodle-
 
 1. Keressük meg a Moodle kurzus oldalán a laborhoz tartozó **meghívó url-t**, és nyissuk meg.
 
-1. Ha kéri, adjunk engedélyt a **GitHub Classroom** alkalmazásnak, hogy használja az account adataidat. 
+1. Ha kéri, jelentkezzünk be az eduID azonosítónkkal.
 
-![](images/github-authorize-classroom.png)
+![](images/ahk-eduid-login.png)
 
 1. Látni fogunk egy oldalt, ahol elfogadhatjuk a feladatot (`Accept the assignment`). Kattintsunk a gombra.
 
-![](images/github-classroom-accept.png)
+![](images/ahk-accept.png)
 
 1. Várjuk meg, amíg elkészül a repository. A repository linkjét itt fogjuk megkapni.
 
-![](images/github-classroom-ready.png)
+![](images/ahk-ready.png)
 
 1. Nyissuk meg a repository-t a webes felületen a linkre kattintva.
 
@@ -86,7 +86,7 @@ Annak érdekében, hogy a repository-n dolgozni tudjuk, szükségünk van egy lo
 
     ![](images/git-ext-clone.png)
 
-    - Abban az esetben, ha authentikációt kér a program, adjuk meg a felhasználónevünket és egy **personal access token**-t.
+    - Abban az esetben, ha authentikációt kér a program, válasszuk a böngészős megoldást, vagy adjuk meg a felhasználónevünket és egy **personal access token**-t.
 
     > **Fontos**: 2021 óta a GitHub nem fogad el jelszót az egyes műveletek authentikálásához, emiatt szükségünk lesz egy **Personal Access Token**-re, és mindenhol ezt kell majd használnuk a jelszó helyett.
     > 
@@ -189,7 +189,7 @@ Ezután következik a megoldások elkészítése. Ennek során figyelj a követk
 - A feladatokat a kiadott leírás illetve a laborvezető utasításai alapján készítsd el. 
 - Gyakran, de legalább minden feladat után kommitolj.
 - Figyelj rá, hogy mindig jó branchen legyél, valamint hogy minden módosítást kommitolj, amit te csináltál.
-- A beállítási fájlokat, fordítási eredményeket (pl.: `.vs`, `bin`, `˙*.mvb`) ne kommitolj. 
+- A beállítási fájlokat, fordítási eredményeket (pl.: `bin`, `obj`, `.user`) ne kommitolj. 
 - Kommit üzenetnél nem számít, hogy magyarul vagy angolul írod, de mindig értelmes üzenetet adj meg ami tükrözi, hogy mit tartalmaz a változtatás.
 - Amennyiben a feladat képernyőképet kér, azt mindig a megfelelő helyre, a megadott néven mentsd el.
 - Szöveges válaszok esetén a kiadott leírás szövegébe, a megfelelő helyre kell írni a választ.
@@ -331,6 +331,8 @@ Ha a feladatok értékelésével vagy az eredménnyel kapcsolatban kérdésed va
 
 És végül még egy fontos dolog: mi van, ha valamit elrontassz a folyamatban?
 
+ - Ha rosszul adtad meg a GitHub nevedet a meghívó URL elfogadásakor, akkor nem fogsz hozzáférni a repository-dhoz. Ebben az esetben az [ahk.aut.bme.hu/my](https://ahk.aut.bme.hu/my) oldalon tudod javítani az elgépelést, majd ezután megkapod a megfelelő hozzáférést.
+
  - Ha még nem hoztad létre a pull requestet, akkor senki nem is látta, hogy valami félre ment, kezd nyugodtan újra az egészet, akár onnan is, hogy egy új branchre még egyszer feltöltöd a labor megoldásodat. (Lehet, hogy ott marad akkor egy régi, fel nem használt branch, de az senkit nem zavar.)
 
 - Ha már létrehoztad a pull requestet, de még nem jött el a leadási határidő, így a laborvezetőd nemigen látta, nyugodtan zárd le (esetleg írd oda kommentárba vagy az elején lévő szövegbe, hogy ez nem a végleges és ne vegyük figyelembe).
@@ -349,5 +351,3 @@ Ha a feladatok értékelésével vagy az eredménnyel kapcsolatban kérdésed va
 ## Hozzájárulás
 
 Valami kimaradt ebből a leírásból, vagy valami nem elég egyértelmű? Szívesen veszünk minden javítást. A [Mi a Snippet](/snippets/snippets/0000_MiASnippet/) cikkben részletesen leírást találhatsz arról, te hogyan tudsz ehhez az anyaghoz hozzájárulni.
-
-<small>Szerzők, verziók: Knyihár Gábor</small>
