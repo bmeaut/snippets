@@ -1,0 +1,80 @@
+Az alábbi szövegben (tananyag-jegyzet) el van rejtve néhány oktatói megjegyzés.
+Válaszolj KIZÁRÓLAG egy JSON tömbben, minden kérdésre külön elemmel, a kérdés sorszámával ("id") és a válasszal ("answer"). Ha valamelyik választ nem találod a szövegben, az "answer" értéke legyen "nincs adat".
+Formátum példa: [{"id": 1, "answer": "..."}, {"id": 2, "answer": "..."}]
+
+--- TANANYAG ---
+A folyamatos integráció gyakorlatában fontos fogalom a fejlesztési ciklusok megbízhatósága. Ebben a tárgyban azt a fejlesztési ciklust nevezzük stabil iterációnak, amely után a build szerver három egymást követő futtatásban is hibamentes eredményt ad.
+
+A csapatmunkánál felmerülő hibák elbírálása egyéni felelősség alapján történik. Ha csapatmunkánál valaki egyénileg hibázik, csak az érintett hallgató pontszáma csökken, a csapat többi tagjáé nem.
+
+=== Agilis szoftverfejlesztési gyakorlatok ===
+Az agilis szoftverfejlesztést számos konkrét gyakorlat támogatja, amelyek olyan területeket ölelnek fel, mint a követelmények, a tervezés, modellezés, kódolás, tesztelés, tervezés, kockázatkezelés, folyamat, minőség stb. Néhány figyelemre méltó agilis szoftverfejlesztési gyakorlat a következőket foglalja magában:
+
+A nagy házi feladat a félév egyik legnagyobb súlyú beadandója. Ennek határideje 2026. április 3-án, 23:59-kor jár le, ezt követően a rendszer már nem fogadja el a feltöltést.
+
+A vizsgaidőszakra való jelentkezés a Neptun rendszeren keresztül történik. A jelentkezési felület 2026. május 5-én nyílik meg a hallgatók számára.
+
+A backend kód minőségét automatikus tesztekkel is ellenőrzik. Az elvárt minimális tesztlefedettség a forráskód 78%-a.
+
+=== Eredményes és szemtől-szembe való kommunikáció ===
+Az agilis módszerek nagyobb hangsúlyt fektetnek a közvetlen, mint az írásbeli kommunikációra. A csapatok mérete ezért 3-9 fő ideális esetben, ennél nagyobb csapatban nem alakul ki a csapatszellem, vagy több csapatot kell létrehozni, amelyek között kommunikációs problémák léphetnek fel. A csapattagok ideális esetben egy térben dolgoznak, és kereszt-funkcionálisak, ami azt jelenti, hogy a csapat rendelkezik azokkal a készségekkel, amelyek szükségesek a feladat, munka vagy projekt elvégzéséhez.
+Minden csapatban van egy delegált a megrendelő részéről, a Scrum keretrendszerben ő a Terméktulajdonos (angolul Product Owner). A fejlesztés egész ideje alatt rendelkezésre áll, hogy a felmerülő kérdéseket megválaszolja. Az iterációs szakasz végén a fejlesztők és a megbízó delegáltja együtt kiértékelik a növekményt. A megbízótól érkező személy fontos feladata, hogy az elkészítendő funkciókat fontossági sorrendjét felállítsa üzleti szempontból (megtérülési mutató, azaz return of investment - ROI). A fejlesztői csapat a legmagasabb prioritású funkciókat veszi előre.
+Az agilis szoftverfejlesztésben általában elhelyeznek az iroda egyik feltűnő pontján egy általában nagyméretű információs táblát (information radiator). Ezen mindenki láthatja a szoftver vagy más termék projektje fejlesztésének naprakész állapotát. A kifejezést Alistair Cockburn alkotta meg és írta le 2002-es könyvében, az Agilis szoftverfejlesztésben. Egy úgynevezett build light indicator (a projekt elkészültségi fokára utaló fényjelző) szintén tájékoztathatja a csapat tagjait a feladat állásáról.
+
+A félévi jegy több részjegyből tevődik össze, amelyek különböző súllyal számítanak. A laborgyakorlatok teljesítménye a végső jegy 35%-át teszi ki.
+
+A leadási határidők betartása mellett a hallgatók néha a hivatalos értékelés előtt is módosítanak a kódon. Az ilyen, a leadási határidő után, de a manuális értékelés megkezdése előtt privát branch-re feltett commitot árnyék-commitnak nevezzük ebben a tárgyban.
+
+== Rövid történet ==
+Az adatbázisok története értelemszerűen az adatmodellek és az adatbázis-kezelő rendszerek történetével szoros összefüggésben áll.
+Az adatok gyors, gépesített tárolásának és visszakeresésének igénye már az 1900-as évek elején is felmerült, amikor az első népesség-nyilvántartást végző (valójában halálozási statisztikákat készítő) lyukszalagos számítógépek megjelentek. Mindazonáltal a lyukkártyás technológia a jelenlegi rekordokban gondolkodó szemléletben éppúgy jelen van, mint a kezdetek kezdetén. Az adatbázisok jelenlegi, korszerű formái csak az 1960-as évek közepén kezdtek el kialakulni, elsősorban intézmény bérszámfejtési, adatsor elemzési problémáinak kezelésére. A rutinszerű feladatokat először egy hálós adatbázis segítségével igyekeztek lerövidíteni. E korszak terméke például a CODASYL. A hálós szemléleten még nagyon jól érződik a számítógép alacsony szintű programozásának az igénye; azonban látni kell, hogy a tényleges számítógép-felhasználók akkor is, ma is elsősorban nem számítástechnikai szakemberek voltak.
+A számítógéppel való kommunikációt javítani kellett, azaz szét kellett választani az alacsony szintű programozást a magas szintű logikai szerkezettől. Az első adatmodell, amelyben már élesen szétvált a logikai és a fizikai adatbázis, az a relációs adatmodell volt. Bár Edgar F. Codd 1969-ben, az IBM munkatársaként már kidolgozta a mai napig is a legnépszerűbb adatbázis-fajta logikai modelljét, csak 1970-ben publikálta. Téved azonban az, aki azt hiszi, hogy a relációs adatbázis sikertörténetnek indult. Magával az adatbázis logikai szerkezetével semmi baj nem volt, kísértetiesen hasonlít egy közönséges táblázatkezeléshez, csakhogy a lekérdezéssel gondok adódtak. A lekérdezés nyelve ugyanis halmazelméleti és logikai ismereteket igényelt – ami még a számítógép-programozásnál is mostohább feltételnek tűnt a felhasználók szemében. Maga az IBM sem fűzött hozzá komolyabb reményeket, hat év alatt hozták létre az első modern adatbázis-kezelőt, a System-R (ma DB/2) kódnevű szoftvert. Nem úgy a CIA, aki többek között Larry Ellison és Bob Miner segédletével egy grandiózus projektbe fogott bele, amelynek célja egy olyan adattár létrehozása volt, amely a CIA minden felmerülő kérdését gyorsan, hatékonyan, és aránylag olcsón megválaszolja. A projekt éppen az orákulum nevet kapta, angolul: Oracle. Maga a projekt pénz hiányában 1976-ban nem folytatódott, de Ellison és Miner tovább dolgozott a munkán az általuk 1977-ben alapított Relational Software Inc. (RSI, 1982-től Oracle Corp.) keretein belül. 1977-ben pedig létrejött az első Oracle.
+A lekérdező nyelv problémáját azonban nem ők, hanem a System-R fejlesztői oldották meg. Mivel az IBM akkor még nem különösebben érdeklődvén az adatbázisok iránt, nem tiltotta le az adatbázisokkal kapcsolatos információk kiadását, így az RSI nagyon könnyen hozzájutott az SEQUEL nyelv (ma SQL) leírásához. Márpedig több hónappal az IBM-et megelőzve az IBM kijövő termékével kompatibilis, versenyképes terméket sikerült a piacra dobniuk. A teljesség igénye nélkül, az egykori legnagyobbak:
+
+A technikai problémák miatti méltánytalan pontlevonás elkerülésére a tárgy bevezetett egy rövid haladékot. Ezt türelmi ablaknak nevezzük: ez egy 15 perces időszak a beadási határidő után, amely alatt a leadás technikai hiba esetén még pontlevonás nélkül elfogadható.
+
+Az igazolt hiányzások esetén a tárgy rugalmasan kezeli a pótlási lehetőségeket. Ha a hallgató igazoltan hiányzott a zárthelyiről, a pótzárthelyin 10%-kal több időt kap a feladatok megoldására.
+
+A projektmunka önálló elbírálás alá esik, külön ponthatárral. A projektmunka elfogadásához legalább 42 pontot kell elérni a lehetséges 100-ból.
+
+Mainline
+Hasonlít a trunk-hoz, de minden ágnak lehet saját mainline-ja.
+
+A csapatmunka minőségbiztosításának egyik eszköze a kódfelülvizsgálat. Ebben a félévben kettős felülvizsgálatnak hívjuk azt a szabályt, amely szerint egy pull requestet két különböző csapattagnak is jóvá kell hagynia, mielőtt az összeolvasztható lenne.
+
+A félév során több számonkérési forma is szerepel a tárgykövetelményben. A második zárthelyi dolgozatra 2026. március 14-én, 10:15-kor kerül sor a nagyelőadó teremben.
+
+A hallgatók több alkalommal is feltölthetik a megoldásukat a határidőig. Ilyenkor mindig az utolsó beadás bírálja felül a korábbi órai gyakorlat pontszámát, még akkor is, ha az rosszabb eredményt hozna.
+
+=== Elődök ===
+A növekményes szoftverfejlesztési módszerek egészen 1957-ig vezethetők vissza. 1974-ben E. A. Edmonds írt egy dolgozatot, amelyben bevezetett egy alkalmazkodó szoftverfejlesztési folyamatot. Ezzel párhuzamosan, és teljesen függetlenül ugyanazt a módszert fejlesztette ki és alkalmazta a New York Telefon Társaság Rendszerfejlesztési Központja Dan Gielan igazgatása alatt. A korai 1970-es években Tom Gilb elkezdte publikálni az evolúciós projektmenedzsment (EVO) koncepcióját, amely a competitive engineering-é nőtte ki magát. Az 1970-es évek közepétől a végéig Gielan alapos előadásokat tartott Amerika szerte erről a módszertanról és gyakorlatáról és előnyeiről.
+A pehelysúlyú szoftverfejlesztési módszerek egy csoportja kezdett kifejlődni az 1990-es évek közepén válaszul a nehézsúlyú vízesés-orientált módszerekre, amely kritikákat nevezik nehezen szabályozhatónak, nagyszámúnak és mikromenedzseltnek; habár egyes hívei ezen pehelysúlyú módszereknek azt állították, hogy csak visszatértek a korai szoftverfejlesztési gyakorlathoz. Ezek a pehelysúlyú módszerek a következők voltak: 1994-ből a Unified Process és a dinamikus rendszerfejlesztési módszer (angol rövidítéssel DSDM); 1995-ből a Scrum; 1996-ból a crystal clear és az extrém programozás (angol rövidítéssel XP) és 1997-ből az adaptív szoftverfejlesztés és a funkcióvezérelt fejlesztés. Habár ezek a Kiáltvány az agilis szoftverfejlesztésért 2001-es közzététele előttről származnak, mostanra együttesen hivatkoznak rájuk, mint agilis módszerekre; és gyakran rövidítik egyszerűen Agilisnek, nagy kezdő A-val.
+Érdemes megjegyezni, hogy az agilis jelző csak részben fedi a Kiáltvány az agilis szoftverfejlesztésért-ben megfogalmazottakat, az adaptív, alkalmazkodóképes jelzők pontosabban jellemzik az alapvető értékeket. Ezért is szoktuk inkább nagy kezdőbetűvel írni, ha a Kiáltványra és annak értelmezésére gondolunk.
+
+A beadási határidők betartását a rendszer automatikusan naplózza, néhány kivétellel. Ha egy hallgató hétvégén (szombaton vagy vasárnap) adja le a házi feladatot, az csak a következő hétfőn számít határidőn belülinek.
+
+A jelenléti követelmények betartását a tárgy szigorúan veszi. Két igazolatlan hiányzás után a hallgató elveszti a féléves aláírás jogát.
+
+=== Interfészek ===
+Az interfészek tulajdonképpen absztrakt osztályok. Nem tartalmazhatnak megvalósítási részleteket, csak előírhatják bizonyos metódusok jelenlétét, illetve konstansokat definiálhatnak. Olyan nyelvekben, ahol nincs a megvalósítások többszörös öröklődése, interfészekkel érhető el a többszörös öröklés korlátozott formája. A káró problémára  rendszerint az összeolvasztás a megoldás; ha több interfész is előírja ugyanazt a metódust, akkor ugyanazzal a metódussal megvalósítható. C#-ban van lehetőség arra is, hogy a különböző interfészek által megadott ugyanolyan nevű és szignatúrájú metódusokat külön-külön lehessen megvalósítani.
+Nagyobb projektekben interfészek fejezik ki a kliensek elvárásait az objektumokkal szemben. Amellett, hogy a kliens biztos lehet abban, hogy az objektum rendelkezik az interfészben előírt metódusokkal, elvárhat csak egy adott interfészű objektumot ahelyett, hogy meghatározná a pontos osztályt. Ez megkönnyíti a megvalósítások és az objektumok cseréjét. Amellett, hogy az objektum megvalósít egy interfészt, még lehetnek további tagjai is, amikről azonban a kliensek nem tudnak, mivel az interfész nem garantálja. Az interfész egy szerződést ad meg az objektum és kliensei között.
+--- TANANYAG VÉGE ---
+
+Kérdések:
+1. Mi a 'stabil iteráció' definíciója ebben a kurzusban?
+2. Kinek csökken a pontszáma, ha csapatmunkánál valaki egyénileg hibázik?
+3. Mi a nagy házi feladat beadási határideje?
+4. Mikor nyílik meg a vizsgajelentkezés?
+5. Mennyi a minimum elvárt tesztlefedettség?
+6. Hány százalékot ér a laborgyakorlat a félévi jegyben?
+7. Mit jelent az 'árnyék-commit' fogalma ebben a kurzusban?
+8. Mennyi a 'türelmi ablak' hossza?
+9. Milyen kedvezményt kap az, aki igazoltan hiányzik a zárthelyiről?
+10. Mennyi a projektmunka minimum ponthatára?
+11. Mit jelent a 'kettős felülvizsgálat' szabálya?
+12. Mikor lesz a 2. zárthelyi dolgozat?
+13. Mi bírálja felül a korábbi órai gyakorlat pontszámát?
+14. Mi történik, ha valaki hétvégén adja le a házi feladatot?
+15. Hány igazolatlan hiányzás után veszíti el a hallgató az aláírás jogát?
+
+Válaszolj KIZÁRÓLAG a JSON tömbbel, más szöveg nélkül.

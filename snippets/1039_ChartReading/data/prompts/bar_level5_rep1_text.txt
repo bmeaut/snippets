@@ -1,0 +1,38 @@
+Az alábbi táblázat egy mérés adatait tartalmazza:
+
+Mérés | A minta | B minta | C minta | D minta
+1. mérés | 10.92 | 51.79 | 36.38 | 24.69
+2. mérés | 12.51 | 77.77 | 22.05 | 68.16
+3. mérés | 34.58 | 95.16 | 23.55 | 55.96
+4. mérés | 16.27 | 77.34 | 36.66 | 20.2
+5. mérés | 82.3 | 19.89 | 87.64 | 42.92
+6. mérés | 58.32 | 22.82 | 63.15 | 42.11
+7. mérés | 64.62 | 63.24 | 58.25 | 48.53
+8. mérés | 66.15 | 25.52 | 52.85 | 93.04
+9. mérés | 80.69 | 50.74 | 69.29 | 17.4
+10. mérés | 31.1 | 88.49 | 82.44 | 63.07
+11. mérés | 59.98 | 63.11 | 18.69 | 25.9
+12. mérés | 28.52 | 38.2 | 64.29 | 85.43
+13. mérés | 57.52 | 96.86 | 79.95 | 71.6
+14. mérés | 73.48 | 22.16 | 35.95 | 70.94
+15. mérés | 57.96 | 72.3 | 32.34 | 31.59
+16. mérés | 67.28 | 72.72 | 96.85 | 86.91
+17. mérés | 31.48 | 51.04 | 97.36 | 14.08
+18. mérés | 25.42 | 63.95 | 39.18 | 54.8
+19. mérés | 32.72 | 64.29 | 52.42 | 14.54
+20. mérés | 37.93 | 13.36 | 96.13 | 36.69
+21. mérés | 48.71 | 85.44 | 39.33 | 41.74
+22. mérés | 33.17 | 14.48 | 47.98 | 81.17
+23. mérés | 85.24 | 42.27 | 28.1 | 41.33
+24. mérés | 65.07 | 68.98 | 26.39 | 42.07
+
+Válaszolj KIZÁRÓLAG egy JSON tömbben, minden kérdésre külön elemmel, a kérdés sorszámával ("id") és a válasszal ("answer"). Ha nem tudod megállapítani a választ, az "answer" értéke legyen "nincs adat".
+Formátum példa: [{"id": 1, "answer": "..."}, {"id": 2, "answer": "..."}]
+
+Kérdések:
+1. Mennyi a mért érték itt: A minta, 7. mérés?
+2. Mennyivel tér el egymástól a következő két érték: A minta, 7. mérés és B minta, 11. mérés?
+3. Melyik ponton (minta/mérés) a legnagyobb az érték a diagramon a(z) B minta sorozatban?
+4. Mennyi B minta értékeinek átlaga a diagramon?
+
+Válaszolj KIZÁRÓLAG a JSON tömbbel, más szöveg nélkül.

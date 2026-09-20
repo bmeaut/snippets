@@ -1,0 +1,11 @@
+Nézd meg a mellékelt diagramot: @data/charts/scatter_level1_rep1.png
+Válaszolj KIZÁRÓLAG egy JSON tömbben, minden kérdésre külön elemmel, a kérdés sorszámával ("id") és a válasszal ("answer"). Ha nem tudod megállapítani a választ, az "answer" értéke legyen "nincs adat".
+Formátum példa: [{"id": 1, "answer": "..."}, {"id": 2, "answer": "..."}]
+
+Kérdések:
+1. Mennyi a 1. pont y-értéke (a mért feszültség)?
+2. Mennyivel tér el egymástól a 1. pont és a 4. pont y-értéke?
+3. Hányadik pontnak (sorszám) a legnagyobb az y-értéke az adatpontok közül?
+4. Mennyi az összes pont pontjainak átlagos y-értéke?
+
+Válaszolj KIZÁRÓLAG a JSON tömbbel, más szöveg nélkül.

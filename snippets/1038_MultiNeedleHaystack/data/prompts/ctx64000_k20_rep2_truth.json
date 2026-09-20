@@ -1,0 +1,176 @@
+{
+  "cell_id": "ctx64000_k20_rep2",
+  "context_tokens_target": 64000,
+  "k": 20,
+  "repeat": 2,
+  "actual_chars": 260227,
+  "needles": [
+    {
+      "id": "N18",
+      "type": "kivetel",
+      "question": "Kinek csökken a pontszáma, ha csapatmunkánál valaki egyénileg hibázik?",
+      "expected_answer": [
+        "érintett",
+        "hallgató"
+      ],
+      "match": "all_keywords",
+      "position_frac": 0.048
+    },
+    {
+      "id": "N02",
+      "type": "hatarido",
+      "question": "Mi a nagy házi feladat beadási határideje?",
+      "expected_answer": "2026. április 3",
+      "match": "substring",
+      "position_frac": 0.095
+    },
+    {
+      "id": "N06",
+      "type": "definicio",
+      "question": "Mi a 'stabil iteráció' definíciója ebben a kurzusban?",
+      "expected_answer": "három egymást követő futtatásban",
+      "match": "substring",
+      "position_frac": 0.143
+    },
+    {
+      "id": "N15",
+      "type": "szam",
+      "question": "Mennyi a minimum elvárt tesztlefedettség?",
+      "expected_answer": "78%",
+      "match": "substring",
+      "position_frac": 0.19
+    },
+    {
+      "id": "N01",
+      "type": "hatarido",
+      "question": "Mikor lesz a 2. zárthelyi dolgozat?",
+      "expected_answer": "2026. március 14",
+      "match": "substring",
+      "position_frac": 0.238
+    },
+    {
+      "id": "N16",
+      "type": "kivetel",
+      "question": "Mi történik, ha valaki hétvégén adja le a házi feladatot?",
+      "expected_answer": "hétfőn",
+      "match": "substring",
+      "position_frac": 0.286
+    },
+    {
+      "id": "N10",
+      "type": "definicio",
+      "question": "Mi a 'forduló-pont' ebben a kurzusban?",
+      "expected_answer": "működő prototípust",
+      "match": "substring",
+      "position_frac": 0.333
+    },
+    {
+      "id": "N13",
+      "type": "szam",
+      "question": "Legfeljebb hány linter-figyelmeztetés engedhető meg hibátlan beadáshoz?",
+      "expected_answer": "12",
+      "match": "substring",
+      "position_frac": 0.381
+    },
+    {
+      "id": "N19",
+      "type": "kivetel",
+      "question": "Mi bírálja felül a korábbi órai gyakorlat pontszámát?",
+      "expected_answer": "utolsó beadás",
+      "match": "substring",
+      "position_frac": 0.429
+    },
+    {
+      "id": "N07",
+      "type": "definicio",
+      "question": "Mit jelent az 'árnyék-commit' fogalma ebben a kurzusban?",
+      "expected_answer": "leadási határidő után",
+      "match": "substring",
+      "position_frac": 0.476
+    },
+    {
+      "id": "N05",
+      "type": "hatarido",
+      "question": "Mikor lesz a pótzárthelyi?",
+      "expected_answer": "2026. június 2",
+      "match": "substring",
+      "position_frac": 0.524
+    },
+    {
+      "id": "N08",
+      "type": "definicio",
+      "question": "Mit jelent a 'kettős felülvizsgálat' szabálya?",
+      "expected_answer": "két különböző csapattagnak",
+      "match": "substring",
+      "position_frac": 0.571
+    },
+    {
+      "id": "N20",
+      "type": "kivetel",
+      "question": "Hány igazolatlan hiányzás után veszíti el a hallgató az aláírás jogát?",
+      "expected_answer": [
+        "két",
+        "kettő",
+        "2"
+      ],
+      "match": "any",
+      "position_frac": 0.619
+    },
+    {
+      "id": "N11",
+      "type": "szam",
+      "question": "Hány százalékot ér a laborgyakorlat a félévi jegyben?",
+      "expected_answer": "35%",
+      "match": "substring",
+      "position_frac": 0.667
+    },
+    {
+      "id": "N04",
+      "type": "hatarido",
+      "question": "Mikor lesz a következő konzultáció?",
+      "expected_answer": "2026. február 20",
+      "match": "substring",
+      "position_frac": 0.714
+    },
+    {
+      "id": "N09",
+      "type": "definicio",
+      "question": "Mennyi a 'türelmi ablak' hossza?",
+      "expected_answer": "15 perc",
+      "match": "substring",
+      "position_frac": 0.762
+    },
+    {
+      "id": "N17",
+      "type": "kivetel",
+      "question": "Milyen kedvezményt kap az, aki igazoltan hiányzik a zárthelyiről?",
+      "expected_answer": "10%",
+      "match": "substring",
+      "position_frac": 0.81
+    },
+    {
+      "id": "N03",
+      "type": "hatarido",
+      "question": "Mikor nyílik meg a vizsgajelentkezés?",
+      "expected_answer": "2026. május 5",
+      "match": "substring",
+      "position_frac": 0.857
+    },
+    {
+      "id": "N12",
+      "type": "szam",
+      "question": "Mennyi a projektmunka minimum ponthatára?",
+      "expected_answer": "42 pont",
+      "match": "substring",
+      "position_frac": 0.905
+    },
+    {
+      "id": "N14",
+      "type": "szam",
+      "question": "Legfeljebb hány fő alkothat egy csapatot a projektmunkánál?",
+      "expected_answer": "3",
+      "match": "substring",
+      "position_frac": 0.952
+    }
+  ]
+}

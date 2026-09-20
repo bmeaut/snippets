@@ -1,0 +1,33 @@
+{
+  "cell_id": "ctx16000_k3_rep1",
+  "context_tokens_target": 16000,
+  "k": 3,
+  "repeat": 1,
+  "actual_chars": 64557,
+  "needles": [
+    {
+      "id": "N11",
+      "type": "szam",
+      "question": "Hány százalékot ér a laborgyakorlat a félévi jegyben?",
+      "expected_answer": "35%",
+      "match": "substring",
+      "position_frac": 0.25
+    },
+    {
+      "id": "N14",
+      "type": "szam",
+      "question": "Legfeljebb hány fő alkothat egy csapatot a projektmunkánál?",
+      "expected_answer": "3",
+      "match": "substring",
+      "position_frac": 0.5
+    },
+    {
+      "id": "N17",
+      "type": "kivetel",
+      "question": "Milyen kedvezményt kap az, aki igazoltan hiányzik a zárthelyiről?",
+      "expected_answer": "10%",
+      "match": "substring",
+      "position_frac": 0.75
+    }
+  ]
+}

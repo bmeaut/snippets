@@ -1,0 +1,73 @@
+{
+  "cell_id": "ctx150000_k8_rep2",
+  "context_tokens_target": 150000,
+  "k": 8,
+  "repeat": 2,
+  "actual_chars": 603949,
+  "needles": [
+    {
+      "id": "N15",
+      "type": "szam",
+      "question": "Mennyi a minimum elvárt tesztlefedettség?",
+      "expected_answer": "78%",
+      "match": "substring",
+      "position_frac": 0.111
+    },
+    {
+      "id": "N16",
+      "type": "kivetel",
+      "question": "Mi történik, ha valaki hétvégén adja le a házi feladatot?",
+      "expected_answer": "hétfőn",
+      "match": "substring",
+      "position_frac": 0.222
+    },
+    {
+      "id": "N11",
+      "type": "szam",
+      "question": "Hány százalékot ér a laborgyakorlat a félévi jegyben?",
+      "expected_answer": "35%",
+      "match": "substring",
+      "position_frac": 0.333
+    },
+    {
+      "id": "N17",
+      "type": "kivetel",
+      "question": "Milyen kedvezményt kap az, aki igazoltan hiányzik a zárthelyiről?",
+      "expected_answer": "10%",
+      "match": "substring",
+      "position_frac": 0.444
+    },
+    {
+      "id": "N12",
+      "type": "szam",
+      "question": "Mennyi a projektmunka minimum ponthatára?",
+      "expected_answer": "42 pont",
+      "match": "substring",
+      "position_frac": 0.556
+    },
+    {
+      "id": "N08",
+      "type": "definicio",
+      "question": "Mit jelent a 'kettős felülvizsgálat' szabálya?",
+      "expected_answer": "két különböző csapattagnak",
+      "match": "substring",
+      "position_frac": 0.667
+    },
+    {
+      "id": "N09",
+      "type": "definicio",
+      "question": "Mennyi a 'türelmi ablak' hossza?",
+      "expected_answer": "15 perc",
+      "match": "substring",
+      "position_frac": 0.778
+    },
+    {
+      "id": "N10",
+      "type": "definicio",
+      "question": "Mi a 'forduló-pont' ebben a kurzusban?",
+      "expected_answer": "működő prototípust",
+      "match": "substring",
+      "position_frac": 0.889
+    }
+  ]
+}
