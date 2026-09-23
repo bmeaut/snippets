@@ -74,7 +74,6 @@ The published starting page was checked against all 112 directories under `snipp
 | `0212_DpObserver` | OK | Page and images render correctly. |
 | `0213_DpStrategy` | OK | Page and images render correctly. |
 | `0214_DpState` | OK | Page and images render correctly. |
-| `0215_DpEgyebek` | invisible | No link to this directory was found on the starting page. |
 | `0216_VisitorObserverPelda` | OK | Page and images render correctly. |
 | `0217_DpVisitor` | OK | Page and images render correctly. |
 | `0218_GlcdTervezesiPelda` | OK | Page and images render correctly. |
@@ -112,7 +111,7 @@ The published starting page was checked against all 112 directories under `snipp
 | `1004_Wordle` | OK | Page and images render correctly. |
 | `1005_RAGCourseMaterial` | OK | Page and images render correctly. |
 | `1007_KontenerizacioROS` | OK | Page and images render correctly. |
-| `1008_NotionPersonalHub` | visible but misformatted | Literal `%}` remains visible in the rendered page text. |
+| `1008_NotionPersonalHub` | OK | The `%}` sequence is part of valid Kramdown image sizing syntax (`{width=90%}`), not an unrecognized rendered marker. |
 | `1010_AutomatAd` | OK | Page and images render correctly. |
 | `1011_cashregisterTdd` | OK | Page and images render correctly. |
 | `1012_n8n_basics` | OK | Page and images render correctly. |
@@ -126,13 +125,13 @@ The published starting page was checked against all 112 directories under `snipp
 | `1021_AImless` | OK | Page and images render correctly. |
 | `1022_Figma2AndroidUI` | OK | Page and images render correctly. |
 | `1023_AIAssistedPIDTuning` | OK | Page and images render correctly. |
-| `1025_BiPlatform` | visible but misformatted | Literal `}}` remains visible in the rendered page text. |
+| `1025_BiPlatform` | OK | The `}}` sequence is inside a fenced JSON example and is rendered as intended code content, not an unrecognized markup marker. |
 | `1026_AIforGeneratingRobotModels` | OK | Page and images render correctly. |
 | `1027_AIGrader` | OK | Page and images render correctly. |
 | `1028_RalphLoop` | OK | Page and images render correctly. |
 | `1030_RustCInterop` | OK | Page and images render correctly. |
 | `1031_MobileDesign` | OK | Page and images render correctly. |
-| `1032_TeamsIntegration` | invisible | No link to this directory was found on the starting page. |
+| `1032_TeamsIntegration` | OK | Fixed: removed the leading blank line so Jekyll recognizes the front matter and includes this page in the generated starting-page index. The live site will reflect this after the current repository is deployed. |
 | `1037_LocalGradingAgent` | OK | Page and images render correctly. |
 | `1038_MultiNeedleHaystack` | OK | Page and images render correctly. |
 | `1039_ChartReading` | OK | Page and images render correctly. |
@@ -144,5 +143,5 @@ The published starting page was checked against all 112 directories under `snipp
 | `1052_RustCmidlayer` | OK | Page and images render correctly. |
 | `AlkFejlHfTanulsagok` | OK | Page and images render correctly. |
 
-Summary: 108 OK, 2 invisible, and 2 visible but misformatted.
+Summary after fixes: 112 OK, 0 invisible, and 0 visible but misformatted. The two visibility fixes require publication of the current repository state before they can be confirmed on the live site.
 

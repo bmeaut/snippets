@@ -1,4 +1,3 @@
-
 ---
 layout: default
 codename: 1032_TeamsIntegration

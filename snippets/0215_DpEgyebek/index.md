@@ -2,7 +2,7 @@
 layout: default
 codename: DpEgyebek
 title: Egyéb tervezési minták
-tags: designpatterns alkfejl skipfromindex
+tags: designpatterns alkfejl
 authors: Csorba Kristóf
 ---
 
