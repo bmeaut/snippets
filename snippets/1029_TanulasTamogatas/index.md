@@ -7,8 +7,8 @@ authors: Técsi Zsuzsanna Vilma
 ---
 
 # Önálló tanulás támogatása
-## Bevezetés
-A tanuláskutatás eredményei szerint a leghatékonyabb technikák közé tartozik az aktív felidézés ([*active recall*](https://en.wikipedia.org/wiki/Testing_effect)) és az elosztott ismétlés ([*spaced repetition*](https://en.wikipedia.org/wiki/Spaced_repetition)).
+
+A tanuláskutatás eredményei szerint a leghatékonyabb technikák közé tartozik az aktív felidézés ([*active recall*](https://en.wikipedia.org/wiki/Testing_effect)) és az elosztott ismétlés ([*spaced repetition*](https://en.wikipedia.org/wiki/Spaced_repetition)) [[1]].
 
 Aktív felidézésnél a tanuló nem újraolvassa az anyagot, hanem emlékezetből hívja elő, például kérdésekre válaszol, fejből leírja vagy elmagyarázza a tananyagot. Már a felidézéssel járó erőfeszítés is erősíti az emléknyomot, közben pedig kiderül, mi az, ami még nem megy. Az elosztott ismétlés inkább ütemezési stratégia. Az anyagot egyre hosszabb időközönként vesszük elő újra, jellemzően akkor, amikor már kezdenénk elfelejteni. Így kevesebb összes tanulási idővel tartósabb tudás alakul ki, mint egyetlen hosszú, tömbösített tanulással. A két módszer jól kiegészíti egymást. Az elosztott ismétlés azt határozza meg, mikor vegyük elő az anyagot, az aktív felidézés pedig azt, hogyan.
 
@@ -39,6 +39,7 @@ A legfőbb tapasztalatom az, hogy az MI akkor segít a tanulásban, ha én dolgo
 Az alábbi promptok sablonok, amelyek javarészt a saját beszélgetéseim alapján készültek.
 
 ### Az alap: projekt és projekt-utasítás (benne a saját szokások)
+
 Az MI-alapú tanulást leginkább az segíti, ha a projekt funkciót használjuk. Ide feltölthetjük a kapcsolódó forrásanyagokat (előadásdiák, jegyzetek, régi feladatok, forráskód stb.), és egy projekt-utasításban egyszer leírhatjuk, mit szeretnénk. Enélkül minden új beszélgetés elején el kell magyarázni a vizsgát, a szintünket és a kéréseinket, és ez sok felesleges kört jelent.
 
 Érdemes az utasításba a saját tanulási szokásainkat is beleírni. Nálam ilyen volt, hogy hosszú, megszakítás nélküli blokkokban szeretek dolgozni, passzív olvasásnál nehezen tartom a figyelmemet, és gyakran közbekérdezek. Ha ezeket az MI előre tudja, a tempót és a feladatok formáját is ehhez igazítja.
@@ -108,7 +109,7 @@ Bontsd több fázisra, és mindegyiknél írd le, milyen fogalmat kell hozzá me
 
 #### Olvasási terv szakcikkekhez
 
-Keshav háromlépéses olvasási módszere szerint nem kell minden cikket elejétől végéig ugyanolyan mélységben elolvasni. Először 5–10 perc átfutás jön (cím, absztrakt, ábrák, konklúzió), utána alapos olvasás, mély olvasás pedig csak a kulcscikkeknél, fejezeteknél. Ha sok cikket kell feldolgozni, az MI abban segít, hogy milyen sorrendben olvassuk őket, és melyik mennyi figyelmet érdemel.
+Keshav háromlépéses olvasási módszere [[2]] szerint nem kell minden cikket elejétől végéig ugyanolyan mélységben elolvasni. Először 5–10 perc átfutás jön (cím, absztrakt, ábrák, konklúzió), utána alapos olvasás, mély olvasás pedig csak a kulcscikkeknél, fejezeteknél. Ha sok cikket kell feldolgozni, az MI abban segít, hogy milyen sorrendben olvassuk őket, és melyik mennyi figyelmet érdemel.
 
 ```
 A témám: [1-2 mondat]. A projektbe feltöltöttem a cikkeket, amelyeket fel kell dolgoznom.
@@ -217,6 +218,7 @@ Ellentmondásnál a hivatalos anyag a mérvadó.
 ```
 
 #### Hibanapló
+
 Egy munkamenet vagy témablokk végén érdemes összegyűjteni a hibáinkat, mert egyenként javítva nem látszik, ha ugyanaz a gondolkodási hiba ismétlődik.
 
 ```
@@ -247,7 +249,7 @@ Prompt:
 MI:
 ```
 [...]
-80/20 szabály — kiveszem az explicit alkalmazásából. Igazad van, több anyagrészt droppoltam miatta indokolatlanul, pl. éppen a /proc-ot. Inkább te jelzed ha valami túl részletesnek tűnik.
+80/20 szabály — kiveszem az explicit alkalmazásából. Igazad van, több anyagrészt kihagytam miatta indokolatlanul, pl. éppen a /proc-ot. Inkább te jelzed ha valami túl részletesnek tűnik.
 [...]
 ```
 
@@ -274,6 +276,7 @@ Igazad van, és köszönöm, hogy megmutattad a diagramot — ez egyértelműen 
 Ennél az esetnél tanultam a legtöbbet, mert pontosan meg kellett fogalmaznom, mit mutat a diagram, és így a két állapot közötti különbség is rögzült.
  
 #### A nagy kép összeállása
+
 A vizsga előtti estén egy kódértelmezési szimuláció megmutatta, hogy a részletek megvannak, de az egész kép hiányzik. Két fogalmi hibát vétettem, ezért megálltam, és arra kértem az MI-t, hogy egy analógián keresztül magyarázza el, hogyan kapcsolódnak egymáshoz a részek.
  
 Prompt:
@@ -294,7 +297,6 @@ Az analógiát kérdésekkel próbáltam ki, és a tárgy korábbi részéből i
 
 ### Diplomamunka
 
-
 A diplomamunkámhoz számos szakcikket gyűjtöttem össze. Az MI-től azt kértem, hogy segítsen hatékonyan feldolgozni őket, mert nem akartam, hogy passzív olvasás legyen belőle, és végül semmi ne maradjon meg. Először olvasási sorrendet állított össze, és megjelölte, melyik cikk kapcsolódik szorosan a témámhoz, és melyik kevésbé. Ezután jegyzetsablont javasolt, és tanácsokat adott ahhoz, hogyan töltsem ki eredményesen. A kitöltött jegyzeteimet elküldtem neki, és a cikkel összevetve javíttattam. A sablon „viszony a saját rendszeremhez” mezője rendre üresen maradt, és ez megmutatta, hogy a saját rendszerem működését még nem látom át elejétől a végéig. Ez lett a következő tanulási célom.
 
 A fejlesztéshez meg kellett értenem a rendszert és a kódbázist, ami több, mások által írt repóból álló rendszernél nem egyszerű feladat. Ahelyett, hogy rögtön magyarázatot kértem volna, először magam próbáltam megérteni a működést. Amikor elakadtam, iránymutatást és forrásokat kértem. Amikor már volt rálátásom a rendszerre, leírtam neki a saját értelmezésemet, és megkértem, hogy ellenőrizze, helytálló-e.
@@ -302,7 +304,8 @@ A fejlesztéshez meg kellett értenem a rendszert és a kódbázist, ami több, 
 A hibakeresésről és a konténeres fejlesztőkörnyezetről külön esettanulmányt írtam ([1007_KontenerizacioROS](../1007_KontenerizacioROS/index.md)).
 
 ## Források
- 
-- S. Keshav: How to Read a Paper. ACM SIGCOMM Computer Communication Review, 2007.
-- J. Dunlosky et al.: Improving Students' Learning With Effective Learning Techniques. Psychological Science in the Public Interest, 2013.
-- H. L. Roediger, J. D. Karpicke: Test-Enhanced Learning. Psychological Science, 2006.
+- [[1]] J. Dunlosky et al.: Improving Students' Learning With Effective Learning Techniques. Psychological Science in the Public Interest, 2013 
+- [[2]] S. Keshav: How to Read a Paper. ACM SIGCOMM Computer Communication Review, 2007
+
+[1]: https://www.whz.de/fileadmin/lehre/hochschuldidaktik/docs/dunloskiimprovingstudentlearning.pdf  "J. Dunlosky et al.: Improving Students' Learning With Effective Learning Techniques. Psychological Science in the Public Interest, 2013"
+[2]: https://dl.acm.org/doi/abs/10.1145/1273445.1273458 "S. Keshav: How to Read a Paper. ACM SIGCOMM Computer Communication Review, 2007"
