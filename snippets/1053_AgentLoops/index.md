@@ -159,7 +159,7 @@ Azonban a kis modellek pont abban gyengébbek, amire a loop épül, vagyis a kö
 
 ## Gyakorlati példa: három szint egy gyenge lokális modellel
 
-A kérdés az, hogy egy gyenge, ingyenes, lokálisan futó modell eljut-e helyes eredményig pusztán azáltal, hogy a harness sokszor és okosan futtatja. A kísérlethez egy kb. 300 soros, csak a Python standard könyvtárára épülő harnesst írtam. Mindhárom szint ugyanazt a feladatot és ugyanazt a modellt kapja.
+A kérdés az, hogy egy gyenge, ingyenes, lokálisan futó modell eljut-e helyes eredményig pusztán azáltal, hogy a harness sokszor és okosan futtatja. A kísérlethez egy kb. 300 soros, csak a Python standard könyvtárára épülő harnesst írtam: [`agent_loop.py`](agent_loop.py). Mindhárom szint ugyanazt a feladatot és ugyanazt a modellt kapja.
 
 | Elem | Választás |
 |------|-----------|
