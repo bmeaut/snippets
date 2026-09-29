@@ -3,3 +3,9 @@ _site/
 .sass-cache/
 Gemfile.lock
 *.pdf
+/snippets/1011_cashregisterTdd/TddShop.Core/obj/**
+/snippets/1011_cashregisterTdd/TddShop.Core/bin/**
+/snippets/1011_cashregisterTdd/TddShop.Tests/obj/**
+/snippets/1011_cashregisterTdd/TddShop.Tests/bin/**
+/snippets/1011_cashregisterTdd/TddShop.Gui/obj/**
+/snippets/1011_cashregisterTdd/TddShop.Gui/bin/**
