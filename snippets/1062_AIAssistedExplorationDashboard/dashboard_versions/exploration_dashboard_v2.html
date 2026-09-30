@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exploration Fleet — robot1 / robot2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/roslib@1.4.1/build/roslib.min.js"></script>
+<style>
+:root{
+  /* ground */
+  --ground:#0E1116; --panel:#161B22; --panel-2:#1B2129; --rule:#242D39;
+  --ink:#D7DEE7; --ink-dim:#8593A3; --ink-faint:#5A6675;
+  /* signal colours — each one is bound to a marker colour published by the nodes */
+  --bidding:#E8A33D;     /* auction clock, START_BIDDING */
+  --evaluating:#4FD8D0;  /* auction clock, START_EVALUATING + local_blacklist cyan */
+  --goal:#5B8CFF;        /* active_frontier_visual blue */
+  --blacklist:#E5484D;   /* frontier_blacklist_visuals red */
+  --frontier:#6FD07A;    /* frontier_centroid_markers green */
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --label:"Archivo Narrow","Arial Narrow",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--ground);color:var(--ink)}
+body{font-family:var(--mono);font-size:13px;line-height:1.5;
+  padding:18px;max-width:1360px;margin:0 auto;
+  background-image:linear-gradient(180deg,#121821 0,var(--ground) 380px);}
+h1,h2,h3,.lab{font-family:var(--label);text-transform:uppercase;letter-spacing:.14em;font-weight:600;margin:0}
+.lab{font-size:11px;color:var(--ink-dim)}
+.num{font-variant-numeric:tabular-nums}
+a{color:var(--evaluating)}
+:focus-visible{outline:2px solid var(--goal);outline-offset:2px}
+
+/* ── masthead ───────────────────────────────── */
+header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+header h1{font-size:19px;letter-spacing:.2em}
+header .sub{color:var(--ink-faint);font-size:11px}
+.link{margin-left:auto;display:flex;gap:8px;align-items:center}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--blacklist);flex:none}
+.dot.up{background:var(--frontier);box-shadow:0 0 0 3px rgba(111,208,122,.16)}
+.dot.wait{background:var(--bidding)}
+button{font:inherit;font-family:var(--label);text-transform:uppercase;letter-spacing:.12em;
+  font-size:11px;color:var(--ink);background:var(--panel-2);border:1px solid var(--rule);
+  border-radius:2px;padding:5px 10px;cursor:pointer}
+button:hover{border-color:var(--ink-faint)}
+button[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+
+.card{background:var(--panel);border:1px solid var(--rule);border-radius:3px;margin-bottom:14px}
+.card>.head{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--rule)}
+.card>.body{padding:14px}
+
+/* ── signature: the two-stroke phase beam ───── */
+.clock{padding:16px 18px 14px}
+.beam{position:relative;height:38px;border:1px solid var(--rule);border-radius:2px;
+  background:repeating-linear-gradient(90deg,#151b23 0 3px,#131920 3px 6px);
+  display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.beam .half{display:flex;align-items:center;justify-content:center;position:relative;z-index:2;
+  font-family:var(--label);text-transform:uppercase;letter-spacing:.22em;font-size:12px;
+  color:var(--ink-faint);transition:color .18s}
+.beam .half:first-child{border-right:1px solid var(--rule)}
+.beam .half.on{color:var(--ground)}
+.beam .slug{position:absolute;top:0;bottom:0;left:0;width:50%;z-index:1;
+  background:var(--bidding);transition:transform .16s cubic-bezier(.2,.8,.2,1),background .16s}
+.beam.eval .slug{transform:translateX(100%);background:var(--evaluating)}
+.clockrow{display:flex;align-items:flex-end;gap:26px;flex-wrap:wrap;margin-bottom:12px}
+.big{font-size:40px;font-weight:600;line-height:.9;letter-spacing:-.02em}
+.big.sync{color:var(--ink-faint)}
+.stat .lab{margin-bottom:3px}
+.stat .v{font-size:15px;font-weight:500}
+.ticks{display:flex;gap:2px;margin-top:10px;height:12px;align-items:stretch}
+.ticks i{flex:1;min-width:2px;background:var(--rule);border-radius:1px}
+.ticks i.b{background:var(--bidding)}
+.ticks i.e{background:var(--evaluating)}
+.ticks-cap{display:flex;justify-content:space-between;margin-top:5px}
+
+/* ── robot panels ───────────────────────────── */
+.fleet{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:14px}
+.robot .head strong{font-family:var(--label);letter-spacing:.18em;font-size:14px;font-weight:700}
+.state{margin-left:auto;display:flex;align-items:center;gap:7px;font-family:var(--label);
+  letter-spacing:.16em;font-size:11px;color:var(--ink-faint)}
+.state.active{color:var(--goal)}
+.state .dot{background:var(--ink-faint)}
+.state.active .dot{background:var(--goal);box-shadow:0 0 0 3px rgba(91,140,255,.18)}
+.goalpos{font-size:12px;color:var(--ink-dim);margin-bottom:14px}
+.goalpos.none{color:var(--ink-faint)}
+.counts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.count{border:1px solid var(--rule);border-left-width:3px;border-radius:2px;padding:9px 11px;background:var(--panel-2)}
+.count.sender{border-left-color:var(--blacklist)}
+.count.local{border-left-color:var(--evaluating)}
+.count .v{font-size:26px;font-weight:600;line-height:1.1}
+.count .lab{display:block;margin-top:2px}
+.count .src{color:var(--ink-faint);font-size:10px;margin-top:5px}
+
+/* ── tables ─────────────────────────────────── */
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{font-family:var(--label);text-transform:uppercase;letter-spacing:.12em;font-size:10px;
+  color:var(--ink-dim);text-align:left;font-weight:600;padding:0 10px 7px 0;border-bottom:1px solid var(--rule)}
+td{padding:6px 10px 6px 0;border-bottom:1px solid #1E252E}
+tr.mine td:first-child{color:var(--goal)}
+td.r,th.r{text-align:right;padding-right:0}
+.empty{color:var(--ink-faint);padding:6px 0}
+
+/* ── map ────────────────────────────────────── */
+.mapwrap{position:relative;background:#0A0D11;border:1px solid var(--rule);border-radius:2px;
+  height:min(62vh,520px);overflow:hidden;touch-action:none}
+canvas{display:block;width:100%;height:100%;cursor:grab}
+canvas.drag{cursor:grabbing}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;font-size:11px;color:var(--ink-dim)}
+.legend span{display:flex;align-items:center;gap:6px}
+.sw{width:9px;height:9px;border-radius:50%}
+.mapmeta{margin-top:8px;font-size:11px;color:var(--ink-faint)}
+details.setup{background:var(--panel);border:1px solid var(--rule);border-radius:3px;padding:12px 14px}
+details.setup summary{cursor:pointer;font-family:var(--label);text-transform:uppercase;letter-spacing:.14em;font-size:11px;color:var(--ink-dim)}
+pre{background:#0A0D11;border:1px solid var(--rule);border-radius:2px;padding:10px 12px;
+  overflow:auto;font-size:12px;color:var(--ink)}
+code{color:var(--evaluating)}
+footer{color:var(--ink-faint);font-size:11px;margin:16px 0 4px}
+.hidden{display:none!important}
+.warn{margin:12px 0 0;padding:8px 11px;font-size:11.5px;color:var(--bidding);
+  background:rgba(232,163,61,.07);border-left:3px solid var(--bidding);border-radius:2px}
+@media (max-width:820px){.counts{grid-template-columns:1fr}.big{font-size:32px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Exploration Fleet</h1>
+  <span class="sub" id="linkSubjects"></span>
+  <div class="link">
+    <span class="dot" id="linkDot"></span>
+    <span class="lab" id="linkText">Connecting</span>
+    <button id="reconnect">Reconnect</button>
+  </div>
+</header>
+
+<!-- ── auction clock: the one global source of truth ── -->
+<section class="card">
+  <div class="head"><h2 style="font-size:12px">Auction clock</h2>
+    <span class="lab" style="margin-left:auto" id="clockScope">/auction_clock</span></div>
+  <div class="body clock">
+    <div class="clockrow">
+      <div class="stat"><span class="lab">Round</span><div class="big num" id="roundId">—</div></div>
+      <div class="stat"><span class="lab">Robots in clock</span><div class="v num" id="numRobots">—</div></div>
+      <div class="stat"><span class="lab">Tick interval</span><div class="v num" id="tickRate">—</div></div>
+      <div class="stat"><span class="lab">Last tick</span><div class="v num" id="lastTick">—</div></div>
+    </div>
+    <div class="beam" id="beam">
+      <div class="half on" id="halfBid">Bidding</div>
+      <div class="half" id="halfEval">Evaluating</div>
+      <div class="slug"></div>
+    </div>
+    <div class="ticks" id="ticks"></div>
+    <div class="ticks-cap"><span class="lab">Older</span><span class="lab" id="tickNote">Waiting for first tick</span></div>
+    <p class="warn hidden" id="clockWarn"></p>
+  </div>
+</section>
+
+<!-- ── per-robot status ── -->
+<div class="fleet" id="fleet"></div>
+
+<!-- ── bids for the current round ── -->
+<section class="card">
+  <div class="head"><h2 style="font-size:12px">Bids this round</h2>
+    <span class="lab" style="margin-left:auto">/frontier_bids — filtered to round <span class="num" id="bidRound">—</span></span>
+    <button id="bidToggle" aria-expanded="true" aria-controls="bidBody">Hide</button></div>
+  <div class="body" id="bidBody">
+    <table>
+      <thead><tr><th>Robot</th><th>Frontier centroid</th><th>Robot position</th><th class="r">Score</th></tr></thead>
+      <tbody id="bidRows"><tr><td colspan="4" class="empty">No bids received for this round yet.</td></tr></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ── map ── -->
+<section class="card">
+  <div class="head"><h2 style="font-size:12px">Map</h2>
+    <span class="lab">costmap redraws at 1 Hz</span>
+    <span style="margin-left:auto;display:flex;gap:6px">
+      <span id="mapPick" style="display:flex;gap:6px"></span>
+      <button id="rotL" title="Rotate view 90° left">&#8630;</button>
+      <button id="rotR" title="Rotate view 90° right">&#8631;</button>
+      <button id="fitView" title="Frame the whole grid at the default orientation">Fit</button>
+      <button id="mapToggle" aria-expanded="true" aria-controls="mapBody">Hide</button>
+    </span></div>
+  <div class="body" id="mapBody">
+    <div class="mapwrap"><canvas id="map" width="600" height="400"></canvas></div>
+    <div class="legend" id="legend">
+      <span><i class="sw" style="background:var(--frontier)"></i>Frontier candidates</span>
+      <span><i class="sw" style="background:var(--goal)"></i>Active goal</span>
+      <span><i class="sw" style="background:var(--blacklist)"></i>Goal-sender blacklist</span>
+      <span><i class="sw" style="background:var(--evaluating)"></i>Auction local blacklist</span>
+      <span><i class="sw" style="background:#9CA6B2;border-radius:1px"></i>Lethal cell</span>
+      <span><i class="sw" style="background:#565F6B;border-radius:1px"></i>Inscribed ring</span>
+      <span><i class="sw" style="background:#2E3A48;border-radius:1px"></i>Inflation cost</span>
+      <span><i class="sw" style="background:#0E1218;border-radius:1px;border:1px solid var(--rule)"></i>Unknown</span>
+    </div>
+    <div class="mapmeta" id="mapMeta">Waiting for global_costmap/costmap on the selected robot.</div>
+    <div class="mapmeta" id="mapHint">Drag to pan · wheel or pinch to zoom · Fit reframes the grid.</div>
+  </div>
+</section>
+
+<details class="setup" id="setup">
+  <summary>rosbridge is not running? Start it here</summary>
+  <p style="color:var(--ink-dim)">This page talks to ROS 2 over a rosbridge websocket on
+  <code>ws://localhost:9090</code>. Install the bridge once, then launch it alongside your
+  exploration stack.</p>
+<pre># install (match your distro, e.g. humble / iron / jazzy)
+sudo apt update &amp;&amp; sudo apt install ros-$ROS_DISTRO-rosbridge-suite
+
+# launch the websocket server (keep this terminal open)
+source /opt/ros/$ROS_DISTRO/setup.bash
+ros2 launch rosbridge_server rosbridge_websocket_launch.xml
+# → listening on ws://0.0.0.0:9090
+
+# sanity check that the topics are live
+ros2 topic echo /auction_clock --once
+ros2 topic echo /active_frontier --once</pre>
+  <p style="color:var(--ink-dim)">Open this file straight from disk (<code>file://</code>) or serve it
+  with <code>python3 -m http.server</code> — either works, since the bridge is on the same machine.
+  To point at another host, append <code>?ws=ws://192.168.1.20:9090</code> to the URL.</p>
+</details>
+
+<footer>Read-only view. Every value below comes from topics the five exploration nodes already publish — nothing is inferred or written back.</footer>
+
+<script>
+"use strict";
+const Q = new URLSearchParams(location.search);
+/* ?robots=robot1  → single robot.  ?robots=robot1,robot2 (default) → fleet.
+   Namespaces are used verbatim as topic prefixes and matched against the
+   robot_id field, which the nodes publish as the namespace minus its slash. */
+const ROBOTS = (Q.get("robots") || "robot1,robot2")
+                 .split(",").map(s=>s.trim().replace(/^\//,"")).filter(Boolean);
+const SOLO = ROBOTS.length === 1;
+const WS = Q.get("ws") || "ws://localhost:9090";
+const MAP_HZ = 1;
+
+/* ---------- state ---------- */
+const S = {
+  clock:{round:null,transition:null,num:null,tickMs:null,lastTickAt:null},
+  ticks:[],                       // last 60 transitions, for the strip
+  bids:[],                        // bids for the current round only
+  r:{}                            // per robot
+};
+ROBOTS.forEach(n=>S.r[n]={
+  active:false, goal:null,        // from /active_frontier
+  senderBl:0, localBl:0,          // marker.points.length
+  centroids:[], goalMarker:null,
+  senderPts:[], localPts:[],
+  raster:null,                    // offscreen costmap bitmap + its info/histogram
+  pose:null, poseFrame:null, poseSrc:null   // live robot position
+});
+
+/* ---------- robot panels ---------- */
+document.getElementById("fleet").innerHTML = ROBOTS.map(n=>`
+<section class="card robot">
+  <div class="head"><strong>${n}</strong>
+    <span class="state" id="st-${n}"><span class="dot"></span><span>Idle</span></span></div>
+  <div class="body">
+    <div class="goalpos none" id="goal-${n}">No active goal</div>
+    <div class="counts">
+      <div class="count sender"><div class="v num" id="sbl-${n}">0</div>
+        <span class="lab">Goal-sender blacklist</span>
+        <div class="src">aborted Nav2 goals · frontier_blacklist_visuals</div></div>
+      <div class="count local"><div class="v num" id="lbl-${n}">0</div>
+        <span class="lab">Auction local blacklist</span>
+        <div class="src">lost / suppressed bids · local_blacklist</div></div>
+    </div>
+  </div>
+</section>`).join("");
+
+const $ = id=>document.getElementById(id);
+const fmt = (p,d=2)=>p?`x ${(+p.x).toFixed(d)}  y ${(+p.y).toFixed(d)}`:"—";
+
+/* With one robot the auction is uncontested: it either bids and wins its own
+   group every round, or multi_robot_aware is false and it never bids at all. */
+const EMPTY_BIDS = SOLO
+  ? "No bids this round. Expected if multi_robot_aware is false — the auction node then publishes the top frontier directly and skips bidding."
+  : "No bids received for this round yet.";
+$("linkSubjects").textContent = ROBOTS.join(" · ") +
+  (SOLO ? " — single robot, uncontested auction" : " — frontier auction telemetry");
+
+/* ---------- render ---------- */
+function renderClock(){
+  const c=S.clock;
+  const r=$("roundId");
+  r.textContent = c.round===null?"—":c.round;
+  r.classList.toggle("sync", c.round===0);
+  $("numRobots").textContent = c.num===null?"—":c.num;
+  $("bidRound").textContent  = c.round===null?"—":c.round;
+  $("tickRate").textContent  = c.tickMs?`${(c.tickMs/1000).toFixed(2)} s`:"—";
+  const evaluating = c.transition===1;
+  $("beam").classList.toggle("eval",evaluating);
+  $("halfBid").classList.toggle("on",!evaluating && c.transition!==null);
+  $("halfEval").classList.toggle("on",evaluating);
+  $("ticks").innerHTML = S.ticks.map(t=>`<i class="${t===1?"e":"b"}"></i>`).join("");
+  $("tickNote").textContent = c.round===0
+    ? "Round 0 — sync only, auctions ignore it"
+    : `${S.ticks.length} transition${S.ticks.length===1?"":"s"} seen`;
+
+  /* num_robots is what the auction node counts bids against, so a mismatch with
+     the robots actually running means every round ends on a bid timeout. */
+  const w=$("clockWarn"), bad = c.num!==null && c.num!==ROBOTS.length;
+  w.classList.toggle("hidden",!bad);
+  if(bad) w.textContent =
+    `Clock expects ${c.num} robot${c.num===1?"":"s"}, this view is watching ${ROBOTS.length}`+
+    ` (${ROBOTS.join(", ")}). If the clock's num_robots is wrong, evaluation waits for bids that`+
+    ` never arrive and falls back to partial bids after missed_rounds_threshold rounds.`;
+}
+function renderRobot(n){
+  const d=S.r[n];
+  const st=$("st-"+n);
+  st.classList.toggle("active",d.active);
+  st.lastElementChild.textContent = d.active?"Active":"Idle";
+  const g=$("goal-"+n);
+  g.textContent = d.active?`Driving to ${fmt(d.goal)}`:"No active goal";
+  g.classList.toggle("none",!d.active);
+  $("sbl-"+n).textContent = d.senderBl;
+  $("lbl-"+n).textContent = d.localBl;
+}
+function renderBids(){
+  const rows=$("bidRows");
+  if(!S.bids.length){ rows.innerHTML=`<tr><td colspan="4" class="empty">${EMPTY_BIDS}</td></tr>`; return; }
+  rows.innerHTML = [...S.bids].sort((a,b)=>b.score-a.score).map(b=>`
+    <tr><td>${b.robot_id}</td><td>${fmt(b.frontier_centroid)}</td>
+    <td>${fmt(b.robot_position)}</td><td class="r num">${(+b.score).toFixed(3)}</td></tr>`).join("");
+}
+
+/* ---------- map ---------- */
+/* Two distinct marker identities per robot: colour AND shape, so they stay
+   separable in greyscale and against the frontier/goal/blacklist palette. */
+const MARK_COLORS = ["#FF5FA2","#A78BFA","#F2C14E","#7BE0AD"];
+const MARK_SHAPES = ["wedge","box","diamond","wedge"];
+const ROBOT_MARK = {};
+ROBOTS.forEach((n,i)=>ROBOT_MARK[n]={color:MARK_COLORS[i%4],shape:MARK_SHAPES[i%4]});
+
+let mapRobot = ROBOTS[0], needsDraw = true;
+const cv=$("map"), cx=cv.getContext("2d");
+/* camera: world metres → screen. Survives every incoming message; only the
+   Fit button, a robot switch, or the user's own gestures ever change it. */
+/* Default view is a quarter turn anticlockwise from the grid's native
+   orientation. Positive cam.rot turns the map clockwise on screen, so the
+   anticlockwise default is negative. Fit returns here, not to 0°. */
+const DEFAULT_ROT = -Math.PI/2;
+const cam={x:0,y:0,s:20,rot:DEFAULT_ROT,framed:false};
+
+function cssSize(){ const r=cv.getBoundingClientRect(); return [r.width,r.height]; }
+/* world x right / y up  →  screen x right / y down */
+function toScreen(p){
+  const [w,h]=cssSize(), c=Math.cos(cam.rot), s=Math.sin(cam.rot);
+  const dx=(p.x-cam.x)*cam.s, dy=-(p.y-cam.y)*cam.s;
+  return [w/2 + c*dx - s*dy, h/2 + s*dx + c*dy];
+}
+function toWorld(px,py){
+  const [w,h]=cssSize(), c=Math.cos(cam.rot), s=Math.sin(cam.rot);
+  const ex=px-w/2, ey=py-h/2, dx=c*ex+s*ey, dy=-s*ex+c*ey;
+  return {x:cam.x+dx/cam.s, y:cam.y-dy/cam.s};
+}
+
+/* Rasterise once per costmap message (≤1 Hz, bridge-throttled). Every frame
+   afterwards is just a drawImage of this bitmap, so panning stays cheap. */
+function rasterize(g){
+  const w=g.info.width, h=g.info.height;
+  const off=document.createElement("canvas"); off.width=w; off.height=h;
+  const oc=off.getContext("2d"), img=oc.createImageData(w,h), px=img.data;
+  const hist={unknown:0,free:0,infl:0,inscribed:0,lethal:0,max:-1};
+  for(let row=0;row<h;row++){
+    const dst=(h-1-row)*w;                     // bitmap row 0 = top = max y
+    for(let col=0;col<w;col++){
+      const v=g.data[row*w+col], i=(dst+col)*4;
+      let r,gr,b;
+      if(v>hist.max) hist.max=v;
+      if(v<0){ r=14;gr=18;b=24; hist.unknown++; }                 // unknown
+      else if(v>=100){ r=156;gr=166;b=178; hist.lethal++; }       // lethal — the wall
+      else if(v>=99){ r=86;gr=95;b=107; hist.inscribed++; }       // inscribed ring
+      else if(v>0){                                               // inflation: faint hint
+        const t=v/98; r=30+16*t; gr=36+22*t; b=44+30*t; hist.infl++;
+      } else { r=30;gr=36;b=44; hist.free++; }                    // known free
+      px[i]=r;px[i+1]=gr;px[i+2]=b;px[i+3]=255;
+    }
+  }
+  oc.putImageData(img,0,0);
+  return {bmp:off,info:g.info,hist};
+}
+
+function fitView(){
+  const G=S.r[mapRobot].raster, [w,h]=cssSize();
+  cam.rot=DEFAULT_ROT;
+  if(!G||!w){ cam.framed=false; needsDraw=true; return; }
+  const {width:gw,height:gh,resolution:res,origin}=G.info;
+  const Wm=gw*res, Hm=gh*res;
+  cam.x=origin.position.x+Wm/2; cam.y=origin.position.y+Hm/2;
+  /* the grid's on-screen footprint is its rotated bounding box, so at 90°
+     the width and height swap — fit against that, not the raw dimensions */
+  const c=Math.abs(Math.cos(cam.rot)), s=Math.abs(Math.sin(cam.rot));
+  const spanX=Wm*c+Hm*s, spanY=Wm*s+Hm*c;
+  cam.s=Math.min(w/spanX,h/spanY)*0.94;
+  cam.framed=true; needsDraw=true;
+}
+
+/* All point markers are sized in screen pixels, so they never balloon on zoom. */
+function dot(p,color,rad){
+  const [x,y]=toScreen(p);
+  cx.fillStyle=color; cx.beginPath(); cx.arc(x,y,rad,0,6.2832); cx.fill();
+}
+function drawRobotMark(n,d){
+  const [x,y]=toScreen(d.pose), st=ROBOT_MARK[n], R=9;
+  const yaw = d.pose.yaw==null? null : -d.pose.yaw + cam.rot;   // world CCW → screen CW
+  cx.save(); cx.translate(x,y); if(yaw!==null) cx.rotate(yaw);
+  cx.fillStyle=st.color; cx.strokeStyle="#0A0D11"; cx.lineWidth=1.5;
+  cx.beginPath();
+  if(st.shape==="wedge"){                        // arrowhead — reads as heading
+    cx.moveTo(R,0); cx.lineTo(-R*0.72,R*0.78); cx.lineTo(-R*0.36,0); cx.lineTo(-R*0.72,-R*0.78);
+  } else if(st.shape==="box"){
+    const s=R*0.72; cx.rect(-s,-s,2*s,2*s);
+  } else {
+    cx.moveTo(R,0); cx.lineTo(0,R); cx.lineTo(-R,0); cx.lineTo(0,-R);
+  }
+  cx.closePath(); cx.fill(); cx.stroke();
+  if(st.shape!=="wedge" && yaw!==null){          // heading tick for non-arrow shapes
+    cx.beginPath(); cx.moveTo(0,0); cx.lineTo(R*1.5,0);
+    cx.strokeStyle=st.color; cx.lineWidth=2; cx.stroke();
+  }
+  cx.restore();
+}
+
+function drawMap(){
+  const dpr=Math.min(window.devicePixelRatio||1,2), [w,h]=cssSize();
+  if(!w||!h) return;
+  if(cv.width!==Math.round(w*dpr)||cv.height!==Math.round(h*dpr)){
+    cv.width=Math.round(w*dpr); cv.height=Math.round(h*dpr);
+  }
+  cx.setTransform(dpr,0,0,dpr,0,0);
+  cx.fillStyle="#0A0D11"; cx.fillRect(0,0,w,h);
+
+  const d=S.r[mapRobot], G=d.raster;
+  if(G){
+    if(!cam.framed) fitView();
+    const {resolution:res,origin}=G.info, gh=G.info.height;
+    const c=Math.cos(cam.rot), s=Math.sin(cam.rot), k=cam.s;
+    /* world → css px, then the whole thing scaled by devicePixelRatio */
+    const e=w/2-k*c*cam.x-k*s*cam.y, f=h/2-k*s*cam.x+k*c*cam.y;
+    cx.setTransform(dpr*k*c, dpr*k*s, dpr*k*s, -dpr*k*c, dpr*e, dpr*f);
+    /* bitmap cell space → world metres (bitmap y runs down, world y runs up) */
+    cx.transform(res,0,0,-res, origin.position.x, origin.position.y+gh*res);
+    cx.imageSmoothingEnabled=true; cx.imageSmoothingQuality="high";
+    cx.drawImage(G.bmp,0,0);
+    cx.setTransform(dpr,0,0,dpr,0,0);
+  }
+
+  d.centroids.forEach(p=>dot(p,"#6FD07A",3));
+  d.senderPts.forEach(p=>dot(p,"#E5484D",4));
+  d.localPts.forEach(p=>dot(p,"#4FD8D0",4));
+  if(d.goalMarker){
+    const [x,y]=toScreen(d.goalMarker);
+    cx.strokeStyle="#5B8CFF"; cx.lineWidth=1.5;
+    cx.beginPath(); cx.arc(x,y,7,0,6.2832); cx.stroke();
+    cx.beginPath(); cx.moveTo(x-11,y); cx.lineTo(x+11,y);
+    cx.moveTo(x,y-11); cx.lineTo(x,y+11); cx.stroke();
+  }
+  ROBOTS.forEach(n=>{ const rd=S.r[n]; if(rd.pose) drawRobotMark(n,rd); });
+
+  const src = ROBOTS.map(n=>S.r[n].poseSrc).find(Boolean);
+  const meta = [`${mapRobot}`];
+  if(G){
+    const {width:gw,height:gh2,resolution:res,origin}=G.info, hi=G.hist;
+    meta.push(`${gw}×${gh2} cells @ ${res.toFixed(3)} m`,
+              `origin ${fmt(origin.position)}`,
+              `${(cam.s*res).toFixed(2)} px/cell`,
+              `cost: ${hi.lethal} lethal · ${hi.inscribed} inscribed · ${hi.infl} inflated · max ${hi.max}`);
+  } else meta.push("waiting for global_costmap/costmap");
+  meta.push(`${d.centroids.length} candidates`,
+            `${d.senderPts.length+d.localPts.length} blacklisted points`,
+            `pose: ${src || "no source yet"}`);
+  $("mapMeta").textContent = meta.join(" · ");
+}
+
+/* One rAF loop: markers repaint at their source's own rate, while the costmap
+   is only re-rasterised when a (bridge-throttled, 1 Hz) message lands. */
+(function frame(){
+  if(needsDraw && !$("mapBody").classList.contains("hidden")){ needsDraw=false; drawMap(); }
+  requestAnimationFrame(frame);
+})();
+addEventListener("resize",()=>{needsDraw=true;});
+
+/* ---------- map gestures ---------- */
+function panBy(dx,dy){
+  const c=Math.cos(cam.rot), s=Math.sin(cam.rot);
+  cam.x -= (c*dx+s*dy)/cam.s;
+  cam.y += (-s*dx+c*dy)/cam.s;
+  needsDraw=true;
+}
+function zoomAt(px,py,factor){
+  const before=toWorld(px,py);
+  cam.s=Math.max(1,Math.min(6000,cam.s*factor));
+  const after=toWorld(px,py);
+  cam.x+=before.x-after.x; cam.y+=before.y-after.y;   // hold the point under the cursor
+  needsDraw=true;
+}
+const ptrs=new Map();
+let pinch=null;
+const pinchState=()=>{
+  const [a,b]=[...ptrs.values()];
+  return {d:Math.hypot(a.x-b.x,a.y-b.y), c:{x:(a.x+b.x)/2, y:(a.y+b.y)/2}};
+};
+cv.addEventListener("pointerdown",e=>{
+  cv.setPointerCapture(e.pointerId);
+  ptrs.set(e.pointerId,{x:e.offsetX,y:e.offsetY});
+  cv.classList.add("drag");
+  if(ptrs.size===2) pinch=pinchState();
+});
+cv.addEventListener("pointermove",e=>{
+  if(!ptrs.has(e.pointerId)) return;
+  const prev=ptrs.get(e.pointerId), now={x:e.offsetX,y:e.offsetY};
+  ptrs.set(e.pointerId,now);
+  if(ptrs.size===1) panBy(now.x-prev.x, now.y-prev.y);
+  else if(ptrs.size===2 && pinch){
+    const p=pinchState();
+    if(pinch.d>0) zoomAt(p.c.x,p.c.y,p.d/pinch.d);
+    panBy(p.c.x-pinch.c.x, p.c.y-pinch.c.y);
+    pinch=p;
+  }
+});
+["pointerup","pointercancel","pointerleave"].forEach(ev=>
+  cv.addEventListener(ev,e=>{
+    ptrs.delete(e.pointerId);
+    if(ptrs.size<2) pinch=null;
+    if(!ptrs.size) cv.classList.remove("drag");
+  }));
+cv.addEventListener("wheel",e=>{
+  e.preventDefault();
+  zoomAt(e.offsetX,e.offsetY,Math.exp(-e.deltaY*0.0015));
+},{passive:false});
+$("fitView").addEventListener("click",fitView);
+$("rotL").addEventListener("click",()=>{cam.rot-=Math.PI/2;needsDraw=true;});
+$("rotR").addEventListener("click",()=>{cam.rot+=Math.PI/2;needsDraw=true;});
+
+/* legend entries for the robot markers */
+$("legend").insertAdjacentHTML("beforeend", ROBOTS.map(n=>{
+  const st=ROBOT_MARK[n];
+  const box = st.shape==="box" ? "border-radius:1px" : st.shape==="diamond"
+    ? "border-radius:1px;transform:rotate(45deg)" : "clip-path:polygon(100% 50%,0 100%,25% 50%,0 0);border-radius:0";
+  return `<span><i class="sw" style="background:${st.color};${box}"></i>${n}</span>`;
+}).join(""));
+
+/* ---------- connection ---------- */
+let ros=null;
+function link(state,text){
+  const dot=$("linkDot");
+  dot.className="dot"+(state==="up"?" up":state==="wait"?" wait":"");
+  $("linkText").textContent=text;
+  if(state!=="up") $("setup").open=true;
+}
+function sub(name,type,cb,opts={}){
+  new ROSLIB.Topic(Object.assign({ros,name,messageType:type},opts)).subscribe(cb);
+}
+
+function connect(){
+  if(typeof ROSLIB==="undefined"){ link("down","roslib.js failed to load"); return; }
+  link("wait","Connecting to "+WS);
+  ros=new ROSLIB.Ros({url:WS});
+
+  ros.on("connection",()=>{ link("up","Connected · "+WS); $("setup").open=false; subscribeAll(); });
+  ros.on("error",()=>link("down","Websocket error — is rosbridge running?"));
+  ros.on("close",()=>{ link("down","Disconnected — retrying in 3 s"); setTimeout(connect,3000); });
+}
+
+function subscribeAll(){
+  /* global auction clock — drives round id, phase, robot count */
+  sub("/auction_clock","diffrobot_interfaces/msg/AuctionClock",m=>{
+    const now=performance.now(), c=S.clock;
+    if(c.lastTickAt){ const dt=now-c.lastTickAt; c.tickMs = c.tickMs? c.tickMs*0.7+dt*0.3 : dt; }
+    c.lastTickAt=now;
+    if(m.round_id!==c.round){ S.bids=[]; renderBids(); }   // new round, drop stale bids
+    c.round=m.round_id; c.transition=m.transition; c.num=m.num_robots;
+    S.ticks.push(m.transition); if(S.ticks.length>60) S.ticks.shift();
+    $("lastTick").textContent=new Date().toLocaleTimeString();
+    renderClock();
+  });
+
+  /* the only source of active/idle: empty frame_id means the goal was cleared */
+  sub("/active_frontier","diffrobot_interfaces/msg/ActiveFrontier",m=>{
+    const d=S.r[m.robot_id]; if(!d) return;
+    d.active = !!(m.header && m.header.frame_id);
+    d.goal   = d.active? m.frontier_centroid : null;
+    renderRobot(m.robot_id);
+  });
+
+  /* shared bid channel; keep only the round the clock is currently on */
+  sub("/frontier_bids","diffrobot_interfaces/msg/FrontierBid",m=>{
+    if(S.clock.round!==null && m.round_id!==S.clock.round) return;
+    S.bids = S.bids.filter(b=>b.robot_id!==m.robot_id).concat(m);
+    renderBids();
+  });
+
+  /* Live robot pose. /tf carries the whole tree, so it is throttled — but at
+     100 ms, well above the map's 1 Hz redraw, so markers still move smoothly.
+     The base frame is detected rather than assumed: frontier_goal_sender looks
+     up base_footprint while the other two nodes use base_link, so whichever the
+     stack actually publishes is the one we latch onto. */
+  const BASE=/^(?:(.+)\/)?base_(?:link|footprint)$/;
+  function robotOf(parent,child){
+    const m=BASE.exec(child); if(!m) return null;
+    if(m[1]) return ROBOTS.includes(m[1]) ? m[1] : null;     // namespaced child frame
+    const pm=/^(.+)\/map$/.exec(parent);                     // else namespaced map frame
+    if(pm && ROBOTS.includes(pm[1])) return pm[1];
+    return SOLO ? ROBOTS[0] : null;                          // bare frames: only safe solo
+  }
+  const yawOf=q=>Math.atan2(2*(q.w*q.z+q.x*q.y), 1-2*(q.y*q.y+q.z*q.z));
+  sub("/tf","tf2_msgs/msg/TFMessage",m=>{
+    (m.transforms||[]).forEach(t=>{
+      const parent=(t.header.frame_id||"").replace(/^\//,"");
+      const child=(t.child_frame_id||"").replace(/^\//,"");
+      if(!/(^|\/)map$/.test(parent)) return;
+      const n=robotOf(parent,child); if(!n) return;
+      const d=S.r[n];
+      if(d.poseFrame && d.poseFrame!==child) return;   // stay on the first frame seen
+      d.poseFrame=child;
+      d.pose={x:t.transform.translation.x, y:t.transform.translation.y,
+              yaw:yawOf(t.transform.rotation)};
+      d.poseSrc=`/tf ${parent}→${child}`;
+      needsDraw=true;
+    });
+  },{throttle_rate:100, queue_length:1});
+
+  ROBOTS.forEach(n=>{
+    const d=S.r[n];
+    /* blacklist counts — marker.points.length is the only count available */
+    sub(`/${n}/frontier_blacklist_visuals`,"visualization_msgs/msg/Marker",m=>{
+      d.senderPts = m.action===2||m.action===3 ? [] : (m.points||[]);
+      d.senderBl  = d.senderPts.length; renderRobot(n); needsDraw=true;
+    });
+    sub(`/${n}/local_blacklist`,"visualization_msgs/msg/Marker",m=>{
+      d.localPts = m.action===2||m.action===3 ? [] : (m.points||[]);
+      d.localBl  = d.localPts.length; renderRobot(n); needsDraw=true;
+    });
+    /* map overlays */
+    sub(`/${n}/centroids`,"diffrobot_interfaces/msg/FrontierData",m=>{
+      d.centroids=(m.centroids.poses||[]).map(p=>p.position); needsDraw=true;
+    });
+    sub(`/${n}/active_frontier_visual`,"visualization_msgs/msg/Marker",m=>{
+      d.goalMarker = (m.action===2||m.action===3)? null : m.pose.position; needsDraw=true;
+    });
+    /* fallback pose source: only updates when frontier_selection processes a
+       new centroid batch, so it is ignored the moment /tf proves live */
+    sub(`/${n}/auction_data`,"diffrobot_interfaces/msg/AuctionData",m=>{
+      if(d.poseFrame || !m.robot_position) return;
+      d.pose={x:m.robot_position.x,y:m.robot_position.y,yaw:null};
+      d.poseSrc=`${n}/auction_data.robot_position (frontier cadence, not continuous)`;
+      needsDraw=true;
+    });
+    /* costmap: throttled and latched at the bridge so the browser never floods */
+    sub(`/${n}/global_costmap/costmap`,"nav_msgs/msg/OccupancyGrid",m=>{
+      d.raster=rasterize(m);
+      if(mapRobot===n && !cam.framed) fitView();
+      needsDraw=true;
+    },{throttle_rate:1000/MAP_HZ, queue_length:1});
+  });
+}
+
+/* ---------- controls ---------- */
+function panel(btn,body){
+  $(btn).addEventListener("click",()=>{
+    const hidden=$(body).classList.toggle("hidden");
+    $(btn).textContent=hidden?"Show":"Hide";
+    $(btn).setAttribute("aria-expanded",String(!hidden));
+    if(!hidden) needsDraw=true;
+  });
+}
+panel("bidToggle","bidBody");
+panel("mapToggle","mapBody");
+/* one button per robot; a lone robot needs no switcher */
+if(!SOLO){
+  $("mapPick").innerHTML = ROBOTS.map((n,i)=>
+    `<button data-robot="${n}" aria-pressed="${i===0}">${n}</button>`).join("");
+  $("mapPick").addEventListener("click",e=>{
+    const b=e.target.closest("button[data-robot]"); if(!b) return;
+    mapRobot=b.dataset.robot; fitView();
+    $("mapPick").querySelectorAll("button").forEach(x=>
+      x.setAttribute("aria-pressed",String(x===b)));
+  });
+}
+$("reconnect").addEventListener("click",()=>{ try{ros&&ros.close();}catch(e){} connect(); });
+
+$("clockScope").textContent = SOLO
+  ? "/auction_clock — global, one participant"
+  : "/auction_clock — shared by all robots";
+renderClock(); renderBids(); ROBOTS.forEach(renderRobot); drawMap(); connect();
+</script>
+</body>
+</html>
