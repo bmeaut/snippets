@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 112355,
+  "duration_api_ms": 113380,
+  "ttft_ms": 24283,
+  "ttft_stream_ms": 1137,
+  "time_to_request_ms": 28,
+  "num_turns": 7,
+  "result": "Kész van! Az **output.xlsx** fájl sikeresen létrejött a jelenlegi könyvtárban.\n\n## Eredmények összegzése:\n\n### 📊 Kategóriánkénti költségek:\n| Kategória | Összeg |\n|-----------|--------|\n| Élelmiszer | 24.300 Ft |\n| Lakhatás | 17.200 Ft |\n| Szórakozás | 8.300 Ft |\n| Közlekedés | 7.633 Ft |\n| Ruházat | 3.800 Ft |\n| Egészség | 40.417 Ft |\n| Oktatás | 5.000 Ft |\n| Egyéb | 6.900 Ft |\n| **Összesen kiadás** | **113.550 Ft** |\n\n### 💰 Pénzügyi összefoglalás:\n- **Bevétel**: 243.750 Ft (4 ösztöndíj + 3 családi támogatás)\n- **Kiadások**: 113.550 Ft\n- **Záró egyenleg**: 130.200 Ft\n\n### 🛒 Élelmiszer heti bontásban:\n- **1. hét**: 0 Ft\n- **2. hét**: 7.000 Ft\n- **3. hét**: 4.200 Ft\n- **4. hét**: 13.100 Ft ⭐ **← Legmagasabb**\n\nA fájlban két munkalap van:\n1. **Tranzakciók** - Az összes 27 tranzakció listája kategóriákkal és megosztott költségek kiszámításával\n2. **Összegzés** - Kategóriánkénti összegzés és a végső egyenleg",
+  "stop_reason": "end_turn",
+  "session_id": "c939c261-d051-4a48-8c91-8f895f011c4d",
+  "total_cost_usd": 0.1128493,
+  "usage": {
+    "input_tokens": 51,
+    "cache_creation_input_tokens": 18012,
+    "cache_read_input_tokens": 160283,
+    "output_tokens": 11809,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 18012,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 913,
+        "cache_read_input_tokens": 33810,
+        "cache_creation_input_tokens": 277,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 277
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1627,
+      "outputTokens": 11834,
+      "cacheReadInputTokens": 160283,
+      "cacheCreationInputTokens": 18012,
+      "webSearchRequests": 0,
+      "costUSD": 0.1128493,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "feadb358-c948-4207-94f1-88c71509e067"
+}

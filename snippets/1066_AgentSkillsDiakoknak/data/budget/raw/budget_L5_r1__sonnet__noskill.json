@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 198830,
+  "duration_api_ms": 199558,
+  "ttft_ms": 53643,
+  "ttft_stream_ms": 1879,
+  "time_to_request_ms": 36,
+  "num_turns": 5,
+  "result": "Az `output.xlsx` elkészült. Íme az összefoglaló:\n\n---\n\n**Kategóriánkénti kiadások (saját rész):**\n\n| Kategória    | Összeg       |\n|--------------|-------------:|\n| élelmiszer   | 24 300,00 Ft |\n| lakhatás     | 17 200,00 Ft |\n| egészség     | 40 416,67 Ft |\n| közlekedés   |  7 633,33 Ft |\n| szórakozás   |  8 300,00 Ft |\n| ruházat      |  3 800,00 Ft |\n| oktatás      |  5 000,00 Ft |\n| egyéb        |  6 900,00 Ft |\n| **Kiadás összesen** | **113 550,00 Ft** |\n| **Bevétel**  | **+243 750,00 Ft** |\n| **Záró egyenleg** | **+130 200,00 Ft** |\n\n**Élelmiszer heti bontás:**\n- 1. hét: 0 Ft\n- 2. hét: 7 000 Ft (Lidl x2)\n- 3. hét: 4 200 Ft (Kifli.hu)\n- 4. hét: 13 100 Ft (Lidl + Piac)  ← **legmagasabb**\n\n**A fájl tartalma:**\n- **\"Tranzakciók\"** munkalap: mind a 27 tétel, hét, kategória, teljes összeg, saját rész, megjegyzés (zöld = bevétel)\n- **\"Összesítés\"** munkalap: heti bontású kategóriatábla, kiadás/bevétel összesen, záró egyenleg kiemelve, + élelmiszer heti részletezés\n\nNéhány számítási megjegyzés: megosztott tételeknél ahol a saját részt nem jelölte expliciten a lista, egyenlő arányban osztottam (vonatjegy: 7450/3 = 2483,33 Ft; szemüveg: 43850/3 = 14616,67 Ft; gyógyszertár: 1950/3 = 650 Ft).",
+  "stop_reason": "end_turn",
+  "session_id": "fcbe5ac5-8f7f-49d5-a30c-f126c9447c91",
+  "total_cost_usd": 0.3062523,
+  "usage": {
+    "input_tokens": 7,
+    "cache_creation_input_tokens": 15160,
+    "cache_read_input_tokens": 121251,
+    "output_tokens": 11814,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 15160,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 601,
+        "cache_read_input_tokens": 30910,
+        "cache_creation_input_tokens": 125,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 125
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1576,
+      "outputTokens": 22,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001686,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-6": {
+      "inputTokens": 7,
+      "outputTokens": 11814,
+      "cacheReadInputTokens": 121251,
+      "cacheCreationInputTokens": 15160,
+      "webSearchRequests": 0,
+      "costUSD": 0.30456629999999996,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "73914c9e-daf2-443e-9753-bea8e7c13c99"
+}

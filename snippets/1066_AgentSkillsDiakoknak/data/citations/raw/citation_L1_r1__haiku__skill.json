@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 56842,
+  "duration_api_ms": 56998,
+  "ttft_ms": 5457,
+  "ttft_stream_ms": 1655,
+  "time_to_request_ms": 373,
+  "num_turns": 9,
+  "result": "Kész! Létrehoztam a bibliográfiát az **output.docx** fájlban. A dokumentum tartalmazza:\n\n✓ **APA 7. formátum** — a hivatkozások az előírt formátumban vannak (Szerző, I. (Év). *Cím*. Kiadó.)\n✓ **Ábécésorrendbe rendezett** — Horváth → Juhász → Molnár → Szűcs → Tóth\n✓ **Dőltjelzés** — a könyvek címei italicban vannak\n✓ **Függőleges behúzás** — mindegyik hivatkozás hanging indent-tel formázva\n✓ **Külön bekezdések** — minden hivatkozás saját sorban\n✓ **Mentve** — az aktuális könyvtárba (8.7 kB méretben)\n\nA dokumentum készen áll a felhasználásra.",
+  "stop_reason": "end_turn",
+  "session_id": "90e3c2f8-0c77-4b6d-a8af-074697037e95",
+  "total_cost_usd": 0.1038255,
+  "usage": {
+    "input_tokens": 68,
+    "cache_creation_input_tokens": 20853,
+    "cache_read_input_tokens": 261195,
+    "output_tokens": 6970,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 20853,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 486,
+        "cache_read_input_tokens": 38722,
+        "cache_creation_input_tokens": 154,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 154
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1020,
+      "outputTokens": 6996,
+      "cacheReadInputTokens": 261195,
+      "cacheCreationInputTokens": 20853,
+      "webSearchRequests": 0,
+      "costUSD": 0.1038255,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "3787b6bb-2c88-42fb-b644-4ec3e930788d"
+}

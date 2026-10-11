@@ -1,0 +1,60 @@
+Az alábbi rendezetlen, véletlen sorrendű forrásadatokból készíts egy helyes, APA 7. kiadás szerint formázott, ábécésorrendbe rendezett hivatkozásjegyzéket docx fájlként.
+
+Források:
+- típus: book
+  szerző(k): Gál, E.; Balogh, I.
+  cím: A tanulás pszichológiája
+  év: 2011
+  kiadó: Osiris Kiadó
+- típus: book
+  szerző(k): Kiss, T.; Fekete, S.
+  cím: Alapfokú ökológia
+  év: 2013
+  kiadó: Gondolat Kiadó
+- típus: article
+  szerző(k): Lakatos, A.; Nagy, L.
+  cím: A kritikus gondolkodás fejlesztése felsőoktatásban
+  év: 2003
+  folyóirat: Informatika és Oktatás
+  kötetszám: 44
+  lapszám: 4
+- típus: book
+  szerző(k): Lakatos, I.
+  cím: Modern szoftverfejlesztési módszerek
+  év: 2007
+  kiadó: Osiris Kiadó
+- típus: book
+  szerző(k): Németh, K.
+  cím: Kutatásmetodológiai alapfogalmak
+  év: 1996
+  kiadó: Corvina Kiadó
+- típus: book
+  szerző(k): Szabó, A.; Szabó, I.
+  cím: Bevezetés a hálózattudományba
+  év: 2006
+  kiadó: Corvina Kiadó
+- típus: book
+  szerző(k): Szabó, G.
+  cím: Bevezetés a hálózattudományba
+  év: 2020
+  kiadó: Saxum Kiadó
+- típus: book
+  szerző(k): Szűcs, N.; Takács, T.
+  cím: A társadalomtudományi kutatás módszertana
+  év: 2016
+  kiadó: Gondolat Kiadó
+- típus: article
+  szerző(k): Takács, Z.; Varga, R.
+  cím: A tanári attitűd hatása a diákok teljesítményére
+  év: 1998
+  folyóirat: Magyar Pedagógia
+  kötetszám: 41
+  lapszám: 3
+  DOI: 10.8677/6164.9607
+- típus: book
+  szerző(k): Varga, K.; Simon, D.
+  cím: Kutatásmetodológiai alapfogalmak
+  év: 2020
+  kiadó: Osiris Kiadó
+
+Mentsd el "output.docx" néven a jelenlegi könyvtárba. Minden hivatkozás külön bekezdésben szerepeljen, a szerző vezetékneve szerint ábécésorrendbe rendezve. Ha egy mező (pl. oldalszám, DOI) nincs megadva egy forrásnál, hagyd ki a hivatkozásból, ne találj ki helyette adatot.

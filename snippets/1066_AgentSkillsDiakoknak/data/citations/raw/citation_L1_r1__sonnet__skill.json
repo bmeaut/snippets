@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 56299,
+  "duration_api_ms": 56447,
+  "ttft_ms": 3352,
+  "ttft_stream_ms": 1927,
+  "time_to_request_ms": 398,
+  "num_turns": 10,
+  "result": "Az `output.docx` elkészült a jelenlegi könyvtárban. A fájl tartalma:\n\n```\nHorváth, Z. (2015). Statisztikai következtetés a gyakorlatban. Akadémiai Kiadó.\nJuhász, M. (1997). Modern szoftverfejlesztési módszerek. Akadémiai Kiadó.\nMolnár, B. (2004). A fenntartható fejlődés dilemmái. Typotex.\nSzűcs, T. (2006). Az oktatástechnológia története. L'Harmattan Kiadó.\nTóth, I. (1998). Kritikai gondolkodás és argumentáció. L'Harmattan Kiadó.\n```\n\nFormázás: Times New Roman 12pt, kétszeres sorköz, 1,27 cm-es lógó behúzás, könyvcímek dőlten — APA 7. kiadás szerint.",
+  "stop_reason": "end_turn",
+  "session_id": "08ab3cfc-1559-4007-a0aa-ba8ce5e4f2c9",
+  "total_cost_usd": 0.21937160000000003,
+  "usage": {
+    "input_tokens": 13,
+    "cache_creation_input_tokens": 15395,
+    "cache_read_input_tokens": 275902,
+    "output_tokens": 2873,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 15395,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 257,
+        "cache_read_input_tokens": 36380,
+        "cache_creation_input_tokens": 559,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 559
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 952,
+      "outputTokens": 29,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001097,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-6": {
+      "inputTokens": 13,
+      "outputTokens": 2873,
+      "cacheReadInputTokens": 275902,
+      "cacheCreationInputTokens": 15395,
+      "webSearchRequests": 0,
+      "costUSD": 0.21827460000000004,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "a3408e2e-7d30-46c4-9c07-1930c54f5e9b"
+}

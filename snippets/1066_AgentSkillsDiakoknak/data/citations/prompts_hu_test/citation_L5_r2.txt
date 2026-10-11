@@ -1,0 +1,118 @@
+Az alábbi rendezetlen, véletlen sorrendű forrásadatokból készíts egy helyes, APA 7. kiadás szerint formázott, ábécésorrendbe rendezett hivatkozásjegyzéket docx fájlként.
+
+Források:
+- típus: article
+  szerző(k): Takács, K.; Szűcs, G.; Horváth, B.
+  cím: A tanári attitűd hatása a diákok teljesítményére
+  kötetszám: 45
+  év: 2016
+  folyóirat: Alkalmazott Nyelvtudomány
+  DOI: 10.1845/6527.8954
+  oldalszám: 171-182
+  lapszám: 1
+- típus: article
+  kötetszám: 2
+  év: 2004
+  cím: A csoportmunka szerepe a problémamegoldásban
+  folyóirat: Pszichológia
+  lapszám: 3
+  szerző(k): Simon, Z.; Gál, Z.
+- típus: book
+  kiadó: Kalligram Kiadó
+  cím: Bevezetés a statisztikába
+  szerző(k): Rácz, Z.
+  év: 2019
+- típus: website
+  nap: 12
+  hónap: szeptember
+  év: 2021
+  szerző(k): Fekete, O.; Szabó, A.; Gál, D.
+  weboldal neve: National Geographic Magyarország
+  URL: https://example.edu/cikk/8245
+  cím: A tanulási szokások változása digitális korban
+- típus: article
+  év: 1997
+  oldalszám: 178-204
+  cím: A kortárs mentorálás hatása az egyetemi lemorzsolódásra
+  kötetszám: 34
+  lapszám: 4
+  folyóirat: Szociológiai Szemle
+  szerző(k): Simon, S.
+  DOI: 10.1901/2382.5090
+- típus: website
+  hónap: szeptember
+  weboldal neve: Origo Tudomány
+  URL: https://example.edu/cikk/4737
+  nap: 7
+  cím: A felsőoktatás jövője: Tíz tendencia
+  év: 1995
+  szerző(k): Oláh, V.; Farkas, Z.; Oláh, I.
+- típus: article
+  kötetszám: 12
+  DOI: 10.9440/7078.1332
+  oldalszám: 1-27
+  év: 2024
+  szerző(k): Nagy, O.; Rácz, G.
+  cím: A kritikus gondolkodás fejlesztése felsőoktatásban
+  folyóirat: Magyar Pedagógia
+  lapszám: 4
+- típus: website
+  hónap: június
+  nap: 3
+  weboldal neve: 444 Tudomány
+  szerző(k): Papp, J.; Fodor, E.
+  év: 2014
+  cím: Hogyan hat a képernyőidő a koncentrációra?
+  URL: https://example.edu/cikk/7970
+- típus: article
+  oldalszám: 169-182
+  szerző(k): Balogh, N.; Szűcs, K.
+  cím: Az önszabályozott tanulás mérési lehetőségei
+  folyóirat: Iskolakultúra
+  kötetszám: 20
+  lapszám: 1
+  év: 2014
+- típus: book
+  év: 2009
+  kiadó: Kalligram Kiadó
+  cím: A gazdaságtörténet vázlatai
+  szerző(k): Rácz, G.; Kiss, I.
+- típus: book
+  kiadó: Corvina Kiadó
+  év: 2018
+  szerző(k): Rácz, A.
+  cím: Az oktatástechnológia története
+- típus: website
+  weboldal neve: National Geographic Magyarország
+  év: 2019
+  hónap: október
+  nap: 12
+  cím: A kutatási adatok nyílt megosztásának előnyei
+  szerző(k): Fodor, T.; Tóth, O.; Oláh, L.
+  URL: https://example.edu/cikk/6946
+- típus: website
+  cím: Mi az a spacing effect, és miért működik?
+  év: 2019
+  hónap: november
+  weboldal neve: Qubit
+  URL: https://example.edu/cikk/6881
+  szerző(k): Mészáros, Z.
+  nap: 27
+- típus: book
+  cím: A fenntartható fejlődés dilemmái
+  év: 1997
+  kiadó: Typotex
+  szerző(k): Takács, J.; Fekete, G.
+- típus: article
+  cím: A stressz és a tanulási teljesítmény kapcsolata
+  oldalszám: 69-82
+  lapszám: 2
+  folyóirat: Iskolakultúra
+  szerző(k): Simon, S.
+  DOI: 10.9783/9408.1368
+  kötetszám: 22
+  év: 2024
+
+Mentsd el "output.docx" néven a jelenlegi könyvtárba. Minden hivatkozás külön bekezdésben szerepeljen, a szerző vezetékneve szerint ábécésorrendbe rendezve. Ha egy mező (pl. oldalszám, DOI) nincs megadva egy forrásnál, hagyd ki a hivatkozásból, ne találj ki helyette adatot.
+
+Fontos: a teljes hivatkozásjegyzék kizárólag magyar nyelven készüljön, a hónapneveket és a dátumformátumot is beleértve, semmit ne fordíts angolra.

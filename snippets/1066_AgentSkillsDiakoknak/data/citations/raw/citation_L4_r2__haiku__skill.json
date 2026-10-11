@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 106356,
+  "duration_api_ms": 105285,
+  "ttft_ms": 20872,
+  "ttft_stream_ms": 1127,
+  "time_to_request_ms": 279,
+  "num_turns": 14,
+  "result": "Kész! Az **output.docx** fájl sikeresen létrehozódott a jelenlegi könyvtárban. A dokumentum az alábbi jellemzőkkel rendelkezik:\n\n✓ **APA 7. formátum** szerinti hivatkozások\n✓ **Ábécésorrendbe rendezve** az első szerző vezetékneve alapján\n✓ **Minden hivatkozás külön bekezdésben** szerepel\n✓ **Hiányzó mezők kihagyva** (pl. Papp és Takács oldal nélküli cikke)\n✓ **DOI-k helyesen formázva** (https://doi.org/...)\n✓ **Weboldal-hivatkozások** hónappal és nappal\n✓ **Szerzők között &-jellel** (APA stílus szerint)\n\nA 12 hivatkozás sorrendje:\n1. Balogh, I., & Németh, S. (website)\n2. Farkas, D., & Varga, P. (website)\n3. Farkas, N. (article)\n4. Fodor, O., & Fekete, L. (article)\n5. Gál, E., & Papp, K. (website)\n6. Juhász, B., & Szabó, I. (book)\n7. Nagy, N., & Takács, D. (article)\n8. Nagy, V. (article)\n9. Papp, S., & Varga, B. (article)\n10. Takács, K. (article)\n11. Tóth, O. (book)\n12. Varga, L. (book)",
+  "stop_reason": "end_turn",
+  "session_id": "48e9e1ea-e591-4d84-9d78-54950749cada",
+  "total_cost_usd": 0.1538111,
+  "usage": {
+    "input_tokens": 108,
+    "cache_creation_input_tokens": 26609,
+    "cache_read_input_tokens": 501251,
+    "output_tokens": 12983,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4725,
+      "ephemeral_5m_input_tokens": 21884
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 848,
+        "cache_read_input_tokens": 46124,
+        "cache_creation_input_tokens": 2598,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 2598,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1831,
+      "outputTokens": 13010,
+      "cacheReadInputTokens": 501251,
+      "cacheCreationInputTokens": 26609,
+      "webSearchRequests": 0,
+      "costUSD": 0.1538111,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "cc0544d1-191b-4511-9c54-af0559be700c"
+}

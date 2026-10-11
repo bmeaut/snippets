@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 107558,
+  "duration_api_ms": 109250,
+  "ttft_ms": 26702,
+  "ttft_stream_ms": 1689,
+  "time_to_request_ms": 278,
+  "num_turns": 8,
+  "result": "Kész! Az APA 7 formátumban készített hivatkozásjegyzéket sikeresen létrehozul `output.docx` fájlban az aktuális könyvtárban.\n\nA dokumentum tartalmazza:\n- **10 hivatkozás** ábécésorrendbe rendezve (szerző vezetéknevei szerint)\n- **Helyes APA 7 formátum**: \n  - Szerzők nevei, év, *kurzívon a cím/folyóiratnév*\n  - Könyvekhez: kiadó adatai\n  - Cikkekhez: kötet(lapszám) és DOI (ahol létezik)\n- **Minden hivatkozás külön bekezdésben** szerepel\n- **Hiányzó adatok** (pl. oldalszám) az utasítás szerint kihagyva\n\nA hivatkozások sorrendje:\n1. Gál, E., & Balogh, I.\n2. Kiss, T., & Fekete, S.\n3. Lakatos, A., & Nagy, L.\n4. Lakatos, I.\n5. Németh, K.\n6. Szabó, A., & Szabó, I.\n7. Szabó, G.\n8. Szűcs, N., & Takács, T.\n9. Takács, Z., & Varga, R.\n10. Varga, K., & Simon, D.",
+  "stop_reason": "end_turn",
+  "session_id": "eb042061-e5aa-4d13-ab09-54468e25a590",
+  "total_cost_usd": 0.10261455000000003,
+  "usage": {
+    "input_tokens": 60,
+    "cache_creation_input_tokens": 19604,
+    "cache_read_input_tokens": 234253,
+    "output_tokens": 9980,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4335,
+      "ephemeral_5m_input_tokens": 15269
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 567,
+        "cache_read_input_tokens": 41449,
+        "cache_creation_input_tokens": 268,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 268,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1393,
+      "outputTokens": 10008,
+      "cacheReadInputTokens": 234253,
+      "cacheCreationInputTokens": 19604,
+      "webSearchRequests": 0,
+      "costUSD": 0.10261455000000003,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "74fe4e04-c2de-4765-a6ab-d5745db21b04"
+}

@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 182690,
+  "duration_api_ms": 183895,
+  "ttft_ms": 116199,
+  "ttft_stream_ms": 1580,
+  "time_to_request_ms": 29,
+  "num_turns": 6,
+  "result": "Kész. Elmentettem az **`output.docx`** fájlt a jelenlegi könyvtárba, 15 hivatkozással, APA 7. kiadás szerint, teljesen magyar nyelven.\n\n**Formázási döntések:**\n- **Ábécésorrend** a szerző vezetékneve szerint, magyar kollációval (Sz a T elé). Azonos vezetéknévnél a keresztnév kezdőbetűje dönt (pl. Farkas A. → Farkas P.; Kiss A. → Kiss J.; Takács G. → Takács K.).\n- **Függő behúzás** (hanging indent), dupla sorköz, Times New Roman 12 pt — APA-stílus.\n- **Dőlt betű:** könyvcímek, weboldal-oldalcímek, folyóiratnevek és a kötetszám. A cikkcímek és a lapszám (zárójelben) nem dőltek.\n- **Magyar dátumformátum:** `(2018. augusztus 28.)` — a hónapnevek és a dátum sorrendje végig magyar.\n- **`&` jel** a szerzők között (az APA-konvenció szerint; ez tipográfiai jel, nem angol szó).\n- **DOI** URL-formában: `https://doi.org/…`, oldalszám gondolatjellel: `174–195`.\n- **Kihagyott mezők:** a Papp N. (2002) cikknél nincs oldalszám a forrásban, ezért az kimaradt — semmit nem találtam ki helyette.\n\nNéhány érdekesség az adatokban: több különböző forrásnak azonos a címe (pl. *A gazdaságtörténet vázlatai*, *Bevezetés a hálózattudományba*, *A felsőoktatás jövője: Tíz tendencia*, *Mi az a spacing effect…*), de eltérő szerzővel/évvel/kiadóval — ezek külön, önálló hivatkozásként szerepelnek.\n\nEgy megjegyzés: az `&` vs. `és` kérdés a magyar APA-adaptációkban vitatott. Én az eredeti APA 7 `&` jelét használtam. Ha a te intézményed a magyar „és” kötőszót várja el a szerzők között, egy perc alatt átírom.",
+  "stop_reason": "end_turn",
+  "session_id": "c72bae7c-9bfe-4883-8fe9-c3f30ea44911",
+  "total_cost_usd": 0.6373880000000001,
+  "usage": {
+    "input_tokens": 2515,
+    "cache_creation_input_tokens": 22128,
+    "cache_read_input_tokens": 132608,
+    "output_tokens": 13405,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 22128,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 785,
+        "cache_read_input_tokens": 29782,
+        "cache_creation_input_tokens": 455,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 455
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1969,
+      "outputTokens": 27,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.002104,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-opus-4-8": {
+      "inputTokens": 2515,
+      "outputTokens": 13405,
+      "cacheReadInputTokens": 132608,
+      "cacheCreationInputTokens": 22128,
+      "webSearchRequests": 0,
+      "costUSD": 0.6352840000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "2420a1c2-51b6-4530-afa0-ef4cab48bd45"
+}

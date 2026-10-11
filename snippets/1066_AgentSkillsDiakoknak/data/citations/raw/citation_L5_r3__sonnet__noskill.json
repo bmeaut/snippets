@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 123916,
+  "duration_api_ms": 124169,
+  "ttft_ms": 67691,
+  "ttft_stream_ms": 3419,
+  "time_to_request_ms": 849,
+  "num_turns": 5,
+  "result": "Az `output.docx` el van mentve (37 KB). A fájl tartalma:\n\n---\n\n**15 hivatkozás, APA 7. kiadás szerint, ábécésorrendben:**\n\n| # | Szerző | Típus |\n|---|--------|-------|\n| 1 | Fodor, M. (2013) | könyv |\n| 2 | Fodor, N. (2023) | folyóiratcikk |\n| 3 | Kiss, L. (2011) | folyóiratcikk |\n| 4 | Kovács, D., Tóth, I., & Tóth, S. (2005) | folyóiratcikk (DOI nélkül) |\n| 5 | Lakatos, M., Tóth, V., & Farkas, L. (1999) | könyv |\n| 6 | Molnár, V., Farkas, B., & Balogh, D. (1998, augusztus 12) | weboldal |\n| 7 | Németh, J., Szűcs, T., & Kovács, L. (2014) | könyv |\n| 8 | Oláh, S., & Tóth, J. (1998) | könyv |\n| 9 | Papp, I. (2003) | könyv |\n| 10 | Rácz, S., & Rácz, T. (1996, március 13) | weboldal |\n| 11 | Simon, O. (1998) | könyv |\n| 12 | Szűcs, V., Tóth, E., & Németh, T. (2014, december 23) | weboldal |\n| 13 | Tóth, G. (2020, június 24) | weboldal |\n| 14 | Varga, I., Juhász, S., & Oláh, K. (1997) | könyv |\n| 15 | Varga, T. (2004, október 4) | weboldal |\n\n**Formázás:** Times New Roman 12pt, kétszeres sorköz, lógó bekezdés (0,5 inch), dőlt szedés a könyvcímeknél és a folyóirat neve + kötetszám részeknél, hiányzó mezők (pl. DOI a Kovács-cikknél) kihagyva.",
+  "stop_reason": "end_turn",
+  "session_id": "0dcbcc09-f8a6-4588-81f5-c9cbe911ec08",
+  "total_cost_usd": 0.3961024,
+  "usage": {
+    "input_tokens": 7,
+    "cache_creation_input_tokens": 38148,
+    "cache_read_input_tokens": 134998,
+    "output_tokens": 8313,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 38148,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 624,
+        "cache_read_input_tokens": 38019,
+        "cache_creation_input_tokens": 129,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 129
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1864,
+      "outputTokens": 27,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-6": {
+      "inputTokens": 7,
+      "outputTokens": 8313,
+      "cacheReadInputTokens": 134998,
+      "cacheCreationInputTokens": 38148,
+      "webSearchRequests": 0,
+      "costUSD": 0.39410340000000005,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "0e901cc2-8ee3-4485-bd45-a326793bb7f6"
+}

@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 55300,
+  "duration_api_ms": 56063,
+  "ttft_ms": 9336,
+  "ttft_stream_ms": 1070,
+  "time_to_request_ms": 19,
+  "num_turns": 5,
+  "result": "Kész! Az **output.xlsx** fájl sikeresen létrehozva a jelenlegi könyvtárban.\n\n**Az Excel tartalmazza:**\n\n1. **\"Tranzakciók\" munkalap**: Az összes 18 tranzakció kategóriával és összegével\n   \n2. **\"Összesítés\" munkalap**: Kategóriánkénti lebontás\n\n**Pénzügyi összesítés:**\n- 💰 **Bevétel**: 306,050 Ft (család támogatása, alkalmi munka, részmunkaidős fizetés, ösztöndíj)\n- 🛒 **Élelmiszer**: 30,850 Ft (Lidl, Tesco, piac, Wolt)\n- 🚗 **Közlekedés**: 42,650 Ft (vonatjegyek, BKK, benzin)\n- 🎭 **Szórakozás**: 28,700 Ft (mozijegy, koncertjegyek, Netflix)\n- 🏠 **Lakhatás**: 0 Ft\n- **Záró egyenleg**: **203,850 Ft**\n\nA fájl formázott fejlécekkel és ezredesítéssel rendelkezik a könnyebb olvashatóságért.",
+  "stop_reason": "end_turn",
+  "session_id": "28b359df-8c1b-44d8-a9a7-9f6e70eeae24",
+  "total_cost_usd": 0.0697169,
+  "usage": {
+    "input_tokens": 42,
+    "cache_creation_input_tokens": 12501,
+    "cache_read_input_tokens": 104869,
+    "output_tokens": 6587,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 12501,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 749,
+        "cache_read_input_tokens": 25165,
+        "cache_creation_input_tokens": 163,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 163
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1158,
+      "outputTokens": 6614,
+      "cacheReadInputTokens": 104869,
+      "cacheCreationInputTokens": 12501,
+      "webSearchRequests": 0,
+      "costUSD": 0.0697169,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "0a6619ce-1e4f-4380-b9f2-13b8d66ef6e1"
+}

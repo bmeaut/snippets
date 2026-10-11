@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 43115,
+  "duration_api_ms": 43724,
+  "ttft_ms": 9765,
+  "ttft_stream_ms": 2179,
+  "time_to_request_ms": 36,
+  "num_turns": 3,
+  "result": "Az `output.xlsx` fájl létrejött. Tartalom:\n\n**Tranzakciók munkalap** — 13 tétel, kategóriánként színezve:\n\n| # | Leírás | Kategória | Összeg (Ft) |\n|---|--------|-----------|-------------|\n| 1 | vonatjegy hazautazás | közlekedés | −8 650 |\n| 2 | részmunkaidős fizetés | bevétel | +78 350 |\n| 3–5, 8, 10–11 | taxi/Bolt, vonatjegyek | közlekedés | … |\n| 4, 6 | koncertjegy, Spotify | szórakozás | … |\n| 7, 9, 12 | piac, Lidl | élelmiszer | … |\n| 13 | gáz- és áramszámla | lakhatás | … |\n\n**Összesítés munkalap** — kategóriánkénti összegek és záró egyenleg:\n\n| Kategória | Összeg (Ft) |\n|-----------|-------------|\n| bevétel | +78 350 |\n| élelmiszer | −16 800 |\n| lakhatás | −10 650 |\n| szórakozás | −10 800 |\n| közlekedés | −30 750 |\n| **Záró egyenleg** | **+9 350** |\n\nA \"taxi/Bolt\" tételeket (ahol nem volt explicit kategória) `közlekedés`-be soroltam a leírás alapján.",
+  "stop_reason": "end_turn",
+  "session_id": "5aa317dc-0a43-48e6-aa8b-1c7ce90cf4c0",
+  "total_cost_usd": 0.0955994,
+  "usage": {
+    "input_tokens": 5,
+    "cache_creation_input_tokens": 5601,
+    "cache_read_input_tokens": 54378,
+    "output_tokens": 2964,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 5601,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 405,
+        "cache_read_input_tokens": 19615,
+        "cache_creation_input_tokens": 1861,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1861
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1055,
+      "outputTokens": 30,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001205,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-6": {
+      "inputTokens": 5,
+      "outputTokens": 2964,
+      "cacheReadInputTokens": 54378,
+      "cacheCreationInputTokens": 5601,
+      "webSearchRequests": 0,
+      "costUSD": 0.09439439999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "293fa023-5ff1-42b2-ab6e-744682d8c6be"
+}

@@ -1,0 +1,57 @@
+Az alábbi rendezetlen, véletlen sorrendű forrásadatokból készíts egy helyes, APA 7. kiadás szerint formázott, ábécésorrendbe rendezett hivatkozásjegyzéket docx fájlként.
+
+Források:
+- típus: article
+  szerző(k): Balogh, P.
+  cím: Az online tanulás hatása a motivációra
+  év: 2010
+  folyóirat: Informatika és Oktatás
+  kötetszám: 6
+  lapszám: 3
+  oldalszám: 50-70
+- típus: article
+  szerző(k): Gál, G.
+  cím: A csoportmunka szerepe a problémamegoldásban
+  év: 2015
+  folyóirat: Educatio
+  kötetszám: 6
+  lapszám: 1
+  oldalszám: 40-58
+- típus: article
+  szerző(k): Juhász, D.
+  cím: Az online tanulás hatása a motivációra
+  év: 2008
+  folyóirat: Statisztikai Szemle
+  kötetszám: 23
+  lapszám: 1
+  oldalszám: 48-54
+- típus: book
+  szerző(k): Mészáros, S.
+  cím: A fenntartható fejlődés dilemmái
+  év: 2023
+  kiadó: Kalligram Kiadó
+- típus: book
+  szerző(k): Nagy, R.
+  cím: Bevezetés a statisztikába
+  év: 2005
+  kiadó: Corvina Kiadó
+- típus: book
+  szerző(k): Papp, B.
+  cím: Statisztikai következtetés a gyakorlatban
+  év: 2021
+  kiadó: Typotex
+- típus: article
+  szerző(k): Simon, D.
+  cím: A csoportmunka szerepe a problémamegoldásban
+  év: 2001
+  folyóirat: Iskolakultúra
+  kötetszám: 2
+  lapszám: 4
+  oldalszám: 28-38
+- típus: book
+  szerző(k): Szűcs, J.
+  cím: A tanulás pszichológiája
+  év: 2015
+  kiadó: Osiris Kiadó
+
+Mentsd el "output.docx" néven a jelenlegi könyvtárba. Minden hivatkozás külön bekezdésben szerepeljen, a szerző vezetékneve szerint ábécésorrendbe rendezve. Ha egy mező (pl. oldalszám, DOI) nincs megadva egy forrásnál, hagyd ki a hivatkozásból, ne találj ki helyette adatot.

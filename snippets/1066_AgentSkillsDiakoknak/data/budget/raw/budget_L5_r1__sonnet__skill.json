@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 495428,
+  "duration_api_ms": 497164,
+  "ttft_ms": 28374,
+  "ttft_stream_ms": 2569,
+  "time_to_request_ms": 27,
+  "num_turns": 13,
+  "result": "Az `output.xlsx` el van mentve. Összefoglalás:\n\n---\n\n**Számítás-eredmények** (megosztott tételeknél csak a saját rész):\n\n| Kategória | Összeg |\n|---|---|\n| Élelmiszer | 24 300,00 Ft |\n| Lakhatás | 17 200,00 Ft |\n| Szórakozás | 8 300,00 Ft |\n| Közlekedés | 7 633,33 Ft |\n| Ruházat | 3 800,00 Ft |\n| Egészség | 40 416,67 Ft |\n| Oktatás | 5 000,00 Ft |\n| Egyéb | 6 900,00 Ft |\n| **Összes kiadás** | **113 550,00 Ft** |\n| **Bevétel** | **243 750,00 Ft** |\n| **Záró egyenleg** | **130 200,00 Ft** |\n\n**Élelmiszer hetenkénti bontás:** 1. hét 0 Ft · 2. hét 7 000 Ft · 3. hét 4 200 Ft · **4. hét 13 100 Ft**\n→ A legmagasabb élelmiszer-kiadás a **4. héten** volt.\n\n**A fájlban:**\n- *Tranzakciók* munkalap: mind a 27 tétel, kategória, hét, teljes összeg, megosztás módja, képlettel/explicit saját rész\n- *Összesítés* munkalap: SUMIF/SUMIFS képletekkel számolt kategória-összesítő, záró egyenleg, élelmiszer heti bontás, legmagasabb hét automatikus azonosítása",
+  "stop_reason": "end_turn",
+  "session_id": "3e06e92c-72bf-4941-bbae-bbe9e4089d84",
+  "total_cost_usd": 0.9892917999999999,
+  "usage": {
+    "input_tokens": 15,
+    "cache_creation_input_tokens": 47593,
+    "cache_read_input_tokens": 574726,
+    "output_tokens": 35304,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 47593,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 477,
+        "cache_read_input_tokens": 62449,
+        "cache_creation_input_tokens": 1017,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1017
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1576,
+      "outputTokens": 27,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.0017109999999999998,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-6": {
+      "inputTokens": 15,
+      "outputTokens": 35304,
+      "cacheReadInputTokens": 574726,
+      "cacheCreationInputTokens": 47593,
+      "webSearchRequests": 0,
+      "costUSD": 0.9875807999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "a729adca-9cf1-4e7d-82ef-3c6cc9337cc5"
+}

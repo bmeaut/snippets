@@ -1,0 +1,51 @@
+Az alábbi rendezetlen, véletlen sorrendű forrásadatokból készíts egy helyes, APA 7. kiadás szerint formázott, ábécésorrendbe rendezett hivatkozásjegyzéket docx fájlként.
+
+Források:
+- típus: book
+  szerző(k): Balogh, B.
+  cím: Bevezetés a hálózattudományba
+  év: 2001
+  kiadó: Akadémiai Kiadó
+- típus: book
+  szerző(k): Gál, E.
+  cím: Kritikai gondolkodás és argumentáció
+  év: 2006
+  kiadó: Saxum Kiadó
+- típus: book
+  szerző(k): Kovács, J.
+  cím: Modern szoftverfejlesztési módszerek
+  év: 2014
+  kiadó: Typotex
+- típus: article
+  szerző(k): Németh, E.
+  cím: A távoktatás minőségbiztosítási kérdései
+  év: 2022
+  folyóirat: Statisztikai Szemle
+  kötetszám: 43
+  lapszám: 4
+  oldalszám: 66-90
+- típus: book
+  szerző(k): Németh, I.
+  cím: Bevezetés a hálózattudományba
+  év: 1997
+  kiadó: Typotex
+- típus: book
+  szerző(k): Németh, V.
+  cím: Modern szoftverfejlesztési módszerek
+  év: 2023
+  kiadó: Saxum Kiadó
+- típus: book
+  szerző(k): Szabó, E.
+  cím: A nyelvelsajátítás folyamata
+  év: 2005
+  kiadó: Kalligram Kiadó
+- típus: article
+  szerző(k): Szűcs, G.
+  cím: A kortárs mentorálás hatása az egyetemi lemorzsolódásra
+  év: 2014
+  folyóirat: Statisztikai Szemle
+  kötetszám: 20
+  lapszám: 3
+  oldalszám: 150-156
+
+Mentsd el "output.docx" néven a jelenlegi könyvtárba. Minden hivatkozás külön bekezdésben szerepeljen, a szerző vezetékneve szerint ábécésorrendbe rendezve. Ha egy mező (pl. oldalszám, DOI) nincs megadva egy forrásnál, hagyd ki a hivatkozásból, ne találj ki helyette adatot.

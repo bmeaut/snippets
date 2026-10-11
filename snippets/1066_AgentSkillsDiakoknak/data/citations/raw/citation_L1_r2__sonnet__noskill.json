@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 38599,
+  "duration_api_ms": 39071,
+  "ttft_ms": 10736,
+  "ttft_stream_ms": 2452,
+  "time_to_request_ms": 304,
+  "num_turns": 3,
+  "result": "Az `output.docx` fájl el lett mentve a jelenlegi könyvtárba. A hivatkozásjegyzék tartalma:\n\n1. Balogh, D. (2021). *Kutatásmetodológiai alapfogalmak*. Gondolat Kiadó.\n2. Fodor, S. (2004). *A tanulás pszichológiája*. L'Harmattan Kiadó.\n3. Kovács, P. (1999). *A fenntartható fejlődés dilemmái*. Gondolat Kiadó.\n4. Rácz, A. (2021). *A klímaváltozás társadalmi hatásai*. Kalligram Kiadó.\n5. Simon, V. (2019). *Kognitív folyamatok az oktatásban*. Kalligram Kiadó.\n\n**APA 7 formai jellemzők a fájlban:**\n- Times New Roman 12pt betűméret\n- Dőlt szedés a könyvcímeknél\n- Lógó (hanging) behúzás (1,25 cm)\n- Dupla sorköz\n- Ábécésorrend szerzői vezetéknév szerint\n- Csak a megadott mezők szerepelnek, kitalált adat nem",
+  "stop_reason": "end_turn",
+  "session_id": "87621706-0bf9-4d86-8f1e-2850e7b87e02",
+  "total_cost_usd": 0.0895866,
+  "usage": {
+    "input_tokens": 5,
+    "cache_creation_input_tokens": 8073,
+    "cache_read_input_tokens": 71432,
+    "output_tokens": 1995,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3049,
+      "ephemeral_5m_input_tokens": 5024
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 337,
+        "cache_read_input_tokens": 25291,
+        "cache_creation_input_tokens": 4328,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 4328,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 953,
+      "outputTokens": 26,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001083,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-6": {
+      "inputTokens": 5,
+      "outputTokens": 1995,
+      "cacheReadInputTokens": 71432,
+      "cacheCreationInputTokens": 8073,
+      "webSearchRequests": 0,
+      "costUSD": 0.0885036,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "5b2d6ead-adab-44f2-b52d-a87a2e30caea"
+}

@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 15660,
+  "duration_api_ms": 16143,
+  "ttft_ms": 10796,
+  "ttft_stream_ms": 1212,
+  "time_to_request_ms": 407,
+  "num_turns": 2,
+  "result": "Kész! Az **output.docx** fájl sikeresen létrehozva az alábbi tartalommal:\n\n✅ **Hivatkozásjegyzék (APA 7. kiadás)**\n- Ábécésorrendre rendezve (Balogh → Fodor → Kovács → Rácz → Simon)\n- Formátum: Szerző (év). Cím. Kiadó.\n- Minden hivatkozás külön bekezdésben\n- Hanging indent formázás (APA szabvány)\n- Nincs kitalált adat\n\nA fájl a jelenlegi könyvtárban megtalálható.",
+  "stop_reason": "end_turn",
+  "session_id": "e81c4876-8c79-4dd3-bd4b-f1a8e5cc654b",
+  "total_cost_usd": 0.023635999999999997,
+  "usage": {
+    "input_tokens": 18,
+    "cache_creation_input_tokens": 4940,
+    "cache_read_input_tokens": 47450,
+    "output_tokens": 1841,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3220,
+      "ephemeral_5m_input_tokens": 1720
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 334,
+        "cache_read_input_tokens": 25335,
+        "cache_creation_input_tokens": 1720,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 1720,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 971,
+      "outputTokens": 1866,
+      "cacheReadInputTokens": 47450,
+      "cacheCreationInputTokens": 4940,
+      "webSearchRequests": 0,
+      "costUSD": 0.023635999999999997,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "a2685a06-a833-4bf5-b445-c5f0cf9e59f0"
+}

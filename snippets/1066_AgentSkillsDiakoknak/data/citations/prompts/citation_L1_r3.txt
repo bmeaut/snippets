@@ -1,0 +1,30 @@
+Az alábbi rendezetlen, véletlen sorrendű forrásadatokból készíts egy helyes, APA 7. kiadás szerint formázott, ábécésorrendbe rendezett hivatkozásjegyzéket docx fájlként.
+
+Források:
+- típus: book
+  szerző(k): Balogh, L.
+  cím: A tanulás pszichológiája
+  év: 1999
+  kiadó: Akadémiai Kiadó
+- típus: book
+  szerző(k): Lakatos, N.
+  cím: A klímaváltozás társadalmi hatásai
+  év: 2000
+  kiadó: Osiris Kiadó
+- típus: book
+  szerző(k): Mészáros, S.
+  cím: Adatvizualizáció gyakorlata
+  év: 1999
+  kiadó: Gondolat Kiadó
+- típus: book
+  szerző(k): Németh, R.
+  cím: Bevezetés a statisztikába
+  év: 2006
+  kiadó: Typotex
+- típus: book
+  szerző(k): Takács, V.
+  cím: A döntéselmélet alapjai
+  év: 2016
+  kiadó: L'Harmattan Kiadó
+
+Mentsd el "output.docx" néven a jelenlegi könyvtárba. Minden hivatkozás külön bekezdésben szerepeljen, a szerző vezetékneve szerint ábécésorrendbe rendezve. Ha egy mező (pl. oldalszám, DOI) nincs megadva egy forrásnál, hagyd ki a hivatkozásból, ne találj ki helyette adatot.

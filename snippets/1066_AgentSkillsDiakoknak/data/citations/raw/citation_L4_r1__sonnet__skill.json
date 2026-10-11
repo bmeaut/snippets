@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 179371,
+  "duration_api_ms": 180111,
+  "ttft_ms": 19628,
+  "ttft_stream_ms": 2552,
+  "time_to_request_ms": 337,
+  "num_turns": 15,
+  "result": "All formatting is verified: 12 italic runs (one per reference for the title/journal), hanging indent at 720/720 twips (0.5 inch = 1.27 cm), and double line spacing (line=480, lineRule=auto).\n\n`output.docx` has been saved to the current directory. A quick summary of what's in the file:\n\n- **Heading:** „Hivatkozások\" — középre igazítva, félkövér\n- **12 hivatkozás** ábécésorrendben (Fekete → Fodor R. → Fodor V. → Horváth → Juhász → Kiss → Kovács → Lakatos L. → Lakatos V. → Németh → Rácz J. → Rácz N.)\n- **Formázás:** Times New Roman 12pt, dupla sortávolság, lógó behúzás (1,27 cm), nincs extra szóköz bekezdések között\n- **Dőlt szedés:** könyvcímek, folyóiratnevek és kötetszámok — a lapszám (zárójeles rész) nem dőlt\n- **Hiányzó mezők** (pl. oldalszám a Rácz & Varga 2001-nél) kihagyva, nem kitalálva",
+  "stop_reason": "end_turn",
+  "session_id": "2197549b-ac7b-4790-9fef-053cc7403181",
+  "total_cost_usd": 0.4409532500000001,
+  "usage": {
+    "input_tokens": 18,
+    "cache_creation_input_tokens": 24506,
+    "cache_read_input_tokens": 554425,
+    "output_tokens": 11393,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4457,
+      "ephemeral_5m_input_tokens": 20049
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 324,
+        "cache_read_input_tokens": 45734,
+        "cache_creation_input_tokens": 316,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 316,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1626,
+      "outputTokens": 25,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001751,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-6": {
+      "inputTokens": 18,
+      "outputTokens": 11393,
+      "cacheReadInputTokens": 554425,
+      "cacheCreationInputTokens": 24506,
+      "webSearchRequests": 0,
+      "costUSD": 0.43920225,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "cc0ca2bf-f7ed-40e1-b396-636556b8e543"
+}

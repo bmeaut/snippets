@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 54098,
+  "duration_api_ms": 54794,
+  "ttft_ms": 41010,
+  "ttft_stream_ms": 1280,
+  "time_to_request_ms": 334,
+  "num_turns": 2,
+  "result": "Kész! Létrehoztam az **output.docx** fájlt az APA 7 formátumú hivatkozásjegyzékkel.\n\nA dokumentum tartalma:\n- **Ábécésorrendbe rendezett** hivatkozások a szerző vezetéknevei szerint\n- Minden forrásfajtához megfelelő **APA 7 formátum**:\n  - Könyvek: *Szerző (év). Cím. Kiadó.*\n  - Folyóiratcikkek: *Szerző (év). Cím. Folyóirat, kötet(szám), oldalszám. DOI*\n  - Weboldalak: *Szerző (év, hónap nap). Cím. Weboldal. Retrieved from URL*\n- **Italikus formázás** az italikus részekhez (folyóiratok, könyvcímek, weboldalak)\n- **Hanging indent** (0.5\") a szakirodalmi formázás szerint\n- Csak az **elérhető adatok** szerepelnek, hiányzó mezőket nem lesznek pótolva\n\nA 12 forrásbejegyzés ábécésorrendben: Balogh, Farkas (D.), Farkas (N.), Fodor, Gál, Juhász, Nagy (N.), Nagy (V.), Papp, Takács, Tóth, Varga.",
+  "stop_reason": "end_turn",
+  "session_id": "4cfeb8e4-0703-4893-8fc9-d2ae0b96a7e9",
+  "total_cost_usd": 0.06803675000000001,
+  "usage": {
+    "input_tokens": 18,
+    "cache_creation_input_tokens": 11981,
+    "cache_read_input_tokens": 48220,
+    "output_tokens": 8674,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3990,
+      "ephemeral_5m_input_tokens": 7991
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 676,
+        "cache_read_input_tokens": 26105,
+        "cache_creation_input_tokens": 7991,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 7991,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1741,
+      "outputTokens": 8701,
+      "cacheReadInputTokens": 48220,
+      "cacheCreationInputTokens": 11981,
+      "webSearchRequests": 0,
+      "costUSD": 0.06803675000000001,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "7211f7b5-1a7b-4853-a4aa-c7a3d6c6c55b"
+}

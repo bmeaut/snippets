@@ -1,0 +1,40 @@
+Az alábbi nyers tranzakciólistából (ez egy hónap tranzakciói) készíts egy szervezett költségvetés-táblázatot xlsx fájlként.
+
+A lehetséges kategóriák: élelmiszer, lakhatás, szórakozás, közlekedés, ruházat, egészség, oktatás, egyéb, bevétel.
+
+Tranzakciók:
+- koncertjegy (szórakozás) [4. hét] - 14.4k Ft
+- koncertjegy [4. hét] - 10,3 e Ft, négyen osztottuk
+- fogorvosi kezelés [3. hét] - 20,2 e Ft, ebből az én részem 5050 Ft
+- internet előfizetés (lakhatás) [4. hét] - 5,35 e Ft
+- taxi/Bolt [4. hét] - 2000 Ft
+- Netflix előfizetés [4. hét] - 3400 Ft
+- részmunkaidős fizetés (bevétel) [4. hét] - 142,65 e Ft
+- fogorvosi kezelés [3. hét] - 5350
+- fogorvosi kezelés [4. hét] - 22550 Ft
+- mozijegy [1. hét] - 2300 Ft
+- nyelvvizsga díj [3. hét] - 19800
+- albérlet [4. hét] - 95.4k Ft
+- családi támogatás (bevétel) [4. hét] - 54750 Ft
+- Netflix előfizetés (szórakozás) [4. hét] - 3,25 e Ft
+- fogorvosi kezelés (egészség) [3. hét] - 14300
+- benzin [1. hét] - 14.95k Ft, ebből az én részem 3750 Ft
+- nyelvvizsga díj [3. hét] - 19,25 e Ft
+- szemüveg [2. hét] - 31950, hárman osztottuk
+- Tesco bevásárlás (élelmiszer) [3. hét] - 4300 Ft
+- Lidl heti bevásárlás [4. hét] - 3,15 e Ft
+- mozijegy (szórakozás) [3. hét] - 2,6 e Ft
+- BKK havijegy [2. hét] - 9,5 e Ft
+- nyelvvizsga díj [4. hét] - 18550 Ft
+- BKK havijegy (közlekedés) [1. hét] - 9500 Ft
+- fogorvosi kezelés [1. hét] - 16550 Ft
+- ajándék [3. hét] - 11900 Ft, ketten osztottuk
+
+Feladat:
+1. Kategorizáld az egyes tételeket (ha a kategória nincs explicit megadva, a leírásból következtesd ki, és a fenti kategórialistából válassz).
+2. Számítsd ki a kategóriánkénti összköltést (a bevétel is egy kategória; megosztott költség esetén csak a saját részed számít bele).
+3. Számítsd ki a záró egyenleget (az összes kategória összege).
+
+4. Add meg, melyik héten (1-4) volt a legmagasabb az élelmiszer-kategória kiadása.
+
+Mentsd el az eredményt "output.xlsx" néven a jelenlegi könyvtárba. Legyen benne egy munkalap a tranzakciók listájával, és egy másik a kategóriánkénti összesítéssel és a záró egyenleggel.

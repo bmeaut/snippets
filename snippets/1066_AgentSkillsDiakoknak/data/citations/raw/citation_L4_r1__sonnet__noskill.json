@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 73291,
+  "duration_api_ms": 73838,
+  "ttft_ms": 47613,
+  "ttft_stream_ms": 2377,
+  "time_to_request_ms": 349,
+  "num_turns": 3,
+  "result": "Az `output.docx` elkészült. Íme a hivatkozások sorrendbe rendezve, ahogy a fájlba kerültek:\n\n| # | Szerző | Típus |\n|---|--------|-------|\n| 1 | Fekete, K., & Simon, P. (2014) | könyv |\n| 2 | Fodor, R. (2008, január 19) | weboldal |\n| 3 | Fodor, V. (2014) | könyv |\n| 4 | Horváth, P. (2023) | folyóirat |\n| 5 | Juhász, L. (2022) | könyv |\n| 6 | Kiss, N. (2004) | folyóirat |\n| 7 | Kovács, D., & Varga, D. (2023, február 2) | weboldal |\n| 8 | Lakatos, L. (2003) | könyv |\n| 9 | Lakatos, V., & Farkas, I. (2003) | folyóirat |\n| 10 | Németh, G. (2013) | folyóirat |\n| 11 | Rácz, J., & Szabó, S. (2017) | könyv |\n| 12 | Rácz, N., & Varga, M. (2001) | folyóirat |\n\n**APA 7 szempontjából alkalmazott szabályok:**\n- Könyvcímek és folyóiratnevek dőlt betűvel szedve\n- Folyóiratoknál a kötetszám is dőlt\n- Többszerzős műveknél `&` jel az utolsó szerző előtt\n- Lógó bekezdésindentálás (hanging indent)\n- DOI-k `https://doi.org/` formában\n- Hiányzó mezők (pl. oldalszám Rácz & Varga 2001-nél) kihagyva",
+  "stop_reason": "end_turn",
+  "session_id": "34c1f977-6180-43a3-93d2-c22b68d3b63b",
+  "total_cost_usd": 0.1636759,
+  "usage": {
+    "input_tokens": 5,
+    "cache_creation_input_tokens": 12236,
+    "cache_read_input_tokens": 75868,
+    "output_tokens": 5659,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3722,
+      "ephemeral_5m_input_tokens": 8514
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 510,
+        "cache_read_input_tokens": 29054,
+        "cache_creation_input_tokens": 4728,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 4728,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1626,
+      "outputTokens": 26,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001756,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-6": {
+      "inputTokens": 5,
+      "outputTokens": 5659,
+      "cacheReadInputTokens": 75868,
+      "cacheCreationInputTokens": 12236,
+      "webSearchRequests": 0,
+      "costUSD": 0.1619199,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "7f557bf0-8b07-4f7b-b526-80587df1d9ac"
+}

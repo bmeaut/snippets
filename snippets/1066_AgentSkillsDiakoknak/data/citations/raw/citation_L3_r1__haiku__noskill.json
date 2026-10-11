@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 36969,
+  "duration_api_ms": 37477,
+  "ttft_ms": 25643,
+  "ttft_stream_ms": 1318,
+  "time_to_request_ms": 450,
+  "num_turns": 4,
+  "result": "Kész! Az **output.docx** fájl sikeresen létrejött.\n\nA hivatkozásjegyzék tartalmazza:\n- **10 hivatkozás** APA 7. kiadás szerinti formátumban\n- **Ábécésorrendbe rendezve** a szerző vezetéknevei szerint (Balogh → Varga)\n- **Függő behúzással** (hanging indent) formázott bekezdések\n- **Hiányzó mezőket kihagytam**: pl. a Kovács P. (2024) és Szabó M., Fodor T. (1995) hivatkozásoknál nem volt oldalszám, így azt nem tettem be\n- **DOI-okat** megtartottam azoknál a forrásoknál, ahol rendelkezésre állt\n\nA fájl a jelenlegi munkakönyvtárban (workdir_noskill) található és azonnal használható.",
+  "stop_reason": "end_turn",
+  "session_id": "31c7b69c-8301-4f52-9fcd-fff14f0152f6",
+  "total_cost_usd": 0.0504069,
+  "usage": {
+    "input_tokens": 34,
+    "cache_creation_input_tokens": 11062,
+    "cache_read_input_tokens": 110459,
+    "output_tokens": 4209,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3758,
+      "ephemeral_5m_input_tokens": 7304
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 405,
+        "cache_read_input_tokens": 32989,
+        "cache_creation_input_tokens": 188,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 188,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1525,
+      "outputTokens": 4238,
+      "cacheReadInputTokens": 110459,
+      "cacheCreationInputTokens": 11062,
+      "webSearchRequests": 0,
+      "costUSD": 0.0504069,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "4603e200-61d4-4242-8a94-f737288533ff"
+}

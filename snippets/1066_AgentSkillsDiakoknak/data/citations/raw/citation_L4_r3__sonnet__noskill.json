@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 92816,
+  "duration_api_ms": 93341,
+  "ttft_ms": 47374,
+  "ttft_stream_ms": 1735,
+  "time_to_request_ms": 372,
+  "num_turns": 4,
+  "result": "Az `output.docx` elkészült a jelenlegi könyvtárba. Tartalom és formázás összefoglalója:\n\n**12 hivatkozás, ábécésorrendben (szerzői vezetéknév szerint):**\n\n1. Fekete, R. (2002) — weboldal\n2. Gál, E., & Szűcs, D. (2015) — folyóiratcikk\n3. Nagy, O., & Varga, D. (2012) — folyóiratcikk\n4. Nagy, R., & Fekete, A. (2006) — könyv\n5. Papp, R., & Kovács, T. (2009) — könyv\n6. Papp, S. (2020) — folyóiratcikk\n7. Rácz, T., & Farkas, I. (2012) — folyóiratcikk (oldalszám és DOI nélkül, mert nem volt megadva)\n8. Simon, T., & Szabó, O. (2012) — folyóiratcikk\n9. Szabó, R. (2019) — könyv\n10. Szűcs, E. (2001) — weboldal\n11. Takács, I. (2001) — folyóiratcikk\n12. Török, T. (2016) — könyv\n\n**APA 7 formai elemek:** Times New Roman 12pt, dupla sorköz, függő behúzás (0,5 inch), folyóiratnév és könyvcím dőlt betűvel, DOI `https://doi.org/` formátumban, oldalszámoknál en dash (–).",
+  "stop_reason": "end_turn",
+  "session_id": "27b3e067-1ec3-491b-b99e-6d53de1e0ee2",
+  "total_cost_usd": 0.17542385,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 12478,
+    "cache_read_input_tokens": 109152,
+    "output_tokens": 5704,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3775,
+      "ephemeral_5m_input_tokens": 8703
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 431,
+        "cache_read_input_tokens": 33788,
+        "cache_creation_input_tokens": 236,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 236,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1679,
+      "outputTokens": 27,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.0018139999999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-6": {
+      "inputTokens": 6,
+      "outputTokens": 5704,
+      "cacheReadInputTokens": 109152,
+      "cacheCreationInputTokens": 12478,
+      "webSearchRequests": 0,
+      "costUSD": 0.17360984999999998,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "d251c4b6-f30d-4e6a-a63c-980f9fa9adb2"
+}

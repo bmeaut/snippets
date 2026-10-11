@@ -1,0 +1,30 @@
+Az alábbi rendezetlen, véletlen sorrendű forrásadatokból készíts egy helyes, APA 7. kiadás szerint formázott, ábécésorrendbe rendezett hivatkozásjegyzéket docx fájlként.
+
+Források:
+- típus: book
+  szerző(k): Balogh, D.
+  cím: Kutatásmetodológiai alapfogalmak
+  év: 2021
+  kiadó: Gondolat Kiadó
+- típus: book
+  szerző(k): Fodor, S.
+  cím: A tanulás pszichológiája
+  év: 2004
+  kiadó: L'Harmattan Kiadó
+- típus: book
+  szerző(k): Kovács, P.
+  cím: A fenntartható fejlődés dilemmái
+  év: 1999
+  kiadó: Gondolat Kiadó
+- típus: book
+  szerző(k): Rácz, A.
+  cím: A klímaváltozás társadalmi hatásai
+  év: 2021
+  kiadó: Kalligram Kiadó
+- típus: book
+  szerző(k): Simon, V.
+  cím: Kognitív folyamatok az oktatásban
+  év: 2019
+  kiadó: Kalligram Kiadó
+
+Mentsd el "output.docx" néven a jelenlegi könyvtárba. Minden hivatkozás külön bekezdésben szerepeljen, a szerző vezetékneve szerint ábécésorrendbe rendezve. Ha egy mező (pl. oldalszám, DOI) nincs megadva egy forrásnál, hagyd ki a hivatkozásból, ne találj ki helyette adatot.

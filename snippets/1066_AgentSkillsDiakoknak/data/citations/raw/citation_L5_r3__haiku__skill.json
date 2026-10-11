@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 71090,
+  "duration_api_ms": 71624,
+  "ttft_ms": 21193,
+  "ttft_stream_ms": 1745,
+  "time_to_request_ms": 444,
+  "num_turns": 6,
+  "result": "Kész! Az `output.docx` fájl sikeresen létrehozva lett az aktuális könyvtárban. A bibliográfia a következőket tartalmazza:\n\n**Formázás:**\n- **15 hivatkozás** ábécésorrendbe rendezve (szerző vezetékneve szerint)\n- **APA 7. kiadás szerinti** formázás alkalmazva\n- Minden hivatkozás **külön bekezdésben**\n- **Dölt szöveg** a könyvcímekhez, folyóiratnevekhez és weboldalakhoz\n- Hiányzó mezők kihagyva (pl. DOI csak ott, ahol megadva volt)\n\n**Tartalma:**\n1. Fodor, M. (2013) – *A szervezetpszichológia alapjai*\n2. Fodor, N. (2023) – Iskolakultúra cikk DOI-val\n3. Kiss, L. (2011) – Educatio cikk DOI-val\n4. Kovács, D., Tóth, I., & Tóth, S. (2005) – Pszichológia cikk\n5. Lakatos, M., Tóth, V., & Farkas, L. (1999) – *Alapfokú ökológia*\n... és így tovább az ábécérendnek megfelelően.\n\nA fájl nyitható Word-ben, Google Docs-ban vagy bármilyen kompatibilis dokumentumszerkesztővel.",
+  "stop_reason": "end_turn",
+  "session_id": "22146a89-aad5-44fb-9114-aaaabdf52cdc",
+  "total_cost_usd": 0.1115149,
+  "usage": {
+    "input_tokens": 44,
+    "cache_creation_input_tokens": 23146,
+    "cache_read_input_tokens": 158499,
+    "output_tokens": 9464,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 23146,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 722,
+        "cache_read_input_tokens": 40796,
+        "cache_creation_input_tokens": 373,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 373
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1908,
+      "outputTokens": 9493,
+      "cacheReadInputTokens": 158499,
+      "cacheCreationInputTokens": 23146,
+      "webSearchRequests": 0,
+      "costUSD": 0.1115149,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "6bbdaca0-6f4c-49cc-af38-c81efc43449a"
+}

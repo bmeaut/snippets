@@ -1,0 +1,75 @@
+Az alábbi rendezetlen, véletlen sorrendű forrásadatokból készíts egy helyes, APA 7. kiadás szerint formázott, ábécésorrendbe rendezett hivatkozásjegyzéket docx fájlként.
+
+Források:
+- típus: article
+  szerző(k): Balogh, T.
+  cím: A kritikai szövegértés fejlődése serdülőkorban
+  év: 2024
+  folyóirat: Informatika és Oktatás
+  kötetszám: 8
+  lapszám: 1
+  oldalszám: 101-117
+- típus: article
+  szerző(k): Farkas, P.; Papp, D.
+  cím: Digitális eszközök használata a középiskolai oktatásban
+  év: 2013
+  folyóirat: Educatio
+  kötetszám: 12
+  lapszám: 3
+  oldalszám: 38-65
+- típus: article
+  szerző(k): Fekete, J.
+  cím: A tanári attitűd hatása a diákok teljesítményére
+  év: 1998
+  folyóirat: Szociológiai Szemle
+  kötetszám: 34
+  lapszám: 3
+  oldalszám: 25-43
+  DOI: 10.5111/5723.8489
+- típus: article
+  szerző(k): Kovács, P.
+  cím: A gamifikáció szerepe a nyelvtanulásban
+  év: 2024
+  folyóirat: Informatika és Oktatás
+  kötetszám: 32
+  lapszám: 3
+- típus: book
+  szerző(k): Papp, D.
+  cím: Az oktatástechnológia története
+  év: 1997
+  kiadó: L'Harmattan Kiadó
+- típus: article
+  szerző(k): Papp, I.; Simon, G.
+  cím: A kortárs mentorálás hatása az egyetemi lemorzsolódásra
+  év: 2010
+  folyóirat: Informatika és Oktatás
+  kötetszám: 24
+  lapszám: 2
+  DOI: 10.7997/4813.9709
+- típus: article
+  szerző(k): Szabó, L.; Balogh, P.
+  cím: Az önszabályozott tanulás mérési lehetőségei
+  év: 2012
+  folyóirat: Iskolakultúra
+  kötetszám: 40
+  lapszám: 3
+  oldalszám: 118-128
+- típus: article
+  szerző(k): Szabó, M.; Fodor, T.
+  cím: A kritikus gondolkodás fejlesztése felsőoktatásban
+  év: 1995
+  folyóirat: Pszichológia
+  kötetszám: 41
+  lapszám: 2
+- típus: book
+  szerző(k): Takács, E.
+  cím: Kognitív folyamatok az oktatásban
+  év: 2022
+  kiadó: Kalligram Kiadó
+- típus: book
+  szerző(k): Varga, Z.
+  cím: A gazdaságtörténet vázlatai
+  év: 2009
+  kiadó: L'Harmattan Kiadó
+
+Mentsd el "output.docx" néven a jelenlegi könyvtárba. Minden hivatkozás külön bekezdésben szerepeljen, a szerző vezetékneve szerint ábécésorrendbe rendezve. Ha egy mező (pl. oldalszám, DOI) nincs megadva egy forrásnál, hagyd ki a hivatkozásból, ne találj ki helyette adatot.

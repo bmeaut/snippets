@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 23922,
+  "duration_api_ms": 24651,
+  "ttft_ms": 7107,
+  "ttft_stream_ms": 865,
+  "time_to_request_ms": 36,
+  "num_turns": 2,
+  "result": "Kész! Az **output.xlsx** fájl sikeresen létrehozva az aktuális könyvtárban. \n\nA fájl két munkalapot tartalmaz:\n\n**1. Tranzakciók munkalap:**\n- Az összes tranzakció listája kategóriákkal és összegekkel\n- Formázva fejléc és szegéllyel\n\n**2. Összesítés munkalap:**\n- **Élelmiszer:** 36,700 Ft (Tesco, Wolt, piac, Kifli.hu)\n- **Lakhatás:** 7,250 Ft (internet)\n- **Bevétel:** 110,350 Ft (ösztöndíj + alkalmi munka × 2 + családi támogatás)\n\n**Záró egyenleg: 66,400 Ft** (bevétel mínusz költségek)",
+  "stop_reason": "end_turn",
+  "session_id": "fe6068b2-ece9-4b72-aa3a-67b29838fe89",
+  "total_cost_usd": 0.0274603,
+  "usage": {
+    "input_tokens": 18,
+    "cache_creation_input_tokens": 5245,
+    "cache_read_input_tokens": 35273,
+    "output_tokens": 2459,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 5245,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 438,
+        "cache_read_input_tokens": 19196,
+        "cache_creation_input_tokens": 2126,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2126
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1008,
+      "outputTokens": 2487,
+      "cacheReadInputTokens": 35273,
+      "cacheCreationInputTokens": 5245,
+      "webSearchRequests": 0,
+      "costUSD": 0.0274603,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "968c0e36-413f-43b2-8f43-3f5b6674e0e6"
+}

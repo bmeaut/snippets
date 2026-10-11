@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 38777,
+  "duration_api_ms": 39624,
+  "ttft_ms": 16386,
+  "ttft_stream_ms": 1162,
+  "time_to_request_ms": 34,
+  "num_turns": 2,
+  "result": "Kész! Az **output.xlsx** fájl sikeresen létrehozva a jelenlegi könyvtárba.\n\nA táblázat két munkalapot tartalmaz:\n\n**1. Tranzakciók munkalap:**\n- Az összes tranzakció listája leírással, kategóriával és összeggel\n- Megosztott költségek esetén csak a saját részed lett beszámítva\n\n**2. Összesítés munkalap:**\n- Kategóriánkénti összegek\n- Költségek összesen: **103,950 Ft**\n- Bevételek: **72,900 Ft**\n- **Záró egyenleg: -31,050 Ft** (negatív, mivel több költséged volt, mint bevételed)\n\nA táblázat formázva van: fejlécek kiemeltek, számok ezres elválasztóval, a záró egyenleg pedig piros háttérrel jelölt.",
+  "stop_reason": "end_turn",
+  "session_id": "ee95d1a8-e5a9-45d1-8023-015fbea2abd6",
+  "total_cost_usd": 0.0388491,
+  "usage": {
+    "input_tokens": 18,
+    "cache_creation_input_tokens": 6882,
+    "cache_read_input_tokens": 35441,
+    "output_tokens": 4043,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 6882,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 535,
+        "cache_read_input_tokens": 19364,
+        "cache_creation_input_tokens": 3595,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 3595
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1176,
+      "outputTokens": 4073,
+      "cacheReadInputTokens": 35441,
+      "cacheCreationInputTokens": 6882,
+      "webSearchRequests": 0,
+      "costUSD": 0.0388491,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "ac29f9ff-d6e8-4a62-a649-92c4e5411714"
+}

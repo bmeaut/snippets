@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 154966,
+  "duration_api_ms": 155147,
+  "ttft_ms": 3579,
+  "ttft_stream_ms": 2410,
+  "time_to_request_ms": 30,
+  "num_turns": 9,
+  "result": "A fájl helyes. Az összes adat és formula a helyén van. Az elvárt értékek:\n\n| Kategória | Összeg |\n|---|---|\n| Bevétel | +272 150 Ft |\n| Élelmiszer | −4 050 Ft |\n| Lakhatás | −243 500 Ft |\n| **Záró egyenleg** | **+24 600 Ft** |\n\nAz `output.xlsx` el van mentve két munkalappal:\n\n- **Tranzakciók** – mind a 10 tétel leírással, kategóriával és összeggel, váltakozó sorszínezéssel\n- **Összesítő** – SUMIF-formulákkal számított kategória-összegek (kiadások negatívan, bevétel pozitívan), és a záró egyenleg egy `SUM`-formulával",
+  "stop_reason": "end_turn",
+  "session_id": "d6b740d1-c2a0-48ba-a582-50d8d3ba30d0",
+  "total_cost_usd": 0.41133500000000006,
+  "usage": {
+    "input_tokens": 11,
+    "cache_creation_input_tokens": 32842,
+    "cache_read_input_tokens": 191690,
+    "output_tokens": 10376,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 32842,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 228,
+        "cache_read_input_tokens": 31360,
+        "cache_creation_input_tokens": 1482,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1482
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 988,
+      "outputTokens": 23,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001103,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-6": {
+      "inputTokens": 11,
+      "outputTokens": 10376,
+      "cacheReadInputTokens": 191690,
+      "cacheCreationInputTokens": 32842,
+      "webSearchRequests": 0,
+      "costUSD": 0.41023200000000004,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "df5d6809-ffaa-424c-b2c6-084868eee066"
+}

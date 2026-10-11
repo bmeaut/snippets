@@ -1,0 +1,30 @@
+Az alábbi rendezetlen, véletlen sorrendű forrásadatokból készíts egy helyes, APA 7. kiadás szerint formázott, ábécésorrendbe rendezett hivatkozásjegyzéket docx fájlként.
+
+Források:
+- típus: book
+  szerző(k): Horváth, Z.
+  cím: Statisztikai következtetés a gyakorlatban
+  év: 2015
+  kiadó: Akadémiai Kiadó
+- típus: book
+  szerző(k): Juhász, M.
+  cím: Modern szoftverfejlesztési módszerek
+  év: 1997
+  kiadó: Akadémiai Kiadó
+- típus: book
+  szerző(k): Molnár, B.
+  cím: A fenntartható fejlődés dilemmái
+  év: 2004
+  kiadó: Typotex
+- típus: book
+  szerző(k): Szűcs, T.
+  cím: Az oktatástechnológia története
+  év: 2006
+  kiadó: L'Harmattan Kiadó
+- típus: book
+  szerző(k): Tóth, I.
+  cím: Kritikai gondolkodás és argumentáció
+  év: 1998
+  kiadó: L'Harmattan Kiadó
+
+Mentsd el "output.docx" néven a jelenlegi könyvtárba. Minden hivatkozás külön bekezdésben szerepeljen, a szerző vezetékneve szerint ábécésorrendbe rendezve. Ha egy mező (pl. oldalszám, DOI) nincs megadva egy forrásnál, hagyd ki a hivatkozásból, ne találj ki helyette adatot.

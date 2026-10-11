@@ -1,0 +1,41 @@
+Az alábbi nyers tranzakciólistából (ez egy hónap tranzakciói) készíts egy szervezett költségvetés-táblázatot xlsx fájlként.
+
+A lehetséges kategóriák: élelmiszer, lakhatás, szórakozás, közlekedés, ruházat, egészség, oktatás, egyéb, bevétel.
+
+Tranzakciók:
+- Kifli.hu rendelés (élelmiszer) [3. hét] - 4,2 e Ft
+- közös költség [1. hét] - 18300, ketten osztottuk
+- telefon előfizetés (egyéb) [1. hét] - 3.85k Ft, ebből az én részem 1300 Ft
+- családi támogatás (bevétel) [4. hét] - 52650 Ft
+- internet előfizetés [3. hét] - 4.2k Ft, négyen osztottuk
+- Piac, zöldség-gyümölcs [4. hét] - 2,85 e Ft
+- vonatjegy hazautazás [4. hét] - 7450 Ft, hárman osztottuk
+- taxi/Bolt [4. hét] - 3.55k Ft
+- Lidl heti bevásárlás (élelmiszer) [4. hét] - 10250
+- ajándék (egyéb) [2. hét] - 5600
+- Spotify előfizetés (szórakozás) [4. hét] - 1850 Ft
+- Lidl heti bevásárlás [2. hét] - 11,3 e Ft, ebből az én részem 3750 Ft
+- ösztöndíj (bevétel) [4. hét] - 46300 Ft
+- Lidl heti bevásárlás [2. hét] - 3250
+- szemüveg [1. hét] - 43850, hárman osztottuk
+- fogorvosi kezelés (egészség) [4. hét] - 25150 Ft
+- ösztöndíj (bevétel) [4. hét] - 66.75k Ft
+- Netflix előfizetés [1. hét] - 3,1 e Ft
+- H&M ruhavásárlás (ruházat) [3. hét] - 15,3 e Ft, ebből az én részem 3800 Ft
+- taxi/Bolt [4. hét] - 3.25k Ft, ebből az én részem 1600 Ft
+- internet előfizetés [3. hét] - 4800, négyen osztottuk
+- családi támogatás (bevétel) [4. hét] - 26000
+- internet előfizetés (lakhatás) [4. hét] - 5800
+- mozijegy [3. hét] - 3,35 e Ft
+- gyógyszertár (egészség) [1. hét] - 1950, hárman osztottuk
+- családi támogatás (bevétel) [1. hét] - 52050
+- online kurzus [3. hét] - 10.05k Ft, ebből az én részem 5000 Ft
+
+Feladat:
+1. Kategorizáld az egyes tételeket (ha a kategória nincs explicit megadva, a leírásból következtesd ki, és a fenti kategórialistából válassz).
+2. Számítsd ki a kategóriánkénti összköltést (a bevétel is egy kategória; megosztott költség esetén csak a saját részed számít bele).
+3. Számítsd ki a záró egyenleget (az összes kategória összege).
+
+4. Add meg, melyik héten (1-4) volt a legmagasabb az élelmiszer-kategória kiadása.
+
+Mentsd el az eredményt "output.xlsx" néven a jelenlegi könyvtárba. Legyen benne egy munkalap a tranzakciók listájával, és egy másik a kategóriánkénti összesítéssel és a záró egyenleggel.

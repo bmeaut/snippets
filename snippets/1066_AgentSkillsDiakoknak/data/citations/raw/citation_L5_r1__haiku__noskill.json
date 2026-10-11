@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 61697,
+  "duration_api_ms": 62415,
+  "ttft_ms": 25859,
+  "ttft_stream_ms": 1275,
+  "time_to_request_ms": 340,
+  "num_turns": 4,
+  "result": "Kész! Az `output.docx` fájl létrehozva az aktuális könyvtárban. Az APA 7. kiadás szerinti hivatkozásjegyzék tartalmazza:\n\n- **15 hivatkozás** ábécésorrendbe rendezve a szerzők vezetéknevei szerint\n- Helyes APA formázás (szerzők, év, cím dőlt betűvel könyvek/weboldalak esetén, folyóirat, DOI/URL)\n- Hanging indent formázás minden bekezdéshez\n- Csak rendelkezésre álló adatok — nincsenek kitalált mezők\n- Könyvek, folyóiratcikkek és weboldalak megfelelően formázva",
+  "stop_reason": "end_turn",
+  "session_id": "fb3cfcd8-fe00-4491-9d0d-4ff5cfdd6293",
+  "total_cost_usd": 0.08266435,
+  "usage": {
+    "input_tokens": 34,
+    "cache_creation_input_tokens": 15940,
+    "cache_read_input_tokens": 118246,
+    "output_tokens": 9142,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4173,
+      "ephemeral_5m_input_tokens": 11767
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 772,
+        "cache_read_input_tokens": 37897,
+        "cache_creation_input_tokens": 158,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 158,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1940,
+      "outputTokens": 9169,
+      "cacheReadInputTokens": 118246,
+      "cacheCreationInputTokens": 15940,
+      "webSearchRequests": 0,
+      "costUSD": 0.08266435,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "11403ffe-0389-4601-b30f-62d0a9190f5d"
+}

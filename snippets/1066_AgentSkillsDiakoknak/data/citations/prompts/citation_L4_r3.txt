@@ -1,0 +1,93 @@
+Az alábbi rendezetlen, véletlen sorrendű forrásadatokból készíts egy helyes, APA 7. kiadás szerint formázott, ábécésorrendbe rendezett hivatkozásjegyzéket docx fájlként.
+
+Források:
+- típus: website
+  hónap: szeptember
+  év: 2002
+  szerző(k): Fekete, R.
+  cím: Mi az a spacing effect, és miért működik?
+  nap: 18
+  weboldal neve: National Geographic Magyarország
+  URL: https://example.edu/cikk/8621
+- típus: article
+  DOI: 10.4411/8192.3896
+  év: 2015
+  oldalszám: 147-169
+  folyóirat: Magyar Pedagógia
+  kötetszám: 12
+  lapszám: 3
+  szerző(k): Gál, E.; Szűcs, D.
+  cím: A stressz és a tanulási teljesítmény kapcsolata
+- típus: article
+  DOI: 10.2125/3442.1567
+  szerző(k): Nagy, O.; Varga, D.
+  cím: Az önszabályozott tanulás mérési lehetőségei
+  folyóirat: Magyar Pedagógia
+  lapszám: 4
+  év: 2012
+  kötetszám: 13
+  oldalszám: 176-189
+- típus: book
+  szerző(k): Nagy, R.; Fekete, A.
+  kiadó: L'Harmattan Kiadó
+  év: 2006
+  cím: A tanulás pszichológiája
+- típus: book
+  szerző(k): Papp, R.; Kovács, T.
+  cím: A magyar nyelv története
+  év: 2009
+  kiadó: L'Harmattan Kiadó
+- típus: article
+  szerző(k): Papp, S.
+  DOI: 10.2634/2931.4934
+  folyóirat: Educatio
+  kötetszám: 11
+  év: 2020
+  oldalszám: 43-68
+  cím: A tanári attitűd hatása a diákok teljesítményére
+  lapszám: 4
+- típus: article
+  cím: A kortárs mentorálás hatása az egyetemi lemorzsolódásra
+  lapszám: 1
+  kötetszám: 23
+  év: 2012
+  folyóirat: Educatio
+  szerző(k): Rácz, T.; Farkas, I.
+- típus: article
+  folyóirat: Iskolakultúra
+  év: 2012
+  cím: A gamifikáció szerepe a nyelvtanulásban
+  oldalszám: 106-114
+  lapszám: 1
+  szerző(k): Simon, T.; Szabó, O.
+  kötetszám: 32
+  DOI: 10.4673/3960.6778
+- típus: book
+  kiadó: Osiris Kiadó
+  cím: A döntéselmélet alapjai
+  év: 2019
+  szerző(k): Szabó, R.
+- típus: website
+  weboldal neve: Index Tudomány
+  szerző(k): Szűcs, E.
+  hónap: május
+  nap: 4
+  URL: https://example.edu/cikk/9585
+  év: 2001
+  cím: A felsőoktatás jövője: Tíz tendencia
+- típus: article
+  oldalszám: 73-85
+  folyóirat: Educatio
+  cím: A csoportmunka szerepe a problémamegoldásban
+  kötetszám: 39
+  lapszám: 2
+  szerző(k): Takács, I.
+  év: 2001
+  DOI: 10.2542/2206.4134
+- típus: book
+  év: 2016
+  kiadó: Saxum Kiadó
+  szerző(k): Török, T.
+  cím: Statisztikai következtetés a gyakorlatban
+
+Mentsd el "output.docx" néven a jelenlegi könyvtárba. Minden hivatkozás külön bekezdésben szerepeljen, a szerző vezetékneve szerint ábécésorrendbe rendezve. Ha egy mező (pl. oldalszám, DOI) nincs megadva egy forrásnál, hagyd ki a hivatkozásból, ne találj ki helyette adatot.

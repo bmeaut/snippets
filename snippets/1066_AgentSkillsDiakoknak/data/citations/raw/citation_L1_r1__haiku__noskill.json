@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 28490,
+  "duration_api_ms": 28912,
+  "ttft_ms": 17537,
+  "ttft_stream_ms": 1359,
+  "time_to_request_ms": 360,
+  "num_turns": 3,
+  "result": "Kész! Az **output.docx** fájl sikeresen létrehozva a jelenlegi könyvtárban. \n\nA dokumentum tartalmazza:\n- **Cím**: \"Hivatkozásjegyzék\"\n- **Megfelelően formázott hivatkozások** APA 7. formátum szerint:\n  - Horváth, Z. (2015). *Statisztikai következtetés a gyakorlatban*. Akadémiai Kiadó.\n  - Juhász, M. (1997). *Modern szoftverfejlesztési módszerek*. Akadémiai Kiadó.\n  - Molnár, B. (2004). *A fenntartható fejlődés dilemmái*. Typotex.\n  - Szűcs, T. (2006). *Az oktatástechnológia története*. L'Harmattan Kiadó.\n  - Tóth, I. (1998). *Kritikai gondolkodás és argumentáció*. L'Harmattan Kiadó.\n\n- **Jellemzői:**\n  - Ábécésorrendbe rendezve a szerző vezetéknevei szerint\n  - Könyv címek italicizálva\n  - Függőleges behúzás (hanging indent) alkalmazva\n  - Minden forrásnál csak a megadott adatok szerepelnek",
+  "stop_reason": "end_turn",
+  "session_id": "2c92d85b-ab58-448b-969e-5a6f2c9ecc02",
+  "total_cost_usd": 0.03666985,
+  "usage": {
+    "input_tokens": 26,
+    "cache_creation_input_tokens": 8908,
+    "cache_read_input_tokens": 74926,
+    "output_tokens": 2902,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3219,
+      "ephemeral_5m_input_tokens": 5689
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 673,
+        "cache_read_input_tokens": 27477,
+        "cache_creation_input_tokens": 3546,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 3546,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 978,
+      "outputTokens": 2930,
+      "cacheReadInputTokens": 74926,
+      "cacheCreationInputTokens": 8908,
+      "webSearchRequests": 0,
+      "costUSD": 0.03666985,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "1e187435-fa2f-4d8b-92a5-deb8f8f61329"
+}

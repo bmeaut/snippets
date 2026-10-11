@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 52080,
+  "duration_api_ms": 51616,
+  "ttft_ms": 12898,
+  "ttft_stream_ms": 1466,
+  "time_to_request_ms": 318,
+  "num_turns": 11,
+  "result": "Kész! Az APA 7. kiadás szerinti hivatkozásjegyzék sikeresen létrehozva és mentve az **output.docx** fájlként az aktuális könyvtárba.\n\nA dokumentum tartalmazza az öt hivatkozást, ABC sorrendbe rendezve a szerzők vezetéknevei szerint:\n\n1. **Balogh, L.** (1999). A tanulás pszichológiája. Akadémiai Kiadó.\n2. **Lakatos, N.** (2000). A klímaváltozás társadalmi hatásai. Osiris Kiadó.\n3. **Mészáros, S.** (1999). Adatvizualizáció gyakorlata. Gondolat Kiadó.\n4. **Németh, R.** (2006). Bevezetés a statisztikába. Typotex.\n5. **Takács, V.** (2016). A döntéselmélet alapjai. L'Harmattan Kiadó.\n\nMindegyik hivatkozás külön bekezdésben szerepel, megfelelő APA 7. formázással (szerző vezetéknév, kezdőbetű, év, cím, kiadó), és nincs kitalált adat — csak a megadott információk használtam.",
+  "stop_reason": "end_turn",
+  "session_id": "84a52b44-5a52-4f5b-86d5-12e2b9b28315",
+  "total_cost_usd": 0.07840385,
+  "usage": {
+    "input_tokens": 84,
+    "cache_creation_input_tokens": 15557,
+    "cache_read_input_tokens": 322666,
+    "output_tokens": 4513,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3948,
+      "ephemeral_5m_input_tokens": 11609
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 626,
+        "cache_read_input_tokens": 36019,
+        "cache_creation_input_tokens": 1651,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 1651,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1030,
+      "outputTokens": 4540,
+      "cacheReadInputTokens": 322666,
+      "cacheCreationInputTokens": 15557,
+      "webSearchRequests": 0,
+      "costUSD": 0.07840385,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "a50113eb-8887-4860-83aa-c7421f629fb1"
+}

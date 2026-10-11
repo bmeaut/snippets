@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 35318,
+  "duration_api_ms": 35967,
+  "ttft_ms": 9076,
+  "ttft_stream_ms": 1987,
+  "time_to_request_ms": 20,
+  "num_turns": 3,
+  "result": "Az `output.xlsx` elkészült. Összefoglaló:\n\n**Tranzakciók munkalap** — mind a 10 tétel kategóriával és összeggel, színkódolva (zöld = bevétel, kék = lakhatás, sárga = élelmiszer).\n\n**Összesítés munkalap:**\n\n| Kategória | Összeg |\n|---|---|\n| Bevétel | +272 150 Ft |\n| Lakhatás | −243 500 Ft |\n| Élelmiszer | −4 050 Ft |\n| **Záró egyenleg** | **+24 600 Ft** |",
+  "stop_reason": "end_turn",
+  "session_id": "39869758-b133-4e37-87d7-987988a4a094",
+  "total_cost_usd": 0.108159,
+  "usage": {
+    "input_tokens": 5,
+    "cache_creation_input_tokens": 9430,
+    "cache_read_input_tokens": 49870,
+    "output_tokens": 2366,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 9430,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 172,
+        "cache_read_input_tokens": 19389,
+        "cache_creation_input_tokens": 1701,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1701
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 988,
+      "outputTokens": 25,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.0011129999999999998,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-6": {
+      "inputTokens": 5,
+      "outputTokens": 2366,
+      "cacheReadInputTokens": 49870,
+      "cacheCreationInputTokens": 9430,
+      "webSearchRequests": 0,
+      "costUSD": 0.107046,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "1f23f6bf-2d69-43f4-aa79-2c332057b21d"
+}

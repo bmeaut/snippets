@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 153404,
+  "duration_api_ms": 154547,
+  "ttft_ms": 106596,
+  "ttft_stream_ms": 3904,
+  "time_to_request_ms": 448,
+  "num_turns": 3,
+  "result": "Az `output.docx` fájl elkészült. Íme az összefoglaló arról, hogy mi került bele:\n\n**12 hivatkozás, ábécésorrendben (vezéknév szerint):**\n\n1. Balogh, I., & Németh, S. (2018) – weboldal\n2. Farkas, D., & Varga, P. (2021) – weboldal\n3. Farkas, N. (2004) – folyóiratcikk\n4. Fodor, O., & Fekete, L. (2002) – folyóiratcikk DOI-val\n5. Gál, E., & Papp, K. (2018) – weboldal\n6. Juhász, B., & Szabó, I. (2005) – könyv\n7. Nagy, N., & Takács, D. (2005) – folyóiratcikk DOI-val\n8. Nagy, V. (2014) – folyóiratcikk\n9. Papp, S., & Varga, B. (2001) – folyóiratcikk (oldalszám és DOI elhagyva)\n10. Takács, K. (2000) – folyóiratcikk DOI-val\n11. Tóth, O. (2006) – könyv\n12. Varga, L. (2005) – könyv\n\n**Formázási döntések:**\n- Times New Roman 12pt, dupla sorköz, 1,27 cm-es függő behúzás (APA 7 előírás)\n- Folyóiratneveknél és kötetszámnál dőlt betű, könyvek címe dőlt\n- DOI-k `https://doi.org/` formában, URL végén nincs pont\n- Kettőspont utáni szó nagybetűvel: *„Tíz tendencia\"*\n- Hiányzó mezőket (pl. Papp & Varga oldalszáma) kihagyva",
+  "stop_reason": "end_turn",
+  "session_id": "a2a3ab17-ae86-4bc6-a1ec-b784072a2f6b",
+  "total_cost_usd": 0.24162984999999998,
+  "usage": {
+    "input_tokens": 5,
+    "cache_creation_input_tokens": 16384,
+    "cache_read_input_tokens": 79647,
+    "output_tokens": 9722,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3819,
+      "ephemeral_5m_input_tokens": 12565
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 521,
+        "cache_read_input_tokens": 32736,
+        "cache_creation_input_tokens": 5194,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 5194,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1723,
+      "outputTokens": 27,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.0018579999999999998,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-6": {
+      "inputTokens": 5,
+      "outputTokens": 9722,
+      "cacheReadInputTokens": 79647,
+      "cacheCreationInputTokens": 16384,
+      "webSearchRequests": 0,
+      "costUSD": 0.23977185,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "72ace2b9-6c52-4d3c-95e8-aabd0b2e7211"
+}

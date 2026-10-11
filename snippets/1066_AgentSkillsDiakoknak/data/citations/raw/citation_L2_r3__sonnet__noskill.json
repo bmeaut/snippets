@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 53197,
+  "duration_api_ms": 54182,
+  "ttft_ms": 26250,
+  "ttft_stream_ms": 2695,
+  "time_to_request_ms": 340,
+  "num_turns": 3,
+  "result": "Az `output.docx` fájl el lett mentve. A hivatkozásjegyzék tartalma APA 7. kiadás szerint, ábécésorrendbe rendezve:\n\n1. **Balogh, P. (2010).** Az online tanulás hatása a motivációra. *Informatika és Oktatás*, *6*(3), 50–70.\n2. **Gál, G. (2015).** A csoportmunka szerepe a problémamegoldásban. *Educatio*, *6*(1), 40–58.\n3. **Juhász, D. (2008).** Az online tanulás hatása a motivációra. *Statisztikai Szemle*, *23*(1), 48–54.\n4. **Mészáros, S. (2023).** *A fenntartható fejlődés dilemmái.* Kalligram Kiadó.\n5. **Nagy, R. (2005).** *Bevezetés a statisztikába.* Corvina Kiadó.\n6. **Papp, B. (2021).** *Statisztikai következtetés a gyakorlatban.* Typotex.\n7. **Simon, D. (2001).** A csoportmunka szerepe a problémamegoldásban. *Iskolakultúra*, *2*(4), 28–38.\n8. **Szűcs, J. (2015).** *A tanulás pszichológiája.* Osiris Kiadó.\n\nA fájl Times New Roman 12pt betűtípussal, dupla sorközzel és függő behúzással (hanging indent) készült, a hiányzó mezőket (pl. DOI, kiadási hely) kihagytam.",
+  "stop_reason": "end_turn",
+  "session_id": "9c5142a2-3235-4daa-a5aa-271f76e10c4e",
+  "total_cost_usd": 0.1188668,
+  "usage": {
+    "input_tokens": 5,
+    "cache_creation_input_tokens": 9754,
+    "cache_read_input_tokens": 73191,
+    "output_tokens": 3431,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3324,
+      "ephemeral_5m_input_tokens": 6430
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 449,
+        "cache_read_input_tokens": 26775,
+        "cache_creation_input_tokens": 4525,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 4525,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1228,
+      "outputTokens": 29,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.0013729999999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-6": {
+      "inputTokens": 5,
+      "outputTokens": 3431,
+      "cacheReadInputTokens": 73191,
+      "cacheCreationInputTokens": 9754,
+      "webSearchRequests": 0,
+      "costUSD": 0.11749380000000001,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "4ec9d2cd-33e4-4948-b68e-e1a85e376a36"
+}

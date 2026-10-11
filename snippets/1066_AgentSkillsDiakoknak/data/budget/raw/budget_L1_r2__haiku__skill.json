@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 78170,
+  "duration_api_ms": 78466,
+  "ttft_ms": 8651,
+  "ttft_stream_ms": 857,
+  "time_to_request_ms": 27,
+  "num_turns": 11,
+  "result": "Kész! Az **output.xlsx** fájl sikeresen létrejött az alábbi tartalommal:\n\n**Tranzakciók sheet:**\n- 10 tranzakció listázva, mindegyik a megfelelő kategóriával és összegekkel\n\n**Összesítés sheet:**\n- **Bevétel:** 110,350 Ft (ösztöndíj + 2× alkalmi munka + családi támogatás)\n- **Élelmiszer:** 36,700 Ft (Tesco 2×, Wolt, Piac, Kifli.hu)\n- **Lakhatás:** 7,250 Ft (internet előfizetés)\n- **Záró egyenleg:** 66,400 Ft (bevétel mínusz összes költség)\n\nA fájl szép formázással készült: kék fejléc, ezres tagolás, destacélteredmény sárga háttérrel az egyenleghez.",
+  "stop_reason": "end_turn",
+  "session_id": "ad7fe74b-7586-4e78-8791-a90ed0e1eca8",
+  "total_cost_usd": 0.0870897,
+  "usage": {
+    "input_tokens": 83,
+    "cache_creation_input_tokens": 13341,
+    "cache_read_input_tokens": 246997,
+    "output_tokens": 6898,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 13341,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 456,
+        "cache_read_input_tokens": 29247,
+        "cache_creation_input_tokens": 169,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 169
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1073,
+      "outputTokens": 6927,
+      "cacheReadInputTokens": 246997,
+      "cacheCreationInputTokens": 13341,
+      "webSearchRequests": 0,
+      "costUSD": 0.0870897,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "9e8fbb09-413b-4d0a-96e5-a87cf80d42cc"
+}

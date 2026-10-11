@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 171022,
+  "duration_api_ms": 171578,
+  "ttft_ms": 108920,
+  "ttft_stream_ms": 2785,
+  "time_to_request_ms": 348,
+  "num_turns": 6,
+  "result": "Kész. A **`output.docx`** elmentve a jelenlegi könyvtárba.\n\n## Mit tartalmaz\n\n15 hivatkozás, APA 7. kiadás szerint formázva, első szerző vezetékneve szerint ábécésorrendben, mindegyik külön bekezdésben, függő behúzással és Times New Roman 12 pt szedéssel:\n\n1. Balogh, N., & Szűcs, K. (2014)…\n2. Fekete, O., Szabó, A., & Gál, D. (2021)…\n3. Fodor, T., Tóth, O., & Oláh, L. (2019)…\n4. Mészáros, Z. (2019)…\n5. Nagy, O., & Rácz, G. (2024)…\n6. Oláh, V., Farkas, Z., & Oláh, I. (1995)…\n7. Papp, J., & Fodor, E. (2014)…\n8–10. Rácz, A. (2018) → Rácz, G. & Kiss, I. (2009) → Rácz, Z. (2019) *(azonos vezetéknév → keresztnév kezdőbetűje szerint)*\n11–13. Simon, S. (1997) → Simon, S. (2024) → Simon, Z. & Gál, Z. (2004) *(S. előbb, mint Z.; azonos szerzőnél év szerint)*\n14–15. Takács, J. & Fekete, G. (1997) → Takács, K. és mtsai (2016)\n\n## Alkalmazott APA 7 szabályok\n\n- **Típusonkénti formátum:** cikk → csak a folyóiratnév és a kötetszám dőlt, a lapszám nem; könyv → cím dőlt; weboldal → cím dőlt + oldalnév + URL, „(év, hónap nap)\" dátummal.\n- **Kötőjel helyett gondolatjel** az oldalszámoknál (171–182).\n- **DOI** `https://doi.org/…` alakban.\n- **Hiányzó mezők kihagyva, nem kitalálva:** pl. Simon, Z. & Gál, Z. (2004) cikknél nincs DOI és oldalszám → a hivatkozás a `Pszichológia, 2(3).` alaknál lezárul; a Balogh-cikknél nincs DOI.\n- **Kérdőjelre végződő címeknél** (4. és 7. tétel) nincs kitett pont a dőlt cím után.\n\nEgy ellenőrzésre érdemes pont: a 2. és 3. tétel ugyanabban a folyóiratban/oldalon (*National Geographic Magyarország*) jelent meg — a forrásadatok alapján így helyes, csak jelzem, ha esetleg elírás lett volna a bemenetben.",
+  "stop_reason": "end_turn",
+  "session_id": "d8d3282d-2019-44a3-8b91-46bc8eeec0db",
+  "total_cost_usd": 0.724303,
+  "usage": {
+    "input_tokens": 7276,
+    "cache_creation_input_tokens": 25250,
+    "cache_read_input_tokens": 185736,
+    "output_tokens": 13616,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 25250,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 939,
+        "cache_read_input_tokens": 41119,
+        "cache_creation_input_tokens": 440,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 440
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 2010,
+      "outputTokens": 29,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.0021550000000000002,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-opus-4-8": {
+      "inputTokens": 7276,
+      "outputTokens": 13616,
+      "cacheReadInputTokens": 185736,
+      "cacheCreationInputTokens": 25250,
+      "webSearchRequests": 0,
+      "costUSD": 0.7221480000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "b83b535e-1d15-4527-8ca0-07a0f447ae1d"
+}
