@@ -9,3 +9,6 @@ Gemfile.lock
 /snippets/1011_cashregisterTdd/TddShop.Tests/bin/**
 /snippets/1011_cashregisterTdd/TddShop.Gui/obj/**
 /snippets/1011_cashregisterTdd/TddShop.Gui/bin/**
+
+# macOS
+.DS_Store
