@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Napelem-rendszer megtérülése</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    .reveal h1, .reveal h2 { color: #1c4d82; }
+    .title-slide { background: linear-gradient(135deg, #eaf2fb 0%, #cfe1f5 100%); border-radius: 12px; }
+    .icon-row { display: flex; justify-content: center; margin-bottom: 0.5em; }
+    table.data { border-collapse: collapse; margin: 0 auto; font-size: 0.55em; }
+    table.data th, table.data td { border: 1px solid #ccc; padding: 4px 10px; }
+    table.data th { background: #eaf2fb; }
+    .own-photo { max-width: 220px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+    .two-col { display: flex; align-items: center; justify-content: center; gap: 1.5em; }
+    .two-col > div { flex: 1; min-width: 0; }
+    .chart-box { position: relative; height: 320px; }
+    .formula { font-size: 0.5em; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section class="title-slide">
+        <div class="icon-row">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#1c4d82" stroke-width="1.5">
+            <rect x="3" y="3" width="8" height="8" fill="#ffd43b"/>
+            <rect x="13" y="3" width="8" height="8" fill="#ffd43b"/>
+            <rect x="3" y="13" width="8" height="8" fill="#ffd43b"/>
+            <rect x="13" y="13" width="8" height="8" fill="#ffd43b"/>
+          </svg>
+        </div>
+        <h1>Napelem-rendszer megtérülése</h1>
+        <h3>Bekerülési költség: 3 200 000 Ft</h3>
+      </section>
+
+      <section>
+        <h2>Éves és halmozott megtakarítás</h2>
+        <div class="two-col">
+          <div class="chart-box">
+            <canvas id="savingsChart"></canvas>
+          </div>
+          <div>
+            <table class="data">
+              <tr><th>Év</th><th>Megtakarítás</th><th>Halmozott</th></tr>
+              <tr><td>1</td><td>480 000 Ft</td><td>480 000 Ft</td></tr>
+              <tr><td>2</td><td>510 000 Ft</td><td>990 000 Ft</td></tr>
+              <tr><td>3</td><td>540 000 Ft</td><td>1 530 000 Ft</td></tr>
+              <tr><td>4</td><td>560 000 Ft</td><td>2 090 000 Ft</td></tr>
+              <tr><td>5</td><td>590 000 Ft</td><td>2 680 000 Ft</td></tr>
+            </table>
+          </div>
+        </div>
+        <p style="font-size: 0.5em; opacity: 0.7;">Vidd az egeret az oszlopok/pontok fölé az értékekért, kattints a jelmagyarázatra a sorok ki-/bekapcsolásához. A táblázat az eredeti becslést mutatja, a csúszka alatta más növekedési ütemet is kipróbál.</p>
+        <div style="font-size: 0.55em; margin-top: 0.3em;">
+          <label for="growthRate">Éves növekedési ütem: <strong id="growthValue">5.5%</strong></label><br>
+          <input type="range" id="growthRate" min="0" max="10" step="0.5" value="5.5" style="width: 60%;">
+          <span id="fiveYearTotal" style="margin-left: 0.6em;"></span>
+        </div>
+      </section>
+
+      <section>
+        <h2 style="margin-bottom: 0.3em;">Megtérülési idő</h2>
+        <p style="font-size: 0.7em; margin: 0.3em 0;">A megtérülési idő a beruházás és az éves megtakarítás hányadosa:</p>
+        <p class="formula" style="margin: 0.3em 0;"></p>
+        <p style="font-size: 0.5em; opacity: 0.75; margin: 0.3em 0;">Az első évi megtakarítással számolva kb. 6.7 év, az évek során növekvő megtakarítással ténylegesen valamivel kevesebb.</p>
+      </section>
+
+      <section>
+        <h2>A mi rendszerünk</h2>
+        <div class="two-col">
+          <div>
+            <img class="own-photo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAABQCAIAAABd+SbeAAAAp0lEQVR4nO3QAQkAIADAMAua13jaQuEOHuBs7DV1ofH84JNAg24FGnQr0KBbgQbdCjToVqBBtwINuhVo0K1Ag24FGnQr0KBbgQbdCjToVqBBtwINuhVo0K1Ag24FGnQr0KBbgQbdCjToVqBBtwINuhVo0K1Ag24FGnQr0KBbgQbdCjToVqBBtwINutUBnMt05u1x7KEAAAAASUVORK5CYII=" alt="Saját napelem panel">
+          </div>
+          <div style="font-size: 0.55em; text-align: left; opacity: 0.8;">
+            Ez egy technikai demó-kép (a base64-beágyazás bemutatására), nem a felhasználó tényleges fotója — éles használatban a saját, ténylegesen bemásolt/feltöltött kép kerülne ide.
+          </div>
+        </div>
+      </section>
+
+      <section class="title-slide">
+        <h2>Összegzés</h2>
+        <p>A jelenlegi ütemben kb. 6 éven belül térül meg a beruházás.</p>
+        <div style="font-size: 1.8em; font-weight: bold; color: #1c4d82; margin-top: 0.3em;">
+          <span id="totalCounter">0</span> Ft
+        </div>
+        <p style="font-size: 0.5em; opacity: 0.7;">összesen megtakarítva 5 év alatt</p>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script>
+    Reveal.initialize({ hash: true, transition: 'slide' }).then(() => {
+      const ctx = document.getElementById('savingsChart');
+      const savingsChart = new Chart(ctx, {
+        data: {
+          labels: ['1. év', '2. év', '3. év', '4. év', '5. év'],
+          datasets: [
+            {
+              type: 'bar',
+              label: 'Éves megtakarítás (Ft)',
+              data: [480000, 510000, 540000, 560000, 590000],
+              backgroundColor: '#4dabf7'
+            },
+            {
+              type: 'line',
+              label: 'Halmozott megtakarítás (Ft)',
+              data: [480000, 990000, 1530000, 2090000, 2680000],
+              borderColor: '#1c4d82',
+              backgroundColor: '#1c4d82',
+              tension: 0.2
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: true },
+            tooltip: { enabled: true }
+          }
+        }
+      });
+
+      const baseYear1 = 480000;
+      const growthInput = document.getElementById('growthRate');
+      const growthValue = document.getElementById('growthValue');
+      const fiveYearTotal = document.getElementById('fiveYearTotal');
+
+      function recalcSavings() {
+        const rate = parseFloat(growthInput.value) / 100;
+        growthValue.textContent = growthInput.value + '%';
+        const yearly = [];
+        const cumulative = [];
+        let running = 0;
+        for (let i = 0; i < 5; i++) {
+          const val = Math.round(baseYear1 * Math.pow(1 + rate, i));
+          yearly.push(val);
+          running += val;
+          cumulative.push(running);
+        }
+        savingsChart.data.datasets[0].data = yearly;
+        savingsChart.data.datasets[1].data = cumulative;
+        savingsChart.update();
+        fiveYearTotal.textContent = '5 év alatt összesen: ' + running.toLocaleString('hu-HU') + ' Ft';
+      }
+
+      growthInput.addEventListener('input', recalcSavings);
+      recalcSavings();
+
+      document.querySelectorAll('.formula').forEach(el => {
+        katex.render("T = \\frac{\\text{Beruházás}}{\\text{Éves megtakarítás}} = \\frac{3\\,200\\,000\\ \\text{Ft}}{480\\,000\\ \\text{Ft}} \\approx 6.7\\ \\text{év}", el, { throwOnError: false });
+      });
+
+      let counterAnimated = false;
+      function animateCounter() {
+        if (counterAnimated) return;
+        const el = document.getElementById('totalCounter');
+        if (!el) return;
+        counterAnimated = true;
+        const target = 2680000;
+        const duration = 1200;
+        const start = performance.now();
+        function step(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const current = Math.round(target * progress);
+          el.textContent = current.toLocaleString('hu-HU');
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+      Reveal.on('slidechanged', event => {
+        if (event.currentSlide.querySelector('#totalCounter')) animateCounter();
+      });
+      if (Reveal.getCurrentSlide().querySelector('#totalCounter')) animateCounter();
+    });
+  </script>
+</body>
+</html>

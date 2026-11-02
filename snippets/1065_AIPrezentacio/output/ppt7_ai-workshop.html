@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Workshop kisvállalkozóknak</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/white.css">
+  <style>
+    .reveal h1, .reveal h2 { color: #0f5132; overflow-wrap: normal; word-break: normal; hyphens: auto; }
+    .title-slide { background: linear-gradient(135deg, #eafaf1 0%, #c3f0d8 100%); border-radius: 12px; }
+    .icon-row { display: flex; justify-content: center; margin-bottom: 0.4em; }
+    .reveal li { display: flex; align-items: center; gap: 0.5em; margin-bottom: 0.5em; }
+    .reveal li svg { flex-shrink: 0; }
+
+    .quiz-options { display: flex; flex-wrap: wrap; gap: 0.6em; justify-content: center; margin-top: 0.6em; }
+    .quiz-btn { font-size: 0.65em; padding: 0.5em 1em; border: 2px solid #0f5132; border-radius: 8px; background: #fff; color: #0f5132; cursor: pointer; }
+    .quiz-btn:hover:not(:disabled) { background: #eafaf1; }
+    .quiz-btn.correct { background: #ebfbee; border-color: #2f9e44; color: #2f9e44; }
+    .quiz-btn.incorrect { background: #fff5f5; border-color: #e03131; color: #e03131; }
+
+    .tab-bar { display: flex; justify-content: center; gap: 0.5em; margin-bottom: 1em; }
+    .tab-btn { font-size: 0.6em; padding: 0.5em 1em; border: 2px solid #0f5132; border-radius: 8px 8px 0 0; background: #eafaf1; color: #0f5132; cursor: pointer; }
+    .tab-btn.active { background: #0f5132; color: #fff; }
+    .tab-panel { display: none; font-size: 0.7em; }
+    .tab-panel.active { display: block; }
+    .price { font-size: 1.2em; font-weight: bold; color: #0f5132; margin: 0.3em 0; }
+
+    .two-col { display: flex; align-items: center; justify-content: center; gap: 1.5em; }
+    .two-col > div { flex: 1; min-width: 0; }
+    .chart-box { position: relative; height: 300px; }
+
+    .counter-display { font-size: 2em; font-weight: bold; color: #0f5132; margin: 0.3em 0; }
+    .timer-display { font-size: 2em; font-weight: bold; color: #0f5132; margin: 0.3em 0; }
+    .timer-controls button { font-size: 0.6em; padding: 0.4em 1em; border: 2px solid #0f5132; border-radius: 8px; background: #fff; color: #0f5132; cursor: pointer; margin: 0 0.3em; }
+    .timer-controls button:hover { background: #eafaf1; }
+    .qr-box { display: inline-block; background: #fff; border: 3px solid #0f5132; border-radius: 10px; padding: 0.6em; }
+    #qrcode svg { width: 170px; height: 170px; display: block; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section class="title-slide">
+        <div class="icon-row">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#0f5132" stroke-width="1.5">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M9 9h.01M15 9h.01M8 15c1.5 1.5 6.5 1.5 8 0" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h1 style="font-size: 0.85em;">AI Workshop kisvállalkozóknak</h1>
+        <aside class="notes">Köszöntsd a résztvevőket, kérdezd meg, ki használt már AI-t munkára.</aside>
+      </section>
+
+      <section>
+        <h2>Miért fontos ez?</h2>
+        <ul>
+          <li class="fragment"><svg width="22" height="22" viewBox="0 0 24 24" fill="#0f5132"><circle cx="12" cy="12" r="10"/></svg> A mesterséges intelligencia mára minden napi munkafolyamatba beépíthető</li>
+          <li class="fragment"><svg width="22" height="22" viewBox="0 0 24 24" fill="#0f5132"><circle cx="12" cy="12" r="10"/></svg> Aki nem használja, versenyhátrányba kerül</li>
+          <li class="fragment"><svg width="22" height="22" viewBox="0 0 24 24" fill="#0f5132"><circle cx="12" cy="12" r="10"/></svg> Nem kell hozzá programozói tudás</li>
+        </ul>
+        <aside class="notes">Minden pontnál tarts egy kis szünetet, hagyj időt reagálni.</aside>
+      </section>
+
+      <section>
+        <h2>Tudtad-e?</h2>
+        <p style="font-size: 0.75em;">Mennyivel gyorsabb egy átlagos adminisztratív feladat AI-jal?</p>
+        <div class="quiz-options">
+          <button class="quiz-btn" data-correct="false">20%-kal</button>
+          <button class="quiz-btn" data-correct="false">40%-kal</button>
+          <button class="quiz-btn" data-correct="true">70%-kal</button>
+          <button class="quiz-btn" data-correct="false">90%-kal</button>
+        </div>
+        <p id="quizFeedback" style="font-size: 0.55em; margin-top: 0.5em; min-height: 1.2em;"></p>
+        <aside class="notes">Hagyj időt szavazni, mielőtt felfeded a választ.</aside>
+      </section>
+
+      <section>
+        <h2>Csomagjaink</h2>
+        <div class="tab-bar">
+          <button class="tab-btn active" data-tab="alap">Alap</button>
+          <button class="tab-btn" data-tab="halado">Haladó</button>
+          <button class="tab-btn" data-tab="ceges">Céges</button>
+        </div>
+        <div class="tab-panel active" id="tab-alap">
+          <div class="price">45 000 Ft</div>
+          <ul><li>Fél napos</li><li>1 fő</li></ul>
+        </div>
+        <div class="tab-panel" id="tab-halado">
+          <div class="price">85 000 Ft</div>
+          <ul><li>Egész napos</li><li>1 fő</li><li>Gyakorlati feladatokkal</li></ul>
+        </div>
+        <div class="tab-panel" id="tab-ceges">
+          <div class="price">350 000 Ft</div>
+          <ul><li>Egész napos</li><li>Akár 10 fő</li><li>Testreszabott anyaggal</li></ul>
+        </div>
+        <aside class="notes">Mutasd meg mindhárom fület, hangsúlyozd a céges csomag testreszabhatóságát.</aside>
+      </section>
+
+      <section>
+        <h2>Időmegtakarítás</h2>
+        <div class="two-col">
+          <div class="chart-box"><canvas id="savingsChart"></canvas></div>
+          <div style="font-size: 0.6em;">
+            <label for="teamEff">Csapat hatékonysága: <strong id="teamEffValue">100%</strong></label><br>
+            <input type="range" id="teamEff" min="70" max="130" step="5" value="100" style="width: 100%;">
+          </div>
+        </div>
+        <aside class="notes">Mozgasd a csúszkát, mutasd meg, hogy egy lelkesebb vagy vontatottabb csapatnál hogyan változik a görbe.</aside>
+      </section>
+
+      <section class="title-slide">
+        <div class="counter-display"><span id="participantCounter">0</span>+</div>
+        <p>elégedett résztvevő eddig</p>
+        <aside class="notes">Tarts egy kis szünetet, hagyd, hogy a szám felfusson, mielőtt továbblépsz.</aside>
+      </section>
+
+      <section>
+        <h2>Próbáljuk ki most!</h2>
+        <p style="font-size: 0.7em;">3 perc egyéni feladat: oldj meg AI-jal egy saját napi adminisztratív problémát.</p>
+        <div class="timer-display" id="timerDisplay">03:00</div>
+        <div class="timer-controls">
+          <button id="startBtn">Start</button>
+          <button id="pauseBtn">Szünet</button>
+          <button id="resetBtn">Újra</button>
+        </div>
+        <aside class="notes">Csak akkor indítsd, ha mindenki elkezdte a feladatot.</aside>
+      </section>
+
+      <section class="title-slide">
+        <h2 id="typewriterTarget" style="min-height: 1.3em;"></h2>
+        <div class="two-col" style="margin-top: 0.8em;">
+          <div><div class="qr-box"><div id="qrcode"></div></div></div>
+          <div style="font-size: 0.6em; text-align: left;">Jelentkezés:<br>aiworkshop.hu</div>
+        </div>
+        <aside class="notes">Zárásként mutasd meg a QR-kódot, kérd meg őket, olvassák be, ha érdekli őket.</aside>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+  <script>
+    Reveal.initialize({ hash: true, transition: 'slide', plugins: [ RevealNotes ] }).then(() => {
+
+      document.querySelectorAll('.quiz-options').forEach(group => {
+        const buttons = group.querySelectorAll('.quiz-btn');
+        const feedback = group.parentElement.querySelector('#quizFeedback');
+        buttons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            if (group.dataset.answered === 'true') return;
+            group.dataset.answered = 'true';
+            const isCorrect = btn.dataset.correct === 'true';
+            buttons.forEach(b => {
+              b.disabled = true;
+              if (b.dataset.correct === 'true') { b.classList.add('correct'); b.textContent = '✓ ' + b.textContent; }
+              else if (b === btn) { b.classList.add('incorrect'); b.textContent = '✗ ' + b.textContent; }
+            });
+            if (feedback) feedback.textContent = isCorrect ? '✓ Ez a helyes válasz!' : '✗ Nem ez volt a helyes válasz — a ✓ jelzi, melyik az.';
+          });
+        });
+      });
+
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const tabGroup = btn.closest('section');
+          tabGroup.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+          tabGroup.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+          btn.classList.add('active');
+          tabGroup.querySelector('#tab-' + btn.dataset.tab).classList.add('active');
+        });
+      });
+
+      const baseHours = { 0: 0, 25: 3, 50: 6, 75: 8.5, 100: 10 };
+      const usageLevels = [0, 25, 50, 75, 100];
+      const ctx = document.getElementById('savingsChart');
+      const savingsChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: usageLevels.map(u => u + '%'),
+          datasets: [{
+            label: 'Óra/hét megtakarítás',
+            data: usageLevels.map(u => baseHours[u]),
+            borderColor: '#0f5132',
+            backgroundColor: '#0f5132',
+            tension: 0.2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false }, tooltip: { enabled: true } },
+          scales: { x: { title: { display: true, text: 'Heti AI-használat aránya' } } }
+        }
+      });
+
+      const teamEff = document.getElementById('teamEff');
+      const teamEffValue = document.getElementById('teamEffValue');
+      teamEff.addEventListener('input', () => {
+        const mult = parseInt(teamEff.value, 10) / 100;
+        teamEffValue.textContent = teamEff.value + '%';
+        savingsChart.data.datasets[0].data = usageLevels.map(u => Math.round(baseHours[u] * mult * 10) / 10);
+        savingsChart.update();
+      });
+
+      let counterAnimated = false;
+      function animateCounter() {
+        if (counterAnimated) return;
+        counterAnimated = true;
+        const el = document.getElementById('participantCounter');
+        if (!el) return;
+        const target = 120;
+        const duration = 1200;
+        const start = performance.now();
+        function step(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          el.textContent = Math.round(target * progress);
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      let remaining = 3 * 60;
+      let timerInterval = null;
+      const timerDisplay = document.getElementById('timerDisplay');
+      function renderTimer() {
+        const m = Math.floor(remaining / 60).toString().padStart(2, '0');
+        const s = (remaining % 60).toString().padStart(2, '0');
+        timerDisplay.textContent = m + ':' + s;
+      }
+      document.getElementById('startBtn').addEventListener('click', () => {
+        if (timerInterval) return;
+        timerInterval = setInterval(() => {
+          if (remaining > 0) { remaining--; renderTimer(); }
+          else { clearInterval(timerInterval); timerInterval = null; }
+        }, 1000);
+      });
+      document.getElementById('pauseBtn').addEventListener('click', () => {
+        clearInterval(timerInterval); timerInterval = null;
+      });
+      document.getElementById('resetBtn').addEventListener('click', () => {
+        clearInterval(timerInterval); timerInterval = null;
+        remaining = 3 * 60; renderTimer();
+      });
+
+      let typewriterDone = false;
+      function typewrite() {
+        if (typewriterDone) return;
+        typewriterDone = true;
+        const el = document.getElementById('typewriterTarget');
+        if (!el) return;
+        const text = 'Kezdd el ma, ne holnap.';
+        let i = 0;
+        const interval = setInterval(() => {
+          el.textContent = text.slice(0, i + 1);
+          i++;
+          if (i >= text.length) clearInterval(interval);
+        }, 60);
+      }
+
+      const qr = qrcode(0, 'M');
+      qr.addData('https://aiworkshop.hu');
+      qr.make();
+      document.getElementById('qrcode').innerHTML = qr.createSvgTag(4);
+
+      Reveal.on('slidechanged', event => {
+        if (event.currentSlide.querySelector('#participantCounter')) animateCounter();
+        if (event.currentSlide.querySelector('#typewriterTarget')) typewrite();
+      });
+      if (Reveal.getCurrentSlide().querySelector('#participantCounter')) animateCounter();
+      if (Reveal.getCurrentSlide().querySelector('#typewriterTarget')) typewrite();
+    });
+  </script>
+</body>
+</html>

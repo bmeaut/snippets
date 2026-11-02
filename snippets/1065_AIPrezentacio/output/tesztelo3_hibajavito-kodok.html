@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<title>Lineáris kódok: Hamming és Reed–Solomon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<style>
+:root{--acc:#1a56a0;--txt:#1f2937;--soft:#e8f0fb;--ok:#14633a;--bad:#9b1c1c}
+.reveal-viewport{background:linear-gradient(135deg,#f7faff,#eaf1fb)!important}
+.reveal{font-size:30px;color:var(--txt)}
+.reveal h1,.reveal h2,.reveal h3{color:var(--acc);text-transform:none;overflow-wrap:normal;word-break:normal;hyphens:auto;margin:.3em 0}
+.reveal h2{font-size:1.5em}
+.reveal section{text-align:left}
+.reveal ul{margin:.3em 0;display:block}
+.reveal li{margin:.35em 0}
+.reveal p{margin:.3em 0}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.math{font-size:.55em}
+.card{background:#fff;border:2px solid var(--acc);border-radius:12px;padding:14px 20px}
+.center{text-align:center}
+.big{font-size:3.4em;font-weight:700;color:var(--acc);line-height:1}
+.sec{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.sec svg,.ico{flex-shrink:0}
+.ico-li{display:flex;align-items:center;gap:12px}
+.tip{border-bottom:2px dotted var(--acc);position:relative;cursor:help}
+.tip .bubble{display:none;position:absolute;left:50%;bottom:130%;transform:translateX(-50%);width:300px;background:#1f2937;color:#fff;font-size:.6em;padding:8px 12px;border-radius:8px;z-index:20;text-align:left}
+.tip:hover .bubble,.tip:focus .bubble{display:block}
+.tabs{display:flex;gap:10px;margin-bottom:10px}
+.tabs button,.opt,.go{font:inherit;font-size:.8em;padding:8px 18px;border:2px solid var(--acc);background:#fff;color:var(--acc);border-radius:10px;cursor:pointer}
+.tabs button.on{background:var(--acc);color:#fff}
+.pane{display:none}.pane.on{display:block}
+.opt{display:block;width:100%;text-align:left;margin:8px 0;color:var(--txt)}
+.opt.right{border-color:var(--ok);background:#e6f4ec;color:var(--ok);font-weight:700}
+.opt.wrong{border-color:var(--bad);background:#fbeaea;color:var(--bad);text-decoration:underline}
+#bits{font:inherit;font-size:.9em;width:5em;padding:6px;border:2px solid var(--acc);border-radius:8px}
+.cw b{color:var(--acc);text-decoration:underline}
+table{border-collapse:collapse;font-size:.6em;margin:0}
+td,th{border:1px solid #9aa9bd;padding:4px 10px;text-align:center;background:#fff}
+th{background:var(--soft)}
+.chartbox{height:320px;position:relative;background:#fff;border-radius:10px;padding:6px}
+</style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+
+<section>
+ <svg class="ico" width="90" height="90" viewBox="0 0 90 90"><rect x="8" y="8" width="74" height="74" rx="10" fill="#e8f0fb" stroke="#1a56a0" stroke-width="4"/><path d="M25 46l14 14 28-30" fill="none" stroke="#1a56a0" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+ <h1 style="font-size:1.7em">Hibajavító kódok</h1>
+ <h3 style="font-size:1em">Lineáris, Hamming és Reed–Solomon kódok</h3>
+ <p style="font-size:.7em">Generátor- és paritásellenőrző mátrixok, konkrét kódolás</p>
+ <aside class="notes">Üdvözlés. Cél: megérteni, hogyan lehet redundanciával hibákat javítani, és kézzel végigszámolni két példát.</aside>
+</section>
+
+<section class="sec">
+ <svg width="110" height="110" viewBox="0 0 110 110"><g fill="#e8f0fb" stroke="#1a56a0" stroke-width="3"><rect x="10" y="10" width="28" height="28"/><rect x="41" y="10" width="28" height="28"/><rect x="72" y="10" width="28" height="28"/><rect x="10" y="41" width="28" height="28"/><rect x="41" y="41" width="28" height="28"/><rect x="72" y="41" width="28" height="28"/><rect x="10" y="72" width="28" height="28"/><rect x="41" y="72" width="28" height="28"/><rect x="72" y="72" width="28" height="28"/></g></svg>
+ <h2>1. Lineáris kódok alapjai</h2>
+</section>
+
+<section>
+ <h2>Bináris lineáris kód</h2>
+ <ul>
+  <li class="fragment">$[n,k]$ kód: $k$ bit → $n$ bit</li>
+  <li class="fragment">Kódszavak zártak a XOR-ra</li>
+  <li class="fragment">$2^k$ kódszó, ráta $R=k/n$</li>
+  <li class="fragment"><span class="tip" tabindex="0">$d_{min}$<span class="bubble">Hamming-távolság: két szó eltérő bitjeinek száma. Lineáris kódnál a legkisebb nemnulla súly.</span></span> = legkisebb nemnulla súly</li>
+  <li class="fragment">Javít: $t=\lfloor (d_{min}-1)/2\rfloor$ hibát</li>
+ </ul>
+ <aside class="notes">Lineáris kódnál két kódszó összege is kódszó, ezért elég a nulla szótól mért távolságot nézni.</aside>
+</section>
+
+<section>
+ <h2>Mátrixok, szisztematikus alak</h2>
+ <div class="cols">
+  <ul>
+   <li class="fragment">$G$ ($k\times n$): $c=uG$</li>
+   <li class="fragment">$H$ ($(n-k)\times n$): $Hc^T=0$</li>
+   <li class="fragment">Szisztematikus: üzenet elöl</li>
+   <li class="fragment">Szindróma: $s=Hr^T$</li>
+  </ul>
+  <div class="card math">
+   $$G=[\,I_k\mid P\,]$$
+   $$H=[\,P^T\mid I_{n-k}\,]$$
+   $$GH^T=0$$
+  </div>
+ </div>
+ <aside class="notes">Szisztematikus alakban az első k bit maga az üzenet, a maradék n−k bit a paritás. Binárisban a mínusz előjel elhagyható.</aside>
+</section>
+
+<section class="sec">
+ <svg width="110" height="110" viewBox="0 0 110 110"><circle cx="55" cy="55" r="45" fill="#e8f0fb" stroke="#1a56a0" stroke-width="4"/><text x="55" y="68" text-anchor="middle" font-size="40" font-weight="700" fill="#1a56a0">7,4</text></svg>
+ <h2>2. Hamming-kód</h2>
+</section>
+
+<section>
+ <h2>Hamming-kód tulajdonságai</h2>
+ <div class="cols">
+  <div class="center"><div class="big">3</div><p>minimális távolság</p></div>
+  <ul>
+   <li class="fragment">$n=2^m-1,\;k=n-m$</li>
+   <li class="fragment">Javít 1 bithibát</li>
+   <li class="fragment">Jelez 2 bithibát</li>
+   <li class="fragment">Perfekt kód</li>
+   <li class="fragment">$H$ oszlopai: minden nemnulla vektor</li>
+  </ul>
+ </div>
+ <aside class="notes">Perfekt: a 2^k·(1+n)=2^n egyenlőség teljesül, a Hamming-gömbök hézagmentesen lefedik a teret.</aside>
+</section>
+
+<section>
+ <h2>Hamming(7,4): G és H</h2>
+ <div class="cols">
+  <div class="card math">$$G=\begin{pmatrix}1&0&0&0&1&1&0\\0&1&0&0&0&1&1\\0&0&1&0&1&1&1\\0&0&0&1&1&0&1\end{pmatrix}$$</div>
+  <div class="card math">$$H=\begin{pmatrix}1&0&1&1&1&0&0\\1&1&1&0&0&1&0\\0&1&1&1&0&0&1\end{pmatrix}$$</div>
+ </div>
+ <p class="fragment" style="font-size:.8em">Paritások: $p_1=u_1\oplus u_3\oplus u_4$, $p_2=u_1\oplus u_2\oplus u_3$, $p_3=u_2\oplus u_3\oplus u_4$</p>
+ <aside class="notes">H hét oszlopa hét különböző nemnulla 3 bites vektor, ezért Hamming-kód.</aside>
+</section>
+
+<section>
+ <h2>Üzenet kódolása</h2>
+ <div class="cols">
+  <ul>
+   <li>$u=1011$</li>
+   <li class="fragment">$p_1=1\oplus1\oplus1=1$</li>
+   <li class="fragment">$p_2=1\oplus0\oplus1=0$</li>
+   <li class="fragment">$p_3=0\oplus1\oplus1=0$</li>
+   <li class="fragment cw">$c=1011\,\underline{100}$</li>
+  </ul>
+  <div class="card">
+   <p><b>Próbáld ki:</b> 4 bit</p>
+   <input id="bits" value="1011" maxlength="4" inputmode="numeric" aria-label="Üzenet bitek">
+   <p class="cw" style="font-size:1.1em">Kódszó: <span id="cwout"></span></p>
+  </div>
+ </div>
+ <aside class="notes">Végigszámoljuk a három paritásbitet, majd a jobb oldali mezőben bármely 4 bites üzenetet kipróbálhatnak.</aside>
+</section>
+
+<section>
+ <h2>Hibajavítás szindrómával</h2>
+ <ul>
+  <li class="fragment">Küldött: $c=1011100$</li>
+  <li class="fragment">Vett: $r=10\underline{0}1100$ (3. bit hibás)</li>
+  <li class="fragment">$s=Hr^T=(1,1,1)^T$</li>
+  <li class="fragment">Ez $H$ 3. oszlopa → 3. bit</li>
+  <li class="fragment">Bit átbillentése → javítva ✓</li>
+ </ul>
+ <p class="fragment" style="font-size:.8em">Egy bithiba esetén a <span class="tip" tabindex="0">szindróma<span class="bubble">A hiba helyét azonosító vektor: s = H·rᵀ. Hibátlan szónál nulla.</span></span> mindig egy oszlop.</p>
+ <aside class="notes">Mutassák meg: hibátlan esetben a szindróma nulla, egy hibánál egyenlő a hibás pozícióhoz tartozó oszloppal.</aside>
+</section>
+
+<section>
+ <h2>Hamming-kódcsalád</h2>
+ <div class="cols">
+  <div class="chartbox"><canvas id="rateChart"></canvas></div>
+  <table>
+   <tr><th>m</th><th>(n,k)</th><th>Ráta</th></tr>
+   <tr><td>2</td><td>(3,1)</td><td>0,333</td></tr>
+   <tr><td>3</td><td>(7,4)</td><td>0,571</td></tr>
+   <tr><td>4</td><td>(15,11)</td><td>0,733</td></tr>
+   <tr><td>5</td><td>(31,26)</td><td>0,839</td></tr>
+   <tr><td>6</td><td>(63,57)</td><td>0,905</td></tr>
+   <tr><td>7</td><td>(127,120)</td><td>0,945</td></tr>
+   <tr><td>8</td><td>(255,247)</td><td>0,969</td></tr>
+  </table>
+ </div>
+ <aside class="notes">Nagyobb m esetén a ráta közelít az 1-hez, de a kód továbbra is csak 1 hibát javít.</aside>
+</section>
+
+<section class="sec">
+ <svg width="110" height="110" viewBox="0 0 110 110"><path d="M10 80 L35 30 L60 65 L80 20 L100 80 Z" fill="#e8f0fb" stroke="#1a56a0" stroke-width="4" stroke-linejoin="round"/></svg>
+ <h2>3. Reed–Solomon kódok</h2>
+</section>
+
+<section>
+ <h2>Összehasonlítás</h2>
+ <div class="tabs"><button class="on" data-t="0">Hamming</button><button data-t="1">Reed–Solomon</button></div>
+ <div class="pane on"><ul>
+  <li>Bináris szimbólumok</li>
+  <li>$d_{min}=3$, 1 bit javítása</li>
+  <li>$n=2^m-1$</li>
+  <li>Perfekt kód</li>
+ </ul></div>
+ <div class="pane"><ul>
+  <li>Szimbólumok: $GF(q)$ elemei</li>
+  <li>$n\le q-1$, $d=n-k+1$</li>
+  <li>MDS: eléri a Singleton-határt</li>
+  <li>Javít: $t=\lfloor (n-k)/2\rfloor$ szimbólumot</li>
+  <li>Hibacsomók ellen erős</li>
+ </ul></div>
+ <aside class="notes">A RS-kód szimbólumhibákat javít, ezért egy szimbólumon belüli több bithiba is csak egy hibának számít.</aside>
+</section>
+
+<section>
+ <h2>RS(4,2) a GF(5) felett: G és H</h2>
+ <p style="font-size:.8em">$\alpha=2$, $g(x)=(x-2)(x-4)=x^2+4x+3$</p>
+ <div class="cols">
+  <div class="card math">$$G=\begin{pmatrix}3&4&1&0\\0&3&4&1\end{pmatrix}$$</div>
+  <div class="card math">$$H=\begin{pmatrix}1&2&4&3\\1&4&1&4\end{pmatrix}$$</div>
+ </div>
+ <p style="font-size:.75em">$G$: $g(x)$ és $x\,g(x)$ együtthatói. $H$: $\alpha^{ij}$, $i=1,2$. Minden számolás mod 5.</p>
+ <aside class="notes">A generátorpolinom gyökei α és α². A H mátrix sorai ezekben a gyökökben értékelik ki a kódszót.</aside>
+</section>
+
+<section>
+ <h2>RS(4,2) kódolás</h2>
+ <div class="cols">
+  <ul>
+   <li>$u=(3,1)$ → $m(x)=3+x$</li>
+   <li class="fragment">$c(x)=m(x)\,g(x)$</li>
+   <li class="fragment">$=x^3+2x^2+4$</li>
+   <li class="fragment cw"><b>$c=(4,0,2,1)$</b></li>
+  </ul>
+  <div class="card math fragment">
+   <p>Ellenőrzés mod 5:</p>
+   $$Hc^T=\begin{pmatrix}4+0+8+3\\4+0+2+4\end{pmatrix}=\begin{pmatrix}0\\0\end{pmatrix}$$
+   <p>$d=3$, javít 1 szimbólumot ✓</p>
+  </div>
+ </div>
+ <aside class="notes">Ellenőrizhető a gyökökkel is: c(2)=c(4)=0 mod 5. A kód nem szisztematikus; szisztematikus alak polinomosztással kapható.</aside>
+</section>
+
+<section>
+ <h2>Valós alkalmazás</h2>
+ <div class="cols">
+  <div class="center"><div class="big"><span class="count" data-to="16">0</span></div><p>javítható szimbólum<br>RS(255,223)-nál</p></div>
+  <ul>
+   <li>$GF(256)$: 1 szimbólum = 1 bájt</li>
+   <li>32 paritásbájt</li>
+   <li>CD, QR-kód, műholdak</li>
+  </ul>
+ </div>
+ <aside class="notes">32 paritásbájtból 16 hibás bájt javítható, vagyis (n−k)/2.</aside>
+</section>
+
+<section>
+ <h2>Kvíz</h2>
+ <p>Hány bithibát javít a Hamming(7,4) kód?</p>
+ <div id="quiz">
+  <button class="opt" data-ok="0">A) 0</button>
+  <button class="opt" data-ok="1">B) 1</button>
+  <button class="opt" data-ok="0">C) 2</button>
+  <button class="opt" data-ok="0">D) 3</button>
+ </div>
+ <p id="qfb" style="font-size:.8em"></p>
+ <aside class="notes">Helyes: 1, mert d=3 és t=⌊(3−1)/2⌋=1.</aside>
+</section>
+
+<section>
+ <h2>Összegzés</h2>
+ <p class="cw" style="font-size:1.1em;min-height:1.6em"><b id="typed" data-text="Redundancia okosan: hibából javítás."></b></p>
+ <ul>
+  <li class="fragment">$G$ kódol, $H$ ellenőriz</li>
+  <li class="fragment">Hamming: 1 bit, perfekt</li>
+  <li class="fragment">RS: szimbólumok, MDS</li>
+ </ul>
+ <aside class="notes">Összefoglalás és kérdések.</aside>
+</section>
+
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+Reveal.initialize({width:1280,height:720,margin:0.04,hash:true,transition:'slide',autoSlide:0,plugins:[RevealNotes]});
+renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});
+
+// Kódoló
+function enc(){
+  var s=document.getElementById('bits').value.replace(/[^01]/g,'').padEnd(4,'0').slice(0,4);
+  var u=s.split('').map(Number);
+  var p=[u[0]^u[2]^u[3],u[0]^u[1]^u[2],u[1]^u[2]^u[3]];
+  document.getElementById('cwout').innerHTML=s+'<b>'+p.join('')+'</b>';
+}
+document.getElementById('bits').addEventListener('input',enc);enc();
+
+// Diagram
+new Chart(document.getElementById('rateChart'),{
+  type:'bar',
+  data:{labels:['(3,1)','(7,4)','(15,11)','(31,26)','(63,57)','(127,120)','(255,247)'],
+   datasets:[{label:'Ráta k/n',data:[0.333,0.571,0.733,0.839,0.905,0.945,0.969],backgroundColor:'#1a56a0'}]},
+  options:{responsive:true,maintainAspectRatio:false,scales:{y:{min:0,max:1}}}
+});
+
+// Fülek
+document.querySelectorAll('.tabs button').forEach(function(b){
+  b.addEventListener('click',function(){
+    var sec=b.closest('section');
+    sec.querySelectorAll('.tabs button').forEach(function(x){x.classList.remove('on')});
+    sec.querySelectorAll('.pane').forEach(function(x,i){x.classList.toggle('on',i==b.dataset.t)});
+    b.classList.add('on');
+  });
+});
+
+// Kvíz
+document.querySelectorAll('#quiz .opt').forEach(function(o){
+  o.addEventListener('click',function(){
+    var all=document.querySelectorAll('#quiz .opt'),good=o.dataset.ok==='1';
+    all.forEach(function(x){
+      if(!x.dataset.done){x.dataset.done=1;x.dataset.label=x.textContent}
+      if(x.dataset.ok==='1'){x.className='opt right';x.textContent='✓ '+x.dataset.label}
+      else if(x===o){x.className='opt wrong';x.textContent='✗ '+x.dataset.label}
+    });
+    document.getElementById('qfb').textContent=good?'✓ Helyes! d=3, ezért t=1.':'✗ Nem ez. A helyes válasz: B) 1, mert d=3, ezért t=1.';
+  });
+});
+
+// Számláló, gépelés
+Reveal.on('slidechanged',function(e){
+  e.currentSlide.querySelectorAll('.count').forEach(function(el){
+    var to=+el.dataset.to,t0=performance.now(),dur=1200;
+    (function f(t){var p=Math.min((t-t0)/dur,1);el.textContent=Math.round(to*p);if(p<1)requestAnimationFrame(f)})(t0);
+  });
+  var ty=e.currentSlide.querySelector('#typed');
+  if(ty){var txt=ty.dataset.text,i=0;ty.textContent='';var iv=setInterval(function(){ty.textContent=txt.slice(0,++i);if(i>=txt.length)clearInterval(iv)},50)}
+});
+
+// Buborék a képernyőn belül
+document.querySelectorAll('.tip').forEach(function(t){
+  var b=t.querySelector('.bubble');
+  function fit(){b.style.transform='translateX(-50%)';var r=b.getBoundingClientRect(),m=8,dx=0;
+    if(r.left<m)dx=m-r.left;else if(r.right>innerWidth-m)dx=innerWidth-m-r.right;
+    if(dx)b.style.transform='translateX(calc(-50% + '+dx+'px))';}
+  t.addEventListener('mouseenter',function(){setTimeout(fit,0)});
+  t.addEventListener('focus',function(){setTimeout(fit,0)});
+});
+</script>
+</body>
+</html>
