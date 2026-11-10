@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 86564,
+  "duration_api_ms": 87276,
+  "ttft_ms": 3202,
+  "ttft_stream_ms": 2179,
+  "time_to_request_ms": 32,
+  "num_turns": 10,
+  "result": "Az `output.xlsx` elkészült. Összefoglalás:\n\n**Kategorizálás (nem volt megadva):**\n- Piac, zöldség-gyümölcs → **élelmiszer**\n- Gáz- és áramszámla → **lakhatás**\n- Spotify (7. és 13. sor, egyértelmű) → **szórakozás**\n- Kifli.hu rendelés → **élelmiszer** (hazai élelmiszerbolt-futár)\n- Taxi/Bolt → **közlekedés**\n- Netflix → **szórakozás**\n\n**Kategóriánkénti összesítés:**\n\n| Kategória | Összeg |\n|---|---|\n| Élelmiszer | −18 550 Ft |\n| Lakhatás | −14 900 Ft |\n| Szórakozás | −20 150 Ft |\n| Közlekedés | −23 750 Ft |\n| Bevétel | +322 150 Ft |\n| **Záró egyenleg** | **+244 800 Ft** |\n\nA fájlban két munkalap van: **Tranzakciók** (mind a 14 tétel kategóriával és összeggel) és **Összesítés** (SUMIF-formulák a kategóriatotalokhoz, SUM-formula a záróegyenleghez). A kiadások piros, a bevételek zöld színnel jelennek meg.",
+  "stop_reason": "end_turn",
+  "session_id": "0bdd3d1b-a53e-42ac-8052-422f990c1960",
+  "total_cost_usd": 0.21355240000000003,
+  "usage": {
+    "input_tokens": 12,
+    "cache_creation_input_tokens": 11965,
+    "cache_read_input_tokens": 209488,
+    "output_tokens": 5179,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 11965,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 380,
+        "cache_read_input_tokens": 26850,
+        "cache_creation_input_tokens": 988,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 988
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1065,
+      "outputTokens": 26,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.0011949999999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-6": {
+      "inputTokens": 12,
+      "outputTokens": 5179,
+      "cacheReadInputTokens": 209488,
+      "cacheCreationInputTokens": 11965,
+      "webSearchRequests": 0,
+      "costUSD": 0.21235740000000003,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "ef9358ef-d7d1-415b-b9f7-ceb05f0385d8"
+}

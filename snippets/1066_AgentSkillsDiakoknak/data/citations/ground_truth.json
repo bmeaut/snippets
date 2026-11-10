@@ -1,0 +1,2143 @@
+[
+  {
+    "task_id": "citation_L1_r1",
+    "level": 1,
+    "repeat": 1,
+    "sources_raw": [
+      {
+        "type": "book",
+        "authors": [
+          "Horváth, Z."
+        ],
+        "year": 2015,
+        "title": "Statisztikai következtetés a gyakorlatban",
+        "publisher": "Akadémiai Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Juhász, M."
+        ],
+        "year": 1997,
+        "title": "Modern szoftverfejlesztési módszerek",
+        "publisher": "Akadémiai Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Molnár, B."
+        ],
+        "year": 2004,
+        "title": "A fenntartható fejlődés dilemmái",
+        "publisher": "Typotex"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Szűcs, T."
+        ],
+        "year": 2006,
+        "title": "Az oktatástechnológia története",
+        "publisher": "L'Harmattan Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Tóth, I."
+        ],
+        "year": 1998,
+        "title": "Kritikai gondolkodás és argumentáció",
+        "publisher": "L'Harmattan Kiadó"
+      }
+    ],
+    "expected_formatted": [
+      "Horváth, Z. (2015). Statisztikai következtetés a gyakorlatban. Akadémiai Kiadó.",
+      "Juhász, M. (1997). Modern szoftverfejlesztési módszerek. Akadémiai Kiadó.",
+      "Molnár, B. (2004). A fenntartható fejlődés dilemmái. Typotex.",
+      "Szűcs, T. (2006). Az oktatástechnológia története. L'Harmattan Kiadó.",
+      "Tóth, I. (1998). Kritikai gondolkodás és argumentáció. L'Harmattan Kiadó."
+    ],
+    "raw_blocks_text": [
+      "- típus: book\n  szerző(k): Horváth, Z.\n  cím: Statisztikai következtetés a gyakorlatban\n  év: 2015\n  kiadó: Akadémiai Kiadó",
+      "- típus: book\n  szerző(k): Juhász, M.\n  cím: Modern szoftverfejlesztési módszerek\n  év: 1997\n  kiadó: Akadémiai Kiadó",
+      "- típus: book\n  szerző(k): Molnár, B.\n  cím: A fenntartható fejlődés dilemmái\n  év: 2004\n  kiadó: Typotex",
+      "- típus: book\n  szerző(k): Szűcs, T.\n  cím: Az oktatástechnológia története\n  év: 2006\n  kiadó: L'Harmattan Kiadó",
+      "- típus: book\n  szerző(k): Tóth, I.\n  cím: Kritikai gondolkodás és argumentáció\n  év: 1998\n  kiadó: L'Harmattan Kiadó"
+    ]
+  },
+  {
+    "task_id": "citation_L1_r2",
+    "level": 1,
+    "repeat": 2,
+    "sources_raw": [
+      {
+        "type": "book",
+        "authors": [
+          "Balogh, D."
+        ],
+        "year": 2021,
+        "title": "Kutatásmetodológiai alapfogalmak",
+        "publisher": "Gondolat Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Fodor, S."
+        ],
+        "year": 2004,
+        "title": "A tanulás pszichológiája",
+        "publisher": "L'Harmattan Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Kovács, P."
+        ],
+        "year": 1999,
+        "title": "A fenntartható fejlődés dilemmái",
+        "publisher": "Gondolat Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Rácz, A."
+        ],
+        "year": 2021,
+        "title": "A klímaváltozás társadalmi hatásai",
+        "publisher": "Kalligram Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Simon, V."
+        ],
+        "year": 2019,
+        "title": "Kognitív folyamatok az oktatásban",
+        "publisher": "Kalligram Kiadó"
+      }
+    ],
+    "expected_formatted": [
+      "Balogh, D. (2021). Kutatásmetodológiai alapfogalmak. Gondolat Kiadó.",
+      "Fodor, S. (2004). A tanulás pszichológiája. L'Harmattan Kiadó.",
+      "Kovács, P. (1999). A fenntartható fejlődés dilemmái. Gondolat Kiadó.",
+      "Rácz, A. (2021). A klímaváltozás társadalmi hatásai. Kalligram Kiadó.",
+      "Simon, V. (2019). Kognitív folyamatok az oktatásban. Kalligram Kiadó."
+    ],
+    "raw_blocks_text": [
+      "- típus: book\n  szerző(k): Balogh, D.\n  cím: Kutatásmetodológiai alapfogalmak\n  év: 2021\n  kiadó: Gondolat Kiadó",
+      "- típus: book\n  szerző(k): Fodor, S.\n  cím: A tanulás pszichológiája\n  év: 2004\n  kiadó: L'Harmattan Kiadó",
+      "- típus: book\n  szerző(k): Kovács, P.\n  cím: A fenntartható fejlődés dilemmái\n  év: 1999\n  kiadó: Gondolat Kiadó",
+      "- típus: book\n  szerző(k): Rácz, A.\n  cím: A klímaváltozás társadalmi hatásai\n  év: 2021\n  kiadó: Kalligram Kiadó",
+      "- típus: book\n  szerző(k): Simon, V.\n  cím: Kognitív folyamatok az oktatásban\n  év: 2019\n  kiadó: Kalligram Kiadó"
+    ]
+  },
+  {
+    "task_id": "citation_L1_r3",
+    "level": 1,
+    "repeat": 3,
+    "sources_raw": [
+      {
+        "type": "book",
+        "authors": [
+          "Balogh, L."
+        ],
+        "year": 1999,
+        "title": "A tanulás pszichológiája",
+        "publisher": "Akadémiai Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Lakatos, N."
+        ],
+        "year": 2000,
+        "title": "A klímaváltozás társadalmi hatásai",
+        "publisher": "Osiris Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Mészáros, S."
+        ],
+        "year": 1999,
+        "title": "Adatvizualizáció gyakorlata",
+        "publisher": "Gondolat Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Németh, R."
+        ],
+        "year": 2006,
+        "title": "Bevezetés a statisztikába",
+        "publisher": "Typotex"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Takács, V."
+        ],
+        "year": 2016,
+        "title": "A döntéselmélet alapjai",
+        "publisher": "L'Harmattan Kiadó"
+      }
+    ],
+    "expected_formatted": [
+      "Balogh, L. (1999). A tanulás pszichológiája. Akadémiai Kiadó.",
+      "Lakatos, N. (2000). A klímaváltozás társadalmi hatásai. Osiris Kiadó.",
+      "Mészáros, S. (1999). Adatvizualizáció gyakorlata. Gondolat Kiadó.",
+      "Németh, R. (2006). Bevezetés a statisztikába. Typotex.",
+      "Takács, V. (2016). A döntéselmélet alapjai. L'Harmattan Kiadó."
+    ],
+    "raw_blocks_text": [
+      "- típus: book\n  szerző(k): Balogh, L.\n  cím: A tanulás pszichológiája\n  év: 1999\n  kiadó: Akadémiai Kiadó",
+      "- típus: book\n  szerző(k): Lakatos, N.\n  cím: A klímaváltozás társadalmi hatásai\n  év: 2000\n  kiadó: Osiris Kiadó",
+      "- típus: book\n  szerző(k): Mészáros, S.\n  cím: Adatvizualizáció gyakorlata\n  év: 1999\n  kiadó: Gondolat Kiadó",
+      "- típus: book\n  szerző(k): Németh, R.\n  cím: Bevezetés a statisztikába\n  év: 2006\n  kiadó: Typotex",
+      "- típus: book\n  szerző(k): Takács, V.\n  cím: A döntéselmélet alapjai\n  év: 2016\n  kiadó: L'Harmattan Kiadó"
+    ]
+  },
+  {
+    "task_id": "citation_L2_r1",
+    "level": 2,
+    "repeat": 1,
+    "sources_raw": [
+      {
+        "type": "article",
+        "authors": [
+          "Horváth, M."
+        ],
+        "year": 2012,
+        "title": "Az online tanulás hatása a motivációra",
+        "journal": "Magyar Pedagógia",
+        "volume": 9,
+        "issue": 3,
+        "pages": "48-59"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Lakatos, O."
+        ],
+        "year": 2009,
+        "title": "A tanulói autonómia és a belső motiváció összefüggései",
+        "journal": "Alkalmazott Nyelvtudomány",
+        "volume": 5,
+        "issue": 3,
+        "pages": "85-106"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Nagy, N."
+        ],
+        "year": 2016,
+        "title": "Bevezetés a hálózattudományba",
+        "publisher": "Corvina Kiadó"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Nagy, O."
+        ],
+        "year": 2011,
+        "title": "A távoktatás minőségbiztosítási kérdései",
+        "journal": "Szociológiai Szemle",
+        "volume": 44,
+        "issue": 4,
+        "pages": "85-110"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Németh, J."
+        ],
+        "year": 2002,
+        "title": "Statisztikai következtetés a gyakorlatban",
+        "publisher": "Kalligram Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Oláh, B."
+        ],
+        "year": 2018,
+        "title": "A társadalomtudományi kutatás módszertana",
+        "publisher": "Akadémiai Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Tóth, O."
+        ],
+        "year": 2010,
+        "title": "A fenntartható fejlődés dilemmái",
+        "publisher": "Kalligram Kiadó"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Török, Z."
+        ],
+        "year": 2007,
+        "title": "A kritikus gondolkodás fejlesztése felsőoktatásban",
+        "journal": "Educatio",
+        "volume": 36,
+        "issue": 2,
+        "pages": "173-193"
+      }
+    ],
+    "expected_formatted": [
+      "Horváth, M. (2012). Az online tanulás hatása a motivációra. Magyar Pedagógia, 9(3), 48-59.",
+      "Lakatos, O. (2009). A tanulói autonómia és a belső motiváció összefüggései. Alkalmazott Nyelvtudomány, 5(3), 85-106.",
+      "Nagy, N. (2016). Bevezetés a hálózattudományba. Corvina Kiadó.",
+      "Nagy, O. (2011). A távoktatás minőségbiztosítási kérdései. Szociológiai Szemle, 44(4), 85-110.",
+      "Németh, J. (2002). Statisztikai következtetés a gyakorlatban. Kalligram Kiadó.",
+      "Oláh, B. (2018). A társadalomtudományi kutatás módszertana. Akadémiai Kiadó.",
+      "Tóth, O. (2010). A fenntartható fejlődés dilemmái. Kalligram Kiadó.",
+      "Török, Z. (2007). A kritikus gondolkodás fejlesztése felsőoktatásban. Educatio, 36(2), 173-193."
+    ],
+    "raw_blocks_text": [
+      "- típus: article\n  szerző(k): Horváth, M.\n  cím: Az online tanulás hatása a motivációra\n  év: 2012\n  folyóirat: Magyar Pedagógia\n  kötetszám: 9\n  lapszám: 3\n  oldalszám: 48-59",
+      "- típus: article\n  szerző(k): Lakatos, O.\n  cím: A tanulói autonómia és a belső motiváció összefüggései\n  év: 2009\n  folyóirat: Alkalmazott Nyelvtudomány\n  kötetszám: 5\n  lapszám: 3\n  oldalszám: 85-106",
+      "- típus: book\n  szerző(k): Nagy, N.\n  cím: Bevezetés a hálózattudományba\n  év: 2016\n  kiadó: Corvina Kiadó",
+      "- típus: article\n  szerző(k): Nagy, O.\n  cím: A távoktatás minőségbiztosítási kérdései\n  év: 2011\n  folyóirat: Szociológiai Szemle\n  kötetszám: 44\n  lapszám: 4\n  oldalszám: 85-110",
+      "- típus: book\n  szerző(k): Németh, J.\n  cím: Statisztikai következtetés a gyakorlatban\n  év: 2002\n  kiadó: Kalligram Kiadó",
+      "- típus: book\n  szerző(k): Oláh, B.\n  cím: A társadalomtudományi kutatás módszertana\n  év: 2018\n  kiadó: Akadémiai Kiadó",
+      "- típus: book\n  szerző(k): Tóth, O.\n  cím: A fenntartható fejlődés dilemmái\n  év: 2010\n  kiadó: Kalligram Kiadó",
+      "- típus: article\n  szerző(k): Török, Z.\n  cím: A kritikus gondolkodás fejlesztése felsőoktatásban\n  év: 2007\n  folyóirat: Educatio\n  kötetszám: 36\n  lapszám: 2\n  oldalszám: 173-193"
+    ]
+  },
+  {
+    "task_id": "citation_L2_r2",
+    "level": 2,
+    "repeat": 2,
+    "sources_raw": [
+      {
+        "type": "book",
+        "authors": [
+          "Balogh, B."
+        ],
+        "year": 2001,
+        "title": "Bevezetés a hálózattudományba",
+        "publisher": "Akadémiai Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Gál, E."
+        ],
+        "year": 2006,
+        "title": "Kritikai gondolkodás és argumentáció",
+        "publisher": "Saxum Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Kovács, J."
+        ],
+        "year": 2014,
+        "title": "Modern szoftverfejlesztési módszerek",
+        "publisher": "Typotex"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Németh, E."
+        ],
+        "year": 2022,
+        "title": "A távoktatás minőségbiztosítási kérdései",
+        "journal": "Statisztikai Szemle",
+        "volume": 43,
+        "issue": 4,
+        "pages": "66-90"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Németh, I."
+        ],
+        "year": 1997,
+        "title": "Bevezetés a hálózattudományba",
+        "publisher": "Typotex"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Németh, V."
+        ],
+        "year": 2023,
+        "title": "Modern szoftverfejlesztési módszerek",
+        "publisher": "Saxum Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Szabó, E."
+        ],
+        "year": 2005,
+        "title": "A nyelvelsajátítás folyamata",
+        "publisher": "Kalligram Kiadó"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Szűcs, G."
+        ],
+        "year": 2014,
+        "title": "A kortárs mentorálás hatása az egyetemi lemorzsolódásra",
+        "journal": "Statisztikai Szemle",
+        "volume": 20,
+        "issue": 3,
+        "pages": "150-156"
+      }
+    ],
+    "expected_formatted": [
+      "Balogh, B. (2001). Bevezetés a hálózattudományba. Akadémiai Kiadó.",
+      "Gál, E. (2006). Kritikai gondolkodás és argumentáció. Saxum Kiadó.",
+      "Kovács, J. (2014). Modern szoftverfejlesztési módszerek. Typotex.",
+      "Németh, E. (2022). A távoktatás minőségbiztosítási kérdései. Statisztikai Szemle, 43(4), 66-90.",
+      "Németh, I. (1997). Bevezetés a hálózattudományba. Typotex.",
+      "Németh, V. (2023). Modern szoftverfejlesztési módszerek. Saxum Kiadó.",
+      "Szabó, E. (2005). A nyelvelsajátítás folyamata. Kalligram Kiadó.",
+      "Szűcs, G. (2014). A kortárs mentorálás hatása az egyetemi lemorzsolódásra. Statisztikai Szemle, 20(3), 150-156."
+    ],
+    "raw_blocks_text": [
+      "- típus: book\n  szerző(k): Balogh, B.\n  cím: Bevezetés a hálózattudományba\n  év: 2001\n  kiadó: Akadémiai Kiadó",
+      "- típus: book\n  szerző(k): Gál, E.\n  cím: Kritikai gondolkodás és argumentáció\n  év: 2006\n  kiadó: Saxum Kiadó",
+      "- típus: book\n  szerző(k): Kovács, J.\n  cím: Modern szoftverfejlesztési módszerek\n  év: 2014\n  kiadó: Typotex",
+      "- típus: article\n  szerző(k): Németh, E.\n  cím: A távoktatás minőségbiztosítási kérdései\n  év: 2022\n  folyóirat: Statisztikai Szemle\n  kötetszám: 43\n  lapszám: 4\n  oldalszám: 66-90",
+      "- típus: book\n  szerző(k): Németh, I.\n  cím: Bevezetés a hálózattudományba\n  év: 1997\n  kiadó: Typotex",
+      "- típus: book\n  szerző(k): Németh, V.\n  cím: Modern szoftverfejlesztési módszerek\n  év: 2023\n  kiadó: Saxum Kiadó",
+      "- típus: book\n  szerző(k): Szabó, E.\n  cím: A nyelvelsajátítás folyamata\n  év: 2005\n  kiadó: Kalligram Kiadó",
+      "- típus: article\n  szerző(k): Szűcs, G.\n  cím: A kortárs mentorálás hatása az egyetemi lemorzsolódásra\n  év: 2014\n  folyóirat: Statisztikai Szemle\n  kötetszám: 20\n  lapszám: 3\n  oldalszám: 150-156"
+    ]
+  },
+  {
+    "task_id": "citation_L2_r3",
+    "level": 2,
+    "repeat": 3,
+    "sources_raw": [
+      {
+        "type": "article",
+        "authors": [
+          "Balogh, P."
+        ],
+        "year": 2010,
+        "title": "Az online tanulás hatása a motivációra",
+        "journal": "Informatika és Oktatás",
+        "volume": 6,
+        "issue": 3,
+        "pages": "50-70"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Gál, G."
+        ],
+        "year": 2015,
+        "title": "A csoportmunka szerepe a problémamegoldásban",
+        "journal": "Educatio",
+        "volume": 6,
+        "issue": 1,
+        "pages": "40-58"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Juhász, D."
+        ],
+        "year": 2008,
+        "title": "Az online tanulás hatása a motivációra",
+        "journal": "Statisztikai Szemle",
+        "volume": 23,
+        "issue": 1,
+        "pages": "48-54"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Mészáros, S."
+        ],
+        "year": 2023,
+        "title": "A fenntartható fejlődés dilemmái",
+        "publisher": "Kalligram Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Nagy, R."
+        ],
+        "year": 2005,
+        "title": "Bevezetés a statisztikába",
+        "publisher": "Corvina Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Papp, B."
+        ],
+        "year": 2021,
+        "title": "Statisztikai következtetés a gyakorlatban",
+        "publisher": "Typotex"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Simon, D."
+        ],
+        "year": 2001,
+        "title": "A csoportmunka szerepe a problémamegoldásban",
+        "journal": "Iskolakultúra",
+        "volume": 2,
+        "issue": 4,
+        "pages": "28-38"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Szűcs, J."
+        ],
+        "year": 2015,
+        "title": "A tanulás pszichológiája",
+        "publisher": "Osiris Kiadó"
+      }
+    ],
+    "expected_formatted": [
+      "Balogh, P. (2010). Az online tanulás hatása a motivációra. Informatika és Oktatás, 6(3), 50-70.",
+      "Gál, G. (2015). A csoportmunka szerepe a problémamegoldásban. Educatio, 6(1), 40-58.",
+      "Juhász, D. (2008). Az online tanulás hatása a motivációra. Statisztikai Szemle, 23(1), 48-54.",
+      "Mészáros, S. (2023). A fenntartható fejlődés dilemmái. Kalligram Kiadó.",
+      "Nagy, R. (2005). Bevezetés a statisztikába. Corvina Kiadó.",
+      "Papp, B. (2021). Statisztikai következtetés a gyakorlatban. Typotex.",
+      "Simon, D. (2001). A csoportmunka szerepe a problémamegoldásban. Iskolakultúra, 2(4), 28-38.",
+      "Szűcs, J. (2015). A tanulás pszichológiája. Osiris Kiadó."
+    ],
+    "raw_blocks_text": [
+      "- típus: article\n  szerző(k): Balogh, P.\n  cím: Az online tanulás hatása a motivációra\n  év: 2010\n  folyóirat: Informatika és Oktatás\n  kötetszám: 6\n  lapszám: 3\n  oldalszám: 50-70",
+      "- típus: article\n  szerző(k): Gál, G.\n  cím: A csoportmunka szerepe a problémamegoldásban\n  év: 2015\n  folyóirat: Educatio\n  kötetszám: 6\n  lapszám: 1\n  oldalszám: 40-58",
+      "- típus: article\n  szerző(k): Juhász, D.\n  cím: Az online tanulás hatása a motivációra\n  év: 2008\n  folyóirat: Statisztikai Szemle\n  kötetszám: 23\n  lapszám: 1\n  oldalszám: 48-54",
+      "- típus: book\n  szerző(k): Mészáros, S.\n  cím: A fenntartható fejlődés dilemmái\n  év: 2023\n  kiadó: Kalligram Kiadó",
+      "- típus: book\n  szerző(k): Nagy, R.\n  cím: Bevezetés a statisztikába\n  év: 2005\n  kiadó: Corvina Kiadó",
+      "- típus: book\n  szerző(k): Papp, B.\n  cím: Statisztikai következtetés a gyakorlatban\n  év: 2021\n  kiadó: Typotex",
+      "- típus: article\n  szerző(k): Simon, D.\n  cím: A csoportmunka szerepe a problémamegoldásban\n  év: 2001\n  folyóirat: Iskolakultúra\n  kötetszám: 2\n  lapszám: 4\n  oldalszám: 28-38",
+      "- típus: book\n  szerző(k): Szűcs, J.\n  cím: A tanulás pszichológiája\n  év: 2015\n  kiadó: Osiris Kiadó"
+    ]
+  },
+  {
+    "task_id": "citation_L3_r1",
+    "level": 3,
+    "repeat": 1,
+    "sources_raw": [
+      {
+        "type": "article",
+        "authors": [
+          "Balogh, T."
+        ],
+        "year": 2024,
+        "title": "A kritikai szövegértés fejlődése serdülőkorban",
+        "journal": "Informatika és Oktatás",
+        "volume": 8,
+        "issue": 1,
+        "pages": "101-117"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Farkas, P.",
+          "Papp, D."
+        ],
+        "year": 2013,
+        "title": "Digitális eszközök használata a középiskolai oktatásban",
+        "journal": "Educatio",
+        "volume": 12,
+        "issue": 3,
+        "pages": "38-65"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Fekete, J."
+        ],
+        "year": 1998,
+        "title": "A tanári attitűd hatása a diákok teljesítményére",
+        "journal": "Szociológiai Szemle",
+        "volume": 34,
+        "issue": 3,
+        "pages": "25-43",
+        "doi": "10.5111/5723.8489"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Kovács, P."
+        ],
+        "year": 2024,
+        "title": "A gamifikáció szerepe a nyelvtanulásban",
+        "journal": "Informatika és Oktatás",
+        "volume": 32,
+        "issue": 3
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Papp, D."
+        ],
+        "year": 1997,
+        "title": "Az oktatástechnológia története",
+        "publisher": "L'Harmattan Kiadó"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Papp, I.",
+          "Simon, G."
+        ],
+        "year": 2010,
+        "title": "A kortárs mentorálás hatása az egyetemi lemorzsolódásra",
+        "journal": "Informatika és Oktatás",
+        "volume": 24,
+        "issue": 2,
+        "doi": "10.7997/4813.9709"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Szabó, L.",
+          "Balogh, P."
+        ],
+        "year": 2012,
+        "title": "Az önszabályozott tanulás mérési lehetőségei",
+        "journal": "Iskolakultúra",
+        "volume": 40,
+        "issue": 3,
+        "pages": "118-128"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Szabó, M.",
+          "Fodor, T."
+        ],
+        "year": 1995,
+        "title": "A kritikus gondolkodás fejlesztése felsőoktatásban",
+        "journal": "Pszichológia",
+        "volume": 41,
+        "issue": 2
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Takács, E."
+        ],
+        "year": 2022,
+        "title": "Kognitív folyamatok az oktatásban",
+        "publisher": "Kalligram Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Varga, Z."
+        ],
+        "year": 2009,
+        "title": "A gazdaságtörténet vázlatai",
+        "publisher": "L'Harmattan Kiadó"
+      }
+    ],
+    "expected_formatted": [
+      "Balogh, T. (2024). A kritikai szövegértés fejlődése serdülőkorban. Informatika és Oktatás, 8(1), 101-117.",
+      "Farkas, P., & Papp, D. (2013). Digitális eszközök használata a középiskolai oktatásban. Educatio, 12(3), 38-65.",
+      "Fekete, J. (1998). A tanári attitűd hatása a diákok teljesítményére. Szociológiai Szemle, 34(3), 25-43. https://doi.org/10.5111/5723.8489",
+      "Kovács, P. (2024). A gamifikáció szerepe a nyelvtanulásban. Informatika és Oktatás, 32(3).",
+      "Papp, D. (1997). Az oktatástechnológia története. L'Harmattan Kiadó.",
+      "Papp, I., & Simon, G. (2010). A kortárs mentorálás hatása az egyetemi lemorzsolódásra. Informatika és Oktatás, 24(2). https://doi.org/10.7997/4813.9709",
+      "Szabó, L., & Balogh, P. (2012). Az önszabályozott tanulás mérési lehetőségei. Iskolakultúra, 40(3), 118-128.",
+      "Szabó, M., & Fodor, T. (1995). A kritikus gondolkodás fejlesztése felsőoktatásban. Pszichológia, 41(2).",
+      "Takács, E. (2022). Kognitív folyamatok az oktatásban. Kalligram Kiadó.",
+      "Varga, Z. (2009). A gazdaságtörténet vázlatai. L'Harmattan Kiadó."
+    ],
+    "raw_blocks_text": [
+      "- típus: article\n  szerző(k): Balogh, T.\n  cím: A kritikai szövegértés fejlődése serdülőkorban\n  év: 2024\n  folyóirat: Informatika és Oktatás\n  kötetszám: 8\n  lapszám: 1\n  oldalszám: 101-117",
+      "- típus: article\n  szerző(k): Farkas, P.; Papp, D.\n  cím: Digitális eszközök használata a középiskolai oktatásban\n  év: 2013\n  folyóirat: Educatio\n  kötetszám: 12\n  lapszám: 3\n  oldalszám: 38-65",
+      "- típus: article\n  szerző(k): Fekete, J.\n  cím: A tanári attitűd hatása a diákok teljesítményére\n  év: 1998\n  folyóirat: Szociológiai Szemle\n  kötetszám: 34\n  lapszám: 3\n  oldalszám: 25-43\n  DOI: 10.5111/5723.8489",
+      "- típus: article\n  szerző(k): Kovács, P.\n  cím: A gamifikáció szerepe a nyelvtanulásban\n  év: 2024\n  folyóirat: Informatika és Oktatás\n  kötetszám: 32\n  lapszám: 3",
+      "- típus: book\n  szerző(k): Papp, D.\n  cím: Az oktatástechnológia története\n  év: 1997\n  kiadó: L'Harmattan Kiadó",
+      "- típus: article\n  szerző(k): Papp, I.; Simon, G.\n  cím: A kortárs mentorálás hatása az egyetemi lemorzsolódásra\n  év: 2010\n  folyóirat: Informatika és Oktatás\n  kötetszám: 24\n  lapszám: 2\n  DOI: 10.7997/4813.9709",
+      "- típus: article\n  szerző(k): Szabó, L.; Balogh, P.\n  cím: Az önszabályozott tanulás mérési lehetőségei\n  év: 2012\n  folyóirat: Iskolakultúra\n  kötetszám: 40\n  lapszám: 3\n  oldalszám: 118-128",
+      "- típus: article\n  szerző(k): Szabó, M.; Fodor, T.\n  cím: A kritikus gondolkodás fejlesztése felsőoktatásban\n  év: 1995\n  folyóirat: Pszichológia\n  kötetszám: 41\n  lapszám: 2",
+      "- típus: book\n  szerző(k): Takács, E.\n  cím: Kognitív folyamatok az oktatásban\n  év: 2022\n  kiadó: Kalligram Kiadó",
+      "- típus: book\n  szerző(k): Varga, Z.\n  cím: A gazdaságtörténet vázlatai\n  év: 2009\n  kiadó: L'Harmattan Kiadó"
+    ]
+  },
+  {
+    "task_id": "citation_L3_r2",
+    "level": 3,
+    "repeat": 2,
+    "sources_raw": [
+      {
+        "type": "book",
+        "authors": [
+          "Gál, E.",
+          "Balogh, I."
+        ],
+        "year": 2011,
+        "title": "A tanulás pszichológiája",
+        "publisher": "Osiris Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Kiss, T.",
+          "Fekete, S."
+        ],
+        "year": 2013,
+        "title": "Alapfokú ökológia",
+        "publisher": "Gondolat Kiadó"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Lakatos, A.",
+          "Nagy, L."
+        ],
+        "year": 2003,
+        "title": "A kritikus gondolkodás fejlesztése felsőoktatásban",
+        "journal": "Informatika és Oktatás",
+        "volume": 44,
+        "issue": 4
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Lakatos, I."
+        ],
+        "year": 2007,
+        "title": "Modern szoftverfejlesztési módszerek",
+        "publisher": "Osiris Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Németh, K."
+        ],
+        "year": 1996,
+        "title": "Kutatásmetodológiai alapfogalmak",
+        "publisher": "Corvina Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Szabó, A.",
+          "Szabó, I."
+        ],
+        "year": 2006,
+        "title": "Bevezetés a hálózattudományba",
+        "publisher": "Corvina Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Szabó, G."
+        ],
+        "year": 2020,
+        "title": "Bevezetés a hálózattudományba",
+        "publisher": "Saxum Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Szűcs, N.",
+          "Takács, T."
+        ],
+        "year": 2016,
+        "title": "A társadalomtudományi kutatás módszertana",
+        "publisher": "Gondolat Kiadó"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Takács, Z.",
+          "Varga, R."
+        ],
+        "year": 1998,
+        "title": "A tanári attitűd hatása a diákok teljesítményére",
+        "journal": "Magyar Pedagógia",
+        "volume": 41,
+        "issue": 3,
+        "doi": "10.8677/6164.9607"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Varga, K.",
+          "Simon, D."
+        ],
+        "year": 2020,
+        "title": "Kutatásmetodológiai alapfogalmak",
+        "publisher": "Osiris Kiadó"
+      }
+    ],
+    "expected_formatted": [
+      "Gál, E., & Balogh, I. (2011). A tanulás pszichológiája. Osiris Kiadó.",
+      "Kiss, T., & Fekete, S. (2013). Alapfokú ökológia. Gondolat Kiadó.",
+      "Lakatos, A., & Nagy, L. (2003). A kritikus gondolkodás fejlesztése felsőoktatásban. Informatika és Oktatás, 44(4).",
+      "Lakatos, I. (2007). Modern szoftverfejlesztési módszerek. Osiris Kiadó.",
+      "Németh, K. (1996). Kutatásmetodológiai alapfogalmak. Corvina Kiadó.",
+      "Szabó, A., & Szabó, I. (2006). Bevezetés a hálózattudományba. Corvina Kiadó.",
+      "Szabó, G. (2020). Bevezetés a hálózattudományba. Saxum Kiadó.",
+      "Szűcs, N., & Takács, T. (2016). A társadalomtudományi kutatás módszertana. Gondolat Kiadó.",
+      "Takács, Z., & Varga, R. (1998). A tanári attitűd hatása a diákok teljesítményére. Magyar Pedagógia, 41(3). https://doi.org/10.8677/6164.9607",
+      "Varga, K., & Simon, D. (2020). Kutatásmetodológiai alapfogalmak. Osiris Kiadó."
+    ],
+    "raw_blocks_text": [
+      "- típus: book\n  szerző(k): Gál, E.; Balogh, I.\n  cím: A tanulás pszichológiája\n  év: 2011\n  kiadó: Osiris Kiadó",
+      "- típus: book\n  szerző(k): Kiss, T.; Fekete, S.\n  cím: Alapfokú ökológia\n  év: 2013\n  kiadó: Gondolat Kiadó",
+      "- típus: article\n  szerző(k): Lakatos, A.; Nagy, L.\n  cím: A kritikus gondolkodás fejlesztése felsőoktatásban\n  év: 2003\n  folyóirat: Informatika és Oktatás\n  kötetszám: 44\n  lapszám: 4",
+      "- típus: book\n  szerző(k): Lakatos, I.\n  cím: Modern szoftverfejlesztési módszerek\n  év: 2007\n  kiadó: Osiris Kiadó",
+      "- típus: book\n  szerző(k): Németh, K.\n  cím: Kutatásmetodológiai alapfogalmak\n  év: 1996\n  kiadó: Corvina Kiadó",
+      "- típus: book\n  szerző(k): Szabó, A.; Szabó, I.\n  cím: Bevezetés a hálózattudományba\n  év: 2006\n  kiadó: Corvina Kiadó",
+      "- típus: book\n  szerző(k): Szabó, G.\n  cím: Bevezetés a hálózattudományba\n  év: 2020\n  kiadó: Saxum Kiadó",
+      "- típus: book\n  szerző(k): Szűcs, N.; Takács, T.\n  cím: A társadalomtudományi kutatás módszertana\n  év: 2016\n  kiadó: Gondolat Kiadó",
+      "- típus: article\n  szerző(k): Takács, Z.; Varga, R.\n  cím: A tanári attitűd hatása a diákok teljesítményére\n  év: 1998\n  folyóirat: Magyar Pedagógia\n  kötetszám: 41\n  lapszám: 3\n  DOI: 10.8677/6164.9607",
+      "- típus: book\n  szerző(k): Varga, K.; Simon, D.\n  cím: Kutatásmetodológiai alapfogalmak\n  év: 2020\n  kiadó: Osiris Kiadó"
+    ]
+  },
+  {
+    "task_id": "citation_L3_r3",
+    "level": 3,
+    "repeat": 3,
+    "sources_raw": [
+      {
+        "type": "article",
+        "authors": [
+          "Balogh, I.",
+          "Tóth, V."
+        ],
+        "year": 2002,
+        "title": "A csoportmunka szerepe a problémamegoldásban",
+        "journal": "Statisztikai Szemle",
+        "volume": 39,
+        "issue": 2,
+        "doi": "10.1004/2507.8595"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Balogh, M."
+        ],
+        "year": 2024,
+        "title": "A projektalapú oktatás hatásai csoportos környezetben",
+        "journal": "Szociológiai Szemle",
+        "volume": 28,
+        "issue": 3,
+        "pages": "125-149"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Fekete, R.",
+          "Szűcs, L."
+        ],
+        "year": 2020,
+        "title": "A stressz és a tanulási teljesítmény kapcsolata",
+        "journal": "Pszichológia",
+        "volume": 2,
+        "issue": 3
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Gál, B.",
+          "Tóth, R."
+        ],
+        "year": 2013,
+        "title": "Bevezetés a mesterséges intelligenciába",
+        "publisher": "Kalligram Kiadó"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Gál, R.",
+          "Szűcs, A."
+        ],
+        "year": 2000,
+        "title": "Az adaptív tesztelés alkalmazása a felmérésekben",
+        "journal": "Pszichológia",
+        "volume": 5,
+        "issue": 4,
+        "pages": "32-45",
+        "doi": "10.8636/2030.8219"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Nagy, J.",
+          "Fodor, J."
+        ],
+        "year": 2012,
+        "title": "A gamifikáció szerepe a nyelvtanulásban",
+        "journal": "Informatika és Oktatás",
+        "volume": 40,
+        "issue": 4,
+        "pages": "117-146"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Németh, P."
+        ],
+        "year": 2003,
+        "title": "A kortárs mentorálás hatása az egyetemi lemorzsolódásra",
+        "journal": "Magyar Pedagógia",
+        "volume": 37,
+        "issue": 2,
+        "pages": "24-52",
+        "doi": "10.8473/1060.6993"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Oláh, A.",
+          "Rácz, T."
+        ],
+        "year": 2002,
+        "title": "A tanári attitűd hatása a diákok teljesítményére",
+        "journal": "Alkalmazott Nyelvtudomány",
+        "volume": 34,
+        "issue": 4,
+        "pages": "130-155"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Rácz, V.",
+          "Mészáros, A."
+        ],
+        "year": 1995,
+        "title": "A szervezetpszichológia alapjai",
+        "publisher": "Akadémiai Kiadó"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Simon, B."
+        ],
+        "year": 1999,
+        "title": "Digitális eszközök használata a középiskolai oktatásban",
+        "journal": "Alkalmazott Nyelvtudomány",
+        "volume": 27,
+        "issue": 1,
+        "pages": "136-163"
+      }
+    ],
+    "expected_formatted": [
+      "Balogh, I., & Tóth, V. (2002). A csoportmunka szerepe a problémamegoldásban. Statisztikai Szemle, 39(2). https://doi.org/10.1004/2507.8595",
+      "Balogh, M. (2024). A projektalapú oktatás hatásai csoportos környezetben. Szociológiai Szemle, 28(3), 125-149.",
+      "Fekete, R., & Szűcs, L. (2020). A stressz és a tanulási teljesítmény kapcsolata. Pszichológia, 2(3).",
+      "Gál, B., & Tóth, R. (2013). Bevezetés a mesterséges intelligenciába. Kalligram Kiadó.",
+      "Gál, R., & Szűcs, A. (2000). Az adaptív tesztelés alkalmazása a felmérésekben. Pszichológia, 5(4), 32-45. https://doi.org/10.8636/2030.8219",
+      "Nagy, J., & Fodor, J. (2012). A gamifikáció szerepe a nyelvtanulásban. Informatika és Oktatás, 40(4), 117-146.",
+      "Németh, P. (2003). A kortárs mentorálás hatása az egyetemi lemorzsolódásra. Magyar Pedagógia, 37(2), 24-52. https://doi.org/10.8473/1060.6993",
+      "Oláh, A., & Rácz, T. (2002). A tanári attitűd hatása a diákok teljesítményére. Alkalmazott Nyelvtudomány, 34(4), 130-155.",
+      "Rácz, V., & Mészáros, A. (1995). A szervezetpszichológia alapjai. Akadémiai Kiadó.",
+      "Simon, B. (1999). Digitális eszközök használata a középiskolai oktatásban. Alkalmazott Nyelvtudomány, 27(1), 136-163."
+    ],
+    "raw_blocks_text": [
+      "- típus: article\n  szerző(k): Balogh, I.; Tóth, V.\n  cím: A csoportmunka szerepe a problémamegoldásban\n  év: 2002\n  folyóirat: Statisztikai Szemle\n  kötetszám: 39\n  lapszám: 2\n  DOI: 10.1004/2507.8595",
+      "- típus: article\n  szerző(k): Balogh, M.\n  cím: A projektalapú oktatás hatásai csoportos környezetben\n  év: 2024\n  folyóirat: Szociológiai Szemle\n  kötetszám: 28\n  lapszám: 3\n  oldalszám: 125-149",
+      "- típus: article\n  szerző(k): Fekete, R.; Szűcs, L.\n  cím: A stressz és a tanulási teljesítmény kapcsolata\n  év: 2020\n  folyóirat: Pszichológia\n  kötetszám: 2\n  lapszám: 3",
+      "- típus: book\n  szerző(k): Gál, B.; Tóth, R.\n  cím: Bevezetés a mesterséges intelligenciába\n  év: 2013\n  kiadó: Kalligram Kiadó",
+      "- típus: article\n  szerző(k): Gál, R.; Szűcs, A.\n  cím: Az adaptív tesztelés alkalmazása a felmérésekben\n  év: 2000\n  folyóirat: Pszichológia\n  kötetszám: 5\n  lapszám: 4\n  oldalszám: 32-45\n  DOI: 10.8636/2030.8219",
+      "- típus: article\n  szerző(k): Nagy, J.; Fodor, J.\n  cím: A gamifikáció szerepe a nyelvtanulásban\n  év: 2012\n  folyóirat: Informatika és Oktatás\n  kötetszám: 40\n  lapszám: 4\n  oldalszám: 117-146",
+      "- típus: article\n  szerző(k): Németh, P.\n  cím: A kortárs mentorálás hatása az egyetemi lemorzsolódásra\n  év: 2003\n  folyóirat: Magyar Pedagógia\n  kötetszám: 37\n  lapszám: 2\n  oldalszám: 24-52\n  DOI: 10.8473/1060.6993",
+      "- típus: article\n  szerző(k): Oláh, A.; Rácz, T.\n  cím: A tanári attitűd hatása a diákok teljesítményére\n  év: 2002\n  folyóirat: Alkalmazott Nyelvtudomány\n  kötetszám: 34\n  lapszám: 4\n  oldalszám: 130-155",
+      "- típus: book\n  szerző(k): Rácz, V.; Mészáros, A.\n  cím: A szervezetpszichológia alapjai\n  év: 1995\n  kiadó: Akadémiai Kiadó",
+      "- típus: article\n  szerző(k): Simon, B.\n  cím: Digitális eszközök használata a középiskolai oktatásban\n  év: 1999\n  folyóirat: Alkalmazott Nyelvtudomány\n  kötetszám: 27\n  lapszám: 1\n  oldalszám: 136-163"
+    ]
+  },
+  {
+    "task_id": "citation_L4_r1",
+    "level": 4,
+    "repeat": 1,
+    "sources_raw": [
+      {
+        "type": "book",
+        "authors": [
+          "Fekete, K.",
+          "Simon, P."
+        ],
+        "year": 2014,
+        "title": "Kognitív folyamatok az oktatásban",
+        "publisher": "Gondolat Kiadó"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Fodor, R."
+        ],
+        "year": 2008,
+        "month": "január",
+        "day": 19,
+        "title": "Hogyan hat a képernyőidő a koncentrációra?",
+        "site_name": "Index Tudomány",
+        "url": "https://example.edu/cikk/4107"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Fodor, V."
+        ],
+        "year": 2014,
+        "title": "A magyar nyelv története",
+        "publisher": "L'Harmattan Kiadó"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Horváth, P."
+        ],
+        "year": 2023,
+        "title": "A kritikai szövegértés fejlődése serdülőkorban",
+        "journal": "Szociológiai Szemle",
+        "volume": 7,
+        "issue": 2,
+        "pages": "164-183"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Juhász, L."
+        ],
+        "year": 2022,
+        "title": "Adatvizualizáció gyakorlata",
+        "publisher": "Akadémiai Kiadó"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Kiss, N."
+        ],
+        "year": 2004,
+        "title": "A tanulói autonómia és a belső motiváció összefüggései",
+        "journal": "Educatio",
+        "volume": 16,
+        "issue": 1,
+        "pages": "25-30"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Kovács, D.",
+          "Varga, D."
+        ],
+        "year": 2023,
+        "month": "február",
+        "day": 2,
+        "title": "Hogyan hat a képernyőidő a koncentrációra?",
+        "site_name": "National Geographic Magyarország",
+        "url": "https://example.edu/cikk/1261"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Lakatos, L."
+        ],
+        "year": 2003,
+        "title": "A gazdaságtörténet vázlatai",
+        "publisher": "Typotex"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Lakatos, V.",
+          "Farkas, I."
+        ],
+        "year": 2003,
+        "title": "A tanári attitűd hatása a diákok teljesítményére",
+        "journal": "Alkalmazott Nyelvtudomány",
+        "volume": 3,
+        "issue": 2,
+        "pages": "76-104"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Németh, G."
+        ],
+        "year": 2013,
+        "title": "Az önszabályozott tanulás mérési lehetőségei",
+        "journal": "Iskolakultúra",
+        "volume": 14,
+        "issue": 4,
+        "pages": "17-23",
+        "doi": "10.8805/5644.1242"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Rácz, J.",
+          "Szabó, S."
+        ],
+        "year": 2017,
+        "title": "A nyelvelsajátítás folyamata",
+        "publisher": "L'Harmattan Kiadó"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Rácz, N.",
+          "Varga, M."
+        ],
+        "year": 2001,
+        "title": "A kritikai szövegértés fejlődése serdülőkorban",
+        "journal": "Magyar Pedagógia",
+        "volume": 8,
+        "issue": 2,
+        "doi": "10.1009/7717.7238"
+      }
+    ],
+    "expected_formatted": [
+      "Fekete, K., & Simon, P. (2014). Kognitív folyamatok az oktatásban. Gondolat Kiadó.",
+      "Fodor, R. (2008, január 19). Hogyan hat a képernyőidő a koncentrációra? Index Tudomány. https://example.edu/cikk/4107",
+      "Fodor, V. (2014). A magyar nyelv története. L'Harmattan Kiadó.",
+      "Horváth, P. (2023). A kritikai szövegértés fejlődése serdülőkorban. Szociológiai Szemle, 7(2), 164-183.",
+      "Juhász, L. (2022). Adatvizualizáció gyakorlata. Akadémiai Kiadó.",
+      "Kiss, N. (2004). A tanulói autonómia és a belső motiváció összefüggései. Educatio, 16(1), 25-30.",
+      "Kovács, D., & Varga, D. (2023, február 2). Hogyan hat a képernyőidő a koncentrációra? National Geographic Magyarország. https://example.edu/cikk/1261",
+      "Lakatos, L. (2003). A gazdaságtörténet vázlatai. Typotex.",
+      "Lakatos, V., & Farkas, I. (2003). A tanári attitűd hatása a diákok teljesítményére. Alkalmazott Nyelvtudomány, 3(2), 76-104.",
+      "Németh, G. (2013). Az önszabályozott tanulás mérési lehetőségei. Iskolakultúra, 14(4), 17-23. https://doi.org/10.8805/5644.1242",
+      "Rácz, J., & Szabó, S. (2017). A nyelvelsajátítás folyamata. L'Harmattan Kiadó.",
+      "Rácz, N., & Varga, M. (2001). A kritikai szövegértés fejlődése serdülőkorban. Magyar Pedagógia, 8(2). https://doi.org/10.1009/7717.7238"
+    ],
+    "raw_blocks_text": [
+      "- típus: book\n  év: 2014\n  kiadó: Gondolat Kiadó\n  cím: Kognitív folyamatok az oktatásban\n  szerző(k): Fekete, K.; Simon, P.",
+      "- típus: website\n  szerző(k): Fodor, R.\n  cím: Hogyan hat a képernyőidő a koncentrációra?\n  URL: https://example.edu/cikk/4107\n  nap: 19\n  hónap: január\n  weboldal neve: Index Tudomány\n  év: 2008",
+      "- típus: book\n  kiadó: L'Harmattan Kiadó\n  szerző(k): Fodor, V.\n  év: 2014\n  cím: A magyar nyelv története",
+      "- típus: article\n  cím: A kritikai szövegértés fejlődése serdülőkorban\n  szerző(k): Horváth, P.\n  lapszám: 2\n  év: 2023\n  oldalszám: 164-183\n  kötetszám: 7\n  folyóirat: Szociológiai Szemle",
+      "- típus: book\n  szerző(k): Juhász, L.\n  év: 2022\n  kiadó: Akadémiai Kiadó\n  cím: Adatvizualizáció gyakorlata",
+      "- típus: article\n  lapszám: 1\n  év: 2004\n  oldalszám: 25-30\n  cím: A tanulói autonómia és a belső motiváció összefüggései\n  kötetszám: 16\n  szerző(k): Kiss, N.\n  folyóirat: Educatio",
+      "- típus: website\n  év: 2023\n  URL: https://example.edu/cikk/1261\n  szerző(k): Kovács, D.; Varga, D.\n  nap: 2\n  hónap: február\n  cím: Hogyan hat a képernyőidő a koncentrációra?\n  weboldal neve: National Geographic Magyarország",
+      "- típus: book\n  év: 2003\n  cím: A gazdaságtörténet vázlatai\n  kiadó: Typotex\n  szerző(k): Lakatos, L.",
+      "- típus: article\n  lapszám: 2\n  év: 2003\n  oldalszám: 76-104\n  cím: A tanári attitűd hatása a diákok teljesítményére\n  szerző(k): Lakatos, V.; Farkas, I.\n  kötetszám: 3\n  folyóirat: Alkalmazott Nyelvtudomány",
+      "- típus: article\n  kötetszám: 14\n  szerző(k): Németh, G.\n  lapszám: 4\n  folyóirat: Iskolakultúra\n  oldalszám: 17-23\n  DOI: 10.8805/5644.1242\n  cím: Az önszabályozott tanulás mérési lehetőségei\n  év: 2013",
+      "- típus: book\n  év: 2017\n  szerző(k): Rácz, J.; Szabó, S.\n  cím: A nyelvelsajátítás folyamata\n  kiadó: L'Harmattan Kiadó",
+      "- típus: article\n  szerző(k): Rácz, N.; Varga, M.\n  kötetszám: 8\n  lapszám: 2\n  DOI: 10.1009/7717.7238\n  év: 2001\n  folyóirat: Magyar Pedagógia\n  cím: A kritikai szövegértés fejlődése serdülőkorban"
+    ]
+  },
+  {
+    "task_id": "citation_L4_r2",
+    "level": 4,
+    "repeat": 2,
+    "sources_raw": [
+      {
+        "type": "website",
+        "authors": [
+          "Balogh, I.",
+          "Németh, S."
+        ],
+        "year": 2018,
+        "month": "március",
+        "day": 11,
+        "title": "A felsőoktatás jövője: Tíz tendencia",
+        "site_name": "Origo Tudomány",
+        "url": "https://example.edu/cikk/5120"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Farkas, D.",
+          "Varga, P."
+        ],
+        "year": 2021,
+        "month": "június",
+        "day": 15,
+        "title": "A tanulási szokások változása digitális korban",
+        "site_name": "444 Tudomány",
+        "url": "https://example.edu/cikk/2560"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Farkas, N."
+        ],
+        "year": 2004,
+        "title": "Digitális eszközök használata a középiskolai oktatásban",
+        "journal": "Iskolakultúra",
+        "volume": 14,
+        "issue": 1,
+        "pages": "102-132"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Fodor, O.",
+          "Fekete, L."
+        ],
+        "year": 2002,
+        "title": "A stressz és a tanulási teljesítmény kapcsolata",
+        "journal": "Alkalmazott Nyelvtudomány",
+        "volume": 38,
+        "issue": 2,
+        "pages": "49-61",
+        "doi": "10.9303/8127.6426"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Gál, E.",
+          "Papp, K."
+        ],
+        "year": 2018,
+        "month": "március",
+        "day": 23,
+        "title": "Mi az a spacing effect, és miért működik?",
+        "site_name": "National Geographic Magyarország",
+        "url": "https://example.edu/cikk/4702"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Juhász, B.",
+          "Szabó, I."
+        ],
+        "year": 2005,
+        "title": "Kutatásmetodológiai alapfogalmak",
+        "publisher": "Saxum Kiadó"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Nagy, N.",
+          "Takács, D."
+        ],
+        "year": 2005,
+        "title": "A kortárs mentorálás hatása az egyetemi lemorzsolódásra",
+        "journal": "Statisztikai Szemle",
+        "volume": 27,
+        "issue": 2,
+        "pages": "37-56",
+        "doi": "10.7933/7267.7502"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Nagy, V."
+        ],
+        "year": 2014,
+        "title": "A kritikus gondolkodás fejlesztése felsőoktatásban",
+        "journal": "Informatika és Oktatás",
+        "volume": 34,
+        "issue": 4,
+        "pages": "62-73"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Papp, S.",
+          "Varga, B."
+        ],
+        "year": 2001,
+        "title": "A projektalapú oktatás hatásai csoportos környezetben",
+        "journal": "Iskolakultúra",
+        "volume": 38,
+        "issue": 4
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Takács, K."
+        ],
+        "year": 2000,
+        "title": "A projektalapú oktatás hatásai csoportos környezetben",
+        "journal": "Statisztikai Szemle",
+        "volume": 36,
+        "issue": 1,
+        "pages": "120-132",
+        "doi": "10.4217/8973.1618"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Tóth, O."
+        ],
+        "year": 2006,
+        "title": "Bevezetés a statisztikába",
+        "publisher": "Osiris Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Varga, L."
+        ],
+        "year": 2005,
+        "title": "Statisztikai következtetés a gyakorlatban",
+        "publisher": "Osiris Kiadó"
+      }
+    ],
+    "expected_formatted": [
+      "Balogh, I., & Németh, S. (2018, március 11). A felsőoktatás jövője: Tíz tendencia. Origo Tudomány. https://example.edu/cikk/5120",
+      "Farkas, D., & Varga, P. (2021, június 15). A tanulási szokások változása digitális korban. 444 Tudomány. https://example.edu/cikk/2560",
+      "Farkas, N. (2004). Digitális eszközök használata a középiskolai oktatásban. Iskolakultúra, 14(1), 102-132.",
+      "Fodor, O., & Fekete, L. (2002). A stressz és a tanulási teljesítmény kapcsolata. Alkalmazott Nyelvtudomány, 38(2), 49-61. https://doi.org/10.9303/8127.6426",
+      "Gál, E., & Papp, K. (2018, március 23). Mi az a spacing effect, és miért működik? National Geographic Magyarország. https://example.edu/cikk/4702",
+      "Juhász, B., & Szabó, I. (2005). Kutatásmetodológiai alapfogalmak. Saxum Kiadó.",
+      "Nagy, N., & Takács, D. (2005). A kortárs mentorálás hatása az egyetemi lemorzsolódásra. Statisztikai Szemle, 27(2), 37-56. https://doi.org/10.7933/7267.7502",
+      "Nagy, V. (2014). A kritikus gondolkodás fejlesztése felsőoktatásban. Informatika és Oktatás, 34(4), 62-73.",
+      "Papp, S., & Varga, B. (2001). A projektalapú oktatás hatásai csoportos környezetben. Iskolakultúra, 38(4).",
+      "Takács, K. (2000). A projektalapú oktatás hatásai csoportos környezetben. Statisztikai Szemle, 36(1), 120-132. https://doi.org/10.4217/8973.1618",
+      "Tóth, O. (2006). Bevezetés a statisztikába. Osiris Kiadó.",
+      "Varga, L. (2005). Statisztikai következtetés a gyakorlatban. Osiris Kiadó."
+    ],
+    "raw_blocks_text": [
+      "- típus: website\n  URL: https://example.edu/cikk/5120\n  szerző(k): Balogh, I.; Németh, S.\n  nap: 11\n  cím: A felsőoktatás jövője: Tíz tendencia\n  év: 2018\n  hónap: március\n  weboldal neve: Origo Tudomány",
+      "- típus: website\n  nap: 15\n  weboldal neve: 444 Tudomány\n  év: 2021\n  szerző(k): Farkas, D.; Varga, P.\n  hónap: június\n  URL: https://example.edu/cikk/2560\n  cím: A tanulási szokások változása digitális korban",
+      "- típus: article\n  folyóirat: Iskolakultúra\n  cím: Digitális eszközök használata a középiskolai oktatásban\n  szerző(k): Farkas, N.\n  oldalszám: 102-132\n  lapszám: 1\n  kötetszám: 14\n  év: 2004",
+      "- típus: article\n  folyóirat: Alkalmazott Nyelvtudomány\n  lapszám: 2\n  oldalszám: 49-61\n  év: 2002\n  DOI: 10.9303/8127.6426\n  szerző(k): Fodor, O.; Fekete, L.\n  kötetszám: 38\n  cím: A stressz és a tanulási teljesítmény kapcsolata",
+      "- típus: website\n  weboldal neve: National Geographic Magyarország\n  hónap: március\n  URL: https://example.edu/cikk/4702\n  nap: 23\n  szerző(k): Gál, E.; Papp, K.\n  cím: Mi az a spacing effect, és miért működik?\n  év: 2018",
+      "- típus: book\n  szerző(k): Juhász, B.; Szabó, I.\n  cím: Kutatásmetodológiai alapfogalmak\n  év: 2005\n  kiadó: Saxum Kiadó",
+      "- típus: article\n  kötetszám: 27\n  oldalszám: 37-56\n  lapszám: 2\n  év: 2005\n  cím: A kortárs mentorálás hatása az egyetemi lemorzsolódásra\n  folyóirat: Statisztikai Szemle\n  DOI: 10.7933/7267.7502\n  szerző(k): Nagy, N.; Takács, D.",
+      "- típus: article\n  szerző(k): Nagy, V.\n  év: 2014\n  cím: A kritikus gondolkodás fejlesztése felsőoktatásban\n  folyóirat: Informatika és Oktatás\n  kötetszám: 34\n  oldalszám: 62-73\n  lapszám: 4",
+      "- típus: article\n  folyóirat: Iskolakultúra\n  lapszám: 4\n  cím: A projektalapú oktatás hatásai csoportos környezetben\n  szerző(k): Papp, S.; Varga, B.\n  kötetszám: 38\n  év: 2001",
+      "- típus: article\n  DOI: 10.4217/8973.1618\n  folyóirat: Statisztikai Szemle\n  kötetszám: 36\n  szerző(k): Takács, K.\n  lapszám: 1\n  oldalszám: 120-132\n  év: 2000\n  cím: A projektalapú oktatás hatásai csoportos környezetben",
+      "- típus: book\n  év: 2006\n  kiadó: Osiris Kiadó\n  cím: Bevezetés a statisztikába\n  szerző(k): Tóth, O.",
+      "- típus: book\n  év: 2005\n  kiadó: Osiris Kiadó\n  cím: Statisztikai következtetés a gyakorlatban\n  szerző(k): Varga, L."
+    ]
+  },
+  {
+    "task_id": "citation_L4_r3",
+    "level": 4,
+    "repeat": 3,
+    "sources_raw": [
+      {
+        "type": "website",
+        "authors": [
+          "Fekete, R."
+        ],
+        "year": 2002,
+        "month": "szeptember",
+        "day": 18,
+        "title": "Mi az a spacing effect, és miért működik?",
+        "site_name": "National Geographic Magyarország",
+        "url": "https://example.edu/cikk/8621"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Gál, E.",
+          "Szűcs, D."
+        ],
+        "year": 2015,
+        "title": "A stressz és a tanulási teljesítmény kapcsolata",
+        "journal": "Magyar Pedagógia",
+        "volume": 12,
+        "issue": 3,
+        "pages": "147-169",
+        "doi": "10.4411/8192.3896"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Nagy, O.",
+          "Varga, D."
+        ],
+        "year": 2012,
+        "title": "Az önszabályozott tanulás mérési lehetőségei",
+        "journal": "Magyar Pedagógia",
+        "volume": 13,
+        "issue": 4,
+        "pages": "176-189",
+        "doi": "10.2125/3442.1567"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Nagy, R.",
+          "Fekete, A."
+        ],
+        "year": 2006,
+        "title": "A tanulás pszichológiája",
+        "publisher": "L'Harmattan Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Papp, R.",
+          "Kovács, T."
+        ],
+        "year": 2009,
+        "title": "A magyar nyelv története",
+        "publisher": "L'Harmattan Kiadó"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Papp, S."
+        ],
+        "year": 2020,
+        "title": "A tanári attitűd hatása a diákok teljesítményére",
+        "journal": "Educatio",
+        "volume": 11,
+        "issue": 4,
+        "pages": "43-68",
+        "doi": "10.2634/2931.4934"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Rácz, T.",
+          "Farkas, I."
+        ],
+        "year": 2012,
+        "title": "A kortárs mentorálás hatása az egyetemi lemorzsolódásra",
+        "journal": "Educatio",
+        "volume": 23,
+        "issue": 1
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Simon, T.",
+          "Szabó, O."
+        ],
+        "year": 2012,
+        "title": "A gamifikáció szerepe a nyelvtanulásban",
+        "journal": "Iskolakultúra",
+        "volume": 32,
+        "issue": 1,
+        "pages": "106-114",
+        "doi": "10.4673/3960.6778"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Szabó, R."
+        ],
+        "year": 2019,
+        "title": "A döntéselmélet alapjai",
+        "publisher": "Osiris Kiadó"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Szűcs, E."
+        ],
+        "year": 2001,
+        "month": "május",
+        "day": 4,
+        "title": "A felsőoktatás jövője: Tíz tendencia",
+        "site_name": "Index Tudomány",
+        "url": "https://example.edu/cikk/9585"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Takács, I."
+        ],
+        "year": 2001,
+        "title": "A csoportmunka szerepe a problémamegoldásban",
+        "journal": "Educatio",
+        "volume": 39,
+        "issue": 2,
+        "pages": "73-85",
+        "doi": "10.2542/2206.4134"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Török, T."
+        ],
+        "year": 2016,
+        "title": "Statisztikai következtetés a gyakorlatban",
+        "publisher": "Saxum Kiadó"
+      }
+    ],
+    "expected_formatted": [
+      "Fekete, R. (2002, szeptember 18). Mi az a spacing effect, és miért működik? National Geographic Magyarország. https://example.edu/cikk/8621",
+      "Gál, E., & Szűcs, D. (2015). A stressz és a tanulási teljesítmény kapcsolata. Magyar Pedagógia, 12(3), 147-169. https://doi.org/10.4411/8192.3896",
+      "Nagy, O., & Varga, D. (2012). Az önszabályozott tanulás mérési lehetőségei. Magyar Pedagógia, 13(4), 176-189. https://doi.org/10.2125/3442.1567",
+      "Nagy, R., & Fekete, A. (2006). A tanulás pszichológiája. L'Harmattan Kiadó.",
+      "Papp, R., & Kovács, T. (2009). A magyar nyelv története. L'Harmattan Kiadó.",
+      "Papp, S. (2020). A tanári attitűd hatása a diákok teljesítményére. Educatio, 11(4), 43-68. https://doi.org/10.2634/2931.4934",
+      "Rácz, T., & Farkas, I. (2012). A kortárs mentorálás hatása az egyetemi lemorzsolódásra. Educatio, 23(1).",
+      "Simon, T., & Szabó, O. (2012). A gamifikáció szerepe a nyelvtanulásban. Iskolakultúra, 32(1), 106-114. https://doi.org/10.4673/3960.6778",
+      "Szabó, R. (2019). A döntéselmélet alapjai. Osiris Kiadó.",
+      "Szűcs, E. (2001, május 4). A felsőoktatás jövője: Tíz tendencia. Index Tudomány. https://example.edu/cikk/9585",
+      "Takács, I. (2001). A csoportmunka szerepe a problémamegoldásban. Educatio, 39(2), 73-85. https://doi.org/10.2542/2206.4134",
+      "Török, T. (2016). Statisztikai következtetés a gyakorlatban. Saxum Kiadó."
+    ],
+    "raw_blocks_text": [
+      "- típus: website\n  hónap: szeptember\n  év: 2002\n  szerző(k): Fekete, R.\n  cím: Mi az a spacing effect, és miért működik?\n  nap: 18\n  weboldal neve: National Geographic Magyarország\n  URL: https://example.edu/cikk/8621",
+      "- típus: article\n  DOI: 10.4411/8192.3896\n  év: 2015\n  oldalszám: 147-169\n  folyóirat: Magyar Pedagógia\n  kötetszám: 12\n  lapszám: 3\n  szerző(k): Gál, E.; Szűcs, D.\n  cím: A stressz és a tanulási teljesítmény kapcsolata",
+      "- típus: article\n  DOI: 10.2125/3442.1567\n  szerző(k): Nagy, O.; Varga, D.\n  cím: Az önszabályozott tanulás mérési lehetőségei\n  folyóirat: Magyar Pedagógia\n  lapszám: 4\n  év: 2012\n  kötetszám: 13\n  oldalszám: 176-189",
+      "- típus: book\n  szerző(k): Nagy, R.; Fekete, A.\n  kiadó: L'Harmattan Kiadó\n  év: 2006\n  cím: A tanulás pszichológiája",
+      "- típus: book\n  szerző(k): Papp, R.; Kovács, T.\n  cím: A magyar nyelv története\n  év: 2009\n  kiadó: L'Harmattan Kiadó",
+      "- típus: article\n  szerző(k): Papp, S.\n  DOI: 10.2634/2931.4934\n  folyóirat: Educatio\n  kötetszám: 11\n  év: 2020\n  oldalszám: 43-68\n  cím: A tanári attitűd hatása a diákok teljesítményére\n  lapszám: 4",
+      "- típus: article\n  cím: A kortárs mentorálás hatása az egyetemi lemorzsolódásra\n  lapszám: 1\n  kötetszám: 23\n  év: 2012\n  folyóirat: Educatio\n  szerző(k): Rácz, T.; Farkas, I.",
+      "- típus: article\n  folyóirat: Iskolakultúra\n  év: 2012\n  cím: A gamifikáció szerepe a nyelvtanulásban\n  oldalszám: 106-114\n  lapszám: 1\n  szerző(k): Simon, T.; Szabó, O.\n  kötetszám: 32\n  DOI: 10.4673/3960.6778",
+      "- típus: book\n  kiadó: Osiris Kiadó\n  cím: A döntéselmélet alapjai\n  év: 2019\n  szerző(k): Szabó, R.",
+      "- típus: website\n  weboldal neve: Index Tudomány\n  szerző(k): Szűcs, E.\n  hónap: május\n  nap: 4\n  URL: https://example.edu/cikk/9585\n  év: 2001\n  cím: A felsőoktatás jövője: Tíz tendencia",
+      "- típus: article\n  oldalszám: 73-85\n  folyóirat: Educatio\n  cím: A csoportmunka szerepe a problémamegoldásban\n  kötetszám: 39\n  lapszám: 2\n  szerző(k): Takács, I.\n  év: 2001\n  DOI: 10.2542/2206.4134",
+      "- típus: book\n  év: 2016\n  kiadó: Saxum Kiadó\n  szerző(k): Török, T.\n  cím: Statisztikai következtetés a gyakorlatban"
+    ]
+  },
+  {
+    "task_id": "citation_L5_r1",
+    "level": 5,
+    "repeat": 1,
+    "sources_raw": [
+      {
+        "type": "book",
+        "authors": [
+          "Takács, G.",
+          "Molnár, S.",
+          "Rácz, T."
+        ],
+        "year": 2006,
+        "title": "A társadalomtudományi kutatás módszertana",
+        "publisher": "Corvina Kiadó"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Németh, I.",
+          "Lakatos, V."
+        ],
+        "year": 2015,
+        "month": "augusztus",
+        "day": 2,
+        "title": "Mi az a spacing effect, és miért működik?",
+        "site_name": "444 Tudomány",
+        "url": "https://example.edu/cikk/6361"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Gál, R.",
+          "Mészáros, O.",
+          "Mészáros, A."
+        ],
+        "year": 2001,
+        "title": "A kritikai szövegértés fejlődése serdülőkorban",
+        "journal": "Informatika és Oktatás",
+        "volume": 34,
+        "issue": 3,
+        "pages": "174-195",
+        "doi": "10.2418/9107.4949"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Farkas, A.",
+          "Török, J."
+        ],
+        "year": 2002,
+        "title": "A gazdaságtörténet vázlatai",
+        "publisher": "Kalligram Kiadó"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Fekete, G.",
+          "Kovács, T."
+        ],
+        "year": 1995,
+        "month": "július",
+        "day": 20,
+        "title": "A felsőoktatás jövője: Tíz tendencia",
+        "site_name": "Index Tudomány",
+        "url": "https://example.edu/cikk/9124"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Juhász, V."
+        ],
+        "year": 2024,
+        "month": "augusztus",
+        "day": 28,
+        "title": "Mi az a spacing effect, és miért működik?",
+        "site_name": "National Geographic Magyarország",
+        "url": "https://example.edu/cikk/1745"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Mészáros, E.",
+          "Horváth, E.",
+          "Oláh, Z."
+        ],
+        "year": 1997,
+        "title": "Modern szoftverfejlesztési módszerek",
+        "publisher": "Kalligram Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Takács, K."
+        ],
+        "year": 2003,
+        "title": "A gazdaságtörténet vázlatai",
+        "publisher": "Osiris Kiadó"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Fodor, R."
+        ],
+        "year": 2008,
+        "month": "augusztus",
+        "day": 10,
+        "title": "A kutatási adatok nyílt megosztásának előnyei",
+        "site_name": "Index Tudomány",
+        "url": "https://example.edu/cikk/3832"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Kiss, J.",
+          "Juhász, V.",
+          "Fekete, I."
+        ],
+        "year": 2002,
+        "title": "A magyar nyelv története",
+        "publisher": "Akadémiai Kiadó"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Papp, N."
+        ],
+        "year": 2002,
+        "title": "A kortárs mentorálás hatása az egyetemi lemorzsolódásra",
+        "journal": "Szociológiai Szemle",
+        "volume": 8,
+        "issue": 4,
+        "doi": "10.1164/2622.7850"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Kiss, A.",
+          "Rácz, M.",
+          "Nagy, V."
+        ],
+        "year": 2006,
+        "title": "Bevezetés a hálózattudományba",
+        "publisher": "Akadémiai Kiadó"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Varga, L."
+        ],
+        "year": 2012,
+        "month": "február",
+        "day": 10,
+        "title": "A felsőoktatás jövője: Tíz tendencia",
+        "site_name": "444 Tudomány",
+        "url": "https://example.edu/cikk/4750"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Farkas, P.",
+          "Juhász, S.",
+          "Gál, S."
+        ],
+        "year": 2018,
+        "month": "augusztus",
+        "day": 28,
+        "title": "A felsőoktatás jövője: Tíz tendencia",
+        "site_name": "444 Tudomány",
+        "url": "https://example.edu/cikk/2045"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Szabó, I.",
+          "Török, L."
+        ],
+        "year": 2008,
+        "title": "Bevezetés a hálózattudományba",
+        "publisher": "Akadémiai Kiadó"
+      }
+    ],
+    "expected_formatted": [
+      "Farkas, A., & Török, J. (2002). A gazdaságtörténet vázlatai. Kalligram Kiadó.",
+      "Farkas, P., Juhász, S., & Gál, S. (2018, augusztus 28). A felsőoktatás jövője: Tíz tendencia. 444 Tudomány. https://example.edu/cikk/2045",
+      "Fekete, G., & Kovács, T. (1995, július 20). A felsőoktatás jövője: Tíz tendencia. Index Tudomány. https://example.edu/cikk/9124",
+      "Fodor, R. (2008, augusztus 10). A kutatási adatok nyílt megosztásának előnyei. Index Tudomány. https://example.edu/cikk/3832",
+      "Gál, R., Mészáros, O., & Mészáros, A. (2001). A kritikai szövegértés fejlődése serdülőkorban. Informatika és Oktatás, 34(3), 174-195. https://doi.org/10.2418/9107.4949",
+      "Juhász, V. (2024, augusztus 28). Mi az a spacing effect, és miért működik? National Geographic Magyarország. https://example.edu/cikk/1745",
+      "Kiss, A., Rácz, M., & Nagy, V. (2006). Bevezetés a hálózattudományba. Akadémiai Kiadó.",
+      "Kiss, J., Juhász, V., & Fekete, I. (2002). A magyar nyelv története. Akadémiai Kiadó.",
+      "Mészáros, E., Horváth, E., & Oláh, Z. (1997). Modern szoftverfejlesztési módszerek. Kalligram Kiadó.",
+      "Németh, I., & Lakatos, V. (2015, augusztus 2). Mi az a spacing effect, és miért működik? 444 Tudomány. https://example.edu/cikk/6361",
+      "Papp, N. (2002). A kortárs mentorálás hatása az egyetemi lemorzsolódásra. Szociológiai Szemle, 8(4). https://doi.org/10.1164/2622.7850",
+      "Szabó, I., & Török, L. (2008). Bevezetés a hálózattudományba. Akadémiai Kiadó.",
+      "Takács, G., Molnár, S., & Rácz, T. (2006). A társadalomtudományi kutatás módszertana. Corvina Kiadó.",
+      "Takács, K. (2003). A gazdaságtörténet vázlatai. Osiris Kiadó.",
+      "Varga, L. (2012, február 10). A felsőoktatás jövője: Tíz tendencia. 444 Tudomány. https://example.edu/cikk/4750"
+    ],
+    "raw_blocks_text": [
+      "- típus: book\n  kiadó: Corvina Kiadó\n  szerző(k): Takács, G.; Molnár, S.; Rácz, T.\n  év: 2006\n  cím: A társadalomtudományi kutatás módszertana",
+      "- típus: website\n  weboldal neve: 444 Tudomány\n  szerző(k): Németh, I.; Lakatos, V.\n  cím: Mi az a spacing effect, és miért működik?\n  URL: https://example.edu/cikk/6361\n  nap: 2\n  év: 2015\n  hónap: augusztus",
+      "- típus: article\n  lapszám: 3\n  kötetszám: 34\n  oldalszám: 174-195\n  év: 2001\n  szerző(k): Gál, R.; Mészáros, O.; Mészáros, A.\n  cím: A kritikai szövegértés fejlődése serdülőkorban\n  folyóirat: Informatika és Oktatás\n  DOI: 10.2418/9107.4949",
+      "- típus: book\n  év: 2002\n  szerző(k): Farkas, A.; Török, J.\n  cím: A gazdaságtörténet vázlatai\n  kiadó: Kalligram Kiadó",
+      "- típus: website\n  nap: 20\n  cím: A felsőoktatás jövője: Tíz tendencia\n  szerző(k): Fekete, G.; Kovács, T.\n  weboldal neve: Index Tudomány\n  hónap: július\n  év: 1995\n  URL: https://example.edu/cikk/9124",
+      "- típus: website\n  hónap: augusztus\n  szerző(k): Juhász, V.\n  nap: 28\n  cím: Mi az a spacing effect, és miért működik?\n  weboldal neve: National Geographic Magyarország\n  év: 2024\n  URL: https://example.edu/cikk/1745",
+      "- típus: book\n  kiadó: Kalligram Kiadó\n  év: 1997\n  szerző(k): Mészáros, E.; Horváth, E.; Oláh, Z.\n  cím: Modern szoftverfejlesztési módszerek",
+      "- típus: book\n  cím: A gazdaságtörténet vázlatai\n  kiadó: Osiris Kiadó\n  szerző(k): Takács, K.\n  év: 2003",
+      "- típus: website\n  weboldal neve: Index Tudomány\n  szerző(k): Fodor, R.\n  cím: A kutatási adatok nyílt megosztásának előnyei\n  év: 2008\n  hónap: augusztus\n  nap: 10\n  URL: https://example.edu/cikk/3832",
+      "- típus: book\n  szerző(k): Kiss, J.; Juhász, V.; Fekete, I.\n  év: 2002\n  cím: A magyar nyelv története\n  kiadó: Akadémiai Kiadó",
+      "- típus: article\n  cím: A kortárs mentorálás hatása az egyetemi lemorzsolódásra\n  év: 2002\n  DOI: 10.1164/2622.7850\n  kötetszám: 8\n  folyóirat: Szociológiai Szemle\n  szerző(k): Papp, N.\n  lapszám: 4",
+      "- típus: book\n  cím: Bevezetés a hálózattudományba\n  szerző(k): Kiss, A.; Rácz, M.; Nagy, V.\n  év: 2006\n  kiadó: Akadémiai Kiadó",
+      "- típus: website\n  weboldal neve: 444 Tudomány\n  év: 2012\n  hónap: február\n  nap: 10\n  URL: https://example.edu/cikk/4750\n  szerző(k): Varga, L.\n  cím: A felsőoktatás jövője: Tíz tendencia",
+      "- típus: website\n  nap: 28\n  cím: A felsőoktatás jövője: Tíz tendencia\n  szerző(k): Farkas, P.; Juhász, S.; Gál, S.\n  weboldal neve: 444 Tudomány\n  hónap: augusztus\n  év: 2018\n  URL: https://example.edu/cikk/2045",
+      "- típus: book\n  szerző(k): Szabó, I.; Török, L.\n  cím: Bevezetés a hálózattudományba\n  év: 2008\n  kiadó: Akadémiai Kiadó"
+    ]
+  },
+  {
+    "task_id": "citation_L5_r2",
+    "level": 5,
+    "repeat": 2,
+    "sources_raw": [
+      {
+        "type": "article",
+        "authors": [
+          "Takács, K.",
+          "Szűcs, G.",
+          "Horváth, B."
+        ],
+        "year": 2016,
+        "title": "A tanári attitűd hatása a diákok teljesítményére",
+        "journal": "Alkalmazott Nyelvtudomány",
+        "volume": 45,
+        "issue": 1,
+        "pages": "171-182",
+        "doi": "10.1845/6527.8954"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Simon, Z.",
+          "Gál, Z."
+        ],
+        "year": 2004,
+        "title": "A csoportmunka szerepe a problémamegoldásban",
+        "journal": "Pszichológia",
+        "volume": 2,
+        "issue": 3
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Rácz, Z."
+        ],
+        "year": 2019,
+        "title": "Bevezetés a statisztikába",
+        "publisher": "Kalligram Kiadó"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Fekete, O.",
+          "Szabó, A.",
+          "Gál, D."
+        ],
+        "year": 2021,
+        "month": "szeptember",
+        "day": 12,
+        "title": "A tanulási szokások változása digitális korban",
+        "site_name": "National Geographic Magyarország",
+        "url": "https://example.edu/cikk/8245"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Simon, S."
+        ],
+        "year": 1997,
+        "title": "A kortárs mentorálás hatása az egyetemi lemorzsolódásra",
+        "journal": "Szociológiai Szemle",
+        "volume": 34,
+        "issue": 4,
+        "pages": "178-204",
+        "doi": "10.1901/2382.5090"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Oláh, V.",
+          "Farkas, Z.",
+          "Oláh, I."
+        ],
+        "year": 1995,
+        "month": "szeptember",
+        "day": 7,
+        "title": "A felsőoktatás jövője: Tíz tendencia",
+        "site_name": "Origo Tudomány",
+        "url": "https://example.edu/cikk/4737"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Nagy, O.",
+          "Rácz, G."
+        ],
+        "year": 2024,
+        "title": "A kritikus gondolkodás fejlesztése felsőoktatásban",
+        "journal": "Magyar Pedagógia",
+        "volume": 12,
+        "issue": 4,
+        "pages": "1-27",
+        "doi": "10.9440/7078.1332"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Papp, J.",
+          "Fodor, E."
+        ],
+        "year": 2014,
+        "month": "június",
+        "day": 3,
+        "title": "Hogyan hat a képernyőidő a koncentrációra?",
+        "site_name": "444 Tudomány",
+        "url": "https://example.edu/cikk/7970"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Balogh, N.",
+          "Szűcs, K."
+        ],
+        "year": 2014,
+        "title": "Az önszabályozott tanulás mérési lehetőségei",
+        "journal": "Iskolakultúra",
+        "volume": 20,
+        "issue": 1,
+        "pages": "169-182"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Rácz, G.",
+          "Kiss, I."
+        ],
+        "year": 2009,
+        "title": "A gazdaságtörténet vázlatai",
+        "publisher": "Kalligram Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Rácz, A."
+        ],
+        "year": 2018,
+        "title": "Az oktatástechnológia története",
+        "publisher": "Corvina Kiadó"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Fodor, T.",
+          "Tóth, O.",
+          "Oláh, L."
+        ],
+        "year": 2019,
+        "month": "október",
+        "day": 12,
+        "title": "A kutatási adatok nyílt megosztásának előnyei",
+        "site_name": "National Geographic Magyarország",
+        "url": "https://example.edu/cikk/6946"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Mészáros, Z."
+        ],
+        "year": 2019,
+        "month": "november",
+        "day": 27,
+        "title": "Mi az a spacing effect, és miért működik?",
+        "site_name": "Qubit",
+        "url": "https://example.edu/cikk/6881"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Takács, J.",
+          "Fekete, G."
+        ],
+        "year": 1997,
+        "title": "A fenntartható fejlődés dilemmái",
+        "publisher": "Typotex"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Simon, S."
+        ],
+        "year": 2024,
+        "title": "A stressz és a tanulási teljesítmény kapcsolata",
+        "journal": "Iskolakultúra",
+        "volume": 22,
+        "issue": 2,
+        "pages": "69-82",
+        "doi": "10.9783/9408.1368"
+      }
+    ],
+    "expected_formatted": [
+      "Balogh, N., & Szűcs, K. (2014). Az önszabályozott tanulás mérési lehetőségei. Iskolakultúra, 20(1), 169-182.",
+      "Fekete, O., Szabó, A., & Gál, D. (2021, szeptember 12). A tanulási szokások változása digitális korban. National Geographic Magyarország. https://example.edu/cikk/8245",
+      "Fodor, T., Tóth, O., & Oláh, L. (2019, október 12). A kutatási adatok nyílt megosztásának előnyei. National Geographic Magyarország. https://example.edu/cikk/6946",
+      "Mészáros, Z. (2019, november 27). Mi az a spacing effect, és miért működik? Qubit. https://example.edu/cikk/6881",
+      "Nagy, O., & Rácz, G. (2024). A kritikus gondolkodás fejlesztése felsőoktatásban. Magyar Pedagógia, 12(4), 1-27. https://doi.org/10.9440/7078.1332",
+      "Oláh, V., Farkas, Z., & Oláh, I. (1995, szeptember 7). A felsőoktatás jövője: Tíz tendencia. Origo Tudomány. https://example.edu/cikk/4737",
+      "Papp, J., & Fodor, E. (2014, június 3). Hogyan hat a képernyőidő a koncentrációra? 444 Tudomány. https://example.edu/cikk/7970",
+      "Rácz, A. (2018). Az oktatástechnológia története. Corvina Kiadó.",
+      "Rácz, G., & Kiss, I. (2009). A gazdaságtörténet vázlatai. Kalligram Kiadó.",
+      "Rácz, Z. (2019). Bevezetés a statisztikába. Kalligram Kiadó.",
+      "Simon, S. (1997). A kortárs mentorálás hatása az egyetemi lemorzsolódásra. Szociológiai Szemle, 34(4), 178-204. https://doi.org/10.1901/2382.5090",
+      "Simon, S. (2024). A stressz és a tanulási teljesítmény kapcsolata. Iskolakultúra, 22(2), 69-82. https://doi.org/10.9783/9408.1368",
+      "Simon, Z., & Gál, Z. (2004). A csoportmunka szerepe a problémamegoldásban. Pszichológia, 2(3).",
+      "Takács, J., & Fekete, G. (1997). A fenntartható fejlődés dilemmái. Typotex.",
+      "Takács, K., Szűcs, G., & Horváth, B. (2016). A tanári attitűd hatása a diákok teljesítményére. Alkalmazott Nyelvtudomány, 45(1), 171-182. https://doi.org/10.1845/6527.8954"
+    ],
+    "raw_blocks_text": [
+      "- típus: article\n  szerző(k): Takács, K.; Szűcs, G.; Horváth, B.\n  cím: A tanári attitűd hatása a diákok teljesítményére\n  kötetszám: 45\n  év: 2016\n  folyóirat: Alkalmazott Nyelvtudomány\n  DOI: 10.1845/6527.8954\n  oldalszám: 171-182\n  lapszám: 1",
+      "- típus: article\n  kötetszám: 2\n  év: 2004\n  cím: A csoportmunka szerepe a problémamegoldásban\n  folyóirat: Pszichológia\n  lapszám: 3\n  szerző(k): Simon, Z.; Gál, Z.",
+      "- típus: book\n  kiadó: Kalligram Kiadó\n  cím: Bevezetés a statisztikába\n  szerző(k): Rácz, Z.\n  év: 2019",
+      "- típus: website\n  nap: 12\n  hónap: szeptember\n  év: 2021\n  szerző(k): Fekete, O.; Szabó, A.; Gál, D.\n  weboldal neve: National Geographic Magyarország\n  URL: https://example.edu/cikk/8245\n  cím: A tanulási szokások változása digitális korban",
+      "- típus: article\n  év: 1997\n  oldalszám: 178-204\n  cím: A kortárs mentorálás hatása az egyetemi lemorzsolódásra\n  kötetszám: 34\n  lapszám: 4\n  folyóirat: Szociológiai Szemle\n  szerző(k): Simon, S.\n  DOI: 10.1901/2382.5090",
+      "- típus: website\n  hónap: szeptember\n  weboldal neve: Origo Tudomány\n  URL: https://example.edu/cikk/4737\n  nap: 7\n  cím: A felsőoktatás jövője: Tíz tendencia\n  év: 1995\n  szerző(k): Oláh, V.; Farkas, Z.; Oláh, I.",
+      "- típus: article\n  kötetszám: 12\n  DOI: 10.9440/7078.1332\n  oldalszám: 1-27\n  év: 2024\n  szerző(k): Nagy, O.; Rácz, G.\n  cím: A kritikus gondolkodás fejlesztése felsőoktatásban\n  folyóirat: Magyar Pedagógia\n  lapszám: 4",
+      "- típus: website\n  hónap: június\n  nap: 3\n  weboldal neve: 444 Tudomány\n  szerző(k): Papp, J.; Fodor, E.\n  év: 2014\n  cím: Hogyan hat a képernyőidő a koncentrációra?\n  URL: https://example.edu/cikk/7970",
+      "- típus: article\n  oldalszám: 169-182\n  szerző(k): Balogh, N.; Szűcs, K.\n  cím: Az önszabályozott tanulás mérési lehetőségei\n  folyóirat: Iskolakultúra\n  kötetszám: 20\n  lapszám: 1\n  év: 2014",
+      "- típus: book\n  év: 2009\n  kiadó: Kalligram Kiadó\n  cím: A gazdaságtörténet vázlatai\n  szerző(k): Rácz, G.; Kiss, I.",
+      "- típus: book\n  kiadó: Corvina Kiadó\n  év: 2018\n  szerző(k): Rácz, A.\n  cím: Az oktatástechnológia története",
+      "- típus: website\n  weboldal neve: National Geographic Magyarország\n  év: 2019\n  hónap: október\n  nap: 12\n  cím: A kutatási adatok nyílt megosztásának előnyei\n  szerző(k): Fodor, T.; Tóth, O.; Oláh, L.\n  URL: https://example.edu/cikk/6946",
+      "- típus: website\n  cím: Mi az a spacing effect, és miért működik?\n  év: 2019\n  hónap: november\n  weboldal neve: Qubit\n  URL: https://example.edu/cikk/6881\n  szerző(k): Mészáros, Z.\n  nap: 27",
+      "- típus: book\n  cím: A fenntartható fejlődés dilemmái\n  év: 1997\n  kiadó: Typotex\n  szerző(k): Takács, J.; Fekete, G.",
+      "- típus: article\n  cím: A stressz és a tanulási teljesítmény kapcsolata\n  oldalszám: 69-82\n  lapszám: 2\n  folyóirat: Iskolakultúra\n  szerző(k): Simon, S.\n  DOI: 10.9783/9408.1368\n  kötetszám: 22\n  év: 2024"
+    ]
+  },
+  {
+    "task_id": "citation_L5_r3",
+    "level": 5,
+    "repeat": 3,
+    "sources_raw": [
+      {
+        "type": "book",
+        "authors": [
+          "Lakatos, M.",
+          "Tóth, V.",
+          "Farkas, L."
+        ],
+        "year": 1999,
+        "title": "Alapfokú ökológia",
+        "publisher": "Typotex"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Molnár, V.",
+          "Farkas, B.",
+          "Balogh, D."
+        ],
+        "year": 1998,
+        "month": "augusztus",
+        "day": 12,
+        "title": "A kutatási adatok nyílt megosztásának előnyei",
+        "site_name": "Qubit",
+        "url": "https://example.edu/cikk/2019"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Varga, T."
+        ],
+        "year": 2004,
+        "month": "október",
+        "day": 4,
+        "title": "Mi az a spacing effect, és miért működik?",
+        "site_name": "National Geographic Magyarország",
+        "url": "https://example.edu/cikk/4302"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Kiss, L."
+        ],
+        "year": 2011,
+        "title": "A visszacsatolás hatása a tanulási eredményekre",
+        "journal": "Educatio",
+        "volume": 13,
+        "issue": 4,
+        "pages": "106-119",
+        "doi": "10.4168/3426.3918"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Szűcs, V.",
+          "Tóth, E.",
+          "Németh, T."
+        ],
+        "year": 2014,
+        "month": "december",
+        "day": 23,
+        "title": "Mi az a spacing effect, és miért működik?",
+        "site_name": "Qubit",
+        "url": "https://example.edu/cikk/4405"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Fodor, N."
+        ],
+        "year": 2023,
+        "title": "A projektalapú oktatás hatásai csoportos környezetben",
+        "journal": "Iskolakultúra",
+        "volume": 23,
+        "issue": 3,
+        "pages": "28-45",
+        "doi": "10.3331/5116.4929"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Tóth, G."
+        ],
+        "year": 2020,
+        "month": "június",
+        "day": 24,
+        "title": "Hogyan hat a képernyőidő a koncentrációra?",
+        "site_name": "444 Tudomány",
+        "url": "https://example.edu/cikk/3877"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Simon, O."
+        ],
+        "year": 1998,
+        "title": "Kutatásmetodológiai alapfogalmak",
+        "publisher": "Typotex"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Oláh, S.",
+          "Tóth, J."
+        ],
+        "year": 1998,
+        "title": "Az oktatástechnológia története",
+        "publisher": "Osiris Kiadó"
+      },
+      {
+        "type": "article",
+        "authors": [
+          "Kovács, D.",
+          "Tóth, I.",
+          "Tóth, S."
+        ],
+        "year": 2005,
+        "title": "Az önszabályozott tanulás mérési lehetőségei",
+        "journal": "Pszichológia",
+        "volume": 20,
+        "issue": 4,
+        "pages": "140-152"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Papp, I."
+        ],
+        "year": 2003,
+        "title": "Bevezetés a statisztikába",
+        "publisher": "Corvina Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Varga, I.",
+          "Juhász, S.",
+          "Oláh, K."
+        ],
+        "year": 1997,
+        "title": "Adatvizualizáció gyakorlata",
+        "publisher": "L'Harmattan Kiadó"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Fodor, M."
+        ],
+        "year": 2013,
+        "title": "A szervezetpszichológia alapjai",
+        "publisher": "Typotex"
+      },
+      {
+        "type": "website",
+        "authors": [
+          "Rácz, S.",
+          "Rácz, T."
+        ],
+        "year": 1996,
+        "month": "március",
+        "day": 13,
+        "title": "A tanulási szokások változása digitális korban",
+        "site_name": "Qubit",
+        "url": "https://example.edu/cikk/7703"
+      },
+      {
+        "type": "book",
+        "authors": [
+          "Németh, J.",
+          "Szűcs, T.",
+          "Kovács, L."
+        ],
+        "year": 2014,
+        "title": "Kritikai gondolkodás és argumentáció",
+        "publisher": "Typotex"
+      }
+    ],
+    "expected_formatted": [
+      "Fodor, M. (2013). A szervezetpszichológia alapjai. Typotex.",
+      "Fodor, N. (2023). A projektalapú oktatás hatásai csoportos környezetben. Iskolakultúra, 23(3), 28-45. https://doi.org/10.3331/5116.4929",
+      "Kiss, L. (2011). A visszacsatolás hatása a tanulási eredményekre. Educatio, 13(4), 106-119. https://doi.org/10.4168/3426.3918",
+      "Kovács, D., Tóth, I., & Tóth, S. (2005). Az önszabályozott tanulás mérési lehetőségei. Pszichológia, 20(4), 140-152.",
+      "Lakatos, M., Tóth, V., & Farkas, L. (1999). Alapfokú ökológia. Typotex.",
+      "Molnár, V., Farkas, B., & Balogh, D. (1998, augusztus 12). A kutatási adatok nyílt megosztásának előnyei. Qubit. https://example.edu/cikk/2019",
+      "Németh, J., Szűcs, T., & Kovács, L. (2014). Kritikai gondolkodás és argumentáció. Typotex.",
+      "Oláh, S., & Tóth, J. (1998). Az oktatástechnológia története. Osiris Kiadó.",
+      "Papp, I. (2003). Bevezetés a statisztikába. Corvina Kiadó.",
+      "Rácz, S., & Rácz, T. (1996, március 13). A tanulási szokások változása digitális korban. Qubit. https://example.edu/cikk/7703",
+      "Simon, O. (1998). Kutatásmetodológiai alapfogalmak. Typotex.",
+      "Szűcs, V., Tóth, E., & Németh, T. (2014, december 23). Mi az a spacing effect, és miért működik? Qubit. https://example.edu/cikk/4405",
+      "Tóth, G. (2020, június 24). Hogyan hat a képernyőidő a koncentrációra? 444 Tudomány. https://example.edu/cikk/3877",
+      "Varga, I., Juhász, S., & Oláh, K. (1997). Adatvizualizáció gyakorlata. L'Harmattan Kiadó.",
+      "Varga, T. (2004, október 4). Mi az a spacing effect, és miért működik? National Geographic Magyarország. https://example.edu/cikk/4302"
+    ],
+    "raw_blocks_text": [
+      "- típus: book\n  cím: Alapfokú ökológia\n  év: 1999\n  kiadó: Typotex\n  szerző(k): Lakatos, M.; Tóth, V.; Farkas, L.",
+      "- típus: website\n  hónap: augusztus\n  weboldal neve: Qubit\n  év: 1998\n  nap: 12\n  URL: https://example.edu/cikk/2019\n  cím: A kutatási adatok nyílt megosztásának előnyei\n  szerző(k): Molnár, V.; Farkas, B.; Balogh, D.",
+      "- típus: website\n  cím: Mi az a spacing effect, és miért működik?\n  nap: 4\n  weboldal neve: National Geographic Magyarország\n  URL: https://example.edu/cikk/4302\n  év: 2004\n  szerző(k): Varga, T.\n  hónap: október",
+      "- típus: article\n  kötetszám: 13\n  DOI: 10.4168/3426.3918\n  cím: A visszacsatolás hatása a tanulási eredményekre\n  lapszám: 4\n  oldalszám: 106-119\n  folyóirat: Educatio\n  szerző(k): Kiss, L.\n  év: 2011",
+      "- típus: website\n  URL: https://example.edu/cikk/4405\n  cím: Mi az a spacing effect, és miért működik?\n  szerző(k): Szűcs, V.; Tóth, E.; Németh, T.\n  nap: 23\n  weboldal neve: Qubit\n  év: 2014\n  hónap: december",
+      "- típus: article\n  év: 2023\n  szerző(k): Fodor, N.\n  kötetszám: 23\n  folyóirat: Iskolakultúra\n  oldalszám: 28-45\n  lapszám: 3\n  DOI: 10.3331/5116.4929\n  cím: A projektalapú oktatás hatásai csoportos környezetben",
+      "- típus: website\n  hónap: június\n  URL: https://example.edu/cikk/3877\n  cím: Hogyan hat a képernyőidő a koncentrációra?\n  nap: 24\n  weboldal neve: 444 Tudomány\n  szerző(k): Tóth, G.\n  év: 2020",
+      "- típus: book\n  év: 1998\n  cím: Kutatásmetodológiai alapfogalmak\n  kiadó: Typotex\n  szerző(k): Simon, O.",
+      "- típus: book\n  szerző(k): Oláh, S.; Tóth, J.\n  kiadó: Osiris Kiadó\n  év: 1998\n  cím: Az oktatástechnológia története",
+      "- típus: article\n  szerző(k): Kovács, D.; Tóth, I.; Tóth, S.\n  év: 2005\n  cím: Az önszabályozott tanulás mérési lehetőségei\n  folyóirat: Pszichológia\n  kötetszám: 20\n  lapszám: 4\n  oldalszám: 140-152",
+      "- típus: book\n  cím: Bevezetés a statisztikába\n  kiadó: Corvina Kiadó\n  év: 2003\n  szerző(k): Papp, I.",
+      "- típus: book\n  kiadó: L'Harmattan Kiadó\n  év: 1997\n  szerző(k): Varga, I.; Juhász, S.; Oláh, K.\n  cím: Adatvizualizáció gyakorlata",
+      "- típus: book\n  kiadó: Typotex\n  év: 2013\n  szerző(k): Fodor, M.\n  cím: A szervezetpszichológia alapjai",
+      "- típus: website\n  cím: A tanulási szokások változása digitális korban\n  URL: https://example.edu/cikk/7703\n  szerző(k): Rácz, S.; Rácz, T.\n  nap: 13\n  év: 1996\n  hónap: március\n  weboldal neve: Qubit",
+      "- típus: book\n  év: 2014\n  cím: Kritikai gondolkodás és argumentáció\n  szerző(k): Németh, J.; Szűcs, T.; Kovács, L.\n  kiadó: Typotex"
+    ]
+  }
+]

@@ -1,0 +1,87 @@
+Az alábbi rendezetlen, véletlen sorrendű forrásadatokból készíts egy helyes, APA 7. kiadás szerint formázott, ábécésorrendbe rendezett hivatkozásjegyzéket docx fájlként.
+
+Források:
+- típus: book
+  év: 2014
+  kiadó: Gondolat Kiadó
+  cím: Kognitív folyamatok az oktatásban
+  szerző(k): Fekete, K.; Simon, P.
+- típus: website
+  szerző(k): Fodor, R.
+  cím: Hogyan hat a képernyőidő a koncentrációra?
+  URL: https://example.edu/cikk/4107
+  nap: 19
+  hónap: január
+  weboldal neve: Index Tudomány
+  év: 2008
+- típus: book
+  kiadó: L'Harmattan Kiadó
+  szerző(k): Fodor, V.
+  év: 2014
+  cím: A magyar nyelv története
+- típus: article
+  cím: A kritikai szövegértés fejlődése serdülőkorban
+  szerző(k): Horváth, P.
+  lapszám: 2
+  év: 2023
+  oldalszám: 164-183
+  kötetszám: 7
+  folyóirat: Szociológiai Szemle
+- típus: book
+  szerző(k): Juhász, L.
+  év: 2022
+  kiadó: Akadémiai Kiadó
+  cím: Adatvizualizáció gyakorlata
+- típus: article
+  lapszám: 1
+  év: 2004
+  oldalszám: 25-30
+  cím: A tanulói autonómia és a belső motiváció összefüggései
+  kötetszám: 16
+  szerző(k): Kiss, N.
+  folyóirat: Educatio
+- típus: website
+  év: 2023
+  URL: https://example.edu/cikk/1261
+  szerző(k): Kovács, D.; Varga, D.
+  nap: 2
+  hónap: február
+  cím: Hogyan hat a képernyőidő a koncentrációra?
+  weboldal neve: National Geographic Magyarország
+- típus: book
+  év: 2003
+  cím: A gazdaságtörténet vázlatai
+  kiadó: Typotex
+  szerző(k): Lakatos, L.
+- típus: article
+  lapszám: 2
+  év: 2003
+  oldalszám: 76-104
+  cím: A tanári attitűd hatása a diákok teljesítményére
+  szerző(k): Lakatos, V.; Farkas, I.
+  kötetszám: 3
+  folyóirat: Alkalmazott Nyelvtudomány
+- típus: article
+  kötetszám: 14
+  szerző(k): Németh, G.
+  lapszám: 4
+  folyóirat: Iskolakultúra
+  oldalszám: 17-23
+  DOI: 10.8805/5644.1242
+  cím: Az önszabályozott tanulás mérési lehetőségei
+  év: 2013
+- típus: book
+  év: 2017
+  szerző(k): Rácz, J.; Szabó, S.
+  cím: A nyelvelsajátítás folyamata
+  kiadó: L'Harmattan Kiadó
+- típus: article
+  szerző(k): Rácz, N.; Varga, M.
+  kötetszám: 8
+  lapszám: 2
+  DOI: 10.1009/7717.7238
+  év: 2001
+  folyóirat: Magyar Pedagógia
+  cím: A kritikai szövegértés fejlődése serdülőkorban
+
+Mentsd el "output.docx" néven a jelenlegi könyvtárba. Minden hivatkozás külön bekezdésben szerepeljen, a szerző vezetékneve szerint ábécésorrendbe rendezve. Ha egy mező (pl. oldalszám, DOI) nincs megadva egy forrásnál, hagyd ki a hivatkozásból, ne találj ki helyette adatot.

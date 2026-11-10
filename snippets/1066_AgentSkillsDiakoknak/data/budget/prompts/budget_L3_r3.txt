@@ -1,0 +1,29 @@
+Az alábbi nyers tranzakciólistából (ez egy hónap tranzakciói) készíts egy szervezett költségvetés-táblázatot xlsx fájlként.
+
+A lehetséges kategóriák: élelmiszer, lakhatás, szórakozás, közlekedés, bevétel.
+
+Tranzakciók:
+- alkalmi munka (bevétel) - 37,45 e Ft
+- Lidl heti bevásárlás - 9600
+- Piac, zöldség-gyümölcs (élelmiszer) - 1.85k Ft
+- Tesco bevásárlás - 12.7k Ft
+- koncertjegy - 8,85 e Ft
+- benzin (közlekedés) - 10950 Ft
+- közös költség (lakhatás) - 15,75 e Ft
+- alkalmi munka (bevétel) - 43050
+- Wolt rendelés - 4550 Ft
+- közös költség - 13,4 e Ft
+- gáz- és áramszámla - 10.4k Ft
+- internet előfizetés - 6400 Ft
+- Tesco bevásárlás (élelmiszer) - 6,55 e Ft
+- Spotify előfizetés - 1,75 e Ft
+- alkalmi munka (bevétel) - 32,5 e Ft
+- alkalmi munka (bevétel) - 24.25k Ft
+
+Feladat:
+1. Kategorizáld az egyes tételeket (ha a kategória nincs explicit megadva, a leírásból következtesd ki, és a fenti kategórialistából válassz).
+2. Számítsd ki a kategóriánkénti összköltést (a bevétel is egy kategória; megosztott költség esetén csak a saját részed számít bele).
+3. Számítsd ki a záró egyenleget (az összes kategória összege).
+
+
+Mentsd el az eredményt "output.xlsx" néven a jelenlegi könyvtárba. Legyen benne egy munkalap a tranzakciók listájával, és egy másik a kategóriánkénti összesítéssel és a záró egyenleggel.

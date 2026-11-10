@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Koponyák kikészítése</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+<style>
+:root{--ac:#1f6f5c;--tx:#1b2a27;--soft:#e3f1ed}
+.reveal{color:var(--tx);font-family:"Segoe UI",Helvetica,Arial,sans-serif}
+.reveal-viewport{background:linear-gradient(135deg,#f6fbf9,#edf3fa)}
+.reveal h1,.reveal h2,.reveal h3{color:var(--ac);text-transform:none;overflow-wrap:normal;word-break:normal;hyphens:auto;margin:.3em 0}
+.reveal h1{font-size:1.9em}.reveal h2{font-size:1.3em}.reveal h3{font-size:.85em}
+.reveal p{margin:.3em 0;font-size:.75em}
+.reveal ul{margin:.3em 0;padding:0;list-style:none;display:block;width:100%}
+.reveal li{margin:.3em 0;font-size:.72em;display:flex;align-items:center;gap:.5em;text-align:left}
+.ic{width:1.3em;height:1.3em;flex-shrink:0;stroke:var(--ac);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.big{width:5em;height:5em;stroke:var(--ac);fill:none;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
+.cols{display:flex;gap:1.5em;align-items:center;justify-content:center;width:100%}
+.cols>div{flex:1}
+.note{font-size:.55em!important;color:#43524e}
+.numb{font-size:3.2em;font-weight:700;color:var(--ac);line-height:1.1}
+.bad .ic{stroke:#8a1c1c}
+.lab{font-weight:700}
+.tabs,.tl{display:flex;gap:.4em;justify-content:center;margin:.3em 0}
+.tabs button,.tl button,.opt,.go{font:inherit;font-size:.6em;padding:.4em .9em;border:2px solid var(--ac);background:#fff;color:var(--ac);border-radius:.5em;cursor:pointer}
+.tabs button.on,.tl button.on,.go{background:var(--ac);color:#fff}
+.panel{display:none;font-size:.7em;text-align:left}.panel.on{display:block}
+.panel ul{margin:.2em 0}
+.tl button{border-radius:50%;width:2em;height:2em;padding:0}
+.tlbox{background:#fff;border:2px solid var(--soft);border-radius:.6em;padding:.5em 1em;min-height:5.5em;font-size:.7em;text-align:left;width:100%;box-sizing:border-box}
+.opt{display:block;width:100%;margin:.3em 0;text-align:left;font-size:.65em}
+.opt.ok{background:#d8f0e6;border-color:#14633f;color:#0d3d27}
+.opt.no{background:#f9e0e0;border-color:#8a1c1c;color:#5a1010}
+.chk{display:grid;grid-template-columns:1fr 1fr;gap:.2em 1.5em;font-size:.65em;text-align:left;width:100%}
+.chk label{display:flex;gap:.5em;align-items:center;margin:.2em 0;cursor:pointer}
+.chk input{width:1.1em;height:1.1em;flex-shrink:0;accent-color:var(--ac)}
+.tip{position:relative;border-bottom:2px dotted var(--ac);cursor:help}
+.tip .bub{display:none;position:absolute;left:50%;bottom:130%;width:11em;margin-left:-5.5em;background:var(--tx);color:#fff;font-size:.6em;padding:.4em .6em;border-radius:.4em;text-align:left;z-index:5}
+.tip:hover .bub,.tip:focus .bub{display:block}
+.cur::after{content:"|";animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="knife" viewBox="0 0 24 24"><path d="M3 21l9-9M12 12l7-9c1 4 0 8-4 11z"/></symbol>
+<symbol id="drop" viewBox="0 0 24 24"><path d="M12 3c4 5 6 8 6 11a6 6 0 01-12 0c0-3 2-6 6-11z"/></symbol>
+<symbol id="flame" viewBox="0 0 24 24"><path d="M12 3c1 4 6 6 6 12a6 6 0 01-12 0c0-3 2-4 3-7 1 1 2 2 3-5z"/></symbol>
+<symbol id="brush" viewBox="0 0 24 24"><path d="M4 20c0-3 2-4 4-4l9-9 3 3-9 9c0 2-3 4-7 4zM15 5l3 3"/></symbol>
+<symbol id="spark" viewBox="0 0 24 24"><path d="M12 3l2 7 7 2-7 2-2 7-2-7-7-2 7-2z"/></symbol>
+<symbol id="screw" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M8 12h8M12 8v8"/></symbol>
+<symbol id="ok" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></symbol>
+<symbol id="x" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></symbol>
+<symbol id="skull" viewBox="0 0 24 24"><path d="M5 12a7 7 0 0114 0v3h-3v4H8v-4H5z"/><circle cx="9" cy="12" r="1.3"/><circle cx="15" cy="12" r="1.3"/></symbol>
+</defs></svg>
+
+<div class="reveal"><div class="slides">
+
+<section>
+<svg class="big"><use href="#skull"/></svg>
+<h1>Koponyák kikészítése</h1>
+<p id="typed" class="cur" style="min-height:1.5em"></p>
+<aside class="notes">Üdvözlés, áttekintés: a nyúzástól a montírozásig végigmegyünk a teljes folyamaton.</aside>
+</section>
+
+<section>
+<h2>A folyamat lépései</h2>
+<div class="tl" id="tl"></div>
+<div class="tlbox" id="tlbox"></div>
+<p class="note">Kattints a számokra!</p>
+<aside class="notes">Rövid áttekintés. Minden lépésre külön diát szánunk, itt csak a sorrend a lényeg.</aside>
+</section>
+
+<section>
+<h2>Nyúzás</h2>
+<div class="cols"><svg class="big"><use href="#knife"/></svg>
+<ul>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Ne hagyjuk napokig bőrben</li>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Kés éle ne érje a csontot</li>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Orrcsontnál a bőrt hagyjuk fenn</li>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Alsó álkapocs leválasztva</li>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Nyelv, nagy izmok le</li>
+</ul></div>
+<aside class="notes">A bealvadt vér sötét foltokat hagy a csonton, amit alig lehet kifehéríteni. Ha nincs idő főzni, legalább nyúzzuk meg.</aside>
+</section>
+
+<section>
+<h2>Áztatás</h2>
+<div class="cols"><svg class="big"><use href="#drop"/></svg>
+<ul>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Agyvelő kivétele kampós dróttal</li>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Szemgolyók, szövetek el</li>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Tiszta, hideg víz</li>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Rózsát is lepje el</li>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Vízcsere 5–8 óránként</li>
+</ul></div>
+<aside class="notes">Az agyvelő főzés közben zsírosítja a homlokcsontot. A rózsa az <span class="tip" tabindex="0">agancs<span class="bub">alsó, vastag töve</span></span> töve. Így egy-két napig megtartható a koponya.</aside>
+</section>
+
+<section>
+<h2>Főzés: így csináljuk</h2>
+<div class="cols"><ul>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg><span><span class="lab">Helyes:</span> hideg vízből indítunk</span></li>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg><span><span class="lab">Helyes:</span> habot folyamatosan leszedjük</span></li>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg><span><span class="lab">Helyes:</span> csak lassú forrás</span></li>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg><span><span class="lab">Helyes:</span> állkapocs külön főzve</span></li>
+</ul><svg class="big"><use href="#flame"/></svg></div>
+<aside class="notes">Az elforrt vizet pótoljuk, de csak a rózsatövekig. Az agancs alsó részét érdemes becsomagolni, hogy a zsiradék ne szennyezze a rózsákat.</aside>
+</section>
+
+<section>
+<h2>Főzés: ezt kerüljük</h2>
+<ul class="bad">
+<li class="fragment"><svg class="ic"><use href="#x"/></svg><span><span class="lab">Hiba:</span> erős forrás, zsír a rózsán</span></li>
+<li class="fragment"><svg class="ic"><use href="#x"/></svg><span><span class="lab">Hiba:</span> szabad tűz fölé akasztott üst</span></li>
+<li class="fragment"><svg class="ic"><use href="#x"/></svg><span><span class="lab">Hiba:</span> túlfőzés, orrcsont leválik</span></li>
+</ul>
+<p>Legjobb: üst + „üstház”. A korom nem jön le!</p>
+<aside class="notes">A felcsapó láng bekormozza az agancsszárakat. A főzési időt nem lehet pontosan megadni: kortól és az izomzat letisztításától függ, a tapasztalat dönt.</aside>
+</section>
+
+<section data-count-slide>
+<h2>Meddig főzzük?</h2>
+<ul>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Izmok, inak felpuhulnak</li>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Csonthártyát megkarcoljuk</li>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Szétnyílik: főzés vége</li>
+</ul>
+<p class="note">Alternatíva: <span class="tip" tabindex="0">macerálás<span class="bub">Az izomzat lebontása vízben, főzés nélkül, lassú folyamat.</span></span> vagy rovarok (drága, lassú)</p>
+<aside class="notes">Éles késsel óvatosan karcoljuk meg a homlokcsont csonthártyáját. Ha tovább főzzük, a varratok kötőanyaga is szétfő, és elsőként az orrcsont válik le.</aside>
+</section>
+
+<section>
+<h2>Tisztítás</h2>
+<div class="cols"><svg class="big"><use href="#brush"/></svg>
+<ul>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Főzés után azonnal</li>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Orrsövény, orrporc kivésése</li>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Ultrás víz, kefe</li>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Agancsot vegyszer nélkül</li>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Méretre vágás nedvesen</li>
+</ul></div>
+<aside class="notes">Magas nyomású mosónál vigyázzunk, hogy a vízsugár ne törje le a csontokat. A kiszáradt csont könnyebben károsodik, ezért a méretrevágáshoz sablont használjunk.</aside>
+</section>
+
+<section data-count-slide>
+<h2>Fehérítés</h2>
+<div class="cols">
+<div><div class="numb"><span data-count="33">33</span>%</div><p>H<sub>2</sub>O<sub>2</sub> koncentráció</p></div>
+<div><div class="numb"><span data-count="15">15</span> óra</div><p>hatóidő: 10–15 óra</p></div>
+</div>
+<ul>
+<li class="fragment"><svg class="ic"><use href="#spark"/></svg>Sűrű pép, kívül-belül</li>
+<li class="fragment"><svg class="ic"><use href="#spark"/></svg>Folpakkal betekerve</li>
+<li class="fragment"><svg class="ic"><use href="#spark"/></svg>Erős vízsugár, napon szárítás</li>
+</ul>
+<aside class="notes">Tiszta vagy bécsifehér porral péppé kevert hidrogénperoxid. Sokan mesterségesnek találják, de kezelés nélkül a csont gyakran megsárgul. Folyékony változatnál ecset vagy spriccelő flakon.</aside>
+</section>
+
+<section>
+<h2>Különleges trófeák</h2>
+<div class="tabs" id="tabs"><button class="on" data-t="0">Mufloncsiga</button><button data-t="1">Vadkanagyar</button></div>
+<div class="panel on" data-p="0"><ul>
+<li><svg class="ic"><use href="#ok"/></svg>Egész fej a főzővízbe</li>
+<li><svg class="ic"><use href="#ok"/></svg>Szarv melegen, ruhával lehúzva</li>
+<li><svg class="ic"><use href="#ok"/></svg>Szarvcsonk: muflon 10 cm</li>
+<li><svg class="ic"><use href="#ok"/></svg>Zerge 5–6 cm, argali 15–20 cm</li>
+<li><svg class="ic"><use href="#ok"/></svg>Szarv ragasztóval rögzítve</li></ul></div>
+<div class="panel" data-p="1"><ul>
+<li><svg class="ic"><use href="#ok"/></svg>Állkapocs a kiálló rész 3-szorosánál</li>
+<li><svg class="ic"><use href="#ok"/></svg>Csontfűrész, nem balta</li>
+<li><svg class="ic"><use href="#ok"/></svg>1–2 óra lassú főzés</li>
+<li><svg class="ic"><use href="#ok"/></svg>Agyar kihúzása ruhával</li>
+<li><svg class="ic"><use href="#ok"/></svg>Üreg epokittes vattával</li></ul></div>
+<aside class="notes">Mufloncsigánál a szarvat melegen kell lehúzni, majd a koponyát szükség szerint visszatenni főzni. Vadkanagyarnál a vágási hossz a legfontosabb, mert különben megsérülhet az agyar. Az agyart homokba vagy gyurmába állítjuk szárítás közben.</aside>
+</section>
+
+<section>
+<h2>Montírozás</h2>
+<div class="cols"><svg class="big"><use href="#screw"/></svg>
+<ul>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Teljes koponya: hátulról csavar</li>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Előfúrás, nagyhoz két csavar</li>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Legbiztosabb: menetesszár</li>
+<li class="fragment"><svg class="ic"><use href="#ok"/></svg>Agyar: drót, rézlemez, ragasztó</li>
+</ul></div>
+<aside class="notes">A menetesszárat U-alakúra hajlítjuk, átbújtatjuk a koponya tisztításkor keletkezett lyukán, majd alátéttel és csavaranyával rögzítjük. Szemből csavarozni kevésbé esztétikus.</aside>
+</section>
+
+<section>
+<h2>Ellenőrzőlista</h2>
+<p id="cnt" class="lab">0/8 kész</p>
+<div class="chk" id="chk">
+<label><input type="checkbox">Megnyúzás, nyelv le</label>
+<label><input type="checkbox">Agyvelő, szemek ki</label>
+<label><input type="checkbox">Hideg vizes áztatás</label>
+<label><input type="checkbox">Lassú főzés, hab le</label>
+<label><input type="checkbox">Azonnali tisztítás</label>
+<label><input type="checkbox">Zsírtalanítás</label>
+<label><input type="checkbox">Fehérítés H₂O₂-vel</label>
+<label><input type="checkbox">Szárítás, montírozás</label>
+</div>
+<aside class="notes">Közösen végigmehetünk a listán, vagy önálló ellenőrzésre használható.</aside>
+</section>
+
+<section>
+<h2>Kvíz</h2>
+<p>Mikor hagyjuk abba a főzést?</p>
+<div id="quiz">
+<button class="opt" data-ok="0">Ha az izmok már könnyen leválnak</button>
+<button class="opt" data-ok="1">Ha a csonthártya karcolásra szétnyílik</button>
+<button class="opt" data-ok="0">Pontosan két óra után</button>
+</div>
+<aside class="notes">Rossz válasznál is megjelenik a helyes megoldás. Magyarázat: tovább főzve a varratok kötőanyaga is szétfő.</aside>
+</section>
+
+<section>
+<svg class="big"><use href="#skull"/></svg>
+<h2>Köszönöm a figyelmet!</h2>
+<p>Türelem, lassú tűz, tiszta csont.</p>
+</section>
+
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script>
+Reveal.initialize({hash:true,width:1280,height:720,transition:'slide',transitionSpeed:'default',plugins:[RevealNotes]});
+
+// Gépelés-effekt (csak a címdián)
+(function(){var t="Tiszta csont, tartós trófea",el=document.getElementById('typed'),i=0;
+var iv=setInterval(function(){el.firstChild?el.firstChild.nodeValue=t.slice(0,++i):el.insertBefore(document.createTextNode(t.slice(0,++i)),el.firstChild);if(i>=t.length)clearInterval(iv)},70)})();
+
+// Időrendi lépések
+var steps=[["Nyúzás","Bőr és izom eltávolítása, álkapocs leválasztása."],["Áztatás","Agyvelő, szem kivétele; tiszta, hideg vízben tartás."],["Főzés","Hideg vízből indítva, lassú forrásban, folyamatos habszedéssel."],["Tisztítás","Főzés után azonnal: orrsövény kivésése, zsírtalanítás."],["Fehérítés","33%-os H₂O₂ péppel 10–15 órán át."],["Montírozás","Csavarral vagy menetesszárral az alátétre."]];
+var tl=document.getElementById('tl'),tb=document.getElementById('tlbox');
+steps.forEach(function(s,i){var b=document.createElement('button');b.textContent=i+1;b.title=s[0];b.onclick=function(){sel(i)};tl.appendChild(b)});
+function sel(i){[].forEach.call(tl.children,function(b,j){b.classList.toggle('on',i===j)});tb.innerHTML="<b>"+(i+1)+". "+steps[i][0]+"</b><br>"+steps[i][1]}
+sel(0);
+
+// Fülek
+document.querySelectorAll('#tabs button').forEach(function(b){b.onclick=function(){
+document.querySelectorAll('#tabs button').forEach(function(x){x.classList.toggle('on',x===b)});
+document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('on',p.dataset.p===b.dataset.t)})}});
+
+// Ellenőrzőlista számláló
+var boxes=document.querySelectorAll('#chk input');
+boxes.forEach(function(c){c.onchange=function(){document.getElementById('cnt').textContent=[].filter.call(boxes,function(x){return x.checked}).length+"/"+boxes.length+" kész"}});
+
+// Kvíz: szín + ikon/szimbólum
+document.querySelectorAll('#quiz .opt').forEach(function(b,_,all){b.onclick=function(){
+all.forEach(function(o){o.disabled=true;var ok=o.dataset.ok==="1";
+if(ok){o.classList.add('ok');o.textContent="✓ "+o.textContent}
+else if(o===b){o.classList.add('no');o.textContent="✗ "+o.textContent}})}});
+
+// Szám animáció
+function countUp(sl){sl.querySelectorAll('[data-count]').forEach(function(el){
+var to=+el.dataset.count,t0=null;
+(function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1200,1);el.textContent=Math.round(to*p);if(p<1)requestAnimationFrame(f)})(performance.now())})}
+Reveal.on('slidechanged',function(e){countUp(e.currentSlide)});
+
+// Magyarázó buborék: ne lógjon ki
+document.querySelectorAll('.tip').forEach(function(t){
+function fit(){var b=t.querySelector('.bub');b.style.transform='';
+setTimeout(function(){var r=b.getBoundingClientRect(),s=Reveal.getScale()||1,d=0;
+if(r.left<8)d=8-r.left;else if(r.right>innerWidth-8)d=innerWidth-8-r.right;
+if(d)b.style.transform='translateX('+(d/s)+'px)'},0)}
+t.addEventListener('mouseenter',fit);t.addEventListener('focus',fit)});
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 207576,
+  "duration_api_ms": 208269,
+  "ttft_ms": 5018,
+  "ttft_stream_ms": 2675,
+  "time_to_request_ms": 370,
+  "num_turns": 12,
+  "result": "Elkészült az **`output.docx`** a jelenlegi könyvtárban (15 hivatkozás, egyenként külön bekezdésben, függő behúzással, Times New Roman 12 pt, dupla sorköz).\n\n**A formázás és rendezés összefoglalója:**\n\n- **Ábécésorrend** a szerző vezetékneve szerint; azonos vezetéknévnél a keresztnév kezdőbetűje, majd az évszám dönt (pl. Rácz A. → Rácz G. → Rácz Z.; Simon S. 1997 → Simon S. 2024 → Simon Z.).\n- **Típusonkénti APA 7 szerkezet:**\n  - *Cikk:* Szerzők (év). Cím. *Folyóirat*, *kötet*(lapszám), oldalak. https://doi.org/…\n  - *Könyv:* Szerzők (év). *Cím*. Kiadó.\n  - *Weboldal:* Szerzők (év. hónap nap). *Cím*. Weboldal neve. URL\n- **Dőlt betű:** folyóiratnév + kötetszám (cikk), a mű címe (könyv/weboldal). A lapszám, oldalszám és a cikkcím nem dőlt.\n- **Hiányzó mezők kihagyva** (nem pótoltam kitalált adattal): pl. Simon & Gál (2004) cikknél nincs DOI és oldalszám, Balogh & Szűcs (2014) cikknél nincs DOI.\n\n**Néhány szerkesztési döntés, amit érdemes tudni:**\n- A dátumot magyaros APA-formában adtam meg: `(2021. szeptember 12.)`.\n- Az oldalszámoknál nagykötőjelet (–) használtam a kötőjel helyett, ahogy az APA előírja.\n- A kérdőjelre végződő weboldalcímek (`…működik?`, `…koncentrációra?`) után nem tettem külön pontot, mert a kérdőjel helyettesíti azt.\n\nMegjegyzés: LibreOffice/pandoc nincs telepítve a gépen, ezért vizuális PDF-renderrel nem tudtam ellenőrizni, de a `.docx` XML-tartalmát közvetlenül átnéztem — a szöveg, a dőlt szakaszok és a bekezdésszerkezet mind helyesek.",
+  "stop_reason": "end_turn",
+  "session_id": "4f466c8e-b3f1-4457-beb1-9bc661fbac8c",
+  "total_cost_usd": 1.1118155,
+  "usage": {
+    "input_tokens": 8438,
+    "cache_creation_input_tokens": 48416,
+    "cache_read_input_tokens": 392641,
+    "output_tokens": 15480,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 48416,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 823,
+        "cache_read_input_tokens": 47562,
+        "cache_creation_input_tokens": 854,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 854
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 2010,
+      "outputTokens": 27,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.002145,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-opus-4-8": {
+      "inputTokens": 8438,
+      "outputTokens": 15480,
+      "cacheReadInputTokens": 392641,
+      "cacheCreationInputTokens": 48416,
+      "webSearchRequests": 0,
+      "costUSD": 1.1096705,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "6b48df13-c789-48e7-b209-c324bd21b9a0"
+}

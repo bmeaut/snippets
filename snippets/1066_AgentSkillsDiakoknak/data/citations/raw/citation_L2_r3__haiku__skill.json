@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 61690,
+  "duration_api_ms": 62267,
+  "ttft_ms": 10949,
+  "ttft_stream_ms": 1776,
+  "time_to_request_ms": 454,
+  "num_turns": 7,
+  "result": "Kész! Az `output.docx` fájl sikeresen létrehozva lett. A dokumentum tartalmazza:\n\n**Hivatkozásjegyzék (ABC-sorrendben a szerző vezetékneve szerint):**\n\n1. Balogh, P. (2010). Az online tanulás hatása a motivációra. Informatika és Oktatás, 6(3), 50-70.\n2. Gál, G. (2015). A csoportmunka szerepe a problémamegoldásban. Educatio, 6(1), 40-58.\n3. Juhász, D. (2008). Az online tanulás hatása a motivációra. Statisztikai Szemle, 23(1), 48-54.\n4. Mészáros, S. (2023). A fenntartható fejlődés dilemmái. Kalligram Kiadó.\n5. Nagy, R. (2005). Bevezetés a statisztikába. Corvina Kiadó.\n6. Papp, B. (2021). Statisztikai következtetés a gyakorlatban. Typotex.\n7. Simon, D. (2001). A csoportmunka szerepe a problémamegoldásban. Iskolakultúra, 2(4), 28-38.\n8. Szűcs, J. (2015). A tanulás pszichológiája. Osiris Kiadó.\n\nMinden hivatkozás APA 7. formátumban van, illetve bekezdésekben elválasztva. A hiányzó mezőket (mint pl. DOI) nem szerkesztettem be.",
+  "stop_reason": "end_turn",
+  "session_id": "f6c55793-134f-410f-920f-47bee5ca4836",
+  "total_cost_usd": 0.07817175000000001,
+  "usage": {
+    "input_tokens": 52,
+    "cache_creation_input_tokens": 16307,
+    "cache_read_input_tokens": 186855,
+    "output_tokens": 6903,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4230,
+      "ephemeral_5m_input_tokens": 12077
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 859,
+        "cache_read_input_tokens": 38161,
+        "cache_creation_input_tokens": 259,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 259,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1280,
+      "outputTokens": 6930,
+      "cacheReadInputTokens": 186855,
+      "cacheCreationInputTokens": 16307,
+      "webSearchRequests": 0,
+      "costUSD": 0.07817175000000001,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "da5fb4ec-55dc-4a56-bcdb-3d880701fc81"
+}

@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 83545,
+  "duration_api_ms": 84427,
+  "ttft_ms": 40079,
+  "ttft_stream_ms": 2969,
+  "time_to_request_ms": 28,
+  "num_turns": 4,
+  "result": "Elkészült az **output.docx** fájl a jelenlegi könyvtárban. A hivatkozásjegyzék APA 7 formátumban, magyar nyelven, ábécésorrendben tartalmazza a 15 forrást. \n\nA formázás jellemzői:\n- Minden hivatkozás külön bekezdésben\n- Függő bekezdés formázás (első sor balra, többi sor beljebb)\n- Times New Roman betűtípus, 12 pt\n- A szerzők vezetékneve szerint rendezve\n- Magyar hónapnevek és dátumformátum\n- Hiányzó mezők (pl. oldalszám vagy DOI) kihagyva, nem kitalálva",
+  "stop_reason": "end_turn",
+  "session_id": "2b3c135e-0a2c-4ac6-814c-f007a417ee3d",
+  "total_cost_usd": 0.1760112,
+  "usage": {
+    "input_tokens": 27,
+    "cache_creation_input_tokens": 11401,
+    "cache_read_input_tokens": 81894,
+    "output_tokens": 5383,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 11401,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 6,
+        "output_tokens": 188,
+        "cache_read_input_tokens": 24035,
+        "cache_creation_input_tokens": 146,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 146
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 2071,
+      "outputTokens": 28,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.002211,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-5": {
+      "inputTokens": 27,
+      "outputTokens": 5383,
+      "cacheReadInputTokens": 81894,
+      "cacheCreationInputTokens": 11401,
+      "webSearchRequests": 0,
+      "costUSD": 0.1738002,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "a0d61cc1-a12d-4192-8f63-005162e865cc"
+}

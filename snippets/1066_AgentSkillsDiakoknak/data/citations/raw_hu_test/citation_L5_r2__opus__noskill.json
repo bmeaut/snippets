@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 205316,
+  "duration_api_ms": 206470,
+  "ttft_ms": 151316,
+  "ttft_stream_ms": 2648,
+  "time_to_request_ms": 27,
+  "num_turns": 5,
+  "result": "Elkészült az `output.docx` a jelenlegi könyvtárban, 15 hivatkozással.\n\n**Amit alkalmaztam (APA 7, magyar nyelven):**\n\n- **Ábécésorrend** az első szerző vezetékneve szerint; azonos vezetéknévnél a keresztnév kezdőbetűje, majd az évszám dönt. Így a három Rácz (A. → G. → Z.) és a Simon-csoport (S. 1997 → S. 2024 → Z. 2004) helyes sorrendben áll.\n- **Szerzők:** vesszővel elválasztva, az utolsó elé `és` kötőszó (nem `&`), a magyar nyelvhez igazítva.\n- **Dőlt betűs kiemelés** típusonként: cikknél a folyóirat neve + kötetszám; könyvnél és weboldalnál a cím.\n- **Dátumok magyarul:** weboldalaknál `(2021. szeptember 12.)` formátumban, a hónapneveket sem fordítottam le.\n- **Hiányzó mezők kihagyva, nem pótolva:** pl. Simon Z. és Gál Z. (2004) cikk oldalszám és DOI nélkül `Pszichológia, 2(3).`-nál végződik; a Balogh-cikknek nincs DOI-ja.\n- **Formai finomságok:** oldaltartományok nagykötőjellel (169–182); a kérdőjelre végződő webcímek után nincs extra pont; könyveknél csak a kiadó neve szerepel (APA 7 – nincs kiadási hely).\n- **Elrendezés:** minden hivatkozás külön bekezdés, függő behúzással (hanging indent), Times New Roman 12 pt.\n\nA generáló szkriptet `make_refs.py` néven hagytam a könyvtárban, ha később módosítani szeretnéd az adatokat.",
+  "stop_reason": "end_turn",
+  "session_id": "b1226ed0-123f-4fb3-878a-a64a9f64719a",
+  "total_cost_usd": 0.669338,
+  "usage": {
+    "input_tokens": 2513,
+    "cache_creation_input_tokens": 21132,
+    "cache_read_input_tokens": 114684,
+    "output_tokens": 15436,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 21132,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 657,
+        "cache_read_input_tokens": 30721,
+        "cache_creation_input_tokens": 1679,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1679
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 2071,
+      "outputTokens": 28,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.002211,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-opus-4-8": {
+      "inputTokens": 2513,
+      "outputTokens": 15436,
+      "cacheReadInputTokens": 114684,
+      "cacheCreationInputTokens": 21132,
+      "webSearchRequests": 0,
+      "costUSD": 0.667127,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "479f0ca3-c0cb-42e1-aaff-9e00c3e739f5"
+}

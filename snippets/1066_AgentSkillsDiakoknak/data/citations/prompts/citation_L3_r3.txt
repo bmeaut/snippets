@@ -1,0 +1,80 @@
+Az alábbi rendezetlen, véletlen sorrendű forrásadatokból készíts egy helyes, APA 7. kiadás szerint formázott, ábécésorrendbe rendezett hivatkozásjegyzéket docx fájlként.
+
+Források:
+- típus: article
+  szerző(k): Balogh, I.; Tóth, V.
+  cím: A csoportmunka szerepe a problémamegoldásban
+  év: 2002
+  folyóirat: Statisztikai Szemle
+  kötetszám: 39
+  lapszám: 2
+  DOI: 10.1004/2507.8595
+- típus: article
+  szerző(k): Balogh, M.
+  cím: A projektalapú oktatás hatásai csoportos környezetben
+  év: 2024
+  folyóirat: Szociológiai Szemle
+  kötetszám: 28
+  lapszám: 3
+  oldalszám: 125-149
+- típus: article
+  szerző(k): Fekete, R.; Szűcs, L.
+  cím: A stressz és a tanulási teljesítmény kapcsolata
+  év: 2020
+  folyóirat: Pszichológia
+  kötetszám: 2
+  lapszám: 3
+- típus: book
+  szerző(k): Gál, B.; Tóth, R.
+  cím: Bevezetés a mesterséges intelligenciába
+  év: 2013
+  kiadó: Kalligram Kiadó
+- típus: article
+  szerző(k): Gál, R.; Szűcs, A.
+  cím: Az adaptív tesztelés alkalmazása a felmérésekben
+  év: 2000
+  folyóirat: Pszichológia
+  kötetszám: 5
+  lapszám: 4
+  oldalszám: 32-45
+  DOI: 10.8636/2030.8219
+- típus: article
+  szerző(k): Nagy, J.; Fodor, J.
+  cím: A gamifikáció szerepe a nyelvtanulásban
+  év: 2012
+  folyóirat: Informatika és Oktatás
+  kötetszám: 40
+  lapszám: 4
+  oldalszám: 117-146
+- típus: article
+  szerző(k): Németh, P.
+  cím: A kortárs mentorálás hatása az egyetemi lemorzsolódásra
+  év: 2003
+  folyóirat: Magyar Pedagógia
+  kötetszám: 37
+  lapszám: 2
+  oldalszám: 24-52
+  DOI: 10.8473/1060.6993
+- típus: article
+  szerző(k): Oláh, A.; Rácz, T.
+  cím: A tanári attitűd hatása a diákok teljesítményére
+  év: 2002
+  folyóirat: Alkalmazott Nyelvtudomány
+  kötetszám: 34
+  lapszám: 4
+  oldalszám: 130-155
+- típus: book
+  szerző(k): Rácz, V.; Mészáros, A.
+  cím: A szervezetpszichológia alapjai
+  év: 1995
+  kiadó: Akadémiai Kiadó
+- típus: article
+  szerző(k): Simon, B.
+  cím: Digitális eszközök használata a középiskolai oktatásban
+  év: 1999
+  folyóirat: Alkalmazott Nyelvtudomány
+  kötetszám: 27
+  lapszám: 1
+  oldalszám: 136-163
+
+Mentsd el "output.docx" néven a jelenlegi könyvtárba. Minden hivatkozás külön bekezdésben szerepeljen, a szerző vezetékneve szerint ábécésorrendbe rendezve. Ha egy mező (pl. oldalszám, DOI) nincs megadva egy forrásnál, hagyd ki a hivatkozásból, ne találj ki helyette adatot.

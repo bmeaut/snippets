@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 67073,
+  "duration_api_ms": 67627,
+  "ttft_ms": 7127,
+  "ttft_stream_ms": 2496,
+  "time_to_request_ms": 338,
+  "num_turns": 12,
+  "result": "Az `output.docx` elkészült és ellenőrzött. Az XML alapján minden helyes:\n\n- **Cím:** „Hivatkozásjegyzék\" — félkövér, középre igazítva\n- **5 hivatkozás** ábécésorrendben (Balogh → Lakatos → Mészáros → Németh → Takács)\n- **Lógó behúzás** minden hivatkozásnál (720 DXA ≈ 1,27 cm)\n- **Könyvcímek dőlt betűvel** (`<w:i/>`)\n- **APA 7. formátum:** `Szerző, I. (Év). *Cím*. Kiadó.`",
+  "stop_reason": "end_turn",
+  "session_id": "4ef18aae-e0c0-48fd-af5e-9a26efd254df",
+  "total_cost_usd": 0.22844235,
+  "usage": {
+    "input_tokens": 15,
+    "cache_creation_input_tokens": 15546,
+    "cache_read_input_tokens": 350552,
+    "output_tokens": 3690,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3777,
+      "ephemeral_5m_input_tokens": 11769
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 189,
+        "cache_read_input_tokens": 36817,
+        "cache_creation_input_tokens": 273,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 273,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 946,
+      "outputTokens": 28,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001086,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-6": {
+      "inputTokens": 15,
+      "outputTokens": 3690,
+      "cacheReadInputTokens": 350552,
+      "cacheCreationInputTokens": 15546,
+      "webSearchRequests": 0,
+      "costUSD": 0.22735634999999998,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "ed8fbc73-e6bd-4bc9-baa1-347e0d84290f"
+}

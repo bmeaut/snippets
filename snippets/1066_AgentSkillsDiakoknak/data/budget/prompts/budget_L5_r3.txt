@@ -1,0 +1,39 @@
+Az alábbi nyers tranzakciólistából (ez egy hónap tranzakciói) készíts egy szervezett költségvetés-táblázatot xlsx fájlként.
+
+A lehetséges kategóriák: élelmiszer, lakhatás, szórakozás, közlekedés, ruházat, egészség, oktatás, egyéb, bevétel.
+
+Tranzakciók:
+- mozijegy [1. hét] - 2.95k Ft
+- Piac, zöldség-gyümölcs (élelmiszer) [4. hét] - 4150
+- ajándék [1. hét] - 8,65 e Ft, ketten osztottuk
+- Piac, zöldség-gyümölcs [2. hét] - 3.1k Ft
+- ösztöndíj (bevétel) [4. hét] - 63.15k Ft
+- családi támogatás (bevétel) [3. hét] - 57.2k Ft
+- Tesco bevásárlás [2. hét] - 10.85k Ft
+- Kifli.hu rendelés [2. hét] - 5200 Ft
+- taxi/Bolt [3. hét] - 5,25 e Ft
+- közös költség [4. hét] - 11050 Ft
+- közös költség [4. hét] - 14,8 e Ft
+- telefon előfizetés (egyéb) [4. hét] - 4300
+- vonatjegy hazautazás [3. hét] - 8050
+- taxi/Bolt (közlekedés) [1. hét] - 3550
+- Lidl heti bevásárlás (élelmiszer) [3. hét] - 10550 Ft
+- Kifli.hu rendelés [1. hét] - 2,9 e Ft
+- Spotify előfizetés [4. hét] - 1700
+- Spotify előfizetés [4. hét] - 1900
+- albérlet [4. hét] - 133850 Ft, ebből az én részem 66900 Ft
+- közös költség [2. hét] - 9 e Ft, ebből az én részem 4500 Ft
+- ajándék [2. hét] - 10,9 e Ft
+- vonatjegy hazautazás [3. hét] - 8350
+- Kifli.hu rendelés [2. hét] - 7950, négyen osztottuk
+- albérlet (lakhatás) [4. hét] - 147400 Ft
+- részmunkaidős fizetés (bevétel) [3. hét] - 82,25 e Ft
+
+Feladat:
+1. Kategorizáld az egyes tételeket (ha a kategória nincs explicit megadva, a leírásból következtesd ki, és a fenti kategórialistából válassz).
+2. Számítsd ki a kategóriánkénti összköltést (a bevétel is egy kategória; megosztott költség esetén csak a saját részed számít bele).
+3. Számítsd ki a záró egyenleget (az összes kategória összege).
+
+4. Add meg, melyik héten (1-4) volt a legmagasabb az élelmiszer-kategória kiadása.
+
+Mentsd el az eredményt "output.xlsx" néven a jelenlegi könyvtárba. Legyen benne egy munkalap a tranzakciók listájával, és egy másik a kategóriánkénti összesítéssel és a záró egyenleggel.

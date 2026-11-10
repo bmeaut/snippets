@@ -1,0 +1,57 @@
+Az alábbi rendezetlen, véletlen sorrendű forrásadatokból készíts egy helyes, APA 7. kiadás szerint formázott, ábécésorrendbe rendezett hivatkozásjegyzéket docx fájlként.
+
+Források:
+- típus: article
+  szerző(k): Horváth, M.
+  cím: Az online tanulás hatása a motivációra
+  év: 2012
+  folyóirat: Magyar Pedagógia
+  kötetszám: 9
+  lapszám: 3
+  oldalszám: 48-59
+- típus: article
+  szerző(k): Lakatos, O.
+  cím: A tanulói autonómia és a belső motiváció összefüggései
+  év: 2009
+  folyóirat: Alkalmazott Nyelvtudomány
+  kötetszám: 5
+  lapszám: 3
+  oldalszám: 85-106
+- típus: book
+  szerző(k): Nagy, N.
+  cím: Bevezetés a hálózattudományba
+  év: 2016
+  kiadó: Corvina Kiadó
+- típus: article
+  szerző(k): Nagy, O.
+  cím: A távoktatás minőségbiztosítási kérdései
+  év: 2011
+  folyóirat: Szociológiai Szemle
+  kötetszám: 44
+  lapszám: 4
+  oldalszám: 85-110
+- típus: book
+  szerző(k): Németh, J.
+  cím: Statisztikai következtetés a gyakorlatban
+  év: 2002
+  kiadó: Kalligram Kiadó
+- típus: book
+  szerző(k): Oláh, B.
+  cím: A társadalomtudományi kutatás módszertana
+  év: 2018
+  kiadó: Akadémiai Kiadó
+- típus: book
+  szerző(k): Tóth, O.
+  cím: A fenntartható fejlődés dilemmái
+  év: 2010
+  kiadó: Kalligram Kiadó
+- típus: article
+  szerző(k): Török, Z.
+  cím: A kritikus gondolkodás fejlesztése felsőoktatásban
+  év: 2007
+  folyóirat: Educatio
+  kötetszám: 36
+  lapszám: 2
+  oldalszám: 173-193
+
+Mentsd el "output.docx" néven a jelenlegi könyvtárba. Minden hivatkozás külön bekezdésben szerepeljen, a szerző vezetékneve szerint ábécésorrendbe rendezve. Ha egy mező (pl. oldalszám, DOI) nincs megadva egy forrásnál, hagyd ki a hivatkozásból, ne találj ki helyette adatot.

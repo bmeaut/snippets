@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NetPlusz csomagok</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/white.css">
+  <style>
+    .reveal h1, .reveal h2 { color: #0b5394; }
+    .title-slide { background: linear-gradient(135deg, #eaf3fb 0%, #cfe4f7 100%); border-radius: 12px; }
+    .tab-bar { display: flex; justify-content: center; gap: 0.5em; margin-bottom: 1em; }
+    .tab-btn { font-size: 0.65em; padding: 0.5em 1.2em; border: 2px solid #0b5394; border-radius: 8px 8px 0 0; background: #eaf3fb; color: #0b5394; cursor: pointer; }
+    .tab-btn.active { background: #0b5394; color: #fff; }
+    .tab-panel { display: none; font-size: 0.75em; }
+    .tab-panel.active { display: block; }
+    .tab-panel ul { display: inline-block; text-align: left; }
+    .tab-panel li { margin-bottom: 0.4em; }
+    .price { font-size: 1.3em; font-weight: bold; color: #0b5394; margin: 0.3em 0; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section class="title-slide">
+        <h1>NetPlusz internet csomagok</h1>
+      </section>
+
+      <section>
+        <h2>Válassz csomagot</h2>
+        <div class="tab-bar">
+          <button class="tab-btn active" data-tab="alap">Alap</button>
+          <button class="tab-btn" data-tab="optimum">Optimum</button>
+          <button class="tab-btn" data-tab="premium">Prémium</button>
+        </div>
+
+        <div class="tab-panel active" id="tab-alap">
+          <div class="price">4990 Ft/hó</div>
+          <ul>
+            <li>50 Mbps</li>
+            <li>1 eszközre ajánlott</li>
+          </ul>
+        </div>
+
+        <div class="tab-panel" id="tab-optimum">
+          <div class="price">7990 Ft/hó</div>
+          <ul>
+            <li>200 Mbps</li>
+            <li>Családoknak, 3-4 eszközre</li>
+          </ul>
+        </div>
+
+        <div class="tab-panel" id="tab-premium">
+          <div class="price">11990 Ft/hó</div>
+          <ul>
+            <li>500 Mbps</li>
+            <li>Otthoni irodának, sok eszközre</li>
+            <li>Prioritásos ügyfélszolgálat</li>
+          </ul>
+        </div>
+        <aside class="notes">Kattints át a füleken élőben, hogy megmutasd az árkülönbséget — kérdezd meg a hallgatóságot, kinek melyik illene.</aside>
+      </section>
+
+      <section class="title-slide">
+        <h2 id="typewriterTarget" style="min-height: 1.3em;"></h2>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      transition: 'slide',
+      plugins: [ RevealNotes ]
+    });
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabGroup = btn.closest('section');
+        tabGroup.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        tabGroup.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        tabGroup.querySelector('#tab-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    let typewriterDone = false;
+    function typewrite() {
+      if (typewriterDone) return;
+      typewriterDone = true;
+      const el = document.getElementById('typewriterTarget');
+      if (!el) return;
+      const text = 'Válaszd ki, ami neked megfelel';
+      let i = 0;
+      const interval = setInterval(() => {
+        el.textContent = text.slice(0, i + 1);
+        i++;
+        if (i >= text.length) clearInterval(interval);
+      }, 60);
+    }
+    Reveal.on('slidechanged', event => {
+      if (event.currentSlide.querySelector('#typewriterTarget')) typewrite();
+    });
+    if (Reveal.getCurrentSlide().querySelector('#typewriterTarget')) typewrite();
+  </script>
+</body>
+</html>

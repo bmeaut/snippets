@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 284475,
+  "duration_api_ms": 284893,
+  "ttft_ms": 106392,
+  "ttft_stream_ms": 2790,
+  "time_to_request_ms": 369,
+  "num_turns": 6,
+  "result": "Kész — elkészült az **`output.docx`** a jelenlegi könyvtárban, 14 hivatkozással, APA 7. kiadás szerint formázva, a szerző vezetékneve szerint ábécésorrendbe rendezve, mindegyik külön bekezdésben (Times New Roman 12, dupla sorköz, függő behúzás).\n\nA tartalom:\n\n1. Farkas, A., & Török, J. (2002). *A gazdaságtörténet vázlatai*. Kalligram Kiadó.\n2. Farkas, P., Juhász, S., & Gál, S. (2018, augusztus 28). *A felsőoktatás jövője: Tíz tendencia*. 444 Tudomány. https://example.edu/cikk/2045\n3. Fekete, G., & Kovács, T. (1995, július 20). *A felsőoktatás jövője: Tíz tendencia*. Index Tudomány. https://example.edu/cikk/9124\n4. Fodor, R. (2008, augusztus 10). *A kutatási adatok nyílt megosztásának előnyei*. Index Tudomány. https://example.edu/cikk/3832\n5. Gál, R., Mészáros, O., & Mészáros, A. (2001). A kritikai szövegértés fejlődése serdülőkorban. *Informatika és Oktatás, 34*(3), 174–195. https://doi.org/10.2418/9107.4949\n6. Juhász, V. (2024, augusztus 28). *Mi az a spacing effect, és miért működik?* National Geographic Magyarország. https://example.edu/cikk/1745\n7. Kiss, A., Rácz, M., & Nagy, V. (2006). *Bevezetés a hálózattudományba*. Akadémiai Kiadó.\n8. Kiss, J., Juhász, V., & Fekete, I. (2002). *A magyar nyelv története*. Akadémiai Kiadó.\n9. Mészáros, E., Horváth, E., & Oláh, Z. (1997). *Modern szoftverfejlesztési módszerek*. Kalligram Kiadó.\n10. Németh, I., & Lakatos, V. (2015, augusztus 2). *Mi az a spacing effect, és miért működik?* 444 Tudomány. https://example.edu/cikk/6361\n11. Papp, N. (2002). A kortárs mentorálás hatása az egyetemi lemorzsolódásra. *Szociológiai Szemle, 8*(4). https://doi.org/10.1164/2622.7850\n12. Takács, G., Molnár, S., & Rácz, T. (2006). *A társadalomtudományi kutatás módszertana*. Corvina Kiadó.\n13. Takács, K. (2003). *A gazdaságtörténet vázlatai*. Osiris Kiadó.\n14. Varga, L. (2012, február 10). *A felsőoktatás jövője: Tíz tendencia*. 444 Tudomány. https://example.edu/cikk/4750\n\nNéhány APA-döntés, amit érdemes tudni:\n\n- **Szerzők:** vesszővel elválasztva, az utolsó elé `&` került (pl. `Gál, R., Mészáros, O., & Mészáros, A.`).\n- **Dőlt betű:** könyvcímek, weboldalcímek, valamint a folyóiratnév és a kötetszám dőlt; a lapszám `(3)` nem dőlt.\n- **Kihagyott mezők:** a Papp (2002) cikknél nem volt oldalszám, ezért kimaradt (kitalált adat helyett) — a lapszám után rögtön a DOI következik.\n- **Kérdőjeles címek:** a „…miért működik?” címek után nincs plusz pont (a kérdőjel zárja a mondatot).\n- **Kettőspont utáni nagybetű:** az APA-mondatkezdő szabály szerint a „…jövője: **T**íz tendencia” kettőspont után nagybetűvel kezdődik.\n- **DOI:** teljes URL formában (`https://doi.org/…`), oldalszámoknál nagykötőjel (`174–195`).\n\nEgy megjegyzés: a dátumoknál az APA szerkezetét (`év, hónap nap`) tartottam meg, de a hónapneveket magyarul hagytam, mivel a források magyar nyelvűek. Ha inkább a magyar `(2015. augusztus 2.)` írásmódot szeretnéd, szólj, és átalakítom.",
+  "stop_reason": "end_turn",
+  "session_id": "4941f41b-5adc-4bb4-8f47-02e4398f9463",
+  "total_cost_usd": 0.71669225,
+  "usage": {
+    "input_tokens": 7398,
+    "cache_creation_input_tokens": 37023,
+    "cache_read_input_tokens": 171210,
+    "output_tokens": 13829,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3982,
+      "ephemeral_5m_input_tokens": 33041
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 124,
+        "output_tokens": 1555,
+        "cache_read_input_tokens": 40531,
+        "cache_creation_input_tokens": 800,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 800,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1906,
+      "outputTokens": 28,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.002046,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-opus-4-8": {
+      "inputTokens": 7398,
+      "outputTokens": 13829,
+      "cacheReadInputTokens": 171210,
+      "cacheCreationInputTokens": 37023,
+      "webSearchRequests": 0,
+      "costUSD": 0.71464625,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "485d3528-93f2-407d-a5df-cf5914fe88ca"
+}

@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 207522,
+  "duration_api_ms": 207826,
+  "ttft_ms": 13532,
+  "ttft_stream_ms": 2821,
+  "time_to_request_ms": 26,
+  "num_turns": 11,
+  "result": "Az `output.xlsx` elkészült. Íme az összesítő:\n\n| Kategória | Összeg |\n|-----------|-------:|\n| élelmiszer | 21 700 Ft |\n| lakhatás | 17 350 Ft |\n| szórakozás | 6 950 Ft |\n| közlekedés | 25 700 Ft |\n| ruházat | 0 Ft |\n| egészség | 32 250 Ft |\n| **Összes kiadás** | **103 950 Ft** |\n| Bevétel | 72 900 Ft |\n| **Záró egyenleg** | **−31 050 Ft** |\n\nNéhány megjegyzés a kategorizáláshoz:\n- **Wolt rendelések** → élelmiszer (ételfutár)\n- **Kifli.hu** → élelmiszer\n- **BKK havijegy** → közlekedés\n- **Vonatjegy** → közlekedés (a második tételnél nem volt explicit jelölés, de nyilvánvaló)\n- **Netflix** (mind a kettő) → szórakozás\n- **Megosztott kiadásoknál** (Wolt 2500 Ft-os, szemüveg, gyógyszertár) csak a saját rész szerepel a számításban\n\nA fájl két lapot tartalmaz: **Tranzakciók** (mind a 18 tétel részletesen) és **Összesítés** (kategóriánkénti bontás + záró egyenleg).",
+  "stop_reason": "end_turn",
+  "session_id": "a8b2737d-8698-4798-8561-a1bf535e3738",
+  "total_cost_usd": 0.41959540000000006,
+  "usage": {
+    "input_tokens": 13,
+    "cache_creation_input_tokens": 20781,
+    "cache_read_input_tokens": 265308,
+    "output_tokens": 14266,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 20781,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 407,
+        "cache_read_input_tokens": 32207,
+        "cache_creation_input_tokens": 4447,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 4447
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1158,
+      "outputTokens": 26,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.0012879999999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-6": {
+      "inputTokens": 13,
+      "outputTokens": 14266,
+      "cacheReadInputTokens": 265308,
+      "cacheCreationInputTokens": 20781,
+      "webSearchRequests": 0,
+      "costUSD": 0.4183074,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "1c9ce018-c624-433c-991e-cd08a2b1f5f6"
+}

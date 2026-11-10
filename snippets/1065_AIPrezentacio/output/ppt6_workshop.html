@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Csapatmunka gyakorlat</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/white.css">
+  <style>
+    .reveal h1, .reveal h2 { color: #5f3dc4; }
+    .title-slide { background: linear-gradient(135deg, #f3f0ff 0%, #d0bfff 100%); border-radius: 12px; }
+    .reveal li { display: flex; align-items: center; gap: 0.5em; margin-bottom: 0.5em; }
+    .reveal li svg { flex-shrink: 0; }
+    .reveal h1, .reveal h2 { overflow-wrap: normal; word-break: normal; hyphens: auto; }
+    .timer-display { font-size: 2.2em; font-weight: bold; color: #5f3dc4; margin: 0.3em 0; }
+    .timer-controls button { font-size: 0.6em; padding: 0.4em 1em; border: 2px solid #5f3dc4; border-radius: 8px; background: #fff; color: #5f3dc4; cursor: pointer; margin: 0 0.3em; }
+    .timer-controls button:hover { background: #f3f0ff; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section class="title-slide">
+        <h1>Csapatmunka gyakorlat</h1>
+      </section>
+
+      <section>
+        <h2>Feladat</h2>
+        <ul>
+          <li class="fragment"><svg width="22" height="22" viewBox="0 0 24 24" fill="#5f3dc4"><circle cx="12" cy="12" r="10"/></svg> Alkossatok 4 fős csoportokat</li>
+          <li class="fragment"><svg width="22" height="22" viewBox="0 0 24 24" fill="#5f3dc4"><circle cx="12" cy="12" r="10"/></svg> Beszéljétek meg: mi volt az elmúlt hónap legnagyobb közös sikere</li>
+          <li class="fragment"><svg width="22" height="22" viewBox="0 0 24 24" fill="#5f3dc4"><circle cx="12" cy="12" r="10"/></svg> Válasszatok egy szóvivőt</li>
+        </ul>
+        <aside class="notes">Ismételd el szóban is a feladatot, mielőtt átmennétek az időzítő diára.</aside>
+      </section>
+
+      <section>
+        <h2>Időkorlát: 5 perc</h2>
+        <div class="timer-display" id="timerDisplay">05:00</div>
+        <div class="timer-controls">
+          <button id="startBtn">Start</button>
+          <button id="pauseBtn">Szünet</button>
+          <button id="resetBtn">Újra</button>
+        </div>
+        <aside class="notes">Csak akkor indítsd, amikor a csoportok tényleg készen állnak — ne magától induljon.</aside>
+      </section>
+
+      <section class="title-slide">
+        <h2>Szóvivők, 1 perc összefoglaló</h2>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      transition: 'slide',
+      plugins: [ RevealNotes ]
+    });
+
+    let remaining = 5 * 60;
+    let timerInterval = null;
+    const display = document.getElementById('timerDisplay');
+
+    function render() {
+      const m = Math.floor(remaining / 60).toString().padStart(2, '0');
+      const s = (remaining % 60).toString().padStart(2, '0');
+      display.textContent = m + ':' + s;
+    }
+
+    document.getElementById('startBtn').addEventListener('click', () => {
+      if (timerInterval) return;
+      timerInterval = setInterval(() => {
+        if (remaining > 0) {
+          remaining--;
+          render();
+        } else {
+          clearInterval(timerInterval);
+          timerInterval = null;
+        }
+      }, 1000);
+    });
+
+    document.getElementById('pauseBtn').addEventListener('click', () => {
+      clearInterval(timerInterval);
+      timerInterval = null;
+    });
+
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      remaining = 5 * 60;
+      render();
+    });
+  </script>
+</body>
+</html>

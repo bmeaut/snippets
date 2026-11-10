@@ -1,0 +1,23 @@
+Az alábbi nyers tranzakciólistából (ez egy hónap tranzakciói) készíts egy szervezett költségvetés-táblázatot xlsx fájlként.
+
+A lehetséges kategóriák: élelmiszer, lakhatás, bevétel.
+
+Tranzakciók:
+- Piac, zöldség-gyümölcs (élelmiszer) - 4050 Ft
+- gáz- és áramszámla (lakhatás) - 24000 Ft
+- internet előfizetés (lakhatás) - 6200 Ft
+- albérlet (lakhatás) - 102050 Ft
+- családi támogatás (bevétel) - 24500 Ft
+- alkalmi munka (bevétel) - 30500 Ft
+- részmunkaidős fizetés (bevétel) - 99450 Ft
+- albérlet (lakhatás) - 88700 Ft
+- gáz- és áramszámla (lakhatás) - 22550 Ft
+- részmunkaidős fizetés (bevétel) - 117700 Ft
+
+Feladat:
+1. Kategorizáld az egyes tételeket (ha a kategória nincs explicit megadva, a leírásból következtesd ki, és a fenti kategórialistából válassz).
+2. Számítsd ki a kategóriánkénti összköltést (a bevétel is egy kategória; megosztott költség esetén csak a saját részed számít bele).
+3. Számítsd ki a záró egyenleget (az összes kategória összege).
+
+
+Mentsd el az eredményt "output.xlsx" néven a jelenlegi könyvtárba. Legyen benne egy munkalap a tranzakciók listájával, és egy másik a kategóriánkénti összesítéssel és a záró egyenleggel.

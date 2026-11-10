@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 71710,
+  "duration_api_ms": 72575,
+  "ttft_ms": 24629,
+  "ttft_stream_ms": 2350,
+  "time_to_request_ms": 349,
+  "num_turns": 5,
+  "result": "Az `output.docx` elkészült. A hivatkozásjegyzék tartalma ábécésorrendben:\n\n1. Gál, E., & Balogh, I. (2011). *A tanulás pszichológiája*. Osiris Kiadó.\n2. Kiss, T., & Fekete, S. (2013). *Alapfokú ökológia*. Gondolat Kiadó.\n3. Lakatos, A., & Nagy, L. (2003). A kritikus gondolkodás fejlesztése felsőoktatásban. *Informatika és Oktatás*, *44*(4).\n4. Lakatos, I. (2007). *Modern szoftverfejlesztési módszerek*. Osiris Kiadó.\n5. Németh, K. (1996). *Kutatásmetodológiai alapfogalmak*. Corvina Kiadó.\n6. Szabó, A., & Szabó, I. (2006). *Bevezetés a hálózattudományba*. Corvina Kiadó.\n7. Szabó, G. (2020). *Bevezetés a hálózattudományba*. Saxum Kiadó.\n8. Szűcs, N., & Takács, T. (2016). *A társadalomtudományi kutatás módszertana*. Gondolat Kiadó.\n9. Takács, Z., & Varga, R. (1998). A tanári attitűd hatása a diákok teljesítményére. *Magyar Pedagógia*, *41*(3). https://doi.org/10.8677/6164.9607\n10. Varga, K., & Simon, D. (2020). *Kutatásmetodológiai alapfogalmak*. Osiris Kiadó.\n\nAlkalmazott APA 7 szabályok: lógó bekezdés (1,25 cm), dupla sorköz, könyvcímek és folyóirat neve/kötete dőlt, hiányzó mezők (pl. oldalszám) kihagyva, DOI csak a Takács-cikknél szerepel.",
+  "stop_reason": "end_turn",
+  "session_id": "c511d497-10c8-4bca-b5c1-2c238935f7dd",
+  "total_cost_usd": 0.16421039999999998,
+  "usage": {
+    "input_tokens": 7,
+    "cache_creation_input_tokens": 11239,
+    "cache_read_input_tokens": 136683,
+    "output_tokens": 4790,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3429,
+      "ephemeral_5m_input_tokens": 7810
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 563,
+        "cache_read_input_tokens": 32580,
+        "cache_creation_input_tokens": 205,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 205,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1333,
+      "outputTokens": 28,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001473,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-6": {
+      "inputTokens": 7,
+      "outputTokens": 4790,
+      "cacheReadInputTokens": 136683,
+      "cacheCreationInputTokens": 11239,
+      "webSearchRequests": 0,
+      "costUSD": 0.16273739999999998,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "42e39b16-111b-44f2-ae23-cb208f80b0c3"
+}

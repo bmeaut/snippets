@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 25255,
+  "duration_api_ms": 26009,
+  "ttft_ms": 20143,
+  "ttft_stream_ms": 1071,
+  "time_to_request_ms": 296,
+  "num_turns": 2,
+  "result": "Kész! Elkészítettem az APA 7. kiadás szerinti hivatkozásjegyzéket `output.docx` fájlként. \n\nA dokumentum tartalmazza:\n- **8 hivatkozás** ábécésorrendben (szerző vezetékneve szerint)\n- **4 folyóiratcikk** és **4 könyv**\n- **APA formátum**: hanging indent, megfelelő szerkezet\n- **Csak a megadott adatok** – hiányzó mezőket nem töltöttem ki\n\nA fájl a jelenlegi könyvtárba (workdir_noskill) lett mentve.",
+  "stop_reason": "end_turn",
+  "session_id": "14121dbb-42e2-45ff-a2d6-3623d822a31f",
+  "total_cost_usd": 0.0336385,
+  "usage": {
+    "input_tokens": 18,
+    "cache_creation_input_tokens": 6463,
+    "cache_read_input_tokens": 47725,
+    "output_tokens": 3355,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3495,
+      "ephemeral_5m_input_tokens": 2968
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 381,
+        "cache_read_input_tokens": 25610,
+        "cache_creation_input_tokens": 2968,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 2968,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1246,
+      "outputTokens": 3384,
+      "cacheReadInputTokens": 47725,
+      "cacheCreationInputTokens": 6463,
+      "webSearchRequests": 0,
+      "costUSD": 0.0336385,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "7fe525fc-4247-4212-ac6f-bad2837011e6"
+}

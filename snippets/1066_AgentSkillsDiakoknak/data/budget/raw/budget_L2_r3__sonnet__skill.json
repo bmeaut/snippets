@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 87293,
+  "duration_api_ms": 87699,
+  "ttft_ms": 3028,
+  "ttft_stream_ms": 1829,
+  "time_to_request_ms": 31,
+  "num_turns": 12,
+  "result": "A számítás helyes. Az `output.xlsx` el van mentve a jelenlegi könyvtárba.\n\n**Tartalom összefoglalója:**\n\n**Tranzakciók munkalap** — mind a 15 tétel, kategóriával és összeggel. Zölddel jelölve a bevételek, narancssárgával a kiadások.\n\n**Összesítés munkalap** — SUMIF képletekkel kiszámított kategóriánkénti összegek:\n\n| Kategória | Összeg |\n|-----------|--------|\n| Élelmiszer | −35 800 Ft |\n| Lakhatás | −7 900 Ft |\n| Szórakozás | −14 700 Ft |\n| Közlekedés | −25 250 Ft |\n| Bevétel | +289 150 Ft |\n| **Záró egyenleg** | **+205 500 Ft** |\n\nA Spotify-t szórakozásba soroltam (nincs explicit kategória megadva), a koncertjegyet szintén. A képletek élőek — ha módosítasz egy tételt a Tranzakciók lapon, az Összesítés automatikusan frissül.",
+  "stop_reason": "end_turn",
+  "session_id": "fc5feec3-dfac-4695-8358-c7ceb7b9a653",
+  "total_cost_usd": 0.23480120000000002,
+  "usage": {
+    "input_tokens": 14,
+    "cache_creation_input_tokens": 12423,
+    "cache_read_input_tokens": 260754,
+    "output_tokens": 5383,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 12423,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 320,
+        "cache_read_input_tokens": 27758,
+        "cache_creation_input_tokens": 538,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 538
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1105,
+      "outputTokens": 29,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.00125,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-6": {
+      "inputTokens": 14,
+      "outputTokens": 5383,
+      "cacheReadInputTokens": 260754,
+      "cacheCreationInputTokens": 12423,
+      "webSearchRequests": 0,
+      "costUSD": 0.23355120000000004,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "7857b415-5b72-4128-9fd8-1fcea1a02daf"
+}

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Csapatépítő nap</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/white.css">
+  <style>
+    .reveal h1, .reveal h2 { color: #862e9c; overflow-wrap: normal; word-break: normal; hyphens: auto; }
+    .title-slide { background: linear-gradient(135deg, #f8f0fc 0%, #eebefa 100%); border-radius: 12px; }
+    .reveal li svg { flex-shrink: 0; }
+
+    .timeline { display: flex; justify-content: center; gap: 0.4em; margin-top: 0.8em; position: relative; }
+    .timeline-point { font-size: 0.6em; padding: 0.5em 0.8em; border: 2px solid #862e9c; border-radius: 8px; background: #fff; color: #862e9c; cursor: pointer; }
+    .timeline-point.active { background: #862e9c; color: #fff; }
+    .timeline-detail { font-size: 0.7em; margin-top: 0.8em; min-height: 1.5em; }
+
+    .raffle-btn, .calc-input, .canvas-clear-btn { font-size: 0.65em; padding: 0.5em 1em; border: 2px solid #862e9c; border-radius: 8px; background: #fff; color: #862e9c; cursor: pointer; }
+    .raffle-btn:hover, .canvas-clear-btn:hover { background: #f8f0fc; }
+    .raffle-result { font-size: 1.3em; font-weight: bold; color: #862e9c; margin-top: 0.5em; min-height: 1.4em; }
+
+    .drag-row { display: flex; justify-content: center; gap: 3em; margin-top: 0.6em; }
+    .drag-names, .drop-facts { font-size: 0.6em; text-align: left; }
+    .drag-chip { padding: 0.4em 0.8em; border: 2px solid #862e9c; border-radius: 8px; background: #fff; margin-bottom: 0.4em; cursor: grab; }
+    .drop-zone { padding: 0.4em 0.8em; border: 2px dashed #862e9c; border-radius: 8px; margin-bottom: 0.4em; min-height: 1.4em; }
+    .drop-zone.correct { border-style: solid; background: #ebfbee; border-color: #2f9e44; }
+    .drop-zone.incorrect { border-style: solid; background: #fff5f5; border-color: #e03131; }
+
+    .calc-box input { width: 4em; }
+    .calc-result { font-size: 1.1em; font-weight: bold; color: #862e9c; margin-top: 0.4em; }
+
+    .ba-wrap { position: relative; width: 300px; height: 210px; margin: 0 auto; border-radius: 8px; overflow: hidden; border: 2px solid #862e9c; }
+    .ba-wrap img { position: absolute; top: 0; left: 0; width: 300px; height: 210px; object-fit: cover; }
+    .ba-after-clip { position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden; }
+    .ba-slider { width: 300px; margin-top: 0.5em; }
+
+    .canvas-wrap { position: relative; width: 320px; height: 200px; margin: 0 auto; border: 2px solid #862e9c; border-radius: 8px; }
+    .canvas-wrap svg, .canvas-wrap canvas { position: absolute; top: 0; left: 0; width: 320px; height: 200px; }
+
+    #confettiCanvas { position: fixed; inset: 0; pointer-events: none; z-index: 200; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section class="title-slide">
+        <h1>Csapatépítő nap</h1>
+        <aside class="notes">Köszöntsd a csapatot, mondd el a nap programját röviden.</aside>
+      </section>
+
+      <section>
+        <h2>Csapatunk története</h2>
+        <div class="timeline">
+          <div class="timeline-point active" data-year="2019">2019</div>
+          <div class="timeline-point" data-year="2021">2021</div>
+          <div class="timeline-point" data-year="2023">2023</div>
+          <div class="timeline-point" data-year="2026">2026</div>
+        </div>
+        <div class="timeline-detail" id="timelineDetail">Megalakult a csapat, 5 fővel.</div>
+        <aside class="notes">Kattints végig az éveken, meséld el hozzá a sztorit.</aside>
+      </section>
+
+      <section>
+        <h2>Jégtörő: ki kezdi?</h2>
+        <button class="raffle-btn" id="raffleBtn">Sorsolás indítása</button>
+        <div class="raffle-result" id="raffleResult"></div>
+        <aside class="notes">Nyomd meg a gombot élőben, hagyd, hogy lássák a "pörgést".</aside>
+      </section>
+
+      <section>
+        <h2>Párosítós játék</h2>
+        <div class="drag-row">
+          <div class="drag-names">
+            <div class="drag-chip" draggable="true" data-name="anna">Anna</div>
+            <div class="drag-chip" draggable="true" data-name="bence">Bence</div>
+            <div class="drag-chip" draggable="true" data-name="csilla">Csilla</div>
+          </div>
+          <div class="drop-facts">
+            <div class="drop-zone" data-answer="anna">futott már maratont</div>
+            <div class="drop-zone" data-answer="bence">beszél japánul</div>
+            <div class="drop-zone" data-answer="csilla">volt szinkronúszó</div>
+          </div>
+        </div>
+        <aside class="notes">Húzd rá élőben az egyik nevet egy rossz helyre is, mutasd meg, mi történik.</aside>
+      </section>
+
+      <section>
+        <h2>Ebédrendelés kalkulátor</h2>
+        <div class="calc-box">
+          <label for="headcount">Hányan vagyunk?</label>
+          <input type="number" id="headcount" class="calc-input" min="1" value="35">
+        </div>
+        <div class="calc-result" id="pizzaResult"></div>
+        <aside class="notes">Írasd be velük a saját csapatuk létszámát, ha máshol is használnák ezt a sablont.</aside>
+      </section>
+
+      <section>
+        <h2>Iroda felújítás</h2>
+        <div class="ba-wrap" id="baWrap">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACMCAIAAAC283GzAAABf0lEQVR4nO3SQQkAIADAQIOaxj52tIRDkIMLsMfGXhOuG88L+JKxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi8QBV43M+W3EVbMAAAAASUVORK5CYII=" alt="Iroda felújítás előtt">
+          <div class="ba-after-clip" id="baAfterClip">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACMCAIAAAC283GzAAABf0lEQVR4nO3SQQkAIADAQGObxDhms4RDkIMLsMfG3AuuG88L+JKxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi8QBLquT/XDxw6QAAAAASUVORK5CYII=" alt="Iroda felújítás után">
+          </div>
+        </div>
+        <input type="range" class="ba-slider" id="baSlider" min="0" max="100" value="50">
+        <p style="font-size: 0.5em; opacity: 0.7;">Technikai demó-képek (bal: előtte, jobb: utána) — élesben a saját fotóid kerülnének ide.</p>
+        <aside class="notes">Húzd a csúszkát élőben, mutasd meg a különbséget.</aside>
+      </section>
+
+      <section>
+        <h2>Köszöntő videó</h2>
+        <video src="koszonto.mp4" controls style="width: 360px; max-width: 90%; border-radius: 8px; border: 2px solid #862e9c;"></video>
+        <p style="font-size: 0.5em; opacity: 0.7;">A koszonto.mp4-et a mentett HTML mellé kell másolni, ugyanabba a mappába — ez itt csak a hivatkozás, a fájl maga nem került bele.</p>
+        <aside class="notes">Ha nincs meg a fájl a gépen, ez a dia üresen jelenik meg — előre teszteld le.</aside>
+      </section>
+
+      <section>
+        <h2>Csoportfotó ötlet</h2>
+        <div class="canvas-wrap">
+          <svg viewBox="0 0 320 200">
+            <rect x="10" y="10" width="300" height="180" fill="none" stroke="#862e9c" stroke-width="1.5"/>
+            <rect x="30" y="30" width="80" height="50" fill="#f8f0fc" stroke="#862e9c"/>
+            <text x="70" y="58" font-size="10" fill="#862e9c" text-anchor="middle">Színpad</text>
+            <rect x="200" y="120" width="90" height="50" fill="#f8f0fc" stroke="#862e9c"/>
+            <text x="245" y="148" font-size="10" fill="#862e9c" text-anchor="middle">Büfé</text>
+          </svg>
+          <canvas id="drawCanvas" width="320" height="200"></canvas>
+        </div>
+        <button class="canvas-clear-btn" id="clearCanvasBtn" style="margin-top: 0.5em;">Törlés</button>
+        <p style="font-size: 0.5em; opacity: 0.7;">Rajzolj rá egérrel, jelöld be, ki hol álljon.</p>
+        <aside class="notes">Rajzold be élőben a beállást, amíg magyarázod.</aside>
+      </section>
+
+      <section class="title-slide">
+        <h2 id="closingText">Gratulálunk, klassz napunk volt együtt!</h2>
+      </section>
+
+    </div>
+  </div>
+
+  <canvas id="confettiCanvas"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({ hash: true, transition: 'slide', plugins: [ RevealNotes ] }).then(() => {
+
+      const timelineData = {
+        '2019': 'Megalakult a csapat, 5 fővel.',
+        '2021': 'Elköltöztünk az új irodába.',
+        '2023': 'Elértük a 20 fős létszámot.',
+        '2026': 'Idén 35-en vagyunk.'
+      };
+      document.querySelectorAll('.timeline-point').forEach(pt => {
+        pt.addEventListener('click', () => {
+          document.querySelectorAll('.timeline-point').forEach(p => p.classList.remove('active'));
+          pt.classList.add('active');
+          document.getElementById('timelineDetail').textContent = timelineData[pt.dataset.year];
+        });
+      });
+
+      const names = ['Anna', 'Bence', 'Csilla', 'Dávid', 'Emese'];
+      document.getElementById('raffleBtn').addEventListener('click', () => {
+        const resultEl = document.getElementById('raffleResult');
+        let count = 0;
+        const spin = setInterval(() => {
+          resultEl.textContent = names[Math.floor(Math.random() * names.length)];
+          count++;
+          if (count > 12) {
+            clearInterval(spin);
+            resultEl.textContent = names[Math.floor(Math.random() * names.length)];
+          }
+        }, 100);
+      });
+
+      document.querySelectorAll('.drag-chip').forEach(chip => {
+        chip.addEventListener('dragstart', e => {
+          e.dataTransfer.setData('text/plain', chip.dataset.name);
+        });
+      });
+      document.querySelectorAll('.drop-zone').forEach(zone => {
+        zone.addEventListener('dragover', e => e.preventDefault());
+        zone.addEventListener('drop', e => {
+          e.preventDefault();
+          const dragged = e.dataTransfer.getData('text/plain');
+          zone.classList.remove('correct', 'incorrect');
+          zone.classList.add(dragged === zone.dataset.answer ? 'correct' : 'incorrect');
+        });
+      });
+
+      function updatePizza() {
+        const n = parseInt(document.getElementById('headcount').value, 10) || 0;
+        const pizzas = Math.ceil(n / 3);
+        document.getElementById('pizzaResult').textContent = pizzas + ' pizza kell kb. ' + n + ' főre.';
+      }
+      document.getElementById('headcount').addEventListener('input', updatePizza);
+      updatePizza();
+
+      const baSlider = document.getElementById('baSlider');
+      const baAfterClip = document.getElementById('baAfterClip');
+      baSlider.addEventListener('input', () => {
+        baAfterClip.style.width = baSlider.value + '%';
+      });
+
+      const canvas = document.getElementById('drawCanvas');
+      const dctx = canvas.getContext('2d');
+      dctx.strokeStyle = '#862e9c';
+      dctx.lineWidth = 3;
+      dctx.lineCap = 'round';
+      let drawing = false;
+      function pos(e) {
+        const rect = canvas.getBoundingClientRect();
+        const cx = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+        const cy = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top;
+        return { x: cx * (canvas.width / rect.width), y: cy * (canvas.height / rect.height) };
+      }
+      canvas.addEventListener('mousedown', e => { drawing = true; const p = pos(e); dctx.beginPath(); dctx.moveTo(p.x, p.y); });
+      canvas.addEventListener('mousemove', e => { if (!drawing) return; const p = pos(e); dctx.lineTo(p.x, p.y); dctx.stroke(); });
+      window.addEventListener('mouseup', () => { drawing = false; });
+      document.getElementById('clearCanvasBtn').addEventListener('click', () => {
+        dctx.clearRect(0, 0, canvas.width, canvas.height);
+      });
+
+      let confettiFired = false;
+      function fireConfetti() {
+        if (confettiFired) return;
+        confettiFired = true;
+        const cc = document.getElementById('confettiCanvas');
+        cc.width = window.innerWidth;
+        cc.height = window.innerHeight;
+        const cctx = cc.getContext('2d');
+        const colors = ['#862e9c', '#eebefa', '#f8f0fc', '#2f9e44', '#ffd43b'];
+        const pieces = Array.from({ length: 80 }, () => ({
+          x: Math.random() * cc.width,
+          y: -20 - Math.random() * cc.height * 0.3,
+          size: 4 + Math.random() * 5,
+          speed: 2 + Math.random() * 3,
+          drift: (Math.random() - 0.5) * 2,
+          color: colors[Math.floor(Math.random() * colors.length)]
+        }));
+        let frame = 0;
+        function step() {
+          cctx.clearRect(0, 0, cc.width, cc.height);
+          let stillFalling = false;
+          pieces.forEach(p => {
+            p.y += p.speed;
+            p.x += p.drift;
+            if (p.y < cc.height) stillFalling = true;
+            cctx.fillStyle = p.color;
+            cctx.fillRect(p.x, p.y, p.size, p.size);
+          });
+          frame++;
+          if (stillFalling && frame < 240) requestAnimationFrame(step);
+          else cctx.clearRect(0, 0, cc.width, cc.height);
+        }
+        requestAnimationFrame(step);
+      }
+      Reveal.on('slidechanged', event => {
+        if (event.currentSlide.querySelector('#closingText')) fireConfetti();
+      });
+    });
+  </script>
+</body>
+</html>

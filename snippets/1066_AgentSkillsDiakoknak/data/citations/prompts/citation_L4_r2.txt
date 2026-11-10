@@ -1,0 +1,94 @@
+Az alábbi rendezetlen, véletlen sorrendű forrásadatokból készíts egy helyes, APA 7. kiadás szerint formázott, ábécésorrendbe rendezett hivatkozásjegyzéket docx fájlként.
+
+Források:
+- típus: website
+  URL: https://example.edu/cikk/5120
+  szerző(k): Balogh, I.; Németh, S.
+  nap: 11
+  cím: A felsőoktatás jövője: Tíz tendencia
+  év: 2018
+  hónap: március
+  weboldal neve: Origo Tudomány
+- típus: website
+  nap: 15
+  weboldal neve: 444 Tudomány
+  év: 2021
+  szerző(k): Farkas, D.; Varga, P.
+  hónap: június
+  URL: https://example.edu/cikk/2560
+  cím: A tanulási szokások változása digitális korban
+- típus: article
+  folyóirat: Iskolakultúra
+  cím: Digitális eszközök használata a középiskolai oktatásban
+  szerző(k): Farkas, N.
+  oldalszám: 102-132
+  lapszám: 1
+  kötetszám: 14
+  év: 2004
+- típus: article
+  folyóirat: Alkalmazott Nyelvtudomány
+  lapszám: 2
+  oldalszám: 49-61
+  év: 2002
+  DOI: 10.9303/8127.6426
+  szerző(k): Fodor, O.; Fekete, L.
+  kötetszám: 38
+  cím: A stressz és a tanulási teljesítmény kapcsolata
+- típus: website
+  weboldal neve: National Geographic Magyarország
+  hónap: március
+  URL: https://example.edu/cikk/4702
+  nap: 23
+  szerző(k): Gál, E.; Papp, K.
+  cím: Mi az a spacing effect, és miért működik?
+  év: 2018
+- típus: book
+  szerző(k): Juhász, B.; Szabó, I.
+  cím: Kutatásmetodológiai alapfogalmak
+  év: 2005
+  kiadó: Saxum Kiadó
+- típus: article
+  kötetszám: 27
+  oldalszám: 37-56
+  lapszám: 2
+  év: 2005
+  cím: A kortárs mentorálás hatása az egyetemi lemorzsolódásra
+  folyóirat: Statisztikai Szemle
+  DOI: 10.7933/7267.7502
+  szerző(k): Nagy, N.; Takács, D.
+- típus: article
+  szerző(k): Nagy, V.
+  év: 2014
+  cím: A kritikus gondolkodás fejlesztése felsőoktatásban
+  folyóirat: Informatika és Oktatás
+  kötetszám: 34
+  oldalszám: 62-73
+  lapszám: 4
+- típus: article
+  folyóirat: Iskolakultúra
+  lapszám: 4
+  cím: A projektalapú oktatás hatásai csoportos környezetben
+  szerző(k): Papp, S.; Varga, B.
+  kötetszám: 38
+  év: 2001
+- típus: article
+  DOI: 10.4217/8973.1618
+  folyóirat: Statisztikai Szemle
+  kötetszám: 36
+  szerző(k): Takács, K.
+  lapszám: 1
+  oldalszám: 120-132
+  év: 2000
+  cím: A projektalapú oktatás hatásai csoportos környezetben
+- típus: book
+  év: 2006
+  kiadó: Osiris Kiadó
+  cím: Bevezetés a statisztikába
+  szerző(k): Tóth, O.
+- típus: book
+  év: 2005
+  kiadó: Osiris Kiadó
+  cím: Statisztikai következtetés a gyakorlatban
+  szerző(k): Varga, L.
+
+Mentsd el "output.docx" néven a jelenlegi könyvtárba. Minden hivatkozás külön bekezdésben szerepeljen, a szerző vezetékneve szerint ábécésorrendbe rendezve. Ha egy mező (pl. oldalszám, DOI) nincs megadva egy forrásnál, hagyd ki a hivatkozásból, ne találj ki helyette adatot.

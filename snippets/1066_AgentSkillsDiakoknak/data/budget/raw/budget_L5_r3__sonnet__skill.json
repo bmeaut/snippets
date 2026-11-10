@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 537386,
+  "duration_api_ms": 536932,
+  "ttft_ms": 118786,
+  "ttft_stream_ms": 1658,
+  "time_to_request_ms": 32,
+  "num_turns": 12,
+  "result": "A formulák és az adatok helyesek. Az `output.xlsx` elkészült két munkalappal.\n\n---\n\n**Eredmény összefoglalója:**\n\n| Kategória | Összeg |\n|---|---|\n| Élelmiszer | 38 737,5 Ft |\n| Lakhatás | 244 650 Ft |\n| Szórakozás | 6 550 Ft |\n| Közlekedés | 25 200 Ft |\n| Ruházat / Egészség / Oktatás | 0 Ft |\n| Egyéb | 19 525 Ft |\n| **Összes kiadás** | **334 662,5 Ft** |\n| Bevétel | 202 600 Ft |\n| **Záró egyenleg** | **−132 062,5 Ft** |\n\n**Élelmiszer legmagasabb hete: 2. hét** (21 137,5 Ft — Tesco, két Kifli.hu rendelés, piac)\n\n---\n\n**Néhány megjegyzés a kategorizáláshoz és a számításhoz:**\n- **Megosztott tételek:** ajándék [1. hét] ÷2 = 4 325 Ft; Kifli.hu [2. hét] ÷4 = 1 987,5 Ft; közös költség [2. hét] ÷2 = 4 500 Ft; albérlet [4. hét] → saját rész: 66 900 Ft\n- **Spotify, telefon előfizetés** → szórakozás / egyéb (explicit jelölés alapján)\n- **taxi/Bolt, vonatjegy** → közlekedés\n- **Kifli.hu rendelések** → élelmiszer (online élelmiszer-házhozszállítás)\n- **Közös költség** → lakhatás",
+  "stop_reason": "end_turn",
+  "session_id": "fe85cc47-bf34-43ef-bf4c-62ca3e19c789",
+  "total_cost_usd": 0.4303007,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 11438,
+    "cache_read_input_tokens": 208285,
+    "output_tokens": 2892,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 11438,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 630,
+        "cache_read_input_tokens": 39321,
+        "cache_creation_input_tokens": 1583,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1583
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1444,
+      "outputTokens": 23,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001559,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-6": {
+      "inputTokens": 14,
+      "outputTokens": 16766,
+      "cacheReadInputTokens": 353539,
+      "cacheCreationInputTokens": 11858,
+      "webSearchRequests": 0,
+      "costUSD": 0.4287417,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "4509f037-4c89-4d5c-9352-fd68b128aee7"
+}

@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 70869,
+  "duration_api_ms": 71741,
+  "ttft_ms": 41369,
+  "ttft_stream_ms": 2776,
+  "time_to_request_ms": 26,
+  "num_turns": 3,
+  "result": "Kész! Elkészítettem az **output.docx** fájlt a következő jellemzőkkel:\n\n- **APA 7. kiadás szerinti formázás**: minden hivatkozás a megfelelő szabályok szerint\n- **Ábécé sorrendbe rendezett**: a szerzők vezetékneve alapján\n- **Magyar nyelvű**: hónapnevek (szeptember, október, november, június) és formázás teljesen magyarul\n- **Függő behúzás**: minden hivatkozás második sorától 0.5 inch behúzással\n- **Dupla sorköz**: APA 7 követelmény szerint\n- **Times New Roman, 12 pt**: standard APA betűtípus és méret\n\nA hivatkozások 15 forrást tartalmaznak (4 könyv, 7 folyóiratcikk, 4 weboldal), mindegyik külön bekezdésben, a hiányzó mezők kihagyásával (pl. Simon & Gál 2004-nél nincs oldalszám megadva, így az ki van hagyva).",
+  "stop_reason": "end_turn",
+  "session_id": "2b434a70-4aaa-4f09-90a6-a90880891bf7",
+  "total_cost_usd": 0.1351407,
+  "usage": {
+    "input_tokens": 21,
+    "cache_creation_input_tokens": 9856,
+    "cache_read_input_tokens": 56469,
+    "output_tokens": 3787,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 9856,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 6,
+        "output_tokens": 278,
+        "cache_read_input_tokens": 22505,
+        "cache_creation_input_tokens": 133,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 133
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 2071,
+      "outputTokens": 25,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.002196,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-5": {
+      "inputTokens": 21,
+      "outputTokens": 3787,
+      "cacheReadInputTokens": 56469,
+      "cacheCreationInputTokens": 9856,
+      "webSearchRequests": 0,
+      "costUSD": 0.1329447,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "f1f4ff50-3bea-4c22-845e-369b27e577f4"
+}

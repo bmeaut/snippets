@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 46566,
+  "duration_api_ms": 46933,
+  "ttft_ms": 9758,
+  "ttft_stream_ms": 1338,
+  "time_to_request_ms": 265,
+  "num_turns": 9,
+  "result": "Kész! Az **output.docx** fájl sikeresen létrehozva az aktuális könyvtárban.\n\nA dokumentum tartalmazza:\n- **Hivatkozások** fejléc (H1 formázás)\n- **8 hivatkozás** APA 7. kiadás szerint formázva, ábécésorrendben:\n  1. Horváth, M. (2012)...\n  2. Lakatos, O. (2009)...\n  3. Nagy, N. (2016)...\n  4. Nagy, O. (2011)...\n  5. Németh, J. (2002)...\n  6. Oláh, B. (2018)...\n  7. Tóth, O. (2010)...\n  8. Török, Z. (2007)...\n\n- **Függőleges behúzás** (hanging indent) minden hivatkozásnál: az első sor nincs behúzva, az azt követő sorok 0.5 hüvelyk behúzottak\n- **Egysoros térköz** az esthétikus megjelenéshez\n\nA fájl megnyitható a Wordben, Googleben vagy bármely docx-et támogató alkalmazásban.",
+  "stop_reason": "end_turn",
+  "session_id": "5d7d7876-9d06-40e1-8783-f03cba5d76db",
+  "total_cost_usd": 0.07326195,
+  "usage": {
+    "input_tokens": 68,
+    "cache_creation_input_tokens": 14567,
+    "cache_read_input_tokens": 258327,
+    "output_tokens": 4915,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4254,
+      "ephemeral_5m_input_tokens": 10313
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 642,
+        "cache_read_input_tokens": 36482,
+        "cache_creation_input_tokens": 198,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 198,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1320,
+      "outputTokens": 4942,
+      "cacheReadInputTokens": 258327,
+      "cacheCreationInputTokens": 14567,
+      "webSearchRequests": 0,
+      "costUSD": 0.07326195,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "aaf74d6c-c767-4536-a36a-b175dc8d481f"
+}

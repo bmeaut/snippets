@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 43387,
+  "duration_api_ms": 43916,
+  "ttft_ms": 22611,
+  "ttft_stream_ms": 1538,
+  "time_to_request_ms": 491,
+  "num_turns": 4,
+  "result": "Kész! Elkészítettem az APA 7. kiadás szerint formázott hivatkozásjegyzéket az `output.docx` fájlban. \n\nA dokumentum tartalmazza:\n- **15 hivatkozás** – ábécésorrendben (Balogh-tól Takácsig)\n- **Helyes APA 7 formátum** az összes forrásnév szerint\n- **Hanging indent** formázás (a második sortól behúzva)\n- Szerzők, évszám, cím, publikáció adatai, oldalszámok és DOI/URL (ahol voltak megadva)\n\nA hiányos adatok (pl. oldalszám, DOI) kihagyva maradtak, ahogy kérted. A fájl a jelenlegi könyvtárban található: `/Users/pank/Documents/AI_things/snippets/snippets/9998_AgentSkillsDiakoknak/harness/workdir_noskill/output.docx`",
+  "stop_reason": "end_turn",
+  "session_id": "872c284c-c8c3-4285-a07e-be4e41dbbd13",
+  "total_cost_usd": 0.0783942,
+  "usage": {
+    "input_tokens": 34,
+    "cache_creation_input_tokens": 17546,
+    "cache_read_input_tokens": 111382,
+    "output_tokens": 5996,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 17546,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 303,
+        "cache_read_input_tokens": 35253,
+        "cache_creation_input_tokens": 316,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 316
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 2044,
+      "outputTokens": 6024,
+      "cacheReadInputTokens": 111382,
+      "cacheCreationInputTokens": 17546,
+      "webSearchRequests": 0,
+      "costUSD": 0.0783942,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "d18d3383-19f5-4ed1-9d61-88a02f78dfef"
+}

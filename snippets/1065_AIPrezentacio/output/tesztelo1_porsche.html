@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Porsche modellpaletta 2026/27 – összevetés</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+<style>
+:root{
+  --accent:#B3001B; --accent-dark:#7A0012; --ink:#1B1E22; --muted:#4A5058; --line:#E2DCDA; --soft:#F8F3F2; --ok:#1E6E36;
+  --r-background-color:#ffffff;
+  --r-main-font:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+  --r-main-font-size:32px; --r-main-color:#1B1E22;
+  --r-heading-font:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+  --r-heading-color:#1B1E22; --r-heading-text-transform:none; --r-heading-font-weight:700;
+  --r-heading-letter-spacing:-0.01em; --r-heading-line-height:1.15;
+  --r-heading1-size:2.2em; --r-heading2-size:1.35em; --r-heading3-size:1em;
+  --r-link-color:#B3001B; --r-link-color-hover:#7A0012;
+  --r-selection-background-color:#F3C6CC; --r-selection-color:#1B1E22;
+}
+.reveal-viewport{background:linear-gradient(160deg,#ffffff 0%,#fbf8f7 50%,#f5efee 100%);}
+.reveal .slides section{text-align:left;}
+.reveal .slides section.center-all{text-align:center;}
+.reveal h1,.reveal h2,.reveal h3,.reveal h4{overflow-wrap:normal;word-break:normal;-webkit-hyphens:auto;hyphens:auto;margin:.3em 0;}
+.reveal h2{margin:0 0 .45em 0;}
+.reveal section:not(.divider):not(.statement):not(.title-slide) h2::after{content:"";display:block;width:56px;height:5px;border-radius:3px;background:var(--accent);margin-top:.22em;}
+.reveal p{margin:.3em 0;line-height:1.3;}
+.reveal ul{margin:0;padding:0;list-style:none;}
+.reveal table{border-collapse:collapse;width:100%;margin:0;}
+.reveal table th,.reveal table td{padding:.3em .5em;border-bottom:1px solid var(--line);text-align:left;}
+.reveal table th{background:#F2EBEA;font-weight:700;}
+.reveal table .num{text-align:right;font-variant-numeric:tabular-nums;}
+
+.ico{width:1em;height:1em;flex-shrink:0;color:var(--accent);display:inline-block;vertical-align:-.15em;}
+.ico.lg{width:1.9em;height:1.9em;}
+.ico.dark{color:var(--ink);}
+.row{display:flex;align-items:center;gap:.4em;}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:1em;align-items:start;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:.45em;}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.5em .65em;box-shadow:0 2px 10px rgba(40,20,20,.06);}
+.small{font-size:.65em;} .tiny{font-size:.5em;color:var(--muted);line-height:1.35;}
+.muted{color:var(--muted);}
+.ilist li{display:flex;gap:.45em;align-items:flex-start;margin:.32em 0;line-height:1.3;}
+.ilist li .ico{margin-top:.18em;}
+.btn{font:inherit;font-size:.62em;padding:.4em .9em;border-radius:10px;border:2px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer;display:inline-flex;align-items:center;gap:.35em;}
+.btn.ghost{background:#fff;color:var(--accent);}
+.btn:focus-visible,.tab:focus-visible,.opt:focus-visible,.tl button:focus-visible,.chip:focus-visible,.target:focus-visible{outline:3px solid var(--ink);outline-offset:2px;}
+
+/* Címdia */
+.title-slide .kicker{font-size:.6em;color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+.title-slide .subtitle{font-size:.85em;color:var(--ink);}
+.title-slide .meta{font-size:.6em;color:var(--muted);}
+.hero-car{display:block;margin:0 auto .3em;}
+
+/* Szekció-elválasztó */
+.reveal .divider{text-align:left;}
+.reveal .divider h2{color:#fff;font-size:1.9em;margin:.1em 0 .25em;}
+.reveal .divider p{color:#fff;font-size:.8em;}
+.divider .div-num{font-size:2.6em;font-weight:800;color:#FFD9DE;line-height:1;}
+
+/* Modellkártyák */
+.mcard{display:flex;flex-direction:column;gap:.25em;}
+.mhead{display:flex;gap:.45em;align-items:center;}
+.mname{font-size:.85em;font-weight:700;line-height:1.1;}
+.mtype{font-size:.6em;color:var(--muted);}
+.tags{display:flex;gap:.35em;flex-wrap:wrap;}
+.tag{display:inline-flex;align-items:center;gap:.3em;font-size:.6em;padding:.12em .55em;border:1.5px solid var(--line);border-radius:999px;background:var(--soft);}
+.mprice{font-size:.7em;font-weight:700;color:var(--accent);}
+
+/* Idővonal */
+.tl{position:relative;display:flex;justify-content:space-between;margin:.6em 0 .5em;}
+.tl::before{content:"";position:absolute;left:6%;right:6%;top:18px;height:4px;background:var(--line);border-radius:2px;}
+.tl button{display:flex;flex-direction:column;align-items:center;background:none;border:0;cursor:pointer;font:inherit;color:var(--ink);gap:.35em;z-index:1;font-size:.6em;width:16%;padding:0;}
+.dot{width:36px;height:36px;border-radius:50%;background:#fff;border:4px solid var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-sizing:border-box;}
+.tl button.active .dot{background:var(--accent);}
+.tl button.active .dot::after{content:"";width:10px;height:10px;background:#fff;border-radius:50%;}
+.tl button.active .tl-date{font-weight:700;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:4px;}
+.tl-panel{display:flex;gap:.6em;align-items:flex-start;}
+.tl-panel .when{font-size:.6em;font-weight:700;color:var(--accent);}
+.tl-panel h3{font-size:.85em;margin:.1em 0 .2em;}
+.tl-panel p{font-size:.7em;}
+
+/* Kiemelő (gépelés) */
+.statement{text-align:center;}
+.typewriter{font-size:1.6em;font-weight:800;color:var(--ink);min-height:2.4em;display:flex;align-items:center;justify-content:center;margin:0 0 .4em;}
+.typewriter::after{content:"";display:inline-block;width:.07em;height:1em;background:var(--accent);margin-left:.06em;animation:blink 1s steps(1) infinite;}
+@keyframes blink{50%{opacity:0;}}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:.45em;text-align:left;}
+.fact{display:flex;flex-direction:column;gap:.3em;}
+.fact b{font-size:.7em;} .fact span{font-size:.6em;color:var(--muted);}
+
+/* Fülek */
+.tabs{display:flex;gap:.2em;border-bottom:2px solid var(--line);margin-bottom:.5em;}
+.tab{font:inherit;font-size:.65em;padding:.45em .9em;background:transparent;border:0;border-bottom:5px solid transparent;margin-bottom:-2px;cursor:pointer;color:var(--muted);display:inline-flex;gap:.4em;align-items:center;}
+.tab[aria-selected="true"]{color:var(--ink);font-weight:700;border-bottom-color:var(--accent);background:#fff;}
+.tabpanel{display:none;} .tabpanel.active{display:block;}
+.tabpanel h3{font-size:.75em;margin:0 0 .3em;}
+.tabpanel .ilist{font-size:.66em;}
+
+/* Szakkifejezés-buborék */
+.term{position:relative;border-bottom:2px dotted var(--accent);cursor:help;}
+.tip{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);width:340px;background:var(--ink);color:#fff;font-size:18px;font-weight:400;line-height:1.35;padding:10px 12px;border-radius:10px;visibility:hidden;opacity:0;transition:opacity .15s;z-index:50;text-align:left;pointer-events:none;box-shadow:0 6px 18px rgba(0,0,0,.2);}
+.term.open .tip{visibility:visible;opacity:1;}
+
+/* Táblák, oszlopok */
+.ptable{font-size:.6em;}
+.kv{display:flex;flex-direction:column;gap:.35em;}
+.kv .row{font-size:.66em;}
+.colhead{display:flex;align-items:center;gap:.45em;margin-bottom:.25em;}
+.colhead b{font-size:.85em;}
+.sub{font-size:.6em;color:var(--muted);margin:.1em 0 .35em;}
+
+/* Macan létra */
+.ladder{display:flex;flex-direction:column;gap:.35em;}
+.rung{display:grid;grid-template-columns:150px 1fr 110px;align-items:center;gap:.5em;font-size:.62em;}
+.rname{font-weight:700;}
+.rbar{height:1.6em;}
+.rbar span{display:flex;align-items:center;height:100%;width:var(--w);background:linear-gradient(90deg,#8E0016,#B3001B);color:#fff;border-radius:8px;padding-left:.6em;box-sizing:border-box;font-weight:700;}
+.rprice{text-align:right;font-variant-numeric:tabular-nums;}
+
+/* Kvíz */
+.quiz-q{font-size:.85em;font-weight:600;margin:.2em 0 .6em;}
+.quiz-opts{display:grid;grid-template-columns:1fr 1fr;gap:.5em;}
+.opt{font:inherit;font-size:.72em;text-align:left;padding:.55em .8em;border:2px solid var(--line);border-radius:12px;background:#fff;cursor:pointer;display:flex;align-items:center;gap:.55em;color:var(--ink);}
+.opt:disabled{cursor:default;opacity:1;color:var(--ink);}
+.opt .mark{width:1.5em;height:1.5em;border-radius:50%;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:800;}
+.opt.correct{border-color:var(--ok);background:#EAF5EE;}
+.opt.correct .mark{background:var(--ok);border-color:var(--ok);color:#fff;}
+.opt.wrong{border-color:var(--accent);background:#FBEAEC;text-decoration:line-through;}
+.opt.wrong .mark{background:var(--accent);border-color:var(--accent);color:#fff;}
+.feedback{font-size:.66em;min-height:1.6em;margin:.55em 0 .3em;}
+
+/* Nagy szám */
+.big{font-size:4.2em;font-weight:800;color:var(--accent);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;}
+.big small{font-size:.35em;color:var(--ink);font-weight:700;letter-spacing:0;}
+.pills{display:flex;gap:.5em;justify-content:center;margin-top:.6em;}
+.pill{font-size:.62em;padding:.35em .9em;border-radius:999px;background:#fff;border:2px solid var(--line);display:inline-flex;align-items:center;gap:.35em;}
+
+/* Diagram */
+.chart-box{position:relative;width:100%;}
+.slider{margin-top:.5em;font-size:.62em;}
+.slider label{font-weight:700;display:block;margin-bottom:.2em;}
+.slider .row{gap:.6em;}
+.slider input[type=range]{flex:1;accent-color:var(--accent);height:28px;}
+.slider output{font-weight:700;min-width:5.5em;text-align:right;font-variant-numeric:tabular-nums;}
+.draw-wrap{position:relative;height:350px;}
+.draw-layer{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;touch-action:none;}
+.draw-wrap.drawing .draw-layer{pointer-events:auto;cursor:crosshair;}
+.draw-wrap.drawing{outline:3px dashed var(--accent);outline-offset:4px;border-radius:6px;}
+.obs{font-size:.66em;}
+
+/* Variánskereső */
+.finder-controls{display:flex;gap:.8em;align-items:center;font-size:.62em;flex-wrap:nowrap;}
+.fld{display:flex;align-items:center;gap:.4em;font-weight:600;}
+.fld input{font:inherit;font-weight:400;padding:.3em .55em;border:2px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);}
+.fld input:focus{border-color:var(--accent);outline:none;}
+#fq{width:300px;} #fbudget{width:100px;}
+.fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.3em;margin-top:.45em;}
+.fchip{border:2px solid var(--line);border-radius:10px;padding:.28em .5em;background:#fff;font-size:.6em;line-height:1.25;}
+.fchip b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.fmeta{display:flex;justify-content:space-between;gap:.3em;}
+.fstat{font-weight:800;}
+.fchip.ok .fstat{color:var(--ok);}
+.fchip.over{background:#F1EEED;border-style:dashed;color:var(--muted);}
+.fempty{font-size:.65em;color:var(--muted);grid-column:1/-1;}
+
+/* Konkurensek */
+.ccard h3{font-size:.78em;margin:0;display:flex;align-items:center;gap:.4em;}
+.ccard ul{font-size:.6em;margin:.3em 0;}
+.ccard li{margin:.12em 0;padding-left:.9em;position:relative;}
+.ccard li::before{content:"";position:absolute;left:0;top:.5em;width:.4em;height:.4em;border-radius:2px;background:var(--accent);}
+.ccard .arg{font-size:.6em;color:var(--muted);font-style:italic;border-top:1px solid var(--line);padding-top:.25em;}
+
+/* Párosító */
+.dnd-targets{display:grid;grid-template-columns:repeat(4,1fr);gap:.45em;}
+.target{border:2px dashed #C9C1BF;border-radius:14px;padding:.45em .5em;background:#fff;min-height:150px;display:flex;flex-direction:column;gap:.3em;cursor:pointer;}
+.target .t-name{font-size:.75em;font-weight:700;display:flex;align-items:center;gap:.35em;}
+.target.over{border-color:var(--accent);background:#FFF5F6;}
+.target.solved{border-style:solid;border-color:var(--ok);background:#F2FAF4;}
+.target.wrong{border-style:solid;border-color:var(--accent);background:#FBEAEC;}
+.slot{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:.25em;}
+.hint{font-size:.6em;color:var(--muted);}
+.verdict{font-size:.6em;font-weight:700;}
+.verdict.ok{color:var(--ok);} .verdict.bad{color:var(--accent);}
+.dnd-pool{display:flex;gap:.45em;margin-top:.6em;min-height:2.2em;flex-wrap:wrap;}
+.chip{font-size:.65em;padding:.35em .8em;border-radius:10px;background:var(--ink);color:#fff;cursor:grab;user-select:none;}
+.chip.selected{outline:3px solid var(--accent);outline-offset:2px;}
+.chip.placed{cursor:default;background:var(--ok);}
+.chip.dragging{opacity:.6;}
+
+/* Mellette / ellene */
+.pc h3{font-size:.85em;display:flex;align-items:center;gap:.4em;margin:0 0 .3em;}
+.pc .ilist{font-size:.68em;}
+
+/* Ellenőrzőlista */
+.cl-head{display:flex;align-items:center;gap:.7em;font-size:.68em;margin-bottom:.5em;}
+.cl-bar{flex:1;height:14px;background:var(--line);border-radius:7px;overflow:hidden;}
+.cl-bar span{display:block;height:100%;width:0;background:var(--accent);transition:width .3s;}
+#ckCount{font-weight:800;min-width:5em;}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:.4em .8em;}
+.checks label{display:flex;align-items:flex-start;gap:.55em;font-size:.68em;background:#fff;border:1px solid var(--line);border-radius:12px;padding:.45em .6em;cursor:pointer;}
+.checks input{width:1.15em;height:1.15em;flex-shrink:0;accent-color:var(--accent);margin-top:.12em;}
+.checks label.done span{text-decoration:line-through;color:var(--muted);}
+.checks small{display:block;font-size:.85em;color:var(--muted);}
+
+/* QR */
+.qr-card{background:#fff;border:6px solid var(--ink);border-radius:16px;padding:14px;display:inline-flex;flex-direction:column;align-items:center;gap:8px;}
+#qr svg{width:180px;height:180px;display:block;}
+.qr-card span{font-size:.55em;font-weight:700;}
+
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:9999;display:none;}
+</style>
+</head>
+<body>
+
+<!-- Ikonkészlet (inline SVG) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-sport" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15.5c0-1.8 1.6-2.6 4-3l3-2.6c1-.8 2.2-1.2 3.5-1.2h1.8c1.6 0 3 .6 4.2 1.6l2.2 2c1.2.3 1.3 1.2 1.3 2.2v1H2z"/><circle cx="6.5" cy="16" r="1.8"/><circle cx="17.5" cy="16" r="1.8"/></g></symbol>
+    <symbol id="i-sedan" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 15.5v-1.8c0-.9.6-1.6 1.5-1.8l2.5-.5 2.5-2.6c.7-.7 1.6-1.1 2.6-1.1h4.2c1 0 1.9.4 2.6 1.1l2.6 2.6 1.9.4c.9.2 1.6 1 1.6 1.9v1.8z"/><circle cx="6" cy="16" r="1.8"/><circle cx="18" cy="16" r="1.8"/></g></symbol>
+    <symbol id="i-suv" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16v-3.5c0-.8.5-1.4 1.2-1.6l1.8-.5 2.2-3.2c.5-.7 1.3-1.2 2.2-1.2h6.2c.9 0 1.7.4 2.2 1.1l2.4 3.3 1.3.4c.7.2 1.2.9 1.2 1.6V16z"/><circle cx="6.5" cy="16.5" r="2"/><circle cx="17.5" cy="16.5" r="2"/></g></symbol>
+    <symbol id="i-fuel" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v15M3 20h11M5 9h7M13 8h2.5l2 2v7a1.5 1.5 0 0 0 3 0V9l-3-3"/></g></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></g></symbol>
+    <symbol id="i-hybrid" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s-6 6.5-6 11a6 6 0 0 0 12 0c0-4.5-6-11-6-11z"/><path d="M12.6 10 10.2 14h3l-1.2 3.5 2.6-4h-3z"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></g></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></g></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17a9 9 0 1 1 17 0"/><path d="M12 14l4-5"/><circle cx="12" cy="14" r="1.3"/></g></symbol>
+    <symbol id="i-coin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5a4 4 0 1 0 0 7M7 11h6M7 13.5h6"/></g></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></g></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.2c3 .2 5.5 2.6 5.5 5.8"/></g></symbol>
+    <symbol id="i-road" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 21M16 3l4 18M12 4v2.5M12 10.5v3M12 17.5V20"/></g></symbol>
+    <symbol id="i-roof" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15.5c0-1.8 1.6-2.6 4-3l1-1h10l3 2c1.2.3 1.3 1.2 1.3 2.2v1H2z"/><path d="M8 11.5c1-2.5 3-3.5 6-3.5"/><circle cx="6.5" cy="16" r="1.8"/><circle cx="17.5" cy="16" r="1.8"/></g></symbol>
+    <symbol id="i-targa" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15.5c0-1.8 1.6-2.6 4-3l3-2.6c1-.8 2.2-1.2 3.5-1.2h1.8c1.6 0 3 .6 4.2 1.6l2.2 2c1.2.3 1.3 1.2 1.3 2.2v1H2z"/><path d="M12.5 8.7v3.6M14 8.7v3.6" stroke-width="2.4"/><circle cx="6.5" cy="16" r="1.8"/><circle cx="17.5" cy="16" r="1.8"/></g></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></g></symbol>
+  </defs>
+</svg>
+
+<canvas id="confetti"></canvas>
+
+<div class="reveal"><div class="slides">
+
+<!-- 1. CÍMDIA -->
+<section class="title-slide center-all">
+  <svg class="hero-car" viewBox="0 0 520 170" width="480" height="157" aria-hidden="true">
+    <line x1="10" y1="157" x2="510" y2="157" stroke="#E2DCDA" stroke-width="4" stroke-linecap="round"/>
+    <path d="M14 104h40M4 118h46" stroke="#E2DCDA" stroke-width="4" stroke-linecap="round"/>
+    <path d="M30 128C30 108 52 98 92 94L150 92C190 56 250 40 312 44C360 48 400 66 432 86C470 92 492 102 496 118L498 128Z" fill="#fff" stroke="#B3001B" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M176 90C207 65 248 55 300 58C330 60 356 70 378 86Z" fill="#F6E5E7" stroke="#B3001B" stroke-width="4" stroke-linejoin="round"/>
+    <circle cx="118" cy="130" r="26" fill="#fff" stroke="#1B1E22" stroke-width="7"/><circle cx="118" cy="130" r="8" fill="#B3001B"/>
+    <circle cx="420" cy="130" r="26" fill="#fff" stroke="#1B1E22" stroke-width="7"/><circle cx="420" cy="130" r="8" fill="#B3001B"/>
+  </svg>
+  <p class="kicker">Modellpaletta-összevetés · 2026. november</p>
+  <h1 style="font-size:1.9em">Porsche kínálat 2026/27</h1>
+  <p class="subtitle">Típusok · motorok · kivitelek · árak · konkurensek</p>
+  <p class="meta">Magyar piac · Porsche HU konfigurátor tájékoztató árai alapján</p>
+  <aside class="notes">Üdvözlés. Ma végigmegyünk a Porsche teljes jelenlegi kínálatán: milyen modellcsaládok vannak, milyen motorokkal és kivitelekben, mennyibe kerülnek itthon, és kik a fő riválisok. Az árak a magyar konfigurátor tájékoztató bruttó alapárai.</aside>
+</section>
+
+<!-- 2. NAPIREND -->
+<section>
+  <h2>Miről lesz szó?</h2>
+  <div class="grid3" style="grid-template-columns:repeat(5,1fr)">
+    <div class="card fragment" style="text-align:center"><svg class="ico lg"><use href="#i-flag"/></svg><p class="small"><b>01</b><br>A paletta ma</p></div>
+    <div class="card fragment" style="text-align:center"><svg class="ico lg"><use href="#i-gauge"/></svg><p class="small"><b>02</b><br>Modellek &amp; motorok</p></div>
+    <div class="card fragment" style="text-align:center"><svg class="ico lg"><use href="#i-coin"/></svg><p class="small"><b>03</b><br>Árazás</p></div>
+    <div class="card fragment" style="text-align:center"><svg class="ico lg"><use href="#i-users"/></svg><p class="small"><b>04</b><br>Konkurencia</p></div>
+    <div class="card fragment" style="text-align:center"><svg class="ico lg"><use href="#i-check"/></svg><p class="small"><b>05</b><br>Döntés</p></div>
+  </div>
+  <aside class="notes">Öt blokk: először áttekintjük a mai palettát és a friss stratégiai változásokat, utána modellenként a motorokat és kiviteleket, majd az árakat interaktív diagramokkal, aztán a konkurenciát, végül egy döntés előtti ellenőrzőlistát.</aside>
+</section>
+
+<!-- 3. SZEKCIÓ -->
+<section class="divider" data-background-color="#850015" data-background-gradient="linear-gradient(135deg,#A3001A 0%,#6E0011 100%)">
+  <div class="div-num">01</div>
+  <h2>A paletta ma</h2>
+  <p>6 modellcsalád · 4 hajtáslánc-típus</p>
+  <aside class="notes">Első blokk: mi kapható most, és mi változott az elmúlt egy évben.</aside>
+</section>
+
+<!-- 4. MODELLCSALÁDOK -->
+<section>
+  <h2>Hat modellcsalád</h2>
+  <div class="grid3">
+    <div class="card mcard fragment">
+      <div class="mhead"><svg class="ico lg"><use href="#i-sport"/></svg><div><div class="mname">911</div><div class="mtype">Sportautó · Coupé, Cabrio, Targa</div></div></div>
+      <div class="tags"><span class="tag"><svg class="ico"><use href="#i-fuel"/></svg>Benzin</span><span class="tag"><svg class="ico"><use href="#i-hybrid"/></svg>T-Hybrid</span></div>
+      <div class="mprice">54,1 M Ft-tól</div>
+    </div>
+    <div class="card mcard fragment">
+      <div class="mhead"><svg class="ico lg"><use href="#i-sedan"/></svg><div><div class="mname">Panamera</div><div class="mtype">Sportlimuzin · 4 ajtó</div></div></div>
+      <div class="tags"><span class="tag"><svg class="ico"><use href="#i-fuel"/></svg>Benzin</span><span class="tag"><svg class="ico"><use href="#i-hybrid"/></svg>Plug-in hibrid</span></div>
+      <div class="mprice">47,9 M Ft-tól (Panamera 4)</div>
+    </div>
+    <div class="card mcard fragment">
+      <div class="mhead"><svg class="ico lg"><use href="#i-sedan"/></svg><div><div class="mname">Taycan</div><div class="mtype">Villany-sportlimuzin · Sedan, Turismo</div></div></div>
+      <div class="tags"><span class="tag"><svg class="ico"><use href="#i-bolt"/></svg>Elektromos</span></div>
+      <div class="mprice">40,9 M Ft-tól</div>
+    </div>
+    <div class="card mcard fragment">
+      <div class="mhead"><svg class="ico lg"><use href="#i-suv"/></svg><div><div class="mname">Macan</div><div class="mtype">Kompakt SUV</div></div></div>
+      <div class="tags"><span class="tag"><svg class="ico"><use href="#i-bolt"/></svg>Csak elektromos</span></div>
+      <div class="mprice">32,6 M Ft-tól</div>
+    </div>
+    <div class="card mcard fragment">
+      <div class="mhead"><svg class="ico lg"><use href="#i-suv"/></svg><div><div class="mname">Cayenne</div><div class="mtype">Nagy SUV · SUV, Coupé</div></div></div>
+      <div class="tags"><span class="tag"><svg class="ico"><use href="#i-fuel"/></svg>Benzin</span><span class="tag"><svg class="ico"><use href="#i-hybrid"/></svg>Plug-in hibrid</span></div>
+      <div class="mprice">40,1 M Ft-tól</div>
+    </div>
+    <div class="card mcard fragment">
+      <div class="mhead"><svg class="ico lg"><use href="#i-suv"/></svg><div><div class="mname">Cayenne Electric</div><div class="mtype">Nagy SUV · SUV, Coupé</div></div></div>
+      <div class="tags"><span class="tag"><svg class="ico"><use href="#i-bolt"/></svg>Elektromos</span></div>
+      <div class="mprice">40,7 M Ft-tól</div>
+    </div>
+  </div>
+  <p class="tiny" style="margin-top:.6em">718 Boxster/Cayman: benzines gyártás vége 2025. október, villanyos utód fejlesztés alatt. Árak: bruttó alapár, kb. 364 Ft/€, extrák, regadó, szállítás nélkül.</p>
+  <aside class="notes">Hat modellcsalád van most a kínálatban. Fontos: a Macan már csak elektromos, a Cayenne-ből viszont párhuzamosan van benzines/hibrid és tisztán elektromos változat is. A 718 kettős jelenleg kiesett, a villanyos utód még nincs piacon. A belépő a villany-Macan, kb. 33 millió forinttól.</aside>
+</section>
+
+<!-- 5. IDŐVONAL -->
+<section>
+  <h2>Mi változott? – idővonal</h2>
+  <div class="tl" id="tl" role="group" aria-label="Események"></div>
+  <div class="card tl-panel" aria-live="polite">
+    <svg class="ico lg"><use href="#i-flag"/></svg>
+    <div><div class="when" id="tlDate"></div><h3 id="tlTitle"></h3><p id="tlText"></p></div>
+  </div>
+  <p class="tiny">Kattints az idővonal pontjaira. Források: Porsche HU, Autónavigátor, Totalcar, Zero2Turbo (2025–2026).</p>
+  <aside class="notes">Kattintsunk végig a pontokon. A lényeg: 2025-ben eltűnt a benzines 718, megjött a Cayenne Electric, 2026-ban új vezérigazgató jött, és leállt a benzines Macan is. A legfrissebb hír: a Porsche irányt korrigál, 2028 körül újra lesz benzines Macan.</aside>
+</section>
+
+<!-- 6. KIEMELŐ ÁLLÍTÁS (gépelés) -->
+<section class="statement">
+  <h2 class="typewriter" data-text="Fordulat: visszatér a benzines Macan" aria-label="Fordulat: visszatér a benzines Macan">Fordulat: visszatér a benzines Macan</h2>
+  <div class="grid4">
+    <div class="card fact fragment"><svg class="ico lg"><use href="#i-bolt"/></svg><b>Macan Electric marad</b><span>a jelenlegi kínálat gerince</span></div>
+    <div class="card fact fragment"><svg class="ico lg"><use href="#i-fuel"/></svg><b>Benzines utód ~2028</b><span>Audi Q5-rokon alapokon</span></div>
+    <div class="card fact fragment"><svg class="ico lg"><use href="#i-sport"/></svg><b>911: nem lesz villany</b><span>hibrid igen, tisztán elektromos nem</span></div>
+    <div class="card fact fragment"><svg class="ico lg"><use href="#i-road"/></svg><b>Villany-718 folytatódik</b><span>fejlesztés alatt, dátum nyitott</span></div>
+  </div>
+  <aside class="notes">A Porsche új vezérigazgatója, Michael Leiters szerint a cél a vegyes kínálat: benzin, hibrid és villany egymás mellett. A villany-Macan maradt, de 2028 körül érkezik mellé egy benzines utód. A 911 marad égésű motoros, hibrid segítséggel. A villanyos 718 fejlesztése a hírek szerint megy tovább.</aside>
+</section>
+
+<!-- 7. SZEKCIÓ -->
+<section class="divider" data-background-color="#850015" data-background-gradient="linear-gradient(135deg,#A3001A 0%,#6E0011 100%)">
+  <div class="div-num">02</div>
+  <h2>Modellek és motorok</h2>
+  <p>Hajtásláncok · variánsok · kivitelek</p>
+  <aside class="notes">Második blokk: modellenként nézzük meg a motorokat és a kiviteleket.</aside>
+</section>
+
+<!-- 8. HAJTÁSLÁNC-FÜLEK -->
+<section>
+  <h2>Négy hajtáslánc-világ</h2>
+  <div class="tabs" role="tablist" aria-label="Hajtásláncok">
+    <button class="tab" role="tab" aria-selected="true" data-tab="tp-ice"><svg class="ico"><use href="#i-fuel"/></svg>Benzin</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="tp-phev"><svg class="ico"><use href="#i-hybrid"/></svg>Plug-in hibrid</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="tp-th"><svg class="ico"><use href="#i-gauge"/></svg>T-Hybrid</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="tp-el"><svg class="ico"><use href="#i-bolt"/></svg>Elektromos</button>
+  </div>
+  <div id="tp-ice" class="tabpanel active" role="tabpanel">
+    <div class="cols2">
+      <div><h3>Modellek</h3><ul class="ilist"><li><svg class="ico"><use href="#i-sport"/></svg>911 Carrera, Carrera S, Carrera T</li><li><svg class="ico"><use href="#i-suv"/></svg>Cayenne, Cayenne S, GTS</li><li><svg class="ico"><use href="#i-sedan"/></svg>Panamera, Panamera 4, GTS</li></ul></div>
+      <div><h3>Lényeg</h3><ul class="ilist"><li><svg class="ico"><use href="#i-check"/></svg>911: biturbó boxermotor (3,0 l)</li><li><svg class="ico"><use href="#i-check"/></svg>Cayenne/Panamera: V6 vagy V8</li><li><svg class="ico"><use href="#i-check"/></svg><span><span class="term" tabindex="0" data-tip="Porsche Doppelkupplung: 8 fokozatú, duplakuplungos automata váltó. A Carrera T kézi váltóval is jár.">PDK</span> automata alapból</span></li></ul></div>
+    </div>
+  </div>
+  <div id="tp-phev" class="tabpanel" role="tabpanel">
+    <div class="cols2">
+      <div><h3>Modellek</h3><ul class="ilist"><li><svg class="ico"><use href="#i-suv"/></svg>Cayenne E-Hybrid, S, Turbo</li><li><svg class="ico"><use href="#i-sedan"/></svg>Panamera 4, 4S, Turbo, Turbo S</li></ul></div>
+      <div><h3>Lényeg</h3><ul class="ilist"><li><svg class="ico"><use href="#i-check"/></svg><span><span class="term" tabindex="0" data-tip="E-Hybrid: konnektorról tölthető (plug-in) hibrid – benzinmotor + villanymotor + nagyobb akkumulátor.">E-Hybrid</span>: konnektorról tölthető</span></li><li><svg class="ico"><use href="#i-check"/></svg><span>Akár ~90 km tisztán villanyos (<span class="term" tabindex="0" data-tip="WLTP: az EU-s szabványos fogyasztás- és hatótáv-mérési eljárás. A valós érték időjárástól, tempótól függően eltérhet.">WLTP</span>)</span></li><li><svg class="ico"><use href="#i-check"/></svg>Csúcs: Panamera Turbo S, 782 LE</li></ul></div>
+    </div>
+  </div>
+  <div id="tp-th" class="tabpanel" role="tabpanel">
+    <div class="cols2">
+      <div><h3>Modellek</h3><ul class="ilist"><li><svg class="ico"><use href="#i-sport"/></svg>911 Carrera GTS / 4 GTS</li><li><svg class="ico"><use href="#i-sport"/></svg>911 Turbo S</li></ul></div>
+      <div><h3>Lényeg</h3><ul class="ilist"><li><svg class="ico"><use href="#i-check"/></svg><span><span class="term" tabindex="0" data-tip="T-Hybrid: 3,6 literes boxermotor elektromos turbófeltöltéssel és a váltóba épített villanymotorral. Nem tölthető hálózatról.">T-Hybrid</span>: 3,6 l boxer + villany</span></li><li><svg class="ico"><use href="#i-x"/></svg>Hálózatról nem tölthető</li><li><svg class="ico"><use href="#i-check"/></svg>GTS 541 LE · Turbo S 711 LE</li></ul></div>
+    </div>
+  </div>
+  <div id="tp-el" class="tabpanel" role="tabpanel">
+    <div class="cols2">
+      <div><h3>Modellek</h3><ul class="ilist"><li><svg class="ico"><use href="#i-suv"/></svg>Macan (4 variáns + GTS)</li><li><svg class="ico"><use href="#i-sedan"/></svg>Taycan (3 karosszéria)</li><li><svg class="ico"><use href="#i-suv"/></svg>Cayenne Electric (+ Coupé)</li></ul></div>
+      <div><h3>Lényeg</h3><ul class="ilist"><li><svg class="ico"><use href="#i-check"/></svg>800 V-os rendszer, gyorstöltés</li><li><svg class="ico"><use href="#i-check"/></svg>Cayenne S: 584–653 km (WLTP)</li><li><svg class="ico"><use href="#i-check"/></svg>Cayenne: vezeték nélküli töltés opció</li></ul></div>
+    </div>
+  </div>
+  <aside class="notes">Négy hajtáslánc-világ. Kattintsunk végig a füleken. Fontos megkülönböztetés: az E-Hybrid konnektoros hibrid, a 911-ben lévő T-Hybrid viszont teljesítménynövelő hibrid, amit nem lehet hálózatról tölteni. Az aláhúzott kifejezésekre rámutatva magyarázat jelenik meg.</aside>
+</section>
+
+<!-- 9. 911 -->
+<section>
+  <h2>911 – kivitelek és motorok</h2>
+  <div class="cols2" style="grid-template-columns:.8fr 1.2fr">
+    <div class="kv">
+      <div class="card row fragment"><svg class="ico lg"><use href="#i-sport"/></svg><div><b class="small">Coupé</b><div class="sub" style="margin:0">a klasszikus forma</div></div></div>
+      <div class="card row fragment"><svg class="ico lg"><use href="#i-roof"/></svg><div><b class="small">Cabriolet</b><div class="sub" style="margin:0">elektromos vászontető</div></div></div>
+      <div class="card row fragment"><svg class="ico lg"><use href="#i-targa"/></svg><div><b class="small">Targa</b><div class="sub" style="margin:0">csak összkerékhajtással</div></div></div>
+    </div>
+    <div>
+      <table class="ptable">
+        <thead><tr><th>Változat</th><th>Motor</th><th class="num">LE</th><th class="num">M Ft</th></tr></thead>
+        <tbody>
+          <tr><td>Carrera</td><td>3,0 biturbó</td><td class="num">394</td><td class="num">54,1</td></tr>
+          <tr><td>Carrera T Cabrio</td><td>3,0, kézi váltó</td><td class="num">394</td><td class="num">61,5</td></tr>
+          <tr><td>Carrera GTS</td><td>3,6 T-Hybrid</td><td class="num">541</td><td class="num">68,9</td></tr>
+          <tr><td>Carrera 4 GTS</td><td>3,6 T-Hybrid</td><td class="num">541</td><td class="num">72,4</td></tr>
+          <tr><td>Turbo S</td><td>3,6 T-Hybrid</td><td class="num">711</td><td class="num">105,7</td></tr>
+        </tbody>
+      </table>
+      <p class="tiny">Bruttó alapár, Porsche HU konfigurátor. Carrera S (480 LE) és GT-modellek külön.</p>
+    </div>
+  </div>
+  <aside class="notes">A 911 három karosszériával érhető el; a Targa csak összkerékhajtással. A belépő Carrera 3 literes biturbó boxer. A GTS és a Turbo S már T-Hybrid hajtású. Az ár 54 milliótól 106 millióig skálázódik, opciók nélkül.</aside>
+</section>
+
+<!-- 10. NÉGYAJTÓSOK -->
+<section>
+  <h2>Négy ajtó: Taycan vs. Panamera</h2>
+  <div class="cols2">
+    <div>
+      <div class="colhead"><svg class="ico lg"><use href="#i-bolt"/></svg><b>Taycan</b></div>
+      <p class="sub">Sedan · Sport Turismo · Cross Turismo · elektromos</p>
+      <table class="ptable">
+        <thead><tr><th>Változat</th><th class="num">LE</th><th class="num">M Ft</th></tr></thead>
+        <tbody>
+          <tr><td>Taycan</td><td class="num">408</td><td class="num">40,9</td></tr>
+          <tr><td>Taycan 4S</td><td class="num">544</td><td class="num">48,4</td></tr>
+          <tr><td>Taycan GTS</td><td class="num">700</td><td class="num">58,5</td></tr>
+          <tr><td>Taycan Turbo</td><td class="num">884</td><td class="num">69,8</td></tr>
+          <tr><td>Taycan Turbo S</td><td class="num">952</td><td class="num">81,6</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <div class="colhead"><svg class="ico lg"><use href="#i-hybrid"/></svg><b>Panamera</b></div>
+      <p class="sub">Sportlimuzin · benzin és plug-in hibrid</p>
+      <table class="ptable">
+        <thead><tr><th>Változat</th><th class="num">LE</th><th class="num">M Ft</th></tr></thead>
+        <tbody>
+          <tr><td>Panamera 4</td><td class="num">353</td><td class="num">47,9</td></tr>
+          <tr><td>4 E-Hybrid</td><td class="num">470</td><td class="num">51,7</td></tr>
+          <tr><td>4S E-Hybrid</td><td class="num">544</td><td class="num">58,2</td></tr>
+          <tr><td>GTS (V8)</td><td class="num">500</td><td class="num">68,1</td></tr>
+          <tr><td>Turbo E-Hybrid</td><td class="num">680</td><td class="num">82,6</td></tr>
+          <tr><td>Turbo S E-Hybrid</td><td class="num">782</td><td class="num">94,8</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p class="tiny">LE: maximális (Launch Control / overboost) érték. Taycan Turbo GT (1034 LE) nincs a táblában.</p>
+  <aside class="notes">A két négyajtós hasonló árszinten indul, de más filozófiával: a Taycan tisztán elektromos, három karosszériával, a Panamera benzines és plug-in hibrid. Azonos teljesítményért a Taycan általában olcsóbb. A Taycan Turbo GT a csúcs, külön kategória.</aside>
+</section>
+
+<!-- 11. MACAN -->
+<section>
+  <h2>Macan – csak elektromosan</h2>
+  <div class="cols2" style="grid-template-columns:1.25fr 1fr">
+    <div class="ladder">
+      <div class="rung fragment"><span class="rname">Macan</span><div class="rbar"><span style="--w:56%">360 LE</span></div><span class="rprice">32,6 M</span></div>
+      <div class="rung fragment"><span class="rname">Macan 4</span><div class="rbar"><span style="--w:64%">408 LE</span></div><span class="rprice">–</span></div>
+      <div class="rung fragment"><span class="rname">Macan 4S</span><div class="rbar"><span style="--w:81%">516 LE</span></div><span class="rprice">36,5 M</span></div>
+      <div class="rung fragment"><span class="rname">Macan GTS</span><div class="rbar"><span style="--w:89%">571 LE</span></div><span class="rprice">42,2 M</span></div>
+      <div class="rung fragment"><span class="rname">Macan Turbo</span><div class="rbar"><span style="--w:100%">639 LE</span></div><span class="rprice">46,7 M</span></div>
+    </div>
+    <ul class="ilist small">
+      <li class="fragment"><svg class="ico"><use href="#i-bolt"/></svg><span><span class="term" tabindex="0" data-tip="PPE: Premium Platform Electric – a Porsche és az Audi közös, 800 V-os villanyautó-alapja (pl. Audi Q6 e-tron).">PPE</span> platform, 800 V</span></li>
+      <li class="fragment"><svg class="ico"><use href="#i-road"/></svg>Alapmodell hátsókerekes, a többi 4×4</li>
+      <li class="fragment"><svg class="ico"><use href="#i-gauge"/></svg>Hatótáv: akár ~600 km (WLTP)</li>
+      <li class="fragment"><svg class="ico"><use href="#i-x"/></svg>Benzines Macan: gyártás leállt</li>
+    </ul>
+  </div>
+  <p class="tiny">„–”: magyar ár nem ellenőrzött. Ár: bruttó alapár, M Ft.</p>
+  <aside class="notes">A Macan ma kizárólag elektromos. Öt fokozat 360-tól 639 lóerőig, a belépő a legolcsóbb Porsche itthon. A PPE platform közös az Audi Q6 e-tronnal. A benzines Macan gyártása leállt, utódja 2028 körül várható.</aside>
+</section>
+
+<!-- 12. CAYENNE -->
+<section>
+  <h2>Cayenne – két párhuzamos család</h2>
+  <div class="cols2">
+    <div>
+      <div class="colhead"><svg class="ico lg"><use href="#i-fuel"/></svg><b>Cayenne (benzin / PHEV)</b></div>
+      <table class="ptable">
+        <thead><tr><th>Változat</th><th>Motor</th><th class="num">LE</th><th class="num">M Ft</th></tr></thead>
+        <tbody>
+          <tr><td>Cayenne</td><td>3,0 V6</td><td class="num">353</td><td class="num">40,1</td></tr>
+          <tr><td>E-Hybrid</td><td>V6 + villany</td><td class="num">470</td><td class="num">46,5</td></tr>
+          <tr><td>Cayenne S</td><td>4,0 V8</td><td class="num">474</td><td class="num">–</td></tr>
+          <tr><td>GTS</td><td>4,0 V8</td><td class="num">500</td><td class="num">–</td></tr>
+          <tr><td>Turbo E-Hybrid</td><td>V8 + villany</td><td class="num">739</td><td class="num">73,4</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <div class="colhead"><svg class="ico lg"><use href="#i-bolt"/></svg><b>Cayenne Electric</b></div>
+      <table class="ptable">
+        <thead><tr><th>Változat</th><th class="num">LE</th><th class="num">SUV</th><th class="num">Coupé</th></tr></thead>
+        <tbody>
+          <tr><td>Cayenne Electric</td><td class="num">408</td><td class="num">40,7</td><td class="num">42,3</td></tr>
+          <tr><td>S Electric</td><td class="num">666</td><td class="num">49,1</td><td class="num">50,3</td></tr>
+          <tr><td>Turbo Electric</td><td class="num">1 156</td><td class="num">63,4</td><td class="num">64,7</td></tr>
+        </tbody>
+      </table>
+      <p class="sub" style="margin-top:.5em">Mindkét családnál: SUV és Coupé kivitel</p>
+    </div>
+  </div>
+  <p class="tiny">Árak M Ft, bruttó alapár. „–”: magyar ár nem ellenőrzött. Cayenne S E-Hybrid (519 LE) is elérhető.</p>
+  <aside class="notes">A Cayenne különleges: a benzines/plug-in hibrid és a tisztán elektromos változat egymás mellett él, várhatóan még sokáig. Érdekes, hogy a belépő elektromos Cayenne alig drágább a benzinesnél. A Coupé kivitel nagyjából 1,3–1,6 millióval drágább.</aside>
+</section>
+
+<!-- 13. KVÍZ -->
+<section>
+  <h2>Kvíz: ki a legerősebb?</h2>
+  <div class="quiz">
+    <p class="quiz-q">Melyik a legerősebb sorozatgyártású Porsche jelenleg?</p>
+    <div class="quiz-opts">
+      <button class="opt" data-correct="0"><span class="mark">A</span>911 Turbo S</button>
+      <button class="opt" data-correct="0"><span class="mark">B</span>Taycan Turbo GT</button>
+      <button class="opt" data-correct="1"><span class="mark">C</span>Cayenne Turbo Electric</button>
+      <button class="opt" data-correct="0"><span class="mark">D</span>Panamera Turbo S E-Hybrid</button>
+    </div>
+    <p class="feedback" aria-live="polite"></p>
+    <button class="btn ghost reset">Újra</button>
+  </div>
+  <aside class="notes">Kérdezzük meg a közönséget, mielőtt bárki kattint. Sokan a 911 Turbo S-re vagy a Taycan Turbo GT-re tippelnek. A helyes válasz meglepő: egy SUV, a Cayenne Turbo Electric.</aside>
+</section>
+
+<!-- 14. NAGY SZÁM -->
+<section class="center-all">
+  <p class="small muted" style="font-weight:700;letter-spacing:.06em;text-transform:uppercase">Minden idők legerősebb széria-Porschéja</p>
+  <div class="big"><span class="countup" data-target="1156">1 156</span> <small>LE</small></div>
+  <p style="font-size:.85em;font-weight:700;margin-top:.3em">Cayenne Turbo Electric · 850 kW</p>
+  <div class="pills">
+    <span class="pill fragment"><svg class="ico"><use href="#i-gauge"/></svg>0–100 km/h: 2,5 s</span>
+    <span class="pill fragment"><svg class="ico"><use href="#i-road"/></svg>557–623 km (WLTP)</span>
+    <span class="pill fragment"><svg class="ico"><use href="#i-coin"/></svg>63,4 M Ft-tól</span>
+  </div>
+  <aside class="notes">1156 lóerő, 850 kilowatt – ez a Cayenne Turbo Electric csúcsteljesítménye. A Coupé változata is ugyanennyit tud. Közben a hatótáv is 550–620 km körül van, az ára pedig olcsóbb, mint egy Taycan Turbo S-é.</aside>
+</section>
+
+<!-- 15. SZEKCIÓ -->
+<section class="divider" data-background-color="#850015" data-background-gradient="linear-gradient(135deg,#A3001A 0%,#6E0011 100%)">
+  <div class="div-num">03</div>
+  <h2>Árazás</h2>
+  <p>Belépő vs. csúcs · árfolyam · saját keret</p>
+  <aside class="notes">Harmadik blokk: árak, interaktívan.</aside>
+</section>
+
+<!-- 16. ÁR-DIAGRAM + TÁBLÁZAT + CSÚSZKA -->
+<section id="s-prices">
+  <h2 style="font-size:1.25em">Belépő és csúcs modellcsaládonként</h2>
+  <div class="cols2" style="grid-template-columns:1.35fr 1fr">
+    <div class="chart-box" style="height:340px"><canvas id="barCanvas" role="img" aria-label="Belépő és csúcsmodell ára modellcsaládonként"></canvas></div>
+    <div>
+      <table class="ptable">
+        <thead><tr><th>Modell</th><th class="num">Belépő</th><th class="num">Csúcs</th></tr></thead>
+        <tbody id="ptBody"></tbody>
+      </table>
+      <div class="card slider">
+        <label for="rate">EUR/HUF árfolyam (az ár EUR-alapú)</label>
+        <div class="row"><input type="range" id="rate" min="330" max="420" step="1" value="364"><output id="rateOut" for="rate">364 Ft/€</output></div>
+      </div>
+      <p class="tiny">M Ft, bruttó alapár; extrák, regadó, szállítás és GT-modellek nélkül. Forrás: Porsche HU konfigurátor.</p>
+    </div>
+  </div>
+  <aside class="notes">A diagram a belépő és a csúcsmodell árát mutatja családonként; a jelmagyarázatra kattintva ki-be kapcsolható. A Porsche euróban áraz, a forintár a számlázás napi MNB-árfolyamától függ – a csúszkával megmutathatjuk, mennyit mozdul az ár 10–20 forintos árfolyamváltozásnál.</aside>
+</section>
+
+<!-- 17. VARIÁNSKERESŐ -->
+<section id="s-finder">
+  <h2>Variánskereső: mi fér bele a keretbe?</h2>
+  <div class="finder-controls">
+    <label class="fld">Keresés <input id="fq" type="text" placeholder="pl. Turbo, elektromos, Cayenne" autocomplete="off"></label>
+    <label class="fld">Saját keret (M Ft) <input id="fbudget" type="number" min="1" max="500" step="1" value="60"></label>
+    <span id="fcount" class="pill" aria-live="polite"></span>
+  </div>
+  <div id="fgrid" class="fgrid"></div>
+  <p class="tiny" style="margin-top:.4em">✓ = belefér · ✗ szaggatott kerettel = keret felett · az előző dián beállított árfolyammal számolva</p>
+  <aside class="notes">Itt bárki beírhatja a saját keretét milliókban, és rögtön látszik, melyik variáns fér bele. A keresőmező szűr névre, de hajtásra is: próbáljuk ki, hogy „elektromos” vagy „hibrid”. Érdemes megmutatni, hogy 60 millióból már a villanyos Cayenne S vagy a Panamera 4S E-Hybrid is elérhető.</aside>
+</section>
+
+<!-- 18. SCATTER + RAJZOLÁS -->
+<section id="s-scatter">
+  <h2>Ár vs. teljesítmény – minden variáns</h2>
+  <div class="cols2" style="grid-template-columns:1.6fr 1fr">
+    <div id="drawWrap" class="draw-wrap">
+      <div class="chart-box" style="height:350px"><canvas id="scatterCanvas" role="img" aria-label="Variánsok ára és teljesítménye"></canvas></div>
+      <canvas id="drawLayer" class="draw-layer" aria-hidden="true"></canvas>
+    </div>
+    <div>
+      <ul class="ilist obs">
+        <li class="fragment"><svg class="ico"><use href="#i-bolt"/></svg>Villanyosok: több LE forintonként</li>
+        <li class="fragment"><svg class="ico"><use href="#i-gauge"/></svg>Cayenne Turbo Electric kiugrik</li>
+        <li class="fragment"><svg class="ico"><use href="#i-sport"/></svg>911: a felár az élményért jár</li>
+        <li class="fragment"><svg class="ico"><use href="#i-hybrid"/></svg>PHEV-ek a középmezőnyben</li>
+      </ul>
+      <div class="row" style="gap:.4em;margin-top:.5em">
+        <button id="drawToggle" class="btn" aria-pressed="false">✏️ <span>Rajzolás: KI</span></button>
+        <button id="drawClear" class="btn ghost">Törlés</button>
+      </div>
+      <p class="tiny">Rajzolás BE: egérrel/ujjal jelölhetsz. KI: működnek a tooltipek és a jelmagyarázat.</p>
+    </div>
+  </div>
+  <aside class="notes">Minden variáns egy pont: vízszintesen az ár, függőlegesen a teljesítmény. A formák a modellcsaládokat jelölik. Kapcsoljuk be a rajzolást, és karikázzuk be a Cayenne Turbo Electricet, illetve a 911-et: utóbbinál látszik, hogy nem a lóerőt fizetjük meg, hanem a sportautó-élményt. Utána a Törlés gombbal tisztítsuk le.</aside>
+</section>
+
+<!-- 19. SZEKCIÓ -->
+<section class="divider" data-background-color="#850015" data-background-gradient="linear-gradient(135deg,#A3001A 0%,#6E0011 100%)">
+  <div class="div-num">04</div>
+  <h2>Konkurencia</h2>
+  <p>Riválisok · konszern-testvérek · erősségek</p>
+  <aside class="notes">Negyedik blokk: kik a fő alternatívák.</aside>
+</section>
+
+<!-- 20. KONKURENSEK -->
+<section>
+  <h2>Fő riválisok modellenként</h2>
+  <div class="grid3">
+    <div class="card ccard fragment"><h3><svg class="ico"><use href="#i-sport"/></svg>911</h3><ul><li>Mercedes-AMG GT Coupé</li><li>Aston Martin Vantage</li><li>Chevrolet Corvette</li></ul><div class="arg">Porsche-érv: ikon, maradványérték</div></div>
+    <div class="card ccard fragment"><h3><svg class="ico"><use href="#i-sedan"/></svg>Panamera</h3><ul><li>Mercedes-AMG GT 4 ajtós</li><li>BMW M5</li><li>BMW i7</li></ul><div class="arg">Porsche-érv: sportosság limuzinban</div></div>
+    <div class="card ccard fragment"><h3><svg class="ico"><use href="#i-sedan"/></svg>Taycan</h3><ul><li>Audi e-tron GT</li><li>BMW i5 M60</li><li>Lucid Air</li></ul><div class="arg">Porsche-érv: menetdinamika, töltés</div></div>
+    <div class="card ccard fragment"><h3><svg class="ico"><use href="#i-suv"/></svg>Macan</h3><ul><li>BMW iX3</li><li>Mercedes GLC (elektromos)</li><li>Tesla Model Y Performance</li></ul><div class="arg">Porsche-érv: dinamika, 800 V</div></div>
+    <div class="card ccard fragment"><h3><svg class="ico"><use href="#i-suv"/></svg>Cayenne</h3><ul><li>BMW X5 / X6</li><li>Mercedes GLE</li><li>Range Rover Sport</li></ul><div class="arg">Porsche-érv: V6-tól Turbo E-Hybridig</div></div>
+    <div class="card ccard fragment"><h3><svg class="ico"><use href="#i-suv"/></svg>Cayenne Electric</h3><ul><li>BMW iX</li><li>Range Rover Electric</li><li>Mercedes EQS SUV</li></ul><div class="arg">Porsche-érv: 1156 LE, induktív töltés</div></div>
+  </div>
+  <aside class="notes">Minden Porschénak van erős riválisa. Az árakat itt szándékosan nem tesszük egymás mellé, mert a felszereltség nagyon eltér – a valós összevetéshez azonos felszereltségű ajánlatot kell kérni. A Porsche jellemző érve a menetdinamika és a maradványérték, a konkurensek gyakran a komfortban és az alapfelszereltségben erősek.</aside>
+</section>
+
+<!-- 21. KONSZERN-TESTVÉREK (drag & drop) -->
+<section>
+  <h2>Párosítsd: kinek a konszern-testvére?</h2>
+  <p class="small muted">Húzd a sötét kártyákat a megfelelő Porschéhoz (vagy kattints a kártyára, majd a modellre).</p>
+  <div class="dnd-targets">
+    <div class="target" tabindex="0" data-accept="etron" data-plat="J1 platform"><div class="t-name"><svg class="ico"><use href="#i-sedan"/></svg>Taycan</div><div class="slot"><span class="hint">ide húzd</span></div></div>
+    <div class="target" tabindex="0" data-accept="q6" data-plat="PPE platform"><div class="t-name"><svg class="ico"><use href="#i-suv"/></svg>Macan</div><div class="slot"><span class="hint">ide húzd</span></div></div>
+    <div class="target" tabindex="0" data-accept="urus" data-plat="MLB Evo platform"><div class="t-name"><svg class="ico"><use href="#i-suv"/></svg>Cayenne</div><div class="slot"><span class="hint">ide húzd</span></div></div>
+    <div class="target" tabindex="0" data-accept="spur" data-plat="MSB platform"><div class="t-name"><svg class="ico"><use href="#i-sedan"/></svg>Panamera</div><div class="slot"><span class="hint">ide húzd</span></div></div>
+  </div>
+  <div class="dnd-pool" id="dndPool">
+    <div class="chip" draggable="true" tabindex="0" data-id="urus">Lamborghini Urus</div>
+    <div class="chip" draggable="true" tabindex="0" data-id="etron">Audi e-tron GT</div>
+    <div class="chip" draggable="true" tabindex="0" data-id="spur">Bentley Flying Spur</div>
+    <div class="chip" draggable="true" tabindex="0" data-id="q6">Audi Q6 e-tron</div>
+  </div>
+  <div class="row" style="margin-top:.5em"><span class="pill" id="dndCount" aria-live="polite">0/4 helyes</span><button class="btn ghost" id="dndReset">Újrakezdés</button></div>
+  <aside class="notes">Interaktív rész: a Porsche a Volkswagen-konszern platformjait használja. A Taycan az Audi e-tron GT-vel, a Macan az Audi Q6 e-tronnal, a Cayenne a Lamborghini Urusszal, a Panamera a Bentley Flying Spurral rokon. Ez azért érdekes, mert a konszernen belül is van alternatíva, gyakran más árszinten.</aside>
+</section>
+
+<!-- 22. MELLETTE / ELLENE -->
+<section>
+  <h2>Mi szól mellette – és mi ellene?</h2>
+  <div class="cols2">
+    <div class="card pc">
+      <h3><svg class="ico" style="color:var(--ok)"><use href="#i-check"/></svg>Mellette</h3>
+      <ul class="ilist">
+        <li class="fragment"><svg class="ico" style="color:var(--ok)"><use href="#i-check"/></svg>Kiemelkedő menetdinamika</li>
+        <li class="fragment"><svg class="ico" style="color:var(--ok)"><use href="#i-check"/></svg>Benzin, PHEV, T-Hybrid, villany</li>
+        <li class="fragment"><svg class="ico" style="color:var(--ok)"><use href="#i-check"/></svg>800 V-os gyorstöltés</li>
+        <li class="fragment"><svg class="ico" style="color:var(--ok)"><use href="#i-check"/></svg>Szinte korlátlan egyediesítés</li>
+      </ul>
+    </div>
+    <div class="card pc">
+      <h3><svg class="ico"><use href="#i-x"/></svg>Ellene</h3>
+      <ul class="ilist">
+        <li class="fragment"><svg class="ico"><use href="#i-x"/></svg>Drága extrák: egyedi fényezés ~3,7–4,7 M Ft</li>
+        <li class="fragment"><svg class="ico"><use href="#i-x"/></svg>EUR-alapú ár: árfolyamkockázat</li>
+        <li class="fragment"><svg class="ico"><use href="#i-x"/></svg>Most nincs benzines Macan, 718</li>
+        <li class="fragment"><svg class="ico"><use href="#i-x"/></svg>Regadó, szállítás külön</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">Összegzés pro és kontra. A legnagyobb buktató az extrák ára: csak egy egyedi fényezés 3,7–4,7 millió forint lehet. Mivel az ár euróban van, a forint gyengülése közvetlenül drágítja az autót. Átmenetileg két népszerű belépő – benzines Macan és 718 – hiányzik.</aside>
+</section>
+
+<!-- 23. ELLENŐRZŐLISTA -->
+<section>
+  <h2>Döntés előtti ellenőrzőlista</h2>
+  <div class="cl-head"><span id="ckCount">0/6 kész</span><div class="cl-bar" aria-hidden="true"><span id="ckBar"></span></div></div>
+  <div class="checks" id="checklist">
+    <label><input type="checkbox"><span>Teljes keret, extrákkal együtt<small>alapár + opciók + tartalék</small></span></label>
+    <label><input type="checkbox"><span>Hajtáslánc-választás<small>van otthoni / céges töltés?</small></span></label>
+    <label><input type="checkbox"><span>Kivitel<small>Coupé, Cabrio, Targa, Turismo?</small></span></label>
+    <label><input type="checkbox"><span>Árfolyam-kockázat<small>EUR-alapú számlázás</small></span></label>
+    <label><input type="checkbox"><span>Regadó és szállítás<small>nincs benne az alapárban</small></span></label>
+    <label><input type="checkbox"><span>Tesztvezetés<small>a konkurensből is</small></span></label>
+  </div>
+  <aside class="notes">Hat lépés, amit vásárlás előtt érdemes kipipálni. Pipáljuk végig közösen. Különösen fontos: a töltési lehetőség eldönti, hogy villany vagy plug-in hibrid éri-e meg, és a teljes keretbe az extrákat is bele kell számolni.</aside>
+</section>
+
+<!-- 24. ZÁRÓ + QR -->
+<section>
+  <h2>Összegzés</h2>
+  <div class="cols2" style="grid-template-columns:1.4fr 1fr;align-items:center">
+    <ul class="ilist" style="font-size:.75em">
+      <li class="fragment"><svg class="ico"><use href="#i-coin"/></svg>Belépő: Macan, ~32,6 M Ft</li>
+      <li class="fragment"><svg class="ico"><use href="#i-sport"/></svg>Csúcs: 911 Turbo S, ~105,7 M Ft</li>
+      <li class="fragment"><svg class="ico"><use href="#i-gauge"/></svg>Legerősebb: Cayenne Turbo Electric</li>
+      <li class="fragment"><svg class="ico"><use href="#i-flag"/></svg>2028-tól újra benzines Macan</li>
+    </ul>
+    <div style="text-align:center">
+      <div class="qr-card"><div id="qr" aria-label="QR-kód a Porsche magyar konfigurátorához"></div><span><svg class="ico dark"><use href="#i-link"/></svg> configurator.porsche.com/hu-HU</span></div>
+      <p class="small" style="margin-top:.3em;font-weight:700">Konfiguráld a sajátodat!</p>
+    </div>
+  </div>
+  <p class="tiny">Források: Porsche HU konfigurátor (2026), Autónavigátor (2026.04.30), Totalcar (2026.07), Zero2Turbo (2026.10.05). Az árak tájékoztató jellegűek.</p>
+  <aside class="notes">Négy mondatban: a legolcsóbb Porsche ma a villany-Macan, a legdrágább sorozatmodell a 911 Turbo S, a legerősebb egy SUV, és a Porsche visszatér a benzines Macanhez. A QR-kóddal bárki megnyithatja a hivatalos magyar konfigurátort, és összerakhatja a saját autóját valós aktuális árakkal. Kérdések?</aside>
+</section>
+
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+<script>
+/* ---------- Adatok ---------- */
+const BASE_RATE = 364;
+let rate = BASE_RATE;
+const fmt1 = v => v.toLocaleString('hu-HU',{minimumFractionDigits:1,maximumFractionDigits:1});
+const conv = p => p * rate / BASE_RATE;
+const DRIVE = {el:'elektromos', ice:'benzin', phev:'plug-in hibrid E-Hybrid', th:'T-Hybrid'};
+
+const VARIANTS = [
+  {n:'Macan',fam:'Macan',le:360,p:32.6,d:'el'},
+  {n:'Macan 4S',fam:'Macan',le:516,p:36.5,d:'el'},
+  {n:'Macan GTS',fam:'Macan',le:571,p:42.2,d:'el'},
+  {n:'Macan Turbo',fam:'Macan',le:639,p:46.7,d:'el'},
+  {n:'Cayenne',fam:'Cayenne',le:353,p:40.1,d:'ice'},
+  {n:'Cayenne E-Hybrid',fam:'Cayenne',le:470,p:46.5,d:'phev'},
+  {n:'Cayenne Turbo E-Hybrid',fam:'Cayenne',le:739,p:73.4,d:'phev'},
+  {n:'Cayenne Electric',fam:'Cayenne Electric',le:408,p:40.7,d:'el'},
+  {n:'Cayenne S Electric',fam:'Cayenne Electric',le:666,p:49.1,d:'el'},
+  {n:'Cayenne Turbo Electric',fam:'Cayenne Electric',le:1156,p:63.4,d:'el'},
+  {n:'Taycan',fam:'Taycan',le:408,p:40.9,d:'el'},
+  {n:'Taycan 4S',fam:'Taycan',le:544,p:48.4,d:'el'},
+  {n:'Taycan GTS',fam:'Taycan',le:700,p:58.5,d:'el'},
+  {n:'Taycan Turbo',fam:'Taycan',le:884,p:69.8,d:'el'},
+  {n:'Taycan Turbo S',fam:'Taycan',le:952,p:81.6,d:'el'},
+  {n:'Panamera 4',fam:'Panamera',le:353,p:47.9,d:'ice'},
+  {n:'Panamera 4 E-Hybrid',fam:'Panamera',le:470,p:51.7,d:'phev'},
+  {n:'Panamera 4S E-Hybrid',fam:'Panamera',le:544,p:58.2,d:'phev'},
+  {n:'Panamera GTS',fam:'Panamera',le:500,p:68.1,d:'ice'},
+  {n:'Panamera Turbo E-Hybrid',fam:'Panamera',le:680,p:82.6,d:'phev'},
+  {n:'Panamera Turbo S E-Hybrid',fam:'Panamera',le:782,p:94.8,d:'phev'},
+  {n:'911 Carrera',fam:'911',le:394,p:54.1,d:'ice'},
+  {n:'911 Carrera GTS',fam:'911',le:541,p:68.9,d:'th'},
+  {n:'911 Turbo S',fam:'911',le:711,p:105.7,d:'th'}
+];
+const FAMILIES = [
+  {name:'Macan',lo:32.6,loN:'Macan',hi:46.7,hiN:'Macan Turbo'},
+  {name:'Cayenne',lo:40.1,loN:'Cayenne',hi:73.4,hiN:'Turbo E-Hybrid'},
+  {name:'Cayenne El.',lo:40.7,loN:'Cayenne Electric',hi:63.4,hiN:'Turbo Electric'},
+  {name:'Taycan',lo:40.9,loN:'Taycan',hi:81.6,hiN:'Taycan Turbo S'},
+  {name:'Panamera',lo:47.9,loN:'Panamera 4',hi:94.8,hiN:'Turbo S E-Hybrid'},
+  {name:'911',lo:54.1,loN:'911 Carrera',hi:105.7,hiN:'911 Turbo S'}
+];
+const FAM_STYLE = {
+  '911':{c:'#B3001B',s:'circle'}, 'Panamera':{c:'#6B7280',s:'rect'}, 'Taycan':{c:'#1B1E22',s:'triangle'},
+  'Macan':{c:'#E36A79',s:'rectRot'}, 'Cayenne':{c:'#7A0012',s:'rectRounded'}, 'Cayenne Electric':{c:'#4A5058',s:'crossRot'}
+};
+const TL = [
+  {d:'2025. október', t:'Vége a benzines 718-nak', x:'Leállt a 718 Boxster és Cayman benzines gyártása; az EU-ban kiberbiztonsági előírások miatt már korábban kivonták.'},
+  {d:'2025 vége', t:'Megjön a Cayenne Electric', x:'A villanyos Cayenne a benzines/hibrid Cayenne mellé érkezik, nem helyette.'},
+  {d:'2026 eleje', t:'Új vezérigazgató', x:'Michael Leiters váltja Oliver Blume-ot a Porsche élén, és újratervezi a modellstratégiát.'},
+  {d:'2026. április', t:'Cayenne Coupé Electric', x:'Megjelenik a kupé villany-Cayenne; magyar ára 42,3 M Ft-tól, a Turbo 64,7 M Ft-tól.'},
+  {d:'2026 nyara', t:'Leáll a benzines Macan', x:'Megszűnik a benzines Macan gyártása, a kompakt SUV-szegmensben csak a Macan Electric marad.'},
+  {d:'2028 (várható)', t:'Visszatér a benzines Macan', x:'Új benzines Macan érkezik Audi Q5-rokon alapokon; a villanyos 718 fejlesztése is folytatódik.'}
+];
+
+/* ---------- Ártábla ---------- */
+const ptBody = document.getElementById('ptBody');
+ptBody.innerHTML = FAMILIES.map((f,i)=>`<tr><td>${f.name}</td><td class="num" id="lo${i}">${fmt1(f.lo)}</td><td class="num" id="hi${i}">${fmt1(f.hi)}</td></tr>`).join('');
+
+/* ---------- Chart.js ---------- */
+Chart.defaults.font.family = '"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif';
+Chart.defaults.font.size = 19;
+Chart.defaults.color = '#3A3F46';
+let barChart = null, scatterChart = null;
+
+function initBar(){
+  if(barChart) return;
+  barChart = new Chart(document.getElementById('barCanvas'), {
+    type:'bar',
+    data:{ labels:FAMILIES.map(f=>f.name), datasets:[
+      {label:'Belépő modell', data:FAMILIES.map(f=>+conv(f.lo).toFixed(1)), backgroundColor:'#8A9099', borderRadius:6},
+      {label:'Csúcsmodell', data:FAMILIES.map(f=>+conv(f.hi).toFixed(1)), backgroundColor:'#B3001B', borderRadius:6}
+    ]},
+    options:{ responsive:true, maintainAspectRatio:false, animation:{duration:500},
+      plugins:{ legend:{position:'top', labels:{usePointStyle:true, pointStyle:'rectRounded', color:'#1B1E22'}},
+        tooltip:{ bodyFont:{size:18}, titleFont:{size:18}, callbacks:{ label:c=>{ const f=FAMILIES[c.dataIndex]; const nm = c.datasetIndex===0 ? f.loN : f.hiN; return ` ${nm}: ${fmt1(c.parsed.y)} M Ft`; } } } },
+      scales:{ y:{beginAtZero:true, title:{display:true,text:'M Ft (bruttó)'}, grid:{color:'#EEE7E5'}}, x:{grid:{display:false}, ticks:{color:'#1B1E22'}} } }
+  });
+}
+
+function scatterDatasets(){
+  return Object.keys(FAM_STYLE).map(f=>({
+    label:f,
+    data:VARIANTS.filter(v=>v.fam===f).map(v=>({x:+conv(v.p).toFixed(1), y:v.le, n:v.n})),
+    backgroundColor:FAM_STYLE[f].c, borderColor:FAM_STYLE[f].c, pointStyle:FAM_STYLE[f].s,
+    pointRadius:8, pointHoverRadius:11, borderWidth: f==='Cayenne Electric' ? 3 : 1
+  }));
+}
+function initScatter(){
+  if(scatterChart) return;
+  scatterChart = new Chart(document.getElementById('scatterCanvas'), {
+    type:'scatter',
+    data:{ datasets:scatterDatasets() },
+    options:{ responsive:true, maintainAspectRatio:false, animation:{duration:400},
+      plugins:{ legend:{position:'top', labels:{usePointStyle:true, boxWidth:14, color:'#1B1E22', font:{size:17}}},
+        tooltip:{ bodyFont:{size:18}, callbacks:{ label:c=>` ${c.raw.n}: ${c.raw.y.toLocaleString('hu-HU')} LE · ${fmt1(c.raw.x)} M Ft` } } },
+      scales:{ x:{title:{display:true,text:'Alapár (M Ft)'}, grid:{color:'#EEE7E5'}}, y:{title:{display:true,text:'Teljesítmény (LE)'}, grid:{color:'#EEE7E5'}} } }
+  });
+}
+
+/* ---------- Árfolyam-csúszka ---------- */
+function updatePrices(){
+  document.getElementById('rateOut').textContent = rate + ' Ft/€';
+  FAMILIES.forEach((f,i)=>{ document.getElementById('lo'+i).textContent = fmt1(conv(f.lo)); document.getElementById('hi'+i).textContent = fmt1(conv(f.hi)); });
+  if(barChart){ barChart.data.datasets[0].data = FAMILIES.map(f=>+conv(f.lo).toFixed(1)); barChart.data.datasets[1].data = FAMILIES.map(f=>+conv(f.hi).toFixed(1)); barChart.update(); }
+  if(scatterChart){ scatterChart.data.datasets.forEach(ds=>ds.data.forEach(pt=>{ const v=VARIANTS.find(x=>x.n===pt.n); pt.x = +conv(v.p).toFixed(1); })); scatterChart.update(); }
+  renderFinder();
+}
+document.getElementById('rate').addEventListener('input', e=>{ rate = +e.target.value; updatePrices(); });
+
+/* ---------- Variánskereső ---------- */
+function renderFinder(){
+  const grid = document.getElementById('fgrid');
+  const q = document.getElementById('fq').value.trim().toLowerCase();
+  const budget = parseFloat(document.getElementById('fbudget').value);
+  let shown = 0, fit = 0;
+  const html = VARIANTS.map(v=>{
+    const price = conv(v.p);
+    const hay = (v.n+' '+v.fam+' '+DRIVE[v.d]).toLowerCase();
+    if(q && !hay.includes(q)) return '';
+    shown++;
+    const ok = isNaN(budget) ? true : price <= budget;
+    if(ok) fit++;
+    return `<div class="fchip ${ok?'ok':'over'}"><b title="${v.n}">${v.n}</b><div class="fmeta"><span>${v.le.toLocaleString('hu-HU')} LE · ${fmt1(price)} M Ft</span><span class="fstat" aria-label="${ok?'belefér':'keret felett'}">${ok?'✓':'✗'}</span></div></div>`;
+  }).join('');
+  grid.innerHTML = html || '<p class="fempty">Nincs találat – próbálj más kulcsszót.</p>';
+  document.getElementById('fcount').textContent = `${shown} látszik · ${fit} belefér ✓`;
+}
+document.getElementById('fq').addEventListener('input', renderFinder);
+document.getElementById('fbudget').addEventListener('input', renderFinder);
+renderFinder();
+
+/* ---------- Rajzolás a diagramon ---------- */
+function initDraw(){
+  const wrap = document.getElementById('drawWrap'), cv = document.getElementById('drawLayer');
+  if(cv._init) return; cv._init = true;
+  const ctx = cv.getContext('2d');
+  const size = ()=>{ cv.width = cv.offsetWidth; cv.height = cv.offsetHeight; };
+  size();
+  let drawing = false, last = null;
+  const pos = e => { const r = cv.getBoundingClientRect(); return {x:(e.clientX-r.left)*cv.width/r.width, y:(e.clientY-r.top)*cv.height/r.height}; };
+  cv.addEventListener('pointerdown', e=>{ drawing = true; last = pos(e); cv.setPointerCapture(e.pointerId); e.preventDefault(); });
+  cv.addEventListener('pointermove', e=>{ if(!drawing) return; const p = pos(e); ctx.strokeStyle='#B3001B'; ctx.lineWidth=5; ctx.lineCap='round'; ctx.lineJoin='round'; ctx.beginPath(); ctx.moveTo(last.x,last.y); ctx.lineTo(p.x,p.y); ctx.stroke(); last = p; });
+  ['pointerup','pointercancel'].forEach(t=>cv.addEventListener(t, ()=>{ drawing = false; }));
+  ['touchstart','touchmove'].forEach(t=>cv.addEventListener(t, e=>e.stopPropagation(), {passive:true}));
+  document.getElementById('drawToggle').addEventListener('click', function(){
+    const on = wrap.classList.toggle('drawing');
+    this.setAttribute('aria-pressed', on);
+    this.querySelector('span').textContent = on ? 'Rajzolás: BE' : 'Rajzolás: KI';
+    if(on && cv.width !== cv.offsetWidth) size();
+  });
+  document.getElementById('drawClear').addEventListener('click', ()=>ctx.clearRect(0,0,cv.width,cv.height));
+}
+
+/* ---------- Idővonal ---------- */
+(function(){
+  const tl = document.getElementById('tl');
+  tl.innerHTML = TL.map((e,i)=>`<button type="button" aria-pressed="false" data-i="${i}"><span class="dot"></span><span class="tl-date">${e.d}</span></button>`).join('');
+  const btns = tl.querySelectorAll('button');
+  function sel(i){
+    btns.forEach((b,j)=>{ b.classList.toggle('active', i===j); b.setAttribute('aria-pressed', i===j); });
+    document.getElementById('tlDate').textContent = TL[i].d;
+    document.getElementById('tlTitle').textContent = TL[i].t;
+    document.getElementById('tlText').textContent = TL[i].x;
+  }
+  btns.forEach(b=>b.addEventListener('click', ()=>sel(+b.dataset.i)));
+  sel(0);
+})();
+
+/* ---------- Fülek ---------- */
+document.querySelectorAll('.tabs').forEach(tabs=>{
+  const btns = tabs.querySelectorAll('.tab');
+  btns.forEach(b=>b.addEventListener('click', ()=>{
+    btns.forEach(x=>{ x.setAttribute('aria-selected', x===b); document.getElementById(x.dataset.tab).classList.toggle('active', x===b); });
+  }));
+});
+
+/* ---------- Szakkifejezés-buborékok (szélre igazítással) ---------- */
+document.querySelectorAll('.term').forEach(t=>{
+  const b = document.createElement('span'); b.className = 'tip'; b.setAttribute('role','tooltip'); b.textContent = t.dataset.tip; t.appendChild(b);
+  const show = ()=>{
+    t.classList.add('open'); b.style.transform = 'translateX(-50%)';
+    requestAnimationFrame(()=>{
+      const r = b.getBoundingClientRect(), m = 10; let dx = 0;
+      if(r.left < m) dx = m - r.left; else if(r.right > window.innerWidth - m) dx = (window.innerWidth - m) - r.right;
+      const s = (window.Reveal && Reveal.getScale && Reveal.getScale()) || 1;
+      b.style.transform = `translateX(calc(-50% + ${dx/s}px))`;
+    });
+  };
+  const hide = ()=>t.classList.remove('open');
+  t.addEventListener('mouseenter', show); t.addEventListener('focus', show);
+  t.addEventListener('mouseleave', hide); t.addEventListener('blur', hide);
+  t.addEventListener('click', e=>{ e.stopPropagation(); t.classList.contains('open') ? hide() : show(); });
+});
+
+/* ---------- Kvíz ---------- */
+document.querySelectorAll('.quiz').forEach(q=>{
+  const opts = q.querySelectorAll('.opt'), fb = q.querySelector('.feedback');
+  const letters = [...opts].map(o=>o.querySelector('.mark').textContent);
+  opts.forEach(o=>o.addEventListener('click', ()=>{
+    if(q.dataset.done) return; q.dataset.done = '1';
+    const ok = o.dataset.correct === '1';
+    opts.forEach(x=>{ x.disabled = true; if(x.dataset.correct === '1'){ x.classList.add('correct'); x.querySelector('.mark').textContent = '✓'; } });
+    if(!ok){ o.classList.add('wrong'); o.querySelector('.mark').textContent = '✗'; }
+    fb.innerHTML = ok ? '✓ <b>Helyes!</b> A Cayenne Turbo Electric 850 kW-tal (1156 LE) a legerősebb széria-Porsche.'
+                      : '✗ <b>Nem ez.</b> A helyes válasz (✓ jellel): Cayenne Turbo Electric, 1156 LE.';
+    if(ok) confetti();
+  }));
+  q.querySelector('.reset').addEventListener('click', ()=>{
+    delete q.dataset.done; fb.innerHTML = '';
+    opts.forEach((x,i)=>{ x.disabled = false; x.classList.remove('correct','wrong'); x.querySelector('.mark').textContent = letters[i]; });
+  });
+});
+
+/* ---------- Konfetti ---------- */
+function confetti(){
+  const cv = document.getElementById('confetti'), ctx = cv.getContext('2d');
+  cv.width = window.innerWidth; cv.height = window.innerHeight; cv.style.display = 'block';
+  const cols = ['#B3001B','#7A0012','#E36A79','#1B1E22','#9CA3AF','#F2C94C'];
+  const ps = Array.from({length:160}, ()=>({x:Math.random()*cv.width, y:-20-Math.random()*cv.height*0.4, w:6+Math.random()*8, h:8+Math.random()*10, vx:-2+Math.random()*4, vy:2+Math.random()*4, r:Math.random()*Math.PI, vr:-0.2+Math.random()*0.4, c:cols[Math.floor(Math.random()*cols.length)]}));
+  const t0 = performance.now();
+  (function frame(t){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    ps.forEach(p=>{ p.x+=p.vx; p.y+=p.vy; p.vy+=0.06; p.r+=p.vr; ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r); ctx.fillStyle=p.c; ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h); ctx.restore(); });
+    if(t - t0 < 3200) requestAnimationFrame(frame); else { ctx.clearRect(0,0,cv.width,cv.height); cv.style.display='none'; }
+  })(t0);
+}
+
+/* ---------- Párosító (drag & drop + kattintásos tartalék) ---------- */
+(function(){
+  const pool = document.getElementById('dndPool');
+  const chipsOrig = [...pool.children];
+  const targets = document.querySelectorAll('.target');
+  let selected = null;
+  const clearSel = ()=>{ selected = null; chipsOrig.forEach(c=>c.classList.remove('selected')); };
+  const update = ()=>{ document.getElementById('dndCount').textContent = `${document.querySelectorAll('.target.solved').length}/4 helyes`; };
+  chipsOrig.forEach(ch=>{
+    ch.addEventListener('dragstart', e=>{ e.dataTransfer.setData('text/plain', ch.dataset.id); e.dataTransfer.effectAllowed = 'move'; ch.classList.add('dragging'); });
+    ch.addEventListener('dragend', ()=>ch.classList.remove('dragging'));
+    ch.addEventListener('click', e=>{ e.stopPropagation(); if(ch.classList.contains('placed')) return; const was = selected === ch; clearSel(); if(!was){ ch.classList.add('selected'); selected = ch; } });
+  });
+  function tryMatch(t, id){
+    if(t.classList.contains('solved') || !id) return;
+    const chip = pool.querySelector(`.chip[data-id="${id}"]`); if(!chip) return;
+    const slot = t.querySelector('.slot');
+    if(id === t.dataset.accept){
+      t.classList.add('solved'); chip.classList.add('placed'); chip.classList.remove('selected'); chip.draggable = false;
+      slot.innerHTML = ''; slot.appendChild(chip);
+      const v = document.createElement('div'); v.className = 'verdict ok'; v.textContent = '✓ Helyes – ' + t.dataset.plat; slot.appendChild(v);
+    } else {
+      t.classList.add('wrong'); slot.innerHTML = '<div class="verdict bad">✗ Nem ez – próbáld újra</div>';
+      setTimeout(()=>{ if(!t.classList.contains('solved')){ t.classList.remove('wrong'); slot.innerHTML = '<span class="hint">ide húzd</span>'; } }, 1300);
+    }
+    clearSel(); update();
+  }
+  targets.forEach(t=>{
+    t.addEventListener('dragover', e=>{ if(t.classList.contains('solved')) return; e.preventDefault(); t.classList.add('over'); });
+    t.addEventListener('dragleave', ()=>t.classList.remove('over'));
+    t.addEventListener('drop', e=>{ e.preventDefault(); t.classList.remove('over'); tryMatch(t, e.dataTransfer.getData('text/plain')); });
+    t.addEventListener('click', ()=>{ if(selected) tryMatch(t, selected.dataset.id); });
+  });
+  document.getElementById('dndReset').addEventListener('click', ()=>{
+    chipsOrig.forEach(c=>{ c.classList.remove('placed','selected'); c.draggable = true; pool.appendChild(c); });
+    targets.forEach(t=>{ t.classList.remove('solved','wrong','over'); t.querySelector('.slot').innerHTML = '<span class="hint">ide húzd</span>'; });
+    clearSel(); update();
+  });
+})();
+
+/* ---------- Ellenőrzőlista ---------- */
+(function(){
+  const cks = document.querySelectorAll('#checklist input');
+  const upd = ()=>{
+    const n = [...cks].filter(c=>c.checked).length;
+    document.getElementById('ckCount').textContent = `${n}/${cks.length} kész`;
+    document.getElementById('ckBar').style.width = (n/cks.length*100) + '%';
+    cks.forEach(c=>c.closest('label').classList.toggle('done', c.checked));
+  };
+  cks.forEach(c=>c.addEventListener('change', upd)); upd();
+})();
+
+/* ---------- QR-kód ---------- */
+try {
+  const qr = qrcode(0, 'M'); qr.addData('https://configurator.porsche.com/hu-HU/'); qr.make();
+  document.getElementById('qr').innerHTML = qr.createSvgTag(4, 0);
+} catch(e){ document.getElementById('qr').textContent = 'QR-kód nem tölthető be'; }
+
+/* ---------- Animációk ---------- */
+function countUp(el){
+  const target = +el.dataset.target, dur = 1300, t0 = performance.now();
+  el.textContent = '0';
+  (function step(t){ const p = Math.min(1,(t-t0)/dur), e = 1-Math.pow(1-p,3); el.textContent = Math.round(target*e).toLocaleString('hu-HU'); if(p<1) requestAnimationFrame(step); })(t0);
+}
+function typeIt(el){
+  const full = el.dataset.text; if(el._timer) clearInterval(el._timer);
+  el.textContent = ''; let i = 0;
+  el._timer = setInterval(()=>{ el.textContent = full.slice(0, ++i); if(i >= full.length) clearInterval(el._timer); }, 60);
+}
+function onShow(slide){
+  if(!slide) return;
+  if(slide.id === 's-prices') initBar();
+  if(slide.id === 's-scatter'){ initScatter(); initDraw(); }
+  if(slide.id === 's-finder') renderFinder();
+  const cu = slide.querySelector('.countup'); if(cu) countUp(cu);
+  const tw = slide.querySelector('.typewriter'); if(tw) typeIt(tw);
+}
+
+/* ---------- Reveal.js ---------- */
+Reveal.initialize({
+  hash:true, width:1280, height:720, margin:0.04, center:true,
+  transition:'slide', backgroundTransition:'fade',
+  controls:true, progress:true, slideNumber:'c/t',
+  plugins:[ RevealNotes ]
+}).then(()=>{
+  onShow(Reveal.getCurrentSlide());
+  Reveal.on('slidechanged', e=>onShow(e.currentSlide));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 239723,
+  "duration_api_ms": 239893,
+  "ttft_ms": 2451,
+  "ttft_stream_ms": 1938,
+  "time_to_request_ms": 28,
+  "num_turns": 13,
+  "result": "Az `output.xlsx` elkészült. Összefoglalás:\n\n**Tranzakciók munkalap** – 19 tétel, oszlopok: #, Leírás, Teljes összeg, Saját rész, Kategória, Megjegyzés. A megosztott tételeknél a megjegyzés tartalmazza az osztás logikáját.\n\n**Összesítő munkalap** – SUMIF formulák a Saját rész oszlopra:\n\n| Kategória    | Összeg        |\n|--------------|---------------|\n| élelmiszer   | 32 600 Ft     |\n| lakhatás     | 20 950 Ft     |\n| szórakozás   | 17 800 Ft     |\n| közlekedés   | 18 650 Ft     |\n| ruházat      | 15 850 Ft     |\n| egészség     | 25 300 Ft     |\n| bevétel      | 23 000 Ft     |\n| **Összes kiadás** | **131 150 Ft** |\n| **Záró egyenleg** | **−108 150 Ft** |\n\nNéhány megjegyzés a kategorizáláshoz:\n- **Internet előfizetés** → `lakhatás` (közüzemi/infrastruktúra jellegű)\n- **Spotify** (kétszer szerepel, eltérő összegekkel) → mindkettő `szórakozás`, saját rész 633 ill. 567 Ft (1/3, kerekítve)\n- **Netflix** → `szórakozás`, saját rész 1 150 Ft (3 450 / 3, pontos)",
+  "stop_reason": "end_turn",
+  "session_id": "b66a9e70-f549-48cd-a961-dcbf764e5041",
+  "total_cost_usd": 0.5489362000000001,
+  "usage": {
+    "input_tokens": 15,
+    "cache_creation_input_tokens": 27242,
+    "cache_read_input_tokens": 394944,
+    "output_tokens": 17709,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 27242,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 1,
+        "output_tokens": 439,
+        "cache_read_input_tokens": 41746,
+        "cache_creation_input_tokens": 1369,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1369
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1186,
+      "outputTokens": 27,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001321,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-sonnet-4-6": {
+      "inputTokens": 15,
+      "outputTokens": 17709,
+      "cacheReadInputTokens": 394944,
+      "cacheCreationInputTokens": 27242,
+      "webSearchRequests": 0,
+      "costUSD": 0.5476152000000001,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "291be361-a5b1-441d-9f26-5269c7507314"
+}

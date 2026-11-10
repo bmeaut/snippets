@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 71694,
+  "duration_api_ms": 69561,
+  "ttft_ms": 11570,
+  "ttft_stream_ms": 1498,
+  "time_to_request_ms": 353,
+  "num_turns": 19,
+  "result": "Perfect! I've created the **output.docx** file with your APA 7th edition formatted reference list in Hungarian. \n\nThe document contains:\n- **8 references** in correct alphabetical order by author's last name\n- **Hanging indentation** (0.75 cm for subsequent lines)\n- **Single spacing** between and within references\n- **Times New Roman 12pt** font formatting\n- **APA 7th edition format** with all provided data (excluding missing fields as requested)\n\nThe references are properly formatted:\n- Books: Author. (Year). *Title*. Publisher.\n- Journal articles: Author. (Year). Title. *Journal Name*, Volume(Issue), Pages.\n\nThe file is saved in your current working directory as requested.",
+  "stop_reason": "end_turn",
+  "session_id": "8ce1595b-a46c-4d8b-99b5-6fff69f377f8",
+  "total_cost_usd": 0.13640735000000004,
+  "usage": {
+    "input_tokens": 148,
+    "cache_creation_input_tokens": 21847,
+    "cache_read_input_tokens": 665971,
+    "output_tokens": 7580,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4186,
+      "ephemeral_5m_input_tokens": 17661
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 516,
+        "cache_read_input_tokens": 41819,
+        "cache_creation_input_tokens": 2141,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 2141,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1332,
+      "outputTokens": 7606,
+      "cacheReadInputTokens": 665971,
+      "cacheCreationInputTokens": 21847,
+      "webSearchRequests": 0,
+      "costUSD": 0.13640735000000004,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "285351cb-e0cb-4c99-9365-6cd56dcdbe4e"
+}

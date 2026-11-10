@@ -1,0 +1,106 @@
+Az alábbi rendezetlen, véletlen sorrendű forrásadatokból készíts egy helyes, APA 7. kiadás szerint formázott, ábécésorrendbe rendezett hivatkozásjegyzéket docx fájlként.
+
+Források:
+- típus: book
+  cím: Alapfokú ökológia
+  év: 1999
+  kiadó: Typotex
+  szerző(k): Lakatos, M.; Tóth, V.; Farkas, L.
+- típus: website
+  hónap: augusztus
+  weboldal neve: Qubit
+  év: 1998
+  nap: 12
+  URL: https://example.edu/cikk/2019
+  cím: A kutatási adatok nyílt megosztásának előnyei
+  szerző(k): Molnár, V.; Farkas, B.; Balogh, D.
+- típus: website
+  cím: Mi az a spacing effect, és miért működik?
+  nap: 4
+  weboldal neve: National Geographic Magyarország
+  URL: https://example.edu/cikk/4302
+  év: 2004
+  szerző(k): Varga, T.
+  hónap: október
+- típus: article
+  kötetszám: 13
+  DOI: 10.4168/3426.3918
+  cím: A visszacsatolás hatása a tanulási eredményekre
+  lapszám: 4
+  oldalszám: 106-119
+  folyóirat: Educatio
+  szerző(k): Kiss, L.
+  év: 2011
+- típus: website
+  URL: https://example.edu/cikk/4405
+  cím: Mi az a spacing effect, és miért működik?
+  szerző(k): Szűcs, V.; Tóth, E.; Németh, T.
+  nap: 23
+  weboldal neve: Qubit
+  év: 2014
+  hónap: december
+- típus: article
+  év: 2023
+  szerző(k): Fodor, N.
+  kötetszám: 23
+  folyóirat: Iskolakultúra
+  oldalszám: 28-45
+  lapszám: 3
+  DOI: 10.3331/5116.4929
+  cím: A projektalapú oktatás hatásai csoportos környezetben
+- típus: website
+  hónap: június
+  URL: https://example.edu/cikk/3877
+  cím: Hogyan hat a képernyőidő a koncentrációra?
+  nap: 24
+  weboldal neve: 444 Tudomány
+  szerző(k): Tóth, G.
+  év: 2020
+- típus: book
+  év: 1998
+  cím: Kutatásmetodológiai alapfogalmak
+  kiadó: Typotex
+  szerző(k): Simon, O.
+- típus: book
+  szerző(k): Oláh, S.; Tóth, J.
+  kiadó: Osiris Kiadó
+  év: 1998
+  cím: Az oktatástechnológia története
+- típus: article
+  szerző(k): Kovács, D.; Tóth, I.; Tóth, S.
+  év: 2005
+  cím: Az önszabályozott tanulás mérési lehetőségei
+  folyóirat: Pszichológia
+  kötetszám: 20
+  lapszám: 4
+  oldalszám: 140-152
+- típus: book
+  cím: Bevezetés a statisztikába
+  kiadó: Corvina Kiadó
+  év: 2003
+  szerző(k): Papp, I.
+- típus: book
+  kiadó: L'Harmattan Kiadó
+  év: 1997
+  szerző(k): Varga, I.; Juhász, S.; Oláh, K.
+  cím: Adatvizualizáció gyakorlata
+- típus: book
+  kiadó: Typotex
+  év: 2013
+  szerző(k): Fodor, M.
+  cím: A szervezetpszichológia alapjai
+- típus: website
+  cím: A tanulási szokások változása digitális korban
+  URL: https://example.edu/cikk/7703
+  szerző(k): Rácz, S.; Rácz, T.
+  nap: 13
+  év: 1996
+  hónap: március
+  weboldal neve: Qubit
+- típus: book
+  év: 2014
+  cím: Kritikai gondolkodás és argumentáció
+  szerző(k): Németh, J.; Szűcs, T.; Kovács, L.
+  kiadó: Typotex
+
+Mentsd el "output.docx" néven a jelenlegi könyvtárba. Minden hivatkozás külön bekezdésben szerepeljen, a szerző vezetékneve szerint ábécésorrendbe rendezve. Ha egy mező (pl. oldalszám, DOI) nincs megadva egy forrásnál, hagyd ki a hivatkozásból, ne találj ki helyette adatot.

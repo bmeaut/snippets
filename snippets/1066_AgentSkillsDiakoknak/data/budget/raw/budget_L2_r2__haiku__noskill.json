@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 33835,
+  "duration_api_ms": 34857,
+  "ttft_ms": 12403,
+  "ttft_stream_ms": 1294,
+  "time_to_request_ms": 35,
+  "num_turns": 2,
+  "result": "Kész! Az **output.xlsx** fájl sikeresen létrehozva a jelenlegi könyvtárban.\n\nA fájl tartalmazza:\n\n**Munkalap 1 – Tranzakciók:** Az összes 14 tétel, kategóriával és összegekkel\n\n**Munkalap 2 – Összesítés:**\n- **Élelmiszer:** 18.550 Ft (piac, Kifli.hu)\n- **Lakhatás:** 14.900 Ft (közműszámlák)\n- **Szórakozás:** 20.150 Ft (3× Spotify, Netflix, koncertjegy)\n- **Közlekedés:** 23.750 Ft (benzin, vonatjegy, taxi)\n- **Bevétel:** 322.150 Ft (2× részmunkaidős fizetés)\n\n**Végeredmény:**\n- Költségek összesen: 77.350 Ft\n- **Záró egyenleg: +244.800 Ft** ✓",
+  "stop_reason": "end_turn",
+  "session_id": "f3b4533a-39b1-44b2-b75d-0d403d6bd47c",
+  "total_cost_usd": 0.0363878,
+  "usage": {
+    "input_tokens": 18,
+    "cache_creation_input_tokens": 6530,
+    "cache_read_input_tokens": 35348,
+    "output_tokens": 3714,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 6530,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 526,
+        "cache_read_input_tokens": 19271,
+        "cache_creation_input_tokens": 3336,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 3336
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1083,
+      "outputTokens": 3742,
+      "cacheReadInputTokens": 35348,
+      "cacheCreationInputTokens": 6530,
+      "webSearchRequests": 0,
+      "costUSD": 0.0363878,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "93aa1ce6-f9a9-44d6-8589-228a8d2db2cd"
+}

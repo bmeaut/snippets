@@ -1,0 +1,107 @@
+Az alábbi rendezetlen, véletlen sorrendű forrásadatokból készíts egy helyes, APA 7. kiadás szerint formázott, ábécésorrendbe rendezett hivatkozásjegyzéket docx fájlként.
+
+Források:
+- típus: book
+  kiadó: Corvina Kiadó
+  szerző(k): Takács, G.; Molnár, S.; Rácz, T.
+  év: 2006
+  cím: A társadalomtudományi kutatás módszertana
+- típus: website
+  weboldal neve: 444 Tudomány
+  szerző(k): Németh, I.; Lakatos, V.
+  cím: Mi az a spacing effect, és miért működik?
+  URL: https://example.edu/cikk/6361
+  nap: 2
+  év: 2015
+  hónap: augusztus
+- típus: article
+  lapszám: 3
+  kötetszám: 34
+  oldalszám: 174-195
+  év: 2001
+  szerző(k): Gál, R.; Mészáros, O.; Mészáros, A.
+  cím: A kritikai szövegértés fejlődése serdülőkorban
+  folyóirat: Informatika és Oktatás
+  DOI: 10.2418/9107.4949
+- típus: book
+  év: 2002
+  szerző(k): Farkas, A.; Török, J.
+  cím: A gazdaságtörténet vázlatai
+  kiadó: Kalligram Kiadó
+- típus: website
+  nap: 20
+  cím: A felsőoktatás jövője: Tíz tendencia
+  szerző(k): Fekete, G.; Kovács, T.
+  weboldal neve: Index Tudomány
+  hónap: július
+  év: 1995
+  URL: https://example.edu/cikk/9124
+- típus: website
+  hónap: augusztus
+  szerző(k): Juhász, V.
+  nap: 28
+  cím: Mi az a spacing effect, és miért működik?
+  weboldal neve: National Geographic Magyarország
+  év: 2024
+  URL: https://example.edu/cikk/1745
+- típus: book
+  kiadó: Kalligram Kiadó
+  év: 1997
+  szerző(k): Mészáros, E.; Horváth, E.; Oláh, Z.
+  cím: Modern szoftverfejlesztési módszerek
+- típus: book
+  cím: A gazdaságtörténet vázlatai
+  kiadó: Osiris Kiadó
+  szerző(k): Takács, K.
+  év: 2003
+- típus: website
+  weboldal neve: Index Tudomány
+  szerző(k): Fodor, R.
+  cím: A kutatási adatok nyílt megosztásának előnyei
+  év: 2008
+  hónap: augusztus
+  nap: 10
+  URL: https://example.edu/cikk/3832
+- típus: book
+  szerző(k): Kiss, J.; Juhász, V.; Fekete, I.
+  év: 2002
+  cím: A magyar nyelv története
+  kiadó: Akadémiai Kiadó
+- típus: article
+  cím: A kortárs mentorálás hatása az egyetemi lemorzsolódásra
+  év: 2002
+  DOI: 10.1164/2622.7850
+  kötetszám: 8
+  folyóirat: Szociológiai Szemle
+  szerző(k): Papp, N.
+  lapszám: 4
+- típus: book
+  cím: Bevezetés a hálózattudományba
+  szerző(k): Kiss, A.; Rácz, M.; Nagy, V.
+  év: 2006
+  kiadó: Akadémiai Kiadó
+- típus: website
+  weboldal neve: 444 Tudomány
+  év: 2012
+  hónap: február
+  nap: 10
+  URL: https://example.edu/cikk/4750
+  szerző(k): Varga, L.
+  cím: A felsőoktatás jövője: Tíz tendencia
+- típus: website
+  nap: 28
+  cím: A felsőoktatás jövője: Tíz tendencia
+  szerző(k): Farkas, P.; Juhász, S.; Gál, S.
+  weboldal neve: 444 Tudomány
+  hónap: augusztus
+  év: 2018
+  URL: https://example.edu/cikk/2045
+- típus: book
+  szerző(k): Szabó, I.; Török, L.
+  cím: Bevezetés a hálózattudományba
+  év: 2008
+  kiadó: Akadémiai Kiadó
+
+Mentsd el "output.docx" néven a jelenlegi könyvtárba. Minden hivatkozás külön bekezdésben szerepeljen, a szerző vezetékneve szerint ábécésorrendbe rendezve. Ha egy mező (pl. oldalszám, DOI) nincs megadva egy forrásnál, hagyd ki a hivatkozásból, ne találj ki helyette adatot.
+
+Fontos: a teljes hivatkozásjegyzék kizárólag magyar nyelven készüljön, a hónapneveket és a dátumformátumot is beleértve, semmit ne fordíts angolra.

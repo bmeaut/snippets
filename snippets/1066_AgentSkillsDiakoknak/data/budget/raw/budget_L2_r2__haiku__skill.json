@@ -1,0 +1,62 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 121723,
+  "duration_api_ms": 120303,
+  "ttft_ms": 8294,
+  "ttft_stream_ms": 1122,
+  "time_to_request_ms": 24,
+  "num_turns": 17,
+  "result": "Kész! Az **output.xlsx** fájl sikeresen létrehozva lett. Tartalmazza:\n\n## 📊 Munkalapok:\n\n**1. Tranzakciók lap** – 14 tranzakció kategóriákkal és összegekkel:\n- Élelmiszer (3 tétel): 5150, 5800, 7600 Ft\n- Lakhatás (1 tétel): gáz-áram 14900 Ft  \n- Szórakozás (5 tétel): Spotify, Netflix, koncertjegy, stb.\n- Közlekedés (3 tétel): benzin, vonatjegy, taxi\n- Bevétel (2 tétel): 158250 + 163900 Ft\n\n**2. Összesítés lap** – kategóriánkénti összegek és záró egyenleg:\n\n| Kategória | Összeg |\n|-----------|--------|\n| Élelmiszer | 18550 Ft |\n| Lakhatás | 14900 Ft |\n| Szórakozás | 20150 Ft |\n| Közlekedés | 23750 Ft |\n| Bevétel | 322150 Ft |\n| **Záró egyenleg** | **244800 Ft** |\n\nAz összesítés SUMIF formulákat használ, így ha a tranzakciók lapot módosítod, az összegek automatikusan frissülnek az Excelben.",
+  "stop_reason": "end_turn",
+  "session_id": "31c7cbd8-857a-4ac6-8ec2-28c5bb3083c7",
+  "total_cost_usd": 0.14220499999999997,
+  "usage": {
+    "input_tokens": 131,
+    "cache_creation_input_tokens": 18905,
+    "cache_read_input_tokens": 454640,
+    "output_tokens": 11523,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 18905,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 8,
+        "output_tokens": 631,
+        "cache_read_input_tokens": 33510,
+        "cache_creation_input_tokens": 1470,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1470
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1196,
+      "outputTokens": 11547,
+      "cacheReadInputTokens": 454640,
+      "cacheCreationInputTokens": 18905,
+      "webSearchRequests": 0,
+      "costUSD": 0.14220499999999997,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "3f2e375a-cb39-41e5-9c33-8d0782e55c08"
+}

@@ -1,0 +1,72 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "duration_ms": 206151,
+  "duration_api_ms": 205937,
+  "ttft_ms": 5279,
+  "ttft_stream_ms": 3200,
+  "time_to_request_ms": 388,
+  "num_turns": 12,
+  "result": "Kész — az `output.docx` elkészült a jelenlegi könyvtárban.\n\n**Mit tartalmaz:**\n15 hivatkozás APA 7. kiadás szerint formázva, a szerző vezetékneve szerint ábécésorrendben, mindegyik külön bekezdésben, függő behúzással (hanging indent) és dupla sorközzel — ahogy az APA előírja. A duplikált forrásokat nem vontam össze, mert eltérő szerzőjű/kiadójú/évű, tehát külön művek.\n\n**Formázási döntések, amiket alkalmaztam:**\n- **Szerzők:** `Vezetéknév, X.` alakban, `&` jellel az utolsó szerző előtt (könyv/website/cikk egységesen).\n- **Könyv:** *dőlt cím* + kiadó.\n- **Folyóiratcikk:** cím nem dőlt, majd *folyóirat neve, évfolyam* dőlten, `(szám)` nem dőlten, oldalszám nagykötőjellel (`174–195`), végül DOI `https://doi.org/…` formában.\n- **Weboldal:** teljes dátum `(év, hónap nap)`, *dőlt cím*, weboldal neve, URL.\n\n**Kihagyott / hiányzó mezők (nem pótoltam kitalált adattal):**\n- **Papp, N. (2002)** folyóiratcikk — nem volt megadva oldalszám, ezért kihagytam.\n- Ahol egy weboldalnál nem volt szerző, az nem fordult elő; minden forrásnál volt szerző.\n\n**Néhány finomság, amire figyeltem:**\n- A kérdőjelre végződő címek (`Mi az a spacing effect, és miért működik?`) után nincs újabb pont, csak szóköz a weboldal neve előtt.\n- Azonos vezetéknevűeknél a keresztnév kezdőbetűje dönt: Farkas A. < Farkas P., Kiss A. < Kiss J., Takács G. < Takács K.\n\nEgy megjegyzés: a szigorú APA 7 az `&` jelet írja elő (nem a magyar „és”-t) a hivatkozásjegyzékben — ezt követtem. Ha a magyar „és” kötőszót szeretnéd helyette, szólj, és átírom.",
+  "stop_reason": "end_turn",
+  "session_id": "0f32ba86-8e56-4fdb-afb8-2627ed24548b",
+  "total_cost_usd": 1.01031,
+  "usage": {
+    "input_tokens": 8438,
+    "cache_creation_input_tokens": 47742,
+    "cache_read_input_tokens": 399438,
+    "output_tokens": 15676,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 20290,
+      "ephemeral_5m_input_tokens": 27452
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 809,
+        "cache_read_input_tokens": 46930,
+        "cache_creation_input_tokens": 812,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 812,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1906,
+      "outputTokens": 24,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.002026,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-opus-4-8": {
+      "inputTokens": 8438,
+      "outputTokens": 15676,
+      "cacheReadInputTokens": 399438,
+      "cacheCreationInputTokens": 47742,
+      "webSearchRequests": 0,
+      "costUSD": 1.0082840000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "uuid": "a05de060-7a47-46ef-89bb-835aefe75e02"
+}

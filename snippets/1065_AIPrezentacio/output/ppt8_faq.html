@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gyakori kérdések: AI a munkahelyen</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/white.css">
+  <style>
+    .reveal h1, .reveal h2 { color: #1864ab; overflow-wrap: normal; word-break: normal; hyphens: auto; }
+    .title-slide { background: linear-gradient(135deg, #eaf4fd 0%, #cfe4f7 100%); border-radius: 12px; }
+    .reveal li { display: flex; align-items: center; gap: 0.5em; margin-bottom: 0.5em; }
+    .reveal li svg { flex-shrink: 0; }
+
+    .checklist-item { font-size: 0.75em; }
+    .checklist-item input { width: 1.1em; height: 1.1em; }
+    .checklist-count { font-size: 0.6em; opacity: 0.75; margin-top: 0.4em; }
+
+    .glossary { border-bottom: 2px dotted #1864ab; cursor: help; position: relative; }
+    .glossary .tooltip {
+      display: none; position: absolute; bottom: 130%; left: 50%; transform: translateX(-50%);
+      background: #1864ab; color: #fff; padding: 0.4em 0.6em; border-radius: 6px;
+      font-size: 0.7em; width: 220px; text-align: left; z-index: 10;
+    }
+    .glossary:hover .tooltip, .glossary:focus .tooltip { display: block; }
+
+    .diagram-thumb { cursor: zoom-in; border: 2px solid #1864ab; border-radius: 8px; padding: 0.6em; display: inline-block; }
+    .lightbox-overlay {
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8);
+      z-index: 100; align-items: center; justify-content: center;
+    }
+    .lightbox-overlay.open { display: flex; }
+    .lightbox-overlay svg { width: 80vw; max-width: 700px; background: #fff; border-radius: 10px; padding: 1em; }
+
+    .search-box { font-size: 0.7em; padding: 0.4em 0.8em; width: 80%; border: 2px solid #1864ab; border-radius: 8px; margin-bottom: 0.5em; }
+    .faq-list { font-size: 0.65em; text-align: left; max-height: 340px; }
+    .faq-list li { display: list-item; margin-bottom: 0.3em; }
+    .faq-list li.hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section class="title-slide">
+        <h1>Gyakori kérdések: AI a munkahelyen</h1>
+        <aside class="notes">Rövid bevezető: ez egy belső tudásbázis, mindenki nézze át munkakezdés előtt.</aside>
+      </section>
+
+      <section>
+        <h2>Mielőtt elkezded</h2>
+        <div>
+          <div class="checklist-item"><label><input type="checkbox" class="check-box"> Kérj hozzáférést a céges AI-fiókhoz az IT-től</label></div>
+          <div class="checklist-item"><label><input type="checkbox" class="check-box"> Olvasd el a belső adatvédelmi szabályzatot</label></div>
+          <div class="checklist-item"><label><input type="checkbox" class="check-box"> Ne tölts fel ügyféladatot külső AI-eszközbe</label></div>
+        </div>
+        <div class="checklist-count"><span id="checkedCount">0</span>/3 kész</div>
+        <aside class="notes">Kérd meg őket, hogy valóban pipálják ki, amit már elvégeztek.</aside>
+      </section>
+
+      <section>
+        <h2>Néhány fogalom</h2>
+        <p style="font-size: 0.75em; text-align: left;">
+          A <span class="glossary" tabindex="0">prompt<span class="tooltip">A szöveges utasítás, amit megadsz az AI-nak.</span></span> az,
+          amit az AI-nak megadsz. Az <span class="glossary" tabindex="0">LLM<span class="tooltip">Nagy nyelvi modell — a mai chatbotok mögötti technológia.</span></span>
+          a mai chatbotok mögötti technológia. A <span class="glossary" tabindex="0">token<span class="tooltip">A szöveg legkisebb feldolgozási egysége, ez alapján árazzák a legtöbb szolgáltatást.</span></span>
+          alapján árazzák a legtöbb szolgáltatást.
+        </p>
+        <p style="font-size: 0.5em; opacity: 0.7;">Húzd a kurzort a pontozottan aláhúzott szavak fölé.</p>
+        <aside class="notes">Hagyj időt, hogy kipróbálják a hover-tooltipeket.</aside>
+      </section>
+
+      <section>
+        <h2>Jóváhagyási folyamat</h2>
+        <div class="diagram-thumb" id="diagramThumb">
+          <svg width="260" height="90" viewBox="0 0 260 90">
+            <g font-size="10" fill="#1864ab" text-anchor="middle">
+              <rect x="2" y="30" width="55" height="30" fill="#eaf4fd" stroke="#1864ab"/>
+              <text x="29" y="49">Kérés</text>
+              <rect x="70" y="30" width="60" height="30" fill="#eaf4fd" stroke="#1864ab"/>
+              <text x="100" y="45">Vezetői</text><text x="100" y="55">jóváhagyás</text>
+              <rect x="143" y="30" width="55" height="30" fill="#eaf4fd" stroke="#1864ab"/>
+              <text x="170" y="45">IT</text><text x="170" y="55">beállítás</text>
+              <rect x="211" y="30" width="47" height="30" fill="#eaf4fd" stroke="#1864ab"/>
+              <text x="234" y="45">Hasz-</text><text x="234" y="55">nálat</text>
+            </g>
+            <g stroke="#1864ab" stroke-width="1.5" fill="none" marker-end="url(#arrow)">
+              <line x1="57" y1="45" x2="68" y2="45"/>
+              <line x1="130" y1="45" x2="141" y2="45"/>
+              <line x1="198" y1="45" x2="209" y2="45"/>
+            </g>
+            <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#1864ab"/></marker></defs>
+          </svg>
+        </div>
+        <p style="font-size: 0.5em; opacity: 0.7;">Kattints a diagramra a nagyításhoz.</p>
+        <aside class="notes">Kattints rá élőben, mutasd meg a nagyítást.</aside>
+      </section>
+
+      <section>
+        <h2>Gyakori kérdések</h2>
+        <input type="text" class="search-box" id="faqSearch" placeholder="Kezdj el gépelni a kereséshez...">
+        <ul class="faq-list" id="faqList">
+          <li>Használhatok ingyenes AI-eszközt is?</li>
+          <li>Mi történik, ha véletlenül bizalmas adatot töltök fel?</li>
+          <li>Kell-e képzés az AI-eszközök használatához?</li>
+          <li>Ki felel az AI által generált tartalom hibáiért?</li>
+          <li>Használhatom az AI-t ügyfélnek szóló levelek megírásához?</li>
+          <li>Van-e havi keret az AI-eszközök használatára?</li>
+          <li>Mit tegyek, ha az AI hibás választ ad?</li>
+          <li>Kihez fordulhatok technikai problémával?</li>
+        </ul>
+        <aside class="notes">Mutasd meg élőben, hogy néhány betű beírására hogyan szűkül a lista.</aside>
+      </section>
+
+      <section class="title-slide">
+        <h2>Kérdés esetén</h2>
+        <p>Fordulj az IT-hez.</p>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <svg width="600" height="200" viewBox="0 0 260 90">
+      <g font-size="10" fill="#1864ab" text-anchor="middle">
+        <rect x="2" y="30" width="55" height="30" fill="#eaf4fd" stroke="#1864ab"/>
+        <text x="29" y="49">Kérés</text>
+        <rect x="70" y="30" width="60" height="30" fill="#eaf4fd" stroke="#1864ab"/>
+        <text x="100" y="45">Vezetői</text><text x="100" y="55">jóváhagyás</text>
+        <rect x="143" y="30" width="55" height="30" fill="#eaf4fd" stroke="#1864ab"/>
+        <text x="170" y="45">IT</text><text x="170" y="55">beállítás</text>
+        <rect x="211" y="30" width="47" height="30" fill="#eaf4fd" stroke="#1864ab"/>
+        <text x="234" y="45">Hasz-</text><text x="234" y="55">nálat</text>
+      </g>
+      <g stroke="#1864ab" stroke-width="1.5" fill="none" marker-end="url(#arrow2)">
+        <line x1="57" y1="45" x2="68" y2="45"/>
+        <line x1="130" y1="45" x2="141" y2="45"/>
+        <line x1="198" y1="45" x2="209" y2="45"/>
+      </g>
+      <defs><marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#1864ab"/></marker></defs>
+    </svg>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({ hash: true, transition: 'slide', plugins: [ RevealNotes ] });
+
+    const checkboxes = document.querySelectorAll('.check-box');
+    const checkedCount = document.getElementById('checkedCount');
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', () => {
+        checkedCount.textContent = document.querySelectorAll('.check-box:checked').length;
+      });
+    });
+
+    const thumb = document.getElementById('diagramThumb');
+    const overlay = document.getElementById('lightboxOverlay');
+    thumb.addEventListener('click', () => overlay.classList.add('open'));
+    overlay.addEventListener('click', () => overlay.classList.remove('open'));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') overlay.classList.remove('open');
+    });
+
+    const searchInput = document.getElementById('faqSearch');
+    const faqItems = document.querySelectorAll('#faqList li');
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.toLowerCase();
+      faqItems.forEach(li => {
+        li.classList.toggle('hidden', !li.textContent.toLowerCase().includes(q));
+      });
+    });
+
+    const margin = 10;
+    document.querySelectorAll('.glossary').forEach(g => {
+      const tip = g.querySelector('.tooltip');
+      const reposition = () => {
+        tip.style.transform = 'translateX(-50%)';
+        const rect = tip.getBoundingClientRect();
+        if (rect.left < margin) {
+          tip.style.transform = `translateX(calc(-50% + ${margin - rect.left}px))`;
+        } else if (rect.right > window.innerWidth - margin) {
+          tip.style.transform = `translateX(calc(-50% - ${rect.right - (window.innerWidth - margin)}px))`;
+        }
+      };
+      g.addEventListener('mouseenter', reposition);
+      g.addEventListener('focus', reposition);
+    });
+  </script>
+</body>
+</html>
