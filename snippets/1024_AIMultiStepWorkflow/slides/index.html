@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Citi Bike 2018 – AI workflow</title>
+<link rel="stylesheet" href="lib/reveal/reset.css">
+<link rel="stylesheet" href="lib/reveal/reveal.css">
+<link rel="stylesheet" href="lib/reveal/theme/white.css">
+<style>
+  :root { --blue:#1f5fa8; --orange:#e8833a; --ink:#1b2430; }
+  .reveal { font-family: "Segoe UI", system-ui, sans-serif; color: var(--ink); }
+  .reveal h1, .reveal h2 { font-family: inherit; text-transform: none; color: var(--blue); letter-spacing: -0.01em; }
+  .reveal h1 { font-size: 2.3em; }
+  .reveal h2 { font-size: 1.5em; margin-bottom: .5em; }
+  .reveal section { text-align: left; }
+  .reveal .sub { color:#5b6573; font-size:.7em; }
+  .reveal img { border: none; box-shadow: none; margin: 0; }
+  .reveal ul { font-size: .72em; }
+  .reveal li { margin-bottom: .45em; }
+  .cols { display:grid; grid-template-columns: 1.25fr 1fr; gap: 1.2em; align-items:center; }
+  .stat { display:flex; gap:1em; margin-top:.8em; }
+  .stat div { flex:1; background:#eef3fa; border-radius:10px; padding:.5em .7em; text-align:center; }
+  .stat b { display:block; font-size:1.5em; color:var(--blue); }
+  .stat span { font-size:.55em; color:#5b6573; }
+  .stat .o b { color: var(--orange); }
+  
+  .reveal .slides section.dark { color:#fff; }
+</style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+
+<section data-background-gradient="linear-gradient(135deg,#eef3fa,#ffffff)">
+  <h1>Citi Bike 2018</h1>
+  <p>Többlépéses AI-workflow: CSV → Python → Markdown/Mermaid → Typst → Reveal.js</p>
+  <p class="sub">BME AUT snippet · Claude-dal készített demó</p>
+</section>
+
+<section>
+  <h2>Adat és kérdések</h2>
+  <div class="stat">
+    <div><b>17 543 815</b><span>tisztított utazás, 2018</span></div>
+    <div><b>821</b><span>indulóállomás</span></div>
+    <div class="o"><b>12</b><span>havi CSV</span></div>
+  </div>
+  <ul>
+    <li class="fragment">Mikor használják a legtöbben a rendszert?</li>
+    <li class="fragment">Mennyiben más a hétvége, mint a hétköznap?</li>
+    <li class="fragment">Mennyi ideig tart egy út, és ki utazik tovább?</li>
+    <li class="fragment">Hogyan változik a forgalom a szezonok között?</li>
+  </ul>
+</section>
+
+<section>
+  <h2>A workflow</h2>
+  <img src="../image/workflow_mermaid.png" alt="A workflow Mermaid-ábrája" style="max-height:430px; display:block; margin:0 auto">
+  <p class="sub">Mermaid-forrás: <code>workflow.mmd</code>. A Typst-jelentés és a diák ugyanabból a <code>results.json</code>-ból készülnek.</p>
+</section>
+
+<section>
+  <h2>Hétköznap két csúcs, hétvégén egy púp</h2>
+  <div class="cols">
+    <img src="../image/chart_hourly.png" alt="Óránkénti indulások">
+    <ul>
+      <li class="fragment">Hétköznapi csúcs: <b>17, 18 és 8 óra</b>, kb. 5 259 indulás/nap</li>
+      <li class="fragment">8 órakor a hétköznapi forgalom <b>4,7×</b> a hétvégié</li>
+      <li class="fragment">Hétvégi csúcs <b>13 órakor</b>; a hétvégi nap 20%-kal kevesebb utat ad</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Szezonalitás</h2>
+  <div class="cols">
+    <img src="../image/chart_monthly.png" alt="Havi utazások">
+    <ul>
+      <li class="fragment"><b>augusztus:</b> 1,98 M utazás</li>
+      <li class="fragment"><b>január:</b> 0,72 M utazás</li>
+      <li class="fragment">Arány: <b>2,75×</b></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Utazási idő és állomások</h2>
+  <img src="../image/chart_duration_stations.png" alt="Időtartam és állomások" style="max-height:380px">
+  <ul>
+    <li>Medián: előfizető <b>9,3 perc</b>, alkalmi <b>21,4 perc</b> · top 10 állomás = 5,7% az utakból</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Korlátok</h2>
+  <ul>
+    <li>Csak 2018: nincs évek közötti trend</li>
+    <li>Nincs időjárás- és ünnepnap-adat, az okok csak feltételezések</li>
+    <li>Csak indulások: a készlethiány és az újraosztás nem látszik</li>
+    <li>4 524 db 24 óránál hosszabb utat kizártunk</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Konklúzió</h2>
+  <ul>
+    <li class="fragment">Az adatban egyértelmű napi és éves ritmus látszik</li>
+    <li class="fragment">Egy forrás (<code>results.json</code>) → jelentés és diák, kézi átírás nélkül</li>
+    <li class="fragment">A kérdéseket és a következtetések ellenőrzését az embernek kell végeznie</li>
+  </ul>
+</section>
+
+</div></div>
+<script src="lib/reveal/reveal.js"></script>
+<script>
+  Reveal.initialize({ hash: true, width: 1280, height: 720, margin: 0.06, transition: "slide" })
+    .then(() => document.body.setAttribute("data-ready", "1"));
+</script>
+</body>
+</html>
