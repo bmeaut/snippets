@@ -1,0 +1,1136 @@
+{
+ "N01": {
+  "en": "A student has {A} apples. The student buys {B} more apples and then gives {C} apples to a friend. How many apples does the student have now?",
+  "hu": {
+   "deepl": "Egy diáknak {A} alma van. A diák {B} almát vásárol még, majd {C} almát ad egy barátjának. Hány almája van most a diáknak?",
+   "back_en": "A student has {A} apples. The student buys {B} more apples, then gives {C} apples to a friend. How many apples does the student have now?",
+   "placeholders_ok": true,
+   "nllb": "Egy diáknak 111 almája van. A diák 222 almát vásárol, majd 333 almát ad egy barátjának. Hány alma van most a diáknak?",
+   "chrf_back": 95.4,
+   "chrf_nllb": 95.2
+  },
+  "de": {
+   "deepl": "Ein Schüler hat {A} Äpfel. Der Schüler kauft {B} weitere Äpfel und schenkt dann {C} Äpfel einem Freund. Wie viele Äpfel hat der Schüler nun?",
+   "back_en": "A student has {A} apples. The student buys {B} more apples and then gives {C} apples to a friend. How many apples does the student have now?",
+   "placeholders_ok": true,
+   "nllb": "Ein Schüler hat 111 Äpfel. Der Schüler kauft 222 Äpfel und gibt dann 333 Äpfel an einen Freund. Wie viele Äpfel hat der Schüler jetzt?",
+   "chrf_back": 100.0,
+   "chrf_nllb": 79.8
+  },
+  "ja": {
+   "deepl": "ある生徒が{A}個のリンゴを持っています。その生徒はさらに{B}個のリンゴを買い、その後、{C}個のリンゴを友達にあげました。今、その生徒はリンゴを何個持っていますか？",
+   "back_en": "A student has {A} apples. The student bought {B} more apples and then gave {C} apples to a friend. How many apples does the student have now?",
+   "placeholders_ok": true,
+   "nllb": "生徒には111個のリンゴがあります. 生徒はさらに222個のリンゴを購入し,友人に333個のリンゴを贈ります. 生徒には今どれくらいのリンゴがありますか.",
+   "chrf_back": 89.6,
+   "chrf_nllb": 39.8
+  }
+ },
+ "N02": {
+  "en": "A bakery bakes {A} rolls every hour. It bakes for {B} hours and then sells {C} of the rolls. How many rolls are left?",
+  "hu": {
+   "deepl": "Egy pékség óránként {A} darab zsemlét süt. {B} órán át süt, majd {C} darab zsemlét elad. Hány zsemle marad?",
+   "back_en": "A bakery bakes {A} rolls per hour. It bakes for {B} hours, then sells {C} rolls. How many rolls are left?",
+   "placeholders_ok": true,
+   "nllb": "Egy pékészár minden órában 111 rúllát süt, 222 órát süt, majd 333 rúllát értékesít.",
+   "chrf_back": 79.6,
+   "chrf_nllb": 36.0
+  },
+  "de": {
+   "deepl": "Eine Bäckerei backt jede Stunde {A} Brötchen. Sie backt {B} Stunden lang und verkauft anschließend {C} der Brötchen. Wie viele Brötchen sind noch übrig?",
+   "back_en": "A bakery bakes {A} rolls every hour. It bakes for {B} hours and then sells {C} of the rolls. How many rolls are left?",
+   "placeholders_ok": true,
+   "nllb": "Eine Bäckerei backt jede Stunde 111 Rollen. Sie backt 222 Stunden lang und verkauft dann 333 Rollen. Wie viele Rollen sind noch übrig?",
+   "chrf_back": 100.0,
+   "chrf_nllb": 75.2
+  },
+  "ja": {
+   "deepl": "あるパン屋では、1時間に{A}個のロールパンを焼きます。{B}時間焼いた後、{C}個のロールパンを売りました。残っているロールパンはいくつですか？",
+   "back_en": "A certain bakery bakes {A} rolls per hour. After baking for {B} hours, they sold {C} rolls. How many rolls are left?",
+   "placeholders_ok": true,
+   "nllb": "パン屋は毎時間111巻を焼いて 222時間焼いて 333巻を販売する",
+   "chrf_back": 62.1,
+   "chrf_nllb": 24.8
+  }
+ },
+ "N03": {
+  "en": "A student reads {A} pages every day for {B} days. The book has {C} pages. How many pages are left to read?",
+  "hu": {
+   "deepl": "Egy diák {A} oldalt olvas minden nap {B} napon keresztül. A könyvnek {C} oldala van. Hány oldal van még hátra?",
+   "back_en": "A student reads {A} page every day for {B} days. The book has {C} pages. How many pages are left?",
+   "placeholders_ok": true,
+   "nllb": "Egy diák minden nap 111 oldalt olvassa 222 napig. A könyv 333 oldalt tartalmaz. Hány oldalt kell még olvasni?",
+   "chrf_back": 88.9,
+   "chrf_nllb": 53.7
+  },
+  "de": {
+   "deepl": "Ein Schüler liest {A} Seiten pro Tag über einen Zeitraum von {B} Tagen. Das Buch hat {C} Seiten. Wie viele Seiten muss er noch lesen?",
+   "back_en": "A student reads {A} pages a day for {B} days. The book has {C} pages. How many more pages does he have to read?",
+   "placeholders_ok": true,
+   "nllb": "Ein Schüler liest 222 Tage lang jeden Tag 111 Seiten. Das Buch hat 333 Seiten. Wie viele Seiten sind noch zu lesen?",
+   "chrf_back": 78.4,
+   "chrf_nllb": 69.1
+  },
+  "ja": {
+   "deepl": "ある生徒が、{B}日間、毎日{A}ページずつ読んでいます。その本は{C}ページあります。あと何ページ残っていますか？",
+   "back_en": "A student has been reading {A} pages every day for {B} days. The book has {C} pages. How many pages are left?",
+   "placeholders_ok": true,
+   "nllb": "学生 は 日々 111 ページ を 222 日 間 読み ます.その 本 は 333 ページ です.まだ 何 ページ を 読む こと が でき ます か.",
+   "chrf_back": 84.5,
+   "chrf_nllb": 34.3
+  }
+ },
+ "N04": {
+  "en": "A box holds {A} pencils. A teacher has {B} full boxes and {C} loose pencils. How many pencils does the teacher have in total?",
+  "hu": {
+   "deepl": "Egy dobozban {A} ceruza van. Egy tanárnak {B} teli doboza és {C} darab szórványos ceruzája van. Összesen hány ceruzája van a tanárnak?",
+   "back_en": "There is {A} pencil in a box. A teacher has {B} full boxes and {C} scattered pencils. How many pencils does the teacher have in total?",
+   "placeholders_ok": true,
+   "nllb": "Egy doboz 111 ceruzát tartalmaz. Egy tanárnak 222 teljes doboza és 333 szabad ceruzája van. Hány ceruzája van a tanárnak összesen?",
+   "chrf_back": 81.3,
+   "chrf_nllb": 66.9
+  },
+  "de": {
+   "deepl": "In einer Schachtel befinden sich {A} Bleistifte. Ein Lehrer hat {B} volle Schachteln und {C} lose Bleistifte. Wie viele Bleistifte hat der Lehrer insgesamt?",
+   "back_en": "There are {A} pencils in a box. A teacher has {B} full boxes and {C} loose pencils. How many pencils does the teacher have in total?",
+   "placeholders_ok": true,
+   "nllb": "Eine Schachtel enthält 111 Bleistifte. Ein Lehrer hat 222 volle Schachtel und 333 lose Bleistifte. Wie viele Bleistifte hat der Lehrer insgesamt?",
+   "chrf_back": 88.7,
+   "chrf_nllb": 86.9
+  },
+  "ja": {
+   "deepl": "ある箱には{A}本の鉛筆が入っています。ある先生が{B}個の満杯の箱と{C}本のバラの鉛筆を持っています。その先生は全部で何本の鉛筆を持っているでしょうか？",
+   "back_en": "A certain box contains {A} pencils. A certain teacher has {B} full boxes and {C} loose pencils. How many pencils does the teacher have in total?",
+   "placeholders_ok": true,
+   "nllb": "箱には111枚の鉛筆があります.教師には222枚の箱と333枚の鉛筆があります.教師には合計でどのくらいの鉛筆がありますか.",
+   "chrf_back": 87.7,
+   "chrf_nllb": 21.9
+  }
+ },
+ "N05": {
+  "en": "A class has {A} students. {B} students walk to school and {C} students come by bus. All the others come by bike. How many students come by bike?",
+  "hu": {
+   "deepl": "Egy osztályban {A} diák van. {B} diák gyalog jön az iskolába, {C} diák pedig busszal. A többiek mind kerékpárral jönnek. Hány diák jön kerékpárral?",
+   "back_en": "There are {A} students in a class. {B} students walk to school, and {C} students take the bus. The rest all ride their bikes. How many students ride their bikes?",
+   "placeholders_ok": true,
+   "nllb": "Egy osztályban 111 diák van. 222 diák sétálva megy iskolába, 333 diák buszon jön. Mindenki más kerékpárral jön. Hány diák kerékpárral jön?",
+   "chrf_back": 57.5,
+   "chrf_nllb": 65.1
+  },
+  "de": {
+   "deepl": "Eine Klasse hat {A} Schüler. {B} Schüler gehen zu Fuß zur Schule und {C} Schüler fahren mit dem Bus. Alle anderen fahren mit dem Fahrrad. Wie viele Schüler fahren mit dem Fahrrad?",
+   "back_en": "A class has {A} students. {B} students walk to school, and {C} students take the bus. All the others ride their bikes. How many students ride their bikes?",
+   "placeholders_ok": true,
+   "nllb": "Eine Klasse hat 111 Schüler. 222 Schüler kommen zu Fuß zur Schule und 333 Schüler kommen mit dem Bus. Alle anderen kommen mit dem Fahrrad. Wie viele Schüler kommen mit dem Fahrrad?",
+   "chrf_back": 72.1,
+   "chrf_nllb": 82.3
+  },
+  "ja": {
+   "deepl": "あるクラスには{A}人の生徒がいます。{B}人が歩いて登校し、{C}人がバスで登校します。残りの生徒は全員自転車で登校します。自転車で登校する生徒は何人ですか？",
+   "back_en": "There are {A} students in a certain class. {B} students walk to school, and {C} students take the bus. All of the remaining students ride their bikes to school. How many students ride their bikes to school?",
+   "placeholders_ok": true,
+   "nllb": "一つのクラスには111人の生徒がいる.222人の生徒は徒歩で学校へ行き,333人の生徒はバスで来る.他の全員が自転車で来る.どの生徒が自転車で来るのか.",
+   "chrf_back": 57.3,
+   "chrf_nllb": 31.4
+  }
+ },
+ "N06": {
+  "en": "A farmer collects {A} eggs in the morning and {B} eggs in the evening. The eggs are packed in boxes of {C}. How many full boxes does the farmer get?",
+  "hu": {
+   "deepl": "Egy gazda reggel {A} tojást, este pedig {B} tojást gyűjt össze. A tojásokat {C} darabos dobozokba csomagolják. Hány teli dobozt kap a gazda?",
+   "back_en": "A farmer collects {A} eggs in the morning and {B} eggs in the evening. The eggs are packed into boxes containing {C} eggs each. How many full boxes does the farmer end up with?",
+   "placeholders_ok": true,
+   "nllb": "Egy gazdálkodó 111 tojást gyűjt reggel és 222 tojást este.",
+   "chrf_back": 85.9,
+   "chrf_nllb": 47.9
+  },
+  "de": {
+   "deepl": "Ein Landwirt sammelt morgens {A} Eier und abends {B} Eier ein. Die Eier werden in Kisten zu je {C} verpackt. Wie viele volle Kisten erhält der Landwirt?",
+   "back_en": "A farmer collects {A} eggs in the morning and {B} eggs in the evening. The eggs are packed into boxes of {C} each. How many full boxes does the farmer end up with?",
+   "placeholders_ok": true,
+   "nllb": "Ein Bauer sammelt morgens 111 Eier und abends 222 Eier.",
+   "chrf_back": 90.8,
+   "chrf_nllb": 61.2
+  },
+  "ja": {
+   "deepl": "ある農家が、朝に{A}個、夕方に{B}個の卵を採集しました。卵は{C}個ずつ箱に詰められます。農家は、満杯の箱をいくつ手に入れるでしょうか。",
+   "back_en": "A farmer collected {A} eggs in the morning and {B} eggs in the evening. The eggs are packed into boxes of {C} each. How many full boxes will the farmer end up with?",
+   "placeholders_ok": true,
+   "nllb": "ある 農夫 は,朝 に 111 個 の 卵 を 集め,夜 に 222 個 の 卵 を 集め て い ます.卵 は 333 個 の 箱 に 詰め られ て い ます.農夫 は どの よう な 箱 を 満杯 に 集め ます か.",
+   "chrf_back": 82.6,
+   "chrf_nllb": 29.1
+  }
+ },
+ "N07": {
+  "en": "A worker earns {A} euros per week and saves {B} euros each week. The rest is spent. How many euros does the worker spend in {C} weeks?",
+  "hu": {
+   "deepl": "Egy munkavállaló hetente {A} eurót keres, és hetente {B} eurót tesz félre. A maradékot elkölt. Hány eurót költ el a munkavállaló {C} hét alatt?",
+   "back_en": "An employee earns {A} euros per week and sets aside {B} euros per week. He spends the rest. How many euros does the employee spend over {C} weeks?",
+   "placeholders_ok": true,
+   "nllb": "A munkavállaló hetente 111 eurót keres, hetente 222 eurót takarít meg, a többit pedig elkölti. Hány eurót költ a munkavállaló 333 héten belül?",
+   "chrf_back": 60.7,
+   "chrf_nllb": 67.5
+  },
+  "de": {
+   "deepl": "Ein Arbeitnehmer verdient {A} Euro pro Woche und spart jede Woche {B} Euro. Den Rest gibt er aus. Wie viele Euro gibt der Arbeitnehmer in {C} Wochen aus?",
+   "back_en": "An employee earns {A} euros per week and saves {B} euros each week. He spends the rest. How many euros will the employee spend in {C} weeks?",
+   "placeholders_ok": true,
+   "nllb": "Ein Arbeiter verdient 111 Euro pro Woche und spart 222 Euro pro Woche. Der Rest wird ausgegeben. Wie viele Euro verbringt der Arbeiter in 333 Wochen?",
+   "chrf_back": 71.1,
+   "chrf_nllb": 64.9
+  },
+  "ja": {
+   "deepl": "ある労働者は、週に{A}ユーロを稼ぎ、毎週{B}ユーロを貯めています。残りはすべて使っています。この労働者は、{C}週間でいくらのユーロを使うでしょうか？",
+   "back_en": "A worker earns {A} euros per week and saves {B} euros every week. He spends the rest. How many euros will this worker spend in {C} weeks?",
+   "placeholders_ok": true,
+   "nllb": "労働者は週に111ユーロを稼ぎ,週に222ユーロを貯める.残りは費やされる.労働者は333週間で何ユーロを費やしている?",
+   "chrf_back": 77.7,
+   "chrf_nllb": 41.4
+  }
+ },
+ "N08": {
+  "en": "A train has {B} carriages with {A} seats in each carriage. {C} seats are empty. How many seats are taken?",
+  "hu": {
+   "deepl": "Egy vonatnak {B} kocsija van, és minden kocsiban {A} ülőhely van. {C} ülőhely üres. Hány ülőhely foglalt?",
+   "back_en": "A train has {B} cars, and each car has {A} seats. {C} seats are empty. How many seats are occupied?",
+   "placeholders_ok": true,
+   "nllb": "Egy vonaton 222 kocsi van, minden kocsiban 111 ülés. 333 ülés üres. Hány ülés van foglalva?",
+   "chrf_back": 65.8,
+   "chrf_nllb": 60.9
+  },
+  "de": {
+   "deepl": "Ein Zug hat {B} Waggons mit jeweils {A} Sitzplätzen. {C} Sitzplätze sind frei. Wie viele Sitzplätze sind besetzt?",
+   "back_en": "A train has {B} cars, each with {A} seats. {C} seats are empty. How many seats are occupied?",
+   "placeholders_ok": true,
+   "nllb": "Ein Zug hat 222 Wagen mit 111 Plätzen in jedem Wagen. 333 Plätze sind leer. Wie viele Plätze sind besetzt?",
+   "chrf_back": 67.5,
+   "chrf_nllb": 57.8
+  },
+  "ja": {
+   "deepl": "ある列車には{B}両の車両があり、各車両には{A}席あります。{C}席が空いています。埋まっている席はいくつありますか？",
+   "back_en": "A certain train has {B} cars, and each car has {A} seats. {C} seats are empty. How many seats are occupied?",
+   "placeholders_ok": true,
+   "nllb": "列車には222台の車輪があり,各車輪には111座席があります.333座席は空いています.",
+   "chrf_back": 65.3,
+   "chrf_nllb": 35.3
+  }
+ },
+ "N09": {
+  "en": "A girl bought {A} stickers. She gave half of them to a friend and then bought {B} more. How many stickers does she have now?",
+  "hu": {
+   "deepl": "Egy kislány vett {A} matricát. A felét odaadta egy barátjának, majd vett még {B}-t. Hány matricája van most?",
+   "back_en": "A little girl bought {A} stickers. She gave half of them to a friend, then bought {B} more. How many stickers does she have now?",
+   "placeholders_ok": true,
+   "nllb": "Egy lány 111 plakátot vett, felét egy barátjának adta, aztán 222 másikat.",
+   "chrf_back": 92.7,
+   "chrf_nllb": 37.4
+  },
+  "de": {
+   "deepl": "Ein Mädchen hat {A} Aufkleber gekauft. Die Hälfte davon hat sie einer Freundin geschenkt und anschließend {B} weitere gekauft. Wie viele Aufkleber hat sie nun?",
+   "back_en": "A girl bought {A} stickers. She gave half of them to a friend and then bought {B} more. How many stickers does she have now?",
+   "placeholders_ok": true,
+   "nllb": "Ein Mädchen kaufte 111 Aufkleber, gab die Hälfte an einen Freund und kaufte 222 weitere. Wie viele Aufkleber hat sie jetzt?",
+   "chrf_back": 100.0,
+   "chrf_nllb": 61.3
+  },
+  "ja": {
+   "deepl": "ある女の子が{A}枚のステッカーを買いました。その半分を友達にあげた後、さらに{B}枚買いました。今、彼女は何枚のステッカーを持っていますか？",
+   "back_en": "A girl bought {A} stickers. After giving half of them to her friends, she bought another {B} stickers. How many stickers does she have now?",
+   "placeholders_ok": true,
+   "nllb": "ある女の子は111枚のステッカーを買った. その半分を友人に渡し,さらに222枚を買った. 今,彼女はどれだけのステッカーを持っているか.",
+   "chrf_back": 69.1,
+   "chrf_nllb": 46.5
+  }
+ },
+ "N10": {
+  "en": "A shop sold {A} pens on Monday, {B} pens on Tuesday and {C} pens on Wednesday. How many pens did the shop sell on these three days?",
+  "hu": {
+   "deepl": "Egy bolt hétfőn {A} darab tollat, kedden {B} darab tollat, szerdán pedig {C} darab tollat adott el. Hány tollat adott el a bolt ezen a három napon?",
+   "back_en": "A store sold {A} pens on Monday, {B} pens on Tuesday, and {C} pens on Wednesday. How many pens did the store sell over those three days?",
+   "placeholders_ok": true,
+   "nllb": "Egy bolt 111 tollat értékesített hétfőn, 222 tollat kedden és 333 tollat szerdán.",
+   "chrf_back": 82.0,
+   "chrf_nllb": 41.3
+  },
+  "de": {
+   "deepl": "Ein Geschäft verkaufte am Montag {A} Stifte, am Dienstag {B} Stifte und am Mittwoch {C} Stifte. Wie viele Stifte hat das Geschäft an diesen drei Tagen verkauft?",
+   "back_en": "A store sold {A} pens on Monday, {B} pens on Tuesday, and {C} pens on Wednesday. How many pens did the store sell over those three days?",
+   "placeholders_ok": true,
+   "nllb": "Ein Laden verkaufte am Montag 111 Bleistifte, am Dienstag 222 Bleistifte und am Mittwoch 333 Bleistifte. Wie viele Bleistifte verkaufte der Laden in diesen drei Tagen?",
+   "chrf_back": 82.0,
+   "chrf_nllb": 64.8
+  },
+  "ja": {
+   "deepl": "あるお店では、月曜日に{A}本のペン、火曜日に{B}本のペン、水曜日に{C}本のペンを売りました。この3日間で、そのお店は合計で何本のペンを売ったでしょうか。",
+   "back_en": "A certain store sold {A} pens on Monday, {B} pens on Tuesday, and {C} pens on Wednesday. How many pens did the store sell in total over those three days?",
+   "placeholders_ok": true,
+   "nllb": "ある店では月曜日に111筆,火曜日に222筆,水曜日に333筆が売られました.この3日間で店はどのくらいの筆を売りましたか?",
+   "chrf_back": 79.5,
+   "chrf_nllb": 36.9
+  }
+ },
+ "E01": {
+  "en": "A warehouse received {A} pallets on Monday, {B} pallets on Tuesday and {C} pallets on Wednesday. How many pallets arrived on Tuesday?",
+  "hu": {
+   "deepl": "Egy raktárba hétfőn {A}, kedden {B}, szerdán pedig {C} raklap érkezett. Hány raklap érkezett kedden?",
+   "back_en": "{A} pallets arrived at a warehouse on Monday, {B} on Tuesday, and {C} on Wednesday. How many pallets arrived on Tuesday?",
+   "placeholders_ok": true,
+   "nllb": "Egy raktár 111 palétát kapott hétfőn, 222 palétát kedden és 333 palétát szerdán. Hány palétát érkeztek kedden?",
+   "chrf_back": 71.1,
+   "chrf_nllb": 38.3
+  },
+  "de": {
+   "deepl": "Ein Lagerhaus erhielt am Montag {A} Paletten, am Dienstag {B} Paletten und am Mittwoch {C} Paletten. Wie viele Paletten sind am Dienstag eingetroffen?",
+   "back_en": "A warehouse received {A} pallets on Monday, {B} pallets on Tuesday, and {C} pallets on Wednesday. How many pallets arrived on Tuesday?",
+   "placeholders_ok": true,
+   "nllb": "Ein Lager hat am Montag 111 Paletten, am Dienstag 222 Paletten und am Mittwoch 333 Paletten erhalten.",
+   "chrf_back": 97.5,
+   "chrf_nllb": 81.5
+  },
+  "ja": {
+   "deepl": "ある倉庫には、月曜日に{A}パレット、火曜日に{B}パレット、水曜日に{C}パレットが搬入されました。火曜日に何パレットが搬入されましたか？",
+   "back_en": "{A} pallets were delivered to a warehouse on Monday, {B} pallets on Tuesday, and {C} pallets on Wednesday. How many pallets were delivered on Tuesday?",
+   "placeholders_ok": true,
+   "nllb": "1つの倉庫は月曜日に111パレット,火曜日に222パレット,水曜日に333パレットを受け取った.火曜日にどのくらいのパレット届きましたか?",
+   "chrf_back": 79.2,
+   "chrf_nllb": 46.6
+  }
+ },
+ "E02": {
+  "en": "The library has {A} novels, {B} dictionaries and {C} magazines. How many dictionaries does the library have?",
+  "hu": {
+   "deepl": "A könyvtárban {A} regény, {B} szótár és {C} folyóirat található. Hány szótár van a könyvtárban?",
+   "back_en": "The library contains {A} novel, {B} dictionary, and {C} magazine. How many dictionaries are there in the library?",
+   "placeholders_ok": true,
+   "nllb": "A könyvtárban 111 regény, 222 szótár és 333 folyóirat van. Hány szótár van a könyvtárban?",
+   "chrf_back": 69.9,
+   "chrf_nllb": 91.1
+  },
+  "de": {
+   "deepl": "Die Bibliothek verfügt über {A} Romane, {B} Wörterbücher und {C} Zeitschriften. Wie viele Wörterbücher besitzt die Bibliothek?",
+   "back_en": "The library has {A} novels, {B} dictionaries, and {C} magazines. How many dictionaries does the library have?",
+   "placeholders_ok": true,
+   "nllb": "Die Bibliothek hat 111 Romane, 222 Wörterbücher und 333 Zeitschriften. Wie viele Wörterbücher hat die Bibliothek?",
+   "chrf_back": 97.0,
+   "chrf_nllb": 87.4
+  },
+  "ja": {
+   "deepl": "この図書館には、{A}冊の小説、{B}冊の辞書、{C}冊の雑誌があります。この図書館には、辞書が何冊ありますか？",
+   "back_en": "This library has {A} novels, {B} dictionaries, and {C} magazines. How many dictionaries are there in this library?",
+   "placeholders_ok": true,
+   "nllb": "図書館には111冊の小説,222冊の辞書,333冊の雑誌があります.図書館には何冊の辞書がありますか.",
+   "chrf_back": 80.3,
+   "chrf_nllb": 55.1
+  }
+ },
+ "E03": {
+  "en": "In March the shop earned {A} euros, in April {B} euros and in May {C} euros. How many euros did the shop earn in May?",
+  "hu": {
+   "deepl": "Márciusban az üzlet {A} eurót, áprilisban {B} eurót, májusban pedig {C} eurót keresett. Hány eurót keresett az üzlet májusban?",
+   "back_en": "In March, the store earned {A} euros; in April, {B} euros; and in May, {C} euros. How many euros did the store earn in May?",
+   "placeholders_ok": true,
+   "nllb": "Márciusban a bolt 111 eurót keresett, áprilisban 222 eurót és májusban 333 eurót.",
+   "chrf_back": 72.4,
+   "chrf_nllb": 70.0
+  },
+  "de": {
+   "deepl": "Im März erzielte das Geschäft {A} Euro, im April {B} Euro und im Mai {C} Euro. Wie viele Euro hat das Geschäft im Mai erzielt?",
+   "back_en": "In March, the store earned {A} euros, in April {B} euros, and in May {C} euros. How many euros did the store earn in May?",
+   "placeholders_ok": true,
+   "nllb": "Im März verdiente der Laden 111 Euro, im April 222 Euro und im Mai 333 Euro. Wie viele Euro verdiente der Laden im Mai?",
+   "chrf_back": 82.0,
+   "chrf_nllb": 60.7
+  },
+  "ja": {
+   "deepl": "3月の売り上げは{A}ユーロ、4月は{B}ユーロ、5月は{C}ユーロでした。5月の売り上げはいくらでしたか？",
+   "back_en": "Sales in March were {A} euros, in April {B} euros, and in May {C} euros. How much were the sales in May?",
+   "placeholders_ok": true,
+   "nllb": "3月の店は111ユーロ,4月の店は222ユーロ,5月の店は333ユーロ.",
+   "chrf_back": 57.8,
+   "chrf_nllb": 42.2
+  }
+ },
+ "E04": {
+  "en": "Three students scored {A}, {B} and {C} points on a test. What was the highest score?",
+  "hu": {
+   "deepl": "Három diák {A}, {B} és {C} pontot ért el egy dolgozaton. Mi volt a legmagasabb pontszám?",
+   "back_en": "Three students scored {A}, {B}, and {C} on a test. What was the highest score?",
+   "placeholders_ok": true,
+   "nllb": "Három diák 111, 222 és 333 pontszámot kapott egy vizsgán. Melyik volt a legmagasabb pontszám?",
+   "chrf_back": 84.6,
+   "chrf_nllb": 65.3
+  },
+  "de": {
+   "deepl": "Drei Schüler erzielten bei einem Test {A}, {B} und {C} Punkte. Wie lautete die höchste Punktzahl?",
+   "back_en": "Three students scored {A}, {B}, and {C} points on a test. What was the highest score?",
+   "placeholders_ok": true,
+   "nllb": "Bei einem Test erzielten drei Schüler 111, 222 und 333 Punkte. Was war die höchste Punktzahl?",
+   "chrf_back": 95.9,
+   "chrf_nllb": 76.9
+  },
+  "ja": {
+   "deepl": "あるテストで、3人の生徒がそれぞれ{A}点、{B}点、{C}点を獲得しました。最高得点はいくつでしたか？",
+   "back_en": "On a certain test, three students scored {A}, {B}, and {C}, respectively. What was the highest score?",
+   "placeholders_ok": true,
+   "nllb": "3人の生徒がテストで111,222と333点を獲得した.最も高いスコアは?",
+   "chrf_back": 72.9,
+   "chrf_nllb": 35.5
+  }
+ },
+ "E05": {
+  "en": "Three parcels weigh {A} kilograms, {B} kilograms and {C} kilograms. How many kilograms does the lightest parcel weigh?",
+  "hu": {
+   "deepl": "Három csomag súlya {A} kilogramm, {B} kilogramm és {C} kilogramm. Hány kilogrammot nyom a legkönnyebb csomag?",
+   "back_en": "Three packages weigh {A} kilograms, {B} kilograms, and {C} kilograms. How many kilograms does the lightest package weigh?",
+   "placeholders_ok": true,
+   "nllb": "Három csomag 111 kilogramm, 222 kilogramm és 333 kilogramm súlyú.",
+   "chrf_back": 84.3,
+   "chrf_nllb": 76.5
+  },
+  "de": {
+   "deepl": "Drei Pakete wiegen {A} Kilogramm, {B} Kilogramm und {C} Kilogramm. Wie viele Kilogramm wiegt das leichteste Paket?",
+   "back_en": "Three packages weigh {A} kilograms, {B} kilograms, and {C} kilograms. How many kilograms does the lightest package weigh?",
+   "placeholders_ok": true,
+   "nllb": "Drei Pakete wiegen 111 Kilogramm, 222 Kilogramm und 333 Kilogramm. Wie viele Kilogramm wiegt das leichteste Paket?",
+   "chrf_back": 84.3,
+   "chrf_nllb": 100.0
+  },
+  "ja": {
+   "deepl": "3つの小包の重さは、それぞれ{A}キログラム、{B}キログラム、{C}キログラムです。最も軽い小包の重さは何キログラムですか？",
+   "back_en": "The weights of the three packages are {A} kilograms, {B} kilograms, and {C} kilograms, respectively. How many kilograms does the lightest package weigh?",
+   "placeholders_ok": true,
+   "nllb": "3つの包装は111キロ,222キロ,333キロの重量.最も軽い包装はどのくらいの重量ですか?",
+   "chrf_back": 74.8,
+   "chrf_nllb": 26.6
+  }
+ },
+ "E06": {
+  "en": "A school has {A} students in year 1, {B} students in year 2 and {C} students in year 3. How many students are in year 2?",
+  "hu": {
+   "deepl": "Egy iskolában {A} tanuló jár az 1. évfolyamon, {B} tanuló a 2. évfolyamon és {C} tanuló a 3. évfolyamon. Hány tanuló jár a 2. évfolyamon?",
+   "back_en": "At a school, student {A} is in the 1st grade, student {B} is in the 2nd grade, and student {C} is in the 3rd grade. How many students are in the 2nd grade?",
+   "placeholders_ok": true,
+   "nllb": "Egy iskolában 111 hallgató van az 1. évadban, 222 hallgató a 2. évadban és 333 hallgató a 3. évadban. Hány hallgató van a 2. évadban?",
+   "chrf_back": 47.2,
+   "chrf_nllb": 37.1
+  },
+  "de": {
+   "deepl": "Eine Schule hat {A} Schüler in der 1. Klasse, {B} Schüler in der 2. Klasse und {C} Schüler in der 3. Klasse. Wie viele Schüler sind in der 2. Klasse?",
+   "back_en": "A school has {A} students in the 1st grade, {B} students in the 2nd grade, and {C} students in the 3rd grade. How many students are in the 2nd grade?",
+   "placeholders_ok": true,
+   "nllb": "Eine Schule hat 111 Schüler im 1. Jahr, 222 Schüler im 2. Jahr und 333 Schüler im 3. Jahr.",
+   "chrf_back": 68.4,
+   "chrf_nllb": 57.1
+  },
+  "ja": {
+   "deepl": "ある学校には、1年生が{A}人、2年生が{B}人、3年生が{C}人います。2年生は何人いますか？",
+   "back_en": "At a certain school, there are {A} first-graders, {B} second-graders, and {C} third-graders. How many second-graders are there?",
+   "placeholders_ok": true,
+   "nllb": "1年生には111人の生徒,2年生には222人の生徒,3年生には333人の生徒がいる.",
+   "chrf_back": 27.7,
+   "chrf_nllb": 22.0
+  }
+ },
+ "E07": {
+  "en": "On Friday {A} people visited the museum, on Saturday {B} people and on Sunday {C} people. How many people visited the museum on Friday?",
+  "hu": {
+   "deepl": "Pénteken {A}-en, szombaton {B}-en, vasárnap pedig {C}-en látogatták meg a múzeumot. Hányan látogatták meg a múzeumot pénteken?",
+   "back_en": "They visited the museum on Friday {A}, Saturday {B}, and Sunday {C}. How many people visited the museum on Friday?",
+   "placeholders_ok": true,
+   "nllb": "Pénteken 111 ember látogatta meg a múzeumot, szombaton 222 ember és vasárnap 333 ember. Hány ember látogatta meg a múzeumot pénteken?",
+   "chrf_back": 69.8,
+   "chrf_nllb": 61.5
+  },
+  "de": {
+   "deepl": "Am Freitag besuchten {A} Personen das Museum, am Samstag {B} Personen und am Sonntag {C} Personen. Wie viele Personen besuchten das Museum am Freitag?",
+   "back_en": "{A} people visited the museum on Friday, {B} people on Saturday, and {C} people on Sunday. How many people visited the museum on Friday?",
+   "placeholders_ok": true,
+   "nllb": "Am Freitag besuchten 111 Personen das Museum, am Samstag 222 Personen und am Sonntag 333 Personen.",
+   "chrf_back": 82.5,
+   "chrf_nllb": 90.1
+  },
+  "ja": {
+   "deepl": "金曜日には{A}人が、土曜日には{B}人が、日曜日には{C}人が博物館を訪れました。金曜日には何人が博物館を訪れたでしょうか。",
+   "back_en": "{A} people visited the museum on Friday, {B} people on Saturday, and {C} people on Sunday. How many people visited the museum on Friday?",
+   "placeholders_ok": true,
+   "nllb": "金曜日は111人が博物館を訪れ,土曜日は222人,日曜日は333人が訪れた.金曜日はどれくらいの人が博物館を訪れたのですか?",
+   "chrf_back": 82.5,
+   "chrf_nllb": 42.4
+  }
+ },
+ "E08": {
+  "en": "Three boxes contain {A}, {B} and {C} screws. How many screws are in the box that has neither the most nor the fewest?",
+  "hu": {
+   "deepl": "Három dobozban {A}, {B} és {C} csavarok vannak. Hány csavar van abban a dobozban, amelyikben sem a legtöbb, sem a legkevesebb csavar nincs?",
+   "back_en": "There are screws in three boxes: {A}, {B}, and {C}. How many screws are in the box that contains neither the most nor the fewest screws?",
+   "placeholders_ok": true,
+   "nllb": "Három dobozban van 111, 222 és 333 sikátor. Hány sikátor van a dobozban, amely nem rendelkezik a legtöbb és nem a legkevésbé?",
+   "chrf_back": 78.0,
+   "chrf_nllb": 54.7
+  },
+  "de": {
+   "deepl": "Drei Schachteln enthalten {A}-, {B}- und {C}-Schrauben. Wie viele Schrauben befinden sich in der Schachtel, die weder die meisten noch die wenigsten enthält?",
+   "back_en": "Three boxes contain {A}, {B}, and {C} screws. How many screws are in the box that contains neither the most nor the fewest?",
+   "placeholders_ok": true,
+   "nllb": "Wie viele Schrauben gibt es in der Schachtel, die weder die meisten noch die wenigsten hat?",
+   "chrf_back": 91.4,
+   "chrf_nllb": 73.9
+  },
+  "ja": {
+   "deepl": "3つの箱には、{A}、{B}、{C}のネジが入っています。最も多くも最も少なくもない箱には、ネジがいくつ入っていますか。",
+   "back_en": "The three boxes contain {A}, {B}, and {C} screws. How many screws are in the box that contains neither the most nor the fewest?",
+   "placeholders_ok": true,
+   "nllb": "3つの箱には 111, 222 と 333 の 螺栓 が 含まれ て い ます.最も多くも少なくも ない箱 に いくつ の 螺栓 が あり ます か.",
+   "chrf_back": 90.4,
+   "chrf_nllb": 36.7
+  }
+ },
+ "E09": {
+  "en": "A garden has {A} roses, {B} tulips and {C} daisies. How many flowers are there of the most common kind?",
+  "hu": {
+   "deepl": "Egy kertben {A} rózsa, {B} tulipán és {C} margaréta van. Hány virág van a leggyakoribb fajtából?",
+   "back_en": "In a garden, there are {A} roses, {B} tulips, and {C} daisies. How many flowers are of the most common type?",
+   "placeholders_ok": true,
+   "nllb": "Egy kertben 111 rózsa, 222 tulipán és 333 margarita van. Hány virág van a leggyakoribb típusban?",
+   "chrf_back": 78.2,
+   "chrf_nllb": 84.8
+  },
+  "de": {
+   "deepl": "In einem Garten gibt es {A} Rosen, {B} Tulpen und {C} Gänseblümchen. Wie viele Blumen der häufigsten Art gibt es?",
+   "back_en": "In a garden, there are {A} roses, {B} tulips, and {C} daisies. How many flowers of the most common type are there?",
+   "placeholders_ok": true,
+   "nllb": "In einem Garten gibt es 111 Rosen, 222 Tulpen und 333 Daisies. Wie viele Blumen gibt es von der häufigsten Art?",
+   "chrf_back": 75.6,
+   "chrf_nllb": 80.1
+  },
+  "ja": {
+   "deepl": "ある庭には、{A}本のバラ、{B}本のチューリップ、{C}本のヒナギクがあります。最も多い種類の花はいくつありますか？",
+   "back_en": "In a certain garden, there are {A} roses, {B} tulips, and {C} daisies. How many of the most common type of flower are there?",
+   "placeholders_ok": true,
+   "nllb": "庭には111本のバラ,222本のチューリップ,333本のデージがあります.",
+   "chrf_back": 70.8,
+   "chrf_nllb": 48.0
+  }
+ },
+ "E10": {
+  "en": "A hotel has {A} rooms on the first floor, {B} rooms on the second floor and {C} rooms on the third floor. How many rooms are on the third floor?",
+  "hu": {
+   "deepl": "Egy szállodában {A} szoba van az első emeleten, {B} szoba a második emeleten és {C} szoba a harmadik emeleten. Hány szoba van a harmadik emeleten?",
+   "back_en": "In a hotel, there is {A} room on the first floor, {B} room on the second floor, and {C} room on the third floor. How many rooms are there on the third floor?",
+   "placeholders_ok": true,
+   "nllb": "Egy szállodában 111 szoba van az első emeleten, 222 szoba a második emeleten és 333 szoba a harmadik emeleten. Hány szoba van a harmadik emeleten?",
+   "chrf_back": 81.4,
+   "chrf_nllb": 100.0
+  },
+  "de": {
+   "deepl": "Ein Hotel verfügt über {A} Zimmer im ersten Stock, {B} Zimmer im zweiten Stock und {C} Zimmer im dritten Stock. Wie viele Zimmer befinden sich im dritten Stock?",
+   "back_en": "A hotel has {A} rooms on the first floor, {B} rooms on the second floor, and {C} rooms on the third floor. How many rooms are on the third floor?",
+   "placeholders_ok": true,
+   "nllb": "Ein Hotel hat 111 Zimmer im ersten Stock, 222 Zimmer im zweiten Stock und 333 Zimmer im dritten Stock. Wie viele Zimmer sind im dritten Stock?",
+   "chrf_back": 97.6,
+   "chrf_nllb": 88.4
+  },
+  "ja": {
+   "deepl": "あるホテルには、1階に{A}室、2階に{B}室、3階に{C}室の客室があります。3階には何室の客室がありますか？",
+   "back_en": "A certain hotel has {A} guest rooms on the first floor, {B} guest rooms on the second floor, and {C} guest rooms on the third floor. How many guest rooms are there on the third floor?",
+   "placeholders_ok": true,
+   "nllb": "ホテルは1階に111室,2階に222室,3階に333室がある.",
+   "chrf_back": 82.3,
+   "chrf_nllb": 46.2
+  }
+ },
+ "O01": {
+  "en": "Explain in exactly three sentences what a database index is.",
+  "hu": {
+   "deepl": "Pontosan három mondatban magyarázza el, mi az adatbázis-index.",
+   "back_en": "Explain exactly what a database index is in three sentences.",
+   "placeholders_ok": true,
+   "nllb": "Megmagyarázza pontosan három mondatban, mi az adatbázisindex.",
+   "chrf_back": 82.7,
+   "chrf_nllb": 78.1
+  },
+  "de": {
+   "deepl": "Erläutern Sie in genau drei Sätzen, was ein Datenbankindex ist.",
+   "back_en": "Explain in exactly three sentences what a database index is.",
+   "placeholders_ok": true,
+   "nllb": "Erklären Sie in genau drei Sätzen, was ein Datenbankindex ist.",
+   "chrf_back": 100.0,
+   "chrf_nllb": 88.3
+  },
+  "ja": {
+   "deepl": "データベースのインデックスとは何かを、正確に3文で説明してください。",
+   "back_en": "Please explain exactly what a database index is in three sentences.",
+   "placeholders_ok": true,
+   "nllb": "データベースインデックスとは何かを正確に3句で説明してください.",
+   "chrf_back": 78.7,
+   "chrf_nllb": 66.4
+  }
+ },
+ "O02": {
+  "en": "Explain in exactly three sentences how photosynthesis works.",
+  "hu": {
+   "deepl": "Pontosan három mondatban magyarázd el, hogyan működik a fotoszintézis.",
+   "back_en": "Explain exactly how photosynthesis works in three sentences.",
+   "placeholders_ok": true,
+   "nllb": "Magyarázd meg pontosan három mondatban, hogyan működik a fotoszintézis.",
+   "chrf_back": 83.4,
+   "chrf_nllb": 84.1
+  },
+  "de": {
+   "deepl": "Erläutern Sie in genau drei Sätzen, wie die Photosynthese funktioniert.",
+   "back_en": "Explain in exactly three sentences how photosynthesis works.",
+   "placeholders_ok": true,
+   "nllb": "Erklären Sie in genau drei Sätzen, wie die Photosynthese funktioniert.",
+   "chrf_back": 100.0,
+   "chrf_nllb": 89.9
+  },
+  "ja": {
+   "deepl": "光合成の仕組みを、正確に3文で説明してください。",
+   "back_en": "Please explain the mechanism of photosynthesis accurately in exactly three sentences.",
+   "placeholders_ok": true,
+   "nllb": "光合成の仕組みを正確に3句で説明してください.",
+   "chrf_back": 66.5,
+   "chrf_nllb": 64.5
+  }
+ },
+ "O03": {
+  "en": "Explain in exactly three sentences what inflation is.",
+  "hu": {
+   "deepl": "Pontosan három mondatban magyarázza el, mi az az infláció.",
+   "back_en": "Explain what inflation is in exactly three sentences.",
+   "placeholders_ok": true,
+   "nllb": "Magyarázd meg pontosan három mondattal, mi az infláció.",
+   "chrf_back": 86.6,
+   "chrf_nllb": 69.3
+  },
+  "de": {
+   "deepl": "Erläutern Sie in genau drei Sätzen, was Inflation ist.",
+   "back_en": "Explain in exactly three sentences what inflation is.",
+   "placeholders_ok": true,
+   "nllb": "Erklären Sie in genau drei Sätzen, was Inflation ist.",
+   "chrf_back": 100.0,
+   "chrf_nllb": 86.1
+  },
+  "ja": {
+   "deepl": "インフレとは何かを、正確に3文で説明してください。",
+   "back_en": "Please explain exactly what inflation is in three sentences.",
+   "placeholders_ok": true,
+   "nllb": "インフレとは何かを正確に3句で説明してください.",
+   "chrf_back": 76.3,
+   "chrf_nllb": 66.2
+  }
+ },
+ "O04": {
+  "en": "Explain in exactly three sentences what recursion is in programming.",
+  "hu": {
+   "deepl": "Pontosan három mondatban magyarázza el, mi az a rekurzió a programozásban.",
+   "back_en": "Explain exactly what recursion is in programming in three sentences.",
+   "placeholders_ok": true,
+   "nllb": "Megmagyarázza pontosan három mondatban, mi a rekurzió a programozásban.",
+   "chrf_back": 84.9,
+   "chrf_nllb": 82.4
+  },
+  "de": {
+   "deepl": "Erläutern Sie in genau drei Sätzen, was Rekursion in der Programmierung ist.",
+   "back_en": "Explain in exactly three sentences what recursion is in programming.",
+   "placeholders_ok": true,
+   "nllb": "Erklären Sie in genau drei Sätzen, was Recursion in der Programmierung ist.",
+   "chrf_back": 100.0,
+   "chrf_nllb": 84.9
+  },
+  "ja": {
+   "deepl": "プログラミングにおける再帰とは何かを、正確に3文で説明してください。",
+   "back_en": "Please explain exactly what recursion is in programming in exactly three sentences.",
+   "placeholders_ok": true,
+   "nllb": "プログラミングにおけるリクッションとは何かを正確に3つの文で説明してください.",
+   "chrf_back": 83.8,
+   "chrf_nllb": 56.0
+  }
+ },
+ "O05": {
+  "en": "Explain in exactly three sentences how a vaccine works.",
+  "hu": {
+   "deepl": "Magyarázza el pontosan három mondatban, hogyan működik egy oltóanyag.",
+   "back_en": "Explain exactly how a vaccine works in three sentences.",
+   "placeholders_ok": true,
+   "nllb": "Magyarázd meg pontosan három mondatban, hogyan működik a vakcina.",
+   "chrf_back": 81.1,
+   "chrf_nllb": 72.7
+  },
+  "de": {
+   "deepl": "Erläutern Sie in genau drei Sätzen, wie ein Impfstoff wirkt.",
+   "back_en": "Explain in exactly three sentences how a vaccine works.",
+   "placeholders_ok": true,
+   "nllb": "Erklären Sie in genau drei Sätzen, wie ein Impfstoff funktioniert.",
+   "chrf_back": 100.0,
+   "chrf_nllb": 70.4
+  },
+  "ja": {
+   "deepl": "ワクチンがどのように作用するのかを、正確に3文で説明してください。",
+   "back_en": "Please explain exactly how the vaccine works in three sentences.",
+   "placeholders_ok": true,
+   "nllb": "ワクチンの仕組みを正確に3句で説明してください.",
+   "chrf_back": 69.9,
+   "chrf_nllb": 42.3
+  }
+ },
+ "O06": {
+  "en": "Explain in exactly three sentences how GPS determines a position.",
+  "hu": {
+   "deepl": "Magyarázza el pontosan három mondatban, hogyan határozza meg a GPS a helyzetet.",
+   "back_en": "Explain in exactly three sentences how GPS determines location.",
+   "placeholders_ok": true,
+   "nllb": "Magyarázd meg pontosan három mondatban, hogyan határozza meg a GPS a pozíciót.",
+   "chrf_back": 86.8,
+   "chrf_nllb": 76.9
+  },
+  "de": {
+   "deepl": "Erläutern Sie in genau drei Sätzen, wie GPS einen Standort bestimmt.",
+   "back_en": "Explain in exactly three sentences how GPS determines a location.",
+   "placeholders_ok": true,
+   "nllb": "Erklären Sie in genau drei Sätzen, wie GPS eine Position bestimmt.",
+   "chrf_back": 88.0,
+   "chrf_nllb": 70.5
+  },
+  "ja": {
+   "deepl": "GPSが位置をどのように特定するのかを、正確に3文で説明してください。",
+   "back_en": "Please explain exactly how GPS determines a location in three sentences.",
+   "placeholders_ok": true,
+   "nllb": "GPS が 位置 を 決定 する 方法 を 正確 に 3 句 で 説明 し て ください.",
+   "chrf_back": 69.9,
+   "chrf_nllb": 48.8
+  }
+ },
+ "O07": {
+  "en": "Explain in exactly three sentences what compound interest is.",
+  "hu": {
+   "deepl": "Pontosan három mondatban magyarázza el, mi az a kamatos kamat.",
+   "back_en": "Explain exactly what compound interest is in three sentences.",
+   "placeholders_ok": true,
+   "nllb": "Megmagyarázza pontosan három mondatban, mi a vegyes kamat.",
+   "chrf_back": 83.4,
+   "chrf_nllb": 65.7
+  },
+  "de": {
+   "deepl": "Erläutern Sie in genau drei Sätzen, was Zinseszinsen sind.",
+   "back_en": "Explain in exactly three sentences what compound interest is.",
+   "placeholders_ok": true,
+   "nllb": "Erklären Sie in genau drei Sätzen, was Verbundzinsen sind.",
+   "chrf_back": 100.0,
+   "chrf_nllb": 69.1
+  },
+  "ja": {
+   "deepl": "複利とは何かを、正確に3文で説明してください。",
+   "back_en": "Please explain exactly what compound interest is in three sentences.",
+   "placeholders_ok": true,
+   "nllb": "複合金利とは何なのかを正確に3句で説明する.",
+   "chrf_back": 79.6,
+   "chrf_nllb": 23.4
+  }
+ },
+ "O08": {
+  "en": "Explain in exactly three sentences what a black hole is.",
+  "hu": {
+   "deepl": "Pontosan három mondatban magyarázd el, mi az a fekete lyuk.",
+   "back_en": "Explain what a black hole is in exactly three sentences.",
+   "placeholders_ok": true,
+   "nllb": "Megmagyarázza pontosan három mondattal, hogy mi a fekete lyuk.",
+   "chrf_back": 86.9,
+   "chrf_nllb": 64.0
+  },
+  "de": {
+   "deepl": "Erläutern Sie in genau drei Sätzen, was ein Schwarzes Loch ist.",
+   "back_en": "Explain in exactly three sentences what a black hole is.",
+   "placeholders_ok": true,
+   "nllb": "Erklären Sie in genau drei Sätzen, was ein schwarzes Loch ist.",
+   "chrf_back": 100.0,
+   "chrf_nllb": 80.9
+  },
+  "ja": {
+   "deepl": "ブラックホールとは何かを、正確に3文で説明してください。",
+   "back_en": "Please explain exactly what a black hole is in three sentences.",
+   "placeholders_ok": true,
+   "nllb": "ブラックホールとは何なのかを正確に3句で説明する.",
+   "chrf_back": 76.8,
+   "chrf_nllb": 44.9
+  }
+ },
+ "O09": {
+  "en": "Explain in exactly three sentences what supply and demand mean in economics.",
+  "hu": {
+   "deepl": "Pontosan három mondatban magyarázza el, mit jelent a kereslet és a kínálat a közgazdaságtanban.",
+   "back_en": "Explain, in exactly three sentences, what supply and demand mean in economics.",
+   "placeholders_ok": true,
+   "nllb": "Megmagyarázza pontosan három mondatban, hogy mit jelent a kínálat és a kereslet a gazdaságban.",
+   "chrf_back": 91.3,
+   "chrf_nllb": 70.4
+  },
+  "de": {
+   "deepl": "Erläutern Sie in genau drei Sätzen, was Angebot und Nachfrage in der Wirtschaftswissenschaft bedeuten.",
+   "back_en": "Explain in exactly three sentences what supply and demand mean in economics.",
+   "placeholders_ok": true,
+   "nllb": "Erklären Sie in genau drei Sätzen, was Angebot und Nachfrage in der Wirtschaft bedeuten.",
+   "chrf_back": 100.0,
+   "chrf_nllb": 88.9
+  },
+  "ja": {
+   "deepl": "経済学における「需要」と「供給」の意味を、正確に3文で説明してください。",
+   "back_en": "Please explain the meanings of “demand” and “supply” in economics accurately in exactly three sentences.",
+   "placeholders_ok": true,
+   "nllb": "経済学における供給と需要の意味を正確に3句で説明する.",
+   "chrf_back": 65.5,
+   "chrf_nllb": 36.4
+  }
+ },
+ "O10": {
+  "en": "Explain in exactly three sentences what a neural network is.",
+  "hu": {
+   "deepl": "Pontosan három mondatban magyarázza el, mi az a neurális hálózat.",
+   "back_en": "Explain what a neural network is in exactly three sentences.",
+   "placeholders_ok": true,
+   "nllb": "Megmagyarázza pontosan három mondattal, mi az ideghálózat.",
+   "chrf_back": 88.0,
+   "chrf_nllb": 64.5
+  },
+  "de": {
+   "deepl": "Erläutern Sie in genau drei Sätzen, was ein neuronales Netzwerk ist.",
+   "back_en": "Explain in exactly three sentences what a neural network is.",
+   "placeholders_ok": true,
+   "nllb": "Erklären Sie in genau drei Sätzen, was ein neuronales Netzwerk ist.",
+   "chrf_back": 100.0,
+   "chrf_nllb": 89.2
+  },
+  "ja": {
+   "deepl": "ニューラルネットワークとは何かを、正確に3文で説明してください。",
+   "back_en": "Please explain exactly what a neural network is in three sentences.",
+   "placeholders_ok": true,
+   "nllb": "神経ネットワークとは何か 3つの文で正確に説明してください.",
+   "chrf_back": 78.7,
+   "chrf_nllb": 53.1
+  }
+ },
+ "I_ANSWER_LINE": {
+  "en": "The final line of your answer must start with <x>ANSWER:</x> followed by the number only.",
+  "hu": {
+   "deepl": "A válaszod utolsó sorának az „ANSWER:” szóval kell kezdődnie, amelyet kizárólag a szám követ.",
+   "back_en": "The last line of your answer must begin with the word “ANSWER:,” followed only by the number.",
+   "placeholders_ok": true,
+   "nllb": "A válasz utolsó sorának a válaszmal kell kezdődnie: csak a számmal kell követnie.",
+   "chrf_back": 62.2,
+   "chrf_nllb": 52.7
+  },
+  "de": {
+   "deepl": "Die letzte Zeile Ihrer Antwort muss mit „ANSWER:“ beginnen, gefolgt von der reinen Zahl.",
+   "back_en": "The last line of your answer must begin with “ANSWER:,” followed by the number alone.",
+   "placeholders_ok": true,
+   "nllb": "Die letzte Zeile Ihrer Antwort muss mit ANSWER beginnen, gefolgt nur von der Zahl.",
+   "chrf_back": 65.7,
+   "chrf_nllb": 79.2
+  },
+  "ja": {
+   "deepl": "回答の最後の行は、「ANSWER:」で始まり、その後に数字のみを記載してください。",
+   "back_en": "The last line of your answer should begin with \"ANSWER:,\" followed by numbers only.",
+   "placeholders_ok": true,
+   "nllb": "答えの最後の行は ANSWERで始まる.",
+   "chrf_back": 54.4,
+   "chrf_nllb": 37.5
+  }
+ },
+ "I_ANSWER_ENGLISH": {
+  "en": "Answer in English.",
+  "hu": {
+   "deepl": "Válaszoljon angolul.",
+   "back_en": "Please answer in English.",
+   "placeholders_ok": true,
+   "nllb": "Angolul válaszoljon.",
+   "chrf_back": 84.9,
+   "chrf_nllb": 66.1
+  },
+  "de": {
+   "deepl": "Bitte antworten Sie auf Englisch.",
+   "back_en": "Please reply in English.",
+   "placeholders_ok": true,
+   "nllb": "Antworten Sie auf Englisch.",
+   "chrf_back": 55.0,
+   "chrf_nllb": 91.1
+  },
+  "ja": {
+   "deepl": "英語で答えてください。",
+   "back_en": "Please answer in English.",
+   "placeholders_ok": true,
+   "nllb": "英語で答えろ",
+   "chrf_back": 84.9,
+   "chrf_nllb": 47.4
+  }
+ },
+ "H01": {
+  "en": "A shop sells notebooks for {A} euros each and pens for {B} euros each. A customer buys {C} notebooks and {D} pens and pays with 1000 euros. How many euros of change does the customer get?",
+  "hu": {
+   "deepl": "Egy boltban a füzetek ára darabonként {A} euró, a tollaké pedig darabonként {B} euró. Egy vásárló {C} füzetet és {D} tollat vásárol, és 1000 euróval fizet. Hány euró visszajárót kap a vásárló?",
+   "back_en": "In a store, notebooks cost {A} euros each, and pens cost {B} euros each. A customer buys {C} notebooks and {D} pens and pays 1,000 euros. How many euros in change does the customer receive?",
+   "placeholders_ok": true,
+   "nllb": "Egy boltban 111 euróért lapot és 222 euróért tollat értékesítenek. Egy ügyfél 333 lapot és 444 tollat vásárol és 1000 euróval fizet.",
+   "chrf_back": 75.0,
+   "chrf_nllb": 50.8
+  },
+  "de": {
+   "deepl": "Ein Geschäft verkauft Notizbücher für jeweils {A} Euro und Stifte für jeweils {B} Euro. Ein Kunde kauft {C} Notizbücher und {D} Stifte und bezahlt mit 1000 Euro. Wie viel Euro Wechselgeld erhält der Kunde?",
+   "back_en": "A store sells notebooks for {A} euros each and pens for {B} euros each. A customer buys {C} notebooks and {D} pens and pays with 1,000 euros. How many euros in change does the customer receive?",
+   "placeholders_ok": true,
+   "nllb": "Ein Laden verkauft Notebooks für jeweils 111 Euro und Bleistifte für jeweils 222 Euro. Ein Kunde kauft 333 Notebooks und 444 Bleistifte und zahlt mit 1000 Euro. Wie viele Euro Wechselgeld bekommt der Kunde?",
+   "chrf_back": 89.3,
+   "chrf_nllb": 70.2
+  },
+  "ja": {
+   "deepl": "あるお店では、ノートを1冊{A}ユーロ、ペンを1本{B}ユーロで販売しています。あるお客様が、ノートを{C}冊、ペンを{D}本購入し、1000ユーロで支払いました。そのお客様は、お釣りとして何ユーロ受け取りますか？",
+   "back_en": "A certain store sells notebooks for {A} euros each and pens for {B} euros each. A customer bought {C} notebooks and {D} pens and paid 1,000 euros. How many euros will the customer receive as change?",
+   "placeholders_ok": true,
+   "nllb": "商店でノートブックが111ユーロでペンが222ユーロで販売される.顧客は333本のノートブックと444本のペンを購入し1000ユーロで支払います.顧客はどれくらいの金額で換算することができますか?",
+   "chrf_back": 77.8,
+   "chrf_nllb": 31.0
+  }
+ },
+ "H02": {
+  "en": "A tank contains {A} liters of water. Every day {B} liters are used and {C} liters are added. How many liters are in the tank after {D} days?",
+  "hu": {
+   "deepl": "Egy tartályban {A} liter víz van. Minden nap {B} litert használnak fel, és {C} litert töltenek bele. Hány liter víz lesz a tartályban {D} nap múlva?",
+   "back_en": "A container holds {A} liters of water. Every day, {B} liters are used, and {C} liters are added. How many liters of water will be in the container after {D} days?",
+   "placeholders_ok": true,
+   "nllb": "Egy tartályban 111 liter víz van. Minden nap 222 literet használunk és 333 literet hozzáadunk. Hány liter van a tartályban 444 nap után?",
+   "chrf_back": 77.3,
+   "chrf_nllb": 71.3
+  },
+  "de": {
+   "deepl": "Ein Tank enthält {A} Liter Wasser. Täglich werden {B} Liter verbraucht und {C} Liter nachgefüllt. Wie viele Liter befinden sich nach {D} Tagen im Tank?",
+   "back_en": "A tank contains {A} liters of water. Every day, {B} liters are used and {C} liters are added. How many liters will be in the tank after {D} days?",
+   "placeholders_ok": true,
+   "nllb": "Ein Tank enthält 111 Liter Wasser. Jeden Tag werden 222 Liter verwendet und 333 Liter hinzugefügt. Wie viele Liter sind nach 444 Tagen im Tank?",
+   "chrf_back": 92.9,
+   "chrf_nllb": 71.7
+  },
+  "ja": {
+   "deepl": "あるタンクには{A}リットルの水が入っています。毎日{B}リットルが消費され、{C}リットルが補充されます。{D}日後、タンクには何リットルの水が残っているでしょうか。",
+   "back_en": "A tank contains {A} liters of water. Every day, {B} liters are consumed and {C} liters are added. How many liters of water will remain in the tank after {D} days?",
+   "placeholders_ok": true,
+   "nllb": "タンクには111リットルの水が含まれています.毎日222リットルが使用され,333リットルが追加されます.444日後にタンクにはどのくらいのリットルがありますか?",
+   "chrf_back": 86.5,
+   "chrf_nllb": 46.2
+  }
+ },
+ "H03": {
+  "en": "A factory makes {A} parts per hour. It runs {B} hours a day for {C} days. {D} parts are defective. How many good parts were made?",
+  "hu": {
+   "deepl": "Egy gyár óránként {A} darabot gyárt. Naponta {B} órát működik, {C} napon át. {D} darab hibás. Hány hibátlan darabot gyártottak?",
+   "back_en": "A factory produces {A} units per hour. It operates for {B} hours a day, for {C} days. {D} units are defective. How many defect-free units were produced?",
+   "placeholders_ok": true,
+   "nllb": "Egy gyár 111 alkatrészet készít egy óránként, 222 órát dolgozik naponta 333 napig, 444 alkatrész hibás. Hány jó alkatrész készült?",
+   "chrf_back": 61.0,
+   "chrf_nllb": 33.7
+  },
+  "de": {
+   "deepl": "Eine Fabrik stellt {A} Teile pro Stunde her. Sie ist {B} Stunden pro Tag an {C} Tagen in Betrieb. {D} Teile sind fehlerhaft. Wie viele einwandfreie Teile wurden hergestellt?",
+   "back_en": "A factory produces {A} parts per hour. It operates for {B} hours per day on {C} days. {D} parts are defective. How many defect-free parts were produced?",
+   "placeholders_ok": true,
+   "nllb": "Eine Fabrik produziert 111 Teile pro Stunde, arbeitet 222 Stunden am Tag für 333 Tage, 444 Teile sind defekt. Wie viele gute Teile wurden hergestellt?",
+   "chrf_back": 68.4,
+   "chrf_nllb": 63.0
+  },
+  "ja": {
+   "deepl": "ある工場では、1時間あたり{A}個の部品を製造しています。1日{B}時間稼働し、{C}日間稼働します。{D}個の部品に欠陥があります。良品はいくつ製造されたでしょうか。",
+   "back_en": "A certain factory produces {A} parts per hour. It operates for {B} hours per day and runs for {C} days. {D} parts are defective. How many defect-free parts were produced?",
+   "placeholders_ok": true,
+   "nllb": "工場は1時間111件を製造する 333日間222時間稼働する 444件が欠陥がある どれだけの良い部品が製造されたのか?",
+   "chrf_back": 68.8,
+   "chrf_nllb": 29.1
+  }
+ },
+ "H04": {
+  "en": "A train travels at {A} kilometers per hour for {B} hours and then at {C} kilometers per hour for {D} hours. How many kilometers does the train travel in total?",
+  "hu": {
+   "deepl": "Egy vonat {A} kilométer/órás sebességgel halad {B} órán át, majd {C} kilométer/órás sebességgel {D} órán át. Összesen hány kilométert tesz meg a vonat?",
+   "back_en": "A train travels at a speed of {A} kilometers per hour for {B} hours, and then at a speed of {C} kilometers per hour for {D} hours. How many kilometers does the train travel in total?",
+   "placeholders_ok": true,
+   "nllb": "Egy vonat 111 km/h sebességgel 222 óráig utazik, majd 333 km/h sebességgel 444 óráig. Hány kilométert utazik a vonat összesen?",
+   "chrf_back": 91.6,
+   "chrf_nllb": 58.2
+  },
+  "de": {
+   "deepl": "Ein Zug fährt {A} Kilometer pro Stunde lang {B} Stunden und anschließend {C} Kilometer pro Stunde lang {D} Stunden. Wie viele Kilometer legt der Zug insgesamt zurück?",
+   "back_en": "A train travels at a speed of {A} kilometers per hour for {B} hours and then at a speed of {C} kilometers per hour for {D} hours. How many kilometers does the train travel in total?",
+   "placeholders_ok": true,
+   "nllb": "Ein Zug fährt mit 111 Kilometern pro Stunde für 222 Stunden und dann mit 333 Kilometern pro Stunde für 444 Stunden. Wie viele Kilometer fährt der Zug insgesamt?",
+   "chrf_back": 93.7,
+   "chrf_nllb": 70.5
+  },
+  "ja": {
+   "deepl": "ある列車が、{A}キロメートル毎時で{B}時間走り、その後、{C}キロメートル毎時で{D}時間走りました。この列車は合計で何キロメートル走ったでしょうか。",
+   "back_en": "A train traveled at {A} kilometers per hour for {B} hours, and then traveled at {C} kilometers per hour for {D} hours. How many kilometers did the train travel in total?",
+   "placeholders_ok": true,
+   "nllb": "電車は1時間111キロメートルで222時間,その後333キロメートルで444時間移動する.電車は合計で何キロメートル移動する?",
+   "chrf_back": 87.8,
+   "chrf_nllb": 48.6
+  }
+ },
+ "H05": {
+  "en": "A library had {A} books. In the first week {B} books were lent out and {C} were returned. In the second week {D} books were lent out. How many books are in the library after two weeks?",
+  "hu": {
+   "deepl": "Egy könyvtárban {A} könyv volt. Az első héten {B} könyvet kölcsönöztek ki, és {C}-et adtak vissza. A második héten {D} könyvet kölcsönöztek ki. Hány könyv van a könyvtárban két hét elteltével?",
+   "back_en": "There was {A} book in a library. During the first week, {B} books were checked out, and {C} were returned. During the second week, {D} books were checked out. How many books are there in the library after two weeks?",
+   "placeholders_ok": true,
+   "nllb": "Egy könyvtárban 111 könyv volt. Az első héten 222 könyvet kölcsönvettek, 333 könyvet visszaküldtek. A második héten 444 könyvet kölcsönvettek. Hány könyv van a könyvtárban két hét után?",
+   "chrf_back": 71.9,
+   "chrf_nllb": 76.5
+  },
+  "de": {
+   "deepl": "Eine Bibliothek besa{A} Bücher. In der ersten Woche wurden {B} Bücher ausgeliehen und {C} zurückgegeben. In der zweiten Woche wurden {D} Bücher ausgeliehen. Wie viele Bücher befinden sich nach zwei Wochen in der Bibliothek?",
+   "back_en": "A library ha{A} books. In the first week, {B} books were checked out and {C} were returned. In the second week, {D} books were checked out. How many books are in the library after two weeks?",
+   "placeholders_ok": true,
+   "nllb": "Eine Bibliothek hatte 111 Bücher. In der ersten Woche wurden 222 Bücher ausgeliehen und 333 zurückgegeben. In der zweiten Woche wurden 444 Bücher ausgeliehen. Wie viele Bücher sind nach zwei Wochen in der Bibliothek?",
+   "chrf_back": 84.7,
+   "chrf_nllb": 92.5
+  },
+  "ja": {
+   "deepl": "ある図書館には{A}冊の本がありました。第1週には{B}冊が貸し出され、{C}冊が返却されました。第2週には{D}冊が貸し出されました。2週間後、図書館には何冊の本がありますか？",
+   "back_en": "A certain library had {A} books. In the first week, {B} books were checked out and {C} books were returned. In the second week, {D} books were checked out. How many books will be in the library two weeks later?",
+   "placeholders_ok": true,
+   "nllb": "図書館には111冊の本がありました.最初の週には222冊が貸し,333冊が返還されました.第二週には444冊が貸し出されました.",
+   "chrf_back": 75.9,
+   "chrf_nllb": 62.6
+  }
+ },
+ "H06": {
+  "en": "A bus has {A} seats. At the first stop {B} passengers get on. At the second stop {C} passengers get off and {D} passengers get on. How many seats are empty then?",
+  "hu": {
+   "deepl": "Egy busznak {A} ülőhelye van. Az első megállónál {B} utas száll fel. A második megállónál {C} utas száll le, és {D} utas száll fel. Hány ülőhely marad ekkor üres?",
+   "back_en": "A bus has {A} seats. At the first stop, {B} passengers get on. At the second stop, {C} passengers get off, and {D} passengers get on. How many seats are empty at this point?",
+   "placeholders_ok": true,
+   "nllb": "Egy busz 111 ülésű. Az első állomáson 222 utas száll, a második állomáson 333 utas száll és 444 utas száll. Hány ülés üres akkor?",
+   "chrf_back": 89.4,
+   "chrf_nllb": 53.8
+  },
+  "de": {
+   "deepl": "Ein Bus verfügt über {A} Sitzplätze. An der ersten Haltestelle steigen {B} Fahrgäste ein. An der zweiten Haltestelle steigen {C} Fahrgäste aus und {D} Fahrgäste ein. Wie viele Sitzplätze sind dann frei?",
+   "back_en": "A bus has {A} seats. At the first stop, {B} passengers get on. At the second stop, {C} passengers get off and {D} passengers get on. How many seats are left?",
+   "placeholders_ok": true,
+   "nllb": "Ein Bus hat 111 Plätze. Bei der ersten Haltestelle steigen 222 Passagiere an. Bei der zweiten Haltestelle steigen 333 Passagiere ab und 444 Passagiere steigen an. Wie viele Plätze sind dann leer?",
+   "chrf_back": 89.0,
+   "chrf_nllb": 57.4
+  },
+  "ja": {
+   "deepl": "バスには{A}席あります。最初の停留所で{B}人の乗客が乗り込みます。2番目の停留所で{C}人の乗客が降り、{D}人の乗客が乗り込みます。その時点で、空いている席はいくつありますか？",
+   "back_en": "There are {A} seats on the bus. {B} passengers board at the first stop. At the second stop, {C} passengers get off and {D} passengers board. How many seats are available at that point?",
+   "placeholders_ok": true,
+   "nllb": "バスには111座席があります.最初の駅では222人の乗客が乗ります.第2駅では333人の乗客が降り,444人の乗客が乗ります.",
+   "chrf_back": 68.9,
+   "chrf_nllb": 47.7
+  }
+ },
+ "H07": {
+  "en": "A baker uses {A} grams of flour for one cake. The baker makes {B} cakes on Monday and {C} cakes on Tuesday. The baker starts with {D} grams of flour. How many grams of flour are left?",
+  "hu": {
+   "deepl": "Egy pék egy tortához {A} gramm lisztet használ fel. A pék hétfőn {B}, kedden pedig {C} tortát süt. A pék kezdetben {D} gramm liszttel rendelkezik. Hány gramm liszt marad?",
+   "back_en": "A baker uses {A} grams of flour to make a cake. The baker bakes {B} cakes on Monday and {C} cakes on Tuesday. The baker starts with {D} grams of flour. How many grams of flour are left?",
+   "placeholders_ok": true,
+   "nllb": "Egy pékész 111 gramm folyadékot használ egy tortára. A pékész hétfőn 222 tortát és kedden 333 tortát készít. A pékész 444 gramm folyadékkal kezdődik. Hány gramm folyadék maradt?",
+   "chrf_back": 92.2,
+   "chrf_nllb": 46.3
+  },
+  "de": {
+   "deepl": "Ein Bäcker benötigt {A} Gramm Mehl für einen Kuchen. Am Montag backt der Bäcker {B} Kuchen und am Dienstag {C} Kuchen. Der Bäcker beginnt mit {D} Gramm Mehl. Wie viele Gramm Mehl sind noch übrig?",
+   "back_en": "A baker needs {A} grams of flour to make a cake. On Monday, the baker bakes {B} cakes, and on Tuesday, {C} cakes. The baker starts with {D} grams of flour. How many grams of flour are left?",
+   "placeholders_ok": true,
+   "nllb": "Ein Bäcker verwendet 111 Gramm Mehl für einen Kuchen. Der Bäcker macht 222 Kuchen am Montag und 333 Kuchen am Dienstag. Der Bäcker beginnt mit 444 Gramm Mehl.",
+   "chrf_back": 76.8,
+   "chrf_nllb": 73.3
+  },
+  "ja": {
+   "deepl": "あるパン屋さんは、ケーキ1個につき{A}グラムの小麦粉を使います。月曜日に{B}個、火曜日に{C}個のケーキを作りました。当初、{D}グラムの小麦粉がありました。残っている小麦粉は、何グラムでしょうか。",
+   "back_en": "A certain bakery uses {A} grams of flour per cake. On Monday, they made {B} cakes, and on Tuesday, they made {C} cakes. Initially, they had {D} grams of flour. How many grams of flour are left?",
+   "placeholders_ok": true,
+   "nllb": "ベーカーは1つのケーキに111グラムの粉を使用します.ベーカーは月曜日に222個のケーキと火曜日に333個のケーキを作ります.ベーカーは444グラムの粉から始めます.どれくらいの粉が残りますか?",
+   "chrf_back": 61.5,
+   "chrf_nllb": 34.6
+  }
+ },
+ "H08": {
+  "en": "A rectangular garden is {A} meters long and {B} meters wide. A path with an area of {C} square meters is laid, and {D} square meters are planted with flowers. How many square meters are left as lawn?",
+  "hu": {
+   "deepl": "Egy téglalap alakú kert hossza {A} méter, szélessége pedig {B} méter. A kertben egy {C} négyzetméter alapterületű ösvényt alakítottak ki, és {D} négyzetmétert virágokkal ültettek be. Hány négyzetméter marad gyepként?",
+   "back_en": "A rectangular garden is {A} meters long and {B} meters wide. A path with an area of {C} square meters was laid out in the garden, and {D} square meters were planted with flowers. How many square meters remain as lawn?",
+   "placeholders_ok": true,
+   "nllb": "Egy egyenszöges kert 111 méter hosszú és 222 méter széles. 333 négyzetméter területű ösvényet vetnek le, 444 négyzetméteret virágokkal ültetnek. Hány négyzetméter maradt fűnek?",
+   "chrf_back": 87.3,
+   "chrf_nllb": 61.0
+  },
+  "de": {
+   "deepl": "Ein rechteckiger Garten ist {A} Meter lang und {B} Meter breit. Es wird ein Weg mit einer Fläche von {C} Quadratmetern angelegt, und {D} Quadratmeter werden mit Blumen bepflanzt. Wie viele Quadratmeter bleiben als Rasenfläche übrig?",
+   "back_en": "A rectangular garden is {A} meters long and {B} meters wide. A path with an area of {C} square meters is laid out, and {D} square meters are planted with flowers. How many square meters remain as lawn?",
+   "placeholders_ok": true,
+   "nllb": "Ein rechteckiger Garten ist 111 Meter lang und 222 Meter breit. Ein Weg mit einer Fläche von 333 Quadratmetern wird gelegt, und 444 Quadratmetern sind mit Blumen gepflanzt. Wie viele Quadratmeter bleiben als Rasen?",
+   "chrf_back": 92.7,
+   "chrf_nllb": 88.4
+  },
+  "ja": {
+   "deepl": "長方形の庭は、長さが{A}メートル、幅が{B}メートルです。面積が{C}平方メートルの小道が敷かれ、{D}平方メートルに花が植えられています。芝生として残っている面積は、何平方メートルでしょうか。",
+   "back_en": "A rectangular garden is {A} meters long and {B} meters wide. A path covering an area of {C} square meters has been laid, and flowers have been planted in an area of {D} square meters. What is the area of the lawn?",
+   "placeholders_ok": true,
+   "nllb": "長さ111メートル,幅222メートル,長さ333平方メートル,広さ444平方メートルに花が植えられている.",
+   "chrf_back": 68.1,
+   "chrf_nllb": 54.0
+  }
+ },
+ "H09": {
+  "en": "{A} people share a bill. Each person pays {B} euros, but {C} of them pay an extra {D} euros each. How many euros do they pay in total?",
+  "hu": {
+   "deepl": "{A}-en osztják meg a számlát. Mindenki {B} eurót fizet, de közülük {C}-en fejenként további {D} eurót fizetnek. Összesen hány eurót fizetnek?",
+   "back_en": "{A} people are splitting the bill. Everyone pays {B} euros, but {C} of them pay an additional {D} euros each. How many euros do they pay in total?",
+   "placeholders_ok": true,
+   "nllb": "111 ember osztja meg a számlát. Egy személy 222 eurót fizet, de 333 közülük 444 eurót fizet. Hány eurót fizetnek összesen?",
+   "chrf_back": 75.3,
+   "chrf_nllb": 59.6
+  },
+  "de": {
+   "deepl": "{A} Personen teilen sich eine Rechnung. Jede Person zahlt {B} Euro, aber {C} von ihnen zahlen jeweils zusätzlich {D} Euro. Wie viele Euro zahlen sie insgesamt?",
+   "back_en": "{A} people are splitting a bill. Each person pays {B} euros, but {C} of them each pay an additional {D} euros. How many euros do they pay in total?",
+   "placeholders_ok": true,
+   "nllb": "111 Personen teilen eine Rechnung. Jede Person zahlt 222 Euro, aber 333 von ihnen zahlen jeweils zusätzlich 444 Euro. Wie viele Euro zahlen sie insgesamt?",
+   "chrf_back": 78.4,
+   "chrf_nllb": 97.4
+  },
+  "ja": {
+   "deepl": "{A}人が請求額を割り勘にします。1人あたり{B}ユーロを支払いますが、そのうち{C}人がそれぞれ{D}ユーロずつ追加で支払います。合計でいくらのユーロを支払うことになりますか？",
+   "back_en": "{A} people are splitting the bill. Each person pays {B} euros, but {C} of them pay an additional {D} euros each. What is the total amount they will pay in euros?",
+   "placeholders_ok": true,
+   "nllb": "111人が共同で請求書をする.一人ひとりが222ユーロを支払っているが,333人がそれぞれ444ユーロを額外支払っている.合計で何ユーロを支払っているか.",
+   "chrf_back": 66.4,
+   "chrf_nllb": 37.4
+  }
+ },
+ "H10": {
+  "en": "A cyclist rides {A} kilometers on the first day, {B} kilometers on the second day and {C} kilometers on the third day. The whole trip is {D} kilometers long. How many kilometers are left?",
+  "hu": {
+   "deepl": "Egy kerékpáros az első napon {A} kilométert, a második napon {B} kilométert, a harmadik napon pedig {C} kilométert tesz meg. A teljes út hossza {D} kilométer. Hány kilométer van még hátra?",
+   "back_en": "A cyclist rides {A} kilometers on the first day, {B} kilometers on the second day, and {C} kilometers on the third day. The total length of the route is {D} kilometers. How many kilometers are left?",
+   "placeholders_ok": true,
+   "nllb": "Egy kerékpáros 111 kilométert utazik az első nap, 222 kilométert a második nap és 333 kilométert a harmadik nap. Az egész út 444 kilométert tart. Hány kilométert kell még?",
+   "chrf_back": 86.9,
+   "chrf_nllb": 65.1
+  },
+  "de": {
+   "deepl": "Ein Radfahrer legt am ersten Tag {A} Kilometer, am zweiten Tag {B} Kilometer und am dritten Tag {C} Kilometer zurück. Die gesamte Strecke ist {D} Kilometer lang. Wie viele Kilometer sind noch übrig?",
+   "back_en": "A cyclist travels {A} kilometers on the first day, {B} kilometers on the second day, and {C} kilometers on the third day. The total distance is {D} kilometers. How many kilometers are left?",
+   "placeholders_ok": true,
+   "nllb": "Ein Radfahrer fährt am ersten Tag 111 Kilometer, am zweiten Tag 222 Kilometer und am dritten Tag 333 Kilometer. Die gesamte Reise ist 444 Kilometer lang. Wie viele Kilometer sind noch übrig?",
+   "chrf_back": 83.1,
+   "chrf_nllb": 89.5
+  },
+  "ja": {
+   "deepl": "あるサイクリストが、1日目に{A}キロメートル、2日目に{B}キロメートル、3日目に{C}キロメートルを走りました。全行程は{D}キロメートルです。あと何キロメートル残っていますか？",
+   "back_en": "A cyclist rode {A} kilometers on the first day, {B} kilometers on the second day, and {C} kilometers on the third day. The total distance is {D} kilometers. How many kilometers are left?",
+   "placeholders_ok": true,
+   "nllb": "サイクリストは最初の日に111キロ,第2日に222キロ,第3日に333キロを走ります.全旅は444キロです.何キロが残りますか?",
+   "chrf_back": 83.4,
+   "chrf_nllb": 34.3
+  }
+ }
+}

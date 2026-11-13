@@ -1,0 +1,23 @@
+{
+ "leiras": "Ugyanaz a 10 mondatos adag (angol, 0. adag) + kiindulási utasítás, 8 egymás utáni hívás az új Claude Code verzióval (2.1.317); a bemeneti tokenek összege hívásonként",
+ "claude-opus-5": [
+  1414,
+  1418,
+  1418,
+  1418,
+  1418,
+  1417,
+  1419,
+  1420
+ ],
+ "claude-opus-5-5": [
+  1402,
+  1399,
+  1397,
+  1396,
+  1399,
+  1400,
+  1397,
+  1398
+ ]
+}
