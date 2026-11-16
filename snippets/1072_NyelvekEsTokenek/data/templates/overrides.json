@@ -1,0 +1,52 @@
+{
+ "N04": {
+  "hu": "Egy dobozban {A} ceruza van. Egy tanárnak {B} teli doboza és {C} külön ceruzája van. Összesen hány ceruzája van a tanárnak?",
+  "ja": "ある箱には{A}本の鉛筆が入っています。ある先生は、鉛筆がいっぱいに入った箱を{B}個と、ばらの鉛筆を{C}本持っています。その先生は全部で何本の鉛筆を持っていますか？",
+  "_reason": "HU: a 'szórványos' rossz fordítás a 'loose' szóra. JA: a '満杯' (színültig tele) természetellenes."
+ },
+ "N07": {
+  "hu": "Egy munkavállaló hetente {A} eurót keres, és hetente {B} eurót tesz félre. A maradékot elkölti. Hány eurót költ el a munkavállaló {C} hét alatt?",
+  "_reason": "HU: nyelvtani hiba ('elkölt' helyett 'elkölti'); JA: természetellenes 'いくらのユーロ'.",
+  "ja": "ある労働者は、週に{A}ユーロを稼ぎ、毎週{B}ユーロを貯めています。残りはすべて使っています。この労働者は、{C}週間で何ユーロ使いますか？"
+ },
+ "N09": {
+  "hu": "Egy kislány vett {A} matricát. A felét odaadta egy barátjának, majd még {B} matricát vett. Hány matricája van most?",
+  "_reason": "HU: a számhoz kötött toldalék ('{B}-t') a szám kiejtésétől függ, ezért a mondat átfogalmazva."
+ },
+ "E07": {
+  "hu": "Pénteken {A} ember, szombaton {B} ember, vasárnap pedig {C} ember látogatta meg a múzeumot. Hány ember látogatta meg a múzeumot pénteken?",
+  "_reason": "HU: számhoz kötött toldalék ('{A}-en') a szám kiejtésétől függ, ezért a mondat átfogalmazva."
+ },
+ "E08": {
+  "hu": "Három dobozban {A}, {B} és {C} csavar van. Hány csavar van abban a dobozban, amelyikben sem a legtöbb, sem a legkevesebb csavar nincs?",
+  "de": "Drei Schachteln enthalten {A}, {B} und {C} Schrauben. Wie viele Schrauben befinden sich in der Schachtel, die weder die meisten noch die wenigsten enthält?",
+  "ja": "3つの箱には、それぞれ{A}個、{B}個、{C}個のネジが入っています。最も多くも最も少なくもない箱には、ネジがいくつ入っていますか。",
+  "_reason": "HU: számnév után többes szám; DE: hibás kötőjeles forma ('{A}-, {B}- und {C}-Schrauben'); JA: hiányzó számláló."
+ },
+ "O02": {
+  "hu": "Pontosan három mondatban magyarázza el, hogyan működik a fotoszintézis.",
+  "_reason": "HU: a megszólítás egységesítése (magázás)."
+ },
+ "O08": {
+  "hu": "Pontosan három mondatban magyarázza el, mi az a fekete lyuk.",
+  "_reason": "HU: a megszólítás egységesítése (magázás)."
+ },
+ "I_ANSWER_LINE": {
+  "hu": "A válasz utolsó sora „ANSWER:” szóval kezdődjön, amelyet kizárólag a szám kövessen.",
+  "_reason": "HU: a gépi fordítás tegezett ('válaszod'), a többi utasítás magázó, ezért személytelen alakra cserélve."
+ },
+ "H05": {
+  "hu": "Egy könyvtárban {A} könyv volt. Az első héten {B} könyvet kölcsönöztek ki, és {C} könyvet adtak vissza. A második héten {D} könyvet kölcsönöztek ki. Hány könyv van a könyvtárban két hét elteltével?",
+  "de": "Eine Bibliothek hatte {A} Bücher. In der ersten Woche wurden {B} Bücher ausgeliehen und {C} zurückgegeben. In der zweiten Woche wurden {D} Bücher ausgeliehen. Wie viele Bücher befinden sich nach zwei Wochen in der Bibliothek?",
+  "_reason": "HU: számhoz kötött toldalék ('{C}-et'); DE: a gépi fordítás hibás szót adott ('besa{A}')."
+ },
+ "H09": {
+  "hu": "{A} ember osztozik egy számlán. Mindenki {B} eurót fizet, de közülük {C} ember fejenként további {D} eurót fizet. Összesen hány eurót fizetnek?",
+  "ja": "{A}人で請求額を割り勘にします。1人あたり{B}ユーロを支払いますが、そのうち{C}人はそれぞれ{D}ユーロずつ追加で支払います。合計で何ユーロ支払いますか？",
+  "_reason": "HU: számhoz kötött toldalék ('{A}-en', '{C}-en'); JA: természetellenes 'いくらのユーロ'."
+ },
+ "H04": {
+  "de": "Ein Zug fährt {B} Stunden lang mit {A} Kilometern pro Stunde und anschließend {D} Stunden lang mit {C} Kilometern pro Stunde. Wie viele Kilometer legt der Zug insgesamt zurück?",
+  "_reason": "DE: a gépi fordítás nehézkes mondatszerkezetet adott ('{A} Kilometer pro Stunde lang {B} Stunden')."
+ }
+}

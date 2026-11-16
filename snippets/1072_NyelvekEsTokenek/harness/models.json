@@ -1,0 +1,13 @@
+{
+  "full_grid": [
+    {"alias": "haiku", "resolved_id": "claude-haiku-5-5"},
+    {"alias": "sonnet", "resolved_id": "claude-sonnet-5-5"}
+  ],
+  "comparison_sample": [
+    {"alias": "opus", "resolved_id": "claude-opus-5"}
+  ],
+  "tokenizer_only": [
+    {"alias": "sonnet_46", "resolved_id": "claude-sonnet-4-6"},
+    {"alias": "haiku_45", "resolved_id": "claude-haiku-4-5"}
+  ]
+}

@@ -1,0 +1,18 @@
+{
+ "adagok": 404,
+ "opus55_minusz_opus5_netto_kulonbseg_atlag": 0.06,
+ "konfidencia_intervallum_95_plusz_minusz": 0.32,
+ "adagonkenti_szoras": 3.26,
+ "min": -7.9,
+ "max": 9.1,
+ "nyelvenkenti_atlag": {
+  "de": 0.29,
+  "en": 0.44,
+  "hu": -0.39,
+  "ja": -0.12
+ },
+ "alapvonal_atlag_opus5": 916.9,
+ "alapvonal_atlag_opus55": 898.8,
+ "alapvonal_szoras_opus5": 2.03,
+ "alapvonal_szoras_opus55": 1.97
+}

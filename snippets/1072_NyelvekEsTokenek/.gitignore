@@ -1,0 +1,15 @@
+# futtatási állapot, naplók és a hívások üres munkakönyvtára (nem publikus)
+.run_state/
+data/b_pilot/
+data/b_pilot_results.csv
+# hívásonkénti nyers fájlok (a publikált változat a csomagolt .jsonl) és az újragenerálható promptok
+data/a_raw/
+data/b_raw/
+data/b_visible/
+data/tasks/prompts/
+data/a_check/
+data/a_check_opus55_elozo_futas.json
+data/b_raw_replaced/
+data/b_visible_replaced/
+data/b_raw_newversion/
+data/b_visible_newversion/

@@ -1,0 +1,180 @@
+{
+  "numeric": [
+    {
+      "id": "N01",
+      "text": "A student has {A} apples. The student buys {B} more apples and then gives {C} apples to a friend. How many apples does the student have now?"
+    },
+    {
+      "id": "N02",
+      "text": "A bakery bakes {A} rolls every hour. It bakes for {B} hours and then sells {C} of the rolls. How many rolls are left?"
+    },
+    {
+      "id": "N03",
+      "text": "A student reads {A} pages every day for {B} days. The book has {C} pages. How many pages are left to read?"
+    },
+    {
+      "id": "N04",
+      "text": "A box holds {A} pencils. A teacher has {B} full boxes and {C} loose pencils. How many pencils does the teacher have in total?"
+    },
+    {
+      "id": "N05",
+      "text": "A class has {A} students. {B} students walk to school and {C} students come by bus. All the others come by bike. How many students come by bike?"
+    },
+    {
+      "id": "N06",
+      "text": "A farmer collects {A} eggs in the morning and {B} eggs in the evening. The eggs are packed in boxes of {C}. How many full boxes does the farmer get?"
+    },
+    {
+      "id": "N07",
+      "text": "A worker earns {A} euros per week and saves {B} euros each week. The rest is spent. How many euros does the worker spend in {C} weeks?"
+    },
+    {
+      "id": "N08",
+      "text": "A train has {B} carriages with {A} seats in each carriage. {C} seats are empty. How many seats are taken?"
+    },
+    {
+      "id": "N09",
+      "text": "A girl bought {A} stickers. She gave half of them to a friend and then bought {B} more. How many stickers does she have now?"
+    },
+    {
+      "id": "N10",
+      "text": "A shop sold {A} pens on Monday, {B} pens on Tuesday and {C} pens on Wednesday. How many pens did the shop sell on these three days?"
+    }
+  ],
+  "hard": [
+    {
+      "id": "H01",
+      "text": "A shop sells notebooks for {A} euros each and pens for {B} euros each. A customer buys {C} notebooks and {D} pens and pays with 1000 euros. How many euros of change does the customer get?"
+    },
+    {
+      "id": "H02",
+      "text": "A tank contains {A} liters of water. Every day {B} liters are used and {C} liters are added. How many liters are in the tank after {D} days?"
+    },
+    {
+      "id": "H03",
+      "text": "A factory makes {A} parts per hour. It runs {B} hours a day for {C} days. {D} parts are defective. How many good parts were made?"
+    },
+    {
+      "id": "H04",
+      "text": "A train travels at {A} kilometers per hour for {B} hours and then at {C} kilometers per hour for {D} hours. How many kilometers does the train travel in total?"
+    },
+    {
+      "id": "H05",
+      "text": "A library had {A} books. In the first week {B} books were lent out and {C} were returned. In the second week {D} books were lent out. How many books are in the library after two weeks?"
+    },
+    {
+      "id": "H06",
+      "text": "A bus has {A} seats. At the first stop {B} passengers get on. At the second stop {C} passengers get off and {D} passengers get on. How many seats are empty then?"
+    },
+    {
+      "id": "H07",
+      "text": "A baker uses {A} grams of flour for one cake. The baker makes {B} cakes on Monday and {C} cakes on Tuesday. The baker starts with {D} grams of flour. How many grams of flour are left?"
+    },
+    {
+      "id": "H08",
+      "text": "A rectangular garden is {A} meters long and {B} meters wide. A path with an area of {C} square meters is laid, and {D} square meters are planted with flowers. How many square meters are left as lawn?"
+    },
+    {
+      "id": "H09",
+      "text": "{A} people share a bill. Each person pays {B} euros, but {C} of them pay an extra {D} euros each. How many euros do they pay in total?"
+    },
+    {
+      "id": "H10",
+      "text": "A cyclist rides {A} kilometers on the first day, {B} kilometers on the second day and {C} kilometers on the third day. The whole trip is {D} kilometers long. How many kilometers are left?"
+    }
+  ],
+  "extraction": [
+    {
+      "id": "E01",
+      "text": "A warehouse received {A} pallets on Monday, {B} pallets on Tuesday and {C} pallets on Wednesday. How many pallets arrived on Tuesday?"
+    },
+    {
+      "id": "E02",
+      "text": "The library has {A} novels, {B} dictionaries and {C} magazines. How many dictionaries does the library have?"
+    },
+    {
+      "id": "E03",
+      "text": "In March the shop earned {A} euros, in April {B} euros and in May {C} euros. How many euros did the shop earn in May?"
+    },
+    {
+      "id": "E04",
+      "text": "Three students scored {A}, {B} and {C} points on a test. What was the highest score?"
+    },
+    {
+      "id": "E05",
+      "text": "Three parcels weigh {A} kilograms, {B} kilograms and {C} kilograms. How many kilograms does the lightest parcel weigh?"
+    },
+    {
+      "id": "E06",
+      "text": "A school has {A} students in year 1, {B} students in year 2 and {C} students in year 3. How many students are in year 2?"
+    },
+    {
+      "id": "E07",
+      "text": "On Friday {A} people visited the museum, on Saturday {B} people and on Sunday {C} people. How many people visited the museum on Friday?"
+    },
+    {
+      "id": "E08",
+      "text": "Three boxes contain {A}, {B} and {C} screws. How many screws are in the box that has neither the most nor the fewest?"
+    },
+    {
+      "id": "E09",
+      "text": "A garden has {A} roses, {B} tulips and {C} daisies. How many flowers are there of the most common kind?"
+    },
+    {
+      "id": "E10",
+      "text": "A hotel has {A} rooms on the first floor, {B} rooms on the second floor and {C} rooms on the third floor. How many rooms are on the third floor?"
+    }
+  ],
+  "open": [
+    {
+      "id": "O01",
+      "text": "Explain in exactly three sentences what a database index is."
+    },
+    {
+      "id": "O02",
+      "text": "Explain in exactly three sentences how photosynthesis works."
+    },
+    {
+      "id": "O03",
+      "text": "Explain in exactly three sentences what inflation is."
+    },
+    {
+      "id": "O04",
+      "text": "Explain in exactly three sentences what recursion is in programming."
+    },
+    {
+      "id": "O05",
+      "text": "Explain in exactly three sentences how a vaccine works."
+    },
+    {
+      "id": "O06",
+      "text": "Explain in exactly three sentences how GPS determines a position."
+    },
+    {
+      "id": "O07",
+      "text": "Explain in exactly three sentences what compound interest is."
+    },
+    {
+      "id": "O08",
+      "text": "Explain in exactly three sentences what a black hole is."
+    },
+    {
+      "id": "O09",
+      "text": "Explain in exactly three sentences what supply and demand mean in economics."
+    },
+    {
+      "id": "O10",
+      "text": "Explain in exactly three sentences what a neural network is."
+    }
+  ],
+  "instructions": [
+    {
+      "id": "I_ANSWER_LINE",
+      "text": "The final line of your answer must start with <x>ANSWER:</x> followed by the number only."
+    },
+    {
+      "id": "I_ANSWER_ENGLISH",
+      "text": "Answer in English."
+    }
+  ]
+}
