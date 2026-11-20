@@ -1,0 +1,229 @@
+--[[
+    LowShutter.fuse
+    DaVinci Resolve Studio 20 / Fusion Fuse Plugin
+    Description: Low shutter / frame rate reduction effect with optional motion blur.
+--]]
+
+FuRegisterClass("LowShutter", CT_Tool, {
+    REGS_Name          = "Low Shutter",
+    REGS_Category      = "Fuses\\Effects",
+    REGS_OpIconString  = "LSh",
+    REGS_OpDescription = "Low shutter and frame rate step effect with optional temporal motion blur.",
+    REGS_HelpTopic     = "https://www.blackmagicdesign.com",
+    REG_OpNoMask       = false,
+    REG_NoBlendCtrls   = false,
+    REG_NoObjMatCtrls  = true,
+    REG_NoMotionBlurCtrls = true, -- Handled internally via custom temporal sampling
+    REG_Version        = 1,
+})
+
+function Create()
+    self:AddControlPage("Low Shutter")
+
+    -- Mode Selection: Frame Hold, Target FPS, or FPS Multiplier
+    InMode = self:AddInput("Mode", "Mode", {
+        LINKID_DataType    = "Number",
+        INPID_InputControl = "ComboControl",
+        INP_Default        = 0.0,
+        INP_Integer        = true,
+        INP_DoNotifyChanged = true,
+        { CCS_AddString = "Frame Hold (Step Count)" },
+        { CCS_AddString = "Target Frame Rate (FPS)" },
+        { CCS_AddString = "FPS Multiplier" },
+    })
+
+    InHoldFrames = self:AddInput("Frame Hold Count", "HoldFrames", {
+        LINKID_DataType    = "Number",
+        INPID_InputControl = "SliderControl",
+        INP_Default        = 2.0,
+        INP_MinScale       = 1.0,
+        INP_MaxScale       = 30.0,
+        INP_MinAllowed     = 1.0,
+        INP_MaxAllowed     = 120.0,
+        INP_Integer        = true,
+    })
+
+    InTargetFPS = self:AddInput("Target FPS", "TargetFPS", {
+        LINKID_DataType    = "Number",
+        INPID_InputControl = "SliderControl",
+        INP_Default        = 12.0,
+        INP_MinScale       = 1.0,
+        INP_MaxScale       = 60.0,
+        INP_MinAllowed     = 0.1,
+        INP_MaxAllowed     = 240.0,
+        IC_Visible         = false,
+    })
+
+    InFPSMultiplier = self:AddInput("FPS Multiplier", "FPSMultiplier", {
+        LINKID_DataType    = "Number",
+        INPID_InputControl = "SliderControl",
+        INP_Default        = 0.5,
+        INP_MinScale       = 0.05,
+        INP_MaxScale       = 1.0,
+        INP_MinAllowed     = 0.01,
+        INP_MaxAllowed     = 5.0,
+        IC_Visible         = false,
+    })
+
+    InFrameOffset = self:AddInput("Frame Phase Offset", "FrameOffset", {
+        LINKID_DataType    = "Number",
+        INPID_InputControl = "SliderControl",
+        INP_Default        = 0.0,
+        INP_MinScale       = -10.0,
+        INP_MaxScale       = 10.0,
+        INP_Integer        = true,
+    })
+
+    -- Motion Blur Controls Nest
+    self:BeginControlNest("Motion Blur Settings", "MotionBlurNest", true)
+
+    InEnableMB = self:AddInput("Enable Motion Blur", "EnableMB", {
+        LINKID_DataType    = "Number",
+        INPID_InputControl = "CheckboxControl",
+        INP_Default        = 0.0,
+        INP_Integer        = true,
+        INP_DoNotifyChanged = true,
+    })
+
+    InMBSamples = self:AddInput("Quality / Samples", "MBSamples", {
+        LINKID_DataType    = "Number",
+        INPID_InputControl = "SliderControl",
+        INP_Default        = 5.0,
+        INP_MinScale       = 2.0,
+        INP_MaxScale       = 32.0,
+        INP_MinAllowed     = 2.0,
+        INP_MaxAllowed     = 64.0,
+        INP_Integer        = true,
+        IC_Visible         = false,
+    })
+
+    InMBShutterAngle = self:AddInput("Shutter Angle", "MBShutterAngle", {
+        LINKID_DataType    = "Number",
+        INPID_InputControl = "SliderControl",
+        INP_Default        = 180.0,
+        INP_MinScale       = 0.0,
+        INP_MaxScale       = 360.0,
+        INP_MinAllowed     = 0.0,
+        INP_MaxAllowed     = 720.0,
+        IC_Visible         = false,
+    })
+
+    InMBBias = self:AddInput("Shutter Phase / Bias", "MBBias", {
+        LINKID_DataType    = "Number",
+        INPID_InputControl = "SliderControl",
+        INP_Default        = 0.0,
+        INP_MinScale       = -1.0,
+        INP_MaxScale       = 1.0,
+        INP_MinAllowed     = -1.0,
+        INP_MaxAllowed     = 1.0,
+        IC_Visible         = false,
+    })
+
+    self:EndControlNest()
+
+    -- Main Image Input and Output
+    InImage = self:AddInput("Input", "Input", {
+        LINKID_DataType = "Image",
+        LINK_Main       = 1,
+        INP_Required    = true,
+    })
+
+    OutImage = self:AddOutput("Output", "Output", {
+        LINKID_DataType = "Image",
+        LINK_Main       = 1,
+    })
+end
+
+function NotifyChanged(inp, param, time)
+    if inp == InMode then
+        local mode = param.Value
+        InHoldFrames:SetAttrs({ IC_Visible = (mode == 0) })
+        InTargetFPS:SetAttrs({ IC_Visible = (mode == 1) })
+        InFPSMultiplier:SetAttrs({ IC_Visible = (mode == 2) })
+    elseif inp == InEnableMB then
+        local enableMB = (param.Value > 0.5)
+        InMBSamples:SetAttrs({ IC_Visible = enableMB })
+        InMBShutterAngle:SetAttrs({ IC_Visible = enableMB })
+        InMBBias:SetAttrs({ IC_Visible = enableMB })
+    end
+end
+
+-- Helper function to calculate quantized time for low shutter effect
+local function QuantizeTime(t, mode, holdFrames, targetFPS, fpsMultiplier, frameOffset, compFps)
+    local step = 1.0
+    if mode == 0 then
+        step = math.max(1.0, math.floor(holdFrames + 0.5))
+    elseif mode == 1 then
+        step = compFps / math.max(0.1, targetFPS)
+    elseif mode == 2 then
+        step = 1.0 / math.max(0.01, fpsMultiplier)
+    end
+
+    local t_adj = t - frameOffset
+    local q = math.floor(t_adj / step) * step + frameOffset
+    return q
+end
+
+function Process(req)
+    local mode          = InMode:GetValue(req).Value
+    local holdFrames    = InHoldFrames:GetValue(req).Value
+    local targetFPS     = InTargetFPS:GetValue(req).Value
+    local fpsMultiplier = InFPSMultiplier:GetValue(req).Value
+    local frameOffset   = InFrameOffset:GetValue(req).Value
+
+    local enableMB      = (InEnableMB:GetValue(req).Value > 0.5)
+    local mbSamples     = math.max(2, math.floor(InMBSamples:GetValue(req).Value + 0.5))
+    local shutterAngle  = InMBShutterAngle:GetValue(req).Value
+    local mbBias        = InMBBias:GetValue(req).Value
+
+    -- Retrieve current composition frame rate (defaults to 24.0)
+    local compFps = 24.0
+    if self.Comp and self.Comp:GetPrefs("Comp.FrameFormat.Rate") then
+        compFps = self.Comp:GetPrefs("Comp.FrameFormat.Rate")
+    end
+
+    local currentTime = req.Time
+
+    -- Scenario A: Motion Blur disabled or shutter angle is 0
+    if not enableMB or shutterAngle <= 0.0 then
+        local qTime = QuantizeTime(currentTime, mode, holdFrames, targetFPS, fpsMultiplier, frameOffset, compFps)
+        local img = InImage:GetSource(qTime)
+        if img then
+            OutImage:Set(req, img)
+        else
+            OutImage:Set(req, InImage:GetValue(req))
+        end
+        return
+    end
+
+    -- Scenario B: Temporal Motion Blur enabled
+    local shutterDuration = shutterAngle / 360.0 -- shutter length in frame units
+    local shutterStart = (mbBias - 1.0) * (shutterDuration / 2.0)
+    local shutterEnd   = (mbBias + 1.0) * (shutterDuration / 2.0)
+
+    local outImg = nil
+
+    for i = 1, mbSamples do
+        local frac = (i - 0.5) / mbSamples
+        local subTimeOffset = shutterStart + frac * (shutterEnd - shutterStart)
+        local sampleTime = currentTime + subTimeOffset
+
+        local qSampleTime = QuantizeTime(sampleTime, mode, holdFrames, targetFPS, fpsMultiplier, frameOffset, compFps)
+        local sampleImg = InImage:GetSource(qSampleTime)
+
+        if sampleImg then
+            if outImg == nil then
+                outImg = sampleImg:CopyOf()
+            else
+                local blended = outImg:BlendOf(sampleImg, 1.0 / i)
+                outImg = blended
+            end
+        end
+    end
+
+    if outImg then
+        OutImage:Set(req, outImg)
+    else
+        OutImage:Set(req, InImage:GetValue(req))
+    end
+end
