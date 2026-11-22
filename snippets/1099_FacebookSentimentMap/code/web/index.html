@@ -1,0 +1,529 @@
+<meta name="dash-one-writer">
+<style>
+.sa { font-family: var(--font-anthropic-sans); color: var(--color-fg); display: flex; flex-direction: column; gap: var(--cds-gap-xl); }
+.sa h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0 0 var(--cds-gap-xs); }
+.sa p { margin: 0; line-height: 1.5; }
+.sa .muted { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.sa .lede { font-size: var(--cds-font-size-body); max-width: 70ch; }
+.sa b.num, .sa .num { font-variant-numeric: tabular-nums; }
+.sa .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--cds-gap-md); }
+.sa .tile { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); }
+.sa .tile .lbl { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.sa .tile .big { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: 32px; font-variant-numeric: tabular-nums; margin-top: var(--cds-gap-xs); }
+.sa .card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: flex; flex-direction: column; gap: var(--cds-gap-sm); }
+.sa .legend { display: flex; flex-wrap: wrap; gap: var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.sa .sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+.sa .sw.neg { background: var(--color-bad); } .sa .sw.neu { background: var(--cds-chart-muted); } .sa .sw.pos { background: var(--color-ok); }
+.sa .chart { position: relative; min-height: 60px; }
+.sa .row { margin: 0 0 var(--cds-gap-sm); }
+.sa .row-lbl { display: flex; justify-content: space-between; gap: var(--cds-gap-sm); font-size: var(--cds-font-size-caption); margin-bottom: 3px; }
+.sa .row-lbl .n { color: var(--color-fg-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.sa .bar { display: flex; height: 22px; border-radius: 3px; overflow: hidden; }
+.sa .seg { display: flex; align-items: center; justify-content: center; font-size: 11px; font-variant-numeric: tabular-nums; color: #fff; white-space: nowrap; overflow: hidden; }
+.sa .seg.neg { background: var(--color-bad); } .sa .seg.neu { background: var(--cds-chart-muted); color: var(--color-fg); } .sa .seg.pos { background: var(--color-ok); }
+.sa .tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); box-shadow: var(--cds-shadow-popover); border-radius: var(--cds-radius); padding: 6px 8px; font-size: var(--cds-font-size-caption); z-index: 5; white-space: nowrap; }
+.sa .tip .t { color: var(--cds-text-secondary); }
+.sa .ctl { display: flex; align-items: center; gap: var(--cds-gap-sm); flex-wrap: wrap; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.sa svg text { font-family: var(--font-anthropic-sans); }
+.sa .axis text { fill: var(--cds-text-secondary); font-size: 11px; }
+.sa .axis path, .sa .axis line { stroke: var(--cds-chart-axis); }
+.sa .grid line { stroke: var(--cds-chart-grid); }
+.sa .grid path { display: none; }
+.sa .eng-grid { display: grid; grid-template-columns: minmax(70px, auto) 1fr 1fr; gap: 6px var(--cds-gap-md); align-items: center; font-size: var(--cds-font-size-caption); }
+.sa .eng-grid .h { color: var(--color-fg-muted); }
+.sa .hb { display: flex; align-items: center; gap: 6px; }
+.sa .hb span.b { height: 14px; border-radius: 2px; display: inline-block; }
+.sa .tbl-wrap { overflow-x: auto; }
+.sa table { border-collapse: collapse; width: 100%; font-size: var(--cds-font-size-caption); }
+.sa th, .sa td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--color-border-line); vertical-align: top; }
+.sa th { color: var(--color-fg-muted); font-weight: var(--cds-font-weight-medium); white-space: nowrap; }
+.sa td.r, .sa th.r { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.sa td.txt { min-width: 260px; max-width: 520px; }
+.sa .mini { display: flex; height: 8px; width: 90px; border-radius: 2px; overflow: hidden; margin-top: 4px; }
+.sa .pb-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: var(--cds-gap-md); }
+.sa .pb { border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-md); display: flex; flex-direction: column; gap: 8px; background: var(--color-bg); }
+.sa .pb h3 { font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); margin: 0; line-height: 1.35; }
+.sa .pb .tag { font-size: 11px; color: var(--color-fg-muted); text-transform: uppercase; letter-spacing: .04em; }
+.sa .pb .stats { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); font-variant-numeric: tabular-nums; }
+.sa .pb .stats b { color: var(--color-fg); font-weight: var(--cds-font-weight-medium); }
+.sa .pb .stats b.bad { color: var(--color-bad); }
+.sa .pb p { font-size: var(--cds-font-size-caption); line-height: 1.5; }
+.sa .pb .lbl2 { font-weight: var(--cds-font-weight-medium); color: var(--color-fg); }
+.sa .pb .ex { color: var(--color-fg-muted); font-style: italic; }
+.sa .pb .spark { display: block; }
+.sa .pbar-row { display: grid; grid-template-columns: minmax(0, 1fr) 2fr; gap: 8px; align-items: center; font-size: var(--cds-font-size-caption); margin-bottom: 5px; cursor: pointer; }
+.sa .pbar-row .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sa .pbar { display: flex; align-items: center; gap: 6px; }
+.sa .pbar .track { display: flex; height: 14px; border-radius: 2px; overflow: hidden; }
+.sa .pbar .v { font-variant-numeric: tabular-nums; color: var(--color-fg-muted); white-space: nowrap; }
+@media (max-width: 520px) { .sa .pbar-row { grid-template-columns: 1fr; gap: 2px; } }
+.sa .map-wrap { display: grid; grid-template-columns: minmax(0, 3fr) minmax(220px, 1fr); gap: var(--cds-gap-md); align-items: start; }
+@media (max-width: 760px) { .sa .map-wrap { grid-template-columns: 1fr; } }
+.sa .map-side { display: flex; flex-direction: column; gap: var(--cds-gap-md); font-size: var(--cds-font-size-caption); }
+.sa .map-side h3 { font-size: var(--cds-font-size-caption); font-weight: var(--cds-font-weight-medium); margin: 0 0 4px; }
+.sa .maplist { margin: 0; padding-left: 1.3em; line-height: 1.5; }
+.sa .maplist li { margin-bottom: 3px; }
+.sa .linkish { background: none; border: 0; padding: 0; color: var(--color-fg); text-decoration: underline; text-decoration-color: var(--color-border-line); cursor: pointer; font: inherit; text-align: left; }
+.sa .map-chart { position: relative; min-height: 360px; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); overflow: hidden; background: var(--color-bg); touch-action: none; }
+.sa .dot-legend { display: inline-flex; align-items: center; gap: 6px; }
+.sa .dot-legend i { display: inline-block; border-radius: 50%; background: var(--color-bad); }
+.sa details summary { cursor: pointer; font-weight: var(--cds-font-weight-medium); }
+.sa details ul { margin: var(--cds-gap-sm) 0 0; padding-left: 1.2em; line-height: 1.55; }
+</style>
+
+<div class="sa" data-read lang="hu">
+
+  <p class="lede" id="lede">A biatorbágyi Facebook-csoport 2026. március 17. és november 18. közötti anyagában a kommentek <b class="num" data-draw="lede-cneg" data-source="shares" data-field="neg_pct" data-where="kind=comment">—</b>-a negatív és csak <b class="num" data-draw="lede-cpos" data-source="shares" data-field="pos_pct" data-where="kind=comment">—</b>-a pozitív, míg maguk a posztok <b class="num" data-draw="lede-ppos" data-source="shares" data-field="pos_pct" data-where="kind=post">—</b>-a pozitív hangvételű – a vita és a panasz a hozzászólásokban zajlik.</p>
+
+  <div class="tiles" id="kpis">
+    <div class="tile"><div class="lbl">Posztok (szöveggel)</div><div class="big" data-draw="k-np" data-source="overall" data-field="n" data-where="kind=post">—</div></div>
+    <div class="tile"><div class="lbl">Kommentek (szöveggel)</div><div class="big" data-draw="k-nc" data-source="overall" data-field="n" data-where="kind=comment">—</div></div>
+    <div class="tile"><div class="lbl">Negatív kommentek</div><div class="big" style="color: var(--color-bad)" data-draw="k-cneg" data-source="shares" data-field="neg_pct" data-where="kind=comment">—</div></div>
+    <div class="tile"><div class="lbl">Pozitív kommentek</div><div class="big" style="color: var(--color-ok)" data-draw="k-cpos" data-source="shares" data-field="pos_pct" data-where="kind=comment">—</div></div>
+  </div>
+
+  <section class="card" id="problems">
+    <h2>A leggyakoribb konkrét problémák</h2>
+    <p>A posztok és kommentek szövegében <b class="num" data-draw="pb-n" data-source="pbsum" data-field="issues" data-row="0">—</b> visszatérő problémát azonosítottunk. A legtöbbször a(z) <b data-draw="pb-topg" data-source="pbsum" data-field="top_group" data-row="0">—</b> témakör kerül elő (<b class="num" data-draw="pb-topgn" data-source="pbsum" data-field="top_group_mentions" data-row="0">—</b> említés), a leggyakoribb egyedi probléma pedig ez: <b data-draw="pb-topi" data-source="pbsum" data-field="top_issue" data-row="0">—</b>.</p>
+    <div class="ctl"><label for="pb-group">Témakör:</label>
+      <select class="dash-select" id="pb-group" aria-label="Témakör">
+        <option value="">Mind</option>
+        <option value="kulterulet">Külterületek, zártkertek</option>
+        <option value="kozlekedes">Közlekedés</option>
+        <option value="kornyezet">Környezet, együttélés</option>
+        <option value="kozszolg">Közszolgáltatások</option>
+        <option value="biztonsag">Közbiztonság</option>
+        <option value="kozelet">Közélet</option>
+      </select>
+      <span class="legend"><span><span class="sw neg"></span>Negatív hangvételű említés</span><span><span class="sw neu"></span>Egyéb említés</span></span>
+    </div>
+    <div class="chart" data-draw="pb-chart" data-source="issues" role="img" aria-label="Problémák az említések száma szerint, a negatív említések arányával"></div>
+    <p class="muted">Említés: olyan poszt vagy komment, amelynek a szövegében a problémára jellemző kifejezés szerepel. A sávra kattintva a részletes leíráshoz ugrik.</p>
+    <div class="pb-grid" data-draw="pb-cards" data-source="issues issue_monthly"></div>
+  </section>
+
+  <section class="card" id="map">
+    <h2>Problématérkép</h2>
+    <p class="muted">A posztokban és kommentekben megnevezett utcák, városrészek és helyek a problémákkal együtt. A körök mérete az említések számát, a színük erőssége a negatív hangvételű említések arányát mutatja. Az utcák, amelyekről szó esik, pirossal kiemelve.</p>
+    <div class="ctl"><label for="map-issue">Probléma:</label>
+      <select class="dash-select" id="map-issue" data-draw="map-issue" data-source="issues" aria-label="Probléma kiválasztása"></select>
+      <span class="legend"><span class="dot-legend"><i style="width:6px;height:6px;opacity:.5"></i><i style="width:12px;height:12px;opacity:.75"></i><i style="width:18px;height:18px"></i> kevés → sok említés; halvány → erős: negatív arány</span></span>
+    </div>
+    <div class="map-wrap">
+      <div class="map-chart" data-draw="map-chart" data-source="basemap places place_issues" role="img" aria-label="Biatorbágy problématérképe"></div>
+      <div class="map-side">
+        <div><h3>Kiválasztott hely</h3><div data-draw="map-detail" data-source="places place_issues"></div></div>
+        <div><h3>A 10 leggyakrabban említett hely</h3><div data-draw="map-top" data-source="places place_issues"></div></div>
+        <div><h3>Gyakran említett, de a térképen nem szereplő helyek</h3><div data-draw="map-unplaced" data-source="unplaced"></div></div>
+      </div>
+    </div>
+    <p class="muted">Csak azok a hozzászólások kerülhettek a térképre, amelyek megneveznek egy helyet, vagy egy olyan poszthoz tartoznak, amely legfeljebb két helyet nevez meg. A problémás említések kb. <b class="num" data-draw="map-cov" data-source="geocov" data-field="share" data-row="0">—</b>-a helyezhető el így. Térképadatok: © OpenStreetMap-közreműködők.</p>
+  </section>
+
+  <section class="card" id="overall">
+    <h2>Hangulat megoszlása: posztok és kommentek</h2>
+    <div class="legend"><span><span class="sw neg"></span>Negatív</span><span><span class="sw neu"></span>Semleges</span><span><span class="sw pos"></span>Pozitív</span></div>
+    <div class="chart" data-draw="overall-chart" data-source="overall shares" role="img" aria-label="Negatív, semleges és pozitív arány a posztokban és a kommentekben"></div>
+  </section>
+
+  <section class="card" id="trend">
+    <h2>Havi alakulás</h2>
+    <p>Legnegatívabb hónap a kommentekben: <b data-draw="t-peakm" data-source="trend" data-field="peak_month" data-row="0">—</b> (<b class="num" data-draw="t-peakv" data-source="trend" data-field="peak_neg" data-row="0">—</b> negatív). A legutóbbi, részleges hónapban (<b data-draw="t-lastm" data-source="trend" data-field="last_month" data-row="0">—</b>) ez <b class="num" data-draw="t-lastv" data-source="trend" data-field="last_neg" data-row="0">—</b>.</p>
+    <div class="ctl"><label for="trend-kind">Mutasd:</label>
+      <select class="dash-select" id="trend-kind" aria-label="Posztok vagy kommentek">
+        <option value="comment">Kommentek</option>
+        <option value="post">Posztok</option>
+      </select>
+      <span class="legend"><span><span class="sw neg"></span>Negatív %</span><span><span class="sw pos"></span>Pozitív %</span></span>
+    </div>
+    <div class="chart" style="min-height: 260px" data-draw="trend-chart" data-source="monthly" role="img" aria-label="Negatív és pozitív arány havonta"></div>
+    <p class="muted">A március (17-től) és a november (18-ig) csak részben szerepel az adatban.</p>
+  </section>
+
+  <section class="card" id="topics">
+    <h2>Témák szerint</h2>
+    <p class="muted">Egy szál (poszt + kommentjei) több témába is eshet; a kommentek a saját szövegük és a posztjuk témáit is öröklik. Rendezés: negatív arány szerint.</p>
+    <div class="ctl"><label for="topic-kind">Mutasd:</label>
+      <select class="dash-select" id="topic-kind" aria-label="Posztok vagy kommentek">
+        <option value="comment">Kommentek</option>
+        <option value="post">Posztok</option>
+      </select>
+    </div>
+    <div class="chart" data-draw="topic-chart" data-source="topics" role="img" aria-label="Negatív, semleges és pozitív arány témánként"></div>
+  </section>
+
+  <section class="card" id="engagement">
+    <h2>A negatív posztok kapják a legtöbb figyelmet</h2>
+    <p>Egy negatív poszt átlagosan <b class="num" data-draw="e-nr" data-source="engagement" data-field="reactions_mean" data-where="label=neg">—</b> reakciót és <b class="num" data-draw="e-nc" data-source="engagement" data-field="comments_mean" data-where="label=neg">—</b> kommentet kap, egy pozitív <b class="num" data-draw="e-pr" data-source="engagement" data-field="reactions_mean" data-where="label=pos">—</b> reakciót és <b class="num" data-draw="e-pc" data-source="engagement" data-field="comments_mean" data-where="label=pos">—</b> kommentet.</p>
+    <div class="chart" data-draw="eng-chart" data-source="engagement" role="img" aria-label="Átlagos reakció- és kommentszám a posztok hangulata szerint"></div>
+    <p class="muted">Átlagok; a medián jóval kisebb, mert néhány nagyon népszerű poszt húzza fel az értékeket.</p>
+  </section>
+
+  <section class="card" id="depth">
+    <h2>A válaszláncok mélyén élesebb a hang</h2>
+    <div class="legend"><span><span class="sw neg"></span>Negatív</span><span><span class="sw neu"></span>Semleges</span><span><span class="sw pos"></span>Pozitív</span></div>
+    <div class="chart" data-draw="depth-chart" data-source="depth" role="img" aria-label="Hangulat a komment mélysége szerint"></div>
+  </section>
+
+  <section class="card" id="threads">
+    <h2>A legnagyobb viták</h2>
+    <p class="muted">A 12 legtöbb elemzett kommentet kapott szál. A posztok szövegét adatvédelmi okból nem közöljük, csak a témájukat.</p>
+    <div class="tbl-wrap">
+      <table data-source="threads" data-row-key="rank">
+        <thead><tr>
+          <th data-field="date">Dátum</th>
+          <th data-field="topic">Téma</th>
+          <th class="r" data-field="n">Kommentek</th>
+          <th class="r" data-field="neg">Negatív %</th>
+          <th class="r" data-field="pos">Pozitív %</th>
+          <th class="r" data-field="reactions">Reakciók</th>
+        </tr></thead>
+        <tbody data-draw="threads-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <details id="method">
+    <summary>Módszertan és pontosság</summary>
+    <ul>
+      <li>Forrás: Apify Facebook group post scraper export (3331 poszt, 11 620 komment). A szöveg nélküli posztoknál a megosztott poszt szövegét használtuk; a teljesen szöveg nélküli elemek kimaradtak.</li>
+      <li>Osztályozó: három kategória (negatív / semleges / pozitív). Magyar karakter-n-gram modell, kiegészítve a HuSST és OpinHuBank korpuszon tanított általános modell becslésével, a PrecoSenti szentimentszótárral (tagadáskezeléssel) és emoji-jelekkel, majd erre a csoportra kézzel címkézett <b class="num" data-draw="v-n" data-source="validation" data-field="value" data-where="metric=n_labeled">—</b> elemen hangolva.</li>
+      <li>Pontosság keresztvalidációval: <b class="num" data-draw="v-acc" data-source="validation" data-field="value" data-where="metric=cv_accuracy">—</b>% (makro-F1: <b class="num" data-draw="v-f1" data-source="validation" data-field="value" data-where="metric=cv_macro_f1">—</b>%). Kommenteken <b class="num" data-draw="v-ac" data-source="validation" data-field="value" data-where="metric=acc_comments">—</b>%, posztokon <b class="num" data-draw="v-ap" data-source="validation" data-field="value" data-where="metric=acc_posts">—</b>%. A tévesztések zöme negatív ↔ semleges (pl. irónia, retorikai kérdések).</li>
+      <li>A tévesztési mátrixszal korrigált becslés a kommentekre: kb. <b class="num" data-draw="v-adjn" data-source="validation" data-field="value" data-where="metric=adj_comment_neg">—</b>% negatív és <b class="num" data-draw="v-adjp" data-source="validation" data-field="value" data-where="metric=adj_comment_pos">—</b>% pozitív – a fő kép tehát nem változik.</li>
+      <li>A „negatív” a hangvételt jelenti (panasz, kritika, harag, szomorúság, gúny), nem azt, hogy az írás káros vagy alaptalan. A hirdetések és rendezvényajánlók általában pozitívnak számítanak, ezért a posztok aránya felfelé torzít.</li>
+      <li>Konkrét problémák: 24 témára kézzel összeállított magyar kulcsszólisták (szótövek, kizárásokkal: pl. a „Forrás utca” nem forrás, a „zajlik” nem zaj), majd minden problémánál a legtöbbet kommentelt szálak és a legtöbb reakciót kapott hozzászólások elolvasása. A leírások ezekből készült összefoglalók, nem idézetek. A „szál” azokat a posztokat jelenti, amelyek szövege maga is említi a problémát. Az egészségügy és az áramszünetek kevés vagy főleg tájékoztató említést kaptak, ezért kimaradtak. A kulcsszavas keresés nem talál meg minden említést (például ha a hozzászóló nem nevezi meg a témát), ezért a számok alsó becslésnek tekinthetők.</li>
+      <li>Térkép: az utcák, városrészek és helyek az OpenStreetMap-exportból származnak (Biatorbágy közigazgatási határán belül). A helyneveket a szövegben névalakkal és ragokkal együtt kerestük (pl. „Forrás utcában”, „Szabadság úton”, „Katalin-hegyen”), a hosszabb utcanevek részeként előforduló rövidebb neveket kiszűrve. A komment a posztja helyszínét örökli, ha maga nem nevez meg helyet, és a poszt legfeljebb két helyet említ. Az M1-felhajtó, a pátyi határon lévő hulladéklerakó és a megnevezetlen „lakópark” nincs az exportban, ezért ezek csak listában szerepelnek.</li>
+    </ul>
+  </details>
+</div>
+
+<script>
+window.SA = (function () {
+  const pct = (v) => v == null || isNaN(v) ? '—' : (Math.round(v * 10) / 10).toFixed(1).replace('.', ',') + '%';
+  const num1 = (v) => v == null || isNaN(v) ? '—' : (Math.round(v * 10) / 10).toFixed(1).replace('.', ',');
+  const int = (v) => v == null || isNaN(v) ? '—' : Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  const MONTHS = ['január', 'február', 'március', 'április', 'május', 'június', 'július', 'augusztus', 'szeptember', 'október', 'november', 'december'];
+  const MSHORT = ['jan.', 'febr.', 'márc.', 'ápr.', 'máj.', 'jún.', 'júl.', 'aug.', 'szept.', 'okt.', 'nov.', 'dec.'];
+  const monthName = (ym) => MONTHS[+ym.slice(5, 7) - 1];
+  const monthShort = (ym) => MSHORT[+ym.slice(5, 7) - 1];
+  const KIND = { post: 'Posztok', comment: 'Kommentek' };
+  const LAB = { neg: 'Negatív', neu: 'Semleges', pos: 'Pozitív' };
+  function tip(el) {
+    let t = el.querySelector(':scope > .tip');
+    if (!t) { t = document.createElement('div'); t.className = 'tip'; t.hidden = true; el.appendChild(t); }
+    return {
+      show(html, x, y) {
+        t.replaceChildren(); html.forEach(([a, b]) => { const d = document.createElement('div'); if (b !== undefined) { const s = document.createElement('span'); s.className = 't'; s.textContent = a + ': '; d.appendChild(s); d.appendChild(document.createTextNode(b)); } else { d.textContent = a; d.style.fontWeight = '500'; } t.appendChild(d); });
+        t.hidden = false;
+        const w = el.clientWidth, tw = t.offsetWidth;
+        t.style.left = Math.max(0, Math.min(w - tw, x + 12)) + 'px';
+        t.style.top = Math.max(0, y - 10) + 'px';
+      },
+      hide() { t.hidden = true; }
+    };
+  }
+  function failed(el, st) {
+    el.replaceChildren();
+    const p = document.createElement('p'); p.className = 'muted';
+    p.textContent = st === 'error' ? 'Nem sikerült betölteni.' : '—';
+    el.appendChild(p);
+  }
+  // 100% stacked bar rows: items [{label, sub, neg, neu, pos}] in percent
+  function stacked(el, items) {
+    el.replaceChildren();
+    const tp = tip(el);
+    items.forEach((it) => {
+      const row = document.createElement('div'); row.className = 'row';
+      const lbl = document.createElement('div'); lbl.className = 'row-lbl';
+      const a = document.createElement('span'); a.textContent = it.label;
+      const b = document.createElement('span'); b.className = 'n'; b.textContent = it.sub || '';
+      lbl.append(a, b);
+      const bar = document.createElement('div'); bar.className = 'bar';
+      ['neg', 'neu', 'pos'].forEach((k) => {
+        const s = document.createElement('div'); s.className = 'seg ' + k;
+        s.style.width = it[k] + '%';
+        s.textContent = it[k] >= 9 ? pct(it[k]).replace(',0%', '%') : '';
+        bar.appendChild(s);
+      });
+      const move = (e) => { const r = el.getBoundingClientRect(); tp.show([[it.label], ['Negatív', pct(it.neg)], ['Semleges', pct(it.neu)], ['Pozitív', pct(it.pos)], ...(it.sub ? [['Elemszám', it.sub]] : [])], e.clientX - r.left, e.clientY - r.top); };
+      bar.addEventListener('pointermove', move); bar.addEventListener('pointerleave', () => tp.hide());
+      row.append(lbl, bar); el.appendChild(row);
+    });
+  }
+  return { pct, num1, int, monthName, monthShort, KIND, LAB, tip, failed, stacked, state: { trendKind: 'comment', topicKind: 'comment', pbGroup: '' } };
+})();
+</script>
+
+<script>
+dash.calc('shares', {
+  title: 'Arányok (%)',
+  description: 'Negatív, semleges és pozitív elemek aránya a posztokban és a kommentekben.',
+  inputs: ['overall'],
+  fn: (overall) => overall.map((r) => {
+    const n = +r.neg + +r.neu + +r.pos;
+    const p = (v) => Math.round(v / n * 1000) / 10;
+    return { kind: r.kind, n, neg_pct: p(+r.neg), neu_pct: p(+r.neu), pos_pct: p(+r.pos) };
+  })
+});
+dash.calc('pbsum', {
+  title: 'Problémák összesítve',
+  description: 'Az azonosított problémák száma, a legtöbbet említett témakör és egyedi probléma.',
+  inputs: ['issues', 'issue_groups'],
+  fn: (issues, groups) => {
+    if (!issues.length || !groups.length) return [];
+    const g = groups.reduce((a, b) => (+b.mentions > +a.mentions ? b : a));
+    const i = issues.reduce((a, b) => (+b.mentions > +a.mentions ? b : a));
+    return [{ issues: issues.length, top_group: g.group_hu.toLowerCase(), top_group_mentions: +g.mentions, top_issue: i.title }];
+  }
+});
+dash.calc('geocov', {
+  title: 'Térképen elhelyezhető említések aránya',
+  description: 'A problémás említések közül azok aránya, amelyekhez helyszín rendelhető.',
+  inputs: ['geo_coverage'],
+  fn: (cov) => cov.length ? [{ share: Math.round(+cov[0].placed / +cov[0].problem_items * 1000) / 10 }] : []
+});
+dash.calc('trend', {
+  title: 'Havi csúcs és legutóbbi hónap',
+  description: 'A kommentek legnegatívabb hónapja és a legutóbbi hónap negatív aránya.',
+  inputs: ['monthly'],
+  fn: (monthly) => {
+    const MONTHS = ['január', 'február', 'március', 'április', 'május', 'június', 'július', 'augusztus', 'szeptember', 'október', 'november', 'december'];
+    const c = monthly.filter((r) => r.kind === 'comment').sort((a, b) => a.month.localeCompare(b.month));
+    if (!c.length) return [];
+    const peak = c.reduce((a, b) => (+b.neg > +a.neg ? b : a));
+    const last = c[c.length - 1];
+    return [{ peak_month: MONTHS[+peak.month.slice(5, 7) - 1], peak_neg: +peak.neg, last_month: MONTHS[+last.month.slice(5, 7) - 1], last_neg: +last.neg }];
+  }
+});
+</script>
+
+<script>
+(function () {
+  const S = window.SA;
+  function one(name, src, field, where, fmt) {
+    dash.draw(name, (el) => {
+      const d = dash.data(src);
+      if (d.status === 'loading') { el.classList.add('dash-skeleton'); return; }
+      el.classList.remove('dash-skeleton');
+      if (d.status !== 'ok' || !Array.isArray(d.data)) { el.textContent = '—'; return; }
+      const r = where ? d.data.find((x) => String(x[where[0]]) === where[1]) : d.data[0];
+      el.textContent = r ? fmt(r[field]) : '—';
+    });
+  }
+  one('lede-cneg', 'shares', 'neg_pct', ['kind', 'comment'], S.pct);
+  one('lede-cpos', 'shares', 'pos_pct', ['kind', 'comment'], S.pct);
+  one('lede-ppos', 'shares', 'pos_pct', ['kind', 'post'], S.pct);
+  one('k-np', 'overall', 'n', ['kind', 'post'], S.int);
+  one('k-nc', 'overall', 'n', ['kind', 'comment'], S.int);
+  one('k-cneg', 'shares', 'neg_pct', ['kind', 'comment'], S.pct);
+  one('k-cpos', 'shares', 'pos_pct', ['kind', 'comment'], S.pct);
+  one('t-peakm', 'trend', 'peak_month', null, (v) => v);
+  one('t-peakv', 'trend', 'peak_neg', null, S.pct);
+  one('t-lastm', 'trend', 'last_month', null, (v) => v);
+  one('t-lastv', 'trend', 'last_neg', null, S.pct);
+  one('e-nr', 'engagement', 'reactions_mean', ['label', 'neg'], S.num1);
+  one('e-nc', 'engagement', 'comments_mean', ['label', 'neg'], S.num1);
+  one('e-pr', 'engagement', 'reactions_mean', ['label', 'pos'], S.num1);
+  one('e-pc', 'engagement', 'comments_mean', ['label', 'pos'], S.num1);
+  one('v-n', 'validation', 'value', ['metric', 'n_labeled'], S.int);
+  one('v-acc', 'validation', 'value', ['metric', 'cv_accuracy'], S.num1);
+  one('v-f1', 'validation', 'value', ['metric', 'cv_macro_f1'], S.num1);
+  one('v-ac', 'validation', 'value', ['metric', 'acc_comments'], S.num1);
+  one('v-ap', 'validation', 'value', ['metric', 'acc_posts'], S.num1);
+  one('v-adjn', 'validation', 'value', ['metric', 'adj_comment_neg'], S.num1);
+  one('v-adjp', 'validation', 'value', ['metric', 'adj_comment_pos'], S.num1);
+
+  one('map-cov', 'geocov', 'share', null, S.pct);
+  one('pb-n', 'pbsum', 'issues', null, (v) => String(v));
+  one('pb-topg', 'pbsum', 'top_group', null, (v) => v);
+  one('pb-topgn', 'pbsum', 'top_group_mentions', null, S.int);
+  one('pb-topi', 'pbsum', 'top_issue', null, (v) => v);
+
+  const GORDER = ['kulterulet', 'kozlekedes', 'kornyezet', 'kozszolg', 'biztonsag', 'kozelet'];
+  const pbRows = () => {
+    const d = dash.data('issues');
+    if (d.status !== 'ok' || !Array.isArray(d.data)) return null;
+    const g = S.state.pbGroup;
+    return d.data.filter((r) => !g || r.group === g);
+  };
+
+  dash.draw('pb-chart', (el) => {
+    const d = dash.data('issues');
+    const rows = pbRows();
+    if (!rows) { S.failed(el, d.status); return; }
+    el.replaceChildren();
+    const tp = S.tip(el);
+    const sorted = rows.slice().sort((a, b) => +b.mentions - +a.mentions);
+    const mx = d3.max(d.data, (r) => +r.mentions) || 1;
+    sorted.forEach((r) => {
+      const row = document.createElement('div'); row.className = 'pbar-row';
+      const nm = document.createElement('div'); nm.className = 'nm'; nm.textContent = r.title;
+      const bar = document.createElement('div'); bar.className = 'pbar';
+      const track = document.createElement('div'); track.className = 'track'; track.style.width = Math.max(2, +r.mentions / mx * 85) + '%';
+      const n1 = document.createElement('div'); n1.style.width = r.neg + '%'; n1.style.background = 'var(--color-bad)';
+      const n2 = document.createElement('div'); n2.style.width = (100 - r.neg) + '%'; n2.style.background = 'var(--cds-chart-muted)';
+      track.append(n1, n2);
+      const v = document.createElement('span'); v.className = 'v'; v.textContent = S.int(+r.mentions) + ' · ' + S.pct(+r.neg).replace(',0%', '%') + ' neg.';
+      bar.append(track, v);
+      row.append(nm, bar);
+      row.addEventListener('pointermove', (e) => { const b = el.getBoundingClientRect(); tp.show([[r.title], ['Témakör', r.group_hu], ['Említés', S.int(+r.mentions)], ['Ebből negatív', S.pct(+r.neg)], ['Saját szál (poszt)', S.int(+r.threads)], ['Csúcshónap', S.monthName(r.peak_month)]], e.clientX - b.left, e.clientY - b.top); });
+      row.addEventListener('pointerleave', () => tp.hide());
+      row.addEventListener('click', () => { const t = document.getElementById('pb-' + r.id); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+      el.appendChild(row);
+    });
+  });
+
+  dash.draw('pb-cards', (el) => {
+    const d = dash.data('issues');
+    const rows = pbRows();
+    el.replaceChildren();
+    if (!rows) return;
+    const mon = dash.data('issue_monthly');
+    const byId = {};
+    if (mon.status === 'ok' && Array.isArray(mon.data)) mon.data.forEach((m) => { (byId[m.id] = byId[m.id] || []).push(m); });
+    const sorted = rows.slice().sort((a, b) => (GORDER.indexOf(a.group) - GORDER.indexOf(b.group)) || (+b.mentions - +a.mentions));
+    const mk = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+    const stat = (wrap, label, val, field, id, cls) => {
+      const s = mk('span'); s.append(document.createTextNode(label + ' '));
+      const b = mk('b', cls || '', val); b.dataset.source = 'issues'; b.dataset.field = field; b.dataset.where = 'id=' + id;
+      s.appendChild(b); wrap.appendChild(s);
+    };
+    sorted.forEach((r) => {
+      const c = mk('article', 'pb'); c.id = 'pb-' + r.id;
+      c.appendChild(mk('div', 'tag', r.group_hu));
+      c.appendChild(mk('h3', '', r.title));
+      const st = mk('div', 'stats');
+      stat(st, 'Említés:', S.int(+r.mentions), 'mentions', r.id);
+      stat(st, 'negatív:', S.pct(+r.neg), 'neg', r.id, 'bad');
+      stat(st, 'saját szál:', S.int(+r.threads), 'threads', r.id);
+      stat(st, 'csúcs:', S.monthName(r.peak_month), 'peak_month', r.id);
+      c.appendChild(st);
+      const ms = (byId[r.id] || []).slice().sort((a, b) => a.month.localeCompare(b.month));
+      if (ms.length) {
+        const W = 240, H = 34, bw = W / ms.length;
+        const mxm = d3.max(ms, (m) => +m.mentions) || 1;
+        const svg = d3.select(c).append('svg').attr('class', 'spark').attr('width', '100%').attr('height', H + 12).attr('viewBox', `0 0 ${W} ${H + 12}`).attr('preserveAspectRatio', 'none')
+          .attr('role', 'img').attr('aria-label', 'Havi említések: ' + ms.map((m) => S.monthShort(m.month) + ' ' + m.mentions).join(', '));
+        svg.selectAll('rect').data(ms).join('rect').attr('x', (m, i) => i * bw + 1).attr('width', bw - 2)
+          .attr('y', (m) => H - (+m.mentions / mxm) * H).attr('height', (m) => Math.max(1, (+m.mentions / mxm) * H)).style('fill', 'var(--cds-chart-muted)');
+        svg.selectAll('text').data(ms).join('text').attr('x', (m, i) => i * bw + bw / 2).attr('y', H + 11).attr('text-anchor', 'middle').attr('font-size', 8).style('fill', 'var(--cds-text-secondary)').text((m, i) => (i % 2 ? '' : S.monthShort(m.month)));
+      }
+      c.appendChild(mk('p', '', r.statement));
+      const a = mk('p'); a.append(mk('span', 'lbl2', 'Mit kérnek a lakók: '), document.createTextNode(r.asks)); c.appendChild(a);
+      const pl = mk('p'); pl.append(mk('span', 'lbl2', 'Helyszínek: '), document.createTextNode(r.places)); c.appendChild(pl);
+      if (r.example_text) { const ex = mk('p', 'ex'); ex.textContent = 'Jellemző poszt (' + r.example_date + ', ' + S.int(+r.example_comments) + ' komment): „' + r.example_text + '”'; c.appendChild(ex); }
+      el.appendChild(c);
+    });
+  });
+
+  dash.draw('overall-chart', (el) => {
+    const d = dash.data('shares');
+    if (d.status !== 'ok' || !Array.isArray(d.data)) { S.failed(el, d.status); return; }
+    const order = ['post', 'comment'];
+    const items = order.map((k) => d.data.find((r) => r.kind === k)).filter(Boolean)
+      .map((r) => ({ label: S.KIND[r.kind], sub: S.int(r.n) + ' elem', neg: r.neg_pct, neu: r.neu_pct, pos: r.pos_pct }));
+    S.stacked(el, items);
+  });
+
+  dash.draw('depth-chart', (el) => {
+    const d = dash.data('depth');
+    if (d.status !== 'ok' || !Array.isArray(d.data)) { S.failed(el, d.status); return; }
+    S.stacked(el, d.data.slice().sort((a, b) => +a.depth - +b.depth)
+      .map((r) => ({ label: r.depth_hu, sub: S.int(r.n) + ' komment', neg: +r.neg_pct, neu: +r.neu_pct, pos: +r.pos_pct })));
+  });
+
+  dash.draw('topic-chart', (el) => {
+    const d = dash.data('topics');
+    if (d.status !== 'ok' || !Array.isArray(d.data)) { S.failed(el, d.status); return; }
+    const k = S.state.topicKind;
+    S.stacked(el, d.data.filter((r) => r.kind === k).sort((a, b) => +b.neg - +a.neg)
+      .map((r) => ({ label: r.topic, sub: S.int(r.n) + (k === 'comment' ? ' komment' : ' poszt'), neg: +r.neg, neu: +r.neu, pos: +r.pos })));
+  });
+
+  dash.draw('trend-chart', (el) => {
+    const d = dash.data('monthly');
+    if (d.status !== 'ok' || !Array.isArray(d.data)) { S.failed(el, d.status); return; }
+    const k = S.state.trendKind;
+    const rows = d.data.filter((r) => r.kind === k).sort((a, b) => a.month.localeCompare(b.month));
+    el.replaceChildren();
+    const W = Math.max(280, el.clientWidth), H = 260, m = { t: 14, r: 44, b: 26, l: 36 };
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('height', H).attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', `${S.KIND[k]}: negatív és pozitív arány havonta`);
+    const x = d3.scalePoint(rows.map((r) => r.month), [m.l, W - m.r]).padding(0.2);
+    const ymax = Math.max(10, d3.max(rows, (r) => Math.max(+r.neg, +r.pos)));
+    const y = d3.scaleLinear([0, Math.ceil(ymax / 10) * 10], [H - m.b, m.t]);
+    svg.append('g').attr('class', 'grid').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickSize(-(W - m.l - m.r)).tickFormat(''));
+    svg.append('g').attr('class', 'axis').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickFormat((v) => v + '%'));
+    const narrow = W < 460;
+    svg.append('g').attr('class', 'axis').attr('transform', `translate(0,${H - m.b})`).call(d3.axisBottom(x).tickFormat((v, i) => (narrow && i % 2) ? '' : S.monthShort(v)));
+    const series = [['neg', 'var(--color-bad)'], ['pos', 'var(--color-ok)']];
+    series.forEach(([f, c]) => {
+      svg.append('path').datum(rows).attr('fill', 'none').style('stroke', c).attr('stroke-width', 2)
+        .attr('d', d3.line().x((r) => x(r.month)).y((r) => y(+r[f])));
+      svg.append('g').selectAll('circle').data(rows).join('circle').attr('cx', (r) => x(r.month)).attr('cy', (r) => y(+r[f])).attr('r', 3).style('fill', c);
+      const last = rows[rows.length - 1];
+      if (last) svg.append('text').attr('x', x(last.month) + 6).attr('y', y(+last[f]) + 4).style('fill', c).attr('font-size', 11).text(S.pct(+last[f]));
+    });
+    const tp = S.tip(el);
+    const guide = svg.append('line').attr('y1', m.t).attr('y2', H - m.b).style('stroke', 'var(--cds-chart-reference)').attr('opacity', 0);
+    svg.append('rect').attr('x', m.l).attr('y', m.t).attr('width', W - m.l - m.r).attr('height', H - m.t - m.b).attr('fill', 'transparent')
+      .on('pointermove', (e) => {
+        const [px] = d3.pointer(e);
+        const r = rows.reduce((a, b) => Math.abs(x(b.month) - px) < Math.abs(x(a.month) - px) ? b : a);
+        guide.attr('x1', x(r.month)).attr('x2', x(r.month)).attr('opacity', 1);
+        const sx = x(r.month) * el.clientWidth / W;
+        tp.show([[S.monthName(r.month) + ' – ' + S.KIND[k].toLowerCase()], ['Negatív', S.pct(+r.neg)], ['Semleges', S.pct(+r.neu)], ['Pozitív', S.pct(+r.pos)], ['Elemszám', S.int(+r.n)]], sx, 20);
+      })
+      .on('pointerleave', () => { tp.hide(); guide.attr('opacity', 0); });
+  });
+
+  dash.draw('eng-chart', (el) => {
+    const d = dash.data('engagement');
+    if (d.status !== 'ok' || !Array.isArray(d.data)) { S.failed(el, d.status); return; }
+    el.replaceChildren();
+    const order = ['neg', 'neu', 'pos'];
+    const rows = order.map((k) => d.data.find((r) => r.label === k)).filter(Boolean);
+    const mr = d3.max(rows, (r) => +r.reactions_mean) || 1, mc = d3.max(rows, (r) => +r.comments_mean) || 1;
+    const g = document.createElement('div'); g.className = 'eng-grid';
+    ['', 'Átl. reakció / poszt', 'Átl. komment / poszt'].forEach((h) => { const s = document.createElement('div'); s.className = 'h'; s.textContent = h; g.appendChild(s); });
+    const color = { neg: 'var(--color-bad)', neu: 'var(--cds-chart-muted)', pos: 'var(--color-ok)' };
+    rows.forEach((r) => {
+      const l = document.createElement('div'); l.textContent = r.label_hu + ' (' + S.int(r.n) + ')'; g.appendChild(l);
+      [[+r.reactions_mean, mr], [+r.comments_mean, mc]].forEach(([v, mx]) => {
+        const c = document.createElement('div'); c.className = 'hb';
+        const b = document.createElement('span'); b.className = 'b'; b.style.width = Math.max(2, v / mx * 75) + '%'; b.style.background = color[r.label];
+        const t = document.createElement('span'); t.className = 'num'; t.textContent = S.num1(v);
+        c.append(b, t); g.appendChild(c);
+      });
+    });
+    el.appendChild(g);
+  });
+
+  dash.draw('threads-body', (tb) => {
+    const d = dash.data('threads');
+    tb.replaceChildren();
+    if (d.status !== 'ok' || !Array.isArray(d.data)) return;
+    d.data.forEach((r) => {
+      const tr = document.createElement('tr'); tr.dataset.key = encodeURIComponent(r.rank);
+      const td = (txt, cls) => { const c = document.createElement('td'); if (cls) c.className = cls; c.textContent = txt; tr.appendChild(c); return c; };
+      td(r.date);
+      const t = td(r.topic, 'txt');
+      const mini = document.createElement('div'); mini.className = 'mini';
+      [['neg', r.neg], ['neu', r.neu], ['pos', r.pos]].forEach(([k, v]) => { const s = document.createElement('div'); s.className = 'seg ' + k; s.style.width = v + '%'; mini.appendChild(s); });
+      t.appendChild(mini);
+      td(S.int(r.n), 'r'); td(r.neg + '%', 'r'); td(r.pos + '%', 'r'); td(S.int(r.reactions), 'r');
+      tb.appendChild(tr);
+    });
+  });
+})();
+</script>
+
+<script>
+(function () {
+  const S = window.SA;
+  document.querySelectorAll('#trend-kind').forEach((sel) => sel.addEventListener('change', () => { S.state.trendKind = sel.value; dash.draw('trend-chart'); }));
+  document.querySelectorAll('#pb-group').forEach((sel) => sel.addEventListener('change', () => { S.state.pbGroup = sel.value; dash.draw('pb-chart'); dash.draw('pb-cards'); }));
+  document.querySelectorAll('#topic-kind').forEach((sel) => sel.addEventListener('change', () => { S.state.topicKind = sel.value; dash.draw('topic-chart'); }));
+})();
+</script>
+
+<script src="map.js"></script>
