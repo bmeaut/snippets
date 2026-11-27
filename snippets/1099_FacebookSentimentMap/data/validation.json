@@ -1,0 +1,1 @@
+[{"metric":"cv_accuracy","value":71.4},{"metric":"cv_macro_f1","value":70.4},{"metric":"n_labeled","value":460},{"metric":"acc_comments","value":72.7},{"metric":"acc_posts","value":70.0},{"metric":"adj_comment_neg","value":42.0},{"metric":"adj_comment_pos","value":16.0}]

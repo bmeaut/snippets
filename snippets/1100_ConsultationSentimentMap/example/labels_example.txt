@@ -1,0 +1,6 @@
+0 0 m - -
+1 0 m - -
+2 n p dugo iskola
+3 n x dugo,fout fout
+4 p p fout fout
+5 0 p - -
