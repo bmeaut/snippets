@@ -1,0 +1,454 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Agile-X Grade Plan</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+/* Layout concept: a colorist's grade sheet. One node-graph diagram up top, then a ruled, scannable reference below it.
+   Palette: cool graphite neutrals, steel-teal accent, one warm accent reserved for skin and wood notes. */
+:root {
+  --bg: #f3f5f7;
+  --surface: #ffffff;
+  --fg: #131920;
+  --muted: #59656f;
+  --line: #d8dee4;
+  --accent: #0a7f95;
+  --warm: #b4531f;
+  --pre: #0a7f95;
+  --clip: #a8700f;
+  --post: #3c6db0;
+  --tl: #5f6b77;
+  --chip-fg: #ffffff;
+  --head: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1216; --surface: #151a20; --fg: #e5eaef; --muted: #92a0ad; --line: #28313a;
+    --accent: #3cc4dc; --warm: #e58a4f; --pre: #3cc4dc; --clip: #e0a43a; --post: #7aa6e6; --tl: #93a0ad;
+    --chip-fg: #0e1216; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1216; --surface: #151a20; --fg: #e5eaef; --muted: #92a0ad; --line: #28313a;
+  --accent: #3cc4dc; --warm: #e58a4f; --pre: #3cc4dc; --clip: #e0a43a; --post: #7aa6e6; --tl: #93a0ad;
+  --chip-fg: #0e1216; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 15px; line-height: 1.6;
+  padding-block: 40px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 980px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px; }
+h1, h2, h3 { font-family: var(--head); text-wrap: balance; line-height: 1.2; margin: 0; }
+h1 { font-size: clamp(30px, 5vw, 44px); font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
+h3 { font-size: 17px; font-weight: 600; }
+p { margin: 0; max-width: 68ch; }
+code, .mono { font-family: var(--mono); font-size: 0.88em; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.lede { font-size: 17px; color: var(--fg); max-width: 64ch; }
+.muted { color: var(--muted); }
+section { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+header { display: flex; flex-direction: column; gap: 14px; }
+
+.scroll { overflow-x: auto; max-width: 100%; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; vertical-align: top; padding: 9px 14px 9px 0; border-bottom: 1px solid var(--line); }
+th { font-family: var(--mono); font-size: 11.5px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+td:first-child { font-weight: 500; white-space: nowrap; padding-right: 20px; }
+td.val { font-family: var(--mono); font-size: 13px; }
+.tight td:first-child { white-space: normal; }
+
+.diagram { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px; }
+.diagram svg { display: block; min-width: 860px; width: 100%; height: auto; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 13px; color: var(--muted); }
+.legend b { color: var(--fg); font-weight: 600; }
+
+.node { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 4px 16px; padding-top: 26px; border-top: 1px solid var(--line); }
+.node .chip { grid-row: span 3; width: 44px; height: 44px; border-radius: 8px; display: grid; place-items: center; font-family: var(--mono); font-weight: 500; font-size: 15px; color: var(--chip-fg); }
+.chip.pre { background: var(--pre); } .chip.clip { background: var(--clip); } .chip.post { background: var(--post); } .chip.tl { background: var(--tl); }
+.node-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.tag { font-family: var(--mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 8px; border-radius: 99px; border: 1px solid var(--line); color: var(--muted); }
+.tag.lvl { color: var(--fg); border-color: var(--muted); }
+.node .scroll { min-width: 0; }
+.nodes { display: flex; flex-direction: column; gap: 30px; }
+
+.pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
+.pair > div { min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.note { border-top: 1px solid var(--line); padding-top: 14px; font-size: 14px; color: var(--muted); max-width: 72ch; }
+.warm { color: var(--warm); font-weight: 600; }
+ol, ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; max-width: 72ch; }
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+footer { font-size: 13px; color: var(--muted); display: flex; flex-direction: column; gap: 8px; border-top: 1px solid var(--line); padding-top: 20px; }
+footer ul { gap: 4px; }
+
+/* SVG parts */
+.band { fill: none; stroke-width: 1.4; stroke-dasharray: 5 4; }
+.band.pre { stroke: var(--pre); } .band.clip { stroke: var(--clip); } .band.post { stroke: var(--post); } .band.tl { stroke: var(--tl); }
+.bl { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; }
+.bl.pre { fill: var(--pre); } .bl.clip { fill: var(--clip); } .bl.post { fill: var(--post); } .bl.tl { fill: var(--tl); }
+.nbox { fill: var(--bg); stroke-width: 1.6; }
+.nbox.pre { stroke: var(--pre); } .nbox.clip { stroke: var(--clip); } .nbox.post { stroke: var(--post); } .nbox.tl { stroke: var(--tl); }
+.nn { font-family: var(--mono); font-size: 10px; fill: var(--muted); }
+.nt { font-family: var(--head); font-size: 13px; font-weight: 700; fill: var(--fg); }
+.ns { font-family: var(--body); font-size: 10.5px; fill: var(--muted); }
+.nb { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.05em; fill: var(--fg); }
+.arrow { stroke: var(--muted); stroke-width: 1.4; fill: none; }
+.ah { fill: var(--muted); }
+</style>
+
+<div class="wrap">
+
+<header>
+  <span class="eyebrow">DaVinci Resolve 20 · Color page · Sony A7 III, PP5 · 20 mm f/1.8</span>
+  <h1>Agile-X unboxing: grade plan</h1>
+  <p class="lede">A nine-node tree that takes the dark, slightly warm, orange-heavy office footage to a clean, neutral-white, steel-cool look with natural skin and a robot arm that reads against black foam. Four levels do the work: group Pre-Clip, Clip, group Post-Clip and Timeline.</p>
+</header>
+
+<section id="footage">
+  <h2>What the sample shows</h2>
+  <p>I pulled frames from your clip and measured them. The sample is a 720×1280, 8-bit, 25 fps H.264 file, so read the numbers as relative and re-check them with scopes on the original A7 III files.</p>
+  <div class="scroll">
+  <table class="tight">
+    <thead><tr><th>Finding</th><th>Measured</th><th>What it means for the grade</th></tr></thead>
+    <tbody>
+      <tr><td>Underexposed</td><td class="val">cheek ≈ 27% · wall 20–40% · black foam ≈ 12%</td><td>Skin should sit near 55–62%. That is a lift of roughly two stops or more, so noise is the main risk and denoise comes first.</td></tr>
+      <tr><td>Auto white balance drifts</td><td class="val">wall R:G:B 105:99:101, 86:82:83, 89:84:82</td><td>Slight magenta-warm in one shot and plain warm in another, about 3–6% apart. Balance every shot, and keyframe where it shifts mid-shot.</td></tr>
+      <tr><td>One loud color</td><td class="val">wood hue ≈ 14°, saturation ≈ 0.5</td><td>The cabinets are the only strongly saturated object and they fight the tech look. Pull them toward mahogany with a shared secondary.</td></tr>
+      <tr><td>Muted overall</td><td class="val">low average saturation</td><td>Typical of a Cine gamma profile. The look node adds color back selectively.</td></tr>
+      <tr><td>Black on black</td><td class="val">arm, foam and shirt all near black</td><td>Hold the black point at 3–5%, not 0, and add local contrast on the arm so its outline separates from the foam.</td></tr>
+      <tr><td>Wide lens</td><td class="val">20 mm, edge falloff visible</td><td>A soft vignette node finishes the framing instead of fighting it.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note"><b>About PP5.</b> Sony's help page for the A7 II lists PP5 as the Cine1 gamma sample. I could not confirm the A7 III list, and profiles can be edited, so check PP5 in the camera menu. Cine1, Cine2, Movie and ITU709 all use Rec.709 primaries, so the 709 input in this plan fits them. If the camera shows an S-Log gamma, use <span class="mono">S-Gamut3.Cine / S-Log3</span> (or the matching S-Gamut and S-Log2) as the input in node 02 instead.</p>
+</section>
+
+<section id="setup">
+  <h2>Project setup</h2>
+  <div class="scroll">
+  <table class="tight">
+    <thead><tr><th>Setting</th><th>Value</th><th>Reason</th></tr></thead>
+    <tbody>
+      <tr><td>Color science</td><td class="val">DaVinci YRGB (not Color Managed)</td><td>The nodes below do the color management. Running Resolve Color Management at the same time would transform the image twice.</td></tr>
+      <tr><td>Timeline and output</td><td class="val">Rec.709, Gamma 2.4</td><td>Grade on a Rec.709 / 2.4 reference display and keep it the same for the whole project.</td></tr>
+      <tr><td>Project Settings ▸ General Options ▸ Color</td><td class="val">turn off “Use local version for new clips in timeline” before you add clips</td><td>New clips then get Remote versions, so every cut from one source file shares its Clip grade (manual p. 3276). It only affects clips added afterwards.</td></tr>
+      <tr><td>Same panel</td><td class="val">“Use S-curve for contrast” on</td><td>Default. Contrast then protects shadows and highlights from clipping as you raise it.</td></tr>
+      <tr><td>Grouping</td><td class="val">one group for all A7 III clips</td><td>Right-click the selected clips ▸ Add Into New Group. Pre-Clip and Post-Clip nodes ripple to every member.</td></tr>
+      <tr><td>Studio features</td><td class="val">Temporal and Spatial NR, UltraNR, Magic Mask v2, Film Grain</td><td>Fallbacks for the free version are in the last table.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="graph">
+  <h2>The node graph</h2>
+  <div class="diagram scroll">
+<svg viewBox="0 0 1116 214" role="img" aria-label="Serial node graph with nine nodes in four levels: group Pre-Clip has NR and CST IN; Clip has Balance, Wood and Skin, and Robot; group Post-Clip has Look, Finish and CST OUT; Timeline has Final.">
+  <defs><marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path class="ah" d="M0 0 L8 4 L0 8 z"/></marker></defs>
+
+  <rect class="band pre" x="20" y="30" width="236" height="166" rx="10"/>
+  <rect class="band clip" x="260" y="30" width="356" height="166" rx="10"/>
+  <rect class="band post" x="620" y="30" width="356" height="166" rx="10"/>
+  <rect class="band tl" x="980" y="30" width="116" height="166" rx="10"/>
+  <text class="bl pre" x="32" y="50">GROUP PRE-CLIP</text>
+  <text class="bl clip" x="272" y="50">CLIP</text>
+  <text class="bl post" x="632" y="50">GROUP POST-CLIP</text>
+  <text class="bl tl" x="992" y="50">TIMELINE</text>
+
+  <g>
+    <line class="arrow" x1="128" y1="108" x2="148" y2="108" marker-end="url(#ah)"/>
+    <line class="arrow" x1="248" y1="108" x2="268" y2="108" marker-end="url(#ah)"/>
+    <line class="arrow" x1="368" y1="108" x2="388" y2="108" marker-end="url(#ah)"/>
+    <line class="arrow" x1="488" y1="108" x2="508" y2="108" marker-end="url(#ah)"/>
+    <line class="arrow" x1="608" y1="108" x2="628" y2="108" marker-end="url(#ah)"/>
+    <line class="arrow" x1="728" y1="108" x2="748" y2="108" marker-end="url(#ah)"/>
+    <line class="arrow" x1="848" y1="108" x2="868" y2="108" marker-end="url(#ah)"/>
+    <line class="arrow" x1="968" y1="108" x2="988" y2="108" marker-end="url(#ah)"/>
+  </g>
+
+  <g text-anchor="middle">
+    <rect class="nbox pre" x="30" y="64" width="96" height="88" rx="8"/>
+    <text class="nn" x="78" y="84">01</text><text class="nt" x="78" y="106">NR</text><text class="ns" x="78" y="124">Denoise</text>
+    <text class="nb" x="78" y="170">GROUP</text><text class="nb" x="78" y="184">STUDIO</text>
+
+    <rect class="nbox pre" x="150" y="64" width="96" height="88" rx="8"/>
+    <text class="nn" x="198" y="84">02</text><text class="nt" x="198" y="106">CST IN</text><text class="ns" x="198" y="124">709 → DWG/DI</text>
+    <text class="nb" x="198" y="170">GROUP</text>
+
+    <rect class="nbox clip" x="270" y="64" width="96" height="88" rx="8"/>
+    <text class="nn" x="318" y="84">03</text><text class="nt" x="318" y="106">BALANCE</text><text class="ns" x="318" y="124">Exposure · WB</text>
+    <text class="nb" x="318" y="170">REMOTE</text>
+
+    <rect class="nbox clip" x="390" y="64" width="96" height="88" rx="8"/>
+    <text class="nn" x="438" y="84">04</text><text class="nt" x="438" y="106">WOOD/SKIN</text><text class="ns" x="438" y="124">Chroma Warp</text>
+    <text class="nb" x="438" y="170">SHARED</text>
+
+    <rect class="nbox clip" x="510" y="64" width="96" height="88" rx="8"/>
+    <text class="nn" x="558" y="84">05</text><text class="nt" x="558" y="106">ROBOT</text><text class="ns" x="558" y="124">Hero pop</text>
+    <text class="nb" x="558" y="170">LOCAL</text><text class="nb" x="558" y="184">STUDIO</text>
+
+    <rect class="nbox post" x="630" y="64" width="96" height="88" rx="8"/>
+    <text class="nn" x="678" y="84">06</text><text class="nt" x="678" y="106">LOOK</text><text class="ns" x="678" y="124">Creative color</text>
+    <text class="nb" x="678" y="170">GROUP</text>
+
+    <rect class="nbox post" x="750" y="64" width="96" height="88" rx="8"/>
+    <text class="nn" x="798" y="84">07</text><text class="nt" x="798" y="106">FINISH</text><text class="ns" x="798" y="124">Detail · edges</text>
+    <text class="nb" x="798" y="170">GROUP</text>
+
+    <rect class="nbox post" x="870" y="64" width="96" height="88" rx="8"/>
+    <text class="nn" x="918" y="84">08</text><text class="nt" x="918" y="106">CST OUT</text><text class="ns" x="918" y="124">DWG/DI → 709</text>
+    <text class="nb" x="918" y="170">GROUP</text>
+
+    <rect class="nbox tl" x="990" y="64" width="96" height="88" rx="8"/>
+    <text class="nn" x="1038" y="84">09</text><text class="nt" x="1038" y="106">FINAL</text><text class="ns" x="1038" y="124">QC trim</text>
+    <text class="nb" x="1038" y="170">TIMELINE</text>
+  </g>
+</svg>
+  </div>
+  <div class="legend">
+    <span><b>GROUP</b> edited once, ripples to every clip in the group</span>
+    <span><b>REMOTE</b> shared by every cut of the same source file</span>
+    <span><b>LOCAL</b> this clip only</span>
+    <span><b>SHARED</b> a locked shared node inside the clip tree</span>
+    <span><b>STUDIO</b> needs Resolve Studio</span>
+  </div>
+  <p>Everything is serial, so each node sees the result of the one before it. Resolve applies the levels in a fixed order: Pre-Clip, Clip, Post-Clip, then Timeline (manual pp. 3304, 3324). I used no parallel or layer mixers because nothing here needs overlapping blends. Add one only if you want a glow built from a blurred copy of the highlights.</p>
+</section>
+
+<section id="nodes">
+  <h2>Node by node</h2>
+  <p>Starting values are mine. The manual defines the controls and the method, not the numbers, so judge every value on the waveform, vectorscope and a calibrated viewer.</p>
+
+  <div class="nodes">
+
+  <article class="node" id="n1">
+    <div class="chip pre">01</div>
+    <div class="node-head"><h3>NR · denoise</h3><span class="tag lvl">Group Pre-Clip</span><span class="tag">Studio</span></div>
+    <p>Noise reduction goes first so the lift in node 03 does not amplify noise. In one node, Resolve processes noise reduction before color adjustments (manual p. 3453). A group node is a baseline for every shot. If the darkest shots need more, add a Clip node with extra Spatial NR on a shadow qualifier.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Control (Color ▸ Motion Effects)</th><th>Start</th><th>Check</th></tr></thead>
+      <tbody>
+        <tr><td>Temporal NR frames</td><td class="val">2, Motion Est. Better, Range Medium</td><td>Still areas clean, the moving hands do not ghost.</td></tr>
+        <tr><td>Temporal Luma / Chroma</td><td class="val">ungang, Luma ≈ 3, Chroma ≈ 8</td><td>Raise slowly until static noise drops. Chroma blotches are usually worse than luma noise in dark 4:2:0.</td></tr>
+        <tr><td>Motion Threshold</td><td class="val">50 (default)</td><td>Lower it if hands leave trails.</td></tr>
+        <tr><td>Spatial NR mode</td><td class="val">UltraNR, then Analyze on a flat wall patch</td><td>Use Show Patch to move the sample box off texture.</td></tr>
+        <tr><td>Radius / NR Blend</td><td class="val">Medium / ≈ 25</td><td>Blend 0 is full effect and 100 is none. Keep some original texture so skin does not turn waxy.</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+
+  <article class="node" id="n2">
+    <div class="chip pre">02</div>
+    <div class="node-head"><h3>CST in · Rec.709 to DaVinci Wide Gamut</h3><span class="tag lvl">Group Pre-Clip</span></div>
+    <p>Resolve FX ▸ Color ▸ Color Space Transform. It moves the picture into DaVinci Wide Gamut / DaVinci Intermediate, a log working space where Offset, Log wheels and Contrast with Pivot behave predictably (manual pp. 236–238, 3470). Being a group node, it also covers clips you add to the group later.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Control</th><th>Value</th><th>Check</th></tr></thead>
+      <tbody>
+        <tr><td>Input Color Space / Gamma</td><td class="val">Rec.709 / Gamma 2.4</td><td>Cine1 is a display-referred in-camera curve. Treating it as Gamma 2.4 means it looks as shot until you grade. If it looks wrong next to the source, try Rec.709 (Scene) and use the same choice consistently.</td></tr>
+        <tr><td>Output Color Space / Gamma</td><td class="val">DaVinci Wide Gamut / DaVinci Intermediate</td><td>Node 08 is the exact reverse.</td></tr>
+        <tr><td>Tone Mapping / Gamut Mapping</td><td class="val">None / None</td><td>Going from a small gamut into a large one needs no compression.</td></tr>
+        <tr><td>Test</td><td class="val">enable only 02 and 08</td><td>The image should match the raw clip. Any difference means the in and out settings do not mirror each other.</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+
+  <article class="node" id="n3">
+    <div class="chip clip">03</div>
+    <div class="node-head"><h3>Balance · exposure and white balance</h3><span class="tag lvl">Clip</span><span class="tag">Remote version</span></div>
+    <p>The only node you rebalance shot by shot. Use Remote versions so every cut from one long take inherits it, including a 16:9 timeline and a 9:16 cutdown made from the same files. Switch an individual clip to a Local version when one cut needs its own fix. Because auto white balance drifts, keyframe the white balance across a change or split the clip.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Control (Primaries)</th><th>Start</th><th>Check</th></tr></thead>
+      <tbody>
+        <tr><td>White balance</td><td class="val">eyedropper on the wall or a ceiling tile, then trim with the Offset color wheel</td><td>Neutrals sit on the vectorscope center. Temp up is warmer and Tint up is magenta (manual p. 3063), so a magenta-warm wall needs a small step down on both.</td></tr>
+        <tr><td>Exposure</td><td class="val">Offset master wheel</td><td>Skin at 55–62% on the waveform (the sample cheek is about 27%). In DaVinci Intermediate one stop is about 0.073 in code value, and 18% grey sits at 0.336.</td></tr>
+        <tr><td>Black point</td><td class="val">Lift, or Contrast with Pivot</td><td>Foam and shirt at 3–5%, never crushed to 0, so the arm keeps its outline.</td></tr>
+        <tr><td>Contrast / Pivot</td><td class="val">1.10–1.20 / start 0.336</td><td>Nudge Pivot until skin stops moving when you change Contrast.</td></tr>
+        <tr><td>Highlights / Shadows</td><td class="val">−10 to −25 / +10 to +20</td><td>Ceiling panels and window light stay under 92–95%. Watch noise when opening shadows.</td></tr>
+        <tr><td>Saturation</td><td class="val">50 → 55–60</td><td>Cine profiles come out muted.</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+
+  <article class="node" id="n4">
+    <div class="chip clip">04</div>
+    <div class="node-head"><h3>Wood and skin · Chroma Warp</h3><span class="tag lvl">Clip</span><span class="tag">Shared node</span></div>
+    <p>Color Warper ▸ Chroma Warp, which is exposure independent (manual p. 3136), so a single shared node holds up across shots with different exposures. Build it once, right-click ▸ Save as Shared node, and leave it locked. Shared nodes stay linked when you copy a Remote grade to a Local one (p. 3298).</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Tool</th><th>Action</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Add Stroke (Normal) on the wood</td><td class="val">eyedropper the cabinet, drag 30–40% toward the white point and slightly toward yellow</td><td>Moves the neon red-orange (hue ≈ 14°, saturation ≈ 0.5) toward a calmer mahogany.</td></tr>
+        <tr><td>Pin Point on skin</td><td class="val">eyedropper a cheek</td><td>Keeps faces from changing while the wood moves. Skin is a lighter, less saturated orange than the cabinets.</td></tr>
+        <tr><td>Pin Point at the white point</td><td class="val">click the center circle</td><td>Keeps neutral greys from tinting (manual tip, p. 3139).</td></tr>
+        <tr><td>Optional second stroke</td><td class="val">carpet blue-grey, slightly toward blue-cyan</td><td>One small cool accent that supports the tech mood.</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+
+  <article class="node" id="n5">
+    <div class="chip clip">05</div>
+    <div class="node-head"><h3>Robot · hero pop</h3><span class="tag lvl">Clip</span><span class="tag">Local version</span><span class="tag">Studio</span></div>
+    <p>Only on shots where the arm is the subject. A Magic Mask v2 object mask on the arm, tracked, lets you brighten and sharpen it without lifting the whole shadow area. In the free version use a tracked Power Window instead.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Control</th><th>Start</th><th>Check</th></tr></thead>
+      <tbody>
+        <tr><td>Shadows / Midtone Detail</td><td class="val">+15 to +25 / +15 to +25</td><td>Joints, lens rings and the warning label read clearly against the foam.</td></tr>
+        <tr><td>Temp</td><td class="val">slightly cool</td><td>A steel feel on the metal. Leave the specular highlights alone.</td></tr>
+        <tr><td>Mask edge</td><td class="val">soften</td><td>No halo around the arm while the hands move in front of it.</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+
+  <article class="node" id="n6">
+    <div class="chip post">06</div>
+    <div class="node-head"><h3>Look · creative color</h3><span class="tag lvl">Group Post-Clip</span></div>
+    <p>The stylistic decision, kept out of the clip nodes. A client change here updates every shot in the group at once. The target palette is graphite, white and steel-blue, with warmth only in skin and cardboard.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Control</th><th>Start</th><th>Check</th></tr></thead>
+      <tbody>
+        <tr><td>Log wheels, Shadows</td><td class="val">nudge toward blue-cyan, small</td><td>Cool shadows without a visible tint on the wall. Highlights stay neutral and midtones stay untouched, so skin holds.</td></tr>
+        <tr><td>Contrast</td><td class="val">1.05–1.10</td><td>Crisp, not crushed. The arm must still separate from the foam.</td></tr>
+        <tr><td>Saturation / Color Boost</td><td class="val">52–58 / +5 to +10</td><td>Color Boost lifts low-saturation areas more than saturated ones (manual p. 3063), which wakes up the muted room without pushing the wood.</td></tr>
+        <tr><td>Hue vs Sat</td><td class="val">reds and oranges −10 to −15%, blues and cyans +10 to +15%</td><td>Stacks with node 04, so stay subtle. Skin stays on the skin line.</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+
+  <article class="node" id="n7">
+    <div class="chip post">07</div>
+    <div class="node-head"><h3>Finish · detail and edges</h3><span class="tag lvl">Group Post-Clip</span></div>
+    <p>Clarity, sharpening and a vignette for the 20 mm edges. Each effect is kept small because the footage was lifted a lot.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Control</th><th>Start</th><th>Check</th></tr></thead>
+      <tbody>
+        <tr><td>Midtone Detail</td><td class="val">+10 to +15</td><td>Adds definition and also adds noise, so stop early.</td></tr>
+        <tr><td>Blur palette ▸ Sharpen</td><td class="val">Radius 0.45 (0.50 is neutral), raise Level</td><td>Raise Level until the flat wall stops sharpening, so noise is left alone.</td></tr>
+        <tr><td>Vignette</td><td class="val">large soft ellipse Power Window, inverted, Gain ≈ 0.85–0.90</td><td>Barely visible. If you notice it, it is too strong.</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+
+  <article class="node" id="n8">
+    <div class="chip post">08</div>
+    <div class="node-head"><h3>CST out · back to Rec.709</h3><span class="tag lvl">Group Post-Clip</span></div>
+    <p>The exact reverse of node 02, placed last in the group rather than in the Timeline grade. The Timeline grade applies to every clip in the timeline (manual p. 3327), including footage that never went through node 02, such as other cameras or graphics.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Control</th><th>Value</th><th>Check</th></tr></thead>
+      <tbody>
+        <tr><td>Input</td><td class="val">DaVinci Wide Gamut / DaVinci Intermediate</td><td>Same pair as the output of node 02.</td></tr>
+        <tr><td>Output</td><td class="val">Rec.709 / Gamma 2.4</td><td>Matches the timeline and the reference monitor.</td></tr>
+        <tr><td>Tone Mapping</td><td class="val">None</td><td>Predictable round trip. If ceiling lights clip harshly after the lift, try Luminance Mapping, which suits Rec.709 media (p. 3470).</td></tr>
+        <tr><td>Gamut Mapping</td><td class="val">Saturation Mapping, Knee ≈ 0.8, Max ≈ 1.0</td><td>Only if boosted blues or cyans clip in 709. Use None if nothing does.</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+
+  <article class="node" id="n9">
+    <div class="chip tl">09</div>
+    <div class="node-head"><h3>Final · QC trim</h3><span class="tag lvl">Timeline</span><span class="tag">Studio for grain</span></div>
+    <p>Display-referred and deliberately dull. It is a safety net, not a look, because it reaches every clip in the timeline.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Control</th><th>Start</th><th>Check</th></tr></thead>
+      <tbody>
+        <tr><td>Curves ▸ Soft Clip</td><td class="val">High slightly below 1.0, raise High Soft</td><td>Highlights roll off instead of snapping at 100%.</td></tr>
+        <tr><td>Film Grain (Resolve FX)</td><td class="val">35 mm preset, Opacity ≈ 5–10%, only if needed</td><td>Breaks up banding in 8-bit wall gradients after the lift. Skip it if there is no banding.</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+
+  </div>
+</section>
+
+<section id="levels">
+  <h2>Which level for what</h2>
+  <div class="scroll">
+  <table class="tight">
+    <thead><tr><th>Tool</th><th>Used for</th><th>Reason</th></tr></thead>
+    <tbody>
+      <tr><td>Group Pre-Clip</td><td>01 NR, 02 CST in</td><td>Identical for every A7 III clip. Edit once, and new clips in the group inherit it.</td></tr>
+      <tr><td>Clip, Remote version</td><td>03 Balance</td><td>Long takes get cut into many pieces, and the same files may feed several timelines. Remote grades link them automatically (p. 3276).</td></tr>
+      <tr><td>Clip, Local version</td><td>05 Robot, and any one-off fix</td><td>Per-cut work that must not ripple elsewhere.</td></tr>
+      <tr><td>Shared node</td><td>04 Wood and skin</td><td>The same secondary on every office shot, kept inside the clip tree so it survives copying a Remote grade to Local.</td></tr>
+      <tr><td>Group Post-Clip</td><td>06 Look, 07 Finish, 08 CST out</td><td>One place for client changes to the style, applied after per-shot corrections.</td></tr>
+      <tr><td>Timeline</td><td>09 Final</td><td>Global QC only. It applies to every clip, so no creative moves and no CST here.</td></tr>
+      <tr><td>Other camera or graphics</td><td>a second group</td><td>Give it its own Pre-Clip CST in and copy node 06 as a shared node, so the look stays consistent across groups.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="targets">
+  <h2>Targets to check on the scopes</h2>
+  <div class="pair">
+    <div>
+      <h3>Waveform, Rec.709 display</h3>
+      <div class="scroll"><table class="tight">
+        <tbody>
+          <tr><td>Skin</td><td class="val">55–62%</td></tr>
+          <tr><td>White wall, ceiling</td><td class="val">65–80%, no clip</td></tr>
+          <tr><td>Lights, window</td><td class="val">≤ 92–95%</td></tr>
+          <tr><td>Black foam, shirt</td><td class="val">3–5%</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3>Vectorscope</h3>
+      <div class="scroll"><table class="tight">
+        <tbody>
+          <tr><td>Neutrals</td><td class="val">center</td></tr>
+          <tr><td>Skin</td><td class="val">on the skin line</td></tr>
+          <tr><td>Wood</td><td class="val">clearly shorter than skin</td></tr>
+          <tr><td>Shadows</td><td class="val">slight cool, small</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+</section>
+
+<section id="order">
+  <h2>Order of work</h2>
+  <ol>
+    <li>Create the group, then build nodes 01 and 02 in Group Pre-Clip and nodes 06 to 08 in Group Post-Clip with neutral values.</li>
+    <li>Pick one well-lit shot with the presenter and the arm. Grade node 03 until skin and wall hit the targets above.</li>
+    <li>Build node 04 on that shot, save it as a shared node and lock it.</li>
+    <li>Judge the look in node 06 on that hero shot, then check it on a dark wide shot to make sure it still holds.</li>
+    <li>Walk the other shots and rebalance only node 03. Use split screen against a saved still of the hero shot.</li>
+    <li>Add node 05 to the robot close-ups.</li>
+    <li>Check noise on the darkest shot at 100% zoom, adjust node 01, then set node 09.</li>
+    <li>Run the CST test from node 02 once more before you render.</li>
+  </ol>
+</section>
+
+<section id="free">
+  <h2>If you are on the free version</h2>
+  <div class="scroll">
+  <table class="tight">
+    <thead><tr><th>Studio feature</th><th>Replacement</th></tr></thead>
+    <tbody>
+      <tr><td>Temporal and Spatial NR, UltraNR</td><td>No Motion Effects palette. Use a Blur palette radius just above 0.50 on a node limited to the chroma channels (right-click the node and use Channels). It removes colored blotches, not luma grain. Expose brighter on the next shoot.</td></tr>
+      <tr><td>Magic Mask v2</td><td>A Power Window on the arm with the tracker.</td></tr>
+      <tr><td>Film Grain</td><td>Leave it out. If banding shows, add a very small amount of blur and sharpen at the same time in node 07.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note"><b>For the next shoot.</b> Expose about one to two stops brighter on PP5, with the face near the middle of the waveform. That removes most of the noise problem and halves the lift you need in node 03.</p>
+</section>
+
+<footer>
+  <b>Sources</b>
+  <ul>
+    <li>DaVinci Resolve 20 Reference Manual (July 2025): groups and Pre-Clip, Clip, Post-Clip pp. 3301–3306; node order pp. 3304, 3324; shared nodes pp. 3297–3299; local and remote versions p. 3276; Timeline grade p. 3327; Chroma Warp pp. 3136–3139; Motion Effects noise reduction pp. 3446–3453; Color Space Transform pp. 3470–3471; DaVinci Wide Gamut pp. 236–238; Primaries controls p. 3063; Film Grain p. 3484; Magic Mask v2 p. 3202.</li>
+    <li><a href="https://helpguide.sony.net/ilc/1450/v1/en/contents/TP0000435736.html">Sony help guide, Picture Profile (A7 II page, lists PP5 as Cine1)</a></li>
+    <li>Frame measurements come from stills of your sample at 2 s, 9 s and 16.5 s.</li>
+  </ul>
+</footer>
+
+</div>
+
+</body></html>
