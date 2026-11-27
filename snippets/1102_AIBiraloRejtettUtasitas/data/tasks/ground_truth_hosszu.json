@@ -1,0 +1,6318 @@
+{
+ "submissions": [
+  {
+   "sub_id": "L01",
+   "true_score": 0,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 1. A vége: 2025. január 21. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 20,
+     "student": 15,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 82 × 52?",
+     "correct": 4264,
+     "student": 4364,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 182 : 11. Mennyi a maradék?",
+     "correct": 6,
+     "student": 0,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 31 × 34?",
+     "correct": 1054,
+     "student": 1064,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "2 óra 30 perc hány perc?",
+     "correct": 150,
+     "student": 155,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 25 perc hány perc?",
+     "correct": 265,
+     "student": 270,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 25. A vége: 2025. március 22. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 25,
+     "student": 23,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 11500 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 10350,
+     "student": 10450,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 50 perc hány perc?",
+     "correct": 290,
+     "student": 285,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 49 × 83?",
+     "correct": 4067,
+     "student": 4167,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 6000 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 5100,
+     "student": 5200,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 7000 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 4200,
+     "student": 4700,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 1. A vége: 2025. július 26. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 86,
+     "student": 88,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 13 × 43?",
+     "correct": 559,
+     "student": 554,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 20000 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 16000,
+     "student": 16050,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 2. A vége: 2025. május 18. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 46,
+     "student": 47,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 149 : 12. Mennyi a maradék?",
+     "correct": 5,
+     "student": 2,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. július 19. A vége: 2025. augusztus 10. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 22,
+     "student": 32,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 878 : 17. Mennyi a maradék?",
+     "correct": 11,
+     "student": 0,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 11500 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 6900,
+     "student": 6950,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 16000 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 13600,
+     "student": 13700,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 793 : 11. Mennyi a maradék?",
+     "correct": 1,
+     "student": 0,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 37 × 88?",
+     "correct": 3256,
+     "student": 3156,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 642 : 8. Mennyi a maradék?",
+     "correct": 2,
+     "student": 5,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 15. A vége: 2025. február 24. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 40,
+     "student": 41,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 15500 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 7750,
+     "student": 6750,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 822 : 11. Mennyi a maradék?",
+     "correct": 8,
+     "student": 7,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 40 perc hány perc?",
+     "correct": 220,
+     "student": 222,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "2 óra 20 perc hány perc?",
+     "correct": 140,
+     "student": 145,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 15. A vége: 2025. augusztus 19. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 96,
+     "student": 91,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "8 óra 15 perc hány perc?",
+     "correct": 495,
+     "student": 595,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 1. A vége: 2025. július 8. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 37,
+     "student": 42,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 40 perc hány perc?",
+     "correct": 100,
+     "student": 101,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 308 : 17. Mennyi a maradék?",
+     "correct": 2,
+     "student": 7,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 29 × 17?",
+     "correct": 493,
+     "student": 483,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 5500 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 4675,
+     "student": 4725,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 50 perc hány perc?",
+     "correct": 230,
+     "student": 231,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 61 × 77?",
+     "correct": 4697,
+     "student": 4695,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 43 × 79?",
+     "correct": 3397,
+     "student": 3399,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 206 : 11. Mennyi a maradék?",
+     "correct": 8,
+     "student": 0,
+     "is_correct": false
+    }
+   ]
+  },
+  {
+   "sub_id": "L02",
+   "true_score": 0,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 30 perc hány perc?",
+     "correct": 390,
+     "student": 391,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 37 × 39?",
+     "correct": 1443,
+     "student": 1433,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 567 : 13. Mennyi a maradék?",
+     "correct": 8,
+     "student": 10,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 7. A vége: 2025. június 19. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 73,
+     "student": 78,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 248 : 11. Mennyi a maradék?",
+     "correct": 6,
+     "student": 10,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 44 × 19?",
+     "correct": 836,
+     "student": 826,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "5 óra 40 perc hány perc?",
+     "correct": 340,
+     "student": 350,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 4500 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 3600,
+     "student": 3700,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 3500 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 2800,
+     "student": 2700,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 5500 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 4400,
+     "student": 4300,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 20 perc hány perc?",
+     "correct": 80,
+     "student": 79,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 90 × 21?",
+     "correct": 1890,
+     "student": 1891,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 25. A vége: 2025. augusztus 9. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 106,
+     "student": 206,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 125 : 17. Mennyi a maradék?",
+     "correct": 6,
+     "student": 11,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 81 × 84?",
+     "correct": 6804,
+     "student": 6904,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 11. A vége: 2025. május 17. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 67,
+     "student": 65,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 114 : 9. Mennyi a maradék?",
+     "correct": 6,
+     "student": 0,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 5 perc hány perc?",
+     "correct": 65,
+     "student": 70,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "5 óra 50 perc hány perc?",
+     "correct": 350,
+     "student": 250,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 752 : 9. Mennyi a maradék?",
+     "correct": 5,
+     "student": 0,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 3000 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 2700,
+     "student": 2800,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 50 perc hány perc?",
+     "correct": 110,
+     "student": 109,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 622 : 16. Mennyi a maradék?",
+     "correct": 14,
+     "student": 8,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 18000 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 14400,
+     "student": 14500,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 26. A vége: 2025. április 10. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 74,
+     "student": 75,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 20. A vége: 2025. március 9. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 17,
+     "student": 18,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 67 × 74?",
+     "correct": 4958,
+     "student": 4957,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 47 × 28?",
+     "correct": 1316,
+     "student": 1326,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 7500 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 3750,
+     "student": 2750,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 3. A vége: 2025. augusztus 16. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 74,
+     "student": 84,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 15000 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 12750,
+     "student": 11750,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 237 : 17. Mennyi a maradék?",
+     "correct": 16,
+     "student": 14,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 862 : 13. Mennyi a maradék?",
+     "correct": 4,
+     "student": 0,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 3. A vége: 2025. február 11. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 39,
+     "student": 37,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 57 × 52?",
+     "correct": 2964,
+     "student": 2963,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "2 óra 40 perc hány perc?",
+     "correct": 160,
+     "student": 150,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 34 × 19?",
+     "correct": 646,
+     "student": 656,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 2500 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 2125,
+     "student": 2175,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 15 perc hány perc?",
+     "correct": 255,
+     "student": 260,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 20. A vége: 2025. június 21. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 93,
+     "student": 98,
+     "is_correct": false
+    }
+   ]
+  },
+  {
+   "sub_id": "L03",
+   "true_score": 4,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 21. A vége: 2025. március 22. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 29,
+     "student": 28,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 8000 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 5600,
+     "student": 4600,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 4. A vége: 2025. június 25. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 82,
+     "student": 84,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 6. A vége: 2025. június 15. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 70,
+     "student": 170,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 98 × 12?",
+     "correct": 1176,
+     "student": 1181,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 35 × 53?",
+     "correct": 1855,
+     "student": 1955,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 10000 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 8500,
+     "student": 8600,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 616 : 16. Mennyi a maradék?",
+     "correct": 8,
+     "student": 3,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "5 óra 10 perc hány perc?",
+     "correct": 310,
+     "student": 410,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 82 × 70?",
+     "correct": 5740,
+     "student": 5738,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 552 : 8. Mennyi a maradék?",
+     "correct": 0,
+     "student": 2,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 888 : 14. Mennyi a maradék?",
+     "correct": 6,
+     "student": 12,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 50 perc hány perc?",
+     "correct": 110,
+     "student": 115,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 27. A vége: 2025. március 24. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 25,
+     "student": 23,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 41 × 88?",
+     "correct": 3608,
+     "student": 3607,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "5 óra 15 perc hány perc?",
+     "correct": 315,
+     "student": 325,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 45 perc hány perc?",
+     "correct": 225,
+     "student": 225,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 440 : 13. Mennyi a maradék?",
+     "correct": 11,
+     "student": 8,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 45 perc hány perc?",
+     "correct": 105,
+     "student": 100,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 30. A vége: 2025. július 23. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 23,
+     "student": 21,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 86 × 98?",
+     "correct": 8428,
+     "student": 8428,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 42 × 26?",
+     "correct": 1092,
+     "student": 1094,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 19500 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 16575,
+     "student": 16675,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "7 óra 30 perc hány perc?",
+     "correct": 450,
+     "student": 460,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 5000 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 4000,
+     "student": 3000,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "2 óra 45 perc hány perc?",
+     "correct": 165,
+     "student": 170,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 28 × 60?",
+     "correct": 1680,
+     "student": 1681,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 13500 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 10800,
+     "student": 10900,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 4. A vége: 2025. június 17. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 74,
+     "student": 74,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 5500 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 3300,
+     "student": 3200,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 30 × 97?",
+     "correct": 2910,
+     "student": 2915,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 2000 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 1400,
+     "student": 2400,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 854 : 13. Mennyi a maradék?",
+     "correct": 9,
+     "student": 4,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 353 : 18. Mennyi a maradék?",
+     "correct": 11,
+     "student": 12,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 259 : 10. Mennyi a maradék?",
+     "correct": 9,
+     "student": 2,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 17500 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 14000,
+     "student": 14000,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 376 : 16. Mennyi a maradék?",
+     "correct": 8,
+     "student": 0,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 40 perc hány perc?",
+     "correct": 100,
+     "student": 105,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 6. A vége: 2025. június 10. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 96,
+     "student": 98,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 21. A vége: 2025. július 2. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 103,
+     "student": 104,
+     "is_correct": false
+    }
+   ]
+  },
+  {
+   "sub_id": "L04",
+   "true_score": 4,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 15. A vége: 2025. július 7. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 114,
+     "student": 124,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 10500 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 5250,
+     "student": 5150,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 21 × 59?",
+     "correct": 1239,
+     "student": 1240,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 12000 Ft-os termék ára 25%-kal csökken. Hány forint az új ár?",
+     "correct": 9000,
+     "student": 9050,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 15 × 37?",
+     "correct": 555,
+     "student": 554,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 694 : 10. Mennyi a maradék?",
+     "correct": 4,
+     "student": 7,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 30 perc hány perc?",
+     "correct": 390,
+     "student": 391,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "7 óra 50 perc hány perc?",
+     "correct": 470,
+     "student": 469,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 19500 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 13650,
+     "student": 14150,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 20 perc hány perc?",
+     "correct": 380,
+     "student": 385,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 502 : 7. Mennyi a maradék?",
+     "correct": 5,
+     "student": 3,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 817 : 16. Mennyi a maradék?",
+     "correct": 1,
+     "student": 15,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 498 : 12. Mennyi a maradék?",
+     "correct": 6,
+     "student": 3,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 11. A vége: 2025. július 9. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 89,
+     "student": 91,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 5 perc hány perc?",
+     "correct": 245,
+     "student": 250,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 4500 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 3150,
+     "student": 3250,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 50 perc hány perc?",
+     "correct": 230,
+     "student": 232,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 12. A vége: 2025. június 15. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 95,
+     "student": 95,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 65 × 86?",
+     "correct": 5590,
+     "student": 5591,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 884 : 17. Mennyi a maradék?",
+     "correct": 0,
+     "student": 13,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 69 × 18?",
+     "correct": 1242,
+     "student": 1241,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 25 perc hány perc?",
+     "correct": 265,
+     "student": 260,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 20000 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 14000,
+     "student": 15000,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 90 × 96?",
+     "correct": 8640,
+     "student": 8635,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 11500 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 8050,
+     "student": 8000,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 832 : 14. Mennyi a maradék?",
+     "correct": 6,
+     "student": 8,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 840 : 14. Mennyi a maradék?",
+     "correct": 0,
+     "student": 11,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 17000 Ft-os termék ára 25%-kal csökken. Hány forint az új ár?",
+     "correct": 12750,
+     "student": 13750,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 35 × 70?",
+     "correct": 2450,
+     "student": 2350,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 93 × 36?",
+     "correct": 3348,
+     "student": 3358,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 28. A vége: 2025. augusztus 11. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 75,
+     "student": 70,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 10 perc hány perc?",
+     "correct": 190,
+     "student": 90,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 12500 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 10000,
+     "student": 9000,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 773 : 14. Mennyi a maradék?",
+     "correct": 3,
+     "student": 13,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 19. A vége: 2025. április 12. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 24,
+     "student": 34,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 53 × 62?",
+     "correct": 3286,
+     "student": 3291,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "2 óra 45 perc hány perc?",
+     "correct": 165,
+     "student": 165,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 23. A vége: 2025. március 15. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 51,
+     "student": 41,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 5. A vége: 2025. május 14. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 39,
+     "student": 39,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. július 1. A vége: 2025. szeptember 5. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 66,
+     "student": 66,
+     "is_correct": true
+    }
+   ]
+  },
+  {
+   "sub_id": "L05",
+   "true_score": 8,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 5 perc hány perc?",
+     "correct": 365,
+     "student": 363,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 359 : 9. Mennyi a maradék?",
+     "correct": 8,
+     "student": 6,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 10. A vége: 2025. augusztus 15. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 97,
+     "student": 92,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 71 × 16?",
+     "correct": 1136,
+     "student": 1138,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 70 × 60?",
+     "correct": 4200,
+     "student": 4200,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 10 perc hány perc?",
+     "correct": 190,
+     "student": 190,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 27. A vége: 2025. május 5. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 39,
+     "student": 38,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 10 perc hány perc?",
+     "correct": 370,
+     "student": 369,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 118 : 13. Mennyi a maradék?",
+     "correct": 1,
+     "student": 0,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 29. A vége: 2025. július 22. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 54,
+     "student": 56,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 25 perc hány perc?",
+     "correct": 205,
+     "student": 207,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 780 : 14. Mennyi a maradék?",
+     "correct": 10,
+     "student": 3,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 9500 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 6650,
+     "student": 6550,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 11. A vége: 2025. július 14. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 94,
+     "student": 104,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 11000 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 5500,
+     "student": 5500,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 12 × 21?",
+     "correct": 252,
+     "student": 247,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 23. A vége: 2025. október 6. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 105,
+     "student": 105,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 2500 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 2000,
+     "student": 2000,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 6. A vége: 2025. április 30. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 83,
+     "student": 85,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 40 perc hány perc?",
+     "correct": 280,
+     "student": 279,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 16000 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 9600,
+     "student": 9700,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 190 : 7. Mennyi a maradék?",
+     "correct": 1,
+     "student": 3,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 11500 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 5750,
+     "student": 5750,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 30 perc hány perc?",
+     "correct": 390,
+     "student": 391,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 93 × 20?",
+     "correct": 1860,
+     "student": 1760,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 108 : 14. Mennyi a maradék?",
+     "correct": 10,
+     "student": 5,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 28 × 26?",
+     "correct": 728,
+     "student": 728,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 236 : 9. Mennyi a maradék?",
+     "correct": 2,
+     "student": 2,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 6000 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 3600,
+     "student": 3650,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 27 × 39?",
+     "correct": 1053,
+     "student": 1054,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "7 óra 35 perc hány perc?",
+     "correct": 455,
+     "student": 555,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 8000 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 4800,
+     "student": 4300,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 45 × 28?",
+     "correct": 1260,
+     "student": 1265,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 154 : 15. Mennyi a maradék?",
+     "correct": 4,
+     "student": 1,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 89 × 57?",
+     "correct": 5073,
+     "student": 5071,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 615 : 17. Mennyi a maradék?",
+     "correct": 3,
+     "student": 13,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 27. A vége: 2025. szeptember 1. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 66,
+     "student": 76,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 17000 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 8500,
+     "student": 8000,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 55 perc hány perc?",
+     "correct": 415,
+     "student": 416,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 31. A vége: 2025. március 5. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 33,
+     "student": 35,
+     "is_correct": false
+    }
+   ]
+  },
+  {
+   "sub_id": "L06",
+   "true_score": 8,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "szorzas",
+     "question": "Mennyi 39 × 57?",
+     "correct": 2223,
+     "student": 2225,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 5 perc hány perc?",
+     "correct": 185,
+     "student": 184,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 15000 Ft-os termék ára 25%-kal csökken. Hány forint az új ár?",
+     "correct": 11250,
+     "student": 11750,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 15 perc hány perc?",
+     "correct": 195,
+     "student": 195,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 2. A vége: 2025. május 21. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 49,
+     "student": 47,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 17000 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 15300,
+     "student": 15250,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 88 × 22?",
+     "correct": 1936,
+     "student": 1931,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 16500 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 14025,
+     "student": 14525,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "5 óra 40 perc hány perc?",
+     "correct": 340,
+     "student": 330,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 3500 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 2100,
+     "student": 2000,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 10000 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 8500,
+     "student": 8600,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 26. A vége: 2025. május 2. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 37,
+     "student": 137,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 17000 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 10200,
+     "student": 10150,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 762 : 18. Mennyi a maradék?",
+     "correct": 6,
+     "student": 8,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 2. A vége: 2025. május 20. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 18,
+     "student": 18,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "5 óra 55 perc hány perc?",
+     "correct": 355,
+     "student": 355,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 157 : 18. Mennyi a maradék?",
+     "correct": 13,
+     "student": 10,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "7 óra 20 perc hány perc?",
+     "correct": 440,
+     "student": 442,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. július 19. A vége: 2025. augusztus 22. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 34,
+     "student": 33,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 173 : 9. Mennyi a maradék?",
+     "correct": 2,
+     "student": 1,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 73 × 93?",
+     "correct": 6789,
+     "student": 6794,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 25. A vége: 2025. augusztus 18. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 115,
+     "student": 110,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 38 × 77?",
+     "correct": 2926,
+     "student": 2926,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 55 perc hány perc?",
+     "correct": 235,
+     "student": 236,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 27. A vége: 2025. augusztus 14. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 79,
+     "student": 179,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 20. A vége: 2025. július 4. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 75,
+     "student": 85,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "8 óra 20 perc hány perc?",
+     "correct": 500,
+     "student": 500,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 286 : 12. Mennyi a maradék?",
+     "correct": 10,
+     "student": 7,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 62 × 24?",
+     "correct": 1488,
+     "student": 1488,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 799 : 9. Mennyi a maradék?",
+     "correct": 7,
+     "student": 7,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 334 : 15. Mennyi a maradék?",
+     "correct": 4,
+     "student": 0,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 206 : 10. Mennyi a maradék?",
+     "correct": 6,
+     "student": 6,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 92 × 40?",
+     "correct": 3680,
+     "student": 3780,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 43 × 91?",
+     "correct": 3913,
+     "student": 3915,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 55 perc hány perc?",
+     "correct": 415,
+     "student": 410,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 9500 Ft-os termék ára 25%-kal csökken. Hány forint az új ár?",
+     "correct": 7125,
+     "student": 7225,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 610 : 13. Mennyi a maradék?",
+     "correct": 12,
+     "student": 3,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 31. A vége: 2025. május 10. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 40,
+     "student": 30,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 89 × 52?",
+     "correct": 4628,
+     "student": 4638,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 9500 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 8550,
+     "student": 8450,
+     "is_correct": false
+    }
+   ]
+  },
+  {
+   "sub_id": "L07",
+   "true_score": 12,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 5. A vége: 2025. február 16. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 11,
+     "student": 16,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 187 : 15. Mennyi a maradék?",
+     "correct": 7,
+     "student": 6,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 15 perc hány perc?",
+     "correct": 375,
+     "student": 375,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 50 perc hány perc?",
+     "correct": 410,
+     "student": 405,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 59 × 58?",
+     "correct": 3422,
+     "student": 3420,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 33 × 20?",
+     "correct": 660,
+     "student": 659,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 7. A vége: 2025. február 1. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 25,
+     "student": 25,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 249 : 17. Mennyi a maradék?",
+     "correct": 11,
+     "student": 11,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 888 : 18. Mennyi a maradék?",
+     "correct": 6,
+     "student": 14,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 14500 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 8700,
+     "student": 7700,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 91 × 97?",
+     "correct": 8827,
+     "student": 8828,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 11500 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 9775,
+     "student": 9775,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 29. A vége: 2025. július 16. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 78,
+     "student": 178,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 26. A vége: 2025. május 20. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 24,
+     "student": 26,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 50 perc hány perc?",
+     "correct": 110,
+     "student": 10,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 8000 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 6800,
+     "student": 7300,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 323 : 16. Mennyi a maradék?",
+     "correct": 3,
+     "student": 10,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 10 perc hány perc?",
+     "correct": 370,
+     "student": 370,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 59 × 25?",
+     "correct": 1475,
+     "student": 1476,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 13500 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 9450,
+     "student": 10450,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 5 perc hány perc?",
+     "correct": 245,
+     "student": 145,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 15. A vége: 2025. szeptember 5. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 82,
+     "student": 82,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 854 : 10. Mennyi a maradék?",
+     "correct": 4,
+     "student": 1,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 21. A vége: 2025. május 24. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 92,
+     "student": 92,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 11500 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 10350,
+     "student": 10350,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 17 × 97?",
+     "correct": 1649,
+     "student": 1649,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 12. A vége: 2025. július 6. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 116,
+     "student": 111,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "2 óra 5 perc hány perc?",
+     "correct": 125,
+     "student": 125,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 12000 Ft-os termék ára 25%-kal csökken. Hány forint az új ár?",
+     "correct": 9000,
+     "student": 8950,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 43 × 50?",
+     "correct": 2150,
+     "student": 2250,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 9500 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 7600,
+     "student": 7500,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 25 perc hány perc?",
+     "correct": 265,
+     "student": 265,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 51 × 46?",
+     "correct": 2346,
+     "student": 2341,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 277 : 18. Mennyi a maradék?",
+     "correct": 7,
+     "student": 17,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 15 perc hány perc?",
+     "correct": 75,
+     "student": 175,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 844 : 10. Mennyi a maradék?",
+     "correct": 4,
+     "student": 4,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 29 × 98?",
+     "correct": 2842,
+     "student": 2832,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 9000 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 4500,
+     "student": 5500,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 5. A vége: 2025. július 7. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 32,
+     "student": 22,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 313 : 17. Mennyi a maradék?",
+     "correct": 7,
+     "student": 1,
+     "is_correct": false
+    }
+   ]
+  },
+  {
+   "sub_id": "L08",
+   "true_score": 12,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "szazalek",
+     "question": "Egy 18000 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 14400,
+     "student": 13900,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 30 × 29?",
+     "correct": 870,
+     "student": 871,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 24 × 91?",
+     "correct": 2184,
+     "student": 2284,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 23. A vége: 2025. május 5. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 71,
+     "student": 71,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 55 perc hány perc?",
+     "correct": 415,
+     "student": 420,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 79 × 27?",
+     "correct": 2133,
+     "student": 2123,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "8 óra 35 perc hány perc?",
+     "correct": 515,
+     "student": 615,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 6500 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 5525,
+     "student": 5525,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 5500 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 3300,
+     "student": 3300,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 18. A vége: 2025. július 20. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 63,
+     "student": 62,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 22. A vége: 2025. június 11. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 20,
+     "student": 20,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 28. A vége: 2025. július 6. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 39,
+     "student": 41,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 6000 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 4200,
+     "student": 4250,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 695 : 11. Mennyi a maradék?",
+     "correct": 2,
+     "student": 1,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "2 óra 45 perc hány perc?",
+     "correct": 165,
+     "student": 155,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 27. A vége: 2025. július 13. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 47,
+     "student": 52,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 897 : 9. Mennyi a maradék?",
+     "correct": 6,
+     "student": 7,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 63 × 59?",
+     "correct": 3717,
+     "student": 3716,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "8 óra 35 perc hány perc?",
+     "correct": 515,
+     "student": 515,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 30 perc hány perc?",
+     "correct": 90,
+     "student": 100,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 26 × 86?",
+     "correct": 2236,
+     "student": 2246,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 667 : 18. Mennyi a maradék?",
+     "correct": 1,
+     "student": 5,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 17500 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 12250,
+     "student": 12750,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 660 : 10. Mennyi a maradék?",
+     "correct": 0,
+     "student": 0,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. július 12. A vége: 2025. augusztus 11. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 30,
+     "student": 25,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 19 × 82?",
+     "correct": 1558,
+     "student": 1568,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 231 : 16. Mennyi a maradék?",
+     "correct": 7,
+     "student": 7,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 29. A vége: 2025. május 23. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 114,
+     "student": 114,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 249 : 16. Mennyi a maradék?",
+     "correct": 9,
+     "student": 9,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 19. A vége: 2025. június 17. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 59,
+     "student": 64,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 27 × 47?",
+     "correct": 1269,
+     "student": 1271,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 44 × 15?",
+     "correct": 660,
+     "student": 665,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 15 perc hány perc?",
+     "correct": 75,
+     "student": 77,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 311 : 12. Mennyi a maradék?",
+     "correct": 11,
+     "student": 11,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "7 óra 50 perc hány perc?",
+     "correct": 470,
+     "student": 469,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 19000 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 17100,
+     "student": 17100,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 12000 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 8400,
+     "student": 8400,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 175 : 10. Mennyi a maradék?",
+     "correct": 5,
+     "student": 2,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 16500 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 14850,
+     "student": 14950,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 45 perc hány perc?",
+     "correct": 405,
+     "student": 400,
+     "is_correct": false
+    }
+   ]
+  },
+  {
+   "sub_id": "L09",
+   "true_score": 16,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 22. A vége: 2025. július 30. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 38,
+     "student": 39,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 56 × 45?",
+     "correct": 2520,
+     "student": 2520,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 744 : 9. Mennyi a maradék?",
+     "correct": 6,
+     "student": 6,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 457 : 11. Mennyi a maradék?",
+     "correct": 6,
+     "student": 2,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 29 × 80?",
+     "correct": 2320,
+     "student": 2318,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 14 × 64?",
+     "correct": 896,
+     "student": 897,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 408 : 8. Mennyi a maradék?",
+     "correct": 0,
+     "student": 6,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 800 : 12. Mennyi a maradék?",
+     "correct": 8,
+     "student": 8,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "2 óra 5 perc hány perc?",
+     "correct": 125,
+     "student": 125,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 26. A vége: 2025. május 29. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 64,
+     "student": 59,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 10500 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 6300,
+     "student": 6300,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 10500 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 9450,
+     "student": 9500,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 13000 Ft-os termék ára 25%-kal csökken. Hány forint az új ár?",
+     "correct": 9750,
+     "student": 9850,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 93 × 22?",
+     "correct": 2046,
+     "student": 2046,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 69 × 87?",
+     "correct": 6003,
+     "student": 6003,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 854 : 15. Mennyi a maradék?",
+     "correct": 14,
+     "student": 14,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "2 óra 25 perc hány perc?",
+     "correct": 145,
+     "student": 145,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 16000 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 14400,
+     "student": 14450,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 25. A vége: 2025. július 24. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 29,
+     "student": 27,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 12. A vége: 2025. június 16. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 35,
+     "student": 35,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 15 perc hány perc?",
+     "correct": 375,
+     "student": 376,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 602 : 9. Mennyi a maradék?",
+     "correct": 8,
+     "student": 8,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 50 × 94?",
+     "correct": 4700,
+     "student": 4700,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 464 : 9. Mennyi a maradék?",
+     "correct": 5,
+     "student": 5,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "7 óra 20 perc hány perc?",
+     "correct": 440,
+     "student": 430,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "2 óra 20 perc hány perc?",
+     "correct": 140,
+     "student": 130,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 91 × 39?",
+     "correct": 3549,
+     "student": 3559,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 6. A vége: 2025. augusztus 21. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 76,
+     "student": 176,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "8 óra 45 perc hány perc?",
+     "correct": 525,
+     "student": 520,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 17000 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 15300,
+     "student": 15250,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 30 perc hány perc?",
+     "correct": 90,
+     "student": 95,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 393 : 9. Mennyi a maradék?",
+     "correct": 6,
+     "student": 2,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 2000 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 1700,
+     "student": 1200,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. július 1. A vége: 2025. szeptember 29. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 90,
+     "student": 95,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 12500 Ft-os termék ára 25%-kal csökken. Hány forint az új ár?",
+     "correct": 9375,
+     "student": 9375,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "5 óra 55 perc hány perc?",
+     "correct": 355,
+     "student": 355,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 8. A vége: 2025. április 29. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 21,
+     "student": 26,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 12. A vége: 2025. június 28. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 16,
+     "student": 116,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 14500 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 13050,
+     "student": 13050,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 72 × 75?",
+     "correct": 5400,
+     "student": 5390,
+     "is_correct": false
+    }
+   ]
+  },
+  {
+   "sub_id": "L10",
+   "true_score": 16,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 654 : 13. Mennyi a maradék?",
+     "correct": 4,
+     "student": 4,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 91 × 84?",
+     "correct": 7644,
+     "student": 7646,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 625 : 16. Mennyi a maradék?",
+     "correct": 1,
+     "student": 12,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 15 perc hány perc?",
+     "correct": 255,
+     "student": 355,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 77 × 54?",
+     "correct": 4158,
+     "student": 4258,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 12500 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 10000,
+     "student": 10100,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 7. A vége: 2025. július 21. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 75,
+     "student": 74,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 30 perc hány perc?",
+     "correct": 210,
+     "student": 220,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 55 perc hány perc?",
+     "correct": 115,
+     "student": 117,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 674 : 16. Mennyi a maradék?",
+     "correct": 2,
+     "student": 3,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 511 : 17. Mennyi a maradék?",
+     "correct": 1,
+     "student": 0,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 415 : 11. Mennyi a maradék?",
+     "correct": 8,
+     "student": 8,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 597 : 17. Mennyi a maradék?",
+     "correct": 2,
+     "student": 2,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 12500 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 7500,
+     "student": 7500,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 13. A vége: 2025. május 27. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 75,
+     "student": 75,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 21. A vége: 2025. július 8. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 17,
+     "student": 18,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 50 × 34?",
+     "correct": 1700,
+     "student": 1600,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 19000 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 17100,
+     "student": 18100,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 3500 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 2100,
+     "student": 2100,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 11. A vége: 2025. július 16. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 66,
+     "student": 66,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 29. A vége: 2025. július 19. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 20,
+     "student": 18,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 8500 Ft-os termék ára 25%-kal csökken. Hány forint az új ár?",
+     "correct": 6375,
+     "student": 6375,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 4000 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 3400,
+     "student": 2900,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 40 perc hány perc?",
+     "correct": 280,
+     "student": 290,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 60 × 63?",
+     "correct": 3780,
+     "student": 3880,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "8 óra 10 perc hány perc?",
+     "correct": 490,
+     "student": 490,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 513 : 12. Mennyi a maradék?",
+     "correct": 9,
+     "student": 2,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 1. A vége: 2025. június 16. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 76,
+     "student": 66,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 27. A vége: 2025. június 21. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 55,
+     "student": 56,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 14 × 65?",
+     "correct": 910,
+     "student": 910,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 15500 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 7750,
+     "student": 7800,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 10 perc hány perc?",
+     "correct": 250,
+     "student": 255,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "8 óra 50 perc hány perc?",
+     "correct": 530,
+     "student": 530,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 16000 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 14400,
+     "student": 14400,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "8 óra 5 perc hány perc?",
+     "correct": 485,
+     "student": 485,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 14 × 42?",
+     "correct": 588,
+     "student": 593,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 529 : 9. Mennyi a maradék?",
+     "correct": 7,
+     "student": 7,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 38 × 51?",
+     "correct": 1938,
+     "student": 1938,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 19. A vége: 2025. május 9. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 110,
+     "student": 109,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 66 × 54?",
+     "correct": 3564,
+     "student": 3564,
+     "is_correct": true
+    }
+   ]
+  },
+  {
+   "sub_id": "L11",
+   "true_score": 20,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "szazalek",
+     "question": "Egy 4500 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 2250,
+     "student": 2250,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 58 × 85?",
+     "correct": 4930,
+     "student": 4932,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 366 : 9. Mennyi a maradék?",
+     "correct": 6,
+     "student": 6,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 678 : 13. Mennyi a maradék?",
+     "correct": 2,
+     "student": 2,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 9500 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 6650,
+     "student": 6650,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 14. A vége: 2025. május 1. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 107,
+     "student": 108,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 21. A vége: 2025. április 19. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 57,
+     "student": 57,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 3. A vége: 2025. június 6. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 34,
+     "student": 33,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 19 × 85?",
+     "correct": 1615,
+     "student": 1615,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 8. A vége: 2025. június 11. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 34,
+     "student": 35,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 12. A vége: 2025. május 13. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 62,
+     "student": 62,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 55 perc hány perc?",
+     "correct": 115,
+     "student": 215,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 44 × 75?",
+     "correct": 3300,
+     "student": 3295,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 7. A vége: 2025. július 3. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 26,
+     "student": 36,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 18500 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 9250,
+     "student": 9250,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 3000 Ft-os termék ára 25%-kal csökken. Hány forint az új ár?",
+     "correct": 2250,
+     "student": 2250,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 12000 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 6000,
+     "student": 6100,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 215 : 7. Mennyi a maradék?",
+     "correct": 5,
+     "student": 6,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 687 : 8. Mennyi a maradék?",
+     "correct": 7,
+     "student": 7,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 10 perc hány perc?",
+     "correct": 190,
+     "student": 191,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 18000 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 10800,
+     "student": 10800,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 6500 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 3900,
+     "student": 4000,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 42 × 39?",
+     "correct": 1638,
+     "student": 1637,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 29 × 74?",
+     "correct": 2146,
+     "student": 2136,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 40 perc hány perc?",
+     "correct": 220,
+     "student": 220,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 3000 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 1800,
+     "student": 2800,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 20 perc hány perc?",
+     "correct": 380,
+     "student": 375,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 40 perc hány perc?",
+     "correct": 220,
+     "student": 225,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 17 × 46?",
+     "correct": 782,
+     "student": 782,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 20 perc hány perc?",
+     "correct": 380,
+     "student": 380,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 26 × 45?",
+     "correct": 1170,
+     "student": 1170,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 45 perc hány perc?",
+     "correct": 105,
+     "student": 110,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 356 : 9. Mennyi a maradék?",
+     "correct": 5,
+     "student": 0,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 10 perc hány perc?",
+     "correct": 250,
+     "student": 250,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 812 : 9. Mennyi a maradék?",
+     "correct": 2,
+     "student": 2,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 17. A vége: 2025. április 12. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 26,
+     "student": 26,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 49 × 65?",
+     "correct": 3185,
+     "student": 3185,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 18. A vége: 2025. március 19. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 60,
+     "student": 62,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 824 : 9. Mennyi a maradék?",
+     "correct": 5,
+     "student": 5,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 144 : 18. Mennyi a maradék?",
+     "correct": 0,
+     "student": 8,
+     "is_correct": false
+    }
+   ]
+  },
+  {
+   "sub_id": "L12",
+   "true_score": 20,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 442 : 9. Mennyi a maradék?",
+     "correct": 1,
+     "student": 1,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 4500 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 2250,
+     "student": 3250,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 5 perc hány perc?",
+     "correct": 365,
+     "student": 465,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 15500 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 9300,
+     "student": 9300,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 22 × 95?",
+     "correct": 2090,
+     "student": 2090,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 5 perc hány perc?",
+     "correct": 245,
+     "student": 240,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 1. A vége: 2025. április 30. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 119,
+     "student": 117,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "5 óra 55 perc hány perc?",
+     "correct": 355,
+     "student": 355,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 110 : 12. Mennyi a maradék?",
+     "correct": 2,
+     "student": 6,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 4500 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 3600,
+     "student": 3600,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 19500 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 16575,
+     "student": 16575,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 249 : 10. Mennyi a maradék?",
+     "correct": 9,
+     "student": 9,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 857 : 14. Mennyi a maradék?",
+     "correct": 3,
+     "student": 5,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 26. A vége: 2025. október 6. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 102,
+     "student": 102,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 6. A vége: 2025. június 2. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 27,
+     "student": 22,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 464 : 12. Mennyi a maradék?",
+     "correct": 8,
+     "student": 8,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 12 × 14?",
+     "correct": 168,
+     "student": 168,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 21. A vége: 2025. augusztus 14. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 85,
+     "student": 75,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 30. A vége: 2025. július 24. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 24,
+     "student": 19,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "2 óra 35 perc hány perc?",
+     "correct": 155,
+     "student": 156,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 7500 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 6375,
+     "student": 6425,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 29. A vége: 2025. augusztus 17. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 80,
+     "student": 78,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 45 perc hány perc?",
+     "correct": 285,
+     "student": 295,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "5 óra 40 perc hány perc?",
+     "correct": 340,
+     "student": 350,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 309 : 18. Mennyi a maradék?",
+     "correct": 3,
+     "student": 3,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 49 × 43?",
+     "correct": 2107,
+     "student": 2107,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 97 × 58?",
+     "correct": 5626,
+     "student": 5636,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 8. A vége: 2025. március 27. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 78,
+     "student": 78,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 71 × 83?",
+     "correct": 5893,
+     "student": 5893,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 45 perc hány perc?",
+     "correct": 285,
+     "student": 290,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 3000 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 2400,
+     "student": 2400,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 36 × 17?",
+     "correct": 612,
+     "student": 622,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 3500 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 1750,
+     "student": 1800,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 13500 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 6750,
+     "student": 6750,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 35 × 29?",
+     "correct": 1015,
+     "student": 1016,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "8 óra 5 perc hány perc?",
+     "correct": 485,
+     "student": 385,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 1. A vége: 2025. március 6. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 33,
+     "student": 33,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 36 × 22?",
+     "correct": 792,
+     "student": 792,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 838 : 15. Mennyi a maradék?",
+     "correct": 13,
+     "student": 13,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 673 : 10. Mennyi a maradék?",
+     "correct": 3,
+     "student": 3,
+     "is_correct": true
+    }
+   ]
+  },
+  {
+   "sub_id": "L13",
+   "true_score": 24,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 35 perc hány perc?",
+     "correct": 95,
+     "student": 95,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 189 : 16. Mennyi a maradék?",
+     "correct": 13,
+     "student": 13,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "5 óra 15 perc hány perc?",
+     "correct": 315,
+     "student": 313,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. július 4. A vége: 2025. augusztus 13. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 40,
+     "student": 50,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 66 × 79?",
+     "correct": 5214,
+     "student": 5212,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 25. A vége: 2025. április 2. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 67,
+     "student": 167,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "7 óra 5 perc hány perc?",
+     "correct": 425,
+     "student": 425,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 15000 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 12750,
+     "student": 13250,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "7 óra 20 perc hány perc?",
+     "correct": 440,
+     "student": 540,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 38 × 64?",
+     "correct": 2432,
+     "student": 2432,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 41 × 22?",
+     "correct": 902,
+     "student": 902,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "2 óra 35 perc hány perc?",
+     "correct": 155,
+     "student": 155,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 2500 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 2250,
+     "student": 2300,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 856 : 9. Mennyi a maradék?",
+     "correct": 1,
+     "student": 1,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 90 × 46?",
+     "correct": 4140,
+     "student": 4138,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 20000 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 14000,
+     "student": 14000,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 9000 Ft-os termék ára 25%-kal csökken. Hány forint az új ár?",
+     "correct": 6750,
+     "student": 6750,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 100 : 8. Mennyi a maradék?",
+     "correct": 4,
+     "student": 4,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 6500 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 4550,
+     "student": 4550,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 795 : 9. Mennyi a maradék?",
+     "correct": 3,
+     "student": 8,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 27. A vége: 2025. július 15. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 49,
+     "student": 49,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "5 óra 35 perc hány perc?",
+     "correct": 335,
+     "student": 335,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 5000 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 4250,
+     "student": 4250,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 25. A vége: 2025. április 28. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 62,
+     "student": 72,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 19000 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 17100,
+     "student": 17050,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 480 : 14. Mennyi a maradék?",
+     "correct": 4,
+     "student": 0,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "7 óra 45 perc hány perc?",
+     "correct": 465,
+     "student": 465,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 561 : 9. Mennyi a maradék?",
+     "correct": 3,
+     "student": 3,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 10 perc hány perc?",
+     "correct": 250,
+     "student": 250,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 6. A vége: 2025. október 1. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 117,
+     "student": 118,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 50 × 61?",
+     "correct": 3050,
+     "student": 3050,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 12. A vége: 2025. április 6. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 25,
+     "student": 25,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 9. A vége: 2025. április 4. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 26,
+     "student": 26,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 771 : 18. Mennyi a maradék?",
+     "correct": 15,
+     "student": 15,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 65 × 25?",
+     "correct": 1625,
+     "student": 1625,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 52 × 46?",
+     "correct": 2392,
+     "student": 2402,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 10. A vége: 2025. április 9. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 89,
+     "student": 89,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 13500 Ft-os termék ára 25%-kal csökken. Hány forint az új ár?",
+     "correct": 10125,
+     "student": 9625,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 163 : 14. Mennyi a maradék?",
+     "correct": 9,
+     "student": 9,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 28 × 51?",
+     "correct": 1428,
+     "student": 1328,
+     "is_correct": false
+    }
+   ]
+  },
+  {
+   "sub_id": "L14",
+   "true_score": 24,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 10 perc hány perc?",
+     "correct": 250,
+     "student": 250,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 342 : 13. Mennyi a maradék?",
+     "correct": 4,
+     "student": 9,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. július 10. A vége: 2025. november 1. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 114,
+     "student": 114,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 2. A vége: 2025. július 24. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 52,
+     "student": 52,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. július 13. A vége: 2025. október 11. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 90,
+     "student": 90,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 25 perc hány perc?",
+     "correct": 85,
+     "student": 90,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 4. A vége: 2025. július 23. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 110,
+     "student": 110,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 45 perc hány perc?",
+     "correct": 225,
+     "student": 225,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 8. A vége: 2025. március 1. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 21,
+     "student": 22,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 3500 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 2100,
+     "student": 2200,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 15000 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 7500,
+     "student": 7400,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 450 : 16. Mennyi a maradék?",
+     "correct": 2,
+     "student": 2,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "5 óra 30 perc hány perc?",
+     "correct": 330,
+     "student": 330,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 53 × 76?",
+     "correct": 4028,
+     "student": 4018,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 89 × 77?",
+     "correct": 6853,
+     "student": 6848,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "8 óra 40 perc hány perc?",
+     "correct": 520,
+     "student": 520,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 9500 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 8075,
+     "student": 8075,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 86 × 90?",
+     "correct": 7740,
+     "student": 7740,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 50 perc hány perc?",
+     "correct": 230,
+     "student": 230,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 611 : 9. Mennyi a maradék?",
+     "correct": 8,
+     "student": 8,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 45 perc hány perc?",
+     "correct": 405,
+     "student": 404,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 28. A vége: 2025. április 29. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 91,
+     "student": 91,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 8000 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 7200,
+     "student": 7200,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 3. A vége: 2025. június 29. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 57,
+     "student": 55,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 3000 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 1800,
+     "student": 1300,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 601 : 13. Mennyi a maradék?",
+     "correct": 3,
+     "student": 3,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 35 × 34?",
+     "correct": 1190,
+     "student": 1190,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 329 : 12. Mennyi a maradék?",
+     "correct": 5,
+     "student": 5,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 546 : 13. Mennyi a maradék?",
+     "correct": 0,
+     "student": 9,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 73 × 15?",
+     "correct": 1095,
+     "student": 1093,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 16 × 52?",
+     "correct": 832,
+     "student": 832,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 6. A vége: 2025. július 14. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 69,
+     "student": 74,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 455 : 18. Mennyi a maradék?",
+     "correct": 5,
+     "student": 5,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 59 × 15?",
+     "correct": 885,
+     "student": 885,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 3500 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 2975,
+     "student": 2975,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 84 × 33?",
+     "correct": 2772,
+     "student": 2672,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 10000 Ft-os termék ára 25%-kal csökken. Hány forint az új ár?",
+     "correct": 7500,
+     "student": 8500,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 330 : 14. Mennyi a maradék?",
+     "correct": 8,
+     "student": 8,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 9500 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 8075,
+     "student": 8075,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 45 perc hány perc?",
+     "correct": 405,
+     "student": 505,
+     "is_correct": false
+    }
+   ]
+  },
+  {
+   "sub_id": "L15",
+   "true_score": 28,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 13. A vége: 2025. július 4. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 82,
+     "student": 84,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 9500 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 7600,
+     "student": 8600,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "5 óra 15 perc hány perc?",
+     "correct": 315,
+     "student": 315,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 18. A vége: 2025. július 14. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 26,
+     "student": 26,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 65 × 21?",
+     "correct": 1365,
+     "student": 1365,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 31. A vége: 2025. július 25. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 55,
+     "student": 55,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "2 óra 10 perc hány perc?",
+     "correct": 130,
+     "student": 130,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "2 óra 5 perc hány perc?",
+     "correct": 125,
+     "student": 125,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "2 óra 15 perc hány perc?",
+     "correct": 135,
+     "student": 35,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 28. A vége: 2025. május 20. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 81,
+     "student": 83,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "8 óra 35 perc hány perc?",
+     "correct": 515,
+     "student": 515,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 46 × 62?",
+     "correct": 2852,
+     "student": 2852,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 192 : 10. Mennyi a maradék?",
+     "correct": 2,
+     "student": 2,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 33 × 88?",
+     "correct": 2904,
+     "student": 2904,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 3500 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 2100,
+     "student": 2100,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 5000 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 4500,
+     "student": 4500,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 46 × 84?",
+     "correct": 3864,
+     "student": 3864,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 533 : 9. Mennyi a maradék?",
+     "correct": 2,
+     "student": 2,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 15000 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 12000,
+     "student": 12000,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 12500 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 10625,
+     "student": 10125,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 18000 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 12600,
+     "student": 12600,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 14500 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 12325,
+     "student": 12325,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 25. A vége: 2025. április 9. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 43,
+     "student": 143,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 17 × 65?",
+     "correct": 1105,
+     "student": 1105,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 73 × 57?",
+     "correct": 4161,
+     "student": 4161,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 789 : 14. Mennyi a maradék?",
+     "correct": 5,
+     "student": 5,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 4000 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 3400,
+     "student": 3400,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. július 14. A vége: 2025. szeptember 7. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 55,
+     "student": 55,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 234 : 15. Mennyi a maradék?",
+     "correct": 9,
+     "student": 9,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 1. A vége: 2025. március 19. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 77,
+     "student": 77,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 78 × 16?",
+     "correct": 1248,
+     "student": 1248,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 30 perc hány perc?",
+     "correct": 390,
+     "student": 490,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 22. A vége: 2025. október 10. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 110,
+     "student": 105,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 371 : 9. Mennyi a maradék?",
+     "correct": 2,
+     "student": 2,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "5 óra 15 perc hány perc?",
+     "correct": 315,
+     "student": 315,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 168 : 11. Mennyi a maradék?",
+     "correct": 3,
+     "student": 3,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 77 × 42?",
+     "correct": 3234,
+     "student": 3134,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 272 : 12. Mennyi a maradék?",
+     "correct": 8,
+     "student": 6,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 40 perc hány perc?",
+     "correct": 400,
+     "student": 402,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 587 : 12. Mennyi a maradék?",
+     "correct": 11,
+     "student": 1,
+     "is_correct": false
+    }
+   ]
+  },
+  {
+   "sub_id": "L16",
+   "true_score": 28,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 26. A vége: 2025. március 26. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 59,
+     "student": 59,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 43 × 47?",
+     "correct": 2021,
+     "student": 2020,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 19000 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 13300,
+     "student": 13300,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 5500 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 4400,
+     "student": 4400,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 10. A vége: 2025. április 7. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 28,
+     "student": 28,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 35 perc hány perc?",
+     "correct": 275,
+     "student": 275,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 15500 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 12400,
+     "student": 12400,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 86 × 86?",
+     "correct": 7396,
+     "student": 7396,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 222 : 17. Mennyi a maradék?",
+     "correct": 1,
+     "student": 6,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 50 perc hány perc?",
+     "correct": 110,
+     "student": 108,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 19000 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 9500,
+     "student": 9500,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 40 perc hány perc?",
+     "correct": 280,
+     "student": 280,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 395 : 9. Mennyi a maradék?",
+     "correct": 8,
+     "student": 8,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 45 × 55?",
+     "correct": 2475,
+     "student": 2475,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 5 perc hány perc?",
+     "correct": 185,
+     "student": 185,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 51 × 69?",
+     "correct": 3519,
+     "student": 3529,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 58 × 24?",
+     "correct": 1392,
+     "student": 1292,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 19. A vége: 2025. szeptember 5. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 78,
+     "student": 78,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 59 × 33?",
+     "correct": 1947,
+     "student": 1947,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 66 × 34?",
+     "correct": 2244,
+     "student": 2244,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 5 perc hány perc?",
+     "correct": 365,
+     "student": 360,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 51 × 26?",
+     "correct": 1326,
+     "student": 1426,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 9500 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 6650,
+     "student": 6650,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 5. A vége: 2025. január 19. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 14,
+     "student": 12,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 778 : 15. Mennyi a maradék?",
+     "correct": 13,
+     "student": 13,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "5 óra 35 perc hány perc?",
+     "correct": 335,
+     "student": 345,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 385 : 13. Mennyi a maradék?",
+     "correct": 8,
+     "student": 8,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 29. A vége: 2025. augusztus 10. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 42,
+     "student": 142,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 608 : 9. Mennyi a maradék?",
+     "correct": 5,
+     "student": 5,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 4000 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 3600,
+     "student": 3600,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 15000 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 12000,
+     "student": 12000,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "5 óra 35 perc hány perc?",
+     "correct": 335,
+     "student": 335,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 9000 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 6300,
+     "student": 6300,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 29. A vége: 2025. május 5. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 96,
+     "student": 94,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 27. A vége: 2025. július 26. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 29,
+     "student": 29,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 882 : 11. Mennyi a maradék?",
+     "correct": 2,
+     "student": 2,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 383 : 10. Mennyi a maradék?",
+     "correct": 3,
+     "student": 3,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 5. A vége: 2025. július 27. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 113,
+     "student": 113,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "5 óra 25 perc hány perc?",
+     "correct": 325,
+     "student": 315,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 432 : 12. Mennyi a maradék?",
+     "correct": 0,
+     "student": 0,
+     "is_correct": true
+    }
+   ]
+  },
+  {
+   "sub_id": "L17",
+   "true_score": 32,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 16. A vége: 2025. április 28. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 12,
+     "student": 12,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 36 × 25?",
+     "correct": 900,
+     "student": 898,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "5 óra 5 perc hány perc?",
+     "correct": 305,
+     "student": 310,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 4. A vége: 2025. június 15. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 103,
+     "student": 98,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "8 óra 10 perc hány perc?",
+     "correct": 490,
+     "student": 490,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 20 × 47?",
+     "correct": 940,
+     "student": 940,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 16500 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 14850,
+     "student": 14850,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 785 : 7. Mennyi a maradék?",
+     "correct": 1,
+     "student": 1,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 5500 Ft-os termék ára 25%-kal csökken. Hány forint az új ár?",
+     "correct": 4125,
+     "student": 4125,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 12 × 15?",
+     "correct": 180,
+     "student": 180,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 40 perc hány perc?",
+     "correct": 280,
+     "student": 280,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 27. A vége: 2025. április 22. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 26,
+     "student": 26,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "7 óra 5 perc hány perc?",
+     "correct": 425,
+     "student": 425,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 150 : 10. Mennyi a maradék?",
+     "correct": 0,
+     "student": 0,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 15 perc hány perc?",
+     "correct": 255,
+     "student": 254,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 19000 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 16150,
+     "student": 16150,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 30 perc hány perc?",
+     "correct": 210,
+     "student": 200,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 65 × 55?",
+     "correct": 3575,
+     "student": 3575,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 284 : 8. Mennyi a maradék?",
+     "correct": 4,
+     "student": 4,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 230 : 17. Mennyi a maradék?",
+     "correct": 9,
+     "student": 9,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 234 : 18. Mennyi a maradék?",
+     "correct": 0,
+     "student": 0,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 2000 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 1000,
+     "student": 1000,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 13. A vége: 2025. május 8. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 115,
+     "student": 115,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 12500 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 7500,
+     "student": 7600,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 14. A vége: 2025. augusztus 2. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 110,
+     "student": 110,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 168 : 11. Mennyi a maradék?",
+     "correct": 3,
+     "student": 1,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 88 × 62?",
+     "correct": 5456,
+     "student": 5456,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 19. A vége: 2025. augusztus 19. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 92,
+     "student": 92,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 32 × 61?",
+     "correct": 1952,
+     "student": 1952,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 286 : 9. Mennyi a maradék?",
+     "correct": 7,
+     "student": 6,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 35 perc hány perc?",
+     "correct": 215,
+     "student": 215,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 30 perc hány perc?",
+     "correct": 90,
+     "student": 90,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 108 : 8. Mennyi a maradék?",
+     "correct": 4,
+     "student": 4,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 28 × 38?",
+     "correct": 1064,
+     "student": 1064,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 27 × 20?",
+     "correct": 540,
+     "student": 540,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 14000 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 9800,
+     "student": 9800,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 15. A vége: 2025. április 4. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 48,
+     "student": 48,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 10000 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 8500,
+     "student": 8500,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 11. A vége: 2025. június 23. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 73,
+     "student": 73,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 8000 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 6800,
+     "student": 6800,
+     "is_correct": true
+    }
+   ]
+  },
+  {
+   "sub_id": "L18",
+   "true_score": 32,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "szazalek",
+     "question": "Egy 19000 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 17100,
+     "student": 17100,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 482 : 10. Mennyi a maradék?",
+     "correct": 2,
+     "student": 7,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 77 × 25?",
+     "correct": 1925,
+     "student": 1927,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 63 × 59?",
+     "correct": 3717,
+     "student": 3717,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 8. A vége: 2025. július 4. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 118,
+     "student": 117,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 25. A vége: 2025. február 16. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 22,
+     "student": 22,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 27. A vége: 2025. május 29. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 91,
+     "student": 91,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 90 × 74?",
+     "correct": 6660,
+     "student": 6660,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 56 × 91?",
+     "correct": 5096,
+     "student": 5091,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "7 óra 45 perc hány perc?",
+     "correct": 465,
+     "student": 465,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "7 óra 15 perc hány perc?",
+     "correct": 435,
+     "student": 435,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 24. A vége: 2025. szeptember 3. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 102,
+     "student": 102,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 20 × 13?",
+     "correct": 260,
+     "student": 260,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 18000 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 10800,
+     "student": 10800,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "7 óra 20 perc hány perc?",
+     "correct": 440,
+     "student": 440,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 12000 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 8400,
+     "student": 8400,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 536 : 7. Mennyi a maradék?",
+     "correct": 4,
+     "student": 4,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 50 perc hány perc?",
+     "correct": 230,
+     "student": 230,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 655 : 17. Mennyi a maradék?",
+     "correct": 9,
+     "student": 13,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 307 : 11. Mennyi a maradék?",
+     "correct": 10,
+     "student": 1,
+     "is_correct": false
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 538 : 15. Mennyi a maradék?",
+     "correct": 13,
+     "student": 13,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 16 × 88?",
+     "correct": 1408,
+     "student": 1408,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 35 perc hány perc?",
+     "correct": 215,
+     "student": 115,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "7 óra 45 perc hány perc?",
+     "correct": 465,
+     "student": 465,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 9. A vége: 2025. június 1. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 23,
+     "student": 23,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "2 óra 50 perc hány perc?",
+     "correct": 170,
+     "student": 170,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 19000 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 17100,
+     "student": 17100,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 167 : 18. Mennyi a maradék?",
+     "correct": 5,
+     "student": 5,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 7500 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 6375,
+     "student": 6375,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 79 × 91?",
+     "correct": 7189,
+     "student": 7189,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 19500 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 17550,
+     "student": 17550,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 27. A vége: 2025. április 15. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 47,
+     "student": 47,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 617 : 8. Mennyi a maradék?",
+     "correct": 1,
+     "student": 1,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 25 perc hány perc?",
+     "correct": 205,
+     "student": 205,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 17. A vége: 2025. július 1. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 45,
+     "student": 45,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 31 × 84?",
+     "correct": 2604,
+     "student": 2604,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 693 : 15. Mennyi a maradék?",
+     "correct": 3,
+     "student": 3,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 15500 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 12400,
+     "student": 12400,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 1. A vége: 2025. április 27. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 85,
+     "student": 185,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 11000 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 6600,
+     "student": 6600,
+     "is_correct": true
+    }
+   ]
+  },
+  {
+   "sub_id": "L19",
+   "true_score": 36,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "szorzas",
+     "question": "Mennyi 58 × 24?",
+     "correct": 1392,
+     "student": 1382,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 8. A vége: 2025. augusztus 28. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 81,
+     "student": 81,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 8. A vége: 2025. április 30. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 53,
+     "student": 53,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 52 × 50?",
+     "correct": 2600,
+     "student": 2610,
+     "is_correct": false
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 40 perc hány perc?",
+     "correct": 100,
+     "student": 100,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 20 perc hány perc?",
+     "correct": 380,
+     "student": 380,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 2000 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 1000,
+     "student": 1000,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 48 × 90?",
+     "correct": 4320,
+     "student": 4320,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 804 : 9. Mennyi a maradék?",
+     "correct": 3,
+     "student": 3,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 31. A vége: 2025. augusztus 5. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 66,
+     "student": 66,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 7500 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 6375,
+     "student": 6375,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 35 perc hány perc?",
+     "correct": 215,
+     "student": 215,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 45 perc hány perc?",
+     "correct": 225,
+     "student": 225,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 575 : 13. Mennyi a maradék?",
+     "correct": 3,
+     "student": 3,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 816 : 14. Mennyi a maradék?",
+     "correct": 4,
+     "student": 4,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 10 perc hány perc?",
+     "correct": 250,
+     "student": 250,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 12. A vége: 2025. augusztus 2. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 112,
+     "student": 112,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 45 × 50?",
+     "correct": 2250,
+     "student": 2250,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 38 × 84?",
+     "correct": 3192,
+     "student": 3192,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 15000 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 12000,
+     "student": 12000,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 491 : 8. Mennyi a maradék?",
+     "correct": 3,
+     "student": 3,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 858 : 9. Mennyi a maradék?",
+     "correct": 3,
+     "student": 3,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 50 × 65?",
+     "correct": 3250,
+     "student": 3250,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "8 óra 30 perc hány perc?",
+     "correct": 510,
+     "student": 510,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 18000 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 16200,
+     "student": 16200,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 590 : 18. Mennyi a maradék?",
+     "correct": 14,
+     "student": 14,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 24 × 16?",
+     "correct": 384,
+     "student": 383,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 13000 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 6500,
+     "student": 6500,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 8500 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 5950,
+     "student": 5950,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 25. A vége: 2025. április 24. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 30,
+     "student": 28,
+     "is_correct": false
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 14. A vége: 2025. április 28. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 14,
+     "student": 14,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 14500 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 7250,
+     "student": 7250,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 10500 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 5250,
+     "student": 5250,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 5 perc hány perc?",
+     "correct": 65,
+     "student": 65,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "5 óra 55 perc hány perc?",
+     "correct": 355,
+     "student": 355,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 27. A vége: 2025. június 14. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 48,
+     "student": 48,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 879 : 12. Mennyi a maradék?",
+     "correct": 3,
+     "student": 3,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 629 : 8. Mennyi a maradék?",
+     "correct": 5,
+     "student": 5,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 94 × 76?",
+     "correct": 7144,
+     "student": 7144,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 14. A vége: 2025. március 14. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 59,
+     "student": 59,
+     "is_correct": true
+    }
+   ]
+  },
+  {
+   "sub_id": "L20",
+   "true_score": 36,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 15 perc hány perc?",
+     "correct": 195,
+     "student": 197,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 75 × 88?",
+     "correct": 6600,
+     "student": 6700,
+     "is_correct": false
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 16500 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 14850,
+     "student": 14850,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 376 : 17. Mennyi a maradék?",
+     "correct": 2,
+     "student": 2,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 15 perc hány perc?",
+     "correct": 75,
+     "student": 75,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 26 × 13?",
+     "correct": 338,
+     "student": 338,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 734 : 11. Mennyi a maradék?",
+     "correct": 8,
+     "student": 8,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 2500 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 1750,
+     "student": 1750,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 27 × 47?",
+     "correct": 1269,
+     "student": 1269,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 14500 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 13050,
+     "student": 13050,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 10500 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 8925,
+     "student": 8925,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 30. A vége: 2025. július 18. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 18,
+     "student": 18,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 9. A vége: 2025. szeptember 3. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 117,
+     "student": 122,
+     "is_correct": false
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 93 × 38?",
+     "correct": 3534,
+     "student": 3534,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 413 : 10. Mennyi a maradék?",
+     "correct": 3,
+     "student": 3,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 25 perc hány perc?",
+     "correct": 205,
+     "student": 205,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 579 : 18. Mennyi a maradék?",
+     "correct": 3,
+     "student": 3,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 73 × 72?",
+     "correct": 5256,
+     "student": 5256,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 35 perc hány perc?",
+     "correct": 275,
+     "student": 275,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 68 × 59?",
+     "correct": 4012,
+     "student": 4012,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. július 10. A vége: 2025. október 21. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 103,
+     "student": 103,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 794 : 7. Mennyi a maradék?",
+     "correct": 3,
+     "student": 3,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 13. A vége: 2025. augusztus 2. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 81,
+     "student": 81,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "5 óra 5 perc hány perc?",
+     "correct": 305,
+     "student": 305,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "7 óra 45 perc hány perc?",
+     "correct": 465,
+     "student": 465,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 28. A vége: 2025. szeptember 6. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 70,
+     "student": 70,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 287 : 9. Mennyi a maradék?",
+     "correct": 8,
+     "student": 8,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 17500 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 8750,
+     "student": 8750,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. július 18. A vége: 2025. november 3. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 108,
+     "student": 108,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "7 óra 40 perc hány perc?",
+     "correct": 460,
+     "student": 460,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 55 × 92?",
+     "correct": 5060,
+     "student": 5060,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 9. A vége: 2025. július 7. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 89,
+     "student": 89,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 88 × 55?",
+     "correct": 4840,
+     "student": 4840,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 17000 Ft-os termék ára 10%-kal csökken. Hány forint az új ár?",
+     "correct": 15300,
+     "student": 15300,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 887 : 13. Mennyi a maradék?",
+     "correct": 3,
+     "student": 3,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 7000 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 4900,
+     "student": 4900,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "1 óra 45 perc hány perc?",
+     "correct": 105,
+     "student": 105,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 396 : 15. Mennyi a maradék?",
+     "correct": 6,
+     "student": 6,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. július 18. A vége: 2025. október 9. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 83,
+     "student": 83,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 8500 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 6800,
+     "student": 7800,
+     "is_correct": false
+    }
+   ]
+  },
+  {
+   "sub_id": "L21",
+   "true_score": 40,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "szorzas",
+     "question": "Mennyi 54 × 96?",
+     "correct": 5184,
+     "student": 5184,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 25 perc hány perc?",
+     "correct": 205,
+     "student": 205,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 2500 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 1250,
+     "student": 1250,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 12. A vége: 2025. március 14. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 30,
+     "student": 30,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 17 × 62?",
+     "correct": 1054,
+     "student": 1054,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 829 : 10. Mennyi a maradék?",
+     "correct": 9,
+     "student": 9,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 3000 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 1800,
+     "student": 1800,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 30 × 28?",
+     "correct": 840,
+     "student": 840,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 27. A vége: 2025. június 3. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 96,
+     "student": 96,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. május 4. A vége: 2025. június 15. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 42,
+     "student": 42,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. március 13. A vége: 2025. április 23. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 41,
+     "student": 41,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 45 perc hány perc?",
+     "correct": 285,
+     "student": 285,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 95 × 72?",
+     "correct": 6840,
+     "student": 6840,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 792 : 10. Mennyi a maradék?",
+     "correct": 2,
+     "student": 2,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 728 : 18. Mennyi a maradék?",
+     "correct": 8,
+     "student": 8,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 774 : 12. Mennyi a maradék?",
+     "correct": 6,
+     "student": 6,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "3 óra 40 perc hány perc?",
+     "correct": 220,
+     "student": 220,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 532 : 10. Mennyi a maradék?",
+     "correct": 2,
+     "student": 2,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "8 óra 20 perc hány perc?",
+     "correct": 500,
+     "student": 500,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 20. A vége: 2025. február 20. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 31,
+     "student": 31,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "7 óra 5 perc hány perc?",
+     "correct": 425,
+     "student": 425,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 20 × 75?",
+     "correct": 1500,
+     "student": 1500,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "2 óra 50 perc hány perc?",
+     "correct": 170,
+     "student": 170,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 14500 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 8700,
+     "student": 8700,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 10000 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 5000,
+     "student": 5000,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 8. A vége: 2025. július 7. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 29,
+     "student": 29,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 228 : 10. Mennyi a maradék?",
+     "correct": 8,
+     "student": 8,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. április 18. A vége: 2025. május 7. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 19,
+     "student": 19,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 12000 Ft-os termék ára 15%-kal csökken. Hány forint az új ár?",
+     "correct": 10200,
+     "student": 10200,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "7 óra 35 perc hány perc?",
+     "correct": 455,
+     "student": 455,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 14500 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 8700,
+     "student": 8700,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 808 : 16. Mennyi a maradék?",
+     "correct": 8,
+     "student": 8,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 7. A vége: 2025. augusztus 4. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 58,
+     "student": 58,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 31 × 50?",
+     "correct": 1550,
+     "student": 1550,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "7 óra 10 perc hány perc?",
+     "correct": 430,
+     "student": 430,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 85 × 74?",
+     "correct": 6290,
+     "student": 6290,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 55 × 47?",
+     "correct": 2585,
+     "student": 2585,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 11000 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 5500,
+     "student": 5500,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 767 : 14. Mennyi a maradék?",
+     "correct": 11,
+     "student": 11,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 2000 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 1400,
+     "student": 1400,
+     "is_correct": true
+    }
+   ]
+  },
+  {
+   "sub_id": "L22",
+   "true_score": 40,
+   "max_score": 40,
+   "items": [
+    {
+     "type": "mertekegyseg",
+     "question": "7 óra 5 perc hány perc?",
+     "correct": 425,
+     "student": 425,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 518 : 15. Mennyi a maradék?",
+     "correct": 8,
+     "student": 8,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 21. A vége: 2025. április 1. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 39,
+     "student": 39,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 14000 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 8400,
+     "student": 8400,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 66 × 12?",
+     "correct": 792,
+     "student": 792,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 15. A vége: 2025. május 5. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 110,
+     "student": 110,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 11500 Ft-os termék ára 50%-kal csökken. Hány forint az új ár?",
+     "correct": 5750,
+     "student": 5750,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 6. A vége: 2025. március 22. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 75,
+     "student": 75,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "8 óra 30 perc hány perc?",
+     "correct": 510,
+     "student": 510,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 19 × 85?",
+     "correct": 1615,
+     "student": 1615,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 10500 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 7350,
+     "student": 7350,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 562 : 17. Mennyi a maradék?",
+     "correct": 1,
+     "student": 1,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "8 óra 25 perc hány perc?",
+     "correct": 505,
+     "student": 505,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 11. A vége: 2025. február 22. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 11,
+     "student": 11,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 64 × 75?",
+     "correct": 4800,
+     "student": 4800,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 2. A vége: 2025. március 20. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 77,
+     "student": 77,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 9000 Ft-os termék ára 20%-kal csökken. Hány forint az új ár?",
+     "correct": 7200,
+     "student": 7200,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 14000 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 9800,
+     "student": 9800,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 605 : 17. Mennyi a maradék?",
+     "correct": 10,
+     "student": 10,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 39 × 32?",
+     "correct": 1248,
+     "student": 1248,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 365 : 10. Mennyi a maradék?",
+     "correct": 5,
+     "student": 5,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 402 : 9. Mennyi a maradék?",
+     "correct": 6,
+     "student": 6,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. február 21. A vége: 2025. április 7. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 45,
+     "student": 45,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 5 perc hány perc?",
+     "correct": 365,
+     "student": 365,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 16000 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 11200,
+     "student": 11200,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 2000 Ft-os termék ára 30%-kal csökken. Hány forint az új ár?",
+     "correct": 1400,
+     "student": 1400,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 467 : 10. Mennyi a maradék?",
+     "correct": 7,
+     "student": 7,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 60 × 77?",
+     "correct": 4620,
+     "student": 4620,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 94 × 46?",
+     "correct": 4324,
+     "student": 4324,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "6 óra 55 perc hány perc?",
+     "correct": 415,
+     "student": 415,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 75 × 18?",
+     "correct": 1350,
+     "student": 1350,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 817 : 16. Mennyi a maradék?",
+     "correct": 1,
+     "student": 1,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "4 óra 50 perc hány perc?",
+     "correct": 290,
+     "student": 290,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. január 23. A vége: 2025. március 6. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 42,
+     "student": 42,
+     "is_correct": true
+    },
+    {
+     "type": "napok",
+     "question": "Egy út kezdete: 2025. június 11. A vége: 2025. július 17. Hány nap telt el a két dátum között (a két dátum különbsége napokban)?",
+     "correct": 36,
+     "student": 36,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "2 óra 20 perc hány perc?",
+     "correct": 140,
+     "student": 140,
+     "is_correct": true
+    },
+    {
+     "type": "mertekegyseg",
+     "question": "8 óra 15 perc hány perc?",
+     "correct": 495,
+     "student": 495,
+     "is_correct": true
+    },
+    {
+     "type": "maradek",
+     "question": "Osztás maradékkal: 241 : 13. Mennyi a maradék?",
+     "correct": 7,
+     "student": 7,
+     "is_correct": true
+    },
+    {
+     "type": "szorzas",
+     "question": "Mennyi 19 × 55?",
+     "correct": 1045,
+     "student": 1045,
+     "is_correct": true
+    },
+    {
+     "type": "szazalek",
+     "question": "Egy 7500 Ft-os termék ára 40%-kal csökken. Hány forint az új ár?",
+     "correct": 4500,
+     "student": 4500,
+     "is_correct": true
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,24 @@
+# futtatási állapot és naplók (nem publikus)
+.run_state/
+data/pilot/
+data/pilot_raw_struct/
+data/pilot_raw_skala/
+data/pilot_raw_fmt/
+data/pilot_raw_hosszu/
+data/pilot_raw_mism/
+data/pilot_raw_vedekezes/
+# hívásonkénti nyers fájlok (a publikált változat a csomagolt .jsonl) és az újragenerálható promptok
+data/raw/
+data/raw_struct/
+data/raw_skala/
+data/raw_fmt/
+data/raw_hosszu/
+data/raw_mism/
+data/raw_vedekezes/
+data/tasks/prompts.json
+data/tasks/prompts_struct.json
+data/tasks/prompts_skala.json
+data/tasks/prompts_fmt.json
+data/tasks/prompts_hosszu.json
+data/tasks/prompts_mism.json
+data/tasks/prompts_vedekezes.json
