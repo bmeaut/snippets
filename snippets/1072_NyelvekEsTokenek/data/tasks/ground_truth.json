@@ -1,0 +1,2289 @@
+[
+ {
+  "task_id": "N01_1",
+  "category": "szamtani",
+  "template_id": "N01",
+  "params": {
+   "A": 80,
+   "B": 12,
+   "C": 22
+  },
+  "answer": 70,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N01_2",
+  "category": "szamtani",
+  "template_id": "N01",
+  "params": {
+   "A": 54,
+   "B": 13,
+   "C": 25
+  },
+  "answer": 42,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N01_3",
+  "category": "szamtani",
+  "template_id": "N01",
+  "params": {
+   "A": 56,
+   "B": 39,
+   "C": 28
+  },
+  "answer": 67,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N02_1",
+  "category": "szamtani",
+  "template_id": "N02",
+  "params": {
+   "A": 29,
+   "B": 6,
+   "C": 16
+  },
+  "answer": 158,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N02_2",
+  "category": "szamtani",
+  "template_id": "N02",
+  "params": {
+   "A": 71,
+   "B": 8,
+   "C": 145
+  },
+  "answer": 423,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N02_3",
+  "category": "szamtani",
+  "template_id": "N02",
+  "params": {
+   "A": 53,
+   "B": 5,
+   "C": 83
+  },
+  "answer": 182,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N03_1",
+  "category": "szamtani",
+  "template_id": "N03",
+  "params": {
+   "A": 29,
+   "B": 7,
+   "C": 296
+  },
+  "answer": 93,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N03_2",
+  "category": "szamtani",
+  "template_id": "N03",
+  "params": {
+   "A": 19,
+   "B": 8,
+   "C": 209
+  },
+  "answer": 57,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N03_3",
+  "category": "szamtani",
+  "template_id": "N03",
+  "params": {
+   "A": 5,
+   "B": 7,
+   "C": 72
+  },
+  "answer": 37,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N04_1",
+  "category": "szamtani",
+  "template_id": "N04",
+  "params": {
+   "A": 10,
+   "B": 4,
+   "C": 9
+  },
+  "answer": 49,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N04_2",
+  "category": "szamtani",
+  "template_id": "N04",
+  "params": {
+   "A": 10,
+   "B": 9,
+   "C": 5
+  },
+  "answer": 95,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N04_3",
+  "category": "szamtani",
+  "template_id": "N04",
+  "params": {
+   "A": 7,
+   "B": 12,
+   "C": 6
+  },
+  "answer": 90,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N05_1",
+  "category": "szamtani",
+  "template_id": "N05",
+  "params": {
+   "A": 55,
+   "B": 5,
+   "C": 10
+  },
+  "answer": 40,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N05_2",
+  "category": "szamtani",
+  "template_id": "N05",
+  "params": {
+   "A": 36,
+   "B": 9,
+   "C": 6
+  },
+  "answer": 21,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N05_3",
+  "category": "szamtani",
+  "template_id": "N05",
+  "params": {
+   "A": 64,
+   "B": 17,
+   "C": 17
+  },
+  "answer": 30,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N06_1",
+  "category": "szamtani",
+  "template_id": "N06",
+  "params": {
+   "A": 118,
+   "B": 14,
+   "C": 11
+  },
+  "answer": 12,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N06_2",
+  "category": "szamtani",
+  "template_id": "N06",
+  "params": {
+   "A": 25,
+   "B": 15,
+   "C": 8
+  },
+  "answer": 5,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N06_3",
+  "category": "szamtani",
+  "template_id": "N06",
+  "params": {
+   "A": 175,
+   "B": 25,
+   "C": 8
+  },
+  "answer": 25,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N07_1",
+  "category": "szamtani",
+  "template_id": "N07",
+  "params": {
+   "A": 241,
+   "B": 120,
+   "C": 9
+  },
+  "answer": 1089,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N07_2",
+  "category": "szamtani",
+  "template_id": "N07",
+  "params": {
+   "A": 284,
+   "B": 109,
+   "C": 4
+  },
+  "answer": 700,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N07_3",
+  "category": "szamtani",
+  "template_id": "N07",
+  "params": {
+   "A": 573,
+   "B": 191,
+   "C": 11
+  },
+  "answer": 4202,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N08_1",
+  "category": "szamtani",
+  "template_id": "N08",
+  "params": {
+   "A": 62,
+   "B": 7,
+   "C": 21
+  },
+  "answer": 413,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N08_2",
+  "category": "szamtani",
+  "template_id": "N08",
+  "params": {
+   "A": 45,
+   "B": 12,
+   "C": 20
+  },
+  "answer": 520,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N08_3",
+  "category": "szamtani",
+  "template_id": "N08",
+  "params": {
+   "A": 73,
+   "B": 8,
+   "C": 7
+  },
+  "answer": 577,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N09_1",
+  "category": "szamtani",
+  "template_id": "N09",
+  "params": {
+   "A": 68,
+   "B": 49
+  },
+  "answer": 83,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N09_2",
+  "category": "szamtani",
+  "template_id": "N09",
+  "params": {
+   "A": 48,
+   "B": 7
+  },
+  "answer": 31,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N09_3",
+  "category": "szamtani",
+  "template_id": "N09",
+  "params": {
+   "A": 68,
+   "B": 30
+  },
+  "answer": 64,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N10_1",
+  "category": "szamtani",
+  "template_id": "N10",
+  "params": {
+   "A": 217,
+   "B": 58,
+   "C": 162
+  },
+  "answer": 437,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N10_2",
+  "category": "szamtani",
+  "template_id": "N10",
+  "params": {
+   "A": 279,
+   "B": 146,
+   "C": 27
+  },
+  "answer": 452,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "N10_3",
+  "category": "szamtani",
+  "template_id": "N10",
+  "params": {
+   "A": 294,
+   "B": 241,
+   "C": 49
+  },
+  "answer": 584,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H01_1",
+  "category": "nehez",
+  "template_id": "H01",
+  "params": {
+   "A": 27,
+   "B": 9,
+   "C": 6,
+   "D": 14
+  },
+  "answer": 712,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H01_2",
+  "category": "nehez",
+  "template_id": "H01",
+  "params": {
+   "A": 21,
+   "B": 9,
+   "C": 11,
+   "D": 29
+  },
+  "answer": 508,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H01_3",
+  "category": "nehez",
+  "template_id": "H01",
+  "params": {
+   "A": 21,
+   "B": 4,
+   "C": 11,
+   "D": 12
+  },
+  "answer": 721,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H02_1",
+  "category": "nehez",
+  "template_id": "H02",
+  "params": {
+   "A": 559,
+   "B": 92,
+   "C": 21,
+   "D": 6
+  },
+  "answer": 133,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H02_2",
+  "category": "nehez",
+  "template_id": "H02",
+  "params": {
+   "A": 389,
+   "B": 90,
+   "C": 67,
+   "D": 10
+  },
+  "answer": 159,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H02_3",
+  "category": "nehez",
+  "template_id": "H02",
+  "params": {
+   "A": 174,
+   "B": 46,
+   "C": 35,
+   "D": 10
+  },
+  "answer": 64,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H03_1",
+  "category": "nehez",
+  "template_id": "H03",
+  "params": {
+   "A": 67,
+   "B": 8,
+   "C": 6,
+   "D": 169
+  },
+  "answer": 3047,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H03_2",
+  "category": "nehez",
+  "template_id": "H03",
+  "params": {
+   "A": 89,
+   "B": 12,
+   "C": 20,
+   "D": 127
+  },
+  "answer": 21233,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H03_3",
+  "category": "nehez",
+  "template_id": "H03",
+  "params": {
+   "A": 59,
+   "B": 9,
+   "C": 14,
+   "D": 248
+  },
+  "answer": 7186,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H04_1",
+  "category": "nehez",
+  "template_id": "H04",
+  "params": {
+   "A": 54,
+   "B": 5,
+   "C": 106,
+   "D": 7
+  },
+  "answer": 1012,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H04_2",
+  "category": "nehez",
+  "template_id": "H04",
+  "params": {
+   "A": 99,
+   "B": 5,
+   "C": 70,
+   "D": 9
+  },
+  "answer": 1125,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H04_3",
+  "category": "nehez",
+  "template_id": "H04",
+  "params": {
+   "A": 110,
+   "B": 5,
+   "C": 90,
+   "D": 2
+  },
+  "answer": 730,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H05_1",
+  "category": "nehez",
+  "template_id": "H05",
+  "params": {
+   "A": 535,
+   "B": 139,
+   "C": 124,
+   "D": 122
+  },
+  "answer": 398,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H05_2",
+  "category": "nehez",
+  "template_id": "H05",
+  "params": {
+   "A": 418,
+   "B": 122,
+   "C": 49,
+   "D": 95
+  },
+  "answer": 250,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H05_3",
+  "category": "nehez",
+  "template_id": "H05",
+  "params": {
+   "A": 852,
+   "B": 151,
+   "C": 112,
+   "D": 35
+  },
+  "answer": 778,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H06_1",
+  "category": "nehez",
+  "template_id": "H06",
+  "params": {
+   "A": 96,
+   "B": 20,
+   "C": 17,
+   "D": 13
+  },
+  "answer": 80,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H06_2",
+  "category": "nehez",
+  "template_id": "H06",
+  "params": {
+   "A": 87,
+   "B": 20,
+   "C": 19,
+   "D": 26
+  },
+  "answer": 60,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H06_3",
+  "category": "nehez",
+  "template_id": "H06",
+  "params": {
+   "A": 113,
+   "B": 27,
+   "C": 14,
+   "D": 34
+  },
+  "answer": 66,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H07_1",
+  "category": "nehez",
+  "template_id": "H07",
+  "params": {
+   "A": 96,
+   "B": 5,
+   "C": 4,
+   "D": 925
+  },
+  "answer": 61,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H07_2",
+  "category": "nehez",
+  "template_id": "H07",
+  "params": {
+   "A": 76,
+   "B": 4,
+   "C": 6,
+   "D": 980
+  },
+  "answer": 220,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H07_3",
+  "category": "nehez",
+  "template_id": "H07",
+  "params": {
+   "A": 41,
+   "B": 9,
+   "C": 9,
+   "D": 846
+  },
+  "answer": 108,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H08_1",
+  "category": "nehez",
+  "template_id": "H08",
+  "params": {
+   "A": 36,
+   "B": 21,
+   "C": 32,
+   "D": 64
+  },
+  "answer": 660,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H08_2",
+  "category": "nehez",
+  "template_id": "H08",
+  "params": {
+   "A": 27,
+   "B": 12,
+   "C": 52,
+   "D": 60
+  },
+  "answer": 212,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H08_3",
+  "category": "nehez",
+  "template_id": "H08",
+  "params": {
+   "A": 28,
+   "B": 28,
+   "C": 75,
+   "D": 93
+  },
+  "answer": 616,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H09_1",
+  "category": "nehez",
+  "template_id": "H09",
+  "params": {
+   "A": 24,
+   "B": 10,
+   "C": 15,
+   "D": 22
+  },
+  "answer": 570,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H09_2",
+  "category": "nehez",
+  "template_id": "H09",
+  "params": {
+   "A": 25,
+   "B": 58,
+   "C": 24,
+   "D": 24
+  },
+  "answer": 2026,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H09_3",
+  "category": "nehez",
+  "template_id": "H09",
+  "params": {
+   "A": 24,
+   "B": 13,
+   "C": 17,
+   "D": 21
+  },
+  "answer": 669,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H10_1",
+  "category": "nehez",
+  "template_id": "H10",
+  "params": {
+   "A": 128,
+   "B": 91,
+   "C": 92,
+   "D": 402
+  },
+  "answer": 91,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H10_2",
+  "category": "nehez",
+  "template_id": "H10",
+  "params": {
+   "A": 79,
+   "B": 143,
+   "C": 75,
+   "D": 448
+  },
+  "answer": 151,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "H10_3",
+  "category": "nehez",
+  "template_id": "H10",
+  "params": {
+   "A": 43,
+   "B": 145,
+   "C": 131,
+   "D": 515
+  },
+  "answer": 196,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E01_1",
+  "category": "kinyeres",
+  "template_id": "E01",
+  "params": {
+   "A": 284,
+   "B": 399,
+   "C": 333
+  },
+  "answer": 399,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E01_2",
+  "category": "kinyeres",
+  "template_id": "E01",
+  "params": {
+   "A": 36,
+   "B": 330,
+   "C": 243
+  },
+  "answer": 330,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E01_3",
+  "category": "kinyeres",
+  "template_id": "E01",
+  "params": {
+   "A": 60,
+   "B": 135,
+   "C": 88
+  },
+  "answer": 135,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E02_1",
+  "category": "kinyeres",
+  "template_id": "E02",
+  "params": {
+   "A": 318,
+   "B": 225,
+   "C": 199
+  },
+  "answer": 225,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E02_2",
+  "category": "kinyeres",
+  "template_id": "E02",
+  "params": {
+   "A": 305,
+   "B": 77,
+   "C": 79
+  },
+  "answer": 77,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E02_3",
+  "category": "kinyeres",
+  "template_id": "E02",
+  "params": {
+   "A": 237,
+   "B": 43,
+   "C": 169
+  },
+  "answer": 43,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E03_1",
+  "category": "kinyeres",
+  "template_id": "E03",
+  "params": {
+   "A": 200,
+   "B": 234,
+   "C": 324
+  },
+  "answer": 324,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E03_2",
+  "category": "kinyeres",
+  "template_id": "E03",
+  "params": {
+   "A": 395,
+   "B": 77,
+   "C": 108
+  },
+  "answer": 108,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E03_3",
+  "category": "kinyeres",
+  "template_id": "E03",
+  "params": {
+   "A": 365,
+   "B": 318,
+   "C": 337
+  },
+  "answer": 337,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E04_1",
+  "category": "kinyeres",
+  "template_id": "E04",
+  "params": {
+   "A": 29,
+   "B": 150,
+   "C": 278
+  },
+  "answer": 278,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E04_2",
+  "category": "kinyeres",
+  "template_id": "E04",
+  "params": {
+   "A": 30,
+   "B": 246,
+   "C": 186
+  },
+  "answer": 246,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E04_3",
+  "category": "kinyeres",
+  "template_id": "E04",
+  "params": {
+   "A": 182,
+   "B": 313,
+   "C": 58
+  },
+  "answer": 313,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E05_1",
+  "category": "kinyeres",
+  "template_id": "E05",
+  "params": {
+   "A": 173,
+   "B": 276,
+   "C": 191
+  },
+  "answer": 173,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E05_2",
+  "category": "kinyeres",
+  "template_id": "E05",
+  "params": {
+   "A": 136,
+   "B": 175,
+   "C": 312
+  },
+  "answer": 136,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E05_3",
+  "category": "kinyeres",
+  "template_id": "E05",
+  "params": {
+   "A": 306,
+   "B": 82,
+   "C": 382
+  },
+  "answer": 82,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E06_1",
+  "category": "kinyeres",
+  "template_id": "E06",
+  "params": {
+   "A": 155,
+   "B": 218,
+   "C": 93
+  },
+  "answer": 218,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E06_2",
+  "category": "kinyeres",
+  "template_id": "E06",
+  "params": {
+   "A": 66,
+   "B": 60,
+   "C": 312
+  },
+  "answer": 60,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E06_3",
+  "category": "kinyeres",
+  "template_id": "E06",
+  "params": {
+   "A": 56,
+   "B": 128,
+   "C": 47
+  },
+  "answer": 128,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E07_1",
+  "category": "kinyeres",
+  "template_id": "E07",
+  "params": {
+   "A": 399,
+   "B": 281,
+   "C": 344
+  },
+  "answer": 399,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E07_2",
+  "category": "kinyeres",
+  "template_id": "E07",
+  "params": {
+   "A": 58,
+   "B": 87,
+   "C": 49
+  },
+  "answer": 58,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E07_3",
+  "category": "kinyeres",
+  "template_id": "E07",
+  "params": {
+   "A": 366,
+   "B": 233,
+   "C": 80
+  },
+  "answer": 366,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E08_1",
+  "category": "kinyeres",
+  "template_id": "E08",
+  "params": {
+   "A": 129,
+   "B": 193,
+   "C": 339
+  },
+  "answer": 193,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E08_2",
+  "category": "kinyeres",
+  "template_id": "E08",
+  "params": {
+   "A": 54,
+   "B": 26,
+   "C": 25
+  },
+  "answer": 26,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E08_3",
+  "category": "kinyeres",
+  "template_id": "E08",
+  "params": {
+   "A": 144,
+   "B": 182,
+   "C": 358
+  },
+  "answer": 182,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E09_1",
+  "category": "kinyeres",
+  "template_id": "E09",
+  "params": {
+   "A": 306,
+   "B": 229,
+   "C": 284
+  },
+  "answer": 306,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E09_2",
+  "category": "kinyeres",
+  "template_id": "E09",
+  "params": {
+   "A": 169,
+   "B": 254,
+   "C": 108
+  },
+  "answer": 254,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E09_3",
+  "category": "kinyeres",
+  "template_id": "E09",
+  "params": {
+   "A": 27,
+   "B": 340,
+   "C": 179
+  },
+  "answer": 340,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E10_1",
+  "category": "kinyeres",
+  "template_id": "E10",
+  "params": {
+   "A": 77,
+   "B": 197,
+   "C": 350
+  },
+  "answer": 350,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E10_2",
+  "category": "kinyeres",
+  "template_id": "E10",
+  "params": {
+   "A": 103,
+   "B": 113,
+   "C": 251
+  },
+  "answer": 251,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "E10_3",
+  "category": "kinyeres",
+  "template_id": "E10",
+  "params": {
+   "A": 351,
+   "B": 105,
+   "C": 295
+  },
+  "answer": 295,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "O01_1",
+  "category": "nyitott",
+  "template_id": "O01",
+  "params": {},
+  "answer": null,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "O02_1",
+  "category": "nyitott",
+  "template_id": "O02",
+  "params": {},
+  "answer": null,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "O03_1",
+  "category": "nyitott",
+  "template_id": "O03",
+  "params": {},
+  "answer": null,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "O04_1",
+  "category": "nyitott",
+  "template_id": "O04",
+  "params": {},
+  "answer": null,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "O05_1",
+  "category": "nyitott",
+  "template_id": "O05",
+  "params": {},
+  "answer": null,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "O06_1",
+  "category": "nyitott",
+  "template_id": "O06",
+  "params": {},
+  "answer": null,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "O07_1",
+  "category": "nyitott",
+  "template_id": "O07",
+  "params": {},
+  "answer": null,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "O08_1",
+  "category": "nyitott",
+  "template_id": "O08",
+  "params": {},
+  "answer": null,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "O09_1",
+  "category": "nyitott",
+  "template_id": "O09",
+  "params": {},
+  "answer": null,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ },
+ {
+  "task_id": "O10_1",
+  "category": "nyitott",
+  "template_id": "O10",
+  "params": {},
+  "answer": null,
+  "variants": [
+   "DE_DE",
+   "DE_EN",
+   "EN_DE",
+   "EN_EN",
+   "EN_HU",
+   "EN_JA",
+   "HU_EN",
+   "HU_HU",
+   "JA_EN",
+   "JA_JA"
+  ]
+ }
+]
